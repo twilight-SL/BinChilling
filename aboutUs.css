@@ -3,6 +3,82 @@
    License: none (public domain)
 */
 
+
+
+/* p01 */
+.p01 {
+  background-image: url("./p01/background01.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+
+.logo{
+  position: relative;
+  top: 190px;
+}
+
+.logo img{
+  display: block;
+  margin: auto;
+}
+
+#logo-round img {
+  height: 100px;
+}
+
+#logo-words img{
+  position: relative;
+  top: 3vh;
+  height: 30px;
+}
+
+
+.group{
+  position: relative;
+  top: 450px;
+}
+
+.group img{
+  display: block;
+  margin:auto;
+}
+
+#group-photo img{
+  height:30vh;
+}
+
+@font-face {
+  font-family: 'Noto Sans CJK TC Medium';
+  src: url('/p01/NotoSansTC-Medium-Alphabetic.woff') format("woff");
+}
+
+
+.group-slogan p{
+  color:#ffffff;
+  text-align: center;
+  font-size: 30pt;
+  font-family: 'Noto Sans CJK TC Medium';
+  
+}
+
+.group-slogan{
+}
+
+#group-slogan-author{
+  margin-bottom: 186px;
+  margin-left: 70vh;
+}
+
+#group-slogan-author p{
+  font-size: 15pt;
+}
+
+
+/* p02 */
+
 html,
 body,
 div,
@@ -91,6 +167,7 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
@@ -105,17 +182,21 @@ nav,
 section {
   display: block;
 }
+
 body {
   line-height: 1;
 }
+
 ol,
 ul {
   list-style: none;
 }
+
 blockquote,
 q {
   quotes: none;
 }
+
 blockquote:before,
 blockquote:after,
 q:before,
@@ -123,45 +204,46 @@ q:after {
   content: "";
   content: none;
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
 /* CSS Start */
-.wrap{
+.wrap {
   background-image: url("./p02/background02.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
-  height:880px;
-} 
+  height: 880px;
+}
 
 .flexbox {
   display: flex;
-  justify-content:space-around;
+  justify-content: space-around;
 }
 
-img{
-  height:600px;
-  margin:100px 10px 0px 10px;
+img {
+  height: 600px;
+  margin: 100px 10px 0px 10px;
 }
 
-.footer{
+.footer {
   display: flex;
-  justify-content:flex-start;
+  justify-content: flex-start;
   background-color: #FFF;
 }
 
-p{
-  margin:15px 125px;
+p {
+  margin: 15px 125px;
   font-size: 25px;
   font-family: Noto Sans CJK TC;
 }
 
 .overlay {
-  position:relative;
+  position: relative;
   margin: 0px 10px;
   bottom: 0px;
   left: 0px;
@@ -175,7 +257,7 @@ p{
 }
 
 .container:hover .overlay {
-  bottom:102.5px;
+  bottom: 102.5px;
   height: 100px;
 }
 
@@ -186,9 +268,10 @@ p{
   position: relative;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);  /* Safari 和 Chrome */
-  -moz-transform: translate(-50%, -50%);  /* Firefox */
+  -webkit-transform: translate(-50%, -50%);
+  /* Safari 和 Chrome */
+  -moz-transform: translate(-50%, -50%);
+  /* Firefox */
   transform: translate(-50%, -50%);
   text-align: center;
-}  
-
+}
