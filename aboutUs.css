@@ -9,7 +9,7 @@
 .p01 {
   background-image: url("./p01/background01.png");
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: scroll;
   background-position: center;
   background-size: cover;
   height: 100vh;
@@ -38,7 +38,7 @@
 
 .group{
   position: relative;
-  top: 450px;
+  top: 350px;
 }
 
 .group img{
@@ -211,16 +211,17 @@ table {
 }
 
 /* CSS Start */
-.wrap {
+.p02 {
   background-image: url("./p02/background02.png");
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: scroll;
   background-position: center;
   background-size: cover;
-  height: 880px;
+  height: 100vh;
 }
 
 .flexbox {
+  margin: auto;
   display: flex;
   justify-content: space-around;
 }
