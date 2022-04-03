@@ -234,20 +234,17 @@ img {
 
 .footer {
   display: flex;
-  justify-content: space-between;
+  justify-content:flex-start;
   height: 50px;
   width: 100%;
   background-color: #FFF;
 }
 
 p {
-  margin: 15px 10px;
+  margin:15px 125px;
   font-size: 25px;
   font-family: Noto Sans CJK TC;
 }
-
-
-
 
 .overlay {
   position: relative;
@@ -275,12 +272,25 @@ p {
   position: relative;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  /* Safari 和 Chrome */
-  -moz-transform: translate(-50%, -50%);
-  /* Firefox */
+  -webkit-transform: translate(-50%, -50%); /* Safari 和 Chrome */
+  -moz-transform: translate(-50%, -50%); /* Firefox */
   transform: translate(-50%, -50%);
   text-align: center;
+}
+
+.fog {
+  opacity: 0.7;
+  transition: 0.3s;
+  z-index: 10;
+  position: absolute;
+  top: 892px;
+  height: 600px;
+  width: 350px;
+  background-color: black;
+}
+
+.fog:hover {
+  opacity: 0;
 }
 
 #BinChilling{
