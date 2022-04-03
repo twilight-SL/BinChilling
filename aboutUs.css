@@ -233,12 +233,14 @@ img {
 
 .footer {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
+  height: 50px;
+  width: 100%;
   background-color: #FFF;
 }
 
 p {
-  margin: 15px 125px;
+  margin: 15px 10px;
   font-size: 25px;
   font-family: Noto Sans CJK TC;
 }
@@ -275,4 +277,13 @@ p {
   /* Firefox */
   transform: translate(-50%, -50%);
   text-align: center;
+}
+
+#BinChilling{
+  left: 25px;
+  position: relative;
+}
+#SocialWebResearch{
+  right: 25px;
+  position: relative;
 }
