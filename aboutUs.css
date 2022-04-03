@@ -227,7 +227,8 @@ table {
 }
 
 img {
-  height: 600px;
+  width: 200px;
+  height: 400px;
   margin: 100px 10px 0px 10px;
 }
 
@@ -244,6 +245,9 @@ p {
   font-size: 25px;
   font-family: Noto Sans CJK TC;
 }
+
+
+
 
 .overlay {
   position: relative;
