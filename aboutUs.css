@@ -17,7 +17,7 @@
 
 .logo{
   position: relative;
-  top: 190px;
+  top: 120px;
 }
 
 .logo img{
@@ -26,7 +26,7 @@
 }
 
 #logo-round img {
-  height: 100px;
+  height: 50px;
 }
 
 #logo-words img{
