@@ -2,83 +2,6 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-
-
-
-/* p01 */
-.p01 {
-  background-image: url("./p01/background01.png");
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-position: center;
-  background-size: cover;
-  height: 100vh;
-}
-
-.logo{
-  position: relative;
-  top: 120px;
-}
-
-.logo img{
-  display: block;
-  margin: auto;
-}
-
-#logo-round img {
-  height: 50px;
-}
-
-#logo-words img{
-  position: relative;
-  top: 3vh;
-  height: 30px;
-}
-
-
-.group{
-  position: relative;
-  top: 350px;
-}
-
-.group img{
-  display: block;
-  margin:auto;
-}
-
-#group-photo img{
-  height:30vh;
-}
-
-@font-face {
-  font-family: 'Noto Sans CJK TC Medium';
-  src: url('/p01/NotoSansTC-Medium-Alphabetic.woff') format("woff");
-}
-
-
-.group-slogan p{
-  color:#ffffff;
-  text-align: center;
-  font-size: 30pt;
-  font-family: 'Noto Sans CJK TC Medium';
-  
-}
-
-.group-slogan{
-}
-
-#group-slogan-author{
-  margin-bottom: 186px;
-  margin-left: 70vh;
-}
-
-#group-slogan-author p{
-  font-size: 15pt;
-}
-
-
-/* p02 */
-
 html,
 body,
 div,
@@ -210,16 +133,78 @@ table {
   border-spacing: 0;
 }
 
-/* CSS Start */
-.p02 {
-  background-image: url("./p02/background02.png");
+/* p01 */
+.p01 {
+  background-image: url("./Img/background.png");
   background-repeat: no-repeat;
   background-attachment: scroll;
-  background-position: center;
   background-size: cover;
-  height: 100vh;
+  /* height: 100vh; */
+  height:1630px;
 }
 
+.logo{
+  position: relative;
+  top: 120px;
+}
+
+.logo img{
+  display: block;
+  margin: auto;
+}
+
+#logo-round img {
+  width: 156px;
+  height: 156px;
+}
+
+#logo-words img{
+  position: relative;
+  top: 3vh;
+  height: 30px;
+}
+
+.group{
+  position: relative;
+  top: 350px;
+}
+
+.group img{
+  display: block;
+  margin: auto;
+}
+
+#group-photo img{
+  height:30vh;
+}
+
+@font-face {
+  font-family: 'Noto Sans CJK TC Medium';
+  src: url('/p01/NotoSansTC-Medium-Alphabetic.woff') format("woff");
+}
+
+.group-slogan p{
+  color:#ffffff;
+  text-align: center;
+  font-size: 30pt;
+  font-family: 'Noto Sans CJK TC Medium';
+  
+}
+
+.group-slogan{
+}
+
+#group-slogan-author{
+  margin-bottom: 186px;
+  margin-left: 70vh;
+}
+
+#group-slogan-author p{
+  font-size: 15pt;
+}
+
+
+/* p02 */
 .flexbox {
   margin: auto;
   display: flex;
@@ -227,41 +212,32 @@ table {
 }
 
 img {
-  width: 200px;
-  height: 400px;
-  margin: 100px 10px 0px 10px;
-}
-
-.footer {
-  display: flex;
-  justify-content:flex-start;
-  height: 50px;
-  width: 100%;
-  background-color: #FFF;
-}
-
-p {
-  margin:15px 125px;
-  font-size: 25px;
-  font-family: Noto Sans CJK TC;
+  height:50vh;
+  width:10vw;
+  margin: 300px 10px 100px 10px;
 }
 
 .overlay {
   position: relative;
   margin: 0px 10px;
-  bottom: 0px;
+  bottom: 102.5px;
   left: 0px;
   right: 0px;
   background-color: #ffffff;
   opacity: 0.7;
   overflow: hidden;
-  width: 340px;
+  width:10vw;
   height: 0px;
   transition: 0.5s ease;
 }
+.container{
+  /* position: relative; */
+  height:50vh;
+  width:10vw;
+}
 
 .container:hover .overlay {
-  bottom: 102.5px;
+  bottom: 202.5px;
   height: 100px;
 }
 
@@ -283,9 +259,12 @@ p {
   transition: 0.3s;
   z-index: 10;
   position: absolute;
-  top: 892px;
-  height: 600px;
-  width: 350px;
+  top: 1043px;
+  margin-left: 10px;
+  /* height: 400px;
+  width: 200px; */
+  height:50vh;
+  width:10vw;
   background-color: black;
 }
 
@@ -293,10 +272,25 @@ p {
   opacity: 0;
 }
 
+.footer {
+  display: flex;
+  justify-content: flex-start;
+  height: 50px;
+  width: 100%;
+  background-color: #FFF;
+}
+
+p {
+  margin: 15px 125px;
+  font-size: 25px;
+  font-family: Noto Sans CJK TC;
+}
+
 #BinChilling{
   left: 25px;
   position: relative;
 }
+
 #SocialWebResearch{
   right: 25px;
   position: relative;
