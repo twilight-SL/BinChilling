@@ -1,4 +1,8 @@
-$("#group-photo").click(function(){
-    $("html, body").animate({
-        scrollTop: $(".p02").offset().top},2000);
-    })
+$("#group-photo").click(function () {
+  $("html, body").animate(
+    {
+      scrollTop: $(".p02").offset().top,
+    },
+    2000
+  );
+});
