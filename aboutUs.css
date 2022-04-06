@@ -211,13 +211,13 @@ table {
   justify-content: space-around;
 }
 
-.container img {
-  margin: 100px 0px;
+.team{
+  padding-top: 100px;
 }
 
 .overlay {
   position: relative;
-  bottom: 102.5px;
+  bottom: 0px;
   left: 0px;
   right: 0px;
   background-color: #ffffff;
@@ -228,29 +228,32 @@ table {
   transition: 0.5s ease;
 }
 
+.container{
+  width:280px;
+  height:700px;
+}
+
 .container:hover .overlay {
-  bottom: 200px;
-  height:10.4vh;
+  bottom: 100px;
+  height: 10.5vh;
 }
 
 .text {
-  color: rgb(0, 0, 0);
-  font-size: 40px;
-  font-family: Noto Sans CJK TC;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: relative;
   top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%); /* Safari 和 Chrome */
-  -moz-transform: translate(-50%, -50%); /* Firefox */
+  left: 50%; 
+  /* -webkit-transform: translate(-50%, -50%); 
+  -moz-transform: translate(-50%, -50%);  */
   transform: translate(-50%, -50%);
-  text-align: center;
 }
 
-.text p{
-  color: #DCDCDC;
-  font-size: 29px;
-  margin:auto;
-  font-family: Noto Sans CJK TC;
+.job{
+  width:86px;
+  height:33px;
 }
 
 .fog {
@@ -258,10 +261,10 @@ table {
   transition: 0.3s;
   z-index: 10;
   position: absolute;
-  top: 998px;
+  top: 968px;
   height: 700px;
   width: 280px;
-  background-color: #286A93;
+  background-color: #DCDCDC;
 }
 
 .fog:hover {
@@ -276,13 +279,13 @@ table {
   background-color: #FFF;
 }
 
-p {
+.footer p {
   margin: 15px 125px;
   font-size: 25px;
   font-family: Noto Sans CJK TC;
 }
 
-#BinChilling{
+/* #BinChilling{
   left: 25px;
   position: relative;
 }
@@ -290,4 +293,4 @@ p {
 #SocialWebResearch{
   right: 25px;
   position: relative;
-}
+} */
