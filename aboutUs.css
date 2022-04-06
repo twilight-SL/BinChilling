@@ -139,7 +139,6 @@ table {
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
-  /* height: 100vh; */
   height:1750px;
 }
 
@@ -166,7 +165,7 @@ table {
 
 .group{
   position: relative;
-  top: 300px;
+  top: 260px;
 }
 
 .group img{
@@ -174,39 +173,23 @@ table {
   margin: auto;
 }
 
-/* #group-photo img{
-  height:30vh;
-} */
-
 @font-face {
   font-family: 'Noto Sans CJK TC Medium';
   src: url('/p01/NotoSansTC-Medium-Alphabetic.woff') format("woff");
 }
 
 .group-slogan p{
+  padding-top: 75px;
   color:#ffffff;
   text-align: center;
-  font-size: 30pt;
+  font-size: 33px;
   font-family: 'Noto Sans CJK TC Medium';
-  
+  margin-bottom: 17.4vh;
 }
-
-.group-slogan{
-}
-
-#group-slogan-author{
-  margin-bottom: 186px;
-  margin-left: 70vh;
-}
-
-#group-slogan-author p{
-  font-size: 15pt;
-}
-
 
 /* p02 */
 .flexbox {
-  margin-top: 300px;
+  margin-top: 325px;
   display: flex;
   justify-content: space-around;
 }
@@ -261,7 +244,7 @@ table {
   transition: 0.3s;
   z-index: 5;
   position: absolute;
-  top: 968px;
+  top: 1040px;
   background-color: #DCDCDC;
 }
 
