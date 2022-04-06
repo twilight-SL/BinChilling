@@ -139,7 +139,7 @@ table {
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
-  height:1750px;
+  /* height:2160px; */
 }
 
 .logo{
@@ -173,29 +173,29 @@ table {
   margin: auto;
 }
 
-@font-face {
+/* @font-face {
   font-family: 'Noto Sans CJK TC Medium';
-  src: url('/p01/NotoSansTC-Medium-Alphabetic.woff') format("woff");
-}
+  src: url('./p01/NotoSansTC-Medium-Alphabetic.woff') format("woff");
+} */
 
 .group-slogan p{
   padding-top: 75px;
   color:#ffffff;
   text-align: center;
   font-size: 33px;
-  font-family: 'Noto Sans CJK TC Medium';
+  font-family: sans-serif;
   margin-bottom: 17.4vh;
 }
 
 /* p02 */
 .flexbox {
-  margin-top: 325px;
+  margin: 325px 0px 250px 0px;
   display: flex;
   justify-content: space-around;
 }
 
 .team{
-  padding-top: 100px;
+  padding-top: 60px;
 }
 
 .overlay {
@@ -221,6 +221,11 @@ table {
   height: 10.5vh;
 }
 
+.down{
+  position: relative;
+  top: 100px;
+}
+
 .text {
   display:flex;
   flex-direction: column;
@@ -229,8 +234,6 @@ table {
   position: relative;
   top: 50%;
   left: 50%; 
-  /* -webkit-transform: translate(-50%, -50%); 
-  -moz-transform: translate(-50%, -50%);  */
   transform: translate(-50%, -50%);
 }
 
@@ -240,12 +243,15 @@ table {
 }
 
 .fog {
-  opacity: 0.7;
   transition: 0.3s;
   z-index: 5;
   position: absolute;
-  top: 1040px;
-  background-color: #DCDCDC;
+  top: 1002px;
+}
+
+.down .fog{
+  top: 60px;
+  left: 0px;
 }
 
 .fog:hover {
@@ -261,17 +267,17 @@ table {
 }
 
 .footer p {
-  margin: 15px 125px;
+  margin: 15px 100px 15px 5.5vw;
   font-size: 25px;
   font-family: Noto Sans CJK TC;
 }
 
 /* #BinChilling{
-  left: 25px;
+  left: 5.5vw;
   position: relative;
 }
 
 #SocialWebResearch{
-  right: 25px;
+  right: 34.7vw;
   position: relative;
 } */
