@@ -264,16 +264,16 @@ table {
 
 .footer {
   display: flex;
-  justify-content: flex-start;
+  justify-content:flex-start;
   height: 42.5px;
   width: 100%;
   background-color: #FFF;
 }
 
 .footer p {
-  margin: 10px 100px 10px 5.5vw;
+  margin: 10px 10vw 10px 6vw;
   font-size: 25px;
-  font-family: Noto Sans CJK TC;
+  font-family: sans-serif;
 }
 
 /* #BinChilling{
