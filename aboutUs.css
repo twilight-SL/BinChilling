@@ -189,7 +189,7 @@ table {
 
 /* p02 */
 .flexbox {
-  margin: 325px 0px 250px 0px;
+  margin: 325px 0px 200px 0px;
   display: flex;
   justify-content: space-around;
 }
@@ -261,13 +261,13 @@ table {
 .footer {
   display: flex;
   justify-content: flex-start;
-  height: 50px;
+  height: 40px;
   width: 100%;
   background-color: #FFF;
 }
 
 .footer p {
-  margin: 15px 100px 15px 5.5vw;
+  margin: 10px 100px 10px 5.5vw;
   font-size: 25px;
   font-family: Noto Sans CJK TC;
 }
