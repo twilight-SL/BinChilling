@@ -191,7 +191,7 @@ table {
 .flexbox {
   margin: 325px 0px 200px 0px;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .team{
@@ -209,6 +209,10 @@ table {
   width: 280px;
   height: 0px;
   transition: 0.5s ease;
+}
+
+.card{
+  margin:0px 70px 0px 35px
 }
 
 .container{
@@ -261,7 +265,7 @@ table {
 .footer {
   display: flex;
   justify-content: flex-start;
-  height: 40px;
+  height: 42.5px;
   width: 100%;
   background-color: #FFF;
 }
