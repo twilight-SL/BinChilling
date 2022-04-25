@@ -643,3 +643,88 @@ video {
   font-size: 2vh;
   color: white;
 }
+
+
+/* Lai */
+#landing_page_04_top_collections_title, #landing_page_05_top_collections_title{
+  position: absolute;
+  width: 100%;
+  height: 6.67%;
+  top: 4%;
+  font-family: SFProDisplay-Heavy;
+  text-align: center;
+  color: white;
+  font-size: 6vh;
+}
+
+.top_collect04_05_top_container{
+  display: flex;
+  justify-content: space-between;
+  padding: 7.5% 11% 0% 9%;
+}
+
+span{
+  font-family: SFPRODISPLAY_BOLD;
+  color: white;
+  font-size: 30px;
+}
+
+button:nth-child(odd){
+  border: 1px solid #fff;
+}
+button:nth-child(even){
+  background-color: #000;
+}
+
+select, button{
+  font-family: SFProDisplay-Semibold;
+  color: white;
+  font-size: 24px;
+  background-color: #c8c8c8;
+  padding: 5px 25px;
+  border-radius: 25px;
+  margin-left: 15px;
+}
+
+.p04_round_card_container{
+  margin: 0% 7.5%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap:wrap;
+}
+
+.round_card{
+  width: 29%;  
+  border-radius: 55px;
+  border: 1px solid #fff;
+  padding: 15px 25px;
+  margin: 1.25% 0%;
+  display: flex;
+  align-items: center;
+}
+
+img{
+    margin: 0.5px 1.5%;
+}
+
+.mark{
+  width:70px;
+  padding: 2px 15px;
+  margin-left: 5px;
+  display: inline-block;
+  background-image: url("./p0405/Rectangle37_small.png");
+}
+
+.paragraph{
+  margin-left: 15px;
+  display: flex;
+  flex-direction:column;
+}
+
+.paragraph_1,.paragraph_2{
+  margin: 2px 0px;
+}
+
+.paragraph_1 img:first-child, .paragraph_2 img:first-child{
+  margin-right: 100px;
+}
