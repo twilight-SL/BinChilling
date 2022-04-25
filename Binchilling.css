@@ -657,10 +657,10 @@ video {
   font-size: 6vh;
 }
 
-.top_collect04_05_top_container{
+.top_collect04_top_container{
   display: flex;
   justify-content: space-between;
-  padding: 7.5% 11% 0% 9%;
+  padding: 8.5% 11% 0% 9%;
 }
 
 span{
@@ -703,7 +703,7 @@ select, button{
   align-items: center;
 }
 
-img{
+.landing_page img{
     margin: 0.5px 1.5%;
 }
 
@@ -727,4 +727,71 @@ img{
 
 .paragraph_1 img:first-child, .paragraph_2 img:first-child{
   margin-right: 100px;
+}
+
+.landing_page_collectibles{
+  height: 300vh;
+  width: 100vw;
+  display: block;
+  z-index: 0;
+  background-color: #C4C4C4;
+  min-height: 100%;
+  min-width: 100%;
+  position: relative;
+  top: 0;
+}
+
+.top_collect_05_top_container{
+  display: flex;
+  justify-content: space-between;
+  padding: 14% 11% 0% 9%;
+}
+
+#p05_card_container{
+  padding: 3% 7.5%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.square_card{
+  height: 500px;
+  margin-bottom: 3.5%;
+}
+
+.image{
+  background-color: #E0E0E0;
+  width: 345px;
+  height: 500px;
+  border-radius: 25px;
+}
+
+.text{
+  background-color: #FFF;
+  width: 315px;
+  height: 170px;
+  position: relative;
+  top:-200px;
+  border-radius: 0px 0px 25px 25px;
+  padding: 15px;
+}
+
+.price{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.price img{
+  margin: 7.5px;
+} 
+
+.row{
+  display:flex;
+  justify-content: space-evenly;
+}
+
+.vertical img{
+  display: block;
 }
