@@ -120,7 +120,7 @@ video {
 
 #navbar_logo{
   position: absolute;
-  max-height: 100%;
+  max-height: 4vh;
   width: same-as-height;
 }
 
@@ -143,32 +143,256 @@ video {
   background-color: white;
 }
 
+#navbar_search_container{
+  position: relative;
+  left: 5%;
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#navbar_search_circle_container{  
+  width: 10%;
+  height: 100%;
+  position:relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 #navbar_search_circle{
-  position: absolute;
-  top: 13%;
-  left: 4.464%;
+  position: relative;
   height: 29px;
   width: 29px;
   border-radius: 50%;
   background-color: #E5E5E5;
   display: inline-block;
 }
+#navbar_search_text_container{
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 88%;
+  top: 0%;
+  height: 100%;
+}
 
 #navbar_search_text{
-  position: absolute;
-  top: 28.57%;
-  left: 13%;
+  position: relative;
   text-align: left;
+  font-size: 2vh;
   color: #E5E5E5;
   font-family: SFPRODISPLAY_BOLD; 
+  cursor: default;
+}
+
+#navbar_search_table{
+  display: none;
+  position: relative;
+  height: 500%;
+  width: 100%;
+  top: 20%;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+}
+
+#navbar_search_title_container{
+  position: relative;
+  height: 25.7%;
+  width: 100%;
+  display:flex;
+  justify-content: space-around;
+}
+
+#navbar_search_floorprice_container{
+  position: relative;
+  width: 54%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#navbar_search_time_container{
+  position: relative;
+  width: 45%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#navbar_search_floorprice_text_container{
+  position: relative;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#navbar_search_time_text_container{
+  position: relative;
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#navbar_search_floorprice_text{
+  position: relative;
+  color: #8C8C8C;
+  font-family: SFProDisplay-Semibold;
+  font-size: 1.7vh;
+}
+
+#navbar_search_time_text{
+  position: relative;
+  color: #8C8C8C;
+  font-family: SFProDisplay-Semibold;
+  font-size: 1.7vh;
+}
+
+#navbar_search_floorprice_dropdownmenu_container{
+  position: relative;
+  height: 100%;
+  width: 65%;
+  display: flex;
+  align-items: center;
+}
+
+#navbar_search_time_dropdownmenu_container{
+  position: relative;
+  height: 100%;
+  width: 75%;
+  display: flex;
+  align-items: center;
+}
+
+.dropdownmenu{
+  width: 100%;
+  border-radius: 5px;
+  display: block;
+}
+
+#navbar_search_time_container{
+  position: relative;
+  width: 32.67%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#navbar_search_table_line{
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 0.7%;
+  top: 22%;
+  left: 0%;
+  background-color: #E5E5E5;
+}
+#navbar_search_category_align_container{
+  position: relative;
+  top: 3%;
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+}
+#navbar_search_category_container{
+  position: relative;
+  width: 91.7%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.navbar_search_category{
+  position: relative;
+  height: 28%;
+  border-radius: 12px;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  background-color: #E5E5E5;
+  color: white;
+  font-size: 1.6vh;
+  font-family: SFPRODISPLAY_BOLD;
+}
+
+#navbar_search_category_all{
+  width: 12%;
+}
+
+#navbar_search_category_art{
+  width: 12%;
+}
+#navbar_search_category_celebrities{
+  width: 27%;
+}
+
+#navbar_search_category_domainnames{
+  width: 33%;
+}
+#navbar_search_category_music{
+  width: 19%;
+}
+#navbar_search_category_photography{
+  width: 27%;
+}
+#navbar_search_category_sports{
+  width: 19%;
+}
+#navbar_search_category_tradingcards{
+  width: 27%;
+}
+#navbar_search_category_utility{
+  width: 19%;
+}
+#navbar_search_category_virtualworld{
+  width: 27%;
+}
+#navbar_search_category_collectibles{
+  width: 27%;
+}
+#navbar_search_category_gaming{
+  width: 19%;
+}
+
+#navbar_search_confirm_container{
+  position: relative;
+  width: 100%;
+  height: 12.5%;
+  top: 6%;
+}
+
+#navbar_search_confirm_btn_container{
+  position: absolute;
+  height: 100%;
+  width: 17%;
+  right: 4.15%;
+}
+
+#navbar_search_confirm_btn{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+  border-color: #8C8C8C;
+  background-color: white;
+  color: #8C8C8C;
+  font-size: 1.6vh;
+  font-family: SFPRODISPLAY_BOLD;
 }
 
 #navbar_function_container{
-  position: relative;
+  position: absolute;
   height: 100%;
-  width: 35%;
-  left: 50%;
-  top:38.8%;
+  width: 17.34%;
+  left: 66%;
+  top:0%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -176,12 +400,26 @@ video {
 
 .navbar_function{
   position: relative;
-  width: 15.97%;
   height: 100%;
   top: 0%;
   text-align: center;
+  display: flex;
+  justify-content:center;
+  align-items: center;
   color: white;
   font-family: SFPRODISPLAY_BOLD; 
+}
+
+#navbar_function1{
+  width: 40%;
+}
+
+#navbar_function2{
+  width: 19%;
+}
+
+#navbar_function3{
+  width: 22.5%;
 }
 
 #navbar_vertical_rec{
@@ -195,7 +433,6 @@ video {
 
 #navbar_signin{
   position: absolute;
-  width: 3.75%;
   height: 20%;
   top: 38.8%;
   left: 87.5%;
@@ -205,7 +442,6 @@ video {
 
 #navbar_signup{
   position: absolute;
-  width: 4.27%;
   height: 20%;
   top: 38.8%;
   left: 92.7%;
@@ -277,7 +513,7 @@ video {
 
 #collectibles_view_circle_left{
   position: absolute;
-  top: 54.5%;
+  top: 40%;
   left: 2.88%;
   height: 88px;
   width: 88px;
@@ -288,7 +524,7 @@ video {
 
 #collectibles_view_circle_right{
   position: absolute;
-  top: 54.5%;
+  top: 40%;
   right: 2.88%;
   height: 88px;
   width: 88px;
@@ -468,7 +704,7 @@ video {
 
 #landing_page_02_info_container{
   position: relative;
-  width:33.85%;
+  width:40%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -644,6 +880,129 @@ video {
   color: white;
 }
 
+#privacybar{
+  bottom: 0%;
+  position: fixed;
+  height: 11.5vh;
+  width: 100vw;
+  z-index: 1;
+  background-color: #969696;
+}
+
+#privacy_statement_container{
+  position: relative;
+  width: 53.7%;
+  left: 2.1875%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+#privacy_statement{
+  position: absolute;
+  text-align: left;
+  color: white;
+  font-size: 1.6vh;
+  font-family: SFProDisplay-Semibold
+}
+
+#customize_settings_menu_container_container{
+  position: absolute;
+  height: 100%;
+  width: 30%;
+  left: 63%;
+  top: 0%;
+}
+
+#customize_settings_menu_align_container{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+#customize_settings_text_container{
+  width: 25.7%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+#customize_settings_text{
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content:flex-end;
+  align-items: center;
+  color: white;
+  font-family: SFProDisplay-Semibold;
+  font-size: 1.5vh;
+  text-decoration: underline;
+}
+
+#customize_settings_disable_container{
+  width: 27.25%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+#customize_settings_disable_text{
+  position: relative;
+  top:0%;
+  width: 100%;
+  height: 36.2%;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  background-color: black;
+  color: white;
+  font-size: 1.5vh;
+  font-family: SFPRODISPLAY_BOLD;
+}
+
+#customize_settings_accept_container{
+  width: 27.25%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+#customize_settings_accept_text{
+  position: relative;
+  top:0%;
+  width: 100%;
+  height: 36.2%;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  background-color: black;
+  color: white;
+  font-size: 1.5vh;
+  font-family: SFPRODISPLAY_BOLD;
+}
+
+#privacybar_close_container{
+  width: 1.1%;
+  height: 100%;
+  top:0;
+  right: 2.3%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
+
+#privacybar_close_btn{
+  width: 100%;
+  color: white;
+  font-size: 2.5vh;
+  font-family: SFPRODISPLAY_BOLD;
+}
 
 /* Lai */
 #landing_page_04_top_collections_title, #landing_page_05_top_collections_title{
