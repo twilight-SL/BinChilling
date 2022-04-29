@@ -9,97 +9,127 @@
   </head>
   <script src="./Binchilling.js"></script>
   <body>
-    <div id="navbar">
-      <div class="navbar_logo_container">
-        <img id="navbar_logo" src="./img/logo.png">
+    <div class="homepage" id="homepage_01">
+      <div id="homepage_logo_img_container">
+        <img id="homepage_logo_img" src="./img/logo.png">
       </div>
-      <img id="navbar_logo_text" src="./img/logo_text.png">
-      <div id="navbar_search">
-        <div id="navbar_search_container">
-          <div id="navbar_search_circle_container">
-            <div id="navbar_search_circle"></div>
-          </div>
-          <div id="navbar_search_text_container" onclick="pop_search_table(this.id)">
-            <div id="navbar_search_text">Search</div>
-          </div>
-        </div>
-        <div id="navbar_search_table">
-          <div id="navbar_search_title_container">
-            <form action="#" id="navbar_search_floorprice_container">
-              <div id="navbar_search_floorprice_text_container">
-                <label id="navbar_search_floorprice_text" for="floor_price_dropdownmenu">Floor price</label>
-              </div>
-              <div id="navbar_search_floorprice_dropdownmenu_container">
-                <select class="dropdownmenu" id="floor_price_dropdownmenu">
-                  <option selected="selected" disabled="disabled"  style='display: none' value=''></option>
-                  <option value="0.01">0~1</option>
-                  <option value="0.1">1~3</option>
-                  <option value="1">3~5</option>
-                  <option value="1">5~10</option>
-                  <option value="1">10+</option>
-                </select>
-              </div>
-            </form>
-            <form action="#" id="navbar_search_time_container">
-              <div id="navbar_search_time_text_container">
-                <label id="navbar_search_time_text" for="time_dropdownmenu">Time</label>
-              </div>
-              <div id="navbar_search_time_dropdownmenu_container">
-                <select class="dropdownmenu" id="time_dropdownmenu">
-                  <option selected="selected" disabled="disabled"  style='display: none' value=''></option>
-                  <option value="1">Today</option>
-                  <option value="7">Last 24 hours</option>
-                  <option value="30">Last 7 days</option>
-                  <option value="30">Last 14 days</option>
-                  <option value="30">Last 30 days</option>
-                  <option value="30">Last 60 days</option>
-                  <option value="30">Last 90 days</option>
-                  <option value="30">Last year</option>
-                  <option value="30">All times</option>
-                </select>
-              </div>
-            </form>
-          </div>
-          <div id="navbar_search_table_line"></div>
-          <div id="navbar_search_category_align_container">
-            <div id="navbar_search_category_container">
-              <p class="navbar_search_category" id="navbar_search_category_all" onclick="change_search_category_bgcolor(this.id)">All</p>
-              <p class="navbar_search_category" id="navbar_search_category_art" onclick="change_search_category_bgcolor(this.id)">Art</p>
-              <p class="navbar_search_category" id="navbar_search_category_celebrities" onclick="change_search_category_bgcolor(this.id)">Celebrities</p>
-              <p class="navbar_search_category" id="navbar_search_category_domainnames" onclick="change_search_category_bgcolor(this.id)">Domain Names</p>
-              <p class="navbar_search_category" id="navbar_search_category_music" onclick="change_search_category_bgcolor(this.id)">Music</p>
-              <p class="navbar_search_category" id="navbar_search_category_photography" onclick="change_search_category_bgcolor(this.id)">Photography</p>
-              <p class="navbar_search_category" id="navbar_search_category_sports" onclick="change_search_category_bgcolor(this.id)">Sports</p>
-              <p class="navbar_search_category" id="navbar_search_category_tradingcards" onclick="change_search_category_bgcolor(this.id)">Trading cards</p>
-              <p class="navbar_search_category" id="navbar_search_category_utility" onclick="change_search_category_bgcolor(this.id)">Utility</p>
-              <p class="navbar_search_category" id="navbar_search_category_virtualworld" onclick="change_search_category_bgcolor(this.id)">Virtual World</p>
-              <p class="navbar_search_category" id="navbar_search_category_collectibles" onclick="change_search_category_bgcolor(this.id)">Collectibles</p>
-              <p class="navbar_search_category" id="navbar_search_category_gaming" onclick="change_search_category_bgcolor(this.id)">Gaming</p>
-            </div>
-          </div>
-          <div id="navbar_search_confirm_container">
-            <div id="navbar_search_confirm_btn_container">
-              <div id="navbar_search_confirm_btn" onclick="close_search_table(this.id)">Confirm</div>
-            </div>
-          </div>
-        </div>
+      <div class="homepage_sign_container" id="homepage_sign_in_container">
+        <p class="homepage_sign_text" id="homepage_sign_in_text">Sign In</p>
+      </div>
+      <div class="homepage_sign_container" id="homepage_sign_up_container">
+        <p class="homepage_sign_text" id="homepage_sign_up_text">Sign Up</p>
+      </div>
+    </div>
+
+    <div id="signin_page">
+      <div id="signin_title_container">
+        <p id="signin_title">Title or something about our product</p>
+      </div>
+      <div id="signin_back_container">
+        <div id="triangle_back"></div>
+        <p id="signin_back_text">Back</p>
       </div>
       
-      <div id="navbar_function_container">
-        <p class="navbar_function" id="navbar_function1">Marketpalce</p>
-        <p class="navbar_function" id="navbar_function2">Drops</p>
-        <div id="navbar_function_brands">
-          <p class="navbar_function" id="navbar_function3">Brands</p>
-          <div id="navbar_function_triangle_container">
-            <div class="triangle_down"></div>
+
+
+      </div>
+    </div>
+    
+    <div id="navbar">
+      <div id="navbar_logo">
+        <div class="navbar_logo_img_container">
+          <img id="navbar_logo_img" src="./img/logo.png">
+        </div>
+        <img id="navbar_logo_text" src="./img/logo_text.png">
+      </div>
+      <div id="navbar_nonlogo">
+        <div id="navbar_search">
+          <div id="navbar_search_container">
+            <div id="navbar_search_circle_container">
+              <div id="navbar_search_circle"></div>
+            </div>
+            <div id="navbar_search_text_container" onclick="pop_search_table(this.id)">
+              <div id="navbar_search_text">Search</div>
+            </div>
+          </div>
+          <div id="navbar_search_table">
+            <div id="navbar_search_title_container">
+              <form action="#" id="navbar_search_floorprice_container">
+                <div id="navbar_search_floorprice_text_container">
+                  <label id="navbar_search_floorprice_text" for="floor_price_dropdownmenu">Floor price</label>
+                </div>
+                <div id="navbar_search_floorprice_dropdownmenu_container">
+                  <select class="dropdownmenu" id="floor_price_dropdownmenu">
+                    <option selected="selected" disabled="disabled"  style='display: none' value=''></option>
+                    <option value="0.01">0~1</option>
+                    <option value="0.1">1~3</option>
+                    <option value="1">3~5</option>
+                    <option value="1">5~10</option>
+                    <option value="1">10+</option>
+                  </select>
+                </div>
+              </form>
+              <form action="#" id="navbar_search_time_container">
+                <div id="navbar_search_time_text_container">
+                  <label id="navbar_search_time_text" for="time_dropdownmenu">Time</label>
+                </div>
+                <div id="navbar_search_time_dropdownmenu_container">
+                  <select class="dropdownmenu" id="time_dropdownmenu">
+                    <option selected="selected" disabled="disabled"  style='display: none' value=''></option>
+                    <option value="1">Today</option>
+                    <option value="7">Last 24 hours</option>
+                    <option value="30">Last 7 days</option>
+                    <option value="30">Last 14 days</option>
+                    <option value="30">Last 30 days</option>
+                    <option value="30">Last 60 days</option>
+                    <option value="30">Last 90 days</option>
+                    <option value="30">Last year</option>
+                    <option value="30">All times</option>
+                  </select>
+                </div>
+              </form>
+            </div>
+            <div id="navbar_search_table_line"></div>
+            <div id="navbar_search_category_align_container">
+              <div id="navbar_search_category_container">
+                <p class="navbar_search_category" id="navbar_search_category_all" onclick="change_search_category_bgcolor(this.id)">All</p>
+                <p class="navbar_search_category" id="navbar_search_category_art" onclick="change_search_category_bgcolor(this.id)">Art</p>
+                <p class="navbar_search_category" id="navbar_search_category_celebrities" onclick="change_search_category_bgcolor(this.id)">Celebrities</p>
+                <p class="navbar_search_category" id="navbar_search_category_domainnames" onclick="change_search_category_bgcolor(this.id)">Domain Names</p>
+                <p class="navbar_search_category" id="navbar_search_category_music" onclick="change_search_category_bgcolor(this.id)">Music</p>
+                <p class="navbar_search_category" id="navbar_search_category_photography" onclick="change_search_category_bgcolor(this.id)">Photography</p>
+                <p class="navbar_search_category" id="navbar_search_category_sports" onclick="change_search_category_bgcolor(this.id)">Sports</p>
+                <p class="navbar_search_category" id="navbar_search_category_tradingcards" onclick="change_search_category_bgcolor(this.id)">Trading cards</p>
+                <p class="navbar_search_category" id="navbar_search_category_utility" onclick="change_search_category_bgcolor(this.id)">Utility</p>
+                <p class="navbar_search_category" id="navbar_search_category_virtualworld" onclick="change_search_category_bgcolor(this.id)">Virtual World</p>
+                <p class="navbar_search_category" id="navbar_search_category_collectibles" onclick="change_search_category_bgcolor(this.id)">Collectibles</p>
+                <p class="navbar_search_category" id="navbar_search_category_gaming" onclick="change_search_category_bgcolor(this.id)">Gaming</p>
+              </div>
+            </div>
+            <div id="navbar_search_confirm_container">
+              <div id="navbar_search_confirm_btn_container">
+                <div id="navbar_search_confirm_btn" onclick="close_search_table(this.id)">Confirm</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div id="navbar_function_container">
+          <p class="navbar_function" id="navbar_function1">Marketpalce</p>
+          <p class="navbar_function" id="navbar_function2">Drops</p>
+          <div id="navbar_function_brands">
+            <p class="navbar_function" id="navbar_function3">Brands</p>
+            <div id="navbar_function_triangle_container">
+              <div class="triangle_down"></div>
+            </div>
+            
           </div>
           
         </div>
-        
+        <div id="navbar_vertical_rec"></div>
+        <p id="navbar_signin">Sign In</p>
+        <p id="navbar_signup">Sign Up</p>
       </div>
-      <div id="navbar_vertical_rec"></div>
-      <p id="navbar_signin">Sign In</p>
-      <p id="navbar_signup">Sign Up</p>
     </div>
     <div class="landing_page" id="landing_page_01">
       <h1 class="title" id="landing_page_01_title">Title or something about our product</h1>
