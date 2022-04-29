@@ -11,18 +11,15 @@
   <body>
     <div id="navbar">
       <div class="navbar_logo_container">
-        <img id="navbar_logo" src="./img/logo.png" />
+        <img id="navbar_logo" src="./img/logo.png">
       </div>
-      <img id="navbar_logo_text" src="./img/logo_text.png" />
+      <img id="navbar_logo_text" src="./img/logo_text.png">
       <div id="navbar_search">
         <div id="navbar_search_container">
           <div id="navbar_search_circle_container">
             <div id="navbar_search_circle"></div>
           </div>
-          <div
-            id="navbar_search_text_container"
-            onclick="pop_search_table(this.id)"
-          >
+          <div id="navbar_search_text_container" onclick="pop_search_table(this.id)">
             <div id="navbar_search_text">Search</div>
           </div>
         </div>
@@ -30,20 +27,11 @@
           <div id="navbar_search_title_container">
             <form action="#" id="navbar_search_floorprice_container">
               <div id="navbar_search_floorprice_text_container">
-                <label
-                  id="navbar_search_floorprice_text"
-                  for="floor_price_dropdownmenu"
-                  >Floor price</label
-                >
+                <label id="navbar_search_floorprice_text" for="floor_price_dropdownmenu">Floor price</label>
               </div>
               <div id="navbar_search_floorprice_dropdownmenu_container">
                 <select class="dropdownmenu" id="floor_price_dropdownmenu">
-                  <option
-                    selected="selected"
-                    disabled="disabled"
-                    style="display: none"
-                    value=""
-                  ></option>
+                  <option selected="selected" disabled="disabled"  style='display: none' value=''></option>
                   <option value="0.01">0~1</option>
                   <option value="0.1">1~3</option>
                   <option value="1">3~5</option>
@@ -54,18 +42,11 @@
             </form>
             <form action="#" id="navbar_search_time_container">
               <div id="navbar_search_time_text_container">
-                <label id="navbar_search_time_text" for="time_dropdownmenu"
-                  >Time</label
-                >
+                <label id="navbar_search_time_text" for="time_dropdownmenu">Time</label>
               </div>
               <div id="navbar_search_time_dropdownmenu_container">
                 <select class="dropdownmenu" id="time_dropdownmenu">
-                  <option
-                    selected="selected"
-                    disabled="disabled"
-                    style="display: none"
-                    value=""
-                  ></option>
+                  <option selected="selected" disabled="disabled"  style='display: none' value=''></option>
                   <option value="1">Today</option>
                   <option value="7">Last 24 hours</option>
                   <option value="30">Last 7 days</option>
@@ -82,121 +63,47 @@
           <div id="navbar_search_table_line"></div>
           <div id="navbar_search_category_align_container">
             <div id="navbar_search_category_container">
-              <p
-                class="navbar_search_category"
-                id="navbar_search_category_all"
-                onclick="change_search_category_bgcolor(this.id)"
-              >
-                All
-              </p>
-              <p
-                class="navbar_search_category"
-                id="navbar_search_category_art"
-                onclick="change_search_category_bgcolor(this.id)"
-              >
-                Art
-              </p>
-              <p
-                class="navbar_search_category"
-                id="navbar_search_category_celebrities"
-                onclick="change_search_category_bgcolor(this.id)"
-              >
-                Celebrities
-              </p>
-              <p
-                class="navbar_search_category"
-                id="navbar_search_category_domainnames"
-                onclick="change_search_category_bgcolor(this.id)"
-              >
-                Domain Names
-              </p>
-              <p
-                class="navbar_search_category"
-                id="navbar_search_category_music"
-                onclick="change_search_category_bgcolor(this.id)"
-              >
-                Music
-              </p>
-              <p
-                class="navbar_search_category"
-                id="navbar_search_category_photography"
-                onclick="change_search_category_bgcolor(this.id)"
-              >
-                Photography
-              </p>
-              <p
-                class="navbar_search_category"
-                id="navbar_search_category_sports"
-                onclick="change_search_category_bgcolor(this.id)"
-              >
-                Sports
-              </p>
-              <p
-                class="navbar_search_category"
-                id="navbar_search_category_tradingcards"
-                onclick="change_search_category_bgcolor(this.id)"
-              >
-                Trading cards
-              </p>
-              <p
-                class="navbar_search_category"
-                id="navbar_search_category_utility"
-                onclick="change_search_category_bgcolor(this.id)"
-              >
-                Utility
-              </p>
-              <p
-                class="navbar_search_category"
-                id="navbar_search_category_virtualworld"
-                onclick="change_search_category_bgcolor(this.id)"
-              >
-                Virtual World
-              </p>
-              <p
-                class="navbar_search_category"
-                id="navbar_search_category_collectibles"
-                onclick="change_search_category_bgcolor(this.id)"
-              >
-                Collectibles
-              </p>
-              <p
-                class="navbar_search_category"
-                id="navbar_search_category_gaming"
-                onclick="change_search_category_bgcolor(this.id)"
-              >
-                Gaming
-              </p>
+              <p class="navbar_search_category" id="navbar_search_category_all" onclick="change_search_category_bgcolor(this.id)">All</p>
+              <p class="navbar_search_category" id="navbar_search_category_art" onclick="change_search_category_bgcolor(this.id)">Art</p>
+              <p class="navbar_search_category" id="navbar_search_category_celebrities" onclick="change_search_category_bgcolor(this.id)">Celebrities</p>
+              <p class="navbar_search_category" id="navbar_search_category_domainnames" onclick="change_search_category_bgcolor(this.id)">Domain Names</p>
+              <p class="navbar_search_category" id="navbar_search_category_music" onclick="change_search_category_bgcolor(this.id)">Music</p>
+              <p class="navbar_search_category" id="navbar_search_category_photography" onclick="change_search_category_bgcolor(this.id)">Photography</p>
+              <p class="navbar_search_category" id="navbar_search_category_sports" onclick="change_search_category_bgcolor(this.id)">Sports</p>
+              <p class="navbar_search_category" id="navbar_search_category_tradingcards" onclick="change_search_category_bgcolor(this.id)">Trading cards</p>
+              <p class="navbar_search_category" id="navbar_search_category_utility" onclick="change_search_category_bgcolor(this.id)">Utility</p>
+              <p class="navbar_search_category" id="navbar_search_category_virtualworld" onclick="change_search_category_bgcolor(this.id)">Virtual World</p>
+              <p class="navbar_search_category" id="navbar_search_category_collectibles" onclick="change_search_category_bgcolor(this.id)">Collectibles</p>
+              <p class="navbar_search_category" id="navbar_search_category_gaming" onclick="change_search_category_bgcolor(this.id)">Gaming</p>
             </div>
           </div>
           <div id="navbar_search_confirm_container">
             <div id="navbar_search_confirm_btn_container">
-              <div
-                id="navbar_search_confirm_btn"
-                onclick="close_search_table(this.id)"
-              >
-                Confirm
-              </div>
+              <div id="navbar_search_confirm_btn" onclick="close_search_table(this.id)">Confirm</div>
             </div>
           </div>
         </div>
       </div>
-
+      
       <div id="navbar_function_container">
         <p class="navbar_function" id="navbar_function1">Marketpalce</p>
         <p class="navbar_function" id="navbar_function2">Drops</p>
-        <p class="navbar_function" id="navbar_function2">Brands</p>
+        <div id="navbar_function_brands">
+          <p class="navbar_function" id="navbar_function3">Brands</p>
+          <div id="navbar_function_triangle_container">
+            <div class="triangle_down"></div>
+          </div>
+          
+        </div>
+        
       </div>
       <div id="navbar_vertical_rec"></div>
       <p id="navbar_signin">Sign In</p>
       <p id="navbar_signup">Sign Up</p>
     </div>
     <div class="landing_page" id="landing_page_01">
-      <h1 class="title" id="landing_page_01_title">
-        Title or something about our product
-      </h1>
-      <p class="subtitle" id="landing_page_01_subtitle">
-        Subtitle or something about our product
-      </p>
+      <h1 class="title" id="landing_page_01_title">Title or something about our product</h1>
+      <p class="subtitle" id="landing_page_01_subtitle">Subtitle or something about our product</p>
       <div id="collectibles_view_container">
         <div id="collectibles_view">
           <div id="collectibles_view_circle_left"></div>
@@ -209,22 +116,10 @@
           </div>
           <div id="collectibles_view_selections_bar_container">
             <div id="collectibles_view_selections_bar">
-              <div
-                class="selections_rec"
-                id="collectibles_view_selections_rec_1"
-              ></div>
-              <div
-                class="selections_rec"
-                id="collectibles_view_selections_rec_2"
-              ></div>
-              <div
-                class="selections_rec"
-                id="collectibles_view_selections_rec_3"
-              ></div>
-              <div
-                class="selections_rec"
-                id="collectibles_view_selections_rec_4"
-              ></div>
+              <div class="selections_rec" id="collectibles_view_selections_rec_1"></div>
+              <div class="selections_rec" id="collectibles_view_selections_rec_2"></div>
+              <div class="selections_rec" id="collectibles_view_selections_rec_3"></div>
+              <div class="selections_rec" id="collectibles_view_selections_rec_4"></div>
             </div>
           </div>
           <div id="collectibles_view_circle_right"></div>
@@ -233,12 +128,8 @@
     </div>
     <div class="landing_page" id="landing_page_02">
       <div id="landing_page_02_black">
-        <p class="title" id="landing_page_02_title">
-          Title or something about our product
-        </p>
-        <p class="subtitle" id="landing_page_02_subtitle">
-          Subtitle or something about our product
-        </p>
+        <p class="title" id="landing_page_02_title">Title or something about our product</p>
+        <p class="subtitle" id="landing_page_02_subtitle">Subtitle or something about our product</p>
         <div id="landing_page_02_subscribe_bar_container">
           <div id="landing_page_02_subscribe_bar">
             <div id="landing_page_02_subscribe_email"></div>
@@ -249,28 +140,15 @@
         </div>
         <div id="landing_page_02_info_align_container">
           <div id="landing_page_02_info_container">
-            <p class="landing_page_02_info">
-              After reading the Privacy Notice, you may subscribe for our
-              newsletter to get special
-            </p>
-            <p class="landing_page_02_info">
-              offers and occasional surveys delivered to your inbox. Unsubscribe
-              at any time by
-            </p>
+            <p class="landing_page_02_info">After reading the Privacy Notice, you may subscribe for our newsletter to get special</p>
+            <p class="landing_page_02_info">offers and occasional surveys delivered to your inbox. Unsubscribe at any time by</p>
             <p class="landing_page_02_info">on the link in the email.</p>
           </div>
         </div>
         <div id="landing_page_02_agree_align_container">
           <p id="landing_page_02_agree_container">
-            <input
-              type="checkbox"
-              id="landing_page_02_checkbox"
-              value="subscribe_agreement"
-            />
-            <label for="landing_page_02_checkbox" id="landing_page_02_agreement"
-              >By entering my email and subscribing I confirm and agree to the
-              above.</label
-            >
+            <input type="checkbox" id="landing_page_02_checkbox" value="subscribe_agreement">
+            <label for="landing_page_02_checkbox" id="landing_page_02_agreement">By entering my email and subscribing I confirm and agree to the above.</label>
           </p>
         </div>
       </div>
@@ -284,163 +162,61 @@
       <div id="top_creators_view_circle_right"></div>
       <div id="top_creators_view_profile_align_container_container">
         <div id="top_creators_view_profile_align_container">
-          <div
-            class="top_creators_view_profile_container"
-            id="top_creators_view_profile_container_1"
-          >
-            <div
-              class="top_creators_view_profile_photo"
-              id="top_creators_view_profile_photo_1"
-            ></div>
-            <p
-              class="top_creators_view_profile_name"
-              id="top_creators_view_profile_creator_1"
-            >
-              Creator
-            </p>
-            <div
-              class="top_creators_view_profile_value_container"
-              id="top_creators_view_profile_value_container_1"
-            >
-              <div
-                class="top_creators_view_profile_num_container"
-                id="top_creators_view_profile_num_1"
-              >
+          <div class="top_creators_view_profile_container" id="top_creators_view_profile_container_1">
+            <div class="top_creators_view_profile_photo" id="top_creators_view_profile_photo_1"></div>
+            <p class="top_creators_view_profile_name" id="top_creators_view_profile_creator_1">Creator</p>
+            <div class="top_creators_view_profile_value_container" id="top_creators_view_profile_value_container_1">
+              <div class="top_creators_view_profile_num_container" id="top_creators_view_profile_num_1">
                 <p class="top_creators_view_profile_num">1</p>
               </div>
               <p class="top_creators_view_profile_dollor">＄1,000,000 +</p>
             </div>
           </div>
-          <div
-            class="top_creators_view_profile_container"
-            id="top_creators_view_profile_container_2"
-          >
-            <div
-              class="top_creators_view_profile_photo"
-              id="top_creators_view_profile_photo_2"
-            ></div>
-            <p
-              class="top_creators_view_profile_name"
-              id="top_creators_view_profile_creator_2"
-            >
-              Creator
-            </p>
-            <div
-              class="top_creators_view_profile_value_container"
-              id="top_creators_view_profile_value_container_2"
-            >
-              <div
-                class="top_creators_view_profile_num_container"
-                id="top_creators_view_profile_num_2"
-              >
+          <div class="top_creators_view_profile_container" id="top_creators_view_profile_container_2">
+            <div class="top_creators_view_profile_photo" id="top_creators_view_profile_photo_2"></div>
+            <p class="top_creators_view_profile_name" id="top_creators_view_profile_creator_2">Creator</p>
+            <div class="top_creators_view_profile_value_container" id="top_creators_view_profile_value_container_2">
+              <div class="top_creators_view_profile_num_container" id="top_creators_view_profile_num_2">
                 <p class="top_creators_view_profile_num">2</p>
               </div>
               <p class="top_creators_view_profile_dollor">＄1,000,000 +</p>
             </div>
           </div>
-          <div
-            class="top_creators_view_profile_container"
-            id="top_creators_view_profile_container_3"
-          >
-            <div
-              class="top_creators_view_profile_photo"
-              id="top_creators_view_profile_photo_3"
-            ></div>
-            <p
-              class="top_creators_view_profile_name"
-              id="top_creators_view_profile_creator_3"
-            >
-              Creator
-            </p>
-            <div
-              class="top_creators_view_profile_value_container"
-              id="top_creators_view_profile_value_container_3"
-            >
-              <div
-                class="top_creators_view_profile_num_container"
-                id="top_creators_view_profile_num_3"
-              >
+          <div class="top_creators_view_profile_container" id="top_creators_view_profile_container_3">
+            <div class="top_creators_view_profile_photo" id="top_creators_view_profile_photo_3"></div>
+            <p class="top_creators_view_profile_name" id="top_creators_view_profile_creator_3">Creator</p>
+            <div class="top_creators_view_profile_value_container" id="top_creators_view_profile_value_container_3">
+              <div class="top_creators_view_profile_num_container" id="top_creators_view_profile_num_3">
                 <p class="top_creators_view_profile_num">3</p>
               </div>
               <p class="top_creators_view_profile_dollor">＄1,000,000 +</p>
             </div>
           </div>
-          <div
-            class="top_creators_view_profile_container"
-            id="top_creators_view_profile_container_4"
-          >
-            <div
-              class="top_creators_view_profile_photo"
-              id="top_creators_view_profile_photo_4"
-            ></div>
-            <p
-              class="top_creators_view_profile_name"
-              id="top_creators_view_profile_creator_4"
-            >
-              Creator
-            </p>
-            <div
-              class="top_creators_view_profile_value_container"
-              id="top_creators_view_profile_value_container_4"
-            >
-              <div
-                class="top_creators_view_profile_num_container"
-                id="top_creators_view_profile_num_4"
-              >
+          <div class="top_creators_view_profile_container" id="top_creators_view_profile_container_4">
+            <div class="top_creators_view_profile_photo" id="top_creators_view_profile_photo_4"></div>
+            <p class="top_creators_view_profile_name" id="top_creators_view_profile_creator_4">Creator</p>
+            <div class="top_creators_view_profile_value_container" id="top_creators_view_profile_value_container_4">
+              <div class="top_creators_view_profile_num_container" id="top_creators_view_profile_num_4">
                 <p class="top_creators_view_profile_num">4</p>
               </div>
               <p class="top_creators_view_profile_dollor">＄1,000,000 +</p>
             </div>
           </div>
-          <div
-            class="top_creators_view_profile_container"
-            id="top_creators_view_profile_container_5"
-          >
-            <div
-              class="top_creators_view_profile_photo"
-              id="top_creators_view_profile_photo_5"
-            ></div>
-            <p
-              class="top_creators_view_profile_name"
-              id="top_creators_view_profile_creator_5"
-            >
-              Creator
-            </p>
-            <div
-              class="top_creators_view_profile_value_container"
-              id="top_creators_view_profile_value_container_5"
-            >
-              <div
-                class="top_creators_view_profile_num_container"
-                id="top_creators_view_profile_num_5"
-              >
+          <div class="top_creators_view_profile_container" id="top_creators_view_profile_container_5">
+            <div class="top_creators_view_profile_photo" id="top_creators_view_profile_photo_5"></div>
+            <p class="top_creators_view_profile_name" id="top_creators_view_profile_creator_5">Creator</p>
+            <div class="top_creators_view_profile_value_container" id="top_creators_view_profile_value_container_5">
+              <div class="top_creators_view_profile_num_container" id="top_creators_view_profile_num_5">
                 <p class="top_creators_view_profile_num">5</p>
               </div>
               <p class="top_creators_view_profile_dollor">＄1,000,000 +</p>
             </div>
           </div>
-          <div
-            class="top_creators_view_profile_container"
-            id="top_creators_view_profile_container_6"
-          >
-            <div
-              class="top_creators_view_profile_photo"
-              id="top_creators_view_profile_photo_6"
-            ></div>
-            <p
-              class="top_creators_view_profile_name"
-              id="top_creators_view_profile_creator_6"
-            >
-              Creator
-            </p>
-            <div
-              class="top_creators_view_profile_value_container"
-              id="top_creators_view_profile_value_container_6"
-            >
-              <div
-                class="top_creators_view_profile_num_container"
-                id="top_creators_view_profile_num_6"
-              >
+          <div class="top_creators_view_profile_container" id="top_creators_view_profile_container_6">
+            <div class="top_creators_view_profile_photo" id="top_creators_view_profile_photo_6"></div>
+            <p class="top_creators_view_profile_name" id="top_creators_view_profile_creator_6">Creator</p>
+            <div class="top_creators_view_profile_value_container" id="top_creators_view_profile_value_container_6">
+              <div class="top_creators_view_profile_num_container" id="top_creators_view_profile_num_6">
                 <p class="top_creators_view_profile_num">6</p>
               </div>
               <p class="top_creators_view_profile_dollor">＄1,000,000 +</p>
@@ -1322,37 +1098,12 @@
         </div>
       </div>
     </div>
-    <div class="bottom-area">
-      <div>
-        <img id="bottom_logo" src="./p0405/logo上 4.png" alt="" />
-      </div>
-      <div class="col" style="margin-left: 34%">
-        <img src="./p0405/About Us.png" alt="" style="width: 93px" />
-        <img src="./p0405/About.png" alt="" style="width: 52px" />
-        <img src="./p0405/Terms of Service.png" alt="" />
-      </div>
-      <div class="col" style="margin-left: 55%">
-        <img src="./p0405/Support.png" alt="" style="width: 83px" />
-        <img src="./p0405/Help Center.png" alt="" style="width: 102px" />
-        <img src="./p0405/Terms of Service.png" alt="" style="width: 145px" />
-      </div>
-      <div class="col" style="margin-left: 76%">
-        <img src="./p0405/Privacy.png" alt="" style="width: 75px" />
-        <img src="./p0405/T_C.png" alt="" style="width: 36px" />
-        <img src="./p0405/Privacy Notice.png" alt="" style="width: 123px" />
-        <img src="./p0405/Cookies Preference.png" alt="" style="width: 145px" />
-      </div>
-    </div>
 
     <!-- Chang -->
     <div id="privacybar">
       <div id="privacy_statement_container">
-        <p id="privacy_statement">
-          We use cookies to personalise content and ads, to provide social media
-          features and to analyse our traffic. We also share information about
-          your use of our site with our social media, advertising and analytics
-          partners.
-        </p>
+        <p id="privacy_statement">We use cookies to personalise content and ads, to provide social media features and to analyse our traffic. We also share information about 
+          your use of our site with our social media, advertising and analytics partners.</p>
       </div>
       <div id="customize_settings_menu_container_container">
         <div id="customize_settings_menu_align_container">
@@ -1369,7 +1120,7 @@
       </div>
       <div id="privacybar_close_container" onclick="close_privacybar(this.id)">
         <div class="close" id="privacybar_close_btn">&times;</div>
-      </div>
+      </div> 
     </div>
   </body>
 </html>

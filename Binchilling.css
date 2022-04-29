@@ -396,7 +396,7 @@ video {
 #navbar_function_container{
   position: absolute;
   height: 100%;
-  width: 17.34%;
+  width: 18.5%;
   left: 66%;
   top:0%;
   display: flex;
@@ -417,7 +417,7 @@ video {
 }
 
 #navbar_function1{
-  width: 40%;
+  width: 35%;
 }
 
 #navbar_function2{
@@ -425,9 +425,34 @@ video {
 }
 
 #navbar_function3{
-  width: 22.5%;
+  width: 60%;
 }
 
+#navbar_function_brands{
+  position: relative;
+  width: 25%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+#navbar_function_triangle_container{
+  width: 20%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+}
+
+.triangle_down{
+  position: relative;
+  width: 0; 
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px  solid #FFFFFF;
+}
 #navbar_vertical_rec{
   position: absolute;
   width: 0.2%;
@@ -1159,37 +1184,4 @@ select, button{
 
 .vertical img{
   display: block;
-}
-
-.bottom-area{
-  height: 45vh;
-  width: 100vw;
-  display: block;
-  z-index: 0;
-  background-color: #BCBCBC;
-  min-height: 100%;
-  min-width: 100%;
-  position: relative;
-  top: 0;
-  display: flex;
-}
-
-#bottom_logo{
-  position: absolute;
-  margin: 5% 17%;
-}
-
-.col{
-  position: absolute;
-  margin-top: 5%;
-  display: flex;
-  flex-direction: column;
-}
-
-.col img{
-  margin-bottom: 14%;
-}
-
-.col img:first-child{
-  margin-bottom: 30%;
 }
