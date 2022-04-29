@@ -1160,3 +1160,36 @@ select, button{
 .vertical img{
   display: block;
 }
+
+.bottom-area{
+  height: 45vh;
+  width: 100vw;
+  display: block;
+  z-index: 0;
+  background-color: #BCBCBC;
+  min-height: 100%;
+  min-width: 100%;
+  position: relative;
+  top: 0;
+  display: flex;
+}
+
+#bottom_logo{
+  position: absolute;
+  margin: 5% 17%;
+}
+
+.col{
+  position: absolute;
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+}
+
+.col img{
+  margin-bottom: 14%;
+}
+
+.col img:first-child{
+  margin-bottom: 30%;
+}
