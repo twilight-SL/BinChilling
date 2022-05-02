@@ -101,6 +101,11 @@ video {
   src: url(./fonts/SFProDisplay-Semibold.ttf);
 }
 
+@font-face {
+  font-family: SFPRODISPLAY_MEDIUM;
+  src: url(./fonts/SFPRODISPLAYMEDIUM.OTF);
+}
+
 .homepage{
   height: 100vh;
   width: 100vw;
@@ -201,6 +206,116 @@ video {
   font-size: 2vh;
   color: white;
   font-family: SFProDisplay-Semibold;
+}
+
+#signin_signin_text{
+  position: absolute;
+  left:50%;
+  top: 30%;
+  font-size: 7vh;
+  color: white;
+  font-family: SFPRODISPLAY_BOLD;
+}
+
+#signin_noaccount_text{
+  position: absolute;
+  left:50%;
+  top: 39%;
+  font-size: 2.3vh;
+  color: white;
+  font-family: SFPRODISPLAY_MEDIUM;
+}
+
+#signin_noaccount_signup_text{
+  position: absolute;
+  left:67%;
+  top: 39%;
+  font-size: 2.3vh;
+  color: black;
+  font-family: SFPRODISPLAY_MEDIUM;
+}
+
+#signin_email{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 2.5vh;
+  color: white;
+  font-family: SFPRODISPLAY_BOLD;
+}
+
+#signin_email_typebox{
+  position: absolute;
+  top: 54%;
+  left: 50%;
+  width: 42%;
+  height: 5.6%;
+  border-radius: 5px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
+
+#signin_email_text{
+  position: inherit;
+  color: #E5E5E5;
+  font-size: 2.4vh;
+  font-family: SFPRODISPLAY_BOLD;
+  left: 3%;
+}
+
+#signin_password{
+  position: absolute;
+  top: 63%;
+  left: 50%;
+  font-size: 2.5vh;
+  color: white;
+  font-family: SFPRODISPLAY_BOLD;
+}
+
+#forgot_password{
+  position: absolute;
+  top: 63%;
+  left: 80%;
+  font-size: 2.3vh;
+  color: black;
+  font-family: SFPRODISPLAY_MEDIUM;
+}
+
+#signin_password_typebox{
+  position: absolute;
+  top: 67%;
+  left: 50%;
+  width: 42%;
+  height: 5.6%;
+  border-radius: 5px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
+
+#signin_password_text{
+  position: inherit;
+  color: #E5E5E5;
+  font-size: 2.4vh;
+  font-family: SFPRODISPLAY_BOLD;
+  left: 3%;
+}
+
+#signin_signin_btn{
+  position: absolute;
+  top:80%;
+  left: 50%;
+  width: 42%;
+  height: 5.6%;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  background-color: #A0A0A0;
+  border-radius: 5px;
+  color: white;
+  font-size: 2.4vh;
+  font-family: SFPRODISPLAY_BOLD;
 }
 
 #navbar{
