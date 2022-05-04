@@ -106,10 +106,15 @@ video {
   src: url(./fonts/SFPRODISPLAYMEDIUM.OTF);
 }
 
+@font-face {
+  font-family: SFPRODISPLAYREGULAR;
+  src: url(./fonts/SFPRODISPLAYREGULAR.OTF);
+}
+
 .homepage{
   height: 100vh;
   width: 100vw;
-  background-color: #C4C4C4;
+  background-color: white;
 }
 
 #homepage_logo_img_container{
@@ -125,6 +130,13 @@ video {
   position: relative;
   max-height: 20vh;
   width: same-as-height;
+}
+
+#homepage_email_text_container{
+  position: absolute;
+  width: 100%;
+  margin-left: 40%;
+  margin-right: 40%;
 }
 
 .homepage_sign_container{
@@ -143,27 +155,24 @@ video {
   display: flex;
   justify-content:center;
   align-items: center;
-  background-color: black;
+  background-color: #286A93;
   color: white;
   font-size: 2vh;
   font-family: SFPRODISPLAY_BOLD;
-}
-
-#homepage_sign_up_container{
-  top: 25%;
 }
 
 #signin_page{
   position: relative;
   width: 100vw;
   height: 100vh;
-  background-color: #C4C4C4;
+  background-color: white;
 }
+
 #signin_title_container{
   position: absolute;
   width: 42%;
   height: 100vh;
-  background-color: black;
+  background-image: url("./img/sign_title_bg.png");
 }
 
 #signin_title{
@@ -172,19 +181,17 @@ video {
   margin-left: 31.8%;
   margin-top: 50%;
   margin-bottom: 20%;
-  margin-right: 15%;
+  margin-right: 13%;
   display: flex;
   align-items: center;
   text-align: right;
   color: white;
-  font-size: 7vh;
+  font-size: 6vh;
   font-family: SFPRODISPLAY_BOLD;
 }
 
-#signin_back_container{
+.sign_back_container{
   position: relative;
-  top: 23%;
-  left: 50%;
   width: 4%;
   height: 3%;
   display: flex;
@@ -192,85 +199,102 @@ video {
   flex-direction: row;
 }
 
-#triangle_back{
+#signin_back_container{
+  top: 15%;
+  left: 50%;
+}
+
+#signup_back_container{
+  top: 5%;
+  left: 45%;
+}
+
+.triangle_back{
   position: relative;
   width: 0; 
   height: 0;
-  border-right: 10px solid #FFFFFF;
+  border-right: 10px solid #286A93;
   border-top: 10px solid transparent;
   border-bottom: 10px  solid transparent;
 }
 
-#signin_back_text{
+.sign_back_text{
   position: relative;
   font-size: 2vh;
-  color: white;
+  color: #286A93;
   font-family: SFProDisplay-Semibold;
 }
 
 #signin_signin_text{
   position: absolute;
   left:50%;
-  top: 30%;
+  top: 20%;
   font-size: 7vh;
-  color: white;
+  color: #286A93;
   font-family: SFPRODISPLAY_BOLD;
 }
 
 #signin_noaccount_text{
   position: absolute;
   left:50%;
-  top: 39%;
+  top: 29%;
   font-size: 2.3vh;
-  color: white;
+  color: #A0A0A0;
   font-family: SFPRODISPLAY_MEDIUM;
 }
 
 #signin_noaccount_signup_text{
   position: absolute;
   left:67%;
-  top: 39%;
+  top: 29%;
   font-size: 2.3vh;
-  color: black;
+  color: #286A93;
   font-family: SFPRODISPLAY_MEDIUM;
 }
-
-#signin_email{
+.typebox{
   position: absolute;
-  top: 50%;
-  left: 50%;
-  font-size: 2.5vh;
-  color: white;
-  font-family: SFPRODISPLAY_BOLD;
-}
-
-#signin_email_typebox{
-  position: absolute;
-  top: 54%;
   left: 50%;
   width: 42%;
   height: 5.6%;
   border-radius: 5px;
   background-color: white;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #A0A0A0;
   display: flex;
   align-items: center;
 }
 
-#signin_email_text{
+.typetext{
   position: inherit;
   color: #E5E5E5;
-  font-size: 2.4vh;
+  font-size: 2.2vh;
   font-family: SFPRODISPLAY_BOLD;
   left: 3%;
 }
 
-#signin_password{
+.sign_item{
   position: absolute;
-  top: 63%;
   left: 50%;
   font-size: 2.5vh;
-  color: white;
+  color: #A0A0A0;
   font-family: SFPRODISPLAY_BOLD;
+}
+
+#signin_email{
+  top: 50%;
+}
+
+#signin_email_typebox{
+  top: 54%;
+}
+
+#signin_password{
+  top: 63%;
+}
+
+#signin_password_typebox{
+  top: 67%;
 }
 
 #forgot_password{
@@ -278,29 +302,12 @@ video {
   top: 63%;
   left: 80%;
   font-size: 2.3vh;
-  color: black;
+  color: #286A93;
   font-family: SFPRODISPLAY_MEDIUM;
 }
 
-#signin_password_typebox{
-  position: absolute;
-  top: 67%;
-  left: 50%;
-  width: 42%;
-  height: 5.6%;
-  border-radius: 5px;
-  background-color: white;
-  display: flex;
-  align-items: center;
-}
 
-#signin_password_text{
-  position: inherit;
-  color: #E5E5E5;
-  font-size: 2.4vh;
-  font-family: SFPRODISPLAY_BOLD;
-  left: 3%;
-}
+
 
 #signin_signin_btn{
   position: absolute;
@@ -311,7 +318,224 @@ video {
   display: flex;
   justify-content:center;
   align-items: center;
-  background-color: #A0A0A0;
+  background-color: #286A93;
+  border-radius: 5px;
+  color: white;
+  font-size: 2.4vh;
+  font-family: SFPRODISPLAY_BOLD;
+}
+
+#signup_page{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  display: none;
+}
+
+#signup_title_container{
+  position: absolute;
+  width: 42%;
+  height: 100vh;
+  background-image: url("./img/sign_title_bg.png");
+}
+
+#signup_title{
+  position: relative;
+  height: 13.34%;
+  margin-left: 10%;
+  margin-top: 30%;
+  margin-right: 13%;
+  display: flex;
+  align-items: center;
+  text-align: right;
+  color: white;
+  font-size: 6vh;
+  font-family: SFPRODISPLAY_BOLD;
+}
+
+#hightlight_container{
+  position: absolute;
+  top: 30%;
+  width: 42%;
+  height: 70%;
+}
+.highlight{
+  position: relative;
+  right: 13%;
+  text-align: right;
+  font-size: 3vh;
+  font-family: SFProDisplay-Semibold;
+  color: white;
+}
+
+.highlight_description{
+  position: relative;
+  right: 13%;
+  text-align: right;
+  font-size: 2vh;
+  font-family: SFPRODISPLAYREGULAR;
+  color: white;
+}
+
+#highlight1{
+  top: 20%;
+}
+
+#highlight2{
+  top: 35%;
+}
+
+#highlight3{
+  top: 50%;
+}
+
+#highlight_description1{
+  top: 23%;
+}
+
+#highlight_description2{
+  top: 38%;
+}
+
+#highlight_description3{
+  top: 53%;
+}
+
+#signup_signup_text{
+  position: absolute;
+  left:50%;
+  top: 10%;
+  font-size: 7vh;
+  color: #286A93;
+  font-family: SFPRODISPLAY_BOLD;
+}
+
+#signup_haveaccount_text{
+  position: absolute;
+  left:50%;
+  top: 19%;
+  font-size: 2.3vh;
+  color: #A0A0A0;
+  font-family: SFPRODISPLAY_MEDIUM;
+}
+
+#signup_haveaccount_signin_text{
+  position: absolute;
+  left:67%;
+  top: 19%;
+  font-size: 2.3vh;
+  color: #286A93;
+  font-family: SFPRODISPLAY_MEDIUM;
+}
+
+/*#signup_fullname{
+  top: 35%;
+}
+
+#signup_fullname_typebox{
+  top: 39%;
+}
+*/
+#signup_email{
+  top: 30%;
+}
+
+#signup_email_typebox{
+  top: 34%;
+}
+
+#signup_username{
+  top: 43%;
+}
+
+#signup_username_visibility{
+  position: absolute;
+  top: 43%;
+  left: 58%;
+  font-size: 2.3vh;
+  color: #A0A0A0;
+  font-family: SFPRODISPLAY_MEDIUM;
+}
+
+#signup_username_typebox{
+  top: 47%;
+}
+
+#signup_password{
+  top: 56%;
+}
+
+#signup_password_restriction{
+  position: absolute;
+  top: 57%;
+  left: 58%;
+  font-size: 1.3vh;
+  color: red;
+  font-family: SFPRODISPLAYREGULAR;
+}
+
+#signup_password_typebox{
+  top: 60%;
+}
+
+#signup_confirm_password{
+  top: 69%;
+}
+
+#signup_confirm_password_typebox{
+  top: 73%;
+}
+
+#signup_agreement_container{
+  position: absolute;
+  width: 42%;
+  height: 5.6%;
+  left: 50%;
+  top: 83%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+#signup_checkbox_container{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#signup_checkbox{
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+
+#signup_agreement_text_container{
+  position: relative;
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#signup_agreement_text{
+  position: relative;
+  font-size: 2vh;
+  color: #A0A0A0;
+  font-family: SFPRODISPLAY_MEDIUM;
+}
+
+#signup_signup_btn{
+  position: absolute;
+  top:90%;
+  left: 50%;
+  width: 42%;
+  height: 5.6%;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  background-color: #286A93;
   border-radius: 5px;
   color: white;
   font-size: 2.4vh;
@@ -325,6 +549,15 @@ video {
   width: 100vw;
   z-index: 1;
   background-color: #BCBCBC;
+  
+}
+
+#signin_logo_container{
+  top: 0%;
+  position: fixed;
+  height: 11.5vh;
+  width: 100vw;
+  z-index: 1;
 }
 
 .navbar_logo_img_container{
@@ -633,6 +866,8 @@ video {
   font-family: SFPRODISPLAY_BOLD; 
 }
 
+
+
 #navbar_function1{
   width: 35%;
 }
@@ -645,7 +880,7 @@ video {
   width: 60%;
 }
 
-#navbar_function_brands{
+#navbar_function3_container{
   position: relative;
   width: 25%;
   display: flex;
@@ -668,8 +903,13 @@ video {
   height: 0;
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
-  border-top: 6px  solid #FFFFFF;
+  
 }
+#navbar_triangle_down{
+  border-top: 6px  solid;
+  border-top-color: white;
+}
+
 #navbar_vertical_rec{
   position: absolute;
   width: 0.2%;
@@ -874,12 +1114,12 @@ video {
   background-color: #C4C4C4;
 }
 
-#landing_page_02_black{
+#landing_page_02_blue{
   position: absolute;
   width: 100%;
   height: 55%;
   top: 28%;
-  background-color: black;;
+  background-color: #286A93;
 }
 
 #landing_page_02_title{
@@ -1004,7 +1244,7 @@ video {
   width: 12.5%;
   height: 100%;
   border-radius: 20px;
-  background-color: black;
+  background-color: #286A93;
   display: flex;
   justify-content:center;
   align-items: center;
@@ -1134,7 +1374,8 @@ video {
   height: 11.5vh;
   width: 100vw;
   z-index: 1;
-  background-color: #969696;
+  background-color: #9BB3C6;
+  display: none;
 }
 
 #privacy_statement_container{
@@ -1207,7 +1448,7 @@ video {
   display: flex;
   justify-content:center;
   align-items: center;
-  background-color: black;
+  background-color: #286A93;
   color: white;
   font-size: 1.5vh;
   font-family: SFPRODISPLAY_BOLD;
@@ -1229,7 +1470,7 @@ video {
   display: flex;
   justify-content:center;
   align-items: center;
-  background-color: black;
+  background-color: #286A93;
   color: white;
   font-size: 1.5vh;
   font-family: SFPRODISPLAY_BOLD;
