@@ -111,13 +111,13 @@ video {
   src: url(./fonts/SFPRODISPLAYREGULAR.OTF);
 }
 
-.homepage{
+.homepage {
   height: 100vh;
   width: 100vw;
   background-color: white;
 }
 
-#homepage_logo_img_container{
+#homepage_logo_img_container {
   width: 100%;
   height: 40%;
   top: 30%;
@@ -126,34 +126,34 @@ video {
   justify-content: center;
 }
 
-#homepage_logo_img{
+#homepage_logo_img {
   position: relative;
   max-height: 20vh;
   width: same-as-height;
 }
 
-#homepage_email_text_container{
+#homepage_email_text_container {
   position: absolute;
   width: 100%;
   margin-left: 40%;
   margin-right: 40%;
 }
 
-.homepage_sign_container{
+.homepage_sign_container {
   position: relative;
   top: 20%;
   width: 100%;
   height: 5%;
   display: flex;
-  justify-content:center;
+  justify-content: center;
 }
 
-.homepage_sign_text{
+.homepage_sign_text {
   position: relative;
   width: 10%;
   height: 100%;
   display: flex;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
   background-color: #286A93;
   color: white;
@@ -161,21 +161,21 @@ video {
   font-family: SFPRODISPLAY_BOLD;
 }
 
-#signin_page{
+#signin_page {
   position: relative;
   width: 100vw;
   height: 100vh;
   background-color: white;
 }
 
-#signin_title_container{
+#signin_title_container {
   position: absolute;
   width: 42%;
   height: 100vh;
   background-image: url("./img/sign_title_bg.png");
 }
 
-#signin_title{
+#signin_title {
   position: relative;
   height: 26.67%;
   margin-left: 31.8%;
@@ -190,7 +190,7 @@ video {
   font-family: SFPRODISPLAY_BOLD;
 }
 
-.sign_back_container{
+.sign_back_container {
   position: relative;
   width: 4%;
   height: 3%;
@@ -199,59 +199,60 @@ video {
   flex-direction: row;
 }
 
-#signin_back_container{
+#signin_back_container {
   top: 15%;
   left: 50%;
 }
 
-#signup_back_container{
+#signup_back_container {
   top: 5%;
   left: 45%;
 }
 
-.triangle_back{
+.triangle_back {
   position: relative;
-  width: 0; 
+  width: 0;
   height: 0;
   border-right: 10px solid #286A93;
   border-top: 10px solid transparent;
-  border-bottom: 10px  solid transparent;
+  border-bottom: 10px solid transparent;
 }
 
-.sign_back_text{
+.sign_back_text {
   position: relative;
   font-size: 2vh;
   color: #286A93;
   font-family: SFProDisplay-Semibold;
 }
 
-#signin_signin_text{
+#signin_signin_text {
   position: absolute;
-  left:50%;
+  left: 50%;
   top: 20%;
   font-size: 7vh;
   color: #286A93;
   font-family: SFPRODISPLAY_BOLD;
 }
 
-#signin_noaccount_text{
+#signin_noaccount_text {
   position: absolute;
-  left:50%;
+  left: 50%;
   top: 29%;
   font-size: 2.3vh;
   color: #A0A0A0;
   font-family: SFPRODISPLAY_MEDIUM;
 }
 
-#signin_noaccount_signup_text{
+#signin_noaccount_signup_text {
   position: absolute;
-  left:67%;
+  left: 67%;
   top: 29%;
   font-size: 2.3vh;
   color: #286A93;
   font-family: SFPRODISPLAY_MEDIUM;
 }
-.typebox{
+
+.typebox {
   position: absolute;
   left: 50%;
   width: 42%;
@@ -265,7 +266,7 @@ video {
   align-items: center;
 }
 
-.typetext{
+.typetext {
   position: inherit;
   color: #E5E5E5;
   font-size: 2.2vh;
@@ -273,7 +274,7 @@ video {
   left: 3%;
 }
 
-.sign_item{
+.sign_item {
   position: absolute;
   left: 50%;
   font-size: 2.5vh;
@@ -281,23 +282,23 @@ video {
   font-family: SFPRODISPLAY_BOLD;
 }
 
-#signin_email{
+#signin_email {
   top: 50%;
 }
 
-#signin_email_typebox{
+#signin_email_typebox {
   top: 54%;
 }
 
-#signin_password{
+#signin_password {
   top: 63%;
 }
 
-#signin_password_typebox{
+#signin_password_typebox {
   top: 67%;
 }
 
-#forgot_password{
+#forgot_password {
   position: absolute;
   top: 63%;
   left: 80%;
@@ -309,14 +310,14 @@ video {
 
 
 
-#signin_signin_btn{
+#signin_signin_btn {
   position: absolute;
-  top:80%;
+  top: 80%;
   left: 50%;
   width: 42%;
   height: 5.6%;
   display: flex;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
   background-color: #286A93;
   border-radius: 5px;
@@ -325,7 +326,7 @@ video {
   font-family: SFPRODISPLAY_BOLD;
 }
 
-#signup_page{
+#signup_page {
   position: relative;
   width: 100vw;
   height: 100vh;
@@ -333,14 +334,14 @@ video {
   display: none;
 }
 
-#signup_title_container{
+#signup_title_container {
   position: absolute;
   width: 42%;
   height: 100vh;
   background-image: url("./img/sign_title_bg.png");
 }
 
-#signup_title{
+#signup_title {
   position: relative;
   height: 13.34%;
   margin-left: 10%;
@@ -354,13 +355,14 @@ video {
   font-family: SFPRODISPLAY_BOLD;
 }
 
-#hightlight_container{
+#hightlight_container {
   position: absolute;
   top: 30%;
   width: 42%;
   height: 70%;
 }
-.highlight{
+
+.highlight {
   position: relative;
   right: 13%;
   text-align: right;
@@ -369,7 +371,7 @@ video {
   color: white;
 }
 
-.highlight_description{
+.highlight_description {
   position: relative;
   right: 13%;
   text-align: right;
@@ -378,51 +380,51 @@ video {
   color: white;
 }
 
-#highlight1{
+#highlight1 {
   top: 20%;
 }
 
-#highlight2{
+#highlight2 {
   top: 35%;
 }
 
-#highlight3{
+#highlight3 {
   top: 50%;
 }
 
-#highlight_description1{
+#highlight_description1 {
   top: 23%;
 }
 
-#highlight_description2{
+#highlight_description2 {
   top: 38%;
 }
 
-#highlight_description3{
+#highlight_description3 {
   top: 53%;
 }
 
-#signup_signup_text{
+#signup_signup_text {
   position: absolute;
-  left:50%;
+  left: 50%;
   top: 10%;
   font-size: 7vh;
   color: #286A93;
   font-family: SFPRODISPLAY_BOLD;
 }
 
-#signup_haveaccount_text{
+#signup_haveaccount_text {
   position: absolute;
-  left:50%;
+  left: 50%;
   top: 19%;
   font-size: 2.3vh;
   color: #A0A0A0;
   font-family: SFPRODISPLAY_MEDIUM;
 }
 
-#signup_haveaccount_signin_text{
+#signup_haveaccount_signin_text {
   position: absolute;
-  left:67%;
+  left: 67%;
   top: 19%;
   font-size: 2.3vh;
   color: #286A93;
@@ -437,19 +439,19 @@ video {
   top: 39%;
 }
 */
-#signup_email{
+#signup_email {
   top: 30%;
 }
 
-#signup_email_typebox{
+#signup_email_typebox {
   top: 34%;
 }
 
-#signup_username{
+#signup_username {
   top: 43%;
 }
 
-#signup_username_visibility{
+#signup_username_visibility {
   position: absolute;
   top: 43%;
   left: 58%;
@@ -458,15 +460,15 @@ video {
   font-family: SFPRODISPLAY_MEDIUM;
 }
 
-#signup_username_typebox{
+#signup_username_typebox {
   top: 47%;
 }
 
-#signup_password{
+#signup_password {
   top: 56%;
 }
 
-#signup_password_restriction{
+#signup_password_restriction {
   position: absolute;
   top: 57%;
   left: 58%;
@@ -475,19 +477,19 @@ video {
   font-family: SFPRODISPLAYREGULAR;
 }
 
-#signup_password_typebox{
+#signup_password_typebox {
   top: 60%;
 }
 
-#signup_confirm_password{
+#signup_confirm_password {
   top: 69%;
 }
 
-#signup_confirm_password_typebox{
+#signup_confirm_password_typebox {
   top: 73%;
 }
 
-#signup_agreement_container{
+#signup_agreement_container {
   position: absolute;
   width: 42%;
   height: 5.6%;
@@ -498,20 +500,20 @@ video {
   flex-direction: row;
 }
 
-#signup_checkbox_container{
+#signup_checkbox_container {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-#signup_checkbox{
+#signup_checkbox {
   position: relative;
   width: 20px;
   height: 20px;
 }
 
-#signup_agreement_text_container{
+#signup_agreement_text_container {
   position: relative;
   width: 95%;
   display: flex;
@@ -519,21 +521,21 @@ video {
   align-items: center;
 }
 
-#signup_agreement_text{
+#signup_agreement_text {
   position: relative;
   font-size: 2vh;
   color: #A0A0A0;
   font-family: SFPRODISPLAY_MEDIUM;
 }
 
-#signup_signup_btn{
+#signup_signup_btn {
   position: absolute;
-  top:90%;
+  top: 90%;
   left: 50%;
   width: 42%;
   height: 5.6%;
   display: flex;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
   background-color: #286A93;
   border-radius: 5px;
@@ -542,17 +544,17 @@ video {
   font-family: SFPRODISPLAY_BOLD;
 }
 
-#navbar{
+#navbar {
   top: 0%;
   position: fixed;
   height: 11.5vh;
   width: 100vw;
   z-index: 1;
   background-color: #BCBCBC;
-  
+
 }
 
-#signin_logo_container{
+#signin_logo_container {
   top: 0%;
   position: fixed;
   height: 11.5vh;
@@ -560,29 +562,29 @@ video {
   z-index: 1;
 }
 
-.navbar_logo_img_container{
+.navbar_logo_img_container {
   position: absolute;
-  top:33%;
+  top: 33%;
   left: 1.875%;
   height: 33%;
   width: 2.1875%;
 }
 
-#navbar_logo_img{
+#navbar_logo_img {
   position: absolute;
   max-height: 4vh;
   width: same-as-height;
 }
 
-#navbar_logo_text{
+#navbar_logo_text {
   position: absolute;
-  top:42%;
+  top: 42%;
   left: 4.79%;
   max-width: 8.385%;
   max-height: 20%;
 }
 
-#navbar_search{
+#navbar_search {
   position: absolute;
   display: inline-block;
   top: 30%;
@@ -593,7 +595,7 @@ video {
   background-color: white;
 }
 
-#navbar_search_container{
+#navbar_search_container {
   position: relative;
   left: 5%;
   width: 80%;
@@ -603,16 +605,16 @@ video {
   justify-content: space-between;
 }
 
-#navbar_search_circle_container{  
+#navbar_search_circle_container {
   width: 10%;
   height: 100%;
-  position:relative;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-#navbar_search_circle{
+#navbar_search_circle {
   position: relative;
   height: 29px;
   width: 29px;
@@ -620,7 +622,8 @@ video {
   background-color: #E5E5E5;
   display: inline-block;
 }
-#navbar_search_text_container{
+
+#navbar_search_text_container {
   position: relative;
   display: flex;
   align-items: center;
@@ -629,16 +632,16 @@ video {
   height: 100%;
 }
 
-#navbar_search_text{
+#navbar_search_text {
   position: relative;
   text-align: left;
   font-size: 2vh;
   color: #E5E5E5;
-  font-family: SFPRODISPLAY_BOLD; 
+  font-family: SFPRODISPLAY_BOLD;
   cursor: default;
 }
 
-#navbar_search_table{
+#navbar_search_table {
   display: none;
   position: relative;
   height: 500%;
@@ -648,15 +651,15 @@ video {
   border-radius: 10px;
 }
 
-#navbar_search_title_container{
+#navbar_search_title_container {
   position: relative;
   height: 25.7%;
   width: 100%;
-  display:flex;
+  display: flex;
   justify-content: space-around;
 }
 
-#navbar_search_floorprice_container{
+#navbar_search_floorprice_container {
   position: relative;
   width: 54%;
   height: 100%;
@@ -664,7 +667,7 @@ video {
   justify-content: space-between;
 }
 
-#navbar_search_time_container{
+#navbar_search_time_container {
   position: relative;
   width: 45%;
   height: 100%;
@@ -672,7 +675,7 @@ video {
   justify-content: space-between;
 }
 
-#navbar_search_floorprice_text_container{
+#navbar_search_floorprice_text_container {
   position: relative;
   width: 30%;
   display: flex;
@@ -680,7 +683,7 @@ video {
   justify-content: center;
 }
 
-#navbar_search_time_text_container{
+#navbar_search_time_text_container {
   position: relative;
   width: 20%;
   display: flex;
@@ -688,21 +691,21 @@ video {
   justify-content: center;
 }
 
-#navbar_search_floorprice_text{
+#navbar_search_floorprice_text {
   position: relative;
   color: #8C8C8C;
   font-family: SFProDisplay-Semibold;
   font-size: 1.7vh;
 }
 
-#navbar_search_time_text{
+#navbar_search_time_text {
   position: relative;
   color: #8C8C8C;
   font-family: SFProDisplay-Semibold;
   font-size: 1.7vh;
 }
 
-#navbar_search_floorprice_dropdownmenu_container{
+#navbar_search_floorprice_dropdownmenu_container {
   position: relative;
   height: 100%;
   width: 65%;
@@ -710,7 +713,7 @@ video {
   align-items: center;
 }
 
-#navbar_search_time_dropdownmenu_container{
+#navbar_search_time_dropdownmenu_container {
   position: relative;
   height: 100%;
   width: 75%;
@@ -718,13 +721,13 @@ video {
   align-items: center;
 }
 
-.dropdownmenu{
+.dropdownmenu {
   width: 100%;
   border-radius: 5px;
   display: block;
 }
 
-#navbar_search_time_container{
+#navbar_search_time_container {
   position: relative;
   width: 32.67%;
   height: 100%;
@@ -732,7 +735,7 @@ video {
   justify-content: space-between;
 }
 
-#navbar_search_table_line{
+#navbar_search_table_line {
   position: absolute;
   display: block;
   width: 100%;
@@ -741,7 +744,8 @@ video {
   left: 0%;
   background-color: #E5E5E5;
 }
-#navbar_search_category_align_container{
+
+#navbar_search_category_align_container {
   position: relative;
   top: 3%;
   width: 100%;
@@ -749,7 +753,8 @@ video {
   display: flex;
   justify-content: center;
 }
-#navbar_search_category_container{
+
+#navbar_search_category_container {
   position: relative;
   width: 91.7%;
   height: 100%;
@@ -759,12 +764,12 @@ video {
   flex-wrap: wrap;
 }
 
-.navbar_search_category{
+.navbar_search_category {
   position: relative;
   height: 28%;
   border-radius: 12px;
   display: flex;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
   background-color: #E5E5E5;
   color: white;
@@ -772,60 +777,69 @@ video {
   font-family: SFPRODISPLAY_BOLD;
 }
 
-#navbar_search_category_all{
+#navbar_search_category_all {
   width: 12%;
 }
 
-#navbar_search_category_art{
+#navbar_search_category_art {
   width: 12%;
 }
-#navbar_search_category_celebrities{
+
+#navbar_search_category_celebrities {
   width: 27%;
 }
 
-#navbar_search_category_domainnames{
+#navbar_search_category_domainnames {
   width: 33%;
 }
-#navbar_search_category_music{
-  width: 19%;
-}
-#navbar_search_category_photography{
-  width: 27%;
-}
-#navbar_search_category_sports{
-  width: 19%;
-}
-#navbar_search_category_tradingcards{
-  width: 27%;
-}
-#navbar_search_category_utility{
-  width: 19%;
-}
-#navbar_search_category_virtualworld{
-  width: 27%;
-}
-#navbar_search_category_collectibles{
-  width: 27%;
-}
-#navbar_search_category_gaming{
+
+#navbar_search_category_music {
   width: 19%;
 }
 
-#navbar_search_confirm_container{
+#navbar_search_category_photography {
+  width: 27%;
+}
+
+#navbar_search_category_sports {
+  width: 19%;
+}
+
+#navbar_search_category_tradingcards {
+  width: 27%;
+}
+
+#navbar_search_category_utility {
+  width: 19%;
+}
+
+#navbar_search_category_virtualworld {
+  width: 27%;
+}
+
+#navbar_search_category_collectibles {
+  width: 27%;
+}
+
+#navbar_search_category_gaming {
+  width: 19%;
+}
+
+#navbar_search_confirm_container {
   position: relative;
   width: 100%;
   height: 12.5%;
   top: 6%;
 }
 
-#navbar_search_confirm_btn_container{
+#navbar_search_confirm_btn_container {
   position: absolute;
   height: 100%;
   width: 17%;
   right: 4.15%;
 }
 
-#navbar_search_confirm_btn{
+#navbar_search_confirm_btn {
   position: relative;
   height: 100%;
   width: 100%;
@@ -836,51 +850,51 @@ video {
   border-radius: 12px;
   background-color: white;
   display: flex;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
   color: #8C8C8C;
   font-size: 1.6vh;
   font-family: SFPRODISPLAY_BOLD;
 }
 
-#navbar_function_container{
+#navbar_function_container {
   position: absolute;
   height: 100%;
   width: 18.5%;
   left: 66%;
-  top:0%;
+  top: 0%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.navbar_function{
+.navbar_function {
   position: relative;
   height: 100%;
   top: 0%;
   text-align: center;
   display: flex;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
   color: white;
-  font-family: SFPRODISPLAY_BOLD; 
+  font-family: SFPRODISPLAY_BOLD;
 }
 
 
 
-#navbar_function1{
+#navbar_function1 {
   width: 35%;
 }
 
-#navbar_function2{
+#navbar_function2 {
   width: 19%;
 }
 
-#navbar_function3{
+#navbar_function3 {
   width: 60%;
 }
 
-#navbar_function3_container{
+#navbar_function3_container {
   position: relative;
   width: 25%;
   display: flex;
@@ -888,29 +902,30 @@ video {
   flex-direction: row;
 }
 
-#navbar_function_triangle_container{
+#navbar_function_triangle_container {
   width: 20%;
   height: 100%;
   position: relative;
   display: flex;
-  align-items: center; 
+  align-items: center;
   justify-content: center;
 }
 
-.triangle_down{
+.triangle_down {
   position: relative;
-  width: 0; 
+  width: 0;
   height: 0;
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
-  
+
 }
-#navbar_triangle_down{
-  border-top: 6px  solid;
+
+#navbar_triangle_down {
+  border-top: 6px solid;
   border-top-color: white;
 }
 
-#navbar_vertical_rec{
+#navbar_vertical_rec {
   position: absolute;
   width: 0.2%;
   height: 32.6%;
@@ -919,25 +934,25 @@ video {
   background-color: white;
 }
 
-#navbar_signin{
+#navbar_signin {
   position: absolute;
   height: 20%;
   top: 38.8%;
   left: 87.5%;
   color: white;
-  font-family: SFPRODISPLAY_BOLD; 
+  font-family: SFPRODISPLAY_BOLD;
 }
 
-#navbar_signup{
+#navbar_signup {
   position: absolute;
   height: 20%;
   top: 38.8%;
   left: 92.7%;
   color: white;
-  font-family: SFPRODISPLAY_BOLD; 
+  font-family: SFPRODISPLAY_BOLD;
 }
 
-.landing_page{
+.landing_page {
   height: 100vh;
   width: 100vw;
   display: block;
@@ -950,7 +965,7 @@ video {
 }
 
 
-.title{
+.title {
   position: absolute;
   width: 100%;
   height: 6.67%;
@@ -958,10 +973,10 @@ video {
   font-family: SFProDisplay-Heavy;
   font-size: 5vh;
   color: white;
-  
+
 }
 
-.subtitle{
+.subtitle {
   position: absolute;
   width: 100%;
   height: 3.75%;
@@ -971,17 +986,17 @@ video {
   color: white;
 }
 
-#landing_page_01_title{
+#landing_page_01_title {
   top: 22%;
   color: white;
 }
 
-#landing_page_01_subtitle{
+#landing_page_01_subtitle {
   top: 30%;
   color: white;
 }
 
-#collectibles_view_container{
+#collectibles_view_container {
   position: relative;
   width: 100%;
   height: 47%;
@@ -990,7 +1005,7 @@ video {
   justify-content: center;
 }
 
-#collectibles_view{
+#collectibles_view {
   position: relative;
   width: 66%;
   height: 100%;
@@ -999,7 +1014,7 @@ video {
   border-radius: 10px;
 }
 
-#collectibles_view_circle_left{
+#collectibles_view_circle_left {
   position: absolute;
   top: 40%;
   left: 2.88%;
@@ -1010,7 +1025,7 @@ video {
   display: inline-block;
 }
 
-#collectibles_view_circle_right{
+#collectibles_view_circle_right {
   position: absolute;
   top: 40%;
   right: 2.88%;
@@ -1021,7 +1036,7 @@ video {
   display: inline-block;
 }
 
-#collectibles_view_upcoming{
+#collectibles_view_upcoming {
   position: absolute;
   top: 10%;
   width: 100%;
@@ -1031,7 +1046,7 @@ video {
   color: #C4C4C4;
 }
 
-#collectibles_view_date{
+#collectibles_view_date {
   position: absolute;
   top: 15%;
   width: 100%;
@@ -1041,7 +1056,7 @@ video {
   color: #C4C4C4;
 }
 
-#collectibles_view_collectibles{
+#collectibles_view_collectibles {
   position: absolute;
   top: 30%;
   width: 100%;
@@ -1051,7 +1066,7 @@ video {
   color: #C4C4C4;
 }
 
-#collectibles_view_info{
+#collectibles_view_info {
   position: absolute;
   top: 42%;
   width: 100%;
@@ -1061,7 +1076,7 @@ video {
   color: #C4C4C4;
 }
 
-#collectibles_view_more{
+#collectibles_view_more {
   position: absolute;
   top: 0%;
   width: 20%;
@@ -1069,23 +1084,23 @@ video {
   border-radius: 30px;
   background-color: #C4C4C4;
   display: flex;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
   font-family: SFPRODISPLAY_BOLD;
   font-size: 2.4vh;
   color: white;
 }
 
-#collectibles_view_more_container{
+#collectibles_view_more_container {
   position: relative;
   top: 55%;
   width: 100%;
   height: 13.77%;
   display: flex;
-  justify-content:center;
+  justify-content: center;
 }
 
-.selections_rec{
+.selections_rec {
   position: relative;
   width: 18%;
   height: 10%;
@@ -1093,7 +1108,7 @@ video {
   border-radius: 5px;
 }
 
-#collectibles_view_selections_bar{
+#collectibles_view_selections_bar {
   position: relative;
   width: 18%;
   display: flex;
@@ -1101,7 +1116,7 @@ video {
   justify-content: space-between;
 }
 
-#collectibles_view_selections_bar_container{
+#collectibles_view_selections_bar_container {
   position: relative;
   height: 10%;
   width: 100%;
@@ -1110,11 +1125,11 @@ video {
   justify-content: center;
 }
 
-#collectibles_view_selections_rec_1{
+#collectibles_view_selections_rec_1 {
   background-color: #C4C4C4;
 }
 
-#landing_page_02_blue{
+#landing_page_02_blue {
   position: absolute;
   width: 100%;
   height: 55%;
@@ -1122,37 +1137,37 @@ video {
   background-color: #286A93;
 }
 
-#landing_page_02_title{
+#landing_page_02_title {
   top: 22%;
   z-index: 1;
 }
 
-#landing_page_02_title{
+#landing_page_02_title {
   top: 20%;
   z-index: 1;
 }
 
-#landing_page_02_subtitle{
+#landing_page_02_subtitle {
   top: 32%;
   color: white;
 }
 
-#landing_page_02_subscribe_bar_container{
+#landing_page_02_subscribe_bar_container {
   width: 100%;
   height: 10%;
   position: absolute;
   top: 51%;
   display: flex;
-  justify-content:center;
+  justify-content: center;
 }
 
-#landing_page_02_subscribe_bar{
+#landing_page_02_subscribe_bar {
   width: 43%;
   height: 100%;
   position: absolute;
 }
 
-#landing_page_02_subscribe_email{
+#landing_page_02_subscribe_email {
   width: 79.6%;
   height: 100%;
   position: absolute;
@@ -1162,13 +1177,13 @@ video {
   border-bottom-left-radius: 10px;
 }
 
-#landing_page_02_subscribe_subscribe{
+#landing_page_02_subscribe_subscribe {
   position: absolute;
-  font-family: SFPRODISPLAY_BOLD; 
+  font-family: SFPRODISPLAY_BOLD;
   color: white;
 }
 
-#landing_page_02_subscribe_btn{
+#landing_page_02_subscribe_btn {
   width: 20.4%;
   height: 100%;
   left: 79.6%;
@@ -1181,64 +1196,64 @@ video {
   justify-content: center;
 }
 
-#landing_page_02_info_align_container{
+#landing_page_02_info_align_container {
   position: relative;
-  width:100%;
+  width: 100%;
   height: 9.16%;
   top: 68%;
   display: flex;
   justify-content: center;
 }
 
-#landing_page_02_info_container{
+#landing_page_02_info_container {
   position: relative;
-  width:40%;
+  width: 40%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.landing_page_02_info{
+.landing_page_02_info {
   color: white;
   font-family: SFProDisplay-Semibold;
   font-size: 1.5vh;
   text-align: center;
 }
 
-#landing_page_02_agree_align_container{
+#landing_page_02_agree_align_container {
   position: relative;
-  width:100%;
+  width: 100%;
   height: 3%;
   top: 75%;
   display: flex;
   justify-content: center;
 }
 
-#landing_page_02_checkbox{
+#landing_page_02_checkbox {
   color: white;
   font-family: SFProDisplay-Semibold;
   font-size: 1.5vh;
   text-align: center;
 }
 
-#landing_page_02_agreement{
+#landing_page_02_agreement {
   color: white;
   font-family: SFProDisplay-Semibold;
   font-size: 1.5vh;
   text-align: center;
 }
 
-#top_creators_view_top_selling_container{
+#top_creators_view_top_selling_container {
   position: relative;
   top: 23.5%;
   width: 100%;
   height: 4.53%;
   display: flex;
-  justify-content:center;
+  justify-content: center;
 }
 
-#top_creators_view_top_selling{
+#top_creators_view_top_selling {
   position: absolute;
   top: 0%;
   width: 12.5%;
@@ -1246,14 +1261,14 @@ video {
   border-radius: 20px;
   background-color: #286A93;
   display: flex;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
   font-family: SFPRODISPLAY_BOLD;
   font-size: 1.8vh;
   color: white;
 }
 
-#landing_page_03_top_creators_title{
+#landing_page_03_top_creators_title {
   position: absolute;
   width: 100%;
   height: 6.67%;
@@ -1264,7 +1279,7 @@ video {
   font-size: 6vh;
 }
 
-#top_creators_view_circle_left{
+#top_creators_view_circle_left {
   position: absolute;
   top: 33.7%;
   left: 81.3%;
@@ -1275,7 +1290,7 @@ video {
   display: inline-block;
 }
 
-#top_creators_view_circle_right{
+#top_creators_view_circle_right {
   position: absolute;
   top: 33.7%;
   left: 87%;
@@ -1286,7 +1301,7 @@ video {
   display: inline-block;
 }
 
-#top_creators_view_profile_align_container_container{
+#top_creators_view_profile_align_container_container {
   position: relative;
   width: 100%;
   height: 49.6%;
@@ -1295,7 +1310,7 @@ video {
   justify-content: center;
 }
 
-#top_creators_view_profile_align_container{
+#top_creators_view_profile_align_container {
   position: relative;
   width: 80%;
   display: flex;
@@ -1303,14 +1318,14 @@ video {
   justify-content: space-between;
 }
 
-.top_creators_view_profile_container{
+.top_creators_view_profile_container {
   position: relative;
   height: 100%;
   width: 13.28125%;
 }
 
 
-.top_creators_view_profile_photo{
+.top_creators_view_profile_photo {
   position: absolute;
   width: 100%;
   padding-top: 100%;
@@ -1319,7 +1334,7 @@ video {
   background-color: white;
 }
 
-.top_creators_view_profile_name{
+.top_creators_view_profile_name {
   position: absolute;
   width: 100%;
   top: 43%;
@@ -1329,25 +1344,25 @@ video {
   font-size: 3.5vh;
 }
 
-.top_creators_view_profile_value_container{
+.top_creators_view_profile_value_container {
   position: absolute;
   width: 100%;
   height: 30px;
   top: 55%;
 }
 
-.top_creators_view_profile_num_container{
+.top_creators_view_profile_num_container {
   position: absolute;
   width: 30px;
   height: 30px;
   border-radius: 50%;
   background-color: #A0A0A0;
   display: flex;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
 }
 
-.top_creators_view_profile_num{
+.top_creators_view_profile_num {
   position: absolute;
   width: 100%;
   text-align: center;
@@ -1356,7 +1371,7 @@ video {
   color: white;
 }
 
-.top_creators_view_profile_dollor{
+.top_creators_view_profile_dollor {
   position: absolute;
   width: 80%;
   height: 100%;
@@ -1368,7 +1383,7 @@ video {
   color: white;
 }
 
-#privacybar{
+#privacybar {
   bottom: 0%;
   position: fixed;
   height: 11.5vh;
@@ -1378,7 +1393,7 @@ video {
   display: none;
 }
 
-#privacy_statement_container{
+#privacy_statement_container {
   position: relative;
   width: 53.7%;
   left: 2.1875%;
@@ -1387,7 +1402,7 @@ video {
   align-items: center;
 }
 
-#privacy_statement{
+#privacy_statement {
   position: absolute;
   text-align: left;
   color: white;
@@ -1395,7 +1410,7 @@ video {
   font-family: SFProDisplay-Semibold
 }
 
-#customize_settings_menu_container_container{
+#customize_settings_menu_container_container {
   position: absolute;
   height: 100%;
   width: 30%;
@@ -1403,7 +1418,7 @@ video {
   top: 0%;
 }
 
-#customize_settings_menu_align_container{
+#customize_settings_menu_align_container {
   position: relative;
   height: 100%;
   width: 100%;
@@ -1412,7 +1427,7 @@ video {
   flex-direction: row;
 }
 
-#customize_settings_text_container{
+#customize_settings_text_container {
   width: 25.7%;
   height: 100%;
   position: relative;
@@ -1420,11 +1435,11 @@ video {
   align-items: center;
 }
 
-#customize_settings_text{
+#customize_settings_text {
   position: relative;
   display: flex;
   width: 100%;
-  justify-content:flex-end;
+  justify-content: flex-end;
   align-items: center;
   color: white;
   font-family: SFProDisplay-Semibold;
@@ -1432,7 +1447,7 @@ video {
   text-decoration: underline;
 }
 
-#customize_settings_disable_container{
+#customize_settings_disable_container {
   width: 27.25%;
   height: 100%;
   position: relative;
@@ -1440,13 +1455,13 @@ video {
   align-items: center;
 }
 
-#customize_settings_disable_text{
+#customize_settings_disable_text {
   position: relative;
-  top:0%;
+  top: 0%;
   width: 100%;
   height: 36.2%;
   display: flex;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
   background-color: #286A93;
   color: white;
@@ -1454,7 +1469,7 @@ video {
   font-family: SFPRODISPLAY_BOLD;
 }
 
-#customize_settings_accept_container{
+#customize_settings_accept_container {
   width: 27.25%;
   height: 100%;
   position: relative;
@@ -1462,13 +1477,13 @@ video {
   align-items: center;
 }
 
-#customize_settings_accept_text{
+#customize_settings_accept_text {
   position: relative;
-  top:0%;
+  top: 0%;
   width: 100%;
   height: 36.2%;
   display: flex;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
   background-color: #286A93;
   color: white;
@@ -1476,17 +1491,17 @@ video {
   font-family: SFPRODISPLAY_BOLD;
 }
 
-#privacybar_close_container{
+#privacybar_close_container {
   width: 1.1%;
   height: 100%;
-  top:0;
+  top: 0;
   right: 2.3%;
   position: absolute;
   display: flex;
   align-items: center;
 }
 
-#privacybar_close_btn{
+#privacybar_close_btn {
   width: 100%;
   color: white;
   font-size: 2.5vh;
@@ -1494,7 +1509,8 @@ video {
 }
 
 /* Lai */
-#landing_page_04_top_collections_title, #landing_page_05_top_collections_title{
+#landing_page_04_top_collections_title,
+#landing_page_05_top_collections_title {
   position: absolute;
   width: 100%;
   height: 6.67%;
@@ -1505,26 +1521,28 @@ video {
   font-size: 6vh;
 }
 
-.top_collect04_top_container{
+.top_collect04_top_container {
   display: flex;
   justify-content: space-between;
   padding: 8.5% 11% 0% 9%;
 }
 
-span{
+span {
   font-family: SFPRODISPLAY_BOLD;
   color: white;
   font-size: 30px;
 }
 
-button:nth-child(odd){
+button:nth-child(odd) {
   border: 1px solid #fff;
 }
-button:nth-child(even){
+
+button:nth-child(even) {
   background-color: #000;
 }
 
-select, button{
+select,
+button {
   font-family: SFProDisplay-Semibold;
   color: white;
   font-size: 24px;
@@ -1534,15 +1552,15 @@ select, button{
   margin-left: 15px;
 }
 
-.p04_round_card_container{
+.p04_round_card_container {
   margin: 0% 7.5%;
   display: flex;
   justify-content: space-around;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
 }
 
-.round_card{
-  width: 29%;  
+.round_card {
+  width: 29%;
   border-radius: 55px;
   border: 1px solid #fff;
   padding: 15px 25px;
@@ -1551,33 +1569,35 @@ select, button{
   align-items: center;
 }
 
-.landing_page img{
-    margin: 0.5px 1.5%;
+.landing_page img {
+  margin: 0.5px 1.5%;
 }
 
-.mark{
-  width:70px;
+.mark {
+  width: 70px;
   padding: 2px 15px;
   margin-left: 5px;
   display: inline-block;
   background-image: url("./p0405/Rectangle37_small.png");
 }
 
-.paragraph{
+.paragraph {
   margin-left: 15px;
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
 }
 
-.paragraph_1,.paragraph_2{
+.paragraph_1,
+.paragraph_2 {
   margin: 2px 0px;
 }
 
-.paragraph_1 img:first-child, .paragraph_2 img:first-child{
+.paragraph_1 img:first-child,
+.paragraph_2 img:first-child {
   margin-right: 100px;
 }
 
-.landing_page_collectibles{
+.landing_page_collectibles {
   height: 300vh;
   width: 100vw;
   display: block;
@@ -1589,13 +1609,13 @@ select, button{
   top: 0;
 }
 
-.top_collect_05_top_container{
+.top_collect_05_top_container {
   display: flex;
   justify-content: space-between;
   padding: 14% 11% 0% 9%;
 }
 
-#p05_card_container{
+#p05_card_container {
   padding: 3% 7.5%;
   display: flex;
   flex-direction: row;
@@ -1603,43 +1623,76 @@ select, button{
   justify-content: space-around;
 }
 
-.square_card{
+.square_card {
   height: 500px;
   margin-bottom: 3.5%;
 }
 
-.image{
+.image {
   background-color: #E0E0E0;
   width: 345px;
   height: 500px;
   border-radius: 25px;
 }
 
-.text{
+.text {
   background-color: #FFF;
   width: 315px;
   height: 170px;
   position: relative;
-  top:-200px;
+  top: -200px;
   border-radius: 0px 0px 25px 25px;
   padding: 15px;
 }
 
-.price{
-  display:flex;
+.price {
+  display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 }
 
-.price img{
+.price img {
   margin: 7.5px;
-} 
+}
 
-.row{
-  display:flex;
+.row {
+  display: flex;
   justify-content: space-evenly;
 }
 
-.vertical img{
+.vertical img {
   display: block;
+}
+
+.bottom-area {
+  height: 45vh;
+  width: 100vw;
+  display: block;
+  z-index: 0;
+  background-color: #BCBCBC;
+  min-height: 100%;
+  min-width: 100%;
+  position: relative;
+  top: 0;
+  display: flex;
+}
+
+#bottom_logo {
+  position: absolute;
+  margin: 5% 17%;
+}
+
+.col {
+  position: absolute;
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+}
+
+.col img {
+  margin-bottom: 14%;
+}
+
+.col img:first-child {
+  margin-bottom: 30%;
 }
