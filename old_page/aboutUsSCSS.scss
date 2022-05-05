@@ -1,0 +1,171 @@
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ul {
+    list-style: none;
+}
+
+q {
+    quotes: none;
+    &:after {
+        content: "";
+        content: none;
+    }
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* p01 */
+.p01 {
+    background-image: url("./Img/background.png");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    /* height:2160px; */
+}
+
+.logo {
+    position: relative;
+    top: 120px;
+    img {
+        display: block;
+        margin: auto;
+    }
+}
+
+#logo-round {
+    img {
+        width: 156px;
+        height: 156px;
+    }
+}
+
+#logo-words {
+    img {
+        position: relative;
+        top: 3vh;
+        height: 30px;
+    }
+}
+
+.group {
+    position: relative;
+    top: 260px;
+    img {
+        display: block;
+        margin: auto;
+    }
+}
+
+.group-slogan {
+    p {
+        padding-top: 75px;
+        color: #ffffff;
+        text-align: center;
+        font-size: 33px;
+        font-family: sans-serif;
+        margin-bottom: 17.4vh;
+    }
+}
+
+/* p02 */
+.flexbox {
+    margin: 325px 0px 200px 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.team {
+    padding-top: 60px;
+}
+
+.overlay {
+    position: relative;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: #ffffff;
+    opacity: 0.7;
+    overflow: hidden;
+    width: 280px;
+    height: 0px;
+    transition: 0.5s ease;
+}
+
+.card {
+    margin: 0px 70px 0px 35px;
+}
+
+.container {
+    width: 280px;
+    height: 700px;
+    &:hover .overlay {
+        bottom: 100px;
+        height: 10.5vh;
+    }
+}
+
+.down {
+    position: relative;
+    top: 100px;
+    .fog {
+        top: 60px;
+        left: 0px;
+    }
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.job {
+    width: 86px;
+    height: 33px;
+}
+
+.fog {
+    transition: 0.3s;
+    z-index: 5;
+    position: absolute;
+    top: 1002px;
+    &:hover {
+        opacity: 0;
+    }
+}
+
+.footer {
+    display: flex;
+    justify-content: flex-start;
+    height: 42.5px;
+    width: 100%;
+    background-color: #fff;
+    p {
+        margin: 10px 10vw 10px 6vw;
+        font-size: 25px;
+        font-family: sans-serif;
+    }
+}

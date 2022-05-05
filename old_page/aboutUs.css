@@ -1,0 +1,287 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* p01 */
+.p01 {
+  background-image: url("./Img/background.png");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  /* height:2160px; */
+}
+
+.logo{
+  position: relative;
+  top: 120px;
+}
+
+.logo img{
+  display: block;
+  margin: auto;
+}
+
+#logo-round img {
+  width: 156px;
+  height: 156px;
+}
+
+#logo-words img{
+  position: relative;
+  top: 3vh;
+  height: 30px;
+}
+
+.group{
+  position: relative;
+  top: 260px;
+}
+
+.group img{
+  display: block;
+  margin: auto;
+}
+
+/* @font-face {
+  font-family: 'Noto Sans CJK TC Medium';
+  src: url('./p01/NotoSansTC-Medium-Alphabetic.woff') format("woff");
+} */
+
+.group-slogan p{
+  padding-top: 75px;
+  color:#ffffff;
+  text-align: center;
+  font-size: 33px;
+  font-family: sans-serif;
+  margin-bottom: 17.4vh;
+}
+
+/* p02 */
+.flexbox {
+  margin: 325px 0px 200px 0px;
+  display: flex;
+  justify-content: center;
+}
+
+.team{
+  padding-top: 60px;
+}
+
+.overlay {
+  position: relative;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: #ffffff;
+  opacity: 0.7;
+  overflow: hidden;
+  width: 280px;
+  height: 0px;
+  transition: 0.5s ease;
+}
+
+.card{
+  margin:0px 70px 0px 35px
+}
+
+.container{
+  width:280px;
+  height:700px;
+}
+
+.container:hover .overlay {
+  bottom: 100px;
+  height: 10.5vh;
+}
+
+.down{
+  position: relative;
+  top: 100px;
+}
+
+.text {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 50%;
+  left: 50%; 
+  transform: translate(-50%, -50%);
+}
+
+.job{
+  width:86px;
+  height:33px;
+}
+
+.fog {
+  transition: 0.3s;
+  z-index: 5;
+  position: absolute;
+  top: 1002px;
+}
+
+.down .fog{
+  top: 60px;
+  left: 0px;
+}
+
+.fog:hover {
+  opacity: 0;
+}
+
+.footer {
+  display: flex;
+  justify-content:flex-start;
+  height: 42.5px;
+  width: 100%;
+  background-color: #FFF;
+}
+
+.footer p {
+  margin: 10px 10vw 10px 6vw;
+  font-size: 25px;
+  font-family: sans-serif;
+}
+
+/* #BinChilling{
+  left: 5.5vw;
+  position: relative;
+}
+
+#SocialWebResearch{
+  right: 34.7vw;
+  position: relative;
+} */
