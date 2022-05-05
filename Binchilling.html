@@ -9,40 +9,106 @@
   </head>
   <script src="./Binchilling.js"></script>
   <body>
+    <!--
     <div class="homepage" id="homepage_01">
       <div id="homepage_logo_img_container">
         <img id="homepage_logo_img" src="./img/logo.png">
       </div>
+      <div id="homepage_email_text_container">
+        <p id="homepage_email_text">Email</p>
+      </div>
+      
+      </div>
       <div class="homepage_sign_container" id="homepage_sign_in_container">
         <p class="homepage_sign_text" id="homepage_sign_in_text">Sign In</p>
       </div>
-      <div class="homepage_sign_container" id="homepage_sign_up_container">
-        <p class="homepage_sign_text" id="homepage_sign_up_text">Sign Up</p>
-      </div>
     </div>
-
+    -->
     <div id="signin_page">
-      <div id="signin_title_container">
-        <p id="signin_title">Title or something about our product</p>
+      <div id="signin_logo_container">
+        <div id="navbar_logo">
+          <div class="navbar_logo_img_container">
+            <img id="navbar_logo_img" src="./img/logo.png">
+          </div>
+          <img id="navbar_logo_text" src="./img/logo_text.png">
+        </div>
       </div>
-      <div id="signin_back_container">
-        <div id="triangle_back"></div>
-        <p id="signin_back_text">Back</p>
+      <div id="signin_title_container">
+        <p id="signin_title">Welcome to this virtual world!</p>
+      </div>
+      <div class="sign_back_container" id="signin_back_container">
+        <div class="triangle_back"></div>
+        <p class="sign_back_text">Back</p>
       </div>
       <p id="signin_signin_text">Sign In</p>
       <p id="signin_noaccount_text">Don't have an account yet?</p>
-      <p id="signin_noaccount_signup_text">Sign Up</p>
-      <p id="signin_email">Email</p>   
-      <div id="signin_email_typebox">
-        <p id="signin_email_text">Please enter your email</p>
+      <p id="signin_noaccount_signup_text" onclick="turn_to_signup_page(this.id)">Sign Up</p>
+      <p class="sign_item" id="signin_email">Email</p>   
+      <div class="typebox" id="signin_email_typebox">
+        <p class="typetext" id="signin_email_text">Please enter your email</p>
       </div>
-      <p id="signin_password">Password</p>
+      <p class="sign_item" id="signin_password">Password</p>
       <p id="forgot_password">Forgot password?</p>
-      <div id="signin_password_typebox">
-        <p id="signin_password_text">Please enter your password</p>
-      </div> <!--loading!!!-->
-      <p id="signin_signin_btn">Sign In</p>
-      
+      <div class="typebox" id="signin_password_typebox">
+        <p class="typetext" id="signin_password_text">Please enter your password</p>
+      </div>
+      <p id="signin_signin_btn">Sign In</p>  
+    </div>
+
+    <div id="signup_page">
+      <div id="signup_title_container">
+        <p id="signup_title">Get more information of your account</p>
+      </div>
+      <div id="hightlight_container">
+        <p class="highlight" id="highlight1">Highlight 1</p>
+        <p class="highlight_description" id="highlight_description1">Highlight 1Ttitle or something about highlight</p>
+        <p class="highlight" id="highlight2">Highlight2</p>
+        <p class="highlight_description" id="highlight_description2">Highlight 2Ttitle or something about highlight</p>
+        <p class="highlight" id="highlight3">Highlight3</p>
+        <p class="highlight_description" id="highlight_description3">Highlight 3Ttitle or something about highlight</p>
+      </div>
+        
+     
+      <div class="sign_back_container" id="signup_back_container" onclick="turn_to_signin_page(this.id)">
+        <div class="triangle_back"></div>
+        <p class="sign_back_text">Back</p>
+      </div>
+      <p id="signup_signup_text">Sign Up</p>
+      <p id="signup_haveaccount_text">Already have an account?</p>
+      <p id="signup_haveaccount_signin_text" onclick="turn_to_signin_page(this.id)">Sign In</p>
+      <p class="sign_item" id="signup_email">Email</p>   
+      <div class="typebox" id="signup_email_typebox">
+        <p class="typetext" id="signup_email_text">Please enter your email</p>
+      </div>
+      <!--
+      <p class="sign_item" id="signup_fullname">Full Name</p>   
+      <div class="typebox" id="signup_fullname_typebox">
+        <p class="typetext" id="signup_fullname_text">Please enter your full name</p>
+      </div>
+      -->
+      <p class="sign_item" id="signup_username">User Name</p>  
+      <p id="signup_username_visibility">(Visible to the Public)</p> 
+      <div class="typebox" id="signup_username_typebox">
+        <p class="typetext" id="signup_username_text">Please enter your username</p>
+      </div>
+      <p class="sign_item" id="signup_password">Password</p>  
+      <p id="signup_password_restriction">*Please enter alphanumerical characters, hyphens or underscores</p> 
+      <div class="typebox" id="signup_password_typebox">
+        <p class="typetext" id="signup_password_text">Please enter 8-20 characters</p>
+      </div>
+      <p class="sign_item" id="signup_confirm_password">Confirm Password</p>   
+      <div class="typebox" id="signup_confirm_password_typebox">
+        <p class="typetext" id="signup_confirm_password_text">Please confirm your password</p>
+      </div>
+      <div id="signup_agreement_container">
+        <div id="signup_checkbox_container">
+          <input type="checkbox" id="signup_checkbox" value="signup_agreement">
+        </div>
+        <div id="signup_agreement_text_container">
+          <label for="signup_checkbox" id="signup_agreement_text">By clicking Sign Up, I hereby acknowledge that I agree to the Crypto.com NFT Terms and Conditions and I've read the Privacy Notice.</label>
+        </div>
+      </div>
+      <p id="signup_signup_btn">Sign Up</p> 
     </div>
     
     <div id="navbar">
@@ -127,10 +193,10 @@
         <div id="navbar_function_container">
           <p class="navbar_function" id="navbar_function1">Marketpalce</p>
           <p class="navbar_function" id="navbar_function2">Drops</p>
-          <div id="navbar_function_brands">
+          <div id="navbar_function3_container" onmouseover="change_hover_color(this.id)" onmouseout="change_back_hover_color(this.id)">
             <p class="navbar_function" id="navbar_function3">Brands</p>
             <div id="navbar_function_triangle_container">
-              <div class="triangle_down"></div>
+              <div class="triangle_down" id="navbar_triangle_down"></div>
             </div>
             
           </div>
@@ -167,7 +233,7 @@
       </div>
     </div>
     <div class="landing_page" id="landing_page_02">
-      <div id="landing_page_02_black">
+      <div id="landing_page_02_blue">
         <p class="title" id="landing_page_02_title">Title or something about our product</p>
         <p class="subtitle" id="landing_page_02_subtitle">Subtitle or something about our product</p>
         <div id="landing_page_02_subscribe_bar_container">
@@ -1136,6 +1202,27 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="bottom-area">
+      <div>
+        <img id="bottom_logo" src="./p0405/logo上 4.png" alt="" />
+      </div>
+      <div class="col" style="margin-left: 34%">
+        <img src="./p0405/About Us.png" alt="" style="width: 93px" />
+        <a href=""><img src="./p0405/About.png" alt="" style="width: 52px" /></a>
+        <img src="./p0405/Terms of Service.png" alt="" />
+      </div>
+      <div class="col" style="margin-left: 55%">
+        <img src="./p0405/Support.png" alt="" style="width: 83px" />
+        <img src="./p0405/Help Center.png" alt="" style="width: 102px" />
+        <img src="./p0405/Terms of Service.png" alt="" style="width: 145px" />
+      </div>
+      <div class="col" style="margin-left: 76%">
+        <img src="./p0405/Privacy.png" alt="" style="width: 75px" />
+        <img src="./p0405/T_C.png" alt="" style="width: 36px" />
+        <img src="./p0405/Privacy Notice.png" alt="" style="width: 123px" />
+        <img src="./p0405/Cookies Preference.png" alt="" style="width: 145px" />
       </div>
     </div>
 
