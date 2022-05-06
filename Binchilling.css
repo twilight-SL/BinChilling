@@ -274,6 +274,13 @@ video {
   left: 3%;
 }
 
+::-webkit-input-placeholder{
+  position: fix;
+  color: #E5E5E5;
+  font-size: 2.2vh;
+  font-family: SFPRODISPLAY_BOLD;
+}
+
 .sign_item {
   position: absolute;
   left: 50%;
@@ -544,14 +551,17 @@ video {
   font-family: SFPRODISPLAY_BOLD;
 }
 
-#navbar {
+.navbar {
   top: 0%;
   position: fixed;
   height: 11.5vh;
   width: 100vw;
   z-index: 1;
   background-color: #BCBCBC;
+}
 
+#NFT_navbar{
+  display: block;
 }
 
 #signin_logo_container {
@@ -857,7 +867,7 @@ video {
   font-family: SFPRODISPLAY_BOLD;
 }
 
-#navbar_function_container {
+.navbar_function_container {
   position: absolute;
   height: 100%;
   width: 18.5%;
@@ -882,27 +892,34 @@ video {
 
 
 
-#navbar_function1 {
+#navbar_function_marketplace {
   width: 35%;
 }
 
-#navbar_function2 {
+#navbar_function_drops {
   width: 19%;
 }
 
-#navbar_function3 {
+#navbar_function_brands {
   width: 60%;
 }
 
-#navbar_function3_container {
+.navbar_function3_container {
   position: relative;
-  width: 25%;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
 }
 
-#navbar_function_triangle_container {
+#wallet_navbar_function3_container{
+  width: 30%;
+}
+
+#NFT_navbar_function3_container{
+  width: 25%;
+}
+
+.navbar_function_triangle_container {
   width: 20%;
   height: 100%;
   position: relative;
@@ -917,21 +934,29 @@ video {
   height: 0;
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
-
-}
-
-#navbar_triangle_down {
   border-top: 6px solid;
   border-top-color: white;
 }
 
-#navbar_vertical_rec {
+#navbar_triangle_down {
+  
+}
+
+.navbar_vertical_rec {
   position: absolute;
   width: 0.2%;
   height: 32.6%;
   top: 33.87%;
   left: 86%;
   background-color: white;
+}
+
+#wallet_navbar_vertical_rec{
+  
+}
+
+#NFT__navbar_vertical_rec{
+  
 }
 
 #navbar_signin {
@@ -950,6 +975,154 @@ video {
   left: 92.7%;
   color: white;
   font-family: SFPRODISPLAY_BOLD;
+}
+
+
+#wallet_navbar{
+  display: none;
+}
+
+#wallet_overview{
+  display: none;
+}
+
+#wallet_navbar_head_contianer{
+  position: absolute;
+  left: 88%;
+  width: 1.8%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+#wallet_navbar_head{
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: black;
+}
+
+#wallet_username_container{
+  position: absolute;
+  width: 7%;
+  height: 100%;
+  left: 90.5%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+#wallet_navbar_username{
+  position: relative;
+  height: 100%;
+  width: 70%;
+  top: 0%;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: SFPRODISPLAY_BOLD;
+  
+}
+
+#wallet_navbar_username_triangle_container{
+  left: 0%;
+}
+
+.wallet_page {
+  height: 100vh;
+  width: 100vw;
+  display: block;
+  z-index: 0;
+  background-color: white;
+  min-height: 100%;
+  min-width: 100%;
+  position: relative;
+  top: 0;
+}
+
+.wallet_title{
+  position: absolute;
+  left: 48.95%;
+  top: 23.8%;
+  width: 0.21%;
+  height: 6.67%;
+  font-size: 6vh;
+  color:#286A93;
+  font-family: SFPRODISPLAY_BOLD;
+}
+
+#category_btw_account_container{
+  position: absolute;
+  left: 64.75%;
+  top: 26.76%;
+  width: 7.03%;
+  height: 2.314%;
+  border-style: solid;
+  border-width: 1.5px;
+  border-radius: 70px;
+  border-color: #286A93;
+  z-index: 0;
+}
+
+#category_btw_account{
+  position: absolute;
+  left: 68.2%;
+  top: 26.76%;
+  width: 3.5%;
+  height: 2.314%;
+  border-style: solid;
+  border-width: 1.5px;
+  border-radius: 70px;
+  border-color: #286A93;
+  background-color: #286A93;
+  z-index: 1;
+}
+
+#wallet_category_choice{
+  position: absolute;
+  left: 64.75%;
+  top: 26.76%;
+  width: 3.8%;
+  height: 2.314%;
+  color: #286A93;
+  border-radius: 70px;
+  font-size: 1.2vh;
+  font-family: SFPRODISPLAYREGULAR;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+#wallet_account_choice{
+  position: absolute;
+  left: 68.2%;
+  top: 26.76%;
+  width: 3.5%;
+  height: 2.314%;
+  color: white;
+  font-size: 1.2vh;
+  font-family: SFPRODISPLAYREGULAR;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.wallet_whole_asset_dollor{
+  position: absolute;
+  top: 29.167%;
+  left: 48.954%;
+  width: 10.3125%;
+  height: 4.45%;
+  color: #286A93;
+  font-size: 4vh;
+  font-family: SFProDisplay-Semibold;
 }
 
 .landing_page {

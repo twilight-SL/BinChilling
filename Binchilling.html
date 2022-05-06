@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="Binchilling.css" />
   </head>
   <script src="./Binchilling.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <body>
     <!--
     <div class="homepage" id="homepage_01">
@@ -36,23 +37,31 @@
       <div id="signin_title_container">
         <p id="signin_title">Welcome to this virtual world!</p>
       </div>
+      <!--
       <div class="sign_back_container" id="signin_back_container">
         <div class="triangle_back"></div>
         <p class="sign_back_text">Back</p>
       </div>
+      -->
       <p id="signin_signin_text">Sign In</p>
       <p id="signin_noaccount_text">Don't have an account yet?</p>
       <p id="signin_noaccount_signup_text" onclick="turn_to_signup_page(this.id)">Sign Up</p>
-      <p class="sign_item" id="signin_email">Email</p>   
+      <p class="sign_item" id="signin_email">Email</p>
+      <input class="typebox" id="signin_email_typebox" placeholder="Please enter your email">
+      <!--  
       <div class="typebox" id="signin_email_typebox">
         <p class="typetext" id="signin_email_text">Please enter your email</p>
       </div>
+      --> 
       <p class="sign_item" id="signin_password">Password</p>
       <p id="forgot_password">Forgot password?</p>
+      <input class="typebox" id="signin_password_typebox" placeholder="Please enter your password">
+      <!--
       <div class="typebox" id="signin_password_typebox">
         <p class="typetext" id="signin_password_text">Please enter your password</p>
       </div>
-      <p id="signin_signin_btn">Sign In</p>  
+      -->
+      <p id="signin_signin_btn" onclick="turn_to_wallet_page(this.id)">Sign In</p>  
     </div>
 
     <div id="signup_page">
@@ -76,10 +85,13 @@
       <p id="signup_signup_text">Sign Up</p>
       <p id="signup_haveaccount_text">Already have an account?</p>
       <p id="signup_haveaccount_signin_text" onclick="turn_to_signin_page(this.id)">Sign In</p>
-      <p class="sign_item" id="signup_email">Email</p>   
+      <p class="sign_item" id="signup_email">Email</p> 
+      <input class="typebox" id="signup_email_typebox" placeholder="Please enter your email">
+      <!--
       <div class="typebox" id="signup_email_typebox">
         <p class="typetext" id="signup_email_text">Please enter your email</p>
       </div>
+      -->
       <!--
       <p class="sign_item" id="signup_fullname">Full Name</p>   
       <div class="typebox" id="signup_fullname_typebox">
@@ -88,18 +100,27 @@
       -->
       <p class="sign_item" id="signup_username">User Name</p>  
       <p id="signup_username_visibility">(Visible to the Public)</p> 
+      <input type="text" class="typebox" id="signup_username_typebox" placeholder="Please enter your username">
+      <!--
       <div class="typebox" id="signup_username_typebox">
         <p class="typetext" id="signup_username_text">Please enter your username</p>
       </div>
+      -->
       <p class="sign_item" id="signup_password">Password</p>  
       <p id="signup_password_restriction">*Please enter alphanumerical characters, hyphens or underscores</p> 
+      <input type="text" class="typebox" id="signup_password_typebox" placeholder="Please enter 8-20 characters">
+      <!--
       <div class="typebox" id="signup_password_typebox">
         <p class="typetext" id="signup_password_text">Please enter 8-20 characters</p>
       </div>
-      <p class="sign_item" id="signup_confirm_password">Confirm Password</p>   
+      -->
+      <p class="sign_item" id="signup_confirm_password">Confirm Password</p> 
+      <input type="text" class="typebox" id="signup_confirm_password_typebox" placeholder="Please confirm your password">  
+      <!--
       <div class="typebox" id="signup_confirm_password_typebox">
         <p class="typetext" id="signup_confirm_password_text">Please confirm your password</p>
       </div>
+      -->
       <div id="signup_agreement_container">
         <div id="signup_checkbox_container">
           <input type="checkbox" id="signup_checkbox" value="signup_agreement">
@@ -111,8 +132,49 @@
       <p id="signup_signup_btn">Sign Up</p> 
     </div>
     
-    <div id="navbar">
-      <div id="navbar_logo">
+    <!--Wallet-->
+    <div id="wallet">
+      <div class="navbar" id="wallet_navbar">
+        <div class="navbar_logo">
+          <div class="navbar_logo_img_container">
+            <img id="navbar_logo_img" src="./img/logo.png">
+          </div>
+          <img id="navbar_logo_text" src="./img/logo_text.png">
+        </div>
+        <div class="navbar_function_container">
+          <p class="navbar_function" id="navbar_function_plan">Plan</p>
+          <p class="navbar_function" id="navbar_function_statement">Statement</p>
+          <div class="navbar_function3_container" id="wallet_navbar_function3_container" onmouseover="change_hover_color(this.id)" onmouseout="change_back_hover_color(this.id)">
+            <p class="navbar_function" id="navbar_function_account">Account</p>
+            <div class="navbar_function_triangle_container" id="wallet_navbar_function_triangle_container">
+              <div class="triangle_down" id="navbar_triangle_down"></div>
+            </div> 
+          </div> 
+        </div>
+        <div class="navbar_vertical_rec" id="wallet_navbar_vertical_rec"></div>
+        <div id="wallet_navbar_head_contianer">
+          <div id="wallet_navbar_head"></div>
+        </div>
+        <div id="wallet_username_container">
+          <p id="wallet_navbar_username">Username</p>
+          <div class="navbar_function_triangle_container" id="wallet_navbar_username_triangle_container">
+            <div class="triangle_down" id="navbar_wallet_triangle_down"></div>
+          </div>
+        </div>
+         
+      </div>
+      <div class="wallet_page" id="wallet_overview">
+        <p class="wallet_title" id="wallet_overview_title">Overview</p>
+        <div id="category_btw_account_container" ></div>
+        <div id="category_btw_account"></div>
+        <p id="wallet_category_choice">Category</p>
+        <p id="wallet_account_choice" onclick="switch_wallet_overview_classification()">Account</p>
+        <p class="wallet_whole_asset_dollor" id="wallet_overview_whole_asset_dollor">＄618,910</p>
+      </div>
+    </div>
+    <!--NFT Market-->
+    <div class="navbar" id="NFT_navbar">
+      <div class="navbar_logo">
         <div class="navbar_logo_img_container">
           <img id="navbar_logo_img" src="./img/logo.png">
         </div>
@@ -190,19 +252,17 @@
           </div>
         </div>
         
-        <div id="navbar_function_container">
-          <p class="navbar_function" id="navbar_function1">Marketpalce</p>
-          <p class="navbar_function" id="navbar_function2">Drops</p>
-          <div id="navbar_function3_container" onmouseover="change_hover_color(this.id)" onmouseout="change_back_hover_color(this.id)">
-            <p class="navbar_function" id="navbar_function3">Brands</p>
-            <div id="navbar_function_triangle_container">
+        <div class="navbar_function_container">
+          <p class="navbar_function" id="navbar_function_marketplace">Marketpalce</p>
+          <p class="navbar_function" id="navbar_function_drops">Drops</p>
+          <div class="navbar_function3_container" id="NFT_navbar_function3_container" onmouseover="change_hover_color(this.id)" onmouseout="change_back_hover_color(this.id)">
+            <p class="navbar_function" id="navbar_function_brands">Brands</p>
+            <div class="navbar_function_triangle_container">
               <div class="triangle_down" id="navbar_triangle_down"></div>
-            </div>
-            
-          </div>
-          
+            </div> 
+          </div> 
         </div>
-        <div id="navbar_vertical_rec"></div>
+        <div class="navbar_vertical_rec" id="NFT__navbar_vertical_rec"></div>
         <p id="navbar_signin">Sign In</p>
         <p id="navbar_signup">Sign Up</p>
       </div>

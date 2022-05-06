@@ -8,6 +8,25 @@ function turn_to_signin_page(btn_id){
   document.getElementById('signin_page').style.display='block';
 }
 
+function turn_to_wallet_page(btn_id){
+  document.getElementById('signin_page').style.display='none';
+  document.getElementById('wallet_navbar').style.display='block';
+  document.getElementById('wallet_overview').style.display='block';
+  document.getElementById('privacybar').style.display='block';
+}
+
+/*function switch_wallet_overview_classification(){
+  if(document.getElementById('category_btw_account').style.left>='65%'){
+    document.getElementById('category_btw_account').style.transition = "all 1s";
+    document.getElementById('category_btw_account').style.width='3.8%';
+    document.getElementById('category_btw_account').style.left='64.75%';
+  }
+  else{
+
+  }
+}*/
+
+
 function close_privacybar(btn_id){
   document.getElementById('privacybar').style.display='none';
 }
@@ -47,6 +66,19 @@ $(document).ready(function(){
   $("#navbar_function3_container").mouseout(function(){
     $("#navbar_function3").css("color","white");
     $("#navbar_triangle_down").css("border-top-color","white");
+  });
+
+  $("#wallet_account_choice").click(function(){
+    console.log("wallet");
+    if($("#category_btw_account").offset().left>='65%'){
+      $("#category_btw_account").animate({left:"64.75%"});
+      $("#category_btw_account").animate({width:"3.8%"});
+    }
+    else{
+      $("#category_btw_account").animate({left:"68.2%"});
+      $("#category_btw_account").animate({width:"3.5%"});
+    }
+    
   });
 });
 
