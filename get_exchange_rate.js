@@ -4,6 +4,7 @@ import "fs";
 import "console";
 
 function getETHtoUSD() {
+return new Promise (function(resolve, reject){
     request({
         url: "https://bitflyer.com/en-us/ethereum-chart",
         method: "GET"
@@ -17,31 +18,43 @@ function getETHtoUSD() {
         var text = rate.text().replace(" ", "")
         var text = text.replace(/\s/g, '')
         var final = text.split("*")[0]
-        console.log("Function Obtained Result:" + final);
-        return final
+        // console.log("Function Obtained Result:" + final);
+        resolve(final)
     })
+})
 }
 
 function getUSDtoNTD() {
-    request({
-        url: "https://www.exchangerates.org.uk/Dollars-to-Taiwan-Dollar-currency-conversion-page.html",
-        method: "GET"
-    }, (error, res, body) => {
-        if (error || !body) {
-            console.log("Error")
-        }
-        const data = [];
-        const $ = cheerio.load(body)
-        const rate = $("#shd2a");
-        var text = rate.text();
-        text = text.replace(/\s/g, '');
-        text = text.split("1USD=");
-        text = text[1].split("TWD");
-        var final = text[0];
-        console.log("Function Obtained Result:" + final);
-        return final;
+    return new Promise(function(resolve, reject){
+        request({
+            url: "https://www.exchangerates.org.uk/Dollars-to-Taiwan-Dollar-currency-conversion-page.html",
+            method: "GET"
+        }, (error, res, body) => {
+            if (error || !body) {
+                console.log("Error")
+            }
+            const data = [];
+            const $ = cheerio.load(body)
+            const rate = $("#shd2a");
+            var text = rate.text();
+            text = text.replace(/\s/g, '');
+            text = text.split("1USD=");
+            text = text[1].split("TWD");
+            var final = text[0];
+            // console.log("Function Obtained Result:" + final);
+    
+            resolve(final);
+    
+    })
+
     })
 }
+
+// README
+// 使用時採用.then的形式，以getETHtoUSD為例，如下：
+// getETHtoUSD().then((function(data){
+//     console.log(data); //print result
+// }))
 
 
 export { getETHtoUSD, getUSDtoNTD }
