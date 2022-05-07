@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="Binchilling.css" />
   </head>
   <script src="./Binchilling.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js?ver=1.3.2'></script>
+  <script type='text/javascript' src='./js/jquery.mousewheel.min.js'></script>
   <body>
     <!--
     <div class="homepage" id="homepage_01">
@@ -69,12 +70,12 @@
         <p id="signup_title">Get more information of your account</p>
       </div>
       <div id="hightlight_container">
-        <p class="highlight" id="highlight1">Highlight 1</p>
-        <p class="highlight_description" id="highlight_description1">Highlight 1Ttitle or something about highlight</p>
-        <p class="highlight" id="highlight2">Highlight2</p>
-        <p class="highlight_description" id="highlight_description2">Highlight 2Ttitle or something about highlight</p>
-        <p class="highlight" id="highlight3">Highlight3</p>
-        <p class="highlight_description" id="highlight_description3">Highlight 3Ttitle or something about highlight</p>
+        <p class="highlight" id="highlight1">Cross accounts</p>
+        <p class="highlight_description" id="highlight_description1">Connect all your accounts in one platform.</p>
+        <p class="highlight" id="highlight2">Overview Chart</p>
+        <p class="highlight_description" id="highlight_description2">Easy, simple and clear.</p>
+        <p class="highlight" id="highlight3">Risk management</p>
+        <p class="highlight_description" id="highlight_description3">Carefully track your asset allocation.</p>
       </div>
         
      
@@ -158,11 +159,13 @@
         <div id="wallet_username_container">
           <p id="wallet_navbar_username">Username</p>
           <div class="navbar_function_triangle_container" id="wallet_navbar_username_triangle_container">
-            <div class="triangle_down" id="navbar_wallet_triangle_down"></div>
+            <div class="triangle_down" id="navbar_wallet_username_triangle_down"></div>
           </div>
         </div>
          
       </div>
+
+      <!---------------------------------------------Wallet overview--------------------------------------------->
       <div class="wallet_page" id="wallet_overview">
         <p class="wallet_title" id="wallet_overview_title">Overview</p>
         <div id="category_btw_account_container" ></div>
@@ -170,1122 +173,1353 @@
         <p id="wallet_category_choice">Category</p>
         <p id="wallet_account_choice" onclick="switch_wallet_overview_classification()">Account</p>
         <p class="wallet_whole_asset_dollor" id="wallet_overview_whole_asset_dollor">＄618,910</p>
+        <div class="wallet_whole_asset_dollor_menu_btn" id="wallet_overview_whole_asset_dollor_menu_btn" onclick="pop_wallet_currency_menu(this.id)">
+          <p class="wallet_whole_asset_dollor_menu" id="wallet_overview_whole_asset_dollor_menu_text">NTD</p>
+          <div class="triangle_down wallet_whole_asset_triangle_down" id="wallet_overview_whole_asset_triangle_down"></div>
+        </div>
+        <div class="wallet_whole_asset_dollor_scrollable_dropdown_menu" id="wallet_overview_whole_asset_scrollable_dollor_menu">
+          <div class="wallet_whole_asset_dollor_dropdown_menu" id="wallet_overview_whole_asset_dollor_menu" >
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_overview_whole_asset_dollor_menu_NTD" onclick="close_wallet_whole_asset_currency_menu(this.id)">NTD</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_first"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_overview_whole_asset_dollor_menu_USD" onclick="close_wallet_whole_asset_currency_menu(this.id)">USD</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_second"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_overview_whole_asset_dollor_menu_JPY" onclick="close_wallet_whole_asset_currency_menu(this.id)">JPY</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_third"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_overview_whole_asset_dollor_menu_ETH" onclick="close_wallet_whole_asset_currency_menu(this.id)">ETH</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_second"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_overview_whole_asset_dollor_menu_RMB" onclick="close_wallet_whole_asset_currency_menu(this.id)">RMB</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_third"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_overview_whole_asset_dollor_menu_EUR" onclick="close_wallet_whole_asset_currency_menu(this.id)">EUR</div>
+          </div>
+        </div>
+      
+        <p class="wallet_show" id="wallet_overview_show">show</p>
+        <p class="wallet_category" id="wallet_overview_category">Category</p>
+        <p class="wallet_totalamount" id="wallet_overview_totalamount">Total amount</p>
+        <p class="wallet_currency" id="wallet_overview_currency">Currency</p>
+        <p class="wallet_percentage" id="wallet_overview_percentage">Percentage</p>
+        <div class="wallet_object_container wallet_object_container1" id="wallet_overview_object_container1">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color1" id="wallet_overview_show_color1" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_overview_category1" onclick="turn_to_specific_wallet(this.id)">NFT</p>
+          <p class="wallet_totalamount_totalamount wallet_text" id="wallet_overview_totalamount1">296,210.326</p>
+          <p class="wallet_currency_currency wallet_text overview" id="wallet_overview_currency1">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text" id="wallet_overview_percentage1">47.86%</p>
+        </div>
+        <div class="wallet_object_container wallet_object_container2" id="wallet_overview_object_container2">
+          <div class="wallet_show_color_container">
+            <p class="wallet_show_color wallet_show_color2" id="wallet_overview_show_color2" onclick="show_wallet_object(this.id)"></p>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_overview_category2">Stock</p>
+          <p class="wallet_totalamount_totalamount wallet_text" id="wallet_overview_totalamount2">175,832.331</p>
+          <p class="wallet_currency_currency wallet_text overview" id="wallet_overview_currency2">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text " id="wallet_overview_percentage2">28.41%</p>
+        </div>
+        <div class="wallet_object_container wallet_object_container3" id="wallet_overview_object_container3">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color3" id="wallet_overview_show_color3" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_overview_category3">Crypto</p>
+          <p class="wallet_totalamount_totalamount wallet_text" id="wallet_overview_totalamount3">91,722.462</p>
+          <p class="wallet_currency_currency wallet_text overview" id="wallet_overview_currency3">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text" id="wallet_overview_percentage3">14.82%</p>
+        </div>
+        <div class="wallet_object_container wallet_object_container4" id="wallet_overview_object_container4">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color4" id="wallet_overview_show_color4" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_overview_category4">CD(For)</p>
+          <p class="wallet_totalamount_totalamount wallet_text" id="wallet_overview_totalamount4">30,017.135</p>
+          <p class="wallet_currency_currency wallet_text overview" id="wallet_overview_currency4">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text" id="wallet_overview_percentage4">4.85%</p>
+        </div>
+        <div class="wallet_object_container wallet_object_container5" id="wallet_overview_object_container5">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color5" id="wallet_overview_show_color5" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_overview_category5">CD(NTD)</p>
+          <p class="wallet_totalamount_totalamount wallet_text" id="wallet_overview_totalamount5">25,127.746</p>
+          <p class="wallet_currency_currency wallet_text overview" id="wallet_overview_currency5">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text" id="wallet_overview_percentage5">4.06%</p>
+        </div>
+      </div>
+
+      <!---------------------------------------------Wallet NFT--------------------------------------------->
+      <div class="wallet_page" id="wallet_NFT">
+        <div id="wallet_NFT_back_container" onclick="turn_to_overview_page(this.id)">
+          <div class="triangle_back"></div>
+          <p id="wallet_NFT_back_text">Back to overview</p>
+        </div>
+        <p class="wallet_title" id="wallet_NFT_title">NFT</p>
+        <p id="explore_NFT_btn" onclick="turn_to_NFT_Martket()">Explore more</p>
+        <p class="wallet_whole_asset_dollor" id="wallet_overview_whole_asset_dollor">＄296,210.326</p>
+        <div class="wallet_whole_asset_dollor_menu_btn" id="wallet_NFT_whole_asset_dollor_menu_btn" onclick="pop_wallet_currency_menu(this.id)">
+          <p class="wallet_whole_asset_dollor_menu" id="wallet_NFT_whole_asset_dollor_menu_text">USD</p>
+          <div class="triangle_down wallet_whole_asset_triangle_down" id="wallet_NFT_whole_asset_triangle_down"></div>
+        </div>
+        <div class="wallet_whole_asset_dollor_scrollable_dropdown_menu" id="wallet_NFT_whole_asset_scrollable_dollor_menu">
+          <div class="wallet_whole_asset_dollor_dropdown_menu" id="wallet_NFT_whole_asset_dollor_menu" >
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_NFT_whole_asset_dollor_menu_NTD" onclick="close_wallet_whole_asset_currency_menu(this.id)">NTD</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_first"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_NFT_whole_asset_dollor_menu_USD" onclick="close_wallet_whole_asset_currency_menu(this.id)">USD</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_second"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_NFT_whole_asset_dollor_menu_JPY" onclick="close_wallet_whole_asset_currency_menu(this.id)">JPY</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_third"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_NFT_whole_asset_dollor_menu_ETH" onclick="close_wallet_whole_asset_currency_menu(this.id)">ETH</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_second"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_NFT_whole_asset_dollor_menu_RMB" onclick="close_wallet_whole_asset_currency_menu(this.id)">RMB</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_third"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_NFT_whole_asset_dollor_menu_EUR" onclick="close_wallet_whole_asset_currency_menu(this.id)">EUR</div>
+          </div>
+        </div>
+        <div id="wallet_NFT_filter_btn" onclick="pop_wallet_NFT_filer_table(this.id)">
+          <div id="wallet_NFT_filter_btn_strips_container">
+            <div class="wallet_NFT_filter_btn_strip_container">
+              <div id="wallet_NFT_filter_btn_strip1"></div>
+            </div>
+            <div class="wallet_NFT_filter_btn_strip_container">
+              <div id="wallet_NFT_filter_btn_strip2"></div>
+            </div>
+            <div class="wallet_NFT_filter_btn_strip_container">
+              <div id="wallet_NFT_filter_btn_strip3"></div>
+            </div>
+          </div>
+          <p id="wallet_NFT_filter_btn_text" >Filter</p>
+        </div>
+        <!--  filter-->
+        <div id="wallet_NFT_filter_table">
+          <div id="navbar_search_title_container">
+            <p id="wallet_NFT_filter_price_text">Price</p>
+            <div id="wallet_NFT_filter_dollor_menu_btn" onclick="pop_wallet_NFT_filter_currency_menu(this.id)">
+              <p id="wallet_NFT_filter_dollor_menu_text">USD</p>
+              <div class="triangle_down wallet_whole_asset_triangle_down" id="wallet_NFT_whole_asset_triangle_down"></div>
+            </div>
+            <div class="wallet_filter_dollor_scrollable_dropdown_menu" id="wallet_NFT_filter_scrollable_dollor_menu">
+              <div class="wallet_whole_asset_dollor_dropdown_menu" id="wallet_NFT_whole_asset_dollor_menu" >
+                <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_NFT_filter_dollor_menu_NTD" onclick="close_wallet_whole_asset_currency_menu(this.id)">NTD</div>
+                <div class="wallet_menu_line" id="wallet_menu_line_first"></div>
+                <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_NFT_filter_dollor_menu_USD" onclick="close_wallet_whole_asset_currency_menu(this.id)">USD</div>
+                <div class="wallet_menu_line" id="wallet_menu_line_second"></div>
+                <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_NFT_filter_dollor_menu_JPY" onclick="close_wallet_whole_asset_currency_menu(this.id)">JPY</div>
+                <div class="wallet_menu_line" id="wallet_menu_line_third"></div>
+                <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_NFT_filter_dollor_menu_ETH" onclick="close_wallet_whole_asset_currency_menu(this.id)">ETH</div>
+                <div class="wallet_menu_line" id="wallet_menu_line_second"></div>
+                <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_NFT_filter_dollor_menu_RMB" onclick="close_wallet_whole_asset_currency_menu(this.id)">RMB</div>
+                <div class="wallet_menu_line" id="wallet_menu_line_third"></div>
+                <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_NFT_filter_dollor_menu_EUR" onclick="close_wallet_whole_asset_currency_menu(this.id)">EUR</div>
+              </div>
+            </div>
+              
+            </form>
+            <p id="wallet_NFT_filter_min_text">Min</p>
+            <div id="wallet_NFT_filter_min_typebox_container">
+              <input class="typebox" id="wallet_NFT_filter_min_typebox" placeholder="Min">
+            </div>
+            <p id="wallet_NFT_filter_to_text">to</p>
+            <p id="wallet_NFT_filter_max_text">Max</p>
+            <div id="wallet_NFT_filter_max_typebox_container">
+              <input class="typebox" id="wallet_NFT_filter_max_typebox" placeholder="Max">
+            </div>
+            
+          </div>
+          <div id="navbar_search_table_line"></div>
+          <div id="navbar_search_category_align_container">
+            <div id="navbar_search_category_container">
+              <p class="navbar_search_category filter_category_all" id="wallet_NFT_filter_category_all" onclick="change_search_category_bgcolor(this.id)">All</p>
+              <p class="navbar_search_category filter_category_art" id="wallet_NFT_filter_category_art" onclick="change_search_category_bgcolor(this.id)">Art</p>
+              <p class="navbar_search_category filter_category_celebrities" id="wallet_NFT_filter_category_celebrities" onclick="change_search_category_bgcolor(this.id)">Celebrities</p>
+              <p class="navbar_search_category filter_category_domainnames" id="wallet_NFT_filter_category_domainnames" onclick="change_search_category_bgcolor(this.id)">Domain Names</p>
+              <p class="navbar_search_category filter_category_music" id="wallet_NFT_filter_category_music" onclick="change_search_category_bgcolor(this.id)">Music</p>
+              <p class="navbar_search_category filter_category_photography" id="wallet_NFT_filter_category_photography" onclick="change_search_category_bgcolor(this.id)">Photography</p>
+              <p class="navbar_search_category filter_category_sports" id="wallet_NFT_filter_category_sports" onclick="change_search_category_bgcolor(this.id)">Sports</p>
+              <p class="navbar_search_category filter_category_tradingcards" id="wallet_NFT_filter_category_tradingcards" onclick="change_search_category_bgcolor(this.id)">Trading cards</p>
+              <p class="navbar_search_category filter_category_utility" id="wallet_NFT_filter_category_utility" onclick="change_search_category_bgcolor(this.id)">Utility</p>
+              <p class="navbar_search_category filter_category_virtualworld" id="wallet_NFT_filter_category_virtualworld" onclick="change_search_category_bgcolor(this.id)">Virtual World</p>
+              <p class="navbar_search_category filter_category_collectibles" id="wallet_NFT_filter_category_collectibles" onclick="change_search_category_bgcolor(this.id)">Collectibles</p>
+              <p class="navbar_search_category filter_category_gaming" id="wallet_NFT_filter_category_gaming" onclick="change_search_category_bgcolor(this.id)">Gaming</p>
+            </div>
+          </div>
+          <div id="navbar_search_confirm_container">
+            <div id="navbar_search_confirm_btn_container">
+              <div class="navbar_search_confirm_btn" id="wallet_NFT_filter_confirm_btn" onclick="close_wallet_NFT_filer_table(this.id)">Apply</div>
+            </div>
+          </div>
+        </div>
+        <!--filter end-->
+        <p id="wallet_NFT_all_btn">All</p>
+        <div class="wallet_NFT_direction_btn" id="wallet_NFT_left_btn">
+          <div id="wallet_NFT_left_btn_direction"></div>
+        </div>
+        <div id="wallet_NFT_NFTs_mask_container">
+          <div id="wallet_NFT_NFTs_container">
+            <div class="wallet_NFT_NFTs" id="wallet_NFT_NFT1">
+              <div class="wallet_NFT_NFTs_img_container" id="wallet_NFT_NFTs_img_container1"></div>
+              <div class="wallet_NFT_NFTs_info_container">
+                <div class="wallet_NFT_NFTs_info_self_container">
+                  <p class="wallet_NFT_NFTs_info_subname" >Death Zoo Vol. 2</p>
+                  <p class="wallet_NFT_NFTs_info_name">I'm a bird</p>
+                  <p class="wallet_NFT_NFTs_info_source">MetaMask</p>
+                </div>
+                <p class="wallet_NFT_NFTs_info_value">1,651.428965</p>
+                <p class="wallet_NFT_NFTs_info_currency" id="wallet_NFT_NFTs_info_currency1">USD</p>
+              </div>
+            </div>
+            <div class="wallet_NFT_NFTs" id="wallet_NFT_NFT2">
+              <div class="wallet_NFT_NFTs_img_container" id="wallet_NFT_NFTs_img_container2"></div>
+              <div class="wallet_NFT_NFTs_info_container">
+                <div class="wallet_NFT_NFTs_info_self_container">
+                  <p class="wallet_NFT_NFTs_info_subname" >Death Zoo Vol. 2</p>
+                  <p class="wallet_NFT_NFTs_info_name">I'm a white tiger</p>
+                  <p class="wallet_NFT_NFTs_info_source">WalletConnect</p>
+                </div>
+                <p class="wallet_NFT_NFTs_info_value">1,455.681035</p>
+                <p class="wallet_NFT_NFTs_info_currency" id="wallet_NFT_NFTs_info_currency2">USD</p>
+              </div>
+            </div>
+            
+            <div class="wallet_NFT_NFTs" id="wallet_NFT_NFT3">
+              <div class="wallet_NFT_NFTs_img_container" id="wallet_NFT_NFTs_img_container3"></div>
+              <div class="wallet_NFT_NFTs_info_container">
+                <div class="wallet_NFT_NFTs_info_self_container">
+                  <p class="wallet_NFT_NFTs_info_subname" >Death Zoo Vol. 2</p>
+                  <p class="wallet_NFT_NFTs_info_name">I'm a bird</p>
+                  <p class="wallet_NFT_NFTs_info_source">MetaMask</p>
+                </div>
+                <p class="wallet_NFT_NFTs_info_value">1,651.428965</p>
+                <p class="wallet_NFT_NFTs_info_currency" id="wallet_NFT_NFTs_info_currency3">USD</p>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        <div class="wallet_NFT_direction_btn" id="wallet_NFT_right_btn">
+          <div id="wallet_NFT_right_btn_direction"></div>
+        </div>
       </div>
     </div>
-    <!--NFT Market-->
-    <div class="navbar" id="NFT_navbar">
-      <div class="navbar_logo">
-        <div class="navbar_logo_img_container">
-          <img id="navbar_logo_img" src="./img/logo.png">
-        </div>
-        <img id="navbar_logo_text" src="./img/logo_text.png">
-      </div>
-      <div id="navbar_nonlogo">
-        <div id="navbar_search">
-          <div id="navbar_search_container">
-            <div id="navbar_search_circle_container">
-              <div id="navbar_search_circle"></div>
-            </div>
-            <div id="navbar_search_text_container" onclick="pop_search_table(this.id)">
-              <div id="navbar_search_text">Search</div>
-            </div>
+    <!---------------------------------------------NFT Market--------------------------------------------->
+    <div id="NFT_Market">
+      <div class="navbar" id="NFT_Market_navbar">
+        <div class="navbar_logo">
+          <div class="navbar_logo_img_container">
+            <img id="navbar_logo_img" src="./img/logo.png">
           </div>
-          <div id="navbar_search_table">
-            <div id="navbar_search_title_container">
-              <form action="#" id="navbar_search_floorprice_container">
-                <div id="navbar_search_floorprice_text_container">
-                  <label id="navbar_search_floorprice_text" for="floor_price_dropdownmenu">Floor price</label>
-                </div>
-                <div id="navbar_search_floorprice_dropdownmenu_container">
-                  <select class="dropdownmenu" id="floor_price_dropdownmenu">
-                    <option selected="selected" disabled="disabled"  style='display: none' value=''></option>
-                    <option value="0.01">0~1</option>
-                    <option value="0.1">1~3</option>
-                    <option value="1">3~5</option>
-                    <option value="1">5~10</option>
-                    <option value="1">10+</option>
-                  </select>
-                </div>
-              </form>
-              <form action="#" id="navbar_search_time_container">
-                <div id="navbar_search_time_text_container">
-                  <label id="navbar_search_time_text" for="time_dropdownmenu">Time</label>
-                </div>
-                <div id="navbar_search_time_dropdownmenu_container">
-                  <select class="dropdownmenu" id="time_dropdownmenu">
-                    <option selected="selected" disabled="disabled"  style='display: none' value=''></option>
-                    <option value="1">Today</option>
-                    <option value="7">Last 24 hours</option>
-                    <option value="30">Last 7 days</option>
-                    <option value="30">Last 14 days</option>
-                    <option value="30">Last 30 days</option>
-                    <option value="30">Last 60 days</option>
-                    <option value="30">Last 90 days</option>
-                    <option value="30">Last year</option>
-                    <option value="30">All times</option>
-                  </select>
-                </div>
-              </form>
-            </div>
-            <div id="navbar_search_table_line"></div>
-            <div id="navbar_search_category_align_container">
-              <div id="navbar_search_category_container">
-                <p class="navbar_search_category" id="navbar_search_category_all" onclick="change_search_category_bgcolor(this.id)">All</p>
-                <p class="navbar_search_category" id="navbar_search_category_art" onclick="change_search_category_bgcolor(this.id)">Art</p>
-                <p class="navbar_search_category" id="navbar_search_category_celebrities" onclick="change_search_category_bgcolor(this.id)">Celebrities</p>
-                <p class="navbar_search_category" id="navbar_search_category_domainnames" onclick="change_search_category_bgcolor(this.id)">Domain Names</p>
-                <p class="navbar_search_category" id="navbar_search_category_music" onclick="change_search_category_bgcolor(this.id)">Music</p>
-                <p class="navbar_search_category" id="navbar_search_category_photography" onclick="change_search_category_bgcolor(this.id)">Photography</p>
-                <p class="navbar_search_category" id="navbar_search_category_sports" onclick="change_search_category_bgcolor(this.id)">Sports</p>
-                <p class="navbar_search_category" id="navbar_search_category_tradingcards" onclick="change_search_category_bgcolor(this.id)">Trading cards</p>
-                <p class="navbar_search_category" id="navbar_search_category_utility" onclick="change_search_category_bgcolor(this.id)">Utility</p>
-                <p class="navbar_search_category" id="navbar_search_category_virtualworld" onclick="change_search_category_bgcolor(this.id)">Virtual World</p>
-                <p class="navbar_search_category" id="navbar_search_category_collectibles" onclick="change_search_category_bgcolor(this.id)">Collectibles</p>
-                <p class="navbar_search_category" id="navbar_search_category_gaming" onclick="change_search_category_bgcolor(this.id)">Gaming</p>
+          <img id="navbar_logo_text" src="./img/logo_text.png">
+        </div>
+        <div id="navbar_nonlogo">
+          <div id="navbar_search">
+            <div id="navbar_search_container">
+              <div id="navbar_search_circle_container">
+                <div id="navbar_search_circle"></div>
+              </div>
+              <div id="navbar_search_text_container" onclick="pop_search_table(this.id)">
+                <div id="navbar_search_text">Search</div>
               </div>
             </div>
-            <div id="navbar_search_confirm_container">
-              <div id="navbar_search_confirm_btn_container">
-                <div id="navbar_search_confirm_btn" onclick="close_search_table(this.id)">Confirm</div>
+            <div id="navbar_search_table">
+              <div id="navbar_search_title_container">
+                <form action="#" id="navbar_search_floorprice_container">
+                  <div id="navbar_search_floorprice_text_container">
+                    <label id="navbar_search_floorprice_text" for="floor_price_dropdownmenu">Floor price</label>
+                  </div>
+                  <div id="navbar_search_floorprice_dropdownmenu_container">
+                    <select class="dropdownmenu" id="floor_price_dropdownmenu">
+                      <option selected="selected" disabled="disabled"  style='display: none' value=''></option>
+                      <option value="0.01">0~1</option>
+                      <option value="0.1">1~3</option>
+                      <option value="1">3~5</option>
+                      <option value="1">5~10</option>
+                      <option value="1">10+</option>
+                    </select>
+                  </div>
+                </form>
+                <form action="#" id="navbar_search_time_container">
+                  <div id="navbar_search_time_text_container">
+                    <label id="navbar_search_time_text" for="time_dropdownmenu">Time</label>
+                  </div>
+                  <div id="navbar_search_time_dropdownmenu_container">
+                    <select class="dropdownmenu" id="time_dropdownmenu">
+                      <option selected="selected" disabled="disabled"  style='display: none' value=''></option>
+                      <option value="1">Today</option>
+                      <option value="7">Last 24 hours</option>
+                      <option value="30">Last 7 days</option>
+                      <option value="30">Last 14 days</option>
+                      <option value="30">Last 30 days</option>
+                      <option value="30">Last 60 days</option>
+                      <option value="30">Last 90 days</option>
+                      <option value="30">Last year</option>
+                      <option value="30">All times</option>
+                    </select>
+                  </div>
+                </form>
+              </div>
+              <div id="navbar_search_table_line"></div>
+              <div id="navbar_search_category_align_container">
+                <div id="navbar_search_category_container">
+                  <p class="navbar_search_category filter_category_all" id="navbar_search_category_all" onclick="change_search_category_bgcolor(this.id)">All</p>
+                  <p class="navbar_search_category filter_category_art" id="navbar_search_category_art" onclick="change_search_category_bgcolor(this.id)">Art</p>
+                  <p class="navbar_search_category filter_category_celebrities" id="navbar_search_category_celebrities" onclick="change_search_category_bgcolor(this.id)">Celebrities</p>
+                  <p class="navbar_search_category filter_category_domainnames" id="navbar_search_category_domainnames" onclick="change_search_category_bgcolor(this.id)">Domain Names</p>
+                  <p class="navbar_search_category filter_category_music" id="navbar_search_category_music" onclick="change_search_category_bgcolor(this.id)">Music</p>
+                  <p class="navbar_search_category filter_category_photography" id="navbar_search_category_photography" onclick="change_search_category_bgcolor(this.id)">Photography</p>
+                  <p class="navbar_search_category filter_category_sports" id="navbar_search_category_sports" onclick="change_search_category_bgcolor(this.id)">Sports</p>
+                  <p class="navbar_search_category filter_category_tradingcards" id="navbar_search_category_tradingcards" onclick="change_search_category_bgcolor(this.id)">Trading cards</p>
+                  <p class="navbar_search_category filter_category_utility" id="navbar_search_category_utility" onclick="change_search_category_bgcolor(this.id)">Utility</p>
+                  <p class="navbar_search_category filter_category_virtualworld" id="navbar_search_category_virtualworld" onclick="change_search_category_bgcolor(this.id)">Virtual World</p>
+                  <p class="navbar_search_category filter_category_collectibles" id="navbar_search_category_collectibles" onclick="change_search_category_bgcolor(this.id)">Collectibles</p>
+                  <p class="navbar_search_category filter_category_gaming" id="navbar_search_category_gaming" onclick="change_search_category_bgcolor(this.id)">Gaming</p>
+                </div>
+              </div>
+              <div id="navbar_search_confirm_container">
+                <div id="navbar_search_confirm_btn_container">
+                  <div class="navbar_search_confirm_btn"id="navbar_search_confirm_btn" onclick="close_search_table(this.id)">Confirm</div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        
-        <div class="navbar_function_container">
-          <p class="navbar_function" id="navbar_function_marketplace">Marketpalce</p>
-          <p class="navbar_function" id="navbar_function_drops">Drops</p>
-          <div class="navbar_function3_container" id="NFT_navbar_function3_container" onmouseover="change_hover_color(this.id)" onmouseout="change_back_hover_color(this.id)">
-            <p class="navbar_function" id="navbar_function_brands">Brands</p>
-            <div class="navbar_function_triangle_container">
-              <div class="triangle_down" id="navbar_triangle_down"></div>
+          
+          <div class="navbar_function_container">
+            <p class="navbar_function" id="navbar_function_marketplace">Marketpalce</p>
+            <p class="navbar_function" id="navbar_function_drops">Drops</p>
+            <div class="navbar_function3_container" id="NFT_navbar_function3_container" onmouseover="change_hover_color(this.id)" onmouseout="change_back_hover_color(this.id)">
+              <p class="navbar_function" id="navbar_function_brands">Brands</p>
+              <div class="navbar_function_triangle_container">
+                <div class="triangle_down" id="navbar_triangle_down"></div>
+              </div> 
             </div> 
-          </div> 
-        </div>
-        <div class="navbar_vertical_rec" id="NFT__navbar_vertical_rec"></div>
-        <p id="navbar_signin">Sign In</p>
-        <p id="navbar_signup">Sign Up</p>
-      </div>
-    </div>
-    <div class="landing_page" id="landing_page_01">
-      <h1 class="title" id="landing_page_01_title">Title or something about our product</h1>
-      <p class="subtitle" id="landing_page_01_subtitle">Subtitle or something about our product</p>
-      <div id="collectibles_view_container">
-        <div id="collectibles_view">
-          <div id="collectibles_view_circle_left"></div>
-          <p id="collectibles_view_upcoming">Upcoming</p>
-          <p id="collectibles_view_date">Mon, April 18</p>
-          <p id="collectibles_view_collectibles">Collectibles</p>
-          <p id="collectibles_view_info">Something about collectibles</p>
-          <div id="collectibles_view_more_container">
-            <div id="collectibles_view_more">View More</div>
           </div>
-          <div id="collectibles_view_selections_bar_container">
-            <div id="collectibles_view_selections_bar">
-              <div class="selections_rec" id="collectibles_view_selections_rec_1"></div>
-              <div class="selections_rec" id="collectibles_view_selections_rec_2"></div>
-              <div class="selections_rec" id="collectibles_view_selections_rec_3"></div>
-              <div class="selections_rec" id="collectibles_view_selections_rec_4"></div>
-            </div>
+          <div class="navbar_vertical_rec" id="NFT__navbar_vertical_rec"></div>
+          <div id="wallet_navbar_head_contianer">
+            <div id="wallet_navbar_head"></div>
           </div>
-          <div id="collectibles_view_circle_right"></div>
-        </div>
-      </div>
-    </div>
-    <div class="landing_page" id="landing_page_02">
-      <div id="landing_page_02_blue">
-        <p class="title" id="landing_page_02_title">Title or something about our product</p>
-        <p class="subtitle" id="landing_page_02_subtitle">Subtitle or something about our product</p>
-        <div id="landing_page_02_subscribe_bar_container">
-          <div id="landing_page_02_subscribe_bar">
-            <div id="landing_page_02_subscribe_email"></div>
-            <div id="landing_page_02_subscribe_btn">
-              <p id="landing_page_02_subscribe_subscribe">Subscribe</p>
-            </div>
-          </div>
-        </div>
-        <div id="landing_page_02_info_align_container">
-          <div id="landing_page_02_info_container">
-            <p class="landing_page_02_info">After reading the Privacy Notice, you may subscribe for our newsletter to get special</p>
-            <p class="landing_page_02_info">offers and occasional surveys delivered to your inbox. Unsubscribe at any time by</p>
-            <p class="landing_page_02_info">on the link in the email.</p>
-          </div>
-        </div>
-        <div id="landing_page_02_agree_align_container">
-          <p id="landing_page_02_agree_container">
-            <input type="checkbox" id="landing_page_02_checkbox" value="subscribe_agreement">
-            <label for="landing_page_02_checkbox" id="landing_page_02_agreement">By entering my email and subscribing I confirm and agree to the above.</label>
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="landing_page" id="landing_page_03">
-      <div id="top_creators_view_top_selling_container">
-        <div id="top_creators_view_top_selling">Top Selling</div>
-      </div>
-      <p id="landing_page_03_top_creators_title">Top Creators</p>
-      <div id="top_creators_view_circle_left"></div>
-      <div id="top_creators_view_circle_right"></div>
-      <div id="top_creators_view_profile_align_container_container">
-        <div id="top_creators_view_profile_align_container">
-          <div class="top_creators_view_profile_container" id="top_creators_view_profile_container_1">
-            <div class="top_creators_view_profile_photo" id="top_creators_view_profile_photo_1"></div>
-            <p class="top_creators_view_profile_name" id="top_creators_view_profile_creator_1">Creator</p>
-            <div class="top_creators_view_profile_value_container" id="top_creators_view_profile_value_container_1">
-              <div class="top_creators_view_profile_num_container" id="top_creators_view_profile_num_1">
-                <p class="top_creators_view_profile_num">1</p>
-              </div>
-              <p class="top_creators_view_profile_dollor">＄1,000,000 +</p>
-            </div>
-          </div>
-          <div class="top_creators_view_profile_container" id="top_creators_view_profile_container_2">
-            <div class="top_creators_view_profile_photo" id="top_creators_view_profile_photo_2"></div>
-            <p class="top_creators_view_profile_name" id="top_creators_view_profile_creator_2">Creator</p>
-            <div class="top_creators_view_profile_value_container" id="top_creators_view_profile_value_container_2">
-              <div class="top_creators_view_profile_num_container" id="top_creators_view_profile_num_2">
-                <p class="top_creators_view_profile_num">2</p>
-              </div>
-              <p class="top_creators_view_profile_dollor">＄1,000,000 +</p>
-            </div>
-          </div>
-          <div class="top_creators_view_profile_container" id="top_creators_view_profile_container_3">
-            <div class="top_creators_view_profile_photo" id="top_creators_view_profile_photo_3"></div>
-            <p class="top_creators_view_profile_name" id="top_creators_view_profile_creator_3">Creator</p>
-            <div class="top_creators_view_profile_value_container" id="top_creators_view_profile_value_container_3">
-              <div class="top_creators_view_profile_num_container" id="top_creators_view_profile_num_3">
-                <p class="top_creators_view_profile_num">3</p>
-              </div>
-              <p class="top_creators_view_profile_dollor">＄1,000,000 +</p>
-            </div>
-          </div>
-          <div class="top_creators_view_profile_container" id="top_creators_view_profile_container_4">
-            <div class="top_creators_view_profile_photo" id="top_creators_view_profile_photo_4"></div>
-            <p class="top_creators_view_profile_name" id="top_creators_view_profile_creator_4">Creator</p>
-            <div class="top_creators_view_profile_value_container" id="top_creators_view_profile_value_container_4">
-              <div class="top_creators_view_profile_num_container" id="top_creators_view_profile_num_4">
-                <p class="top_creators_view_profile_num">4</p>
-              </div>
-              <p class="top_creators_view_profile_dollor">＄1,000,000 +</p>
-            </div>
-          </div>
-          <div class="top_creators_view_profile_container" id="top_creators_view_profile_container_5">
-            <div class="top_creators_view_profile_photo" id="top_creators_view_profile_photo_5"></div>
-            <p class="top_creators_view_profile_name" id="top_creators_view_profile_creator_5">Creator</p>
-            <div class="top_creators_view_profile_value_container" id="top_creators_view_profile_value_container_5">
-              <div class="top_creators_view_profile_num_container" id="top_creators_view_profile_num_5">
-                <p class="top_creators_view_profile_num">5</p>
-              </div>
-              <p class="top_creators_view_profile_dollor">＄1,000,000 +</p>
-            </div>
-          </div>
-          <div class="top_creators_view_profile_container" id="top_creators_view_profile_container_6">
-            <div class="top_creators_view_profile_photo" id="top_creators_view_profile_photo_6"></div>
-            <p class="top_creators_view_profile_name" id="top_creators_view_profile_creator_6">Creator</p>
-            <div class="top_creators_view_profile_value_container" id="top_creators_view_profile_value_container_6">
-              <div class="top_creators_view_profile_num_container" id="top_creators_view_profile_num_6">
-                <p class="top_creators_view_profile_num">6</p>
-              </div>
-              <p class="top_creators_view_profile_dollor">＄1,000,000 +</p>
+          <div id="wallet_username_container">
+            <p id="wallet_navbar_username">Username</p>
+            <div class="navbar_function_triangle_container" id="wallet_navbar_username_triangle_container">
+              <div class="triangle_down" id="navbar_wallet_username_triangle_down"></div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-
-    <!-- Start -->
-    <div class="landing_page" id="landing_page_04">
-      <p id="landing_page_04_top_collections_title">Top Collections</p>
-      <div class="top_collect04_top_container">
+      <div class="landing_page" id="landing_page_01">
+        <h1 class="title" id="landing_page_01_title">Title or something about our product</h1>
+        <p class="subtitle" id="landing_page_01_subtitle">Subtitle or something about our product</p>
+        <div id="collectibles_view_container">
+          <div id="collectibles_view">
+            <div id="collectibles_view_circle_left"></div>
+            <p id="collectibles_view_upcoming">Upcoming</p>
+            <p id="collectibles_view_date">Mon, April 18</p>
+            <p id="collectibles_view_collectibles">Collectibles</p>
+            <p id="collectibles_view_info">Something about collectibles</p>
+            <div id="collectibles_view_more_container">
+              <div id="collectibles_view_more">View More</div>
+            </div>
+            <div id="collectibles_view_selections_bar_container">
+              <div id="collectibles_view_selections_bar">
+                <div class="selections_rec" id="collectibles_view_selections_rec_1"></div>
+                <div class="selections_rec" id="collectibles_view_selections_rec_2"></div>
+                <div class="selections_rec" id="collectibles_view_selections_rec_3"></div>
+                <div class="selections_rec" id="collectibles_view_selections_rec_4"></div>
+              </div>
+            </div>
+            <div id="collectibles_view_circle_right"></div>
+          </div>
+        </div>
+      </div>
+      <div class="landing_page" id="landing_page_02">
+        <div id="landing_page_02_blue">
+          <p class="title" id="landing_page_02_title">Title or something about our product</p>
+          <p class="subtitle" id="landing_page_02_subtitle">Subtitle or something about our product</p>
+          <div id="landing_page_02_subscribe_bar_container">
+            <div id="landing_page_02_subscribe_bar">
+              <div id="landing_page_02_subscribe_email"></div>
+              <div id="landing_page_02_subscribe_btn">
+                <p id="landing_page_02_subscribe_subscribe">Subscribe</p>
+              </div>
+            </div>
+          </div>
+          <div id="landing_page_02_info_align_container">
+            <div id="landing_page_02_info_container">
+              <p class="landing_page_02_info">After reading the Privacy Notice, you may subscribe for our newsletter to get special</p>
+              <p class="landing_page_02_info">offers and occasional surveys delivered to your inbox. Unsubscribe at any time by</p>
+              <p class="landing_page_02_info">on the link in the email.</p>
+            </div>
+          </div>
+          <div id="landing_page_02_agree_align_container">
+            <p id="landing_page_02_agree_container">
+              <input type="checkbox" id="landing_page_02_checkbox" value="subscribe_agreement">
+              <label for="landing_page_02_checkbox" id="landing_page_02_agreement">By entering my email and subscribing I confirm and agree to the above.</label>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="landing_page" id="landing_page_03">
+        <div id="top_creators_view_top_selling_container">
+          <div id="top_creators_view_top_selling">Top Selling</div>
+        </div>
+        <p id="landing_page_03_top_creators_title">Top Creators</p>
+        <div id="top_creators_view_circle_left"></div>
+        <div id="top_creators_view_circle_right"></div>
+        <div id="top_creators_view_profile_align_container_container">
+          <div id="top_creators_view_profile_align_container">
+            <div class="top_creators_view_profile_container" id="top_creators_view_profile_container_1">
+              <div class="top_creators_view_profile_photo" id="top_creators_view_profile_photo_1"></div>
+              <p class="top_creators_view_profile_name" id="top_creators_view_profile_creator_1">Creator</p>
+              <div class="top_creators_view_profile_value_container" id="top_creators_view_profile_value_container_1">
+                <div class="top_creators_view_profile_num_container" id="top_creators_view_profile_num_1">
+                  <p class="top_creators_view_profile_num">1</p>
+                </div>
+                <p class="top_creators_view_profile_dollor">＄1,000,000 +</p>
+              </div>
+            </div>
+            <div class="top_creators_view_profile_container" id="top_creators_view_profile_container_2">
+              <div class="top_creators_view_profile_photo" id="top_creators_view_profile_photo_2"></div>
+              <p class="top_creators_view_profile_name" id="top_creators_view_profile_creator_2">Creator</p>
+              <div class="top_creators_view_profile_value_container" id="top_creators_view_profile_value_container_2">
+                <div class="top_creators_view_profile_num_container" id="top_creators_view_profile_num_2">
+                  <p class="top_creators_view_profile_num">2</p>
+                </div>
+                <p class="top_creators_view_profile_dollor">＄1,000,000 +</p>
+              </div>
+            </div>
+            <div class="top_creators_view_profile_container" id="top_creators_view_profile_container_3">
+              <div class="top_creators_view_profile_photo" id="top_creators_view_profile_photo_3"></div>
+              <p class="top_creators_view_profile_name" id="top_creators_view_profile_creator_3">Creator</p>
+              <div class="top_creators_view_profile_value_container" id="top_creators_view_profile_value_container_3">
+                <div class="top_creators_view_profile_num_container" id="top_creators_view_profile_num_3">
+                  <p class="top_creators_view_profile_num">3</p>
+                </div>
+                <p class="top_creators_view_profile_dollor">＄1,000,000 +</p>
+              </div>
+            </div>
+            <div class="top_creators_view_profile_container" id="top_creators_view_profile_container_4">
+              <div class="top_creators_view_profile_photo" id="top_creators_view_profile_photo_4"></div>
+              <p class="top_creators_view_profile_name" id="top_creators_view_profile_creator_4">Creator</p>
+              <div class="top_creators_view_profile_value_container" id="top_creators_view_profile_value_container_4">
+                <div class="top_creators_view_profile_num_container" id="top_creators_view_profile_num_4">
+                  <p class="top_creators_view_profile_num">4</p>
+                </div>
+                <p class="top_creators_view_profile_dollor">＄1,000,000 +</p>
+              </div>
+            </div>
+            <div class="top_creators_view_profile_container" id="top_creators_view_profile_container_5">
+              <div class="top_creators_view_profile_photo" id="top_creators_view_profile_photo_5"></div>
+              <p class="top_creators_view_profile_name" id="top_creators_view_profile_creator_5">Creator</p>
+              <div class="top_creators_view_profile_value_container" id="top_creators_view_profile_value_container_5">
+                <div class="top_creators_view_profile_num_container" id="top_creators_view_profile_num_5">
+                  <p class="top_creators_view_profile_num">5</p>
+                </div>
+                <p class="top_creators_view_profile_dollor">＄1,000,000 +</p>
+              </div>
+            </div>
+            <div class="top_creators_view_profile_container" id="top_creators_view_profile_container_6">
+              <div class="top_creators_view_profile_photo" id="top_creators_view_profile_photo_6"></div>
+              <p class="top_creators_view_profile_name" id="top_creators_view_profile_creator_6">Creator</p>
+              <div class="top_creators_view_profile_value_container" id="top_creators_view_profile_value_container_6">
+                <div class="top_creators_view_profile_num_container" id="top_creators_view_profile_num_6">
+                  <p class="top_creators_view_profile_num">6</p>
+                </div>
+                <p class="top_creators_view_profile_dollor">＄1,000,000 +</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Start -->
+      <div class="landing_page" id="landing_page_04">
+        <p id="landing_page_04_top_collections_title">Top Collections</p>
+        <div class="top_collect04_top_container">
+          <div>
+            <span>Sort By</span>
+            <select>
+              <option selected="selected">Sales Volume</option>
+              <option>XXX</option>
+            </select>
+          </div>
+          <div>
+            <button>Today</button>
+            <button>Last 7 Days</button>
+            <button>Last 30 Days</button>
+          </div>
+        </div>
+        <div class="p04_round_card_container">
+          <div class="round_card">
+            <span>1</span>
+            <img src="./p0405/Ellipse 21.png" alt="" />
+            <div class="paragraph" style="width: 350px">
+              <img
+                src="./p0405/Psychokitties_ The Rid....png"
+                alt=""
+                style="width: 235px"
+              />
+              <div class="paragraph_1">
+                <img src="./p0405/Volume.png" alt="" />
+                <img src="./p0405/＄666.png" alt="" />
+                <div class="mark"><img src="./p0405/+66.66_.png" alt="" /></div>
+              </div>
+              <div class="paragraph_2">
+                <img src="./p0405/Volume-1.png" alt="" />
+                <img src="./p0405/＄666.6K.png" alt="" />
+                <img src="./p0405/+66.66_.png" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="round_card">
+            <span>1</span>
+            <img src="./p0405/Ellipse 21.png" alt="" />
+            <div class="paragraph" style="width: 350px">
+              <img
+                src="./p0405/Psychokitties_ The Rid....png"
+                alt=""
+                style="width: 235px"
+              />
+              <div class="paragraph_1">
+                <img src="./p0405/Volume.png" alt="" />
+                <img src="./p0405/＄666.png" alt="" />
+                <div class="mark"><img src="./p0405/+66.66_.png" alt="" /></div>
+              </div>
+              <div class="paragraph_2">
+                <img src="./p0405/Volume-1.png" alt="" />
+                <img src="./p0405/＄666.6K.png" alt="" />
+                <img src="./p0405/+66.66_.png" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="round_card">
+            <span>1</span>
+            <img src="./p0405/Ellipse 21.png" alt="" />
+            <div class="paragraph" style="width: 350px">
+              <img
+                src="./p0405/Psychokitties_ The Rid....png"
+                alt=""
+                style="width: 235px"
+              />
+              <div class="paragraph_1">
+                <img src="./p0405/Volume.png" alt="" />
+                <img src="./p0405/＄666.png" alt="" />
+                <div class="mark"><img src="./p0405/+66.66_.png" alt="" /></div>
+              </div>
+              <div class="paragraph_2">
+                <img src="./p0405/Volume-1.png" alt="" />
+                <img src="./p0405/＄666.6K.png" alt="" />
+                <img src="./p0405/+66.66_.png" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="round_card">
+            <span>1</span>
+            <img src="./p0405/Ellipse 21.png" alt="" />
+            <div class="paragraph" style="width: 350px">
+              <img
+                src="./p0405/Psychokitties_ The Rid....png"
+                alt=""
+                style="width: 235px"
+              />
+              <div class="paragraph_1">
+                <img src="./p0405/Volume.png" alt="" />
+                <img src="./p0405/＄666.png" alt="" />
+                <div class="mark"><img src="./p0405/+66.66_.png" alt="" /></div>
+              </div>
+              <div class="paragraph_2">
+                <img src="./p0405/Volume-1.png" alt="" />
+                <img src="./p0405/＄666.6K.png" alt="" />
+                <img src="./p0405/+66.66_.png" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="round_card">
+            <span>1</span>
+            <img src="./p0405/Ellipse 21.png" alt="" />
+            <div class="paragraph" style="width: 350px">
+              <img
+                src="./p0405/Psychokitties_ The Rid....png"
+                alt=""
+                style="width: 235px"
+              />
+              <div class="paragraph_1">
+                <img src="./p0405/Volume.png" alt="" />
+                <img src="./p0405/＄666.png" alt="" />
+                <div class="mark"><img src="./p0405/+66.66_.png" alt="" /></div>
+              </div>
+              <div class="paragraph_2">
+                <img src="./p0405/Volume-1.png" alt="" />
+                <img src="./p0405/＄666.6K.png" alt="" />
+                <img src="./p0405/+66.66_.png" alt="" />
+              </div>
+            </div>
+          </div>
+          <!-- 6 -->
+          <div class="round_card">
+            <span>1</span>
+            <img src="./p0405/Ellipse 21.png" alt="" />
+            <div class="paragraph" style="width: 350px">
+              <img
+                src="./p0405/Psychokitties_ The Rid....png"
+                alt=""
+                style="width: 235px"
+              />
+              <div class="paragraph_1">
+                <img src="./p0405/Volume.png" alt="" />
+                <img src="./p0405/＄666.png" alt="" />
+                <div class="mark"><img src="./p0405/+66.66_.png" alt="" /></div>
+              </div>
+              <div class="paragraph_2">
+                <img src="./p0405/Volume-1.png" alt="" />
+                <img src="./p0405/＄666.6K.png" alt="" />
+                <img src="./p0405/+66.66_.png" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="round_card">
+            <span>1</span>
+            <img src="./p0405/Ellipse 21.png" alt="" />
+            <div class="paragraph" style="width: 350px">
+              <img
+                src="./p0405/Psychokitties_ The Rid....png"
+                alt=""
+                style="width: 235px"
+              />
+              <div class="paragraph_1">
+                <img src="./p0405/Volume.png" alt="" />
+                <img src="./p0405/＄666.png" alt="" />
+                <div class="mark"><img src="./p0405/+66.66_.png" alt="" /></div>
+              </div>
+              <div class="paragraph_2">
+                <img src="./p0405/Volume-1.png" alt="" />
+                <img src="./p0405/＄666.6K.png" alt="" />
+                <img src="./p0405/+66.66_.png" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="round_card">
+            <span>1</span>
+            <img src="./p0405/Ellipse 21.png" alt="" />
+            <div class="paragraph" style="width: 350px">
+              <img
+                src="./p0405/Psychokitties_ The Rid....png"
+                alt=""
+                style="width: 235px"
+              />
+              <div class="paragraph_1">
+                <img src="./p0405/Volume.png" alt="" />
+                <img src="./p0405/＄666.png" alt="" />
+                <div class="mark"><img src="./p0405/+66.66_.png" alt="" /></div>
+              </div>
+              <div class="paragraph_2">
+                <img src="./p0405/Volume-1.png" alt="" />
+                <img src="./p0405/＄666.6K.png" alt="" />
+                <img src="./p0405/+66.66_.png" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="round_card">
+            <span>1</span>
+            <img src="./p0405/Ellipse 21.png" alt="" />
+            <div class="paragraph" style="width: 350px">
+              <img
+                src="./p0405/Psychokitties_ The Rid....png"
+                alt=""
+                style="width: 235px"
+              />
+              <div class="paragraph_1">
+                <img src="./p0405/Volume.png" alt="" />
+                <img src="./p0405/＄666.png" alt="" />
+                <div class="mark"><img src="./p0405/+66.66_.png" alt="" /></div>
+              </div>
+              <div class="paragraph_2">
+                <img src="./p0405/Volume-1.png" alt="" />
+                <img src="./p0405/＄666.6K.png" alt="" />
+                <img src="./p0405/+66.66_.png" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="round_card">
+            <span>1</span>
+            <img src="./p0405/Ellipse 21.png" alt="" />
+            <div class="paragraph" style="width: 350px">
+              <img
+                src="./p0405/Psychokitties_ The Rid....png"
+                alt=""
+                style="width: 235px"
+              />
+              <div class="paragraph_1">
+                <img src="./p0405/Volume.png" alt="" />
+                <img src="./p0405/＄666.png" alt="" />
+                <div class="mark"><img src="./p0405/+66.66_.png" alt="" /></div>
+              </div>
+              <div class="paragraph_2">
+                <img src="./p0405/Volume-1.png" alt="" />
+                <img src="./p0405/＄666.6K.png" alt="" />
+                <img src="./p0405/+66.66_.png" alt="" />
+              </div>
+            </div>
+          </div>
+          <!-- 11 -->
+          <div class="round_card">
+            <span>1</span>
+            <img src="./p0405/Ellipse 21.png" alt="" />
+            <div class="paragraph" style="width: 350px">
+              <img
+                src="./p0405/Psychokitties_ The Rid....png"
+                alt=""
+                style="width: 235px"
+              />
+              <div class="paragraph_1">
+                <img src="./p0405/Volume.png" alt="" />
+                <img src="./p0405/＄666.png" alt="" />
+                <div class="mark"><img src="./p0405/+66.66_.png" alt="" /></div>
+              </div>
+              <div class="paragraph_2">
+                <img src="./p0405/Volume-1.png" alt="" />
+                <img src="./p0405/＄666.6K.png" alt="" />
+                <img src="./p0405/+66.66_.png" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="round_card">
+            <span>1</span>
+            <img src="./p0405/Ellipse 21.png" alt="" />
+            <div class="paragraph" style="width: 350px">
+              <img
+                src="./p0405/Psychokitties_ The Rid....png"
+                alt=""
+                style="width: 235px"
+              />
+              <div class="paragraph_1">
+                <img src="./p0405/Volume.png" alt="" />
+                <img src="./p0405/＄666.png" alt="" />
+                <div class="mark"><img src="./p0405/+66.66_.png" alt="" /></div>
+              </div>
+              <div class="paragraph_2">
+                <img src="./p0405/Volume-1.png" alt="" />
+                <img src="./p0405/＄666.6K.png" alt="" />
+                <img src="./p0405/+66.66_.png" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="round_card">
+            <span>1</span>
+            <img src="./p0405/Ellipse 21.png" alt="" />
+            <div class="paragraph" style="width: 350px">
+              <img
+                src="./p0405/Psychokitties_ The Rid....png"
+                alt=""
+                style="width: 235px"
+              />
+              <div class="paragraph_1">
+                <img src="./p0405/Volume.png" alt="" />
+                <img src="./p0405/＄666.png" alt="" />
+                <div class="mark"><img src="./p0405/+66.66_.png" alt="" /></div>
+              </div>
+              <div class="paragraph_2">
+                <img src="./p0405/Volume-1.png" alt="" />
+                <img src="./p0405/＄666.6K.png" alt="" />
+                <img src="./p0405/+66.66_.png" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="round_card">
+            <span>1</span>
+            <img src="./p0405/Ellipse 21.png" alt="" />
+            <div class="paragraph" style="width: 350px">
+              <img
+                src="./p0405/Psychokitties_ The Rid....png"
+                alt=""
+                style="width: 235px"
+              />
+              <div class="paragraph_1">
+                <img src="./p0405/Volume.png" alt="" />
+                <img src="./p0405/＄666.png" alt="" />
+                <div class="mark"><img src="./p0405/+66.66_.png" alt="" /></div>
+              </div>
+              <div class="paragraph_2">
+                <img src="./p0405/Volume-1.png" alt="" />
+                <img src="./p0405/＄666.6K.png" alt="" />
+                <img src="./p0405/+66.66_.png" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="round_card">
+            <span>1</span>
+            <img src="./p0405/Ellipse 21.png" alt="" />
+            <div class="paragraph" style="width: 350px">
+              <img
+                src="./p0405/Psychokitties_ The Rid....png"
+                alt=""
+                style="width: 235px"
+              />
+              <div class="paragraph_1">
+                <img src="./p0405/Volume.png" alt="" />
+                <img src="./p0405/＄666.png" alt="" />
+                <div class="mark"><img src="./p0405/+66.66_.png" alt="" /></div>
+              </div>
+              <div class="paragraph_2">
+                <img src="./p0405/Volume-1.png" alt="" />
+                <img src="./p0405/＄666.6K.png" alt="" />
+                <img src="./p0405/+66.66_.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="landing_page_collectibles" id="landing_page_05">
+        <p id="landing_page_05_top_collections_title">Top Collectibles</p>
+        <div class="top_collect_05_top_container">
+          <div>
+            <span>Sort By</span>
+            <select>
+              <option selected="selected">Sales Volume</option>
+              <option>XXX</option>
+            </select>
+          </div>
+          <div>
+            <button>Today</button>
+            <button>Last 7 Days</button>
+            <button>Last 30 Days</button>
+          </div>
+        </div>
+        <div id="p05_card_container">
+          <div class="square_card">
+            <div class="image"></div>
+            <div class="text">
+              <img
+                src="./p0405/Intersteller Ricky x The Athlete Artest-3.png"
+                alt=""
+              />
+              <div class="price">
+                <img
+                  style="width: 97px; height: 12px"
+                  src="./p0405/FLOOR PRICE.png"
+                  alt=""
+                />
+                <div class="row">
+                  <div class="vertical">
+                    <img src="./p0405/AUCTION.png" alt="" />
+                    <img src="./p0405/Group 21-2.png" alt="" />
+                  </div>
+                  <img src="./p0405/Vector 3.png" alt="" />
+                  <div class="vertical">
+                    <img src="./p0405/BUY NOW.png" alt="" />
+                    <img src="./p0405/Group 20.png" alt="" />
+                  </div>
+                </div>
+                <img
+                  style="width: 87px; height: 11px"
+                  src="./p0405/Defi The Game.png"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+          <div class="square_card">
+            <div class="image"></div>
+            <div class="text">
+              <img
+                src="./p0405/Intersteller Ricky x The Athlete Artest-3.png"
+                alt=""
+              />
+              <div class="price">
+                <img
+                  style="width: 97px; height: 12px"
+                  src="./p0405/FLOOR PRICE.png"
+                  alt=""
+                />
+                <div class="row">
+                  <div class="vertical">
+                    <img src="./p0405/AUCTION.png" alt="" />
+                    <img src="./p0405/Group 21-2.png" alt="" />
+                  </div>
+                  <img src="./p0405/Vector 3.png" alt="" />
+                  <div class="vertical">
+                    <img src="./p0405/BUY NOW.png" alt="" />
+                    <img src="./p0405/Group 20.png" alt="" />
+                  </div>
+                </div>
+                <img
+                  style="width: 87px; height: 11px"
+                  src="./p0405/Defi The Game.png"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+          <div class="square_card">
+            <div class="image"></div>
+            <div class="text">
+              <img
+                src="./p0405/Intersteller Ricky x The Athlete Artest-3.png"
+                alt=""
+              />
+              <div class="price">
+                <img
+                  style="width: 97px; height: 12px"
+                  src="./p0405/FLOOR PRICE.png"
+                  alt=""
+                />
+                <div class="row">
+                  <div class="vertical">
+                    <img src="./p0405/AUCTION.png" alt="" />
+                    <img src="./p0405/Group 21-2.png" alt="" />
+                  </div>
+                  <img src="./p0405/Vector 3.png" alt="" />
+                  <div class="vertical">
+                    <img src="./p0405/BUY NOW.png" alt="" />
+                    <img src="./p0405/Group 20.png" alt="" />
+                  </div>
+                </div>
+                <img
+                  style="width: 87px; height: 11px"
+                  src="./p0405/Defi The Game.png"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+          <div class="square_card">
+            <div class="image"></div>
+            <div class="text">
+              <img
+                src="./p0405/Intersteller Ricky x The Athlete Artest-3.png"
+                alt=""
+              />
+              <div class="price">
+                <img
+                  style="width: 97px; height: 12px"
+                  src="./p0405/FLOOR PRICE.png"
+                  alt=""
+                />
+                <div class="row">
+                  <div class="vertical">
+                    <img src="./p0405/AUCTION.png" alt="" />
+                    <img src="./p0405/Group 21-2.png" alt="" />
+                  </div>
+                  <img src="./p0405/Vector 3.png" alt="" />
+                  <div class="vertical">
+                    <img src="./p0405/BUY NOW.png" alt="" />
+                    <img src="./p0405/Group 20.png" alt="" />
+                  </div>
+                </div>
+                <img
+                  style="width: 87px; height: 11px"
+                  src="./p0405/Defi The Game.png"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+          <!-- 5 -->
+          <div class="square_card">
+            <div class="image"></div>
+            <div class="text">
+              <img
+                src="./p0405/Intersteller Ricky x The Athlete Artest-3.png"
+                alt=""
+              />
+              <div class="price">
+                <img
+                  style="width: 97px; height: 12px"
+                  src="./p0405/FLOOR PRICE.png"
+                  alt=""
+                />
+                <div class="row">
+                  <div class="vertical">
+                    <img src="./p0405/AUCTION.png" alt="" />
+                    <img src="./p0405/Group 21-2.png" alt="" />
+                  </div>
+                  <img src="./p0405/Vector 3.png" alt="" />
+                  <div class="vertical">
+                    <img src="./p0405/BUY NOW.png" alt="" />
+                    <img src="./p0405/Group 20.png" alt="" />
+                  </div>
+                </div>
+                <img
+                  style="width: 87px; height: 11px"
+                  src="./p0405/Defi The Game.png"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+          <div class="square_card">
+            <div class="image"></div>
+            <div class="text">
+              <img
+                src="./p0405/Intersteller Ricky x The Athlete Artest-3.png"
+                alt=""
+              />
+              <div class="price">
+                <img
+                  style="width: 97px; height: 12px"
+                  src="./p0405/FLOOR PRICE.png"
+                  alt=""
+                />
+                <div class="row">
+                  <div class="vertical">
+                    <img src="./p0405/AUCTION.png" alt="" />
+                    <img src="./p0405/Group 21-2.png" alt="" />
+                  </div>
+                  <img src="./p0405/Vector 3.png" alt="" />
+                  <div class="vertical">
+                    <img src="./p0405/BUY NOW.png" alt="" />
+                    <img src="./p0405/Group 20.png" alt="" />
+                  </div>
+                </div>
+                <img
+                  style="width: 87px; height: 11px"
+                  src="./p0405/Defi The Game.png"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+          <div class="square_card">
+            <div class="image"></div>
+            <div class="text">
+              <img
+                src="./p0405/Intersteller Ricky x The Athlete Artest-3.png"
+                alt=""
+              />
+              <div class="price">
+                <img
+                  style="width: 97px; height: 12px"
+                  src="./p0405/FLOOR PRICE.png"
+                  alt=""
+                />
+                <div class="row">
+                  <div class="vertical">
+                    <img src="./p0405/AUCTION.png" alt="" />
+                    <img src="./p0405/Group 21-2.png" alt="" />
+                  </div>
+                  <img src="./p0405/Vector 3.png" alt="" />
+                  <div class="vertical">
+                    <img src="./p0405/BUY NOW.png" alt="" />
+                    <img src="./p0405/Group 20.png" alt="" />
+                  </div>
+                </div>
+                <img
+                  style="width: 87px; height: 11px"
+                  src="./p0405/Defi The Game.png"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+          <div class="square_card">
+            <div class="image"></div>
+            <div class="text">
+              <img
+                src="./p0405/Intersteller Ricky x The Athlete Artest-3.png"
+                alt=""
+              />
+              <div class="price">
+                <img
+                  style="width: 97px; height: 12px"
+                  src="./p0405/FLOOR PRICE.png"
+                  alt=""
+                />
+                <div class="row">
+                  <div class="vertical">
+                    <img src="./p0405/AUCTION.png" alt="" />
+                    <img src="./p0405/Group 21-2.png" alt="" />
+                  </div>
+                  <img src="./p0405/Vector 3.png" alt="" />
+                  <div class="vertical">
+                    <img src="./p0405/BUY NOW.png" alt="" />
+                    <img src="./p0405/Group 20.png" alt="" />
+                  </div>
+                </div>
+                <img
+                  style="width: 87px; height: 11px"
+                  src="./p0405/Defi The Game.png"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+          <!-- 9 -->
+          <div class="square_card">
+            <div class="image"></div>
+            <div class="text">
+              <img
+                src="./p0405/Intersteller Ricky x The Athlete Artest-3.png"
+                alt=""
+              />
+              <div class="price">
+                <img
+                  style="width: 97px; height: 12px"
+                  src="./p0405/FLOOR PRICE.png"
+                  alt=""
+                />
+                <div class="row">
+                  <div class="vertical">
+                    <img src="./p0405/AUCTION.png" alt="" />
+                    <img src="./p0405/Group 21-2.png" alt="" />
+                  </div>
+                  <img src="./p0405/Vector 3.png" alt="" />
+                  <div class="vertical">
+                    <img src="./p0405/BUY NOW.png" alt="" />
+                    <img src="./p0405/Group 20.png" alt="" />
+                  </div>
+                </div>
+                <img
+                  style="width: 87px; height: 11px"
+                  src="./p0405/Defi The Game.png"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+          <div class="square_card">
+            <div class="image"></div>
+            <div class="text">
+              <img
+                src="./p0405/Intersteller Ricky x The Athlete Artest-3.png"
+                alt=""
+              />
+              <div class="price">
+                <img
+                  style="width: 97px; height: 12px"
+                  src="./p0405/FLOOR PRICE.png"
+                  alt=""
+                />
+                <div class="row">
+                  <div class="vertical">
+                    <img src="./p0405/AUCTION.png" alt="" />
+                    <img src="./p0405/Group 21-2.png" alt="" />
+                  </div>
+                  <img src="./p0405/Vector 3.png" alt="" />
+                  <div class="vertical">
+                    <img src="./p0405/BUY NOW.png" alt="" />
+                    <img src="./p0405/Group 20.png" alt="" />
+                  </div>
+                </div>
+                <img
+                  style="width: 87px; height: 11px"
+                  src="./p0405/Defi The Game.png"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+          <div class="square_card">
+            <div class="image"></div>
+            <div class="text">
+              <img
+                src="./p0405/Intersteller Ricky x The Athlete Artest-3.png"
+                alt=""
+              />
+              <div class="price">
+                <img
+                  style="width: 97px; height: 12px"
+                  src="./p0405/FLOOR PRICE.png"
+                  alt=""
+                />
+                <div class="row">
+                  <div class="vertical">
+                    <img src="./p0405/AUCTION.png" alt="" />
+                    <img src="./p0405/Group 21-2.png" alt="" />
+                  </div>
+                  <img src="./p0405/Vector 3.png" alt="" />
+                  <div class="vertical">
+                    <img src="./p0405/BUY NOW.png" alt="" />
+                    <img src="./p0405/Group 20.png" alt="" />
+                  </div>
+                </div>
+                <img
+                  style="width: 87px; height: 11px"
+                  src="./p0405/Defi The Game.png"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+          <div class="square_card">
+            <div class="image"></div>
+            <div class="text">
+              <img
+                src="./p0405/Intersteller Ricky x The Athlete Artest-3.png"
+                alt=""
+              />
+              <div class="price">
+                <img
+                  style="width: 97px; height: 12px"
+                  src="./p0405/FLOOR PRICE.png"
+                  alt=""
+                />
+                <div class="row">
+                  <div class="vertical">
+                    <img src="./p0405/AUCTION.png" alt="" />
+                    <img src="./p0405/Group 21-2.png" alt="" />
+                  </div>
+                  <img src="./p0405/Vector 3.png" alt="" />
+                  <div class="vertical">
+                    <img src="./p0405/BUY NOW.png" alt="" />
+                    <img src="./p0405/Group 20.png" alt="" />
+                  </div>
+                </div>
+                <img
+                  style="width: 87px; height: 11px"
+                  src="./p0405/Defi The Game.png"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+          <!-- 13 -->
+          <div class="square_card">
+            <div class="image"></div>
+            <div class="text">
+              <img
+                src="./p0405/Intersteller Ricky x The Athlete Artest-3.png"
+                alt=""
+              />
+              <div class="price">
+                <img
+                  style="width: 97px; height: 12px"
+                  src="./p0405/FLOOR PRICE.png"
+                  alt=""
+                />
+                <div class="row">
+                  <div class="vertical">
+                    <img src="./p0405/AUCTION.png" alt="" />
+                    <img src="./p0405/Group 21-2.png" alt="" />
+                  </div>
+                  <img src="./p0405/Vector 3.png" alt="" />
+                  <div class="vertical">
+                    <img src="./p0405/BUY NOW.png" alt="" />
+                    <img src="./p0405/Group 20.png" alt="" />
+                  </div>
+                </div>
+                <img
+                  style="width: 87px; height: 11px"
+                  src="./p0405/Defi The Game.png"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+          <div class="square_card">
+            <div class="image"></div>
+            <div class="text">
+              <img
+                src="./p0405/Intersteller Ricky x The Athlete Artest-3.png"
+                alt=""
+              />
+              <div class="price">
+                <img
+                  style="width: 97px; height: 12px"
+                  src="./p0405/FLOOR PRICE.png"
+                  alt=""
+                />
+                <div class="row">
+                  <div class="vertical">
+                    <img src="./p0405/AUCTION.png" alt="" />
+                    <img src="./p0405/Group 21-2.png" alt="" />
+                  </div>
+                  <img src="./p0405/Vector 3.png" alt="" />
+                  <div class="vertical">
+                    <img src="./p0405/BUY NOW.png" alt="" />
+                    <img src="./p0405/Group 20.png" alt="" />
+                  </div>
+                </div>
+                <img
+                  style="width: 87px; height: 11px"
+                  src="./p0405/Defi The Game.png"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+          <div class="square_card">
+            <div class="image"></div>
+            <div class="text">
+              <img
+                src="./p0405/Intersteller Ricky x The Athlete Artest-3.png"
+                alt=""
+              />
+              <div class="price">
+                <img
+                  style="width: 97px; height: 12px"
+                  src="./p0405/FLOOR PRICE.png"
+                  alt=""
+                />
+                <div class="row">
+                  <div class="vertical">
+                    <img src="./p0405/AUCTION.png" alt="" />
+                    <img src="./p0405/Group 21-2.png" alt="" />
+                  </div>
+                  <img src="./p0405/Vector 3.png" alt="" />
+                  <div class="vertical">
+                    <img src="./p0405/BUY NOW.png" alt="" />
+                    <img src="./p0405/Group 20.png" alt="" />
+                  </div>
+                </div>
+                <img
+                  style="width: 87px; height: 11px"
+                  src="./p0405/Defi The Game.png"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+          <div class="square_card">
+            <div class="image"></div>
+            <div class="text">
+              <img
+                src="./p0405/Intersteller Ricky x The Athlete Artest-3.png"
+                alt=""
+              />
+              <div class="price">
+                <img
+                  style="width: 97px; height: 12px"
+                  src="./p0405/FLOOR PRICE.png"
+                  alt=""
+                />
+                <div class="row">
+                  <div class="vertical">
+                    <img src="./p0405/AUCTION.png" alt="" />
+                    <img src="./p0405/Group 21-2.png" alt="" />
+                  </div>
+                  <img src="./p0405/Vector 3.png" alt="" />
+                  <div class="vertical">
+                    <img src="./p0405/BUY NOW.png" alt="" />
+                    <img src="./p0405/Group 20.png" alt="" />
+                  </div>
+                </div>
+                <img
+                  style="width: 87px; height: 11px"
+                  src="./p0405/Defi The Game.png"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bottom-area">
         <div>
-          <span>Sort By</span>
-          <select>
-            <option selected="selected">Sales Volume</option>
-            <option>XXX</option>
-          </select>
+          <img id="bottom_logo" src="./p0405/logo上 4.png" alt="" />
         </div>
-        <div>
-          <button>Today</button>
-          <button>Last 7 Days</button>
-          <button>Last 30 Days</button>
+        <div class="col" style="margin-left: 34%">
+          <img src="./p0405/About Us.png" alt="" style="width: 93px" />
+          <a href=""><img src="./p0405/About.png" alt="" style="width: 52px" /></a>
+          <img src="./p0405/Terms of Service.png" alt="" />
         </div>
-      </div>
-      <div class="p04_round_card_container">
-        <div class="round_card">
-          <span>1</span>
-          <img src="./p0405/Ellipse 21.png" alt="" />
-          <div class="paragraph" style="width: 350px">
-            <img
-              src="./p0405/Psychokitties_ The Rid....png"
-              alt=""
-              style="width: 235px"
-            />
-            <div class="paragraph_1">
-              <img src="./p0405/Volume.png" alt="" />
-              <img src="./p0405/＄666.png" alt="" />
-              <div class="mark"><img src="./p0405/+66.66_.png" alt="" /></div>
-            </div>
-            <div class="paragraph_2">
-              <img src="./p0405/Volume-1.png" alt="" />
-              <img src="./p0405/＄666.6K.png" alt="" />
-              <img src="./p0405/+66.66_.png" alt="" />
-            </div>
-          </div>
+        <div class="col" style="margin-left: 55%">
+          <img src="./p0405/Support.png" alt="" style="width: 83px" />
+          <img src="./p0405/Help Center.png" alt="" style="width: 102px" />
+          <img src="./p0405/Terms of Service.png" alt="" style="width: 145px" />
         </div>
-        <div class="round_card">
-          <span>1</span>
-          <img src="./p0405/Ellipse 21.png" alt="" />
-          <div class="paragraph" style="width: 350px">
-            <img
-              src="./p0405/Psychokitties_ The Rid....png"
-              alt=""
-              style="width: 235px"
-            />
-            <div class="paragraph_1">
-              <img src="./p0405/Volume.png" alt="" />
-              <img src="./p0405/＄666.png" alt="" />
-              <div class="mark"><img src="./p0405/+66.66_.png" alt="" /></div>
-            </div>
-            <div class="paragraph_2">
-              <img src="./p0405/Volume-1.png" alt="" />
-              <img src="./p0405/＄666.6K.png" alt="" />
-              <img src="./p0405/+66.66_.png" alt="" />
-            </div>
-          </div>
-        </div>
-        <div class="round_card">
-          <span>1</span>
-          <img src="./p0405/Ellipse 21.png" alt="" />
-          <div class="paragraph" style="width: 350px">
-            <img
-              src="./p0405/Psychokitties_ The Rid....png"
-              alt=""
-              style="width: 235px"
-            />
-            <div class="paragraph_1">
-              <img src="./p0405/Volume.png" alt="" />
-              <img src="./p0405/＄666.png" alt="" />
-              <div class="mark"><img src="./p0405/+66.66_.png" alt="" /></div>
-            </div>
-            <div class="paragraph_2">
-              <img src="./p0405/Volume-1.png" alt="" />
-              <img src="./p0405/＄666.6K.png" alt="" />
-              <img src="./p0405/+66.66_.png" alt="" />
-            </div>
-          </div>
-        </div>
-        <div class="round_card">
-          <span>1</span>
-          <img src="./p0405/Ellipse 21.png" alt="" />
-          <div class="paragraph" style="width: 350px">
-            <img
-              src="./p0405/Psychokitties_ The Rid....png"
-              alt=""
-              style="width: 235px"
-            />
-            <div class="paragraph_1">
-              <img src="./p0405/Volume.png" alt="" />
-              <img src="./p0405/＄666.png" alt="" />
-              <div class="mark"><img src="./p0405/+66.66_.png" alt="" /></div>
-            </div>
-            <div class="paragraph_2">
-              <img src="./p0405/Volume-1.png" alt="" />
-              <img src="./p0405/＄666.6K.png" alt="" />
-              <img src="./p0405/+66.66_.png" alt="" />
-            </div>
-          </div>
-        </div>
-        <div class="round_card">
-          <span>1</span>
-          <img src="./p0405/Ellipse 21.png" alt="" />
-          <div class="paragraph" style="width: 350px">
-            <img
-              src="./p0405/Psychokitties_ The Rid....png"
-              alt=""
-              style="width: 235px"
-            />
-            <div class="paragraph_1">
-              <img src="./p0405/Volume.png" alt="" />
-              <img src="./p0405/＄666.png" alt="" />
-              <div class="mark"><img src="./p0405/+66.66_.png" alt="" /></div>
-            </div>
-            <div class="paragraph_2">
-              <img src="./p0405/Volume-1.png" alt="" />
-              <img src="./p0405/＄666.6K.png" alt="" />
-              <img src="./p0405/+66.66_.png" alt="" />
-            </div>
-          </div>
-        </div>
-        <!-- 6 -->
-        <div class="round_card">
-          <span>1</span>
-          <img src="./p0405/Ellipse 21.png" alt="" />
-          <div class="paragraph" style="width: 350px">
-            <img
-              src="./p0405/Psychokitties_ The Rid....png"
-              alt=""
-              style="width: 235px"
-            />
-            <div class="paragraph_1">
-              <img src="./p0405/Volume.png" alt="" />
-              <img src="./p0405/＄666.png" alt="" />
-              <div class="mark"><img src="./p0405/+66.66_.png" alt="" /></div>
-            </div>
-            <div class="paragraph_2">
-              <img src="./p0405/Volume-1.png" alt="" />
-              <img src="./p0405/＄666.6K.png" alt="" />
-              <img src="./p0405/+66.66_.png" alt="" />
-            </div>
-          </div>
-        </div>
-        <div class="round_card">
-          <span>1</span>
-          <img src="./p0405/Ellipse 21.png" alt="" />
-          <div class="paragraph" style="width: 350px">
-            <img
-              src="./p0405/Psychokitties_ The Rid....png"
-              alt=""
-              style="width: 235px"
-            />
-            <div class="paragraph_1">
-              <img src="./p0405/Volume.png" alt="" />
-              <img src="./p0405/＄666.png" alt="" />
-              <div class="mark"><img src="./p0405/+66.66_.png" alt="" /></div>
-            </div>
-            <div class="paragraph_2">
-              <img src="./p0405/Volume-1.png" alt="" />
-              <img src="./p0405/＄666.6K.png" alt="" />
-              <img src="./p0405/+66.66_.png" alt="" />
-            </div>
-          </div>
-        </div>
-        <div class="round_card">
-          <span>1</span>
-          <img src="./p0405/Ellipse 21.png" alt="" />
-          <div class="paragraph" style="width: 350px">
-            <img
-              src="./p0405/Psychokitties_ The Rid....png"
-              alt=""
-              style="width: 235px"
-            />
-            <div class="paragraph_1">
-              <img src="./p0405/Volume.png" alt="" />
-              <img src="./p0405/＄666.png" alt="" />
-              <div class="mark"><img src="./p0405/+66.66_.png" alt="" /></div>
-            </div>
-            <div class="paragraph_2">
-              <img src="./p0405/Volume-1.png" alt="" />
-              <img src="./p0405/＄666.6K.png" alt="" />
-              <img src="./p0405/+66.66_.png" alt="" />
-            </div>
-          </div>
-        </div>
-        <div class="round_card">
-          <span>1</span>
-          <img src="./p0405/Ellipse 21.png" alt="" />
-          <div class="paragraph" style="width: 350px">
-            <img
-              src="./p0405/Psychokitties_ The Rid....png"
-              alt=""
-              style="width: 235px"
-            />
-            <div class="paragraph_1">
-              <img src="./p0405/Volume.png" alt="" />
-              <img src="./p0405/＄666.png" alt="" />
-              <div class="mark"><img src="./p0405/+66.66_.png" alt="" /></div>
-            </div>
-            <div class="paragraph_2">
-              <img src="./p0405/Volume-1.png" alt="" />
-              <img src="./p0405/＄666.6K.png" alt="" />
-              <img src="./p0405/+66.66_.png" alt="" />
-            </div>
-          </div>
-        </div>
-        <div class="round_card">
-          <span>1</span>
-          <img src="./p0405/Ellipse 21.png" alt="" />
-          <div class="paragraph" style="width: 350px">
-            <img
-              src="./p0405/Psychokitties_ The Rid....png"
-              alt=""
-              style="width: 235px"
-            />
-            <div class="paragraph_1">
-              <img src="./p0405/Volume.png" alt="" />
-              <img src="./p0405/＄666.png" alt="" />
-              <div class="mark"><img src="./p0405/+66.66_.png" alt="" /></div>
-            </div>
-            <div class="paragraph_2">
-              <img src="./p0405/Volume-1.png" alt="" />
-              <img src="./p0405/＄666.6K.png" alt="" />
-              <img src="./p0405/+66.66_.png" alt="" />
-            </div>
-          </div>
-        </div>
-        <!-- 11 -->
-        <div class="round_card">
-          <span>1</span>
-          <img src="./p0405/Ellipse 21.png" alt="" />
-          <div class="paragraph" style="width: 350px">
-            <img
-              src="./p0405/Psychokitties_ The Rid....png"
-              alt=""
-              style="width: 235px"
-            />
-            <div class="paragraph_1">
-              <img src="./p0405/Volume.png" alt="" />
-              <img src="./p0405/＄666.png" alt="" />
-              <div class="mark"><img src="./p0405/+66.66_.png" alt="" /></div>
-            </div>
-            <div class="paragraph_2">
-              <img src="./p0405/Volume-1.png" alt="" />
-              <img src="./p0405/＄666.6K.png" alt="" />
-              <img src="./p0405/+66.66_.png" alt="" />
-            </div>
-          </div>
-        </div>
-        <div class="round_card">
-          <span>1</span>
-          <img src="./p0405/Ellipse 21.png" alt="" />
-          <div class="paragraph" style="width: 350px">
-            <img
-              src="./p0405/Psychokitties_ The Rid....png"
-              alt=""
-              style="width: 235px"
-            />
-            <div class="paragraph_1">
-              <img src="./p0405/Volume.png" alt="" />
-              <img src="./p0405/＄666.png" alt="" />
-              <div class="mark"><img src="./p0405/+66.66_.png" alt="" /></div>
-            </div>
-            <div class="paragraph_2">
-              <img src="./p0405/Volume-1.png" alt="" />
-              <img src="./p0405/＄666.6K.png" alt="" />
-              <img src="./p0405/+66.66_.png" alt="" />
-            </div>
-          </div>
-        </div>
-        <div class="round_card">
-          <span>1</span>
-          <img src="./p0405/Ellipse 21.png" alt="" />
-          <div class="paragraph" style="width: 350px">
-            <img
-              src="./p0405/Psychokitties_ The Rid....png"
-              alt=""
-              style="width: 235px"
-            />
-            <div class="paragraph_1">
-              <img src="./p0405/Volume.png" alt="" />
-              <img src="./p0405/＄666.png" alt="" />
-              <div class="mark"><img src="./p0405/+66.66_.png" alt="" /></div>
-            </div>
-            <div class="paragraph_2">
-              <img src="./p0405/Volume-1.png" alt="" />
-              <img src="./p0405/＄666.6K.png" alt="" />
-              <img src="./p0405/+66.66_.png" alt="" />
-            </div>
-          </div>
-        </div>
-        <div class="round_card">
-          <span>1</span>
-          <img src="./p0405/Ellipse 21.png" alt="" />
-          <div class="paragraph" style="width: 350px">
-            <img
-              src="./p0405/Psychokitties_ The Rid....png"
-              alt=""
-              style="width: 235px"
-            />
-            <div class="paragraph_1">
-              <img src="./p0405/Volume.png" alt="" />
-              <img src="./p0405/＄666.png" alt="" />
-              <div class="mark"><img src="./p0405/+66.66_.png" alt="" /></div>
-            </div>
-            <div class="paragraph_2">
-              <img src="./p0405/Volume-1.png" alt="" />
-              <img src="./p0405/＄666.6K.png" alt="" />
-              <img src="./p0405/+66.66_.png" alt="" />
-            </div>
-          </div>
-        </div>
-        <div class="round_card">
-          <span>1</span>
-          <img src="./p0405/Ellipse 21.png" alt="" />
-          <div class="paragraph" style="width: 350px">
-            <img
-              src="./p0405/Psychokitties_ The Rid....png"
-              alt=""
-              style="width: 235px"
-            />
-            <div class="paragraph_1">
-              <img src="./p0405/Volume.png" alt="" />
-              <img src="./p0405/＄666.png" alt="" />
-              <div class="mark"><img src="./p0405/+66.66_.png" alt="" /></div>
-            </div>
-            <div class="paragraph_2">
-              <img src="./p0405/Volume-1.png" alt="" />
-              <img src="./p0405/＄666.6K.png" alt="" />
-              <img src="./p0405/+66.66_.png" alt="" />
-            </div>
-          </div>
+        <div class="col" style="margin-left: 76%">
+          <img src="./p0405/Privacy.png" alt="" style="width: 75px" />
+          <img src="./p0405/T_C.png" alt="" style="width: 36px" />
+          <img src="./p0405/Privacy Notice.png" alt="" style="width: 123px" />
+          <img src="./p0405/Cookies Preference.png" alt="" style="width: 145px" />
         </div>
       </div>
     </div>
-
-    <div class="landing_page_collectibles" id="landing_page_05">
-      <p id="landing_page_05_top_collections_title">Top Collectibles</p>
-      <div class="top_collect_05_top_container">
-        <div>
-          <span>Sort By</span>
-          <select>
-            <option selected="selected">Sales Volume</option>
-            <option>XXX</option>
-          </select>
-        </div>
-        <div>
-          <button>Today</button>
-          <button>Last 7 Days</button>
-          <button>Last 30 Days</button>
-        </div>
-      </div>
-      <div id="p05_card_container">
-        <div class="square_card">
-          <div class="image"></div>
-          <div class="text">
-            <img
-              src="./p0405/Intersteller Ricky x The Athlete Artest-3.png"
-              alt=""
-            />
-            <div class="price">
-              <img
-                style="width: 97px; height: 12px"
-                src="./p0405/FLOOR PRICE.png"
-                alt=""
-              />
-              <div class="row">
-                <div class="vertical">
-                  <img src="./p0405/AUCTION.png" alt="" />
-                  <img src="./p0405/Group 21-2.png" alt="" />
-                </div>
-                <img src="./p0405/Vector 3.png" alt="" />
-                <div class="vertical">
-                  <img src="./p0405/BUY NOW.png" alt="" />
-                  <img src="./p0405/Group 20.png" alt="" />
-                </div>
-              </div>
-              <img
-                style="width: 87px; height: 11px"
-                src="./p0405/Defi The Game.png"
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
-        <div class="square_card">
-          <div class="image"></div>
-          <div class="text">
-            <img
-              src="./p0405/Intersteller Ricky x The Athlete Artest-3.png"
-              alt=""
-            />
-            <div class="price">
-              <img
-                style="width: 97px; height: 12px"
-                src="./p0405/FLOOR PRICE.png"
-                alt=""
-              />
-              <div class="row">
-                <div class="vertical">
-                  <img src="./p0405/AUCTION.png" alt="" />
-                  <img src="./p0405/Group 21-2.png" alt="" />
-                </div>
-                <img src="./p0405/Vector 3.png" alt="" />
-                <div class="vertical">
-                  <img src="./p0405/BUY NOW.png" alt="" />
-                  <img src="./p0405/Group 20.png" alt="" />
-                </div>
-              </div>
-              <img
-                style="width: 87px; height: 11px"
-                src="./p0405/Defi The Game.png"
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
-        <div class="square_card">
-          <div class="image"></div>
-          <div class="text">
-            <img
-              src="./p0405/Intersteller Ricky x The Athlete Artest-3.png"
-              alt=""
-            />
-            <div class="price">
-              <img
-                style="width: 97px; height: 12px"
-                src="./p0405/FLOOR PRICE.png"
-                alt=""
-              />
-              <div class="row">
-                <div class="vertical">
-                  <img src="./p0405/AUCTION.png" alt="" />
-                  <img src="./p0405/Group 21-2.png" alt="" />
-                </div>
-                <img src="./p0405/Vector 3.png" alt="" />
-                <div class="vertical">
-                  <img src="./p0405/BUY NOW.png" alt="" />
-                  <img src="./p0405/Group 20.png" alt="" />
-                </div>
-              </div>
-              <img
-                style="width: 87px; height: 11px"
-                src="./p0405/Defi The Game.png"
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
-        <div class="square_card">
-          <div class="image"></div>
-          <div class="text">
-            <img
-              src="./p0405/Intersteller Ricky x The Athlete Artest-3.png"
-              alt=""
-            />
-            <div class="price">
-              <img
-                style="width: 97px; height: 12px"
-                src="./p0405/FLOOR PRICE.png"
-                alt=""
-              />
-              <div class="row">
-                <div class="vertical">
-                  <img src="./p0405/AUCTION.png" alt="" />
-                  <img src="./p0405/Group 21-2.png" alt="" />
-                </div>
-                <img src="./p0405/Vector 3.png" alt="" />
-                <div class="vertical">
-                  <img src="./p0405/BUY NOW.png" alt="" />
-                  <img src="./p0405/Group 20.png" alt="" />
-                </div>
-              </div>
-              <img
-                style="width: 87px; height: 11px"
-                src="./p0405/Defi The Game.png"
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
-        <!-- 5 -->
-        <div class="square_card">
-          <div class="image"></div>
-          <div class="text">
-            <img
-              src="./p0405/Intersteller Ricky x The Athlete Artest-3.png"
-              alt=""
-            />
-            <div class="price">
-              <img
-                style="width: 97px; height: 12px"
-                src="./p0405/FLOOR PRICE.png"
-                alt=""
-              />
-              <div class="row">
-                <div class="vertical">
-                  <img src="./p0405/AUCTION.png" alt="" />
-                  <img src="./p0405/Group 21-2.png" alt="" />
-                </div>
-                <img src="./p0405/Vector 3.png" alt="" />
-                <div class="vertical">
-                  <img src="./p0405/BUY NOW.png" alt="" />
-                  <img src="./p0405/Group 20.png" alt="" />
-                </div>
-              </div>
-              <img
-                style="width: 87px; height: 11px"
-                src="./p0405/Defi The Game.png"
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
-        <div class="square_card">
-          <div class="image"></div>
-          <div class="text">
-            <img
-              src="./p0405/Intersteller Ricky x The Athlete Artest-3.png"
-              alt=""
-            />
-            <div class="price">
-              <img
-                style="width: 97px; height: 12px"
-                src="./p0405/FLOOR PRICE.png"
-                alt=""
-              />
-              <div class="row">
-                <div class="vertical">
-                  <img src="./p0405/AUCTION.png" alt="" />
-                  <img src="./p0405/Group 21-2.png" alt="" />
-                </div>
-                <img src="./p0405/Vector 3.png" alt="" />
-                <div class="vertical">
-                  <img src="./p0405/BUY NOW.png" alt="" />
-                  <img src="./p0405/Group 20.png" alt="" />
-                </div>
-              </div>
-              <img
-                style="width: 87px; height: 11px"
-                src="./p0405/Defi The Game.png"
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
-        <div class="square_card">
-          <div class="image"></div>
-          <div class="text">
-            <img
-              src="./p0405/Intersteller Ricky x The Athlete Artest-3.png"
-              alt=""
-            />
-            <div class="price">
-              <img
-                style="width: 97px; height: 12px"
-                src="./p0405/FLOOR PRICE.png"
-                alt=""
-              />
-              <div class="row">
-                <div class="vertical">
-                  <img src="./p0405/AUCTION.png" alt="" />
-                  <img src="./p0405/Group 21-2.png" alt="" />
-                </div>
-                <img src="./p0405/Vector 3.png" alt="" />
-                <div class="vertical">
-                  <img src="./p0405/BUY NOW.png" alt="" />
-                  <img src="./p0405/Group 20.png" alt="" />
-                </div>
-              </div>
-              <img
-                style="width: 87px; height: 11px"
-                src="./p0405/Defi The Game.png"
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
-        <div class="square_card">
-          <div class="image"></div>
-          <div class="text">
-            <img
-              src="./p0405/Intersteller Ricky x The Athlete Artest-3.png"
-              alt=""
-            />
-            <div class="price">
-              <img
-                style="width: 97px; height: 12px"
-                src="./p0405/FLOOR PRICE.png"
-                alt=""
-              />
-              <div class="row">
-                <div class="vertical">
-                  <img src="./p0405/AUCTION.png" alt="" />
-                  <img src="./p0405/Group 21-2.png" alt="" />
-                </div>
-                <img src="./p0405/Vector 3.png" alt="" />
-                <div class="vertical">
-                  <img src="./p0405/BUY NOW.png" alt="" />
-                  <img src="./p0405/Group 20.png" alt="" />
-                </div>
-              </div>
-              <img
-                style="width: 87px; height: 11px"
-                src="./p0405/Defi The Game.png"
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
-        <!-- 9 -->
-        <div class="square_card">
-          <div class="image"></div>
-          <div class="text">
-            <img
-              src="./p0405/Intersteller Ricky x The Athlete Artest-3.png"
-              alt=""
-            />
-            <div class="price">
-              <img
-                style="width: 97px; height: 12px"
-                src="./p0405/FLOOR PRICE.png"
-                alt=""
-              />
-              <div class="row">
-                <div class="vertical">
-                  <img src="./p0405/AUCTION.png" alt="" />
-                  <img src="./p0405/Group 21-2.png" alt="" />
-                </div>
-                <img src="./p0405/Vector 3.png" alt="" />
-                <div class="vertical">
-                  <img src="./p0405/BUY NOW.png" alt="" />
-                  <img src="./p0405/Group 20.png" alt="" />
-                </div>
-              </div>
-              <img
-                style="width: 87px; height: 11px"
-                src="./p0405/Defi The Game.png"
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
-        <div class="square_card">
-          <div class="image"></div>
-          <div class="text">
-            <img
-              src="./p0405/Intersteller Ricky x The Athlete Artest-3.png"
-              alt=""
-            />
-            <div class="price">
-              <img
-                style="width: 97px; height: 12px"
-                src="./p0405/FLOOR PRICE.png"
-                alt=""
-              />
-              <div class="row">
-                <div class="vertical">
-                  <img src="./p0405/AUCTION.png" alt="" />
-                  <img src="./p0405/Group 21-2.png" alt="" />
-                </div>
-                <img src="./p0405/Vector 3.png" alt="" />
-                <div class="vertical">
-                  <img src="./p0405/BUY NOW.png" alt="" />
-                  <img src="./p0405/Group 20.png" alt="" />
-                </div>
-              </div>
-              <img
-                style="width: 87px; height: 11px"
-                src="./p0405/Defi The Game.png"
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
-        <div class="square_card">
-          <div class="image"></div>
-          <div class="text">
-            <img
-              src="./p0405/Intersteller Ricky x The Athlete Artest-3.png"
-              alt=""
-            />
-            <div class="price">
-              <img
-                style="width: 97px; height: 12px"
-                src="./p0405/FLOOR PRICE.png"
-                alt=""
-              />
-              <div class="row">
-                <div class="vertical">
-                  <img src="./p0405/AUCTION.png" alt="" />
-                  <img src="./p0405/Group 21-2.png" alt="" />
-                </div>
-                <img src="./p0405/Vector 3.png" alt="" />
-                <div class="vertical">
-                  <img src="./p0405/BUY NOW.png" alt="" />
-                  <img src="./p0405/Group 20.png" alt="" />
-                </div>
-              </div>
-              <img
-                style="width: 87px; height: 11px"
-                src="./p0405/Defi The Game.png"
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
-        <div class="square_card">
-          <div class="image"></div>
-          <div class="text">
-            <img
-              src="./p0405/Intersteller Ricky x The Athlete Artest-3.png"
-              alt=""
-            />
-            <div class="price">
-              <img
-                style="width: 97px; height: 12px"
-                src="./p0405/FLOOR PRICE.png"
-                alt=""
-              />
-              <div class="row">
-                <div class="vertical">
-                  <img src="./p0405/AUCTION.png" alt="" />
-                  <img src="./p0405/Group 21-2.png" alt="" />
-                </div>
-                <img src="./p0405/Vector 3.png" alt="" />
-                <div class="vertical">
-                  <img src="./p0405/BUY NOW.png" alt="" />
-                  <img src="./p0405/Group 20.png" alt="" />
-                </div>
-              </div>
-              <img
-                style="width: 87px; height: 11px"
-                src="./p0405/Defi The Game.png"
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
-        <!-- 13 -->
-        <div class="square_card">
-          <div class="image"></div>
-          <div class="text">
-            <img
-              src="./p0405/Intersteller Ricky x The Athlete Artest-3.png"
-              alt=""
-            />
-            <div class="price">
-              <img
-                style="width: 97px; height: 12px"
-                src="./p0405/FLOOR PRICE.png"
-                alt=""
-              />
-              <div class="row">
-                <div class="vertical">
-                  <img src="./p0405/AUCTION.png" alt="" />
-                  <img src="./p0405/Group 21-2.png" alt="" />
-                </div>
-                <img src="./p0405/Vector 3.png" alt="" />
-                <div class="vertical">
-                  <img src="./p0405/BUY NOW.png" alt="" />
-                  <img src="./p0405/Group 20.png" alt="" />
-                </div>
-              </div>
-              <img
-                style="width: 87px; height: 11px"
-                src="./p0405/Defi The Game.png"
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
-        <div class="square_card">
-          <div class="image"></div>
-          <div class="text">
-            <img
-              src="./p0405/Intersteller Ricky x The Athlete Artest-3.png"
-              alt=""
-            />
-            <div class="price">
-              <img
-                style="width: 97px; height: 12px"
-                src="./p0405/FLOOR PRICE.png"
-                alt=""
-              />
-              <div class="row">
-                <div class="vertical">
-                  <img src="./p0405/AUCTION.png" alt="" />
-                  <img src="./p0405/Group 21-2.png" alt="" />
-                </div>
-                <img src="./p0405/Vector 3.png" alt="" />
-                <div class="vertical">
-                  <img src="./p0405/BUY NOW.png" alt="" />
-                  <img src="./p0405/Group 20.png" alt="" />
-                </div>
-              </div>
-              <img
-                style="width: 87px; height: 11px"
-                src="./p0405/Defi The Game.png"
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
-        <div class="square_card">
-          <div class="image"></div>
-          <div class="text">
-            <img
-              src="./p0405/Intersteller Ricky x The Athlete Artest-3.png"
-              alt=""
-            />
-            <div class="price">
-              <img
-                style="width: 97px; height: 12px"
-                src="./p0405/FLOOR PRICE.png"
-                alt=""
-              />
-              <div class="row">
-                <div class="vertical">
-                  <img src="./p0405/AUCTION.png" alt="" />
-                  <img src="./p0405/Group 21-2.png" alt="" />
-                </div>
-                <img src="./p0405/Vector 3.png" alt="" />
-                <div class="vertical">
-                  <img src="./p0405/BUY NOW.png" alt="" />
-                  <img src="./p0405/Group 20.png" alt="" />
-                </div>
-              </div>
-              <img
-                style="width: 87px; height: 11px"
-                src="./p0405/Defi The Game.png"
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
-        <div class="square_card">
-          <div class="image"></div>
-          <div class="text">
-            <img
-              src="./p0405/Intersteller Ricky x The Athlete Artest-3.png"
-              alt=""
-            />
-            <div class="price">
-              <img
-                style="width: 97px; height: 12px"
-                src="./p0405/FLOOR PRICE.png"
-                alt=""
-              />
-              <div class="row">
-                <div class="vertical">
-                  <img src="./p0405/AUCTION.png" alt="" />
-                  <img src="./p0405/Group 21-2.png" alt="" />
-                </div>
-                <img src="./p0405/Vector 3.png" alt="" />
-                <div class="vertical">
-                  <img src="./p0405/BUY NOW.png" alt="" />
-                  <img src="./p0405/Group 20.png" alt="" />
-                </div>
-              </div>
-              <img
-                style="width: 87px; height: 11px"
-                src="./p0405/Defi The Game.png"
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="bottom-area">
-      <div>
-        <img id="bottom_logo" src="./p0405/logo上 4.png" alt="" />
-      </div>
-      <div class="col" style="margin-left: 34%">
-        <img src="./p0405/About Us.png" alt="" style="width: 93px" />
-        <a href=""><img src="./p0405/About.png" alt="" style="width: 52px" /></a>
-        <img src="./p0405/Terms of Service.png" alt="" />
-      </div>
-      <div class="col" style="margin-left: 55%">
-        <img src="./p0405/Support.png" alt="" style="width: 83px" />
-        <img src="./p0405/Help Center.png" alt="" style="width: 102px" />
-        <img src="./p0405/Terms of Service.png" alt="" style="width: 145px" />
-      </div>
-      <div class="col" style="margin-left: 76%">
-        <img src="./p0405/Privacy.png" alt="" style="width: 75px" />
-        <img src="./p0405/T_C.png" alt="" style="width: 36px" />
-        <img src="./p0405/Privacy Notice.png" alt="" style="width: 123px" />
-        <img src="./p0405/Cookies Preference.png" alt="" style="width: 145px" />
-      </div>
-    </div>
-
     <!-- Chang -->
     <div id="privacybar">
       <div id="privacy_statement_container">
