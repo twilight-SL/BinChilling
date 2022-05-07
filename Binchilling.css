@@ -560,8 +560,8 @@ video {
   background-color: #BCBCBC;
 }
 
-#NFT_navbar{
-  display: block;
+#NFT_Market_navbar{
+  display: none;
 }
 
 #signin_logo_container {
@@ -578,6 +578,890 @@ video {
   left: 1.875%;
   height: 33%;
   width: 2.1875%;
+}
+
+
+#navbar_signin {
+  position: absolute;
+  height: 20%;
+  top: 38.8%;
+  left: 87.5%;
+  color: white;
+  font-family: SFPRODISPLAY_BOLD;
+}
+
+#navbar_signup {
+  position: absolute;
+  height: 20%;
+  top: 38.8%;
+  left: 92.7%;
+  color: white;
+  font-family: SFPRODISPLAY_BOLD;
+}
+
+
+#wallet_navbar{
+  display: none;
+}
+
+#wallet_overview{
+  display: none;
+}
+
+#wallet_navbar_head_contianer{
+  position: absolute;
+  left: 88%;
+  width: 1.8%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+#wallet_navbar_head{
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color:#E5E5E5;
+}
+
+#wallet_username_container{
+  position: absolute;
+  width: 7%;
+  height: 100%;
+  left: 90.5%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+#wallet_navbar_username{
+  position: relative;
+  height: 100%;
+  width: 70%;
+  top: 0%;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: SFPRODISPLAY_BOLD;
+  
+}
+
+#wallet_navbar_username_triangle_container{
+  left: 0%;
+}
+
+#navbar_wallet_username_triangle_down{
+  border-top-color: white;
+}
+.wallet_page {
+  height: 100vh;
+  width: 100vw;
+  display: block;
+  z-index: 0;
+  background-color: white;
+  min-height: 100%;
+  min-width: 100%;
+  position: relative;
+  top: 0;
+}
+
+.wallet_title{
+  position: absolute;
+  left: 48.95%;
+  top: 23.8%;
+  width: 0.21%;
+  height: 6.67%;
+  font-size: 6vh;
+  color:#286A93;
+  font-family: SFPRODISPLAY_BOLD;
+}
+
+#category_btw_account_container{
+  position: absolute;
+  left: 64.75%;
+  top: 26.76%;
+  width: 7.03%;
+  height: 2.314%;
+  border-style: solid;
+  border-width: 1.5px;
+  border-radius: 70px;
+  border-color: #286A93;
+  z-index: 0;
+}
+
+#category_btw_account{
+  position: absolute;
+  left: 64.75%;
+  top: 26.76%;
+  width: 3.6%;
+  height: 2.314%;
+  border-style: solid;
+  border-width: 1.5px;
+  border-radius: 70px;
+  border-color: #286A93;
+  background-color: #286A93;
+  z-index: 1;
+}
+
+#wallet_category_choice{
+  position: absolute;
+  left: 64.75%;
+  top: 26.76%;
+  width: 3.6%;
+  height: 2.314%;
+  color: white;
+  border-radius: 70px;
+  font-size: 1.2vh;
+  font-family: SFPRODISPLAYREGULAR;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+#wallet_account_choice{
+  position: absolute;
+  left: 68.2%;
+  top: 26.76%;
+  width: 3.5%;
+  height: 2.314%;
+  color: #286A93;
+  font-size: 1.2vh;
+  font-family: SFPRODISPLAYREGULAR;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.wallet_whole_asset_dollor{
+  position: absolute;
+  top: 32.5%;
+  left: 48.954%;
+  width: 10.3125%;
+  height: 4.45%;
+  color: #286A93;
+  font-size: 4vh;
+  font-family: SFProDisplay-Semibold;
+}
+
+.wallet_whole_asset_dollor_menu_btn{
+  position: absolute;
+  height: 3.9%;
+  width: 12.35%;
+  left: 77%;
+  top: 32.5%;
+}
+
+.wallet_whole_asset_dollor_menu{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-style: solid;
+  border-width: 1.5px;
+  border-color: #286A93;
+  border-radius: 70px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #286A93;
+  font-size: 1.6vh;
+  font-family: SFPRODISPLAY_BOLD;
+}
+
+.wallet_triangle_down{
+  border-top-color: #286A93;
+  top: 42%;
+  left: 87.5%;
+}
+
+.wallet_whole_asset_triangle_down{
+  border-top-color: #286A93;
+  top: 42%;
+  left: 87.5%;
+}
+
+.wallet_whole_asset_dollor_scrollable_dropdown_menu{
+  position: relative;
+  top: 38%;
+  left: 77%;
+  width: 12.35%;
+  height: 17.74%;
+  background-color: white;
+  border-color: #286A93;
+  border-width: 1.5px;
+  border-radius: 20px;
+  border-style: solid;
+  z-index: 2;
+  overflow-y: hidden;
+  display: none;
+}
+
+.wallet_whole_asset_dollor_dropdown_menu{
+  position: absolute;
+  width: 100%;
+  height: 150%;
+  background-color: white;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.wallet_overview_whole_asset_dollor_menu_currency{
+  position: relative;
+  color: #286A93;
+  font-size: 2vh;
+  font-family: SFPRODISPLAY_MEDIUM;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  height: 23%;
+  border-radius: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wallet_overview_whole_asset_dollor_menu_currency:hover{
+  background-color: #D4D4D4;
+}
+
+.wallet_menu_line{
+  position: relative;
+  width: 90%;
+  height: 1%;
+  left: 5%;
+  background-color: #E5E5E5;
+}
+
+#wallet_overview_whole_asset_dollor_menu_NTD{
+  
+}
+
+#wallet_overview_whole_asset_dollor_menu_USD{
+  
+}
+
+#wallet_overview_whole_asset_dollor_menu_ETH{
+
+}
+
+#wallet_overview_whole_asset_dollor_menu_JPY{
+  
+}
+
+.wallet_show{
+  position: absolute;
+  left: 50%;
+  top: 42.1%;
+  color:#286A93;
+  font-size: 2vh;
+  font-family: SFPRODISPLAYREGULAR;
+}
+
+.wallet_category{
+  position: absolute;
+  left: 55.26%;
+  top: 42.1%;
+  color:#286A93;
+  font-size: 2vh;
+  font-family: SFPRODISPLAYREGULAR;
+}
+
+.wallet_totalamount{
+  position: absolute;
+  left: 63.28%;
+  top: 42.1%;
+  color:#286A93;
+  font-size: 2vh;
+  font-family: SFPRODISPLAYREGULAR;
+}
+
+.wallet_currency{
+  position: absolute;
+  left: 73.125%;
+  top: 42.1%;
+  color:#286A93;
+  font-size: 2vh;
+  font-family: SFPRODISPLAYREGULAR;
+}
+.wallet_percentage{
+  position: absolute;
+  left: 81%;
+  top: 42.1%;
+  color:#286A93;
+  font-size: 2vh;
+  font-family: SFPRODISPLAYREGULAR;
+}
+
+.wallet_object_container{
+  position: absolute;
+  width: 41%;
+  height: 4.537%;
+  left: 49%;
+  border-style: solid;
+  border-color: #286A93;
+  border-width: 1px;
+  border-radius: 60px;
+}
+
+.wallet_object_container1{
+  top: 46.39%;
+}
+
+.wallet_show_color_container{
+  position: absolute;
+  height: 100%;
+  width: 9%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wallet_show_color{
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.wallet_show_color1{
+  background-color: #B8CAD6;
+}
+
+.wallet_show_color2{
+  background-color: #E9E9EB;
+}
+
+.wallet_show_color3{
+  background-color: #528CA2;
+}
+
+.wallet_show_color4{
+  background-color: #42506B;
+}
+
+.wallet_show_color5{
+  background-color:#FF7582;
+}
+
+.wallet_text{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-family: SFProDisplay-Semibold;
+  font-size: 2vh;
+}
+
+.wallet_category_category{
+  position: absolute;
+  height: 100%;
+  width: 15%;
+  left: 13%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wallet_totalamount_totalamount{
+  position: absolute;
+  height: 100%;
+  width: 20%;
+  left: 32%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wallet_currency_currency{
+  position: absolute;
+  height: 100%;
+  width: 10%;
+  left: 59%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wallet_percentage_percentage{
+  position: absolute;
+  height: 100%;
+  width: 10%;
+  left: 79.5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wallet_object_container2{
+  top: 53%;
+}
+
+.wallet_object_container3{
+  top: 59.5%;
+}
+
+.wallet_object_container4{
+  top: 66%;
+}
+
+.wallet_object_container5{
+  top: 72.5%;
+}
+
+/*------------------------------------------Wallet NFT------------------------------------------*/
+#wallet_NFT{
+  display: none;
+}
+
+#wallet_NFT_back_container{
+  position: absolute;
+  left: 4.635417%;
+  top: 15%;
+  width: 8.95%;
+  height: 2.4%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+#wallet_NFT_back_text{
+  position: relative;
+  font-size: 1.8vh;
+  color: #286A93;
+  font-family: SFProDisplay-Semibold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
+
+#explore_NFT_btn{
+  position: absolute;
+  top: 26.85%;
+  left:56.875%;
+  font-size: 2vh;
+  font-family: SFProDisplay-Semibold;
+  text-decoration: underline;
+  color: #286A93;
+}
+
+#wallet_NFT_filter_btn{
+  position: absolute;
+  top: 40.56%;
+  left: 49.9%;
+  width: 6.71875%;
+  height: 2.685185%;
+  border-radius: 70px;
+  background-color: #42506B;
+}
+
+#wallet_NFT_filter_btn_strips_container{
+  position: absolute;
+  width: 16%;
+  height: 37.931034%;
+  top: 0%;
+  left: 14%;
+  display: flex;
+  margin-top: 0.92592593vh;
+  margin-bottom: 0.8334vh;
+  justify-content: space-between;
+  flex-direction: column;
+  overflow: cover;
+}
+
+.wallet_NFT_filter_btn_strip_container{
+  position: relative;
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+}
+
+#wallet_NFT_filter_btn_strip1{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+
+#wallet_NFT_filter_btn_strip2{
+  position: relative;
+  width: 70%;
+  height: 100%;
+  background-color: white;
+}
+
+#wallet_NFT_filter_btn_strip3{
+  position: relative;
+  width: 40%;
+  height: 100%;
+  background-color: white;
+}
+
+#wallet_NFT_filter_btn_text{
+  position: absolute;
+  height: 100%;
+  left: 43.41%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 2vh;
+  color: white;
+  font-family: SFProDisplay-Semibold;
+}
+
+
+/*---------------------Wallet NFT Filter-----------------*/
+#wallet_NFT_filter_table{
+  display: none;
+  position: absolute;
+  height: 22.315%;
+  width: 34%;
+  top: 45%;
+  left: 49.9%;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  border-color: #42506B;
+  border-width: 1px;
+  border-style: solid;
+  z-index: 3;
+}
+
+#wallet_NFT_filter_price_container{
+  position: absolute;
+  height: 100%;
+  width: 35%;
+  left: 0%;
+  top: 0%;
+}
+
+#wallet_NFT_filter_price_text {
+  position: absolute;
+  color: #42506B;
+  font-family: SFProDisplay-Semibold;
+  font-size: 2vh;
+  left: 3%;
+  height: 100%;
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#wallet_NFT_filter_dollor_menu_btn{
+  position: absolute;
+  width: 22.4%;
+  height: 49%;
+  top: 25%;
+  left: 15.5%;
+}
+
+#wallet_NFT_filter_dollor_menu_text{
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #42506B;
+  border-color: #42506B;
+  border-style: solid;
+  border-radius: 8px;
+  border-width: 1px;
+  font-size: 2vh;
+  font-family: SFProDisplay-Semibold;
+}
+
+#wallet_NFT_whole_asset_triangle_down{
+  position: absolute;
+  left: 85%;
+}
+
+.wallet_filter_dollor_scrollable_dropdown_menu{
+  position: absolute;
+  top: 90%;
+  left: 15.5%;
+  width: 22.4%;
+  height: 250%;
+  background-color: white;
+  border-color:#42506B;
+  border-width: 1.5px;
+  border-radius: 8px;
+  border-style: solid;
+  z-index: 4;
+  overflow-y: hidden;
+  display: block;
+}
+
+
+#wallet_NFT_filter_min_text{
+  position: absolute;
+  left: 43.712%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #42506B;
+  font-family: SFProDisplay-Semibold;
+  font-size: 2vh;
+}
+
+#wallet_NFT_filter_min_typebox_container{
+  position: absolute;
+  left: 50.61%;
+  width: 15.34%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#wallet_NFT_filter_min_typebox{
+  position: relative;
+  left: 0%;
+  width: 100%;
+  height: 45%;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #42506B;
+  border-radius: 8px;
+}
+
+#wallet_NFT_filter_to_text{
+  position: absolute;
+  left: 67%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #42506B;
+  font-family: SFProDisplay-Semibold;
+  font-size: 2vh;
+}
+
+#wallet_NFT_filter_max_text{
+  position: absolute;
+  left: 71.6157%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #42506B;
+  font-family: SFProDisplay-Semibold;
+  font-size: 2vh;
+}
+
+#wallet_NFT_filter_max_typebox_container{
+  position: absolute;
+  left: 78.68%;
+  width: 15.34%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#wallet_NFT_filter_max_typebox{
+  position: relative;
+  left: 0%;
+  width: 100%;
+  height: 45%;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #42506B;
+  border-radius: 8px;
+}
+
+
+/*---------------------end of Wallet NFT filter---------------*/
+#wallet_NFT_all_btn{
+  position: absolute;
+  width: 3.645833%;
+  height: 2.685185%; 
+  top: 40.56%;
+  left: 57.5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 70px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #286A93;
+  font-size: 2vh;
+  color: #286A93;
+  font-family: SFProDisplay-Semibold;
+}
+
+.wallet_NFT_direction_btn{
+  position: absolute;
+  left: 91%;
+  top: 62%;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background-color:#3E619B;
+  z-index: 1;
+}
+
+#wallet_NFT_left_btn{
+  left: 46.2%;
+}
+
+#wallet_NFT_right_btn{
+  left: 91.2%;
+}
+
+#wallet_NFT_right_btn_direction{
+  position: absolute;
+  left: 40%;
+  top: 40%;
+  border: solid white;
+  border-width: 0 5px 5px 0;
+  display: inline-block;
+  padding: 5px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+#wallet_NFT_left_btn_direction{
+  position: absolute;
+  left: 40%;
+  top: 40%;
+  border: solid white;
+  border-width: 0 5px 5px 0;
+  display: inline-block;
+  padding: 5px;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+#wallet_NFT_NFTs_mask_container{
+  position: absolute;
+  top: 47.223%;
+  left: 48.95%;
+  width: 45%;
+  height: 34.7223%;
+  overflow-x: hidden;
+}
+
+#wallet_NFT_NFTs_container{
+  position: relative;
+  top: 0%;
+  left: 0%;
+  width: 110%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.wallet_NFT_NFTs{
+  position: relative;
+  width: 30%;
+  height: 100%;
+}
+
+.wallet_NFT_NFTs_img_container{
+  position: absolute;
+  top: 0%;
+  width: 100%;
+  height: 73.6%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  overflow: auto;
+  background-size: cover;
+}
+
+#wallet_NFT_NFTs_img_container1{
+  background-image: url("./img/NFT/Wallet/NFT_bird.png");
+}
+
+#wallet_NFT_NFTs_img_container2{
+  background-image: url("./img/NFT/Wallet/NFT_white_tiger.png");
+}
+
+.wallet_NFT_NFTs_info_container{
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
+  height: 26.3%;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: #5C7FA7;
+}
+
+.wallet_NFT_NFTs_info_self_container{
+  position: absolute;
+  top: 0%;
+  width: 100%;
+  height: 50%;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: #5C7FA7;
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);
+}
+
+.wallet_NFT_NFTs_info_subname{
+  position: absolute;
+  left: 7.608696%;
+  top: 22%;
+  color: #D4D4D4;
+  font-size: 1.3vh;
+  font-family: SFPRODISPLAY_BOLD;
+}
+
+.wallet_NFT_NFTs_info_name{
+  position: absolute;
+  left: 7.608696%;
+  top: 42%;
+  color: white;
+  font-size: 1.7vh;
+  font-family: SFPRODISPLAY_BOLD;
+}
+
+.wallet_NFT_NFTs_info_source{
+  position: absolute;
+  left: 74.193548%;
+  top: 50%;
+  color: white;
+  font-size: 1vh;
+  font-family: SFPRODISPLAY_BOLD;
+  text-decoration: underline;
+}
+
+.wallet_NFT_NFTs_info_value{
+  position: absolute;
+  left: 7.608696%;
+  top: 58%;
+  color: white;
+  font-size: 2.2vh;
+  font-family: SFPRODISPLAYREGULAR;
+}
+
+.wallet_NFT_NFTs_info_currency{
+  position: absolute;
+  left: 76.344086%;
+  top: 58%;
+  color: white;
+  font-size: 1.9vh;
+  font-family: SFProDisplay-Semibold;
+}
+/*------------------------------------------NFT Market------------------------------------------*/
+#NFT_Market{
+  display: none;;
 }
 
 #navbar_logo_img {
@@ -787,51 +1671,51 @@ video {
   font-family: SFPRODISPLAY_BOLD;
 }
 
-#navbar_search_category_all {
+.filter_category_all {
   width: 12%;
 }
 
-#navbar_search_category_art {
+.filter_category_art {
   width: 12%;
 }
 
-#navbar_search_category_celebrities {
+.filter_category_celebrities {
   width: 27%;
 }
 
-#navbar_search_category_domainnames {
+.filter_category_domainnames {
   width: 33%;
 }
 
-#navbar_search_category_music {
+.filter_category_music {
   width: 19%;
 }
 
-#navbar_search_category_photography {
+.filter_category_photography {
   width: 27%;
 }
 
-#navbar_search_category_sports {
+.filter_category_sports {
   width: 19%;
 }
 
-#navbar_search_category_tradingcards {
+.filter_category_tradingcards {
   width: 27%;
 }
 
-#navbar_search_category_utility {
+.filter_category_utility {
   width: 19%;
 }
 
-#navbar_search_category_virtualworld {
+.filter_category_virtualworld {
   width: 27%;
 }
 
-#navbar_search_category_collectibles {
-  width: 27%;
+.filter_category_collectibles {
+  width: 29%;
 }
 
-#navbar_search_category_gaming {
+.filter_category_gaming {
   width: 19%;
 }
 
@@ -849,20 +1733,19 @@ video {
   right: 4.15%;
 }
 
-#navbar_search_confirm_btn {
+.navbar_search_confirm_btn {
   position: relative;
   height: 100%;
   width: 100%;
   margin: 0%;
   border-style: solid;
   border-width: 1.5px;
-  border-color: #8C8C8C;
   border-radius: 12px;
-  background-color: white;
+  background-color: #42506B;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #8C8C8C;
+  color: white;
   font-size: 1.6vh;
   font-family: SFPRODISPLAY_BOLD;
 }
@@ -935,11 +1818,10 @@ video {
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
   border-top: 6px solid;
-  border-top-color: white;
 }
 
 #navbar_triangle_down {
-  
+  border-top-color: white;
 }
 
 .navbar_vertical_rec {
@@ -951,179 +1833,6 @@ video {
   background-color: white;
 }
 
-#wallet_navbar_vertical_rec{
-  
-}
-
-#NFT__navbar_vertical_rec{
-  
-}
-
-#navbar_signin {
-  position: absolute;
-  height: 20%;
-  top: 38.8%;
-  left: 87.5%;
-  color: white;
-  font-family: SFPRODISPLAY_BOLD;
-}
-
-#navbar_signup {
-  position: absolute;
-  height: 20%;
-  top: 38.8%;
-  left: 92.7%;
-  color: white;
-  font-family: SFPRODISPLAY_BOLD;
-}
-
-
-#wallet_navbar{
-  display: none;
-}
-
-#wallet_overview{
-  display: none;
-}
-
-#wallet_navbar_head_contianer{
-  position: absolute;
-  left: 88%;
-  width: 1.8%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-
-#wallet_navbar_head{
-  position: relative;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background-color: black;
-}
-
-#wallet_username_container{
-  position: absolute;
-  width: 7%;
-  height: 100%;
-  left: 90.5%;
-  display: flex;
-  justify-content: space-around;
-  flex-direction: row;
-}
-
-#wallet_navbar_username{
-  position: relative;
-  height: 100%;
-  width: 70%;
-  top: 0%;
-  color: white;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: SFPRODISPLAY_BOLD;
-  
-}
-
-#wallet_navbar_username_triangle_container{
-  left: 0%;
-}
-
-.wallet_page {
-  height: 100vh;
-  width: 100vw;
-  display: block;
-  z-index: 0;
-  background-color: white;
-  min-height: 100%;
-  min-width: 100%;
-  position: relative;
-  top: 0;
-}
-
-.wallet_title{
-  position: absolute;
-  left: 48.95%;
-  top: 23.8%;
-  width: 0.21%;
-  height: 6.67%;
-  font-size: 6vh;
-  color:#286A93;
-  font-family: SFPRODISPLAY_BOLD;
-}
-
-#category_btw_account_container{
-  position: absolute;
-  left: 64.75%;
-  top: 26.76%;
-  width: 7.03%;
-  height: 2.314%;
-  border-style: solid;
-  border-width: 1.5px;
-  border-radius: 70px;
-  border-color: #286A93;
-  z-index: 0;
-}
-
-#category_btw_account{
-  position: absolute;
-  left: 68.2%;
-  top: 26.76%;
-  width: 3.5%;
-  height: 2.314%;
-  border-style: solid;
-  border-width: 1.5px;
-  border-radius: 70px;
-  border-color: #286A93;
-  background-color: #286A93;
-  z-index: 1;
-}
-
-#wallet_category_choice{
-  position: absolute;
-  left: 64.75%;
-  top: 26.76%;
-  width: 3.8%;
-  height: 2.314%;
-  color: #286A93;
-  border-radius: 70px;
-  font-size: 1.2vh;
-  font-family: SFPRODISPLAYREGULAR;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 2;
-}
-
-#wallet_account_choice{
-  position: absolute;
-  left: 68.2%;
-  top: 26.76%;
-  width: 3.5%;
-  height: 2.314%;
-  color: white;
-  font-size: 1.2vh;
-  font-family: SFPRODISPLAYREGULAR;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 2;
-}
-
-.wallet_whole_asset_dollor{
-  position: absolute;
-  top: 29.167%;
-  left: 48.954%;
-  width: 10.3125%;
-  height: 4.45%;
-  color: #286A93;
-  font-size: 4vh;
-  font-family: SFProDisplay-Semibold;
-}
 
 .landing_page {
   height: 100vh;
