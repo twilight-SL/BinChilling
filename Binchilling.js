@@ -13,6 +13,7 @@ function turn_to_wallet_page(btn_id){
   document.getElementById('wallet_navbar').style.display='block';
   document.getElementById('wallet_overview').style.display='block';
   document.getElementById('privacybar').style.display='block';
+  document.getElementById('bottom_area').style.display='block';
 }
 
 function turn_to_specific_wallet(btn_id){

@@ -2575,6 +2575,7 @@ button {
   line-height: 26px;
   text-align: center;
   color: #FFFFFF;
+  display: none;
 }
 
 /* Chart */
