@@ -2503,6 +2503,563 @@ video {
   top: 0%;
 }
 
+
+
+/* Liu */
+.homepage_01_blank{
+  height: 1vh;
+  width: 100vh;
+  background-color: white;
+}
+.homepage_01{
+  height: 100vh;
+  width: 100%;
+  background-color: white;
+  position: relative;
+  top:10.5vh;
+  display: inline-flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+#homepage_binchilling_logo{
+  /* display: flex; */
+  position: relative;
+  width: 19.4vh;
+  height: 19.4vh;
+  align-items: center;
+  /* top: 10.5vh; */
+  justify-content: center;
+  top:-10vh;
+}
+
+#homepage_binchilling_logo Img{
+  max-width: 100%;
+  max-height: 100%;
+  filter: drop-shadow(4px 4px 5px rgba(0, 0, 0, 0.25));
+
+}
+
+#words-homepage-1-chilling-with-all-your-accounts{
+  color: #286A93;
+  font-family: SFPRODISPLAY_BOLD;
+  font-size: 5vh;
+}
+
+#words-binchilling-is-a-platform{
+  position: relative;
+  top:3vh;
+  font-family: SFPRODISPLAY_BOLD;
+  font-size: 2vh;
+  width: 55.52%;
+  text-align: center;
+  
+}
+
+.homepage_page1_words{
+  position: relative;
+  text-align: center;
+  top:-6vh;
+  justify-content: center;
+  align-items: center;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+#words-binchilling-is-a-platform{
+  font-size: 2.3vh;
+  text-align: center;
+  color: #A0A0A0;
+  ;
+}
+
+.homepage_photo_of_banks_logo{
+  position: relative;
+  width: 60%;
+  height: 19.4vh;
+  align-items: center;
+  top: 3.5vh;
+  justify-content: center;
+}
+
+.homepage_photo_of_banks_logo Img{
+  max-width: 100%;
+  max-height: 100%;
+  align-items: center;
+}
+
+.homepage_navbar_head_contianer{
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  margin-right: 3vh;
+  width: 12%;
+  height: 11.5vh;
+  right: 0.7%;
+  flex-direction: row;
+  align-items: center;
+}
+
+.navbar_function_container{
+  font-size: 2vh;
+}
+
+.homepage_navbar_head_contianer p{
+  color: white;
+  font-family:SFPRODISPLAY_BOLD;
+  font-size: 2vh;
+}
+.homepage_sign_text {
+  position: relative;
+  width: 10%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #286A93;
+  color: white;
+  font-size: 2vh;
+  font-family: SFPRODISPLAY_BOLD;
+}
+
+.homepage_01_next_page {
+  position: relative;
+  width: 3vh;
+  height: 3vh;
+  top: 9vh;
+}
+
+.homepage_01_next_page Img{
+  max-width: 100%;
+  max-height: 100%;
+}
+
+
+
+/* homepage02 */
+.homepage_02{
+  position: relative;
+  background: #286A93;
+  height: 72.5vh;
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+#words-homepage-2-chilling-with-all-your-accounts{
+  color: white;
+  font-size: 5vh;
+  font-family: SFPRODISPLAY_BOLD;
+  position: relative;
+  top: -20vh;
+}
+
+.homepage_02_center_blocks{
+  position: relative;
+  width: 100%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.homepage_02_connect_your_wallet{
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 12.29%;
+  margin-right: 12.66%;
+}
+
+.homepage_02_connect_your_wallet Img{
+/* max-height: 100%;*/
+width: 50%;
+/* position: relative; */
+left: 22.34%;
+right: 72.76%;
+bottom: 46.48%;
+}
+
+#word_connect_your_wallet{
+  font-size: 2.3vh;
+  font-family: SFPRODISPLAY_BOLD;
+  color: white;
+  position: relative;
+  top: 3vh;
+
+}
+
+#word_describe_connect_your_wallet{
+  font-size: 1.11vh;
+  font-family: SFProDisplay-Semibold;
+  color: white;
+  position: relative;
+  top: 5vh;
+  text-align: center;
+}
+
+.homepage_02_manage_your_assets{
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 12.29%;
+}
+
+.homepage_02_manage_your_assets Img{
+  position: relative;
+  max-width: 100%;
+  height: 100%;
+
+  }
+
+#word_manage_your_assets{
+  font-size: 2.3vh;
+  font-family: SFPRODISPLAY_BOLD;
+  color: white;
+  position: relative;
+  top: 2.5vh;
+}
+
+#word_describe_manage_your_assets{
+  font-size: 1.11vh;
+  font-family: SFProDisplay-Semibold;
+  color: white;
+  position: relative;
+  top: 4.5vh;
+  text-align: center;
+}
+
+.homepage_02_get_more_informations{
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 12.29%;
+  top: 0.5vh;
+  margin-left: 12.03%;
+}
+
+.homepage_02_get_more_informations Img{
+  width: 63.27px;
+  height: 100px;
+  left: 1413px;
+  top: 485px;
+  
+
+  }
+
+#word_get_more_informations{
+  font-size: 2.3vh;
+  font-family: SFPRODISPLAY_BOLD;
+  color: white;
+  position: relative;
+  top: 2.5vh;
+}
+
+#word_describe_get_more_informations{
+  font-size: 1.11vh;
+  font-family: SFProDisplay-Semibold;
+  color: white;
+  position: relative;
+  top: 4.5vh;
+  text-align: center;
+}
+
+.homepage_03{
+  position: relative;
+  background-image: url("./Img/homepage/Rectangle 7.png");
+  background-size: cover;
+  height: 58.3vh;
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+#homepage_03_never_miss_a_drop{
+  font-size: 6vh;
+  font-family: SFPRODISPLAY_BOLD;
+  color: white;
+  position: relative;
+  top: -7vh;
+}
+
+#homepage_03_subscribe_for{
+  font-size: 3vh;
+  font-family: SFProDisplay-Semibold;
+  color: white;
+  position: relative;
+  top: -4vh;
+}
+
+
+#homepage_03_after_reading{
+  font-size: 0.5vh;
+  font-family: SFPRODISPLAY_BOLD;
+  color: white;
+  position: relative;
+  width: 70%;
+  text-align: center;
+}
+
+
+
+.homepage_03_subscribe_box{
+  height: 5vh;
+  display: block;
+  width: 41.14%;
+  position: relative;
+  top:3vh;
+}
+
+#textbox_homepage_03_subscribe_btn{
+  position: absolute;
+  height: 100%;
+  width: 19%;
+  left: 81%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2vh;
+  color: white;
+  font-family: SFProDisplay-Semibold;
+  background: linear-gradient(90deg, #286A93 0%, #528CA2 100%);
+  border-radius: 0px 7px 7px 0px;
+}
+
+#textbox_homepage_03_subscribe_box{
+  position: absolute;
+  width: 83%;
+  height: 100%;
+  left: 0%;
+  padding: 0px;
+  box-sizing: border-box;
+  border-radius: 7px;
+  border: 0vh;
+}
+
+#homepage_03_after_reading{
+  position: relative;
+  top: 7vh;
+  width: 40.88%;
+}
+
+.homepage_03_by_entering{
+  position: relative;
+  top: 10vh;
+}
+
+#homepage_03_after_reading{
+  font-size: 1.3vh;
+  font-family: SFProDisplay-Semibold;
+  color: white;
+  position: relative;
+  text-align: center;
+}
+
+.homepage_03_by_entering{
+  height: 5vh;
+  display: flex;
+  width: 80%;
+  position: relative;
+  left: 2%;
+  align-items: center;
+  justify-content: center;
+}
+
+#words_homepage_03_by_entering{
+  font-size: 1.3vh;
+  font-family: SFPRODISPLAY_BOLD;
+  color: white;
+  position: relative;
+  text-align: center;
+}
+
+#checkbox_homepage_03_by_entering{
+  height: 1.7vh;
+  width: 1.7vh;
+}
+
+#checkbox_homepage_03_by_entering{
+  position: relative;
+  right: 1vh;
+  top: -0.1vh;
+}
+
+.homepage_04{
+  position: relative;
+  background-color: white;
+  height: 90vh;
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.homepage_04_words{
+  position: relative;
+  top:-6vh;
+}
+
+#words-homepage-4-chilling-with-all-your-accounts{
+  color: #8C8C8C;
+  font-family: SFPRODISPLAY_BOLD;
+  font-size: 5vh;
+  position: relative;
+}
+
+#homepage_04_binchilling_logo{
+  /* display: flex; */
+  position: relative;
+  width: 19.4vh;
+  height: 19.4vh;
+  align-items: center;
+  justify-content: center;
+}
+
+#homepage_04_binchilling_logo Img{
+  max-width: 100%;
+  max-height: 100%;
+  filter: drop-shadow(4px 4px 5px rgba(0, 0, 0, 0.25));
+}
+
+.homepage_04_sign_in_area{
+  width: 25%;
+}
+
+#word_homepage_04_email{
+  color: #A0A0A0;
+  font-family: SFPRODISPLAY_BOLD;
+  font-size: 2.5vh;
+  position: relative;
+  margin-bottom: 1vh;
+  margin-left: 1vh;
+}
+
+#word_homepage_04_password{
+  color: #A0A0A0;
+  font-family: SFPRODISPLAY_BOLD;
+  font-size: 2.5vh;
+  position: relative;
+  margin-left: 0.5vh;
+}
+
+#textbox_homepage_04_email{
+  box-sizing: border-box;
+  width: 100%;
+  border: 2px solid #A0A0A0;
+  border-radius: 70px;
+}
+
+.word_homepage_04_password_options{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+}
+
+#textbox_homepage_04_password{
+  box-sizing: border-box;
+  width: 100%;
+  border: 2px solid #A0A0A0;
+  border-radius: 70px;
+}
+
+#word_homepage_04_forgot_password{
+  font-family: SFPRODISPLAY_BOLD;
+  color: #286A93;
+  font-size: 1vh;
+  position: relative;
+}
+
+#textbutton_homepage_04_sign_in{
+  text-align: center;
+  font-family: SFPRODISPLAY_BOLD;
+  color: white;
+  font-size: 2vh;
+  height: 4vh;
+  line-height: 4vh;
+  margin-top: 4vh;
+  position: flex;
+  background: linear-gradient(90deg, #286A93 0%, #528CA2 100%);
+border-radius: 7px;
+}
+
+.word_homepage_04_dont_have_account{
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  top: 4vh;
+}
+
+.word_homepage_04_dont_have_account p{
+  font-family: SFPRODISPLAY_BOLD;
+  font-size: 2.5vh;
+}
+
+#word_homepage_04_dont_have_an_account_yet{
+  color: #8C8C8C;
+}
+
+#word_homepage_04_sign_up{
+  color: #286A93;
+}
+
+.homepage_01_to_02_blank{
+  height: 12.96vh;
+  width: 100vh;
+  background-color: white;
+}
+
+.homepage_02_to_03_blank{
+  height: 15.75vh;
+  width: 100vh;
+  background-color: white;
+}
+
+.homepage_03_to_bottom_blank{
+  height: 11.4vh;
+  width: 100vh;
+  background-color: white;
+}
+
+.homepage_03_to_04_blank{
+  height: 7.12vh;
+  width: 100vh;
+  background-color: white;
+}
+
+#homepage_bottom_area {
+  position: relative;
+  bottom: 0%;
+  height: 7.4vh;
+  background: #9BB3C6;
+  font-family: 'SF Pro';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2vh;
+  line-height: 7.4vh;
+  text-align: center;
+  color: #FFFFFF;
+  display: block;
+  font-family: SFPRODISPLAY_BOLD;
+}
+
+
 #customize_settings_menu_align_container {
   position: relative;
   height: 100%;
