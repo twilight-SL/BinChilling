@@ -111,6 +111,7 @@ video {
   src: url(./fonts/SFPRODISPLAYREGULAR.OTF);
 }
 
+
 .homepage {
   height: 100vh;
   width: 100vw;
@@ -333,6 +334,7 @@ video {
   font-family: SFPRODISPLAY_BOLD;
 }
 
+
 #signup_page {
   position: relative;
   width: 100vw;
@@ -551,6 +553,134 @@ video {
   font-family: SFPRODISPLAY_BOLD;
 }
 
+.verify_container{
+  position: absolute;
+  width: 26.78%;
+  height: 41.3%;
+  top: 30%;
+  left: 36.31%;
+  background-image: url("./Img/verify/verify_email.png");
+  background-position: center;
+  background-size: cover;
+}
+
+#verify_email_container{
+  display: none;
+}
+
+#signup_verify_confirm{
+  position: absolute;
+  top: 80%;
+  left: 36.5%;
+  width: 27%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: SFProDisplay-Semibold;
+  font-size: 2vh;
+  background-color: #3E619B;
+  border-radius: 15px;
+}
+
+/*------------------------Verify email page--------------------*/
+#verify_email_page{
+  height: 100vh;
+  background-color: white;
+  display: none;
+}
+
+#verify_email_navbar_logo_container{
+  background-color: #BCBCBC;
+}
+
+.narbar_sign{
+  width: 7%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2vh;
+  color: white;
+  font-family: SFPRODISPLAY_BOLD;
+}
+
+#verify_email_navbar_signin{
+  left: 87.5%;
+}
+
+#verify_email_navbar_signup{
+  left: 92.7%;
+}
+
+#verify_email_verify_code_align_container{
+  position: absolute;
+  width: 42%;
+  height: 12%;
+  top: 30%;
+  left: 29%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.verify_email_verify_code_container{
+  position: relative;
+  width: 10%;
+  height: 100%;
+}
+
+.verify_email_verify_text{
+  position: relative;
+  width: 68%;
+  height: 100%;
+  font-size: 8vh;
+  color: #A0A0A0;
+  font-family: SFPRODISPLAY_BOLD;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+}
+
+
+
+.verify_email_verify_text_container{
+  width: 100%;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+}
+
+.verify_email_verify_underline{
+  position: absolute;
+  width: 100%;
+  height: 5%;
+  bottom: 0%;
+  border-radius: 50px;
+  background-color: #A0A0A0;
+}
+
+#verify_email_verify_btn{
+  position: absolute;
+  width: 42%;
+  height: 5.56%;
+  top: 53%;
+  left: 29%;
+  background-image: url("./Img/verify/verify_btn.png");
+  background-position: center;
+  background-size: cover;
+}
+
+#verify_fail_img{
+  display: none;
+}
+
+#verify_success_img{
+  display: none;
+}
+
 .navbar {
   top: 0%;
   position: fixed;
@@ -564,7 +694,7 @@ video {
   display: none;
 }
 
-#signin_logo_container {
+.navbar_logo_container {
   top: 0%;
   position: fixed;
   height: 11.5vh;
@@ -610,8 +740,8 @@ video {
 
 #wallet_navbar_head_contianer {
   position: absolute;
-  left: 88%;
-  width: 1.8%;
+  left: 87.5%;
+  width: 30px;
   height: 100%;
   display: flex;
   align-items: center;
@@ -658,7 +788,7 @@ video {
 }
 
 .wallet_page {
-  height: 91.5vh;
+  height: 100vh;
   width: 100vw;
   display: block;
   z-index: 0;
@@ -1184,6 +1314,9 @@ video {
   left: 85%;
 }
 
+#wallet_NFT_filter_scrollable_dollor_menu{
+  display: none;
+}
 .wallet_filter_dollor_scrollable_dropdown_menu {
   position: absolute;
   top: 90%;
@@ -1355,17 +1488,22 @@ video {
   position: relative;
   top: 0%;
   left: 0%;
-  width: 110%;
+  width: 200%;
   height: 100%;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
 }
 
 .wallet_NFT_NFTs {
-  position: relative;
-  width: 30%;
+  position: absolute;
+  width: 17%;
   height: 100%;
+}
+
+#wallet_NFT_NFT1{
+  left: 0%;
+}
+
+#wallet_NFT_NFT2{
+  left: 20%;
 }
 
 .wallet_NFT_NFTs_img_container {
@@ -1428,12 +1566,17 @@ video {
 
 .wallet_NFT_NFTs_info_source {
   position: absolute;
-  left: 74.193548%;
+  left: 70%;
   top: 50%;
+  width: 25%;
+  height: 40%;
   color: white;
   font-size: 1vh;
   font-family: SFPRODISPLAY_BOLD;
   text-decoration: underline;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .wallet_NFT_NFTs_info_value {
@@ -1460,13 +1603,13 @@ video {
   ;
 }
 
-#navbar_logo_img {
+.navbar_logo_img {
   position: absolute;
   max-height: 4vh;
   width: same-as-height;
 }
 
-#navbar_logo_text {
+.navbar_logo_text {
   position: absolute;
   top: 42%;
   left: 4.79%;
@@ -1835,7 +1978,7 @@ video {
   width: 100vw;
   display: block;
   z-index: 0;
-  background-color: #C4C4C4;
+  background-color: white;
   min-height: 100%;
   min-width: 100%;
   position: relative;
@@ -2137,7 +2280,7 @@ video {
   width: 12.5%;
   height: 100%;
   border-radius: 20px;
-  background-color: #286A93;
+  background: linear-gradient(270deg, #528CA2, #286A93);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2153,7 +2296,7 @@ video {
   top: 30%;
   font-family: SFPRODISPLAY_BOLD;
   text-align: center;
-  color: white;
+  color: #286A93;
   font-size: 6vh;
 }
 
@@ -2164,8 +2307,20 @@ video {
   width: 5.5%;
   padding-top: 5.5%;
   border-radius: 50%;
-  background-color: #E5E5E5;
+  background-color:#9BB3C6;
   display: inline-block;
+}
+
+#top_creators_left_btn_direction {
+  position: absolute;
+  left: 40%;
+  top: 35%;
+  border: solid white;
+  border-width: 0 6px 6px 0;
+  display: inline-block;
+  padding: 10px;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
 }
 
 #top_creators_view_circle_right {
@@ -2175,8 +2330,20 @@ video {
   width: 5.5%;
   padding-top: 5.5%;
   border-radius: 50%;
-  background-color: #E5E5E5;
+  background-color: #9BB3C6;
   display: inline-block;
+}
+
+#top_creators_right_btn_direction {
+  position: absolute;
+  right: 40%;
+  top: 35%;
+  border: solid white;
+  border-width: 0 6px 6px 0;
+  display: inline-block;
+  padding: 10px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
 }
 
 #top_creators_view_profile_align_container_container {
@@ -2187,6 +2354,8 @@ video {
   display: flex;
   justify-content: center;
 }
+
+
 
 #top_creators_view_profile_align_container {
   position: relative;
@@ -2209,7 +2378,32 @@ video {
   padding-top: 100%;
   top: 0%;
   border-radius: 50%;
-  background-color: white;
+  background-position: center;
+  background-size: cover;
+}
+
+#top_creators_view_profile_photo_1{
+  background-image: url("./Img/top_creators/super_magic_2.png") ;
+}
+
+#top_creators_view_profile_photo_2{
+  background-image: url("./Img/top_creators/crazy_daruma.png") ;
+}
+
+#top_creators_view_profile_photo_3{
+  background-image: url("./Img/top_creators/atlantis.png") ;
+}
+
+#top_creators_view_profile_photo_4{
+  background-image: url("./Img/top_creators/special_art.png") ;
+}
+
+#top_creators_view_profile_photo_5{
+  background-image: url("./Img/top_creators/creator.png") ;
+}
+
+#top_creators_view_profile_photo_6{
+  background-image: url("./Img/top_creators/Kanaheiheihei.png") ;
 }
 
 .top_creators_view_profile_name {
@@ -2217,9 +2411,9 @@ video {
   width: 100%;
   top: 43%;
   text-align: center;
-  color: white;
+  color:#286A93;
   font-family: SFProDisplay-Heavy;
-  font-size: 3.5vh;
+  font-size: 2.5vh;
 }
 
 .top_creators_view_profile_value_container {
@@ -2234,7 +2428,7 @@ video {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color: #A0A0A0;
+  background-color:#286A93;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2258,7 +2452,7 @@ video {
   align-items: center;
   font-family: SFProDisplay-Semibold;
   font-size: 2vh;
-  color: white;
+  color: #286A93;
 }
 
 #privacybar {
@@ -2565,17 +2759,15 @@ button {
 #bottom_area {
   position: relative;
   bottom: 0%;
-  height: 2.7vh;
-  padding: 27px 740px;
+  height: 7.4%;
+  width: 100%;
   background: #9BB3C6;
   font-family: 'SF Pro';
   font-style: normal;
   font-weight: 700;
-  font-size: 22px;
-  line-height: 26px;
+  font-size: 2vh;
   text-align: center;
   color: #FFFFFF;
-  display: none;
 }
 
 /* Chart */

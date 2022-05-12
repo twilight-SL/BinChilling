@@ -12,7 +12,7 @@
   <script src="./chart.js" defer></script>
   <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js?ver=1.3.2'></script>
   <script type='text/javascript' src='./js/jquery.mousewheel.min.js'></script>
-  <body>
+  <body onload="load_database()">
     <!--
     <div class="homepage" id="homepage_01">
       <div id="homepage_logo_img_container">
@@ -32,9 +32,9 @@
       <div id="signin_logo_container">
         <div id="navbar_logo">
           <div class="navbar_logo_img_container">
-            <img id="navbar_logo_img" src="./img/logo.png">
+            <img class="navbar_logo_img" src="./img/logo.png">
           </div>
-          <img id="navbar_logo_text" src="./img/logo_text.png">
+          <img class="navbar_logo_text" src="./img/logo_text.png">
         </div>
       </div>
       <div id="signin_title_container">
@@ -64,7 +64,7 @@
         <p class="typetext" id="signin_password_text">Please enter your password</p>
       </div>
       -->
-      <p id="signin_signin_btn" onclick="turn_to_wallet_page(this.id)">Sign In</p>  
+      <p id="signin_signin_btn" onclick="turn_to_wallet_page()">Sign In</p> 
     </div>
 
     <div id="signup_page">
@@ -132,17 +132,74 @@
           <label for="signup_checkbox" id="signup_agreement_text">By clicking Sign Up, I hereby acknowledge that I agree to the Crypto.com NFT Terms and Conditions and I've read the Privacy Notice.</label>
         </div>
       </div>
-      <p id="signup_signup_btn">Sign Up</p> 
+      <p id="signup_signup_btn" onclick="pop_verify_email()">Sign Up</p> 
+      <div class="verify_container" id="verify_email_container">
+        <p id="signup_verify_confirm" onclick="turn_to_verify_email_page()">Confirm</p>
+      </div>
     </div>
     
+    <div id="verify_email_page">
+      <div class="navbar_logo_container" id="verify_email_navbar_logo_container">
+        <div class="navbar_logo">
+          <div class="navbar_logo_img_container">
+            <img class="navbar_logo_img" src="./img/logo.png">
+          </div>
+          <img class="navbar_logo_text" src="./img/logo_text.png">
+        </div>
+        <div class="narbar_sign" id="verify_email_navbar_signin" onclick="turn_to_signin_page_from_verify()">Sign in</div>
+        <div class="narbar_sign" id="verify_email_navbar_signup" onclick="turn_to_signup_page_from_verify()">Sign up</div>
+      </div>
+      <form id="verify_email_verify_code_align_container" name="verify_email">
+        <div class="verify_email_verify_code_container" id="verify_email_verify_code_container1">
+          <div class="verify_email_verify_text_container">
+            <input type="text" maxlength=1 autofocus autocomplete="off" class="verify_email_verify_text" id="verify_email_verify_code1" onkeyup="enter_email_verification_code(this.id,0)">
+          </div>
+          <div class="verify_email_verify_underline" id="verify_email_verify_underline1"></div>
+        </div>
+        <div class="verify_email_verify_code_container" id="verify_email_verify_code_container2">
+          <div class="verify_email_verify_text_container">
+            <input type="text" maxlength=1 autocomplete="off" class="verify_email_verify_text" id="verify_email_verify_code2" onkeyup="enter_email_verification_code(this.id,1)">
+          </div>
+          <div class="verify_email_verify_underline" id="verify_email_verify_underline2"></div>
+        </div>
+        <div class="verify_email_verify_code_container" id="verify_email_verify_code_container3">
+          <div class="verify_email_verify_text_container">
+            <input type="text" maxlength=1 autocomplete="off" class="verify_email_verify_text" id="verify_email_verify_code3" onkeyup="enter_email_verification_code(this.id,2)">
+          </div>
+          <div class="verify_email_verify_underline" id="verify_email_verify_underline3"></div>
+        </div>
+        <div class="verify_email_verify_code_container" id="verify_email_verify_code_container4">
+          <div class="verify_email_verify_text_container">
+            <input type="text" maxlength=1 autocomplete="off" class="verify_email_verify_text" id="verify_email_verify_code4" onkeyup="enter_email_verification_code(this.id,3)">
+          </div>
+          <div class="verify_email_verify_underline" id="verify_email_verify_underline4"></div>
+        </div>
+        <div class="verify_email_verify_code_container" id="verify_email_verify_code_container5">
+          <div class="verify_email_verify_text_container">
+            <input type="text" maxlength=1 autocomplete="off" class="verify_email_verify_text" id="verify_email_verify_code5" onkeyup="enter_email_verification_code(this.id,4)">
+          </div>
+          <div class="verify_email_verify_underline" id="verify_email_verify_underline5"></div>
+        </div>
+        <div class="verify_email_verify_code_container" id="verify_email_verify_code_container6">
+          <div class="verify_email_verify_text_container">
+            <input type="text" maxlength=1 autocomplete="off" class="verify_email_verify_text" id="verify_email_verify_code6" onkeyup="enter_email_verification_code(this.id,5)">
+          </div>
+          <div class="verify_email_verify_underline" id="verify_email_verify_underline6"></div>
+        </div>
+      </form>
+      <div id="verify_email_verify_btn" onclick="check_email_verification_code()"></div>
+      <img class="verify_container" id="verify_fail_img" src="./Img/verify/verify_fail.png"></img>
+      <img class="verify_container" id="verify_success_img" src="./Img/verify/verify_success.png"></img>
+    </div>
+
     <!--Wallet-->
     <div id="wallet">
       <div class="navbar" id="wallet_navbar">
         <div class="navbar_logo">
           <div class="navbar_logo_img_container">
-            <img id="navbar_logo_img" src="./img/logo.png">
+            <img class="navbar_logo_img" src="./img/logo.png">
           </div>
-          <img id="navbar_logo_text" src="./img/logo_text.png">
+          <img class="navbar_logo_text" src="./img/logo_text.png">
         </div>
         <div class="navbar_function_container">
           <p class="navbar_function" id="navbar_function_plan">Plan</p>
@@ -204,45 +261,45 @@
             <div class="wallet_show_color wallet_show_color1" id="wallet_overview_show_color1" onclick="show_wallet_object(this.id)"></div>
           </div>
           <p class="wallet_category_category wallet_text" id="wallet_overview_category1" onclick="turn_to_specific_wallet(this.id)">NFT</p>
-          <p class="wallet_totalamount_totalamount wallet_text" id="wallet_overview_totalamount1">296,210.326</p>
+          <p class="wallet_totalamount_totalamount wallet_text overview" id="wallet_overview_totalamount1">296,210.326</p>
           <p class="wallet_currency_currency wallet_text overview" id="wallet_overview_currency1">NTD</p>
-          <p class="wallet_percentage_percentage wallet_text" id="wallet_overview_percentage1">47.86%</p>
+          <p class="wallet_percentage_percentage wallet_text overview" id="wallet_overview_percentage1"></p>
         </div>
         <div class="wallet_object_container wallet_object_container2" id="wallet_overview_object_container2">
           <div class="wallet_show_color_container">
             <p class="wallet_show_color wallet_show_color2" id="wallet_overview_show_color2" onclick="show_wallet_object(this.id)"></p>
           </div>
           <p class="wallet_category_category wallet_text" id="wallet_overview_category2">Stock</p>
-          <p class="wallet_totalamount_totalamount wallet_text" id="wallet_overview_totalamount2">175,832.331</p>
+          <p class="wallet_totalamount_totalamount wallet_text overview" id="wallet_overview_totalamount2">175,832.331</p>
           <p class="wallet_currency_currency wallet_text overview" id="wallet_overview_currency2">NTD</p>
-          <p class="wallet_percentage_percentage wallet_text " id="wallet_overview_percentage2">28.41%</p>
+          <p class="wallet_percentage_percentage wallet_text overview" id="wallet_overview_percentage2"></p>
         </div>
         <div class="wallet_object_container wallet_object_container3" id="wallet_overview_object_container3">
           <div class="wallet_show_color_container">
             <div class="wallet_show_color wallet_show_color3" id="wallet_overview_show_color3" onclick="show_wallet_object(this.id)"></div>
           </div>
           <p class="wallet_category_category wallet_text" id="wallet_overview_category3">Crypto</p>
-          <p class="wallet_totalamount_totalamount wallet_text" id="wallet_overview_totalamount3">91,722.462</p>
+          <p class="wallet_totalamount_totalamount wallet_text overview" id="wallet_overview_totalamount3">91,722.462</p>
           <p class="wallet_currency_currency wallet_text overview" id="wallet_overview_currency3">NTD</p>
-          <p class="wallet_percentage_percentage wallet_text" id="wallet_overview_percentage3">14.82%</p>
+          <p class="wallet_percentage_percentage wallet_text overview" id="wallet_overview_percentage3"></p>
         </div>
         <div class="wallet_object_container wallet_object_container4" id="wallet_overview_object_container4">
           <div class="wallet_show_color_container">
             <div class="wallet_show_color wallet_show_color4" id="wallet_overview_show_color4" onclick="show_wallet_object(this.id)"></div>
           </div>
           <p class="wallet_category_category wallet_text" id="wallet_overview_category4">CD(For)</p>
-          <p class="wallet_totalamount_totalamount wallet_text" id="wallet_overview_totalamount4">30,017.135</p>
+          <p class="wallet_totalamount_totalamount wallet_text overview" id="wallet_overview_totalamount4">30,017.135</p>
           <p class="wallet_currency_currency wallet_text overview" id="wallet_overview_currency4">NTD</p>
-          <p class="wallet_percentage_percentage wallet_text" id="wallet_overview_percentage4">4.85%</p>
+          <p class="wallet_percentage_percentage wallet_text overview" id="wallet_overview_percentage4"></p>
         </div>
         <div class="wallet_object_container wallet_object_container5" id="wallet_overview_object_container5">
           <div class="wallet_show_color_container">
             <div class="wallet_show_color wallet_show_color5" id="wallet_overview_show_color5" onclick="show_wallet_object(this.id)"></div>
           </div>
           <p class="wallet_category_category wallet_text" id="wallet_overview_category5">CD(NTD)</p>
-          <p class="wallet_totalamount_totalamount wallet_text" id="wallet_overview_totalamount5">25,127.746</p>
+          <p class="wallet_totalamount_totalamount wallet_text overview" id="wallet_overview_totalamount5">25,127.746</p>
           <p class="wallet_currency_currency wallet_text overview" id="wallet_overview_currency5">NTD</p>
-          <p class="wallet_percentage_percentage wallet_text" id="wallet_overview_percentage5">4.06%</p>
+          <p class="wallet_percentage_percentage wallet_text overview" id="wallet_overview_percentage5"></p>
         </div>
         <!-- Overview Chart -->
         <div id="dataviz"></div>
@@ -380,7 +437,7 @@
                 <p class="wallet_NFT_NFTs_info_currency" id="wallet_NFT_NFTs_info_currency2">USD</p>
               </div>
             </div>
-            
+            <!--
             <div class="wallet_NFT_NFTs" id="wallet_NFT_NFT3">
               <div class="wallet_NFT_NFTs_img_container" id="wallet_NFT_NFTs_img_container3"></div>
               <div class="wallet_NFT_NFTs_info_container">
@@ -393,6 +450,7 @@
                 <p class="wallet_NFT_NFTs_info_currency" id="wallet_NFT_NFTs_info_currency3">USD</p>
               </div>
             </div>
+            -->
             
           </div>
         </div>
@@ -406,9 +464,9 @@
       <div class="navbar" id="NFT_Market_navbar">
         <div class="navbar_logo">
           <div class="navbar_logo_img_container">
-            <img id="navbar_logo_img" src="./img/logo.png">
+            <img class="navbar_logo_img" src="./img/logo.png">
           </div>
-          <img id="navbar_logo_text" src="./img/logo_text.png">
+          <img class="navbar_logo_text"  id="navbar_NFT_Market_logo_text" src="./img/logo_text.png" onclick="turn_to_wallet_NFT_page()">
         </div>
         <div id="navbar_nonlogo">
           <div id="navbar_search">
@@ -561,13 +619,17 @@
           <div id="top_creators_view_top_selling">Top Selling</div>
         </div>
         <p id="landing_page_03_top_creators_title">Top Creators</p>
-        <div id="top_creators_view_circle_left"></div>
-        <div id="top_creators_view_circle_right"></div>
+        <div id="top_creators_view_circle_left" onclick="top_creators_top_selling_left_btn_clicked(this.id)">
+          <div id="top_creators_left_btn_direction"></div>
+        </div>
+        <div id="top_creators_view_circle_right" onclick="top_creators_top_selling_right_btn_clicked(this.id)">
+          <div id="top_creators_right_btn_direction"></div>
+        </div>
         <div id="top_creators_view_profile_align_container_container">
           <div id="top_creators_view_profile_align_container">
             <div class="top_creators_view_profile_container" id="top_creators_view_profile_container_1">
-              <div class="top_creators_view_profile_photo" id="top_creators_view_profile_photo_1"></div>
-              <p class="top_creators_view_profile_name" id="top_creators_view_profile_creator_1">Creator</p>
+              <div class="top_creators_view_profile_photo" id="top_creators_view_profile_photo_1" ></div>
+              <p class="top_creators_view_profile_name" id="top_creators_view_profile_creator_1">Super Magic 2</p>
               <div class="top_creators_view_profile_value_container" id="top_creators_view_profile_value_container_1">
                 <div class="top_creators_view_profile_num_container" id="top_creators_view_profile_num_1">
                   <p class="top_creators_view_profile_num">1</p>
@@ -577,7 +639,7 @@
             </div>
             <div class="top_creators_view_profile_container" id="top_creators_view_profile_container_2">
               <div class="top_creators_view_profile_photo" id="top_creators_view_profile_photo_2"></div>
-              <p class="top_creators_view_profile_name" id="top_creators_view_profile_creator_2">Creator</p>
+              <p class="top_creators_view_profile_name" id="top_creators_view_profile_creator_2">Crazy Daruma</p>
               <div class="top_creators_view_profile_value_container" id="top_creators_view_profile_value_container_2">
                 <div class="top_creators_view_profile_num_container" id="top_creators_view_profile_num_2">
                   <p class="top_creators_view_profile_num">2</p>
@@ -587,7 +649,7 @@
             </div>
             <div class="top_creators_view_profile_container" id="top_creators_view_profile_container_3">
               <div class="top_creators_view_profile_photo" id="top_creators_view_profile_photo_3"></div>
-              <p class="top_creators_view_profile_name" id="top_creators_view_profile_creator_3">Creator</p>
+              <p class="top_creators_view_profile_name" id="top_creators_view_profile_creator_3">Atlantis</p>
               <div class="top_creators_view_profile_value_container" id="top_creators_view_profile_value_container_3">
                 <div class="top_creators_view_profile_num_container" id="top_creators_view_profile_num_3">
                   <p class="top_creators_view_profile_num">3</p>
@@ -597,7 +659,7 @@
             </div>
             <div class="top_creators_view_profile_container" id="top_creators_view_profile_container_4">
               <div class="top_creators_view_profile_photo" id="top_creators_view_profile_photo_4"></div>
-              <p class="top_creators_view_profile_name" id="top_creators_view_profile_creator_4">Creator</p>
+              <p class="top_creators_view_profile_name" id="top_creators_view_profile_creator_4">Special Art</p>
               <div class="top_creators_view_profile_value_container" id="top_creators_view_profile_value_container_4">
                 <div class="top_creators_view_profile_num_container" id="top_creators_view_profile_num_4">
                   <p class="top_creators_view_profile_num">4</p>
@@ -617,7 +679,7 @@
             </div>
             <div class="top_creators_view_profile_container" id="top_creators_view_profile_container_6">
               <div class="top_creators_view_profile_photo" id="top_creators_view_profile_photo_6"></div>
-              <p class="top_creators_view_profile_name" id="top_creators_view_profile_creator_6">Creator</p>
+              <p class="top_creators_view_profile_name" id="top_creators_view_profile_creator_6">Kanaheiheihei</p>
               <div class="top_creators_view_profile_value_container" id="top_creators_view_profile_value_container_6">
                 <div class="top_creators_view_profile_num_container" id="top_creators_view_profile_num_6">
                   <p class="top_creators_view_profile_num">6</p>
