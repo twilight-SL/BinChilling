@@ -412,3 +412,15 @@ $(document).ready(function(){
   });
 });
 
+
+function homepage_turn_to_signin_page(btn_id){
+  document.getElementById('signin_page').style.display='block';
+  document.getElementById('homepage').style.display='none';
+}
+
+function homepage_turn_to_signup_page(btn_id){
+  document.getElementById('signup_page').style.display='block';
+  document.getElementById('homepage').style.display='none';
+}
+
+
