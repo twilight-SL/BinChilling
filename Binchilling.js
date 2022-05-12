@@ -48,6 +48,7 @@ function check_email_verification_code(){
       break;
     }
   }
+  console.log(equal);
   if(equal){
     document.getElementById('verify_success_img').style.display='block';
     setTimeout(function(){
@@ -61,31 +62,15 @@ function check_email_verification_code(){
   }
   else{
     document.getElementById('verify_fail_img').style.display = 'block';
-    var delay = 3000
-    var end = +new Date() + delay
-    var verify_again = false;
-    while(new Date() < end) {
-      $(document).click((event) => {
-        if (!$(event.target).closest('#verify_fail_img').length) {
-          // the click occured outside '#verify_fail_img
-          document.getElementById('verify_fail_img').style.display = 'none';
-          document.getElementById('verify_email_verify_code1').value = '';
-          document.getElementById('verify_email_verify_code2').value = '';
-          document.getElementById('verify_email_verify_code3').value = '';
-          document.getElementById('verify_email_verify_code4').value = '';
-          verify_again = true;
-          email_verification_code_entered = ['0', '0', '0', '0', '0', '0']
-        }        
-      });
-    }
-    if(!verify_again){
+    setTimeout(function(){
       document.getElementById('verify_fail_img').style.display = 'none';
       document.getElementById('verify_email_verify_code1').value = '';
       document.getElementById('verify_email_verify_code2').value = '';
       document.getElementById('verify_email_verify_code3').value = '';
       document.getElementById('verify_email_verify_code4').value = '';
-      verify_again = false;
-    }
+      document.getElementById('verify_email_verify_code5').value = '';
+      document.getElementById('verify_email_verify_code6').value = '';
+    }, 2000);
   }
   email_verification_code_entered = ['0', '0', '0', '0', '0', '0']
   
@@ -269,19 +254,28 @@ function show_wallet_object(object_id){
 
 var Currency=['NTD', 'USD', 'JPY', 'ETH', 'RMB', 'EUR']
 var Currency_calculator = [1, 0.034, 0.32, 1/67568, 0.2, 0.032]
-var wallet_pages = ['overview', 'NFT', 'stock']
+var wallet_pages = ['overview', 'NFT']
 var overview_category_totalamount = [296210.326, 175832.331, 91722.462, 30017.135, 25127.746, 0]
 var overview_category_totalamount_percentage = [];
 var totalamount_all_array = [overview_category_totalamount]
 var percentage_all_array = [overview_category_totalamount_percentage]
 var overview_total_asset = 618910  //unit: Currency[0] = NTD
+var NFT_total_asset = 296210.326 //unit: Currency[0] = NTD
+var Total_asset = [618910, 296210.326]
+var NFT_asset = [157435.788, 138774.538]
+
 function load_database(){
   load_total_asset();
   calculate_percentage_all(totalamount_all_array, percentage_all_array);
 }
 function load_total_asset(){
-  document.getElementById('wallet_overview_whole_asset_dollor').textContent = '$'+String(overview_total_asset);
+  for(var i in wallet_pages){
+    var now_wallet_page = wallet_pages[i];
+    var id = "wallet_" + now_wallet_page + "_whole_asset_dollor";
+    document.getElementById(id).textContent = '$'+String(Total_asset[i]);
+  }
 } 
+
 function calculate_percentage_all(totalamount_arr, percentage_arr){
   for(i in totalamount_arr){
     switch(totalamount_arr[i]){
@@ -315,7 +309,30 @@ function close_wallet_whole_asset_currency_menu(currency_id){
     if(chosed_currency.includes(Currency[currency])){
       for(var wallet in wallet_pages){
         if($('#'+currency_id).attr('id').indexOf(wallet_pages[wallet]) != -1) {
-          var now_wallet_page = wallet_pages[wallet];
+          var now_wallet_page = wallet_pages[wallet]; 
+          if(now_wallet_page=='NFT'){
+            document.getElementById('wallet_NFT_NFTs_info_currency1').textContent=Currency[currency];
+            document.getElementById('wallet_NFT_NFTs_info_currency2').textContent=Currency[currency];
+            for(var k = 0; k < NFT_asset.length; k++){
+              var NFT_value = (Currency_calculator[currency] * NFT_asset[k]).toFixed(3);
+              var index = k+1;
+              var id = "wallet_NFT_NFTs_info_value" + index;
+              console.log(id)
+              document.getElementById(id).textContent = String(NFT_value)
+            }
+          }
+          else{
+            var currency_node = document.querySelectorAll('.wallet_currency_currency.overview');
+            var total_anount_node = document.querySelectorAll('.wallet_totalamount_totalamount.overview');
+            for( var i = 0 , j = currency_node.length ; i < j ; i++ ){
+              currency_node[i].textContent = Currency[currency];
+              total_anount_node[i].textContent = String((Currency_calculator[currency]*overview_category_totalamount[i]).toFixed(3))
+            }
+          }
+          var total_asset = Currency_calculator[currency]*Total_asset[wallet];
+          total_asset = total_asset.toFixed(3);
+          var id = "wallet_" + now_wallet_page + "_whole_asset_dollor"
+          document.getElementById(id).textContent = '$'+String(total_asset); 
         }   
       }
       if($('#'+currency_id).attr('id').indexOf('filter') != -1){
@@ -323,36 +340,6 @@ function close_wallet_whole_asset_currency_menu(currency_id){
       }
       var id = 'wallet_'+now_wallet_page+'_whole_asset_dollor_menu_text';
       document.getElementById(id).textContent=Currency[currency];
-      if(now_wallet_page=='NFT'){
-        document.getElementById('wallet_NFT_NFTs_info_currency1').textContent=Currency[currency];
-        document.getElementById('wallet_NFT_NFTs_info_currency2').textContent=Currency[currency];
-      }
-      else{
-        var currency_node = document.querySelectorAll('.wallet_currency_currency.overview');
-        var total_anount_node = document.querySelectorAll('.wallet_totalamount_totalamount.overview');
-        var total_asset = Currency_calculator[currency]*overview_total_asset;
-        document.getElementById('wallet_overview_whole_asset_dollor').textContent = '$'+String(total_asset.toFixed(3));
-        for( var i = 0 , j = currency_node.length ; i < j ; i++ ){
-          currency_node[i].textContent = Currency[currency];
-          /*
-          var k=0;
-          var total_amount_standerd = '';
-          var remainder;
-          var total_amount = (Currency_calculator[currency]*overview_category_totalamount[i]).toFixed(3);
-          if(total_amount < 1){
-            total_amount_standerd = String(total_amount);
-          }
-          else{
-            while(true){
-              remainder = total_amount % Math.pow(1000,k);
-               
-            }
-              
-          }
-          */
-          total_anount_node[i].textContent = String((Currency_calculator[currency]*overview_category_totalamount[i]).toFixed(3))
-        }
-      }
     }
   }
   if($('#'+currency_id).attr('id').indexOf('filter') != -1){
