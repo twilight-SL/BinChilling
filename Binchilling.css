@@ -765,7 +765,7 @@ video {
   flex-direction: row;
 }
 
-#wallet_navbar_username {
+.navbar_username {
   position: relative;
   height: 100%;
   width: 70%;
@@ -776,7 +776,6 @@ video {
   justify-content: center;
   align-items: center;
   font-family: SFPRODISPLAY_BOLD;
-
 }
 
 #wallet_navbar_username_triangle_container {
@@ -1912,7 +1911,13 @@ video {
   font-family: SFPRODISPLAY_BOLD;
 }
 
+#navbar_function_plan:hover{
+  color: #286A93;
+}
 
+#navbar_function_statement:hover{
+  color: #286A93;
+}
 
 #navbar_function_marketplace {
   width: 35%;
@@ -1924,6 +1929,14 @@ video {
 
 #navbar_function_brands {
   width: 60%;
+}
+
+#navbar_function_marketplace:hover{
+  color: #286A93;
+}
+
+#navbar_function_drops:hover{
+  color: #286A93;
 }
 
 .navbar_function3_container {
@@ -1959,7 +1972,7 @@ video {
   border-top: 6px solid;
 }
 
-#navbar_triangle_down {
+.navbar_triangle_down {
   border-top-color: white;
 }
 

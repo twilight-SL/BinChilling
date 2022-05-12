@@ -10,8 +10,6 @@
   <script src="./Binchilling.js"></script>
   <script src="https://d3js.org/d3.v6.min.js"></script>
   <script src="./chart.js" defer></script>
-  <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js?ver=1.3.2'></script>
-  <script type='text/javascript' src='./js/jquery.mousewheel.min.js'></script>
   <body onload="load_database()">
     <!--
     <div class="homepage" id="homepage_01">
@@ -204,10 +202,10 @@
         <div class="navbar_function_container">
           <p class="navbar_function" id="navbar_function_plan">Plan</p>
           <p class="navbar_function" id="navbar_function_statement">Statement</p>
-          <div class="navbar_function3_container" id="wallet_navbar_function3_container" onmouseover="change_hover_color(this.id)" onmouseout="change_back_hover_color(this.id)">
+          <div class="navbar_function3_container" id="wallet_navbar_function3_container" onmouseover="change_account_hover_color(this.id)" onmouseout="change_back_account_hover_color(this.id)">
             <p class="navbar_function" id="navbar_function_account">Account</p>
             <div class="navbar_function_triangle_container" id="wallet_navbar_function_triangle_container">
-              <div class="triangle_down" id="navbar_triangle_down"></div>
+              <div class="triangle_down navbar_triangle_down" id="navbar_account_triangle_down"></div>
             </div> 
           </div> 
         </div>
@@ -215,10 +213,10 @@
         <div id="wallet_navbar_head_contianer">
           <div id="wallet_navbar_head"></div>
         </div>
-        <div id="wallet_username_container">
-          <p id="wallet_navbar_username">Username</p>
+        <div id="wallet_username_container" onmouseover="change_username_hover_color(this.id)" onmouseout="change_back_username_hover_color(this.id)">
+          <p class="navbar_username" id="wallet_navbar_username">Username</p>
           <div class="navbar_function_triangle_container" id="wallet_navbar_username_triangle_container">
-            <div class="triangle_down" id="navbar_wallet_username_triangle_down"></div>
+            <div class="triangle_down navbar_triangle_down" id="navbar_wallet_username_triangle_down"></div>
           </div>
         </div>
       </div>
@@ -543,10 +541,10 @@
           <div class="navbar_function_container">
             <p class="navbar_function" id="navbar_function_marketplace">Marketpalce</p>
             <p class="navbar_function" id="navbar_function_drops">Drops</p>
-            <div class="navbar_function3_container" id="NFT_navbar_function3_container" onmouseover="change_hover_color(this.id)" onmouseout="change_back_hover_color(this.id)">
+            <div class="navbar_function3_container" id="NFT_navbar_function3_container" onmouseover="change_NFT_Market_brands_hover_color(this.id)" onmouseout="change_back_NFT_Market_brands_hover_color(this.id)">
               <p class="navbar_function" id="navbar_function_brands">Brands</p>
               <div class="navbar_function_triangle_container">
-                <div class="triangle_down" id="navbar_triangle_down"></div>
+                <div class="triangle_down navbar_triangle_down" id="NFT_Market_navbar_triangle_down"></div>
               </div> 
             </div> 
           </div>
@@ -554,10 +552,10 @@
           <div id="wallet_navbar_head_contianer">
             <div id="wallet_navbar_head"></div>
           </div>
-          <div id="wallet_username_container">
-            <p id="wallet_navbar_username">Username</p>
+          <div id="wallet_username_container" onmouseover="change_NFT_Market_username_hover_color(this.id)" onmouseout="change_back_NFT_Market_username_hover_color(this.id)">
+            <p class="navbar_username" id="NFT_Market_navbar_username">Username</p>
             <div class="navbar_function_triangle_container" id="wallet_navbar_username_triangle_container">
-              <div class="triangle_down" id="navbar_wallet_username_triangle_down"></div>
+              <div class="triangle_down navbar_triangle_down" id="NFT_Market_navbar_username_triangle_down"></div>
             </div>
           </div>
         </div>
@@ -1590,5 +1588,9 @@
       </div> 
     </div>
     <div id="bottom_area">BinChilling @ 2022 Social Web Research</div>
+    <!--<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js?ver=1.3.2'></script>
+    <script type='text/javascript' src='./js/jquery.mousewheel.min.js'></script>-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   </body>
 </html>

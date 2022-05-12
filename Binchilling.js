@@ -173,15 +173,38 @@ function change_search_category_bgcolor(btn_id){
   }
 }
 
-function change_hover_color(btn_id){
-  document.getElementById('navbar_function3').style.Color='#286A93';
-  document.getElementById('navbar_triangle_down').style.borderTopColor='#286A93';
+function change_account_hover_color(btn_id){
+  document.getElementById('navbar_function_account').style.color='#286A93';
+  document.getElementById('navbar_account_triangle_down').style.borderTopColor='#286A93';
 }
-function change_back_hover_color(btn_id){
-  document.getElementById('navbar_function3').style.Color="white";
-  document.getElementById('navbar_triangle_down').style.borderTopColor="white";
+function change_back_account_hover_color(btn_id){
+  document.getElementById('navbar_function_account').style.color="white";
+  document.getElementById('navbar_account_triangle_down').style.borderTopColor="white";
 }
-
+function change_username_hover_color(btn_id){
+  document.getElementById('wallet_navbar_username').style.color='#286A93';
+  document.getElementById('navbar_wallet_username_triangle_down').style.borderTopColor='#286A93';
+}
+function change_back_username_hover_color(btn_id){
+  document.getElementById('wallet_navbar_username').style.color="white";
+  document.getElementById('navbar_wallet_username_triangle_down').style.borderTopColor="white";
+}
+function change_NFT_Market_brands_hover_color(btn_id){
+  document.getElementById('navbar_function_brands').style.color='#286A93';
+  document.getElementById('NFT_Market_navbar_triangle_down').style.borderTopColor='#286A93';
+}
+function change_back_NFT_Market_brands_hover_color(btn_id){
+  document.getElementById('navbar_function_brands').style.color="white";
+  document.getElementById('NFT_Market_navbar_triangle_down').style.borderTopColor="white";
+}
+function change_NFT_Market_username_hover_color(btn_id){
+  document.getElementById('NFT_Market_navbar_username').style.color='#286A93';
+  document.getElementById('NFT_Market_navbar_username_triangle_down').style.borderTopColor='#286A93';
+}
+function change_back_NFT_Market_username_hover_color(btn_id){
+  document.getElementById('NFT_Market_navbar_username').style.color="white";
+  document.getElementById('NFT_Market_navbar_username_triangle_down').style.borderTopColor="white";
+}
 function pop_wallet_currency_menu(btn_id){
   for(var wallet in wallet_pages){
     if($('#'+btn_id).attr('id').indexOf(wallet_pages[wallet]) != -1) {
@@ -219,6 +242,7 @@ function show_wallet_object(object_id){
     var contain = String(i+1);
     if($('#'+object_id).attr('id').indexOf(contain) != -1) {
       if(show[show_array][i] == 'true'){
+        show[show_array][i] = 'false';
         var show_object_id = 'wallet_'+now_wallet_page+'_object_container'+String(i+1);
         document.getElementById(show_object_id).style.borderColor='#E5E5E5';
         var show_object_id = 'wallet_'+now_wallet_page+'_show_color'+String(i+1);
@@ -231,9 +255,9 @@ function show_wallet_object(object_id){
         document.getElementById(show_object_id).style.color='#E5E5E5';
         var show_object_id = 'wallet_'+now_wallet_page+'_percentage'+String(i+1);
         document.getElementById(show_object_id).style.color='#E5E5E5';
-        show[show_array][i] = 'false';
       }
       else{
+        show[show_array][i] = 'true';
         var show_object_id = 'wallet_'+now_wallet_page+'_object_container'+String(i+1);
         document.getElementById(show_object_id).style.borderColor='#286A93';
         var show_object_id = 'wallet_'+now_wallet_page+'_show_color'+String(i+1);
@@ -246,7 +270,6 @@ function show_wallet_object(object_id){
         document.getElementById(show_object_id).style.color='black';
         var show_object_id = 'wallet_'+now_wallet_page+'_percentage'+String(i+1);
         document.getElementById(show_object_id).style.color='black';
-        show[show_array][i] = 'true';
       }
     }
   }
@@ -263,10 +286,16 @@ var overview_total_asset = 618910  //unit: Currency[0] = NTD
 var NFT_total_asset = 296210.326 //unit: Currency[0] = NTD
 var Total_asset = [618910, 296210.326]
 var NFT_asset = [157435.788, 138774.538]
+var username = 'Louis'
 
 function load_database(){
+  load_username();
   load_total_asset();
   calculate_percentage_all(totalamount_all_array, percentage_all_array);
+}
+function load_username(){
+  document.getElementById('wallet_navbar_username').textContent = username;
+  document.getElementById('NFT_Market_navbar_username').textContent = username;
 }
 function load_total_asset(){
   for(var i in wallet_pages){
@@ -277,8 +306,8 @@ function load_total_asset(){
 } 
 
 function calculate_percentage_all(totalamount_arr, percentage_arr){
-  for(i in totalamount_arr){
-    switch(totalamount_arr[i]){
+  for(var m in totalamount_arr){
+    switch(totalamount_arr[m]){
       case overview_category_totalamount:
         calculate_percentage(overview_category_totalamount, percentage_arr[0]);
         var percentage_node = document.querySelectorAll('.wallet_percentage_percentage.overview');
@@ -292,6 +321,7 @@ function calculate_percentage_all(totalamount_arr, percentage_arr){
 
 function calculate_percentage(total, percentage_save){
   var sum = 0;
+
   for(var j in total){
     if(total[j] != 0){
       sum += total[j];
@@ -357,16 +387,8 @@ function close_wallet_whole_asset_currency_menu(currency_id){
   }
 }
 
-$(document).ready(function(){
-  $("#navbar_function3_container").mouseover(function(){
-    $("#navbar_function3").css("Color",'#286A93');
-    $("#navbar_triangle_down").css("border-top-color",'#286A93');
-  });
-  $("#navbar_function3_container").mouseout(function(){
-    $("#navbar_function3").css("color","white");
-    $("#navbar_triangle_down").css("border-top-color","white");
-  });
 
+$(document).ready(function(){
   $("#wallet_account_choice").click(function(){
     console.log("wallet");
     if($("#category_btw_account").offset().left>='65%'){
