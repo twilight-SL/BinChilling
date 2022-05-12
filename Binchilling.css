@@ -167,6 +167,7 @@ video {
   width: 100vw;
   height: 100vh;
   background-color: white;
+  display: none;
 }
 
 #signin_title_container {
@@ -607,11 +608,11 @@ video {
   font-family: SFPRODISPLAY_BOLD;
 }
 
-#verify_email_navbar_signin{
+.navbar_signin{
   left: 87.5%;
 }
 
-#verify_email_navbar_signup{
+.navbar_signup{
   left: 92.7%;
 }
 
@@ -700,6 +701,7 @@ video {
   height: 11.5vh;
   width: 100vw;
   z-index: 1;
+  background-color: #BCBCBC;
 }
 
 .navbar_logo_img_container {
@@ -2532,6 +2534,14 @@ video {
   /* top: 10.5vh; */
   justify-content: center;
   top:-10vh;
+}
+
+#homepage_navbar_logo_container{
+  display: block;
+}
+
+#homepage_navbar_signin{
+
 }
 
 #homepage_binchilling_logo Img{
