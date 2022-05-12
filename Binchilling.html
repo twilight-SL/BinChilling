@@ -5,12 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BinChilling</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script language="JavaScript" type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script language="JavaScript" type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script language="JavaScript" type="text/javascript" src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script language="JavaScript" type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script></body> 
+    <!------------ customized file -------------->
     <link rel="stylesheet" href="Binchilling.css" />
-  </head>
-  <script src="./Binchilling.js"></script>
-  <script src="https://d3js.org/d3.v6.min.js"></script>
-  <script src="./chart.js" defer></script>
-  <body onload="load_database()">
+    <link href="chart.css" rel="stylesheet"/>
+    <link href="account.css" rel="stylesheet"/>
+    <script src="account.js"></script>
+    <!-- <script src="./chart.js" defer></script> -->
+    <script src="./Binchilling.js"></script>
+</head>
+<body onload="load_database()">
     <!--
     <div class="homepage" id="homepage_01">
       <div id="homepage_logo_img_container">
@@ -243,8 +252,8 @@
           </div>
           <img class="navbar_logo_text" src="./img/logo_text.png">
         </div>
-        <div class="narbar_sign" id="verify_email_navbar_signin" onclick="turn_to_signin_page_from_verify()">Sign in</div>
-        <div class="narbar_sign" id="verify_email_navbar_signup" onclick="turn_to_signup_page_from_verify()">Sign up</div>
+        <div class="narbar_sign navbar_signin" id="verify_email_navbar_signin" onclick="turn_to_signin_page_from_verify()">Sign in</div>
+        <div class="narbar_sign navbar_signup" id="verify_email_navbar_signup" onclick="turn_to_signup_page_from_verify()">Sign up</div>
       </div>
       <form id="verify_email_verify_code_align_container" name="verify_email">
         <div class="verify_email_verify_code_container" id="verify_email_verify_code_container1">
@@ -288,7 +297,128 @@
       <img class="verify_container" id="verify_fail_img" src="./Img/verify/verify_fail.png"></img>
       <img class="verify_container" id="verify_success_img" src="./Img/verify/verify_success.png"></img>
     </div>
-
+   <!-------------------- Add account -------------------->
+   <div id="add_new_account_page" >
+    <p class="add_account_title">Add a new account.</p>
+    <p class="add_account_subtitle">Connect all your accounts and manage your assets easily.</p>
+    <div class="container">
+      <div class="input_account">
+        <label>Bank</label>
+        <input class="input_add_style" type="text" placeholder="+  Click to add a new account">
+      </div>
+      <div class="input_account">
+        <label>Securities</label>
+        <input class="input_add_style" type="text" placeholder="+  Click to add a new account">
+      </div>
+      <div class="input_account">
+        <label>Fund</label>
+        <input class="input_add_style" type="text" placeholder="+  Click to add a new account">
+      </div>
+      <div class="input_account">
+        <label>E-ticket</label>
+        <input class="input_add_style" type="text" placeholder="+  Click to add a new account">
+      </div>
+      <div class="input_account">
+        <label>Insurance</label>
+        <input class="input_add_style" type="text" placeholder="+  Click to add a new account">
+      </div>
+      <div class="input_account">
+        <label>NFT/ Cryptocurrency</label>
+        <!------------------  ! Add Demo !  ------------------>
+        <div id="demo-add" style="display: none;">
+          <div style="display: flex;justify-content:flex-start;align-items: center;margin-left: 30px;">
+            <img src="./img/MetaMask_Fox 3.png" alt="">
+            <img src="./img/MetaMask.png" style="height:17px;margin-left: 40px;" alt="">
+          </div>
+          <img src="./img/Group 290.png" alt="">
+        </div>
+        <input id="add-nft" class="input_add_style" type="text" placeholder="+  Click to add a new account" onclick="add_NFT_account(this.id)">
+      </div>
+      <button id="back-to-top" class="toTop">Back to top</button>
+    </div>
+  </div>
+  <!-------------- connect NFT wallet page -------------->
+  <div id="connect_nft_account">
+    <p class="add_account_title">Connect your wallet.</p>
+    <p class="add_account_subtitle">Get to know more information about your assets.</p>
+    <div class="selection">
+        <ul class="row">
+          <div class="col-4">
+            <div class="list-group list-group-flush" id="list-tab" role="tablist">
+              <div class="list-group-item list-group-item-action item rounded-pill" id="list-metamask-list" data-toggle="modal" data-target="#MetaMaskModal" role="tab" aria-controls="list-Metamask">
+                <img src="./img/MetaMask_Fox 3.png" alt="">
+                <p class="icon_name">MetaMask</p>
+              </div>
+              <!---------------------- MetaMask Modal Start --------------------------->
+              <div class="modal fade" id="MetaMaskModal" role="dialog">
+                <div class="modal-dialog">
+                  <!-- Modal content -->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <img src="./img/MetaMask_Fox 3.png" alt="">
+                      <img src="./img/Ellipse 31.png" class="ellipse">
+                      <select name="currency" class="form-select">
+                        <option selected>Main Ethereum Network</option>
+                        <option>Something Network</option>
+                      </select>
+                    </div>
+                    <div class="modal-body">
+                      <img src="./img/MetaMask_Big.jpg" alt="">
+                      <h1>Welcome back!</h1>
+                      <h4>The decentralized web awaits</h4>
+                      <div class="metamask-passwaord">
+                        <div class="psw">Password</div>
+                        <input type="password" class="connect-wallet-password" id="metamask-password-input" onblur="get_metamask_password()">
+                      </div>
+                      <button class="unlock" onclick="verify_metamask_password()">Unlock</button>
+                      <a href="#" class="forgot-psw">Forgot password?</a>
+                      <p class="psw">Need help? Contact <a href="#">MetaMaskSupport</a></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!---------------------- MetaMask Connect Succes --------------------------->
+              <div class='dialog' id="dialog-success">
+                <div class="verify-modal" id="MetaMask-wallet-success-connect">
+                  <img src="./img/Group 170.png" alt="">
+                </div>
+              </div>
+              <!---------------------- MetaMask Connect Failed --------------------------->
+              <div class='dialog' id="dialog-failed">
+                <div class="verify-modal" id="MetaMask-wallet-failed-connect">
+                  <img src="./img/Group 167.png" alt="">
+                </div>
+              </div>
+              <!---------------------- MetaMask Modal End --------------------------->
+              <div class="list-group-item list-group-item-action item rounded-pill" id="list-coinbase-list" data-bs-toggle="list" role="tab" aria-controls="list-Coinbase">
+                <img src="./img/coinbasewallet 1.png" alt="">
+                <p class="icon_name">Coinbase wallet</p>
+              </div>
+              <div class="list-group-item list-group-item-action item rounded-pill" id="list-walletconnect-list" data-bs-toggle="list" role="tab" aria-controls="list-WalletConnect">
+                <img src="./img/walletconnect 1.png" alt="">
+                <p class="icon_name">WalletConnect</p>
+              </div>
+              <div class="list-group-item list-group-item-action item rounded-pill" id="list-phantom-list" data-bs-toggle="list" role="tab" aria-controls="list-Phantom">
+                <img src="./img/Phantom 1.png" alt="">
+                <p class="icon_name">Phantom</p>
+              </div>
+              <div class="list-group-item list-group-item-action item rounded-pill" id="list-venly-list" data-bs-toggle="list" role="tab" aria-controls="list-Venly">
+                <img src="./img/venly_logo 1.png" alt="">
+                <p class="icon_name">Venly</p>
+              </div>
+              <div class="list-group-item list-group-item-action item rounded-pill" id="list-formatic-list" data-bs-toggle="list" role="tab" aria-controls="list-Formatic">
+                <img src="./img/formatic 1.png" alt="">
+                <p class="icon_name">Formatic</p>
+              </div>
+              <div class="list-group-item list-group-item-action item rounded-pill" id="list-kaikas-list" data-bs-toggle="list" role="tab" aria-controls="list-Kaikas">
+                <img src="./img/kaikas 1.png" alt="">
+                <p class="icon_name">Kaikas</p>
+              </div>
+            </div>   
+          </div>
+        </ul>
+    </div>
+  </div>
     <!--Wallet-->
     <div id="wallet">
       <div class="navbar" id="wallet_navbar">
@@ -399,7 +529,14 @@
           <p class="wallet_percentage_percentage wallet_text overview" id="wallet_overview_percentage5"></p>
         </div>
         <!-- Overview Chart -->
-        <div id="dataviz"></div>
+        <!-------------------------- Risk -------------------------->
+        <div class="risk_area" id="Risk">
+          <h2 class="risk-index">Risk Index</h2>
+          <img src="./Img/Group 364.png" id="tooltipex" data-toggle="tooltip" data-placement="top" title="Low risk! You have done a good job!"/>
+          <h3 class="risk-num">56</h3>
+        </div>
+        <!-------------------------- Overview Chart -------------------------->
+        <div id="chart" preserveAspectRatio="xMinYMin meet" viewBox="0 0 200 200"></div>
       </div>
       
       <!---------------------------------------------Wallet NFT--------------------------------------------->
@@ -554,6 +691,15 @@
         <div class="wallet_NFT_direction_btn" id="wallet_NFT_right_btn">
           <div id="wallet_NFT_right_btn_direction"></div>
         </div>
+        <!-- NFT Chart -->
+        <!-------------------------- Risk -------------------------->
+        <div class="risk_area" id="Risk_NFT">
+          <h2 class="risk-index" style="color: #C86B86;">Risk Index</h2>
+          <img src="./Img/Group 363.png" id="tooltipex" data-toggle="tooltip" data-placement="top" class="red-tooltip" title="Watch out! Got to pay attension!"/>
+          <h3 class="risk-num" style="color: #C86B86;">65</h3>
+        </div>
+        <!-------------------------- Chart -------------------------->
+        <div id="chart_NFT" preserveAspectRatio="xMinYMin meet" viewBox="0 0 200 200"></div>
       </div>
     </div>
     <!---------------------------------------------NFT Market--------------------------------------------->
@@ -810,318 +956,318 @@
         <div class="p04_round_card_container">
           <div class="round_card">
             <span>1</span>
-            <img src="./p0405/Ellipse 21.png" alt="" />
+            <img src="./Img/marketplace/Ellipse 23.png" alt="" />
             <div class="paragraph" style="width: 350px">
               <img
-                src="./p0405/Psychokitties_ The Rid....png"
+                src="./Img/marketplace/I’m a SHIBA INU.png"
                 alt=""
-                style="width: 235px"
+                style="width: 241px;height: 24px;"
               />
               <div class="paragraph_1">
-                <img src="./p0405/Volume.png" alt="" />
-                <img src="./p0405/＄666.png" alt="" />
-                <div class="mark"><img src="./p0405/+66.66_.png" alt="" /></div>
+                <img src="./Img/marketplace/Volume-2.png" alt="" />
+                <img src="./Img/marketplace/＄666-7.png" alt="" />
+                <div class="mark"><img src="./Img/marketplace/+66.66%-1.png" alt="" /></div>
               </div>
               <div class="paragraph_2">
-                <img src="./p0405/Volume-1.png" alt="" />
-                <img src="./p0405/＄666.6K.png" alt="" />
-                <img src="./p0405/+66.66_.png" alt="" />
+                <img src="./Img/marketplace/Volume-3.png" alt="" />
+                <img src="./Img/marketplace/＄666.6K-4.png" alt="" />
+                <img src="./Img/marketplace/+66.66_-8.png" alt="" />
               </div>
             </div>
           </div>
           <div class="round_card">
-            <span>1</span>
-            <img src="./p0405/Ellipse 21.png" alt="" />
+            <span>6</span>
+            <img src="./Img/marketplace/Ellipse 22.png" alt="" />
             <div class="paragraph" style="width: 350px">
               <img
-                src="./p0405/Psychokitties_ The Rid....png"
+                src="./Img/marketplace/Psychokitties_ The Rid...-5.png"
                 alt=""
                 style="width: 235px"
               />
               <div class="paragraph_1">
-                <img src="./p0405/Volume.png" alt="" />
-                <img src="./p0405/＄666.png" alt="" />
-                <div class="mark"><img src="./p0405/+66.66_.png" alt="" /></div>
+                <img src="./Img/marketplace/Volume-2.png" alt="" />
+                <img src="./Img/marketplace/＄666-7.png" alt="" />
+                <div class="mark"><img src="./Img/marketplace/+66.66%-1.png" alt="" /></div>
               </div>
               <div class="paragraph_2">
-                <img src="./p0405/Volume-1.png" alt="" />
-                <img src="./p0405/＄666.6K.png" alt="" />
-                <img src="./p0405/+66.66_.png" alt="" />
+                <img src="./Img/marketplace/Volume-3.png" alt="" />
+                <img src="./Img/marketplace/＄666.6K-4.png" alt="" />
+                <img src="./Img/marketplace/-66.66_-3.png" alt="" />
               </div>
             </div>
           </div>
           <div class="round_card">
-            <span>1</span>
-            <img src="./p0405/Ellipse 21.png" alt="" />
+            <span>11</span>
+            <img src="./Img/marketplace/Ellipse 21.png" alt="" />
             <div class="paragraph" style="width: 350px">
               <img
-                src="./p0405/Psychokitties_ The Rid....png"
+                src="./Img/marketplace/Psychokitties_ The Rid...-5.png"
                 alt=""
                 style="width: 235px"
               />
               <div class="paragraph_1">
-                <img src="./p0405/Volume.png" alt="" />
-                <img src="./p0405/＄666.png" alt="" />
-                <div class="mark"><img src="./p0405/+66.66_.png" alt="" /></div>
+                <img src="./Img/marketplace/Volume-2.png" alt="" />
+                <img src="./Img/marketplace/＄666-7.png" alt="" />
+                <div class="mark"><img src="./Img/marketplace/+66.66%-1.png" alt="" /></div>
               </div>
               <div class="paragraph_2">
-                <img src="./p0405/Volume-1.png" alt="" />
-                <img src="./p0405/＄666.6K.png" alt="" />
-                <img src="./p0405/+66.66_.png" alt="" />
+                <img src="./Img/marketplace/Volume-3.png" alt="" />
+                <img src="./Img/marketplace/＄666.6K-4.png" alt="" />
+                <img src="./Img/marketplace/+66.66_-8.png" alt="" />
               </div>
             </div>
           </div>
           <div class="round_card">
-            <span>1</span>
-            <img src="./p0405/Ellipse 21.png" alt="" />
+            <span>2</span>
+            <img src="./Img/marketplace/Ellipse 23-1.png" alt="" />
             <div class="paragraph" style="width: 350px">
-              <img
-                src="./p0405/Psychokitties_ The Rid....png"
+             <img
+                src="./Img/marketplace/Psychokitties_ The Rid...-5.png"
                 alt=""
                 style="width: 235px"
               />
               <div class="paragraph_1">
-                <img src="./p0405/Volume.png" alt="" />
-                <img src="./p0405/＄666.png" alt="" />
-                <div class="mark"><img src="./p0405/+66.66_.png" alt="" /></div>
+                <img src="./Img/marketplace/Volume-2.png" alt="" />
+                <img src="./Img/marketplace/＄666-7.png" alt="" />
+                <div class="mark"><img src="./Img/marketplace/+66.66%-1.png" alt="" /></div>
               </div>
               <div class="paragraph_2">
-                <img src="./p0405/Volume-1.png" alt="" />
-                <img src="./p0405/＄666.6K.png" alt="" />
-                <img src="./p0405/+66.66_.png" alt="" />
+                <img src="./Img/marketplace/Volume-3.png" alt="" />
+                <img src="./Img/marketplace/＄666.6K-4.png" alt="" />
+                <img src="./Img/marketplace/-66.66_-3.png" alt="" />
               </div>
             </div>
           </div>
           <div class="round_card">
-            <span>1</span>
-            <img src="./p0405/Ellipse 21.png" alt="" />
+            <span>7</span>
+            <img src="./Img/marketplace/Ellipse 22-1.png" alt="" />
             <div class="paragraph" style="width: 350px">
               <img
-                src="./p0405/Psychokitties_ The Rid....png"
+                src="./Img/marketplace/Psychokitties_ The Rid...-5.png"
                 alt=""
                 style="width: 235px"
               />
               <div class="paragraph_1">
-                <img src="./p0405/Volume.png" alt="" />
-                <img src="./p0405/＄666.png" alt="" />
-                <div class="mark"><img src="./p0405/+66.66_.png" alt="" /></div>
+                <img src="./Img/marketplace/Volume-2.png" alt="" />
+                <img src="./Img/marketplace/＄666-7.png" alt="" />
+                <div class="mark"><img src="./Img/marketplace/+66.66%-1.png" alt="" /></div>
               </div>
               <div class="paragraph_2">
-                <img src="./p0405/Volume-1.png" alt="" />
-                <img src="./p0405/＄666.6K.png" alt="" />
-                <img src="./p0405/+66.66_.png" alt="" />
+                <img src="./Img/marketplace/Volume-3.png" alt="" />
+                <img src="./Img/marketplace/＄666.6K-4.png" alt="" />
+                <img src="./Img/marketplace/+66.66_-8.png" alt="" />
               </div>
             </div>
           </div>
           <!-- 6 -->
           <div class="round_card">
-            <span>1</span>
-            <img src="./p0405/Ellipse 21.png" alt="" />
+            <span>12</span>
+            <img src="./Img/marketplace/Ellipse 21-1.png" alt="" />
             <div class="paragraph" style="width: 350px">
               <img
-                src="./p0405/Psychokitties_ The Rid....png"
+                src="./Img/marketplace/Psychokitties_ The Rid...-5.png"
                 alt=""
                 style="width: 235px"
               />
               <div class="paragraph_1">
-                <img src="./p0405/Volume.png" alt="" />
-                <img src="./p0405/＄666.png" alt="" />
-                <div class="mark"><img src="./p0405/+66.66_.png" alt="" /></div>
+                <img src="./Img/marketplace/Volume-2.png" alt="" />
+                <img src="./Img/marketplace/＄666-7.png" alt="" />
+                <div class="mark"><img src="./Img/marketplace/+66.66%-1.png" alt="" /></div>
               </div>
               <div class="paragraph_2">
-                <img src="./p0405/Volume-1.png" alt="" />
-                <img src="./p0405/＄666.6K.png" alt="" />
-                <img src="./p0405/+66.66_.png" alt="" />
+                <img src="./Img/marketplace/Volume-3.png" alt="" />
+                <img src="./Img/marketplace/＄666.6K-4.png" alt="" />
+                <img src="./Img/marketplace/-66.66_-3.png" alt="" />
               </div>
             </div>
           </div>
           <div class="round_card">
-            <span>1</span>
-            <img src="./p0405/Ellipse 21.png" alt="" />
+            <span>3</span>
+            <img src="./Img/marketplace/Ellipse 23-2.png" alt="" />
             <div class="paragraph" style="width: 350px">
               <img
-                src="./p0405/Psychokitties_ The Rid....png"
+                src="./Img/marketplace/Psychokitties_ The Rid...-5.png"
                 alt=""
                 style="width: 235px"
               />
               <div class="paragraph_1">
-                <img src="./p0405/Volume.png" alt="" />
-                <img src="./p0405/＄666.png" alt="" />
-                <div class="mark"><img src="./p0405/+66.66_.png" alt="" /></div>
+                <img src="./Img/marketplace/Volume-2.png" alt="" />
+                <img src="./Img/marketplace/＄666-7.png" alt="" />
+                <div class="mark"><img src="./Img/marketplace/+66.66%-1.png" alt="" /></div>
               </div>
               <div class="paragraph_2">
-                <img src="./p0405/Volume-1.png" alt="" />
-                <img src="./p0405/＄666.6K.png" alt="" />
-                <img src="./p0405/+66.66_.png" alt="" />
+                <img src="./Img/marketplace/Volume-3.png" alt="" />
+                <img src="./Img/marketplace/＄666.6K-4.png" alt="" />
+                <img src="./Img/marketplace/+66.66_-8.png" alt="" />
               </div>
             </div>
           </div>
           <div class="round_card">
-            <span>1</span>
-            <img src="./p0405/Ellipse 21.png" alt="" />
+            <span>8</span>
+            <img src="./Img/marketplace/Ellipse 22-2.png" alt="" />
             <div class="paragraph" style="width: 350px">
               <img
-                src="./p0405/Psychokitties_ The Rid....png"
+                src="./Img/marketplace/Psychokitties_ The Rid...-5.png"
                 alt=""
                 style="width: 235px"
               />
               <div class="paragraph_1">
-                <img src="./p0405/Volume.png" alt="" />
-                <img src="./p0405/＄666.png" alt="" />
-                <div class="mark"><img src="./p0405/+66.66_.png" alt="" /></div>
+                <img src="./Img/marketplace/Volume-2.png" alt="" />
+                <img src="./Img/marketplace/＄666-7.png" alt="" />
+                <div class="mark"><img src="./Img/marketplace/+66.66%-1.png" alt="" /></div>
               </div>
               <div class="paragraph_2">
-                <img src="./p0405/Volume-1.png" alt="" />
-                <img src="./p0405/＄666.6K.png" alt="" />
-                <img src="./p0405/+66.66_.png" alt="" />
+                <img src="./Img/marketplace/Volume-3.png" alt="" />
+                <img src="./Img/marketplace/＄666.6K-4.png" alt="" />
+                <img src="./Img/marketplace/-66.66_-3.png" alt="" />
               </div>
             </div>
           </div>
           <div class="round_card">
-            <span>1</span>
-            <img src="./p0405/Ellipse 21.png" alt="" />
+            <span>13</span>
+            <img src="./Img/marketplace/Ellipse 21-2.png" alt="" />
             <div class="paragraph" style="width: 350px">
               <img
-                src="./p0405/Psychokitties_ The Rid....png"
+                src="./Img/marketplace/Psychokitties_ The Rid...-5.png"
                 alt=""
                 style="width: 235px"
               />
               <div class="paragraph_1">
-                <img src="./p0405/Volume.png" alt="" />
-                <img src="./p0405/＄666.png" alt="" />
-                <div class="mark"><img src="./p0405/+66.66_.png" alt="" /></div>
+                <img src="./Img/marketplace/Volume-2.png" alt="" />
+                <img src="./Img/marketplace/＄666-7.png" alt="" />
+                <div class="mark"><img src="./Img/marketplace/+66.66%-1.png" alt="" /></div>
               </div>
               <div class="paragraph_2">
-                <img src="./p0405/Volume-1.png" alt="" />
-                <img src="./p0405/＄666.6K.png" alt="" />
-                <img src="./p0405/+66.66_.png" alt="" />
+                <img src="./Img/marketplace/Volume-3.png" alt="" />
+                <img src="./Img/marketplace/＄666.6K-4.png" alt="" />
+                <img src="./Img/marketplace/+66.66_-8.png" alt="" />
               </div>
             </div>
           </div>
           <div class="round_card">
-            <span>1</span>
-            <img src="./p0405/Ellipse 21.png" alt="" />
+            <span>4</span>
+            <img src="./Img/marketplace/Ellipse 23-3.png" alt="" />
             <div class="paragraph" style="width: 350px">
               <img
-                src="./p0405/Psychokitties_ The Rid....png"
+                src="./Img/marketplace/Psychokitties_ The Rid...-5.png"
                 alt=""
                 style="width: 235px"
               />
               <div class="paragraph_1">
-                <img src="./p0405/Volume.png" alt="" />
-                <img src="./p0405/＄666.png" alt="" />
-                <div class="mark"><img src="./p0405/+66.66_.png" alt="" /></div>
+                <img src="./Img/marketplace/Volume-2.png" alt="" />
+                <img src="./Img/marketplace/＄666-7.png" alt="" />
+                <div class="mark"><img src="./Img/marketplace/+66.66%-1.png" alt="" /></div>
               </div>
               <div class="paragraph_2">
-                <img src="./p0405/Volume-1.png" alt="" />
-                <img src="./p0405/＄666.6K.png" alt="" />
-                <img src="./p0405/+66.66_.png" alt="" />
+                <img src="./Img/marketplace/Volume-3.png" alt="" />
+                <img src="./Img/marketplace/＄666.6K-4.png" alt="" />
+                <img src="./Img/marketplace/-66.66_-3.png" alt="" />
               </div>
             </div>
           </div>
           <!-- 11 -->
           <div class="round_card">
-            <span>1</span>
-            <img src="./p0405/Ellipse 21.png" alt="" />
+            <span>9</span>
+            <img src="./Img/marketplace/Ellipse 22-3.png" alt="" />
             <div class="paragraph" style="width: 350px">
               <img
-                src="./p0405/Psychokitties_ The Rid....png"
+                src="./Img/marketplace/Psychokitties_ The Rid...-5.png"
                 alt=""
                 style="width: 235px"
               />
               <div class="paragraph_1">
-                <img src="./p0405/Volume.png" alt="" />
-                <img src="./p0405/＄666.png" alt="" />
-                <div class="mark"><img src="./p0405/+66.66_.png" alt="" /></div>
+                <img src="./Img/marketplace/Volume-2.png" alt="" />
+                <img src="./Img/marketplace/＄666-7.png" alt="" />
+                <div class="mark"><img src="./Img/marketplace/+66.66%-1.png" alt="" /></div>
               </div>
               <div class="paragraph_2">
-                <img src="./p0405/Volume-1.png" alt="" />
-                <img src="./p0405/＄666.6K.png" alt="" />
-                <img src="./p0405/+66.66_.png" alt="" />
+                <img src="./Img/marketplace/Volume-3.png" alt="" />
+                <img src="./Img/marketplace/＄666.6K-4.png" alt="" />
+                <img src="./Img/marketplace/+66.66_-8.png" alt="" />
               </div>
             </div>
           </div>
           <div class="round_card">
-            <span>1</span>
-            <img src="./p0405/Ellipse 21.png" alt="" />
+            <span>14</span>
+            <img src="./Img/marketplace/Ellipse 21-3.png" alt="" />
             <div class="paragraph" style="width: 350px">
               <img
-                src="./p0405/Psychokitties_ The Rid....png"
+                src="./Img/marketplace/Psychokitties_ The Rid...-5.png"
                 alt=""
                 style="width: 235px"
               />
               <div class="paragraph_1">
-                <img src="./p0405/Volume.png" alt="" />
-                <img src="./p0405/＄666.png" alt="" />
-                <div class="mark"><img src="./p0405/+66.66_.png" alt="" /></div>
+                <img src="./Img/marketplace/Volume-2.png" alt="" />
+                <img src="./Img/marketplace/＄666-7.png" alt="" />
+                <div class="mark"><img src="./Img/marketplace/+66.66%-1.png" alt="" /></div>
               </div>
               <div class="paragraph_2">
-                <img src="./p0405/Volume-1.png" alt="" />
-                <img src="./p0405/＄666.6K.png" alt="" />
-                <img src="./p0405/+66.66_.png" alt="" />
+                <img src="./Img/marketplace/Volume-3.png" alt="" />
+                <img src="./Img/marketplace/＄666.6K-4.png" alt="" />
+                <img src="./Img/marketplace/-66.66_-3.png" alt="" />
               </div>
             </div>
           </div>
           <div class="round_card">
-            <span>1</span>
-            <img src="./p0405/Ellipse 21.png" alt="" />
+            <span>5</span>
+            <img src="./Img/marketplace/Ellipse 23-4.png" alt="" />
             <div class="paragraph" style="width: 350px">
               <img
-                src="./p0405/Psychokitties_ The Rid....png"
+                src="./Img/marketplace/Psychokitties_ The Rid...-5.png"
                 alt=""
                 style="width: 235px"
               />
               <div class="paragraph_1">
-                <img src="./p0405/Volume.png" alt="" />
-                <img src="./p0405/＄666.png" alt="" />
-                <div class="mark"><img src="./p0405/+66.66_.png" alt="" /></div>
+                <img src="./Img/marketplace/Volume-2.png" alt="" />
+                <img src="./Img/marketplace/＄666-7.png" alt="" />
+                <div class="mark"><img src="./Img/marketplace/+66.66%-1.png" alt="" /></div>
               </div>
               <div class="paragraph_2">
-                <img src="./p0405/Volume-1.png" alt="" />
-                <img src="./p0405/＄666.6K.png" alt="" />
-                <img src="./p0405/+66.66_.png" alt="" />
+                <img src="./Img/marketplace/Volume-3.png" alt="" />
+                <img src="./Img/marketplace/＄666.6K-4.png" alt="" />
+                <img src="./Img/marketplace/+66.66_-8.png" alt="" />
               </div>
             </div>
           </div>
           <div class="round_card">
-            <span>1</span>
-            <img src="./p0405/Ellipse 21.png" alt="" />
+            <span>10</span>
+            <img src="./Img/marketplace/Ellipse 22-4.png" alt="" />
             <div class="paragraph" style="width: 350px">
               <img
-                src="./p0405/Psychokitties_ The Rid....png"
+                src="./Img/marketplace/Psychokitties_ The Rid...-5.png"
                 alt=""
                 style="width: 235px"
               />
               <div class="paragraph_1">
-                <img src="./p0405/Volume.png" alt="" />
-                <img src="./p0405/＄666.png" alt="" />
-                <div class="mark"><img src="./p0405/+66.66_.png" alt="" /></div>
+                <img src="./Img/marketplace/Volume-2.png" alt="" />
+                <img src="./Img/marketplace/＄666-7.png" alt="" />
+                <div class="mark"><img src="./Img/marketplace/+66.66%-1.png" alt="" /></div>
               </div>
               <div class="paragraph_2">
-                <img src="./p0405/Volume-1.png" alt="" />
-                <img src="./p0405/＄666.6K.png" alt="" />
-                <img src="./p0405/+66.66_.png" alt="" />
+                <img src="./Img/marketplace/Volume-3.png" alt="" />
+                <img src="./Img/marketplace/＄666.6K-4.png" alt="" />
+                <img src="./Img/marketplace/-66.66_-3.png" alt="" />
               </div>
             </div>
           </div>
           <div class="round_card">
-            <span>1</span>
-            <img src="./p0405/Ellipse 21.png" alt="" />
+            <span>15</span>
+            <img src="./Img/marketplace/Ellipse 21-4.png" alt="" />
             <div class="paragraph" style="width: 350px">
               <img
-                src="./p0405/Psychokitties_ The Rid....png"
+                src="./Img/marketplace/Psychokitties_ The Rid...-5.png"
                 alt=""
                 style="width: 235px"
               />
               <div class="paragraph_1">
-                <img src="./p0405/Volume.png" alt="" />
-                <img src="./p0405/＄666.png" alt="" />
-                <div class="mark"><img src="./p0405/+66.66_.png" alt="" /></div>
+                <img src="./Img/marketplace/Volume-2.png" alt="" />
+                <img src="./Img/marketplace/＄666-7.png" alt="" />
+                <div class="mark"><img src="./Img/marketplace/+66.66%-1.png" alt="" /></div>
               </div>
               <div class="paragraph_2">
-                <img src="./p0405/Volume-1.png" alt="" />
-                <img src="./p0405/＄666.6K.png" alt="" />
-                <img src="./p0405/+66.66_.png" alt="" />
+                <img src="./Img/marketplace/Volume-3.png" alt="" />
+                <img src="./Img/marketplace/＄666.6K-4.png" alt="" />
+                <img src="./Img/marketplace/+66.66_-8.png" alt="" />
               </div>
             </div>
           </div>
@@ -1689,7 +1835,9 @@
     <div id="bottom_area">BinChilling @ 2022 Social Web Research</div>
     <!--<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js?ver=1.3.2'></script>
     <script type='text/javascript' src='./js/jquery.mousewheel.min.js'></script>-->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script language="JavaScript" type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script language="JavaScript" type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script language="JavaScript" type="text/javascript" src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script language="JavaScript" type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html>

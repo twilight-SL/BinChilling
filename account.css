@@ -1,0 +1,271 @@
+/* ---------------- Add account page ---------------- */
+#add_new_account_page {
+  display: none;
+}
+
+.add_account_title {
+  height: 72px;
+  position: absolute;
+  padding: 200px 0px 0px 565px;
+  font-family: SFPRODISPLAY_BOLD;
+  font-size: 60px;
+  line-height: 72px;
+  color: #286A93;
+}
+
+.add_account_subtitle {
+  position: absolute;
+  height: 24px;
+  padding: 280px 0px 0px 565px;
+  font-family: SFPRODISPLAYREGULAR;
+  letter-spacing: 0.75px;
+  font-size: 20px;
+  line-height: 24px;
+  color: #A0A0A0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 375px 500px 250px 515px;
+}
+
+.input_account {
+  margin-bottom: 50px;
+}
+
+label {
+  display: block;
+  height: 26px;
+  margin: 0px 0px 15px 2px;
+  font-family: SFProDisplay-Semibold;
+  font-size: 22px;
+  line-height: 26px;
+  color: #A0A0A0;
+}
+
+::placeholder {
+  font-family: SFProDisplay-Semibold;
+  font-size: 22px;
+  color: #D4D4D4;
+}
+
+.input_add_style {
+  width: 790px;
+  height: 72px;
+  padding: 20px 40px 15px 40px;
+  box-sizing: border-box;
+  border: 2px dashed #A0A0A0;
+  border-radius: 21px;
+}
+
+#back-to-top {
+  width: 790px;
+  height: 72px;
+  border: none;
+  margin-top: 35px;
+  background: linear-gradient(90deg, #286A93 0%, #528CA2 100%);
+  border-radius: 7px;
+  font-family: SFProDisplay-Semibold;
+  font-size: 22px;
+  line-height: 26px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+/* ---------------- Connect to NFT wallet ---------------- */
+#connect_nft_account {
+  display: none;
+}
+
+.selection {
+  /* width: 790px;
+  height: 94.5vh; */
+  display: flex;
+  flex-direction: column;
+  padding: 365px 560px 50px 560px;
+}
+
+.item {
+  width: 790px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  padding: 5px 40px;
+  margin: 2.5px 0px;
+}
+
+.list-group-item.active {
+  background: #E5E5E5;
+  border-color: #E5E5E5;
+}
+
+.list-group-item:hover {
+  background: #E5E5E5;
+  border-color: #E5E5E5;
+  cursor: pointer;
+}
+
+.icon_name {
+  margin-left: 30px;
+  font-family: SFPRODISPLAYREGULAR;
+  color: #000000;
+  font-size: 22px;
+}
+
+.col-4 {
+  width: 100%;
+}
+
+/* ---------------------------- Modal -------------------------- */
+.modal.fade .modal-dialog {
+  transform: translate(7.5%, 100px);
+}
+
+.modal-backdrop {
+  background-color: #E5E5E5;
+  opacity: 0.3;
+}
+
+.modal-header {
+  height: 60px;
+  background: #F3F4F6;
+  padding: 15px;
+}
+
+
+.modal-content {
+  width: 420px;
+  border: none;
+  background: #FFFFFF;
+  box-shadow: 0px 5px 5px 1px rgba(0, 0, 0, 0.25);
+}
+
+.ellipse {
+  position: absolute;
+  left: 170px;
+}
+
+select[name="currency"] {
+  appearance: none;
+  padding: 7px 30px 5px 20px;
+  width: 246px;
+  height: 44px;
+  border: 1px solid #BCBCBC;
+  border-radius: 60px;
+  font-family: SFPRODISPLAYREGULAR;
+  font-size: 15px;
+  text-align: center;
+  color: #000000;
+}
+
+.form-select:focus {
+  border-color: none;
+  outline: 0;
+  box-shadow: 0 0 0 0;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0px;
+}
+
+h1 {
+  height: 48px;
+  font-family: SFProDisplay-Semibold;
+  font-size: 40px;
+  color: #56595F;
+}
+
+h4 {
+  height: 20px;
+  letter-spacing: 0.75px;
+  font-family: SFPRODISPLAY_MEDIUM;
+  font-size: 17px;
+  color: #A0A0A0;
+  margin-top: 5px;
+}
+
+.modal-body img {
+  height: 157px;
+  margin-bottom: 15px;
+}
+
+.psw {
+  height: 18px;
+  font-family: SFProDisplay-Semibold;
+  font-size: 15px;
+  letter-spacing: 0.75px;
+  margin: 60px 0px 10px 0px;
+  color: #A0A0A0;
+}
+
+.forgot-psw {
+  width: 140px;
+  height: 18px;
+  font-family: SFPRODISPLAYREGULAR;
+  font-size: 15px;
+  margin-top: 40px;
+  text-align: center;
+  color: #247DBB;
+}
+
+a {
+  text-decoration: none;
+}
+
+.connect-wallet-password {
+  border: 0;
+  outline: none;
+  width: 345px;
+  border-bottom: 2px solid #1976B8;
+  margin: 15px 0px 40px 0px;
+}
+
+.unlock {
+  width: 369px;
+  height: 56px;
+  font-family: SFProDisplay-Semibold;
+  font-size: 15px;
+  text-align: center;
+  color: #FFFFFF;
+  background: #047DD6;
+  border: none;
+  border-radius: 60px;
+}
+
+.verify-modal {
+  display: none;
+  position: absolute;
+  z-index: 10;
+  left: 705px;
+  top: 260px;
+}
+
+.dialog {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 3;
+  width: 100%;
+  height: 1015px;
+  background-color: rgba(229, 229, 229, 0.3);
+}
+
+/* ---------------- bottom area bar ----------------  */
+#bottom_area {
+  position: relative;
+  bottom: 0%;
+  height: 20px;
+  padding: 20px 740px 40px 740px;
+  background: #9BB3C6;
+  font-family: SFProDisplay-Semibold;
+  font-size: 22px;
+  text-align: center;
+  color: #FFFFFF;
+}

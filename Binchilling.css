@@ -266,6 +266,9 @@ video {
   border-color: #A0A0A0;
   display: flex;
   align-items: center;
+  font-size: 2.5vh;
+  color: black;
+  font-family: SFPRODISPLAY_BOLD;
 }
 
 .typetext {
@@ -554,7 +557,7 @@ video {
   font-family: SFPRODISPLAY_BOLD;
 }
 
-.verify_container{
+.verify_container {
   position: absolute;
   width: 26.78%;
   height: 41.3%;
@@ -565,11 +568,11 @@ video {
   background-size: cover;
 }
 
-#verify_email_container{
+#verify_email_container {
   display: none;
 }
 
-#signup_verify_confirm{
+#signup_verify_confirm {
   position: absolute;
   top: 80%;
   left: 36.5%;
@@ -586,17 +589,17 @@ video {
 }
 
 /*------------------------Verify email page--------------------*/
-#verify_email_page{
+#verify_email_page {
   height: 100vh;
   background-color: white;
   display: none;
 }
 
-#verify_email_navbar_logo_container{
+#verify_email_navbar_logo_container {
   background-color: #BCBCBC;
 }
 
-.narbar_sign{
+.narbar_sign {
   width: 7%;
   height: 100%;
   position: absolute;
@@ -608,15 +611,15 @@ video {
   font-family: SFPRODISPLAY_BOLD;
 }
 
-.navbar_signin{
+.navbar_signin {
   left: 87.5%;
 }
 
-.navbar_signup{
+.navbar_signup {
   left: 92.7%;
 }
 
-#verify_email_verify_code_align_container{
+#verify_email_verify_code_align_container {
   position: absolute;
   width: 42%;
   height: 12%;
@@ -626,13 +629,13 @@ video {
   justify-content: space-between;
 }
 
-.verify_email_verify_code_container{
+.verify_email_verify_code_container {
   position: relative;
   width: 10%;
   height: 100%;
 }
 
-.verify_email_verify_text{
+.verify_email_verify_text {
   position: relative;
   width: 68%;
   height: 100%;
@@ -647,14 +650,14 @@ video {
 
 
 
-.verify_email_verify_text_container{
+.verify_email_verify_text_container {
   width: 100%;
   height: 70%;
   display: flex;
   justify-content: center;
 }
 
-.verify_email_verify_underline{
+.verify_email_verify_underline {
   position: absolute;
   width: 100%;
   height: 5%;
@@ -663,7 +666,7 @@ video {
   background-color: #A0A0A0;
 }
 
-#verify_email_verify_btn{
+#verify_email_verify_btn {
   position: absolute;
   width: 42%;
   height: 5.56%;
@@ -674,11 +677,11 @@ video {
   background-size: cover;
 }
 
-#verify_fail_img{
+#verify_fail_img {
   display: none;
 }
 
-#verify_success_img{
+#verify_success_img {
   display: none;
 }
 
@@ -743,6 +746,7 @@ video {
 #wallet_navbar_head_contianer {
   position: absolute;
   left: 87.5%;
+  top: 0%;
   width: 30px;
   height: 100%;
   display: flex;
@@ -759,6 +763,7 @@ video {
 
 #wallet_username_container {
   position: absolute;
+  top: 0%;
   width: 7%;
   height: 100%;
   left: 90.5%;
@@ -1315,9 +1320,10 @@ video {
   left: 85%;
 }
 
-#wallet_NFT_filter_scrollable_dollor_menu{
+#wallet_NFT_filter_scrollable_dollor_menu {
   display: none;
 }
+
 .wallet_filter_dollor_scrollable_dropdown_menu {
   position: absolute;
   top: 90%;
@@ -1499,11 +1505,11 @@ video {
   height: 100%;
 }
 
-#wallet_NFT_NFT1{
+#wallet_NFT_NFT1 {
   left: 0%;
 }
 
-#wallet_NFT_NFT2{
+#wallet_NFT_NFT2 {
   left: 20%;
 }
 
@@ -1913,11 +1919,11 @@ video {
   font-family: SFPRODISPLAY_BOLD;
 }
 
-#navbar_function_plan:hover{
+#navbar_function_plan:hover {
   color: #286A93;
 }
 
-#navbar_function_statement:hover{
+#navbar_function_statement:hover {
   color: #286A93;
 }
 
@@ -1933,11 +1939,11 @@ video {
   width: 60%;
 }
 
-#navbar_function_marketplace:hover{
+#navbar_function_marketplace:hover {
   color: #286A93;
 }
 
-#navbar_function_drops:hover{
+#navbar_function_drops:hover {
   color: #286A93;
 }
 
@@ -1957,6 +1963,7 @@ video {
 }
 
 .navbar_function_triangle_container {
+  top: 0%;
   width: 20%;
   height: 100%;
   position: relative;
@@ -2322,7 +2329,7 @@ video {
   width: 5.5%;
   padding-top: 5.5%;
   border-radius: 50%;
-  background-color:#9BB3C6;
+  background-color: #9BB3C6;
   display: inline-block;
 }
 
@@ -2397,28 +2404,28 @@ video {
   background-size: cover;
 }
 
-#top_creators_view_profile_photo_1{
-  background-image: url("./Img/top_creators/super_magic_2.png") ;
+#top_creators_view_profile_photo_1 {
+  background-image: url("./Img/top_creators/super_magic_2.png");
 }
 
-#top_creators_view_profile_photo_2{
-  background-image: url("./Img/top_creators/crazy_daruma.png") ;
+#top_creators_view_profile_photo_2 {
+  background-image: url("./Img/top_creators/crazy_daruma.png");
 }
 
-#top_creators_view_profile_photo_3{
-  background-image: url("./Img/top_creators/atlantis.png") ;
+#top_creators_view_profile_photo_3 {
+  background-image: url("./Img/top_creators/atlantis.png");
 }
 
-#top_creators_view_profile_photo_4{
-  background-image: url("./Img/top_creators/special_art.png") ;
+#top_creators_view_profile_photo_4 {
+  background-image: url("./Img/top_creators/special_art.png");
 }
 
-#top_creators_view_profile_photo_5{
-  background-image: url("./Img/top_creators/creator.png") ;
+#top_creators_view_profile_photo_5 {
+  background-image: url("./Img/top_creators/creator.png");
 }
 
-#top_creators_view_profile_photo_6{
-  background-image: url("./Img/top_creators/Kanaheiheihei.png") ;
+#top_creators_view_profile_photo_6 {
+  background-image: url("./Img/top_creators/Kanaheiheihei.png");
 }
 
 .top_creators_view_profile_name {
@@ -2426,7 +2433,7 @@ video {
   width: 100%;
   top: 43%;
   text-align: center;
-  color:#286A93;
+  color: #286A93;
   font-family: SFProDisplay-Heavy;
   font-size: 2.5vh;
 }
@@ -2443,7 +2450,7 @@ video {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color:#286A93;
+  background-color: #286A93;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2508,24 +2515,25 @@ video {
 
 
 /* Liu */
-.homepage_01_blank{
+.homepage_01_blank {
   height: 1vh;
   width: 100vh;
   background-color: white;
 }
-.homepage_01{
+
+.homepage_01 {
   height: 100vh;
   width: 100%;
   background-color: white;
   position: relative;
-  top:10.5vh;
+  top: 10.5vh;
   display: inline-flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
 }
 
-#homepage_binchilling_logo{
+#homepage_binchilling_logo {
   /* display: flex; */
   position: relative;
   width: 19.4vh;
@@ -2533,58 +2541,56 @@ video {
   align-items: center;
   /* top: 10.5vh; */
   justify-content: center;
-  top:-10vh;
+  top: -10vh;
 }
 
-#homepage_navbar_logo_container{
+#homepage_navbar_logo_container {
   display: block;
 }
 
-#homepage_navbar_signin{
+#homepage_navbar_signin {}
 
-}
-
-#homepage_binchilling_logo Img{
+#homepage_binchilling_logo Img {
   max-width: 100%;
   max-height: 100%;
   filter: drop-shadow(4px 4px 5px rgba(0, 0, 0, 0.25));
 
 }
 
-#words-homepage-1-chilling-with-all-your-accounts{
+#words-homepage-1-chilling-with-all-your-accounts {
   color: #286A93;
   font-family: SFPRODISPLAY_BOLD;
   font-size: 5vh;
 }
 
-#words-binchilling-is-a-platform{
+#words-binchilling-is-a-platform {
   position: relative;
-  top:3vh;
+  top: 3vh;
   font-family: SFPRODISPLAY_BOLD;
   font-size: 2vh;
   width: 55.52%;
   text-align: center;
-  
+
 }
 
-.homepage_page1_words{
+.homepage_page1_words {
   position: relative;
   text-align: center;
-  top:-6vh;
+  top: -6vh;
   justify-content: center;
   align-items: center;
   display: inline-flex;
   flex-direction: column;
 }
 
-#words-binchilling-is-a-platform{
+#words-binchilling-is-a-platform {
   font-size: 2.3vh;
   text-align: center;
   color: #A0A0A0;
   ;
 }
 
-.homepage_photo_of_banks_logo{
+.homepage_photo_of_banks_logo {
   position: relative;
   width: 60%;
   height: 19.4vh;
@@ -2593,13 +2599,13 @@ video {
   justify-content: center;
 }
 
-.homepage_photo_of_banks_logo Img{
+.homepage_photo_of_banks_logo Img {
   max-width: 100%;
   max-height: 100%;
   align-items: center;
 }
 
-.homepage_navbar_head_contianer{
+.homepage_navbar_head_contianer {
   position: absolute;
   display: flex;
   justify-content: space-around;
@@ -2611,15 +2617,16 @@ video {
   align-items: center;
 }
 
-.navbar_function_container{
+.navbar_function_container {
   font-size: 2vh;
 }
 
-.homepage_navbar_head_contianer p{
+.homepage_navbar_head_contianer p {
   color: white;
-  font-family:SFPRODISPLAY_BOLD;
+  font-family: SFPRODISPLAY_BOLD;
   font-size: 2vh;
 }
+
 .homepage_sign_text {
   position: relative;
   width: 10%;
@@ -2640,7 +2647,7 @@ video {
   top: 9vh;
 }
 
-.homepage_01_next_page Img{
+.homepage_01_next_page Img {
   max-width: 100%;
   max-height: 100%;
 }
@@ -2648,7 +2655,7 @@ video {
 
 
 /* homepage02 */
-.homepage_02{
+.homepage_02 {
   position: relative;
   background: #286A93;
   height: 72.5vh;
@@ -2659,7 +2666,7 @@ video {
   align-items: center;
 }
 
-#words-homepage-2-chilling-with-all-your-accounts{
+#words-homepage-2-chilling-with-all-your-accounts {
   color: white;
   font-size: 5vh;
   font-family: SFPRODISPLAY_BOLD;
@@ -2667,7 +2674,7 @@ video {
   top: -20vh;
 }
 
-.homepage_02_center_blocks{
+.homepage_02_center_blocks {
   position: relative;
   width: 100%;
   height: 20%;
@@ -2676,7 +2683,7 @@ video {
   justify-content: center;
 }
 
-.homepage_02_connect_your_wallet{
+.homepage_02_connect_your_wallet {
   position: relative;
   display: flex;
   align-items: center;
@@ -2687,16 +2694,16 @@ video {
   margin-right: 12.66%;
 }
 
-.homepage_02_connect_your_wallet Img{
-/* max-height: 100%;*/
-width: 50%;
-/* position: relative; */
-left: 22.34%;
-right: 72.76%;
-bottom: 46.48%;
+.homepage_02_connect_your_wallet Img {
+  /* max-height: 100%;*/
+  width: 50%;
+  /* position: relative; */
+  left: 22.34%;
+  right: 72.76%;
+  bottom: 46.48%;
 }
 
-#word_connect_your_wallet{
+#word_connect_your_wallet {
   font-size: 2.3vh;
   font-family: SFPRODISPLAY_BOLD;
   color: white;
@@ -2705,7 +2712,7 @@ bottom: 46.48%;
 
 }
 
-#word_describe_connect_your_wallet{
+#word_describe_connect_your_wallet {
   font-size: 1.11vh;
   font-family: SFProDisplay-Semibold;
   color: white;
@@ -2714,7 +2721,7 @@ bottom: 46.48%;
   text-align: center;
 }
 
-.homepage_02_manage_your_assets{
+.homepage_02_manage_your_assets {
   position: relative;
   display: flex;
   align-items: center;
@@ -2724,14 +2731,14 @@ bottom: 46.48%;
   width: 12.29%;
 }
 
-.homepage_02_manage_your_assets Img{
+.homepage_02_manage_your_assets Img {
   position: relative;
   max-width: 100%;
   height: 100%;
 
-  }
+}
 
-#word_manage_your_assets{
+#word_manage_your_assets {
   font-size: 2.3vh;
   font-family: SFPRODISPLAY_BOLD;
   color: white;
@@ -2739,7 +2746,7 @@ bottom: 46.48%;
   top: 2.5vh;
 }
 
-#word_describe_manage_your_assets{
+#word_describe_manage_your_assets {
   font-size: 1.11vh;
   font-family: SFProDisplay-Semibold;
   color: white;
@@ -2748,7 +2755,7 @@ bottom: 46.48%;
   text-align: center;
 }
 
-.homepage_02_get_more_informations{
+.homepage_02_get_more_informations {
   position: relative;
   display: flex;
   align-items: center;
@@ -2760,16 +2767,16 @@ bottom: 46.48%;
   margin-left: 12.03%;
 }
 
-.homepage_02_get_more_informations Img{
+.homepage_02_get_more_informations Img {
   width: 63.27px;
   height: 100px;
   left: 1413px;
   top: 485px;
-  
 
-  }
 
-#word_get_more_informations{
+}
+
+#word_get_more_informations {
   font-size: 2.3vh;
   font-family: SFPRODISPLAY_BOLD;
   color: white;
@@ -2777,7 +2784,7 @@ bottom: 46.48%;
   top: 2.5vh;
 }
 
-#word_describe_get_more_informations{
+#word_describe_get_more_informations {
   font-size: 1.11vh;
   font-family: SFProDisplay-Semibold;
   color: white;
@@ -2786,7 +2793,7 @@ bottom: 46.48%;
   text-align: center;
 }
 
-.homepage_03{
+.homepage_03 {
   position: relative;
   background-image: url("./Img/homepage/Rectangle 7.png");
   background-size: cover;
@@ -2798,7 +2805,7 @@ bottom: 46.48%;
   align-items: center;
 }
 
-#homepage_03_never_miss_a_drop{
+#homepage_03_never_miss_a_drop {
   font-size: 6vh;
   font-family: SFPRODISPLAY_BOLD;
   color: white;
@@ -2806,7 +2813,7 @@ bottom: 46.48%;
   top: -7vh;
 }
 
-#homepage_03_subscribe_for{
+#homepage_03_subscribe_for {
   font-size: 3vh;
   font-family: SFProDisplay-Semibold;
   color: white;
@@ -2815,7 +2822,7 @@ bottom: 46.48%;
 }
 
 
-#homepage_03_after_reading{
+#homepage_03_after_reading {
   font-size: 0.5vh;
   font-family: SFPRODISPLAY_BOLD;
   color: white;
@@ -2826,15 +2833,15 @@ bottom: 46.48%;
 
 
 
-.homepage_03_subscribe_box{
+.homepage_03_subscribe_box {
   height: 5vh;
   display: block;
   width: 41.14%;
   position: relative;
-  top:3vh;
+  top: 3vh;
 }
 
-#textbox_homepage_03_subscribe_btn{
+#textbox_homepage_03_subscribe_btn {
   position: absolute;
   height: 100%;
   width: 19%;
@@ -2849,7 +2856,7 @@ bottom: 46.48%;
   border-radius: 0px 7px 7px 0px;
 }
 
-#textbox_homepage_03_subscribe_box{
+#textbox_homepage_03_subscribe_box {
   position: absolute;
   width: 83%;
   height: 100%;
@@ -2860,18 +2867,18 @@ bottom: 46.48%;
   border: 0vh;
 }
 
-#homepage_03_after_reading{
+#homepage_03_after_reading {
   position: relative;
   top: 7vh;
   width: 40.88%;
 }
 
-.homepage_03_by_entering{
+.homepage_03_by_entering {
   position: relative;
   top: 10vh;
 }
 
-#homepage_03_after_reading{
+#homepage_03_after_reading {
   font-size: 1.3vh;
   font-family: SFProDisplay-Semibold;
   color: white;
@@ -2879,7 +2886,7 @@ bottom: 46.48%;
   text-align: center;
 }
 
-.homepage_03_by_entering{
+.homepage_03_by_entering {
   height: 5vh;
   display: flex;
   width: 80%;
@@ -2889,7 +2896,7 @@ bottom: 46.48%;
   justify-content: center;
 }
 
-#words_homepage_03_by_entering{
+#words_homepage_03_by_entering {
   font-size: 1.3vh;
   font-family: SFPRODISPLAY_BOLD;
   color: white;
@@ -2897,18 +2904,18 @@ bottom: 46.48%;
   text-align: center;
 }
 
-#checkbox_homepage_03_by_entering{
+#checkbox_homepage_03_by_entering {
   height: 1.7vh;
   width: 1.7vh;
 }
 
-#checkbox_homepage_03_by_entering{
+#checkbox_homepage_03_by_entering {
   position: relative;
   right: 1vh;
   top: -0.1vh;
 }
 
-.homepage_04{
+.homepage_04 {
   position: relative;
   background-color: white;
   height: 90vh;
@@ -2919,19 +2926,19 @@ bottom: 46.48%;
   align-items: center;
 }
 
-.homepage_04_words{
+.homepage_04_words {
   position: relative;
-  top:-6vh;
+  top: -6vh;
 }
 
-#words-homepage-4-chilling-with-all-your-accounts{
+#words-homepage-4-chilling-with-all-your-accounts {
   color: #8C8C8C;
   font-family: SFPRODISPLAY_BOLD;
   font-size: 5vh;
   position: relative;
 }
 
-#homepage_04_binchilling_logo{
+#homepage_04_binchilling_logo {
   /* display: flex; */
   position: relative;
   width: 19.4vh;
@@ -2940,17 +2947,17 @@ bottom: 46.48%;
   justify-content: center;
 }
 
-#homepage_04_binchilling_logo Img{
+#homepage_04_binchilling_logo Img {
   max-width: 100%;
   max-height: 100%;
   filter: drop-shadow(4px 4px 5px rgba(0, 0, 0, 0.25));
 }
 
-.homepage_04_sign_in_area{
+.homepage_04_sign_in_area {
   width: 25%;
 }
 
-#word_homepage_04_email{
+#word_homepage_04_email {
   color: #A0A0A0;
   font-family: SFPRODISPLAY_BOLD;
   font-size: 2.5vh;
@@ -2959,7 +2966,7 @@ bottom: 46.48%;
   margin-left: 1vh;
 }
 
-#word_homepage_04_password{
+#word_homepage_04_password {
   color: #A0A0A0;
   font-family: SFPRODISPLAY_BOLD;
   font-size: 2.5vh;
@@ -2967,14 +2974,14 @@ bottom: 46.48%;
   margin-left: 0.5vh;
 }
 
-#textbox_homepage_04_email{
+#textbox_homepage_04_email {
   box-sizing: border-box;
   width: 100%;
   border: 2px solid #A0A0A0;
   border-radius: 70px;
 }
 
-.word_homepage_04_password_options{
+.word_homepage_04_password_options {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -2982,21 +2989,21 @@ bottom: 46.48%;
   margin-bottom: 1vh;
 }
 
-#textbox_homepage_04_password{
+#textbox_homepage_04_password {
   box-sizing: border-box;
   width: 100%;
   border: 2px solid #A0A0A0;
   border-radius: 70px;
 }
 
-#word_homepage_04_forgot_password{
+#word_homepage_04_forgot_password {
   font-family: SFPRODISPLAY_BOLD;
   color: #286A93;
   font-size: 1vh;
   position: relative;
 }
 
-#textbutton_homepage_04_sign_in{
+#textbutton_homepage_04_sign_in {
   text-align: center;
   font-family: SFPRODISPLAY_BOLD;
   color: white;
@@ -3006,48 +3013,48 @@ bottom: 46.48%;
   margin-top: 4vh;
   position: flex;
   background: linear-gradient(90deg, #286A93 0%, #528CA2 100%);
-border-radius: 7px;
+  border-radius: 7px;
 }
 
-.word_homepage_04_dont_have_account{
+.word_homepage_04_dont_have_account {
   display: flex;
   justify-content: space-around;
   position: relative;
   top: 4vh;
 }
 
-.word_homepage_04_dont_have_account p{
+.word_homepage_04_dont_have_account p {
   font-family: SFPRODISPLAY_BOLD;
   font-size: 2.5vh;
 }
 
-#word_homepage_04_dont_have_an_account_yet{
+#word_homepage_04_dont_have_an_account_yet {
   color: #8C8C8C;
 }
 
-#word_homepage_04_sign_up{
+#word_homepage_04_sign_up {
   color: #286A93;
 }
 
-.homepage_01_to_02_blank{
+.homepage_01_to_02_blank {
   height: 12.96vh;
   width: 100vh;
   background-color: white;
 }
 
-.homepage_02_to_03_blank{
+.homepage_02_to_03_blank {
   height: 15.75vh;
   width: 100vh;
   background-color: white;
 }
 
-.homepage_03_to_bottom_blank{
+.homepage_03_to_bottom_blank {
   height: 11.4vh;
   width: 100vh;
   background-color: white;
 }
 
-.homepage_03_to_04_blank{
+.homepage_03_to_04_blank {
   height: 7.12vh;
   width: 100vh;
   background-color: white;
@@ -3181,30 +3188,39 @@ border-radius: 7px;
 
 span {
   font-family: SFPRODISPLAY_BOLD;
-  color: white;
-  font-size: 30px;
+  width: 85px;
+  font-size: 25px;
+  color: #355B7F;
 }
 
-button:nth-child(odd) {
-  border: 1px solid #fff;
-}
-
-button:nth-child(even) {
-  background-color: #000;
-}
-
-select,
 button {
-  font-family: SFProDisplay-Semibold;
-  color: white;
-  font-size: 24px;
-  background-color: #c8c8c8;
+  font-family: SFPRODISPLAYREGULAR;
+  font-size: 22px;
+  line-height: 26px;
+  text-align: center;
+  color: #FFFFFF;
+  background: #D4D4D4;
+  border-radius: 70px;
+  border: none;
+}
+
+button:nth-child(2) {
+  background: linear-gradient(270deg, #528CA2 0%, #286A93 100%);
+}
+
+select {
+  background-color: #FFFFFF;
+  font-family: SFPRODISPLAYREGULAR;
   padding: 5px 25px;
-  border-radius: 25px;
+  border: 1px solid #355B7F;
+  border-radius: 70px;
   margin-left: 15px;
+  font-size: 22px;
+  color: #355B7F;
 }
 
 .p04_round_card_container {
+  color: #286A93;
   margin: 0% 7.5%;
   display: flex;
   justify-content: space-around;
@@ -3226,27 +3242,18 @@ button {
 }
 
 .mark {
+  background: #355B7F;
+  border-radius: 5px;
   width: 70px;
   padding: 2px 15px;
   margin-left: 5px;
   display: inline-block;
-  background-image: url("./p0405/Rectangle37_small.png");
 }
 
 .paragraph {
   margin-left: 15px;
   display: flex;
   flex-direction: column;
-}
-
-.paragraph_1,
-.paragraph_2 {
-  margin: 2px 0px;
-}
-
-.paragraph_1 img:first-child,
-.paragraph_2 img:first-child {
-  margin-right: 100px;
 }
 
 .landing_page_collectibles {
@@ -3336,23 +3343,16 @@ button {
   margin-bottom: 30%;
 }
 
+/* ---------------- bottom area bar ----------------  */
 #bottom_area {
   position: relative;
   bottom: 0%;
-  height: 7.4%;
-  width: 100%;
+  max-width: 100%;
+  height: 20px;
+  padding: 20px 740px 40px 740px;
   background: #9BB3C6;
-  font-family: 'SF Pro';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 2vh;
+  font-family: SFProDisplay-Semibold;
+  font-size: 22px;
   text-align: center;
   color: #FFFFFF;
-}
-
-/* Chart */
-#dataviz {
-  position: absolute;
-  left: 240px;
-  top: 235px;
 }
