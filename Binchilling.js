@@ -87,6 +87,9 @@ function check_email_verification_code(){
 
 function turn_to_wallet_page(){
   document.getElementById('signin_page').style.display='none';
+  document.getElementById('add_new_account_page').style.display='none';
+  document.getElementById('connect_nft_account').style.display='none';
+  
   document.getElementById('wallet_navbar').style.display='block';
   document.getElementById('wallet_overview').style.display='block';
   document.getElementById('privacybar').style.display='block';
@@ -410,9 +413,13 @@ function close_wallet_whole_asset_currency_menu(currency_id){
 
 
 $(document).ready(function(){
-
+  $(".toTop").on("click", function (e) {
+    e.preventDefault();
+    $("html").animate({
+      scrollTop: 0,
+    }, 100)
+  });
   $('[data-toggle="tooltip"]').tooltip();
-
   $("#wallet_account_choice").click(function(){
     console.log("wallet");
     if($("#category_btw_account").offset().left>='65%'){
@@ -425,7 +432,6 @@ $(document).ready(function(){
     }
   });
 });
-
 
 function homepage_turn_to_signin_page(btn_id){
   document.getElementById('signin_page').style.display='block';
@@ -440,8 +446,6 @@ function homepage_turn_to_signup_page(btn_id){
 
 
 
-
-
 /* ****** ------------------------------------------------------- Chart Animation--------------------------------------------------------- ****** */
 
 let data = [296210.326, 175832.331, 91722.462, 30017.135, 25127.746]; // ["296210.326", "175832.331", "91722.462", "30017.135", "25127.746"];
@@ -451,7 +455,7 @@ let NFT_colors = ["#E9E9EB", "#FF7582"];
 
 let sizes = {
   innerRadius: 0,
-  outerRadius: 250
+  outerRadius: 230
 };
 
 let durations = {
@@ -459,7 +463,6 @@ let durations = {
 };
 
 function draw() {
-  // d3.select("#chart").html("");
   const Name = ["NFT", "Stock" , "Crypto" ,"CD (For)", "CD (NTD)"]  
   let generator = d3.pie()
     .sort(null);
@@ -471,7 +474,7 @@ function draw() {
     .attr('height', 650)
     .append("g")
     .attr("id", "piechart")
-    .attr("transform", "translate(400, 250)");
+    .attr("transform", "translate(400, 230)");
   
   var path = arcs.selectAll('path')
     .data(chart)
@@ -513,9 +516,6 @@ function draw() {
         arr[index] = Math.round(1000 * item / total)/10;
       }          
       percent.forEach(myFunction);
-
-      // console.log("percent: " + percent[0]);
-        
       let pt = d3.pointer(event) // 抓圓點位置
       let i;
 
@@ -602,7 +602,7 @@ function draw_NFT_chart() {
     .attr('height', 650)
     .append("g")
     .attr("id", "piechart_NFT")
-    .attr("transform", "translate(400, 250)");
+    .attr("transform", "translate(400, 230)");
   
   var path = arcs.selectAll('path')
     .data(chart)
@@ -695,4 +695,63 @@ function draw_NFT_chart() {
         .innerRadius(innerRadiusInterpolation(t))
         .outerRadius(outerRadiusInterpolation(t));
     });
+}
+
+/* -------------------- Add Account Event ---------------------- */
+function TurnBack_choose_account(){
+  document.getElementById("add_new_account_page").style.display='block';
+  document.getElementById("connect_nft_account").style.display='none';
+  document.getElementById("demo-add").style.display='block';
+}
+
+function add_NFT_account(input_id){
+  document.getElementById("add_new_account_page").style.display='none';
+  document.getElementById("connect_nft_account").style.display='block';
+}
+
+/* --------------------  Modal Action  -------------------- */
+const input_MetaMask_success_password = 456789;
+var input_password;
+
+function get_metamask_password(){
+  input_password = document.querySelector("#metamask-password-input").value;
+  if( input_password !== null){
+      console.log("get_metamask_password: " + input_password);
+  }else{
+    console.log("Something error!");
+  }
+}
+
+function verify_metamask_password(){
+  let state = 1; // Inform which state the class 'dialog' should be closed
+  let SuccessOrNot = 0; // Initialize false (which equals failed)
+  $('#MetaMaskModal').modal('hide');
+
+  if(input_password == input_MetaMask_success_password){
+    console.log("Success: " + input_password);
+    document.getElementById('MetaMask-wallet-success-connect').style.display='block';
+    document.getElementById('dialog-success').style.display='block';
+    SuccessOrNot = 1;
+  }else{
+    console.log("Error: " + input_password);
+    document.getElementById('MetaMask-wallet-failed-connect').style.display='block';
+    document.getElementById('dialog-failed').style.display='block';
+  }
+
+  $(".dialog").on("click", function(){
+    console.log("you have click");
+    if(state == 1){
+      $(".dialog").fadeOut("normal");
+      state = 0;
+       if(SuccessOrNot == 1){
+        console.log("TurnBack_choose_account");
+         TurnBack_choose_account();
+       }
+    }
+  });
+  
+  $( ".verify-modal" ).on( "click", function(event) {
+    event.stopPropagation();
+  });
+  $("#metamask-password-input").val('');
 }

@@ -574,7 +574,7 @@ video {
 
 #signup_verify_confirm {
   position: absolute;
-  top: 80%;
+  top: 85.3%;
   left: 36.5%;
   width: 27%;
   height: 10%;
@@ -2326,8 +2326,8 @@ video {
   position: absolute;
   top: 33.7%;
   left: 81.3%;
-  width: 5.5%;
-  padding-top: 5.5%;
+  width: 4%;
+  padding-top: 4%;
   border-radius: 50%;
   background-color: #9BB3C6;
   display: inline-block;
@@ -2349,8 +2349,8 @@ video {
   position: absolute;
   top: 33.7%;
   left: 87%;
-  width: 5.5%;
-  padding-top: 5.5%;
+  width: 4%;
+  padding-top: 4%;
   border-radius: 50%;
   background-color: #9BB3C6;
   display: inline-block;
@@ -2431,7 +2431,7 @@ video {
 .top_creators_view_profile_name {
   position: absolute;
   width: 100%;
-  top: 43%;
+  top: 47.5%;
   text-align: center;
   color: #286A93;
   font-family: SFProDisplay-Heavy;
@@ -3170,20 +3170,22 @@ video {
 /* Lai */
 #landing_page_04_top_collections_title,
 #landing_page_05_top_collections_title {
+  box-sizing: border-box;
   position: absolute;
-  width: 100%;
-  height: 6.67%;
-  top: 4%;
-  font-family: SFProDisplay-Heavy;
+  width: 454px;
+  height: 72px;
+  left: 733px;
+  font-family: SFPRODISPLAY_BOLD;
+  font-size: 60px;
+  line-height: 72px;
   text-align: center;
-  color: white;
-  font-size: 6vh;
+  color: #286A93;
 }
 
 .top_collect04_top_container {
   display: flex;
   justify-content: space-between;
-  padding: 8.5% 11% 0% 9%;
+  padding: 9% 11% 0% 9%;
 }
 
 span {
@@ -3196,6 +3198,8 @@ span {
 button {
   font-family: SFPRODISPLAYREGULAR;
   font-size: 22px;
+  width: 167px;
+  height: 41px;
   line-height: 26px;
   text-align: center;
   color: #FFFFFF;
@@ -3245,23 +3249,31 @@ select {
   background: #355B7F;
   border-radius: 5px;
   width: 70px;
-  padding: 2px 15px;
+  padding: 2px 0px;
   margin-left: 5px;
   display: inline-block;
 }
 
 .paragraph {
+  height: 80px;
   margin-left: 15px;
   display: flex;
+  justify-content: space-around;
   flex-direction: column;
 }
 
+.paragraph_1,
+.paragraph_2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .landing_page_collectibles {
-  height: 300vh;
+  height: 180vh;
   width: 100vw;
   display: block;
   z-index: 0;
-  background-color: #C4C4C4;
   min-height: 100%;
   min-width: 100%;
   position: relative;
@@ -3287,6 +3299,46 @@ select {
   margin-bottom: 3.5%;
 }
 
+#image1 {
+  background-image: url("./Img/marketplace/Rectangle 59.png");
+  background-size: cover;
+}
+
+#image2 {
+  background-image: url("./Img/marketplace/Rectangle 57.png");
+  background-size: cover;
+}
+
+#image3 {
+  background-image: url("./Img/marketplace/Rectangle 55.png");
+  background-size: cover;
+}
+
+#image4 {
+  background-image: url("./Img/marketplace/Rectangle 53.png");
+  background-size: cover;
+}
+
+#image5 {
+  background-image: url("./Img/marketplace/NFT marketplace-27.png");
+  background-size: cover;
+}
+
+#image6 {
+  background-image: url("./Img/marketplace/NFT_marketplace+-25.png");
+  background-size: cover;
+}
+
+#image7 {
+  background-image: url("./Img/marketplace/NFT_marketplace+-26.png");
+  background-size: cover;
+}
+
+#image8 {
+  background-image: url("./Img/marketplace/Rectangle 59.png");
+  background-size: cover;
+}
+
 .image {
   background-color: #E0E0E0;
   width: 345px;
@@ -3295,13 +3347,26 @@ select {
 }
 
 .text {
-  background-color: #FFF;
-  width: 315px;
-  height: 170px;
+  box-sizing: border-box;
   position: relative;
   top: -200px;
-  border-radius: 0px 0px 25px 25px;
+  width: 345px;
+  height: 233.9px;
+  background: #355B7F;
+  border-radius: 0px 0px 20px 20px;
   padding: 15px;
+}
+
+.text:first-child {
+  margin-bottom: 10px;
+}
+
+.vertical {
+  width: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .price {
@@ -3310,17 +3375,24 @@ select {
   justify-content: space-evenly;
 }
 
+.defi {
+  position: relative;
+  top: -80%;
+}
+
+.price_title {
+  width: 70.5px;
+  height: 12px;
+}
+
 .price img {
-  margin: 7.5px;
+  margin: 10px;
+  s
 }
 
 .row {
   display: flex;
   justify-content: space-evenly;
-}
-
-.vertical img {
-  display: block;
 }
 
 #bottom_logo {
@@ -3341,6 +3413,22 @@ select {
 
 .col img:first-child {
   margin-bottom: 30%;
+}
+
+
+#see-more {
+  position: absolute;
+  left: 836px;
+  top: 1600px;
+  width: 246px;
+  height: 41px;
+  font-family: SFPRODISPLAYREGULAR;
+  font-size: 22px;
+  line-height: 26px;
+  text-align: center;
+  color: #FFFFFF;
+  background: linear-gradient(270deg, #528CA2 0%, #286A93 100%);
+  border-radius: 70px;
 }
 
 /* ---------------- bottom area bar ----------------  */
