@@ -10,6 +10,8 @@
     <script language="JavaScript" type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script language="JavaScript" type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script language="JavaScript" type="text/javascript" src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script language="JavaScript" type="text/javascript" src="./js/p5.min.js"></script>
+    <script language="JavaScript" type="text/javascript" src="./js/jquery.mousewheel.min.js"></script>
     <!------------ customized file -------------->
     <link rel="stylesheet" href="Binchilling.css" />
     <link href="chart.css" rel="stylesheet"/>
@@ -450,11 +452,12 @@
       <!---------------------------------------------Wallet overview--------------------------------------------->
       <div class="wallet_page" id="wallet_overview">
         <p class="wallet_title" id="wallet_overview_title">Overview</p>
-        <div id="category_btw_account_container" ></div>
-        <div id="category_btw_account"></div>
+        <div id="category_btw_account_container" >
+          <div id="category_btw_account"></div>
+        </div>
         <p id="wallet_category_choice">Category</p>
-        <p id="wallet_account_choice" onclick="switch_wallet_overview_classification()">Account</p>
-        <p class="wallet_whole_asset_dollor" id="wallet_overview_whole_asset_dollor">＄618,910</p>
+        <p id="wallet_account_choice">Account</p>
+        <p class="wallet_whole_asset_dollor" id="wallet_overview_whole_asset_dollor"></p>
         <div class="wallet_whole_asset_dollor_menu_btn" id="wallet_overview_whole_asset_dollor_menu_btn" onclick="pop_wallet_currency_menu(this.id)">
           <p class="wallet_whole_asset_dollor_menu" id="wallet_overview_whole_asset_dollor_menu_text">NTD</p>
           <div class="triangle_down wallet_whole_asset_triangle_down" id="wallet_overview_whole_asset_triangle_down"></div>
@@ -485,7 +488,7 @@
             <div class="wallet_show_color wallet_show_color1" id="wallet_overview_show_color1" onclick="show_wallet_object(this.id)"></div>
           </div>
           <p class="wallet_category_category wallet_text" id="wallet_overview_category1" onclick="turn_to_specific_wallet(this.id)">NFT</p>
-          <p class="wallet_totalamount_totalamount wallet_text overview" id="wallet_overview_totalamount1">296,210.326</p>
+          <p class="wallet_totalamount_totalamount wallet_text overview" id="wallet_overview_totalamount1"></p>
           <p class="wallet_currency_currency wallet_text overview" id="wallet_overview_currency1">NTD</p>
           <p class="wallet_percentage_percentage wallet_text overview" id="wallet_overview_percentage1"></p>
         </div>
@@ -493,8 +496,8 @@
           <div class="wallet_show_color_container">
             <p class="wallet_show_color wallet_show_color2" id="wallet_overview_show_color2" onclick="show_wallet_object(this.id)"></p>
           </div>
-          <p class="wallet_category_category wallet_text" id="wallet_overview_category2">Stock</p>
-          <p class="wallet_totalamount_totalamount wallet_text overview" id="wallet_overview_totalamount2">175,832.331</p>
+          <p class="wallet_category_category wallet_text" id="wallet_overview_category2"></p>
+          <p class="wallet_totalamount_totalamount wallet_text overview" id="wallet_overview_totalamount2"></p>
           <p class="wallet_currency_currency wallet_text overview" id="wallet_overview_currency2">NTD</p>
           <p class="wallet_percentage_percentage wallet_text overview" id="wallet_overview_percentage2"></p>
         </div>
@@ -502,8 +505,8 @@
           <div class="wallet_show_color_container">
             <div class="wallet_show_color wallet_show_color3" id="wallet_overview_show_color3" onclick="show_wallet_object(this.id)"></div>
           </div>
-          <p class="wallet_category_category wallet_text" id="wallet_overview_category3">Crypto</p>
-          <p class="wallet_totalamount_totalamount wallet_text overview" id="wallet_overview_totalamount3">91,722.462</p>
+          <p class="wallet_category_category wallet_text" id="wallet_overview_category3"></p>
+          <p class="wallet_totalamount_totalamount wallet_text overview" id="wallet_overview_totalamount3"></p>
           <p class="wallet_currency_currency wallet_text overview" id="wallet_overview_currency3">NTD</p>
           <p class="wallet_percentage_percentage wallet_text overview" id="wallet_overview_percentage3"></p>
         </div>
@@ -511,8 +514,8 @@
           <div class="wallet_show_color_container">
             <div class="wallet_show_color wallet_show_color4" id="wallet_overview_show_color4" onclick="show_wallet_object(this.id)"></div>
           </div>
-          <p class="wallet_category_category wallet_text" id="wallet_overview_category4">CD(For)</p>
-          <p class="wallet_totalamount_totalamount wallet_text overview" id="wallet_overview_totalamount4">30,017.135</p>
+          <p class="wallet_category_category wallet_text" id="wallet_overview_category4"></p>
+          <p class="wallet_totalamount_totalamount wallet_text overview" id="wallet_overview_totalamount4">=</p>
           <p class="wallet_currency_currency wallet_text overview" id="wallet_overview_currency4">NTD</p>
           <p class="wallet_percentage_percentage wallet_text overview" id="wallet_overview_percentage4"></p>
         </div>
@@ -520,8 +523,8 @@
           <div class="wallet_show_color_container">
             <div class="wallet_show_color wallet_show_color5" id="wallet_overview_show_color5" onclick="show_wallet_object(this.id)"></div>
           </div>
-          <p class="wallet_category_category wallet_text" id="wallet_overview_category5">CD(NTD)</p>
-          <p class="wallet_totalamount_totalamount wallet_text overview" id="wallet_overview_totalamount5">25,127.746</p>
+          <p class="wallet_category_category wallet_text" id="wallet_overview_category5"></p>
+          <p class="wallet_totalamount_totalamount wallet_text overview" id="wallet_overview_totalamount5"></p>
           <p class="wallet_currency_currency wallet_text overview" id="wallet_overview_currency5">NTD</p>
           <p class="wallet_percentage_percentage wallet_text overview" id="wallet_overview_percentage5"></p>
         </div>

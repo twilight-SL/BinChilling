@@ -831,13 +831,13 @@ video {
 
 #category_btw_account {
   position: absolute;
-  left: 64.75%;
-  top: 26.76%;
-  width: 3.6%;
-  height: 2.314%;
+  left: 0%;
+  top: 0%;
+  width: 55%;
+  height: 100%;
   border-style: solid;
   border-width: 1.5px;
-  border-radius: 70px;
+  border-radius: 60px;
   border-color: #286A93;
   background-color: #286A93;
   z-index: 1;
@@ -918,7 +918,7 @@ video {
   left: 87.5%;
 }
 
-.wallet_whole_asset_triangle_down {
+.wallet_whole_asset_triangle_down.triangle_down {
   border-top-color: #286A93;
   top: 42%;
   left: 87.5%;
@@ -936,12 +936,12 @@ video {
   border-radius: 20px;
   border-style: solid;
   z-index: 2;
-  overflow-y: hidden;
+  overflow: scroll;
   display: none;
 }
 
 .wallet_whole_asset_dollor_dropdown_menu {
-  position: absolute;
+  position: relative;
   width: 100%;
   height: 150%;
   background-color: white;
@@ -1087,7 +1087,6 @@ video {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: black;
   font-family: SFProDisplay-Semibold;
   font-size: 2vh;
 }
@@ -1100,8 +1099,19 @@ video {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: black;
 }
-
+.wallet_category_account {
+  position: absolute;
+  height: 100%;
+  width: 20%;
+  left: 11%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #286A93;
+  text-decoration: underline;
+}
 .wallet_totalamount_totalamount {
   position: absolute;
   height: 100%;
@@ -1317,6 +1327,7 @@ video {
 
 #wallet_NFT_whole_asset_triangle_down {
   position: absolute;
+  border-top-color: #286A93;
   left: 85%;
 }
 

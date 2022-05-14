@@ -101,6 +101,7 @@ function turn_to_wallet_page(){
 }
 
 function turn_to_specific_wallet(btn_id){
+  console.log("turn");
   document.getElementById("Risk_NFT").style.visibility = 'hidden';
   d3.select("svg").remove();
   draw_NFT_chart();
@@ -113,6 +114,7 @@ function turn_to_specific_wallet(btn_id){
   }
   document.getElementById('wallet_overview').style.display='none';
   var next_wallet_page_id = 'wallet_'+ next_wallet_page;
+  console.log(next_wallet_page_id);
   document.getElementById(next_wallet_page_id).style.display='block';
 }
 
@@ -247,7 +249,7 @@ function pop_wallet_currency_menu(btn_id){
   document.getElementById(id).style.borderBottomColor='#286A93';
 }
 
-var show_array_pages = ['overview', 'Crypto']
+var show_array_pages = ['overview', 'Crypto', 'Ban_SinoPac']
 var overview_show = ['true', 'true', 'true', 'true', 'true']
 var show = [overview_show]
 var show_color = ['#B8CAD6', '#E9E9EB', '#528CA2', '#42506B', '#FF7582']
@@ -301,8 +303,8 @@ function show_wallet_object(object_id){
 
 var Currency=['NTD', 'USD', 'JPY', 'ETH', 'RMB', 'EUR']
 var Currency_calculator = [1, 0.034, 0.32, 1/67568, 0.2, 0.032]
-var wallet_pages = ['overview', 'NFT']
-var overview_category_totalamount = [296210.326, 175832.331, 91722.462, 30017.135, 25127.746, 0]
+var wallet_pages = ['overview', 'NFT', 'Bank_SinoPac']
+var overview_category_totalamount = [296210.326, 175832.331, 91722.462, 30017.135, 25127.746]
 var overview_category_totalamount_percentage = [];
 var totalamount_all_array = [overview_category_totalamount]
 var percentage_all_array = [overview_category_totalamount_percentage]
@@ -310,11 +312,15 @@ var overview_total_asset = 618910  //unit: Currency[0] = NTD
 var NFT_total_asset = 296210.326 //unit: Currency[0] = NTD
 var Total_asset = [618910, 296210.326]
 var NFT_asset = [157435.788, 138774.538]
+var overview_category_category = ['NFT', 'Stock', 'Crypto', 'CD(For)', 'CD(NTD)']
+var overview_category_account = ['Bank SinoPac', 'Citibank Taiwan', 'MetaMask', 'Bank of Taiwan', 'Chunghwa Post']
 var username = 'Louis'
 
 function load_database(){
   load_username();
-  load_total_asset();
+  load_overview_total_asset();
+  load_overview_asset();
+  laod_overview_category_institute(overview_category_category)
   calculate_percentage_all(totalamount_all_array, percentage_all_array);
 }
 function load_username(){
@@ -329,14 +335,70 @@ function load_total_asset(){
   }
 } 
 
+function load_overview_asset(){
+  for(var i = 0; i<overview_category_totalamount.length; i++){
+    var index = i+1;
+    if(overview_category_totalamount[i] == 0){
+      break;
+    }
+    var id = "wallet_overview_totalamount" + index;
+    document.getElementById(id).textContent = '$'+String(overview_category_totalamount[i]);
+  }
+}
+
+function laod_overview_category_institute(array){
+  for(var i = 0; i<overview_category_totalamount.length; i++){
+    var index = i+1;
+    if(overview_category_totalamount[i] == 0){
+      break;
+    }
+    var id = "wallet_overview_category" + index;
+    document.getElementById(id).textContent = String(array[i]);
+  }
+}
+
+function get_overview_account_totalamount(){   //--------------  undone------------------//
+  for(i = 0; i<overview_category_totalamount.length; i++){
+  }
+}
+function get_fake_overview_category_totalamount(){
+  overview_category_totalamount[0] = 296210.326;
+  overview_category_totalamount[1] = 175832.331;
+  overview_category_totalamount[2] = 91722.462;
+  overview_category_totalamount[3] = 30017.135;
+  overview_category_totalamount[4] = 25127.746;
+}
+
+function get_fake_overview_account_totalamount(){   //--------------  undone------------------//
+  overview_category_totalamount[0] = 177255;
+  overview_category_totalamount[1] = 5962.42;
+  overview_category_totalamount[2] = 22229;
+  overview_category_totalamount[3] = 19233;
+  overview_category_totalamount[4] = 88888;
+}
+
+function load_overview_total_asset(){
+  var total = 0;
+  for(i = 0; i<overview_category_totalamount.length; i++){
+    if(overview_category_totalamount[i] != 0){
+      total += overview_category_totalamount[i];
+    }
+  }
+  Total_asset[0] = total;
+  document.getElementById('wallet_overview_whole_asset_dollor').textContent = '$' + String(total.toFixed(3));
+}
+
 function calculate_percentage_all(totalamount_arr, percentage_arr){
   for(var m in totalamount_arr){
+    console.log("in ");
     switch(totalamount_arr[m]){
       case overview_category_totalamount:
+        console.log("inin  ");
         calculate_percentage(overview_category_totalamount, percentage_arr[0]);
         var percentage_node = document.querySelectorAll('.wallet_percentage_percentage.overview');
         for(k in percentage_node){
           percentage_node[k].innerHTML = String(percentage_arr[0][k]) + '%';
+          console.log(percentage_arr[0][k]);
         }
         break;
     }
@@ -372,7 +434,7 @@ function close_wallet_whole_asset_currency_menu(currency_id){
               var index = k+1;
               var id = "wallet_NFT_NFTs_info_value" + index;
               console.log(id)
-              document.getElementById(id).textContent = String(NFT_value)
+              document.getElementById(id).textContent = String(NFT_value);
             }
           }
           else{
@@ -406,11 +468,53 @@ function close_wallet_whole_asset_currency_menu(currency_id){
     document.getElementById(id).style.borderTopStyle='Solid';
     document.getElementById(id).style.borderTopColor='#286A93';
     document.getElementById(id).style.borderBottomColor='transparent';
-    id = 'wallet_'+now_wallet_page+'_whole_asset_scrollable_dollor_menu'
+    id = 'wallet_'+now_wallet_page+'_whole_asset_scrollable_dollor_menu';
     document.getElementById(id).style.display='none';
   }
 }
 
+
+
+
+function switch_to_wallet_overview_account(){
+  document.getElementById('wallet_overview_category').textContent = 'Institution';
+  //讀institution檔案到  overview_category_totalamount[];
+  get_fake_overview_account_totalamount();
+  switch_all_currency_to_NTD();
+  load_overview_total_asset();
+  load_overview_asset();
+  laod_overview_category_institute(overview_category_account);
+  calculate_percentage_all(totalamount_all_array, percentage_all_array);
+  var category_node = document.querySelectorAll('.wallet_category_category');
+  for(var i = 0; i < category_node.length; i++){
+    category_node[i].classList.replace('wallet_category_category', 'wallet_category_account');
+  }
+  
+}
+
+function switch_all_currency_to_NTD(){
+  document.getElementById('wallet_overview_whole_asset_dollor_menu_text').textContent = 'NTD';
+  for(var i = 0; i< overview_category_totalamount.length; i++){
+    var index = i+1;
+    id = "wallet_overview_currency" + String(index);
+    document.getElementById(id).textContent = 'NTD';
+  }
+}
+
+function switch_to_wallet_overview_category(){
+  document.getElementById('wallet_overview_category').textContent = 'Category';
+  //讀category檔案到  overview_category_totalamount[];
+  get_fake_overview_category_totalamount();
+  switch_all_currency_to_NTD();
+  load_overview_total_asset();
+  load_overview_asset();
+  laod_overview_category_institute(overview_category_category);
+  calculate_percentage_all(totalamount_all_array, percentage_all_array);
+  var category_node = document.querySelectorAll('.wallet_category_account');
+  for(var i = 0; i < category_node.length; i++){
+    category_node[i].classList.replace('wallet_category_account', 'wallet_category_category');
+  }
+}
 
 $(document).ready(function(){
   $(".toTop").on("click", function (e) {
@@ -421,15 +525,18 @@ $(document).ready(function(){
   });
   $('[data-toggle="tooltip"]').tooltip();
   $("#wallet_account_choice").click(function(){
-    console.log("wallet");
-    if($("#category_btw_account").offset().left>='65%'){
-      $("#category_btw_account").animate({left:"64.75%"});
-      $("#category_btw_account").animate({width: "3.8%"});
-    }
-    else{
-      $("#category_btw_account").animate({left:"68.2%"});
-      $("#category_btw_account").animate({width:"3.5%"});
-    }
+    $("#wallet_category_choice").css('color', '#286A93' );
+    $("#wallet_account_choice").css('color', 'white');
+    $("#category_btw_account").animate({left: "50%"}, {queue: false});
+    $("#category_btw_account").animate({width:"50%"}, {queue: false});
+    switch_to_wallet_overview_account();
+  });
+  $("#wallet_category_choice").click(function(){
+    $("#wallet_category_choice").css('color', 'white');
+    $("#wallet_account_choice").css('color', '#286A93');
+    $("#category_btw_account").animate({left:"0%"}, {queue: false});
+    $("#category_btw_account").animate({width: "55%"}, {queue: false});
+    switch_to_wallet_overview_category();
   });
 });
 
