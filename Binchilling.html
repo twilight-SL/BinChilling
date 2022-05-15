@@ -10,8 +10,6 @@
     <script language="JavaScript" type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script language="JavaScript" type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script language="JavaScript" type="text/javascript" src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script language="JavaScript" type="text/javascript" src="./js/p5.min.js"></script>
-    <script language="JavaScript" type="text/javascript" src="./js/jquery.mousewheel.min.js"></script>
     <!------------ customized file -------------->
     <link rel="stylesheet" href="Binchilling.css" />
     <link href="chart.css" rel="stylesheet"/>
@@ -430,7 +428,7 @@
         <div class="navbar_function_container">
           <p class="navbar_function" id="navbar_function_plan">Plan</p>
           <p class="navbar_function" id="navbar_function_statement">Statement</p>
-          <div class="navbar_function3_container" id="wallet_navbar_function3_container" onmouseover="change_account_hover_color(this.id)" onmouseout="change_back_account_hover_color(this.id)">
+          <div class="navbar_function3_container" id="wallet_navbar_function3_container" onmouseover="change_account_hover_color(this.id)" onmouseout="change_back_account_hover_color(this.id)" onclick="trun_to_add_account_page(this.id)">
             <p class="navbar_function" id="navbar_function_account">Account</p>
             <div class="navbar_function_triangle_container" id="wallet_navbar_function_triangle_container">
               <div class="triangle_down navbar_triangle_down" id="navbar_account_triangle_down"></div>
@@ -642,7 +640,7 @@
         </div>
         <!--filter end-->
         <p id="wallet_NFT_all_btn">All</p>
-        <div class="wallet_NFT_direction_btn" id="wallet_NFT_left_btn">
+        <div class="wallet_NFT_direction_btn" id="wallet_NFT_left_btn" onclick="slide_NFTs(this.id)">
           <div id="wallet_NFT_left_btn_direction"></div>
         </div>
         <div id="wallet_NFT_NFTs_mask_container">
@@ -655,7 +653,7 @@
                   <p class="wallet_NFT_NFTs_info_name">I'm a bird</p>
                   <p class="wallet_NFT_NFTs_info_source">MetaMask</p>
                 </div>
-                <p class="wallet_NFT_NFTs_info_value" id="wallet_NFT_NFTs_info_value1">1,651.428965</p>
+                <p class="wallet_NFT_NFTs_info_value" id="wallet_NFT_NFTs_info_value1"></p>
                 <p class="wallet_NFT_NFTs_info_currency" id="wallet_NFT_NFTs_info_currency1">NTD</p>
               </div>
             </div>
@@ -667,11 +665,10 @@
                   <p class="wallet_NFT_NFTs_info_name">I'm a white tiger</p>
                   <p class="wallet_NFT_NFTs_info_source">WalletConnect</p>
                 </div>
-                <p class="wallet_NFT_NFTs_info_value" id="wallet_NFT_NFTs_info_value2">1,455.681035</p>
+                <p class="wallet_NFT_NFTs_info_value" id="wallet_NFT_NFTs_info_value2"></p>
                 <p class="wallet_NFT_NFTs_info_currency" id="wallet_NFT_NFTs_info_currency2">NTD</p>
               </div>
             </div>
-            <!--
             <div class="wallet_NFT_NFTs" id="wallet_NFT_NFT3">
               <div class="wallet_NFT_NFTs_img_container" id="wallet_NFT_NFTs_img_container3"></div>
               <div class="wallet_NFT_NFTs_info_container">
@@ -680,15 +677,14 @@
                   <p class="wallet_NFT_NFTs_info_name">I'm a bird</p>
                   <p class="wallet_NFT_NFTs_info_source">MetaMask</p>
                 </div>
-                <p class="wallet_NFT_NFTs_info_value">1,651.428965</p>
+                <p class="wallet_NFT_NFTs_info_value" id="wallet_NFT_NFTs_info_value3"></p>
                 <p class="wallet_NFT_NFTs_info_currency" id="wallet_NFT_NFTs_info_currency3">USD</p>
               </div>
             </div>
-            -->
             
           </div>
         </div>
-        <div class="wallet_NFT_direction_btn" id="wallet_NFT_right_btn">
+        <div class="wallet_NFT_direction_btn" id="wallet_NFT_right_btn" onclick="slide_NFTs(this.id)">
           <div id="wallet_NFT_right_btn_direction"></div>
         </div>
         <!-- NFT Chart -->
