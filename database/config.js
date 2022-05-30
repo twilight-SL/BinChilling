@@ -1,4 +1,4 @@
-config = {
+const config = {
   'mongodb': {
     'database': 'wp2022_group3',
     'host': 'luffy.ee.ncku.edu.tw',
@@ -7,10 +7,10 @@ config = {
   },
   'mysql': {
     'database': 'wp2022_group3',
-    'host': 'luffy.ee.ncku.edu.tw',
+    'host': '0.0.0.0',
     'password': 'AsylV6e4JUGjaEEz',
     'user': 'wp2022_group3',
   },
 }
 
-module.exports = config;
+export{config}

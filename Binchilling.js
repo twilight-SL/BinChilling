@@ -356,7 +356,7 @@ function load_overview_asset(){
 
 function load_NFTs_asset(){
   get_NFTs_asset();
-  console.log(NFT_total_asset);
+  // console.log(NFT_total_asset);
   document.getElementById('wallet_NFT_whole_asset_dollor').textContent = NFT_total_asset;
 }
 
