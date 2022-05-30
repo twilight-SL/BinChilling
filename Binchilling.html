@@ -426,14 +426,27 @@
           <img class="navbar_logo_text" src="./img/logo_text.png"  onclick="turn_to_wallet_page()">
         </div>
         <div class="navbar_function_container">
+          <p class="navbar_function" id="navbar_function_wallet" onclick="turn_to_wallet_page()">Wallet</p>
           <p class="navbar_function" id="navbar_function_plan">Plan</p>
-          <p class="navbar_function" id="navbar_function_statement">Statement</p>
-          <div class="navbar_function3_container" id="wallet_navbar_function3_container" onmouseover="change_account_hover_color(this.id)" onmouseout="change_back_account_hover_color(this.id)" onclick="trun_to_add_account_page(this.id)">
+          <div class="navbar_function3_container" id="wallet_navbar_function3_container" onmouseover="change_account_hover_color(this.id)" onmouseout="change_back_account_hover_color(this.id)">
             <p class="navbar_function" id="navbar_function_account">Account</p>
             <div class="navbar_function_triangle_container" id="wallet_navbar_function_triangle_container">
               <div class="triangle_down navbar_triangle_down" id="navbar_account_triangle_down"></div>
             </div> 
           </div> 
+        </div>
+        <div id="navbar_account_dropdown_menu_container"  onmouseover="change_account_hover_color(this.id)" onmouseout="change_back_account_hover_color(this.id)">
+          <div id="navbar_account_dropdown_menu">
+            <p id="navbar_account_add" onclick="trun_to_add_account_page(this.id)">+ Add a new account</p>
+            <div class="navbar_account_line" id="navbar_account_line1"></div>
+            <p class="navbar_account_logged_account" id="navbar_account_logged_account1"></p>
+            <div class="navbar_account_line" id="navbar_account_line2"></div>
+            <p class="navbar_account_logged_account" id="navbar_account_logged_account2"></p>
+            <div class="navbar_account_line" id="navbar_account_line3"></div>
+            <p class="navbar_account_logged_account" id="navbar_account_logged_account3"></p>
+            <div class="navbar_account_line" id="navbar_account_line4"></div>
+            <p class="navbar_account_logged_account" id="navbar_account_logged_account4"></p>
+          </div>
         </div>
         <div class="navbar_vertical_rec" id="wallet_navbar_vertical_rec"></div>
         <div id="wallet_navbar_head_contianer">
@@ -443,6 +456,21 @@
           <p class="navbar_username" id="wallet_navbar_username">Username</p>
           <div class="navbar_function_triangle_container" id="wallet_navbar_username_triangle_container">
             <div class="triangle_down navbar_triangle_down" id="navbar_wallet_username_triangle_down"></div>
+          </div>
+        </div>
+        <div id="navbar_user_dropdown_menu_container" onmouseover="change_username_hover_color(this.id)" onmouseout="change_back_username_hover_color(this.id)">
+          <div id="navbar_user_dropdown_menu">
+            <p class="navbar_user_menu">Profile</p>
+            <div class="navbar_user_dropdown_menu_line"></div>
+            <p class="navbar_user_menu">Setting</p>
+            <div class="navbar_user_dropdown_menu_line"></div>
+            <p class="navbar_user_menu">Device</p>
+            <div class="navbar_user_dropdown_menu_line"></div>
+            <p class="navbar_user_menu">Cloud</p>
+            <div class="navbar_user_dropdown_menu_line"></div>
+            <p class="navbar_user_menu">Privacy Policy</p>
+            <div class="navbar_user_dropdown_menu_line"></div>
+            <p class="navbar_user_menu">About us</p>
           </div>
         </div>
       </div>
@@ -485,7 +513,7 @@
           <div class="wallet_show_color_container">
             <div class="wallet_show_color wallet_show_color1" id="wallet_overview_show_color1" onclick="show_wallet_object(this.id)"></div>
           </div>
-          <p class="wallet_category_category wallet_text" id="wallet_overview_category1" onclick="turn_to_specific_wallet(this.id)">NFT</p>
+          <p class="wallet_category_category wallet_text" id="wallet_overview_category1" onclick="turn_to_specific_wallet(this.id)"></p>
           <p class="wallet_totalamount_totalamount wallet_text overview" id="wallet_overview_totalamount1"></p>
           <p class="wallet_currency_currency wallet_text overview" id="wallet_overview_currency1">NTD</p>
           <p class="wallet_percentage_percentage wallet_text overview" id="wallet_overview_percentage1"></p>
@@ -494,7 +522,7 @@
           <div class="wallet_show_color_container">
             <p class="wallet_show_color wallet_show_color2" id="wallet_overview_show_color2" onclick="show_wallet_object(this.id)"></p>
           </div>
-          <p class="wallet_category_category wallet_text" id="wallet_overview_category2"></p>
+          <p class="wallet_category_category wallet_text" id="wallet_overview_category2" onclick="turn_to_specific_wallet(this.id)"></p>
           <p class="wallet_totalamount_totalamount wallet_text overview" id="wallet_overview_totalamount2"></p>
           <p class="wallet_currency_currency wallet_text overview" id="wallet_overview_currency2">NTD</p>
           <p class="wallet_percentage_percentage wallet_text overview" id="wallet_overview_percentage2"></p>
@@ -503,7 +531,7 @@
           <div class="wallet_show_color_container">
             <div class="wallet_show_color wallet_show_color3" id="wallet_overview_show_color3" onclick="show_wallet_object(this.id)"></div>
           </div>
-          <p class="wallet_category_category wallet_text" id="wallet_overview_category3"></p>
+          <p class="wallet_category_category wallet_text" id="wallet_overview_category3" onclick="turn_to_specific_wallet(this.id)"></p>
           <p class="wallet_totalamount_totalamount wallet_text overview" id="wallet_overview_totalamount3"></p>
           <p class="wallet_currency_currency wallet_text overview" id="wallet_overview_currency3">NTD</p>
           <p class="wallet_percentage_percentage wallet_text overview" id="wallet_overview_percentage3"></p>
@@ -512,7 +540,7 @@
           <div class="wallet_show_color_container">
             <div class="wallet_show_color wallet_show_color4" id="wallet_overview_show_color4" onclick="show_wallet_object(this.id)"></div>
           </div>
-          <p class="wallet_category_category wallet_text" id="wallet_overview_category4"></p>
+          <p class="wallet_category_category wallet_text" id="wallet_overview_category4" onclick="turn_to_specific_wallet(this.id)"></p>
           <p class="wallet_totalamount_totalamount wallet_text overview" id="wallet_overview_totalamount4">=</p>
           <p class="wallet_currency_currency wallet_text overview" id="wallet_overview_currency4">NTD</p>
           <p class="wallet_percentage_percentage wallet_text overview" id="wallet_overview_percentage4"></p>
@@ -521,7 +549,7 @@
           <div class="wallet_show_color_container">
             <div class="wallet_show_color wallet_show_color5" id="wallet_overview_show_color5" onclick="show_wallet_object(this.id)"></div>
           </div>
-          <p class="wallet_category_category wallet_text" id="wallet_overview_category5"></p>
+          <p class="wallet_category_category wallet_text" id="wallet_overview_category5" onclick="turn_to_specific_wallet(this.id)"></p>
           <p class="wallet_totalamount_totalamount wallet_text overview" id="wallet_overview_totalamount5"></p>
           <p class="wallet_currency_currency wallet_text overview" id="wallet_overview_currency5">NTD</p>
           <p class="wallet_percentage_percentage wallet_text overview" id="wallet_overview_percentage5"></p>
@@ -537,11 +565,353 @@
         <div id="chart" preserveAspectRatio="xMinYMin meet" viewBox="0 0 200 200"></div>
       </div>
       
+      <!---------------------------------------------Wallet Stock------------------------------------>
+      <div class="wallet_page" id="wallet_Stock">
+        <div class="wallet_back_container" onclick="turn_to_wallet_page()">
+          <div class="triangle_back"></div>
+          <p class="wallet_back_text">Back to overview</p>
+        </div>
+        <p class="wallet_title" id="wallet_Stock_title" >Stock</p>
+        <p class="wallet_whole_asset_dollor" id="wallet_Stock_whole_asset_dollor"></p>
+        <div class="wallet_whole_asset_dollor_menu_btn" id="wallet_Stock_whole_asset_dollor_menu_btn" onclick="pop_wallet_currency_menu(this.id)">
+          <p class="wallet_whole_asset_dollor_menu" id="wallet_Stock_whole_asset_dollor_menu_text">NTD</p>
+          <div class="triangle_down wallet_whole_asset_triangle_down" id="wallet_Stock_whole_asset_triangle_down"></div>
+        </div>
+        <div class="wallet_whole_asset_dollor_scrollable_dropdown_menu" id="wallet_Stock_whole_asset_scrollable_dollor_menu">
+          <div class="wallet_whole_asset_dollor_dropdown_menu" id="wallet_Stock_whole_asset_dollor_menu" >
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_Stock_whole_asset_dollor_menu_NTD" onclick="close_wallet_whole_asset_currency_menu(this.id)">NTD</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_first"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_Stock_whole_asset_dollor_menu_USD" onclick="close_wallet_whole_asset_currency_menu(this.id)">USD</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_second"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_Stock_whole_asset_dollor_menu_JPY" onclick="close_wallet_whole_asset_currency_menu(this.id)">JPY</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_third"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_Stock_whole_asset_dollor_menu_ETH" onclick="close_wallet_whole_asset_currency_menu(this.id)">ETH</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_second"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_Stock_whole_asset_dollor_menu_RMB" onclick="close_wallet_whole_asset_currency_menu(this.id)">RMB</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_third"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_Stock_whole_asset_dollor_menu_EUR" onclick="close_wallet_whole_asset_currency_menu(this.id)">EUR</div>
+          </div>
+        </div>
+      
+        <p class="wallet_show" id="wallet_overview_show">show</p>
+        <p class="wallet_category Stock" id="wallet_overview_category">Stock</p>
+        <p class="wallet_totalamount" id="wallet_overview_totalamount">Total amount</p>
+        <p class="wallet_currency Stock" id="wallet_overview_currency">Currency</p>
+        <p class="wallet_percentage Stock" id="wallet_overview_percentage">Institution</p>
+        <div class="wallet_object_container wallet_object_container1" id="wallet_Stock_object_container1">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color1" id="wallet_Stock_show_color1" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_Stock_category1" onclick="turn_to_specific_wallet(this.id)"></p>
+          <p class="wallet_totalamount_totalamount wallet_text Stock" id="wallet_Stock_totalamount1"></p>
+          <p class="wallet_totalamount_earning Stock" id="wallet_Stock_earning1"></p>
+          <p class="wallet_currency_currency wallet_text Stock" id="wallet_Stock_currency1">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text Stock" id="wallet_Stock_percentage1"></p>
+        </div>
+        <div class="wallet_object_container wallet_object_container2" id="wallet_Stock_object_container2">
+          <div class="wallet_show_color_container">
+            <p class="wallet_show_color wallet_show_color2" id="wallet_Stock_show_color2" onclick="show_wallet_object(this.id)"></p>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_Stock_category2"></p>
+          <p class="wallet_totalamount_totalamount wallet_text Stock" id="wallet_Stock_totalamount2"></p>
+          <p class="wallet_totalamount_earning Stock" id="wallet_Stock_earning2"></p>
+          <p class="wallet_currency_currency wallet_text Stock" id="wallet_Stock_currency2">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text Stock" id="wallet_Stock_percentage2"></p>
+        </div>
+        <div class="wallet_object_container wallet_object_container3" id="wallet_Stock_object_container3">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color3" id="wallet_Stock_show_color3" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_Stock_category3"></p>
+          <p class="wallet_totalamount_totalamount wallet_text Stock" id="wallet_Stock_totalamount3"></p>
+          <p class="wallet_totalamount_earning Stock" id="wallet_Stock_earning3"></p>
+          <p class="wallet_currency_currency wallet_text Stock" id="wallet_Stock_currency3">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text Stock" id="wallet_Stock_percentage3"></p>
+        </div>
+        <div class="wallet_object_container wallet_object_container4" id="wallet_Stock_object_container4">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color4" id="wallet_Stock_show_color4" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_Stock_category4"></p>
+          <p class="wallet_totalamount_totalamount wallet_text Stock" id="wallet_Stock_totalamount4"></p>
+          <p class="wallet_totalamount_earning Stock" id="wallet_Stock_earning4"></p>
+          <p class="wallet_currency_currency wallet_text Stock" id="wallet_Stock_currency4">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text Stock" id="wallet_Stock_percentage4"></p>
+        </div>
+        <div class="wallet_object_container wallet_object_container5" id="wallet_Stock_object_container5">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color5" id="wallet_Stock_show_color5" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_Stock_category5"></p>
+          <p class="wallet_totalamount_totalamount wallet_text Stock" id="wallet_Stock_totalamount5"></p>
+          <p class="wallet_totalamount_earning Stock" id="wallet_Stock_earning5"></p>
+          <p class="wallet_currency_currency wallet_text Stock" id="wallet_Stock_currency5">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text Stock" id="wallet_Stock_percentage5"></p>
+        </div>
+        <!-- Stock Chart -->
+        <!-------------------------- Risk -------------------------->
+       
+      </div>
+
+      <!---------------------------------------------Wallet Crypto------------------------------------>
+      <div class="wallet_page" id="wallet_Crypto">
+        <div class="wallet_back_container" onclick="turn_to_wallet_page()">
+          <div class="triangle_back"></div>
+          <p class="wallet_back_text">Back to overview</p>
+        </div>
+        <p class="wallet_title" id="wallet_Crypto_title">Crypto</p>
+        <p class="wallet_whole_asset_dollor" id="wallet_Crypto_whole_asset_dollor"></p>
+        <div class="wallet_whole_asset_dollor_menu_btn" id="wallet_Crypto_whole_asset_dollor_menu_btn" onclick="pop_wallet_currency_menu(this.id)">
+          <p class="wallet_whole_asset_dollor_menu" id="wallet_Crypto_whole_asset_dollor_menu_text">NTD</p>
+          <div class="triangle_down wallet_whole_asset_triangle_down" id="wallet_Crypto_whole_asset_triangle_down"></div>
+        </div>
+        <div class="wallet_whole_asset_dollor_scrollable_dropdown_menu" id="wallet_Crypto_whole_asset_scrollable_dollor_menu">
+          <div class="wallet_whole_asset_dollor_dropdown_menu" id="wallet_Crypto_whole_asset_dollor_menu" >
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_Crypto_whole_asset_dollor_menu_NTD" onclick="close_wallet_whole_asset_currency_menu(this.id)">NTD</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_first"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_Crypto_whole_asset_dollor_menu_USD" onclick="close_wallet_whole_asset_currency_menu(this.id)">USD</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_second"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_Crypto_whole_asset_dollor_menu_JPY" onclick="close_wallet_whole_asset_currency_menu(this.id)">JPY</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_third"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_Crypto_whole_asset_dollor_menu_ETH" onclick="close_wallet_whole_asset_currency_menu(this.id)">ETH</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_second"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_Crypto_whole_asset_dollor_menu_RMB" onclick="close_wallet_whole_asset_currency_menu(this.id)">RMB</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_third"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_Crypto_whole_asset_dollor_menu_EUR" onclick="close_wallet_whole_asset_currency_menu(this.id)">EUR</div>
+          </div>
+        </div>
+      
+        <p class="wallet_show" id="wallet_overview_show">show</p>
+        <p class="wallet_category" id="wallet_overview_category">Category</p>
+        <p class="wallet_totalamount" id="wallet_overview_totalamount">Total amount</p>
+        <p class="wallet_currency" id="wallet_overview_currency">Currency</p>
+        <p class="wallet_percentage" id="wallet_overview_percentage">Percentage</p>
+        <div class="wallet_object_container wallet_object_container1" id="wallet_Crypto_object_container1">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color1" id="wallet_Crypto_show_color1" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_Crypto_category1" onclick="turn_to_specific_wallet(this.id)"></p>
+          <p class="wallet_totalamount_totalamount wallet_text Crypto" id="wallet_Crypto_totalamount1"></p>
+          <!--<p class="wallet_totalamount_earning Crypto" id="wallet_Crypto_earning1"></p>-->
+          <p class="wallet_currency_currency wallet_text Crypto" id="wallet_Crypto_currency1">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text Crypto" id="wallet_Crypto_percentage1"></p>
+        </div>
+        <div class="wallet_object_container wallet_object_container2" id="wallet_Crypto_object_container2">
+          <div class="wallet_show_color_container">
+            <p class="wallet_show_color wallet_show_color2" id="wallet_Crypto_show_color2" onclick="show_wallet_object(this.id)"></p>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_Crypto_category2"></p>
+          <p class="wallet_totalamount_totalamount wallet_text Crypto" id="wallet_Crypto_totalamount2"></p>
+          <!--<p class="wallet_totalamount_earning Crypto" id="wallet_Crypto_earning2"></p>-->
+          <p class="wallet_currency_currency wallet_text Crypto" id="wallet_Crypto_currency2">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text Crypto" id="wallet_Crypto_percentage2"></p>
+        </div>
+        <div class="wallet_object_container wallet_object_container3" id="wallet_Crypto_object_container3">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color3" id="wallet_Crypto_show_color3" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_Crypto_category3"></p>
+          <p class="wallet_totalamount_totalamount wallet_text Crypto" id="wallet_Crypto_totalamount3"></p>
+          <!--<p class="wallet_totalamount_earning Crypto" id="wallet_Crypto_earning3"></p>-->
+          <p class="wallet_currency_currency wallet_text Crypto" id="wallet_Crypto_currency3">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text Crypto" id="wallet_Crypto_percentage3"></p>
+        </div>
+        <div class="wallet_object_container wallet_object_container4" id="wallet_Crypto_object_container4">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color4" id="wallet_Crypto_show_color4" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_Crypto_category4"></p>
+          <p class="wallet_totalamount_totalamount wallet_text Crypto" id="wallet_Crypto_totalamount4"></p>
+          <!--<p class="wallet_totalamount_earning Crypto" id="wallet_Crypto_earning4"></p>-->
+          <p class="wallet_currency_currency wallet_text Crypto" id="wallet_Crypto_currency4">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text Crypto" id="wallet_Crypto_percentage4"></p>
+        </div>
+        <div class="wallet_object_container wallet_object_container5" id="wallet_Crypto_object_container5">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color5" id="wallet_Crypto_show_color5" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_Crypto_category5"></p>
+          <p class="wallet_totalamount_totalamount wallet_text Crypto" id="wallet_Crypto_totalamount5"></p>
+          <!--<p class="wallet_totalamount_earning Crypto" id="wallet_Crypto_earning5"></p>-->
+          <p class="wallet_currency_currency wallet_text Crypto" id="wallet_Crypto_currency5">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text Crypto" id="wallet_Crypto_percentage5"></p>
+        </div>
+        <!-- Crypto Chart -->
+        <!-------------------------- Risk -------------------------->
+       
+      </div>
+
+      <!---------------------------------------------Wallet MetaMask------------------------------------>
+      <div class="wallet_page" id="wallet_MetaMask">
+        <div class="wallet_back_container" onclick="turn_to_wallet_page()">
+          <div class="triangle_back"></div>
+          <p class="wallet_back_text">Back to overview</p>
+        </div>
+        <p class="wallet_title" id="wallet_MetaMask_title">MetaMask</p>
+        <p class="wallet_whole_asset_dollor" id="wallet_MetaMask_whole_asset_dollor"></p>
+        <div class="wallet_whole_asset_dollor_menu_btn" id="wallet_MetaMask_whole_asset_dollor_menu_btn" onclick="pop_wallet_currency_menu(this.id)">
+          <p class="wallet_whole_asset_dollor_menu" id="wallet_MetaMask_whole_asset_dollor_menu_text">NTD</p>
+          <div class="triangle_down wallet_whole_asset_triangle_down" id="wallet_MetaMask_whole_asset_triangle_down"></div>
+        </div>
+        <div class="wallet_whole_asset_dollor_scrollable_dropdown_menu" id="wallet_MetaMask_whole_asset_scrollable_dollor_menu">
+          <div class="wallet_whole_asset_dollor_dropdown_menu" id="wallet_MetaMask_whole_asset_dollor_menu" >
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_MetaMask_whole_asset_dollor_menu_NTD" onclick="close_wallet_whole_asset_currency_menu(this.id)">NTD</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_first"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_MetaMask_whole_asset_dollor_menu_USD" onclick="close_wallet_whole_asset_currency_menu(this.id)">USD</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_second"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_MetaMask_whole_asset_dollor_menu_JPY" onclick="close_wallet_whole_asset_currency_menu(this.id)">JPY</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_third"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_MetaMask_whole_asset_dollor_menu_ETH" onclick="close_wallet_whole_asset_currency_menu(this.id)">ETH</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_second"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_MetaMask_whole_asset_dollor_menu_RMB" onclick="close_wallet_whole_asset_currency_menu(this.id)">RMB</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_third"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_MetaMask_whole_asset_dollor_menu_EUR" onclick="close_wallet_whole_asset_currency_menu(this.id)">EUR</div>
+          </div>
+        </div>
+      
+        <p class="wallet_show" id="wallet_overview_show">show</p>
+        <p class="wallet_category" id="wallet_overview_category">Category</p>
+        <p class="wallet_totalamount" id="wallet_overview_totalamount">Total amount</p>
+        <p class="wallet_currency" id="wallet_overview_currency">Currency</p>
+        <p class="wallet_percentage" id="wallet_overview_percentage">Percentage</p>
+        <div class="wallet_object_container wallet_object_container1" id="wallet_MetaMask_object_container1">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color1" id="wallet_MetaMask_show_color1" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_MetaMask_category1" onclick="turn_to_specific_wallet(this.id)"></p>
+          <p class="wallet_totalamount_totalamount wallet_text MetaMask" id="wallet_MetaMask_totalamount1"></p>
+          <p class="wallet_currency_currency wallet_text MetaMask" id="wallet_MetaMask_currency1">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text MetaMask" id="wallet_MetaMask_percentage1"></p>
+        </div>
+        <div class="wallet_object_container wallet_object_container2" id="wallet_MetaMask_object_container2">
+          <div class="wallet_show_color_container">
+            <p class="wallet_show_color wallet_show_color2" id="wallet_MetaMask_show_color2" onclick="show_wallet_object(this.id)"></p>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_MetaMask_category2"></p>
+          <p class="wallet_totalamount_totalamount wallet_text MetaMask" id="wallet_MetaMask_totalamount2"></p>
+          <p class="wallet_currency_currency wallet_text MetaMask" id="wallet_MetaMask_currency2">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text MetaMask" id="wallet_MetaMask_percentage2"></p>
+        </div>
+        <div class="wallet_object_container wallet_object_container3" id="wallet_MetaMask_object_container3">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color3" id="wallet_MetaMask_show_color3" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_MetaMask_category3"></p>
+          <p class="wallet_totalamount_totalamount wallet_text MetaMask" id="wallet_MetaMask_totalamount3"></p>
+          <p class="wallet_currency_currency wallet_text MetaMask" id="wallet_MetaMask_currency3">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text MetaMask" id="wallet_MetaMask_percentage3"></p>
+        </div>
+        <div class="wallet_object_container wallet_object_container4" id="wallet_MetaMask_object_container4">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color4" id="wallet_MetaMask_show_color4" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_MetaMask_category4"></p>
+          <p class="wallet_totalamount_totalamount wallet_text MetaMask" id="wallet_MetaMask_totalamount4"></p>
+          <p class="wallet_currency_currency wallet_text MetaMask" id="wallet_MetaMask_currency4">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text MetaMask" id="wallet_MetaMask_percentage4"></p>
+        </div>
+        <div class="wallet_object_container wallet_object_container5" id="wallet_MetaMask_object_container5">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color5" id="wallet_MetaMask_show_color5" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_MetaMask_category5"></p>
+          <p class="wallet_totalamount_totalamount wallet_text MetaMask" id="wallet_MetaMask_totalamount5"></p>
+          <p class="wallet_currency_currency wallet_text MetaMask" id="wallet_MetaMask_currency5">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text MetaMask" id="wallet_MetaMask_percentage5"></p>
+        </div>
+        <!-- MetaMask Chart -->
+        <!-------------------------- Risk -------------------------->
+       
+      </div>
+
+      <!---------------------------------------------Wallet WalletConnect------------------------------------>
+      <div class="wallet_page" id="wallet_WalletConnect">
+        <div class="wallet_back_container" onclick="turn_to_wallet_page()">
+          <div class="triangle_back"></div>
+          <p class="wallet_back_text">Back to overview</p>
+        </div>
+        <p class="wallet_title" id="wallet_WalletConnect_title" >WalletConnect</p>
+        <p class="wallet_whole_asset_dollor" id="wallet_WalletConnect_whole_asset_dollor"></p>
+        <div class="wallet_whole_asset_dollor_menu_btn" id="wallet_WalletConnect_whole_asset_dollor_menu_btn" onclick="pop_wallet_currency_menu(this.id)">
+          <p class="wallet_whole_asset_dollor_menu" id="wallet_WalletConnect_whole_asset_dollor_menu_text">NTD</p>
+          <div class="triangle_down wallet_whole_asset_triangle_down" id="wallet_WalletConnect_whole_asset_triangle_down"></div>
+        </div>
+        <div class="wallet_whole_asset_dollor_scrollable_dropdown_menu" id="wallet_WalletConnect_whole_asset_scrollable_dollor_menu">
+          <div class="wallet_whole_asset_dollor_dropdown_menu" id="wallet_WalletConnect_whole_asset_dollor_menu" >
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_WalletConnect_whole_asset_dollor_menu_NTD" onclick="close_wallet_whole_asset_currency_menu(this.id)">NTD</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_first"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_WalletConnect_whole_asset_dollor_menu_USD" onclick="close_wallet_whole_asset_currency_menu(this.id)">USD</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_second"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_WalletConnect_whole_asset_dollor_menu_JPY" onclick="close_wallet_whole_asset_currency_menu(this.id)">JPY</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_third"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_WalletConnect_whole_asset_dollor_menu_ETH" onclick="close_wallet_whole_asset_currency_menu(this.id)">ETH</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_second"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_WalletConnect_whole_asset_dollor_menu_RMB" onclick="close_wallet_whole_asset_currency_menu(this.id)">RMB</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_third"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_WalletConnect_whole_asset_dollor_menu_EUR" onclick="close_wallet_whole_asset_currency_menu(this.id)">EUR</div>
+          </div>
+        </div>
+      
+        <p class="wallet_show" id="wallet_overview_show">show</p>
+        <p class="wallet_category WalletConnect" id="wallet_overview_category">Category</p>
+        <p class="wallet_totalamount" id="wallet_overview_totalamount">Total amount</p>
+        <p class="wallet_currency" id="wallet_overview_currency">Currency</p>
+        <p class="wallet_percentage WalletConnect" id="wallet_overview_percentage">Percentage</p>
+        <div class="wallet_object_container wallet_object_container1" id="wallet_WalletConnect_object_container1">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color1" id="wallet_WalletConnect_show_color1" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_WalletConnect_category1"></p>
+          <p class="wallet_totalamount_totalamount wallet_text WalletConnect" id="wallet_WalletConnect_totalamount1"></p>
+          <p class="wallet_currency_currency wallet_text WalletConnect" id="wallet_WalletConnect_currency1">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text WalletConnect" id="wallet_WalletConnect_percentage1"></p>
+        </div>
+        <div class="wallet_object_container wallet_object_container2" id="wallet_WalletConnect_object_container2">
+          <div class="wallet_show_color_container">
+            <p class="wallet_show_color wallet_show_color2" id="wallet_WalletConnect_show_color2" onclick="show_wallet_object(this.id)"></p>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_WalletConnect_category2"></p>
+          <p class="wallet_totalamount_totalamount wallet_text WalletConnect" id="wallet_WalletConnect_totalamount2"></p>
+          <p class="wallet_currency_currency wallet_text WalletConnect" id="wallet_WalletConnect_currency2">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text WalletConnect" id="wallet_WalletConnect_percentage2"></p>
+        </div>
+        <div class="wallet_object_container wallet_object_container3" id="wallet_WalletConnect_object_container3">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color3" id="wallet_WalletConnect_show_color3" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_WalletConnect_category3"></p>
+          <p class="wallet_totalamount_totalamount wallet_text WalletConnect" id="wallet_WalletConnect_totalamount3"></p>
+          <p class="wallet_currency_currency wallet_text WalletConnect" id="wallet_WalletConnect_currency3">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text WalletConnect" id="wallet_WalletConnect_percentage3"></p>
+        </div>
+        <div class="wallet_object_container wallet_object_container4" id="wallet_WalletConnect_object_container4">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color4" id="wallet_WalletConnect_show_color4" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_WalletConnect_category4"></p>
+          <p class="wallet_totalamount_totalamount wallet_text WalletConnect" id="wallet_WalletConnect_totalamount4"></p>
+          <p class="wallet_currency_currency wallet_text WalletConnect" id="wallet_WalletConnect_currency4">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text WalletConnect" id="wallet_WalletConnect_percentage4"></p>
+        </div>
+        <div class="wallet_object_container wallet_object_container5" id="wallet_WalletConnect_object_container5">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color5" id="wallet_WalletConnect_show_color5" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_WalletConnect_category5"></p>
+          <p class="wallet_totalamount_totalamount wallet_text WalletConnect" id="wallet_WalletConnect_totalamount5"></p>
+          <p class="wallet_currency_currency wallet_text WalletConnect" id="wallet_WalletConnect_currency5">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text WalletConnect" id="wallet_WalletConnect_percentage5"></p>
+        </div>
+        <!-- WalletConnect Chart -->
+        <!-------------------------- Risk -------------------------->
+       
+      </div>
+
       <!---------------------------------------------Wallet NFT--------------------------------------------->
       <div class="wallet_page" id="wallet_NFT">
-        <div id="wallet_NFT_back_container" onclick="turn_to_overview_page(this.id)">
+        <div class="wallet_back_container" onclick="turn_to_wallet_page()">
           <div class="triangle_back"></div>
-          <p id="wallet_NFT_back_text">Back to overview</p>
+          <p class="wallet_back_text">Back to overview</p>
         </div>
         <p class="wallet_title" id="wallet_NFT_title">NFT</p>
         <p id="explore_NFT_btn" onclick="turn_to_NFT_Martket()">Explore more</p>
@@ -606,7 +976,7 @@
             </form>
             <p id="wallet_NFT_filter_min_text">Min</p>
             <div id="wallet_NFT_filter_min_typebox_container">
-              <input class="typebox" id="wallet_NFT_filter_min_typebox" placeholder="Min">
+              <input class="typebox" id="wallet_NFT_filter_min_typebox" placeholder="Min" style="font-size: 1.8vh;">
             </div>
             <p id="wallet_NFT_filter_to_text">to</p>
             <p id="wallet_NFT_filter_max_text">Max</p>
@@ -647,10 +1017,11 @@
           <div id="wallet_NFT_NFTs_container">
             <div class="wallet_NFT_NFTs" id="wallet_NFT_NFT1">
               <div class="wallet_NFT_NFTs_img_container" id="wallet_NFT_NFTs_img_container1"></div>
+              <p class="wallet_NFT_percentage" id="wallet_NFT_percentage1"></p>
               <div class="wallet_NFT_NFTs_info_container">
                 <div class="wallet_NFT_NFTs_info_self_container">
-                  <p class="wallet_NFT_NFTs_info_subname" >Death Zoo Vol. 2</p>
-                  <p class="wallet_NFT_NFTs_info_name">I'm a bird</p>
+                  <p class="wallet_NFT_NFTs_info_subname" >Crazy bird</p>
+                  <p class="wallet_NFT_NFTs_info_name">Crazy bird #5487</p>
                   <p class="wallet_NFT_NFTs_info_source">MetaMask</p>
                 </div>
                 <p class="wallet_NFT_NFTs_info_value" id="wallet_NFT_NFTs_info_value1"></p>
@@ -659,10 +1030,11 @@
             </div>
             <div class="wallet_NFT_NFTs" id="wallet_NFT_NFT2">
               <div class="wallet_NFT_NFTs_img_container" id="wallet_NFT_NFTs_img_container2"></div>
+              <p class="wallet_NFT_percentage" id="wallet_NFT_percentage2"></p>
               <div class="wallet_NFT_NFTs_info_container">
                 <div class="wallet_NFT_NFTs_info_self_container">
-                  <p class="wallet_NFT_NFTs_info_subname" >Death Zoo Vol. 2</p>
-                  <p class="wallet_NFT_NFTs_info_name">I'm a white tiger</p>
+                  <p class="wallet_NFT_NFTs_info_subname" >Japanese Illustration</p>
+                  <p class="wallet_NFT_NFTs_info_name">Japanese Illustra_</p>
                   <p class="wallet_NFT_NFTs_info_source">WalletConnect</p>
                 </div>
                 <p class="wallet_NFT_NFTs_info_value" id="wallet_NFT_NFTs_info_value2"></p>
@@ -671,10 +1043,11 @@
             </div>
             <div class="wallet_NFT_NFTs" id="wallet_NFT_NFT3">
               <div class="wallet_NFT_NFTs_img_container" id="wallet_NFT_NFTs_img_container3"></div>
+              <p class="wallet_NFT_percentage" id="wallet_NFT_percentage3"></p>
               <div class="wallet_NFT_NFTs_info_container">
                 <div class="wallet_NFT_NFTs_info_self_container">
-                  <p class="wallet_NFT_NFTs_info_subname" >Death Zoo Vol. 2</p>
-                  <p class="wallet_NFT_NFTs_info_name">I'm a bird</p>
+                  <p class="wallet_NFT_NFTs_info_subname" >Crazy tiger</p>
+                  <p class="wallet_NFT_NFTs_info_name">Crazy tiger #6771</p>
                   <p class="wallet_NFT_NFTs_info_source">MetaMask</p>
                 </div>
                 <p class="wallet_NFT_NFTs_info_value" id="wallet_NFT_NFTs_info_value3"></p>
