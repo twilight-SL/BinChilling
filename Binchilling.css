@@ -88,7 +88,7 @@ video {
 
 @font-face {
   font-family: SFPRODISPLAY_BOLD;
-  src: url(./fonts/SFPRODISPLAYBOLD.otf);
+  src: url(./fonts/SFPRODISPLAYBOLD.OTF);
 }
 
 @font-face {
@@ -174,7 +174,7 @@ video {
   position: absolute;
   width: 42%;
   height: 100vh;
-  background-image: url("./img/sign_title_bg.png");
+  background-image: url("./Img/sign_title_bg.png");
 }
 
 #signin_title {
@@ -353,7 +353,7 @@ video {
   position: absolute;
   width: 42%;
   height: 100vh;
-  background-image: url("./img/sign_title_bg.png");
+  background-image: url("./Img/sign_title_bg.png");
 }
 
 #signup_title {
@@ -1107,7 +1107,7 @@ video {
   position: absolute;
   height: 100%;
   width: 20%;
-  left: 11%;
+  left: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1204,6 +1204,10 @@ video {
 
 .wallet_object_container5 {
   top: 72.5%;
+}
+
+.wallet_page{
+  display: none;
 }
 
 /*------------------------------------------Wallet Stock------------------------------------------*/

@@ -15,6 +15,7 @@
     <link href="chart.css" rel="stylesheet"/>
     <link href="account.css" rel="stylesheet"/>
     <script src="./Binchilling.js" defer></script>
+    
 </head>
 <body onload="load_database()">
     <!--
@@ -36,9 +37,9 @@
       <div class="navbar_logo_container" id="homepage_navbar_logo_container">
         <div class="navbar_logo">
           <div class="navbar_logo_img_container">
-            <img class="navbar_logo_img" src="./img/logo.png">
+            <img class="navbar_logo_img" src="./Img/logo.png">
           </div>
-          <img class="navbar_logo_text" src="./img/logo_text.png">
+          <img class="navbar_logo_text" src="./Img/logo_text.png">
         </div>
         <div class="narbar_sign navbar_signin" id="homepage_navbar_signin" onclick="homepage_turn_to_signin_page(this.id)">Sign in</div>
         <div class="narbar_sign navbar_signup" id="homepage_navbar_signup" onclick="homepage_turn_to_signup_page(this.id)">Sign up</div>
@@ -133,9 +134,9 @@
       <div id="signin_logo_container">
         <div id="navbar_logo">
           <div class="navbar_logo_img_container">
-            <img class="navbar_logo_img" src="./img/logo.png">
+            <img class="navbar_logo_img" src="./Img/logo.png">
           </div>
-          <img class="navbar_logo_text" src="./img/logo_text.png">
+          <img class="navbar_logo_text" src="./Img/logo_text.png">
         </div>
       </div>
       <div id="signin_title_container">
@@ -245,9 +246,9 @@
       <div class="navbar_logo_container" id="verify_email_navbar_logo_container">
         <div class="navbar_logo">
           <div class="navbar_logo_img_container">
-            <img class="navbar_logo_img" src="./img/logo.png">
+            <img class="navbar_logo_img" src="./Img/logo.png">
           </div>
-          <img class="navbar_logo_text" src="./img/logo_text.png">
+          <img class="navbar_logo_text" src="./Img/logo_text.png">
         </div>
         <div class="narbar_sign navbar_signin" id="verify_email_navbar_signin" onclick="turn_to_signin_page_from_verify()">Sign in</div>
         <div class="narbar_sign navbar_signup" id="verify_email_navbar_signup" onclick="turn_to_signup_page_from_verify()">Sign up</div>
@@ -324,10 +325,10 @@
         <!------------------  ! Add Demo !  ------------------>
         <div id="demo-add" style="display: none;">
           <div style="display: flex;justify-content:flex-start;align-items: center;margin-left: 30px;">
-            <img src="./img/MetaMask_Fox 3.png" alt="">
-            <img src="./img/MetaMask.png" style="height:17px;margin-left: 40px;" alt="">
+            <img src="./Img/MetaMask_Fox 3.png" alt="">
+            <img src="./Img/MetaMask.png" style="height:17px;margin-left: 40px;" alt="">
           </div>
-          <img src="./img/Group 290.png" alt="">
+          <img src="./Img/Group 290.png" alt="">
         </div>
         <input id="add-nft" class="input_add_style" type="text" placeholder="+  Click to add a new account" onclick="add_NFT_account(this.id)">
       </div>
@@ -343,7 +344,7 @@
           <div class="col-4">
             <div class="list-group list-group-flush" id="list-tab" role="tablist">
               <div class="list-group-item list-group-item-action item rounded-pill" id="list-metamask-list" data-toggle="modal" data-target="#MetaMaskModal" role="tab" aria-controls="list-Metamask">
-                <img src="./img/MetaMask_Fox 3.png" alt="">
+                <img src="./Img/MetaMask_Fox 3.png" alt="">
                 <p class="icon_name">MetaMask</p>
               </div>
               <!---------------------- MetaMask Modal Start --------------------------->
@@ -352,15 +353,15 @@
                   <!-- Modal content -->
                   <div class="modal-content">
                     <div class="modal-header">
-                      <img src="./img/MetaMask_Fox 3.png" alt="">
-                      <img src="./img/Ellipse 31.png" class="ellipse">
+                      <img src="./Img/MetaMask_Fox 3.png" alt="">
+                      <img src="./Img/Ellipse 31.png" class="ellipse">
                       <select name="currency" class="form-select">
                         <option selected>Main Ethereum Network</option>
                         <option>Something Network</option>
                       </select>
                     </div>
                     <div class="modal-body">
-                      <img src="./img/MetaMask_Big.jpg" alt="">
+                      <img src="./Img/MetaMask_Big.jpg" alt="">
                       <h1>Welcome back!</h1>
                       <h4>The decentralized web awaits</h4>
                       <div class="metamask-passwaord">
@@ -377,38 +378,38 @@
               <!---------------------- MetaMask Connect Succes --------------------------->
               <div class='dialog' id="dialog-success">
                 <div class="verify-modal" id="MetaMask-wallet-success-connect">
-                  <img src="./img/Group 170.png" alt="">
+                  <img src="./Img/Group 170.png" alt="">
                 </div>
               </div>
               <!---------------------- MetaMask Connect Failed --------------------------->
               <div class='dialog' id="dialog-failed">
                 <div class="verify-modal" id="MetaMask-wallet-failed-connect">
-                  <img src="./img/Group 167.png" alt="">
+                  <img src="./Img/Group 167.png" alt="">
                 </div>
               </div>
               <!---------------------- MetaMask Modal End --------------------------->
               <div class="list-group-item list-group-item-action item rounded-pill" id="list-coinbase-list" data-bs-toggle="list" role="tab" aria-controls="list-Coinbase">
-                <img src="./img/coinbasewallet 1.png" alt="">
+                <img src="./Img/coinbasewallet 1.png" alt="">
                 <p class="icon_name">Coinbase wallet</p>
               </div>
               <div class="list-group-item list-group-item-action item rounded-pill" id="list-walletconnect-list" data-bs-toggle="list" role="tab" aria-controls="list-WalletConnect">
-                <img src="./img/walletconnect 1.png" alt="">
+                <img src="./Img/walletconnect 1.png" alt="">
                 <p class="icon_name">WalletConnect</p>
               </div>
               <div class="list-group-item list-group-item-action item rounded-pill" id="list-phantom-list" data-bs-toggle="list" role="tab" aria-controls="list-Phantom">
-                <img src="./img/Phantom 1.png" alt="">
+                <img src="./Img/Phantom 1.png" alt="">
                 <p class="icon_name">Phantom</p>
               </div>
               <div class="list-group-item list-group-item-action item rounded-pill" id="list-venly-list" data-bs-toggle="list" role="tab" aria-controls="list-Venly">
-                <img src="./img/venly_logo 1.png" alt="">
+                <img src="./Img/venly_logo 1.png" alt="">
                 <p class="icon_name">Venly</p>
               </div>
               <div class="list-group-item list-group-item-action item rounded-pill" id="list-formatic-list" data-bs-toggle="list" role="tab" aria-controls="list-Formatic">
-                <img src="./img/formatic 1.png" alt="">
+                <img src="./Img/formatic 1.png" alt="">
                 <p class="icon_name">Formatic</p>
               </div>
               <div class="list-group-item list-group-item-action item rounded-pill" id="list-kaikas-list" data-bs-toggle="list" role="tab" aria-controls="list-Kaikas">
-                <img src="./img/kaikas 1.png" alt="">
+                <img src="./Img/kaikas 1.png" alt="">
                 <p class="icon_name">Kaikas</p>
               </div>
             </div>   
@@ -421,9 +422,9 @@
       <div class="navbar" id="wallet_navbar">
         <div class="navbar_logo">
           <div class="navbar_logo_img_container">
-            <img class="navbar_logo_img" src="./img/logo.png"  onclick="turn_to_wallet_page()">
+            <img class="navbar_logo_img" src="./Img/logo.png"  onclick="turn_to_wallet_page()">
           </div>
-          <img class="navbar_logo_text" src="./img/logo_text.png"  onclick="turn_to_wallet_page()">
+          <img class="navbar_logo_text" src="./Img/logo_text.png"  onclick="turn_to_wallet_page()">
         </div>
         <div class="navbar_function_container">
           <p class="navbar_function" id="navbar_function_wallet" onclick="turn_to_wallet_page()">Wallet</p>
@@ -824,85 +825,334 @@
        
       </div>
 
-      <!---------------------------------------------Wallet WalletConnect------------------------------------>
-      <div class="wallet_page" id="wallet_WalletConnect">
+      <!---------------------------------------------Wallet Phanton------------------------------------>
+      <div class="wallet_page" id="wallet_Phanton">
         <div class="wallet_back_container" onclick="turn_to_wallet_page()">
           <div class="triangle_back"></div>
           <p class="wallet_back_text">Back to overview</p>
         </div>
-        <p class="wallet_title" id="wallet_WalletConnect_title" >WalletConnect</p>
-        <p class="wallet_whole_asset_dollor" id="wallet_WalletConnect_whole_asset_dollor"></p>
-        <div class="wallet_whole_asset_dollor_menu_btn" id="wallet_WalletConnect_whole_asset_dollor_menu_btn" onclick="pop_wallet_currency_menu(this.id)">
-          <p class="wallet_whole_asset_dollor_menu" id="wallet_WalletConnect_whole_asset_dollor_menu_text">NTD</p>
-          <div class="triangle_down wallet_whole_asset_triangle_down" id="wallet_WalletConnect_whole_asset_triangle_down"></div>
+        <p class="wallet_title" id="wallet_Phanton_title" >Phanton</p>
+        <p class="wallet_whole_asset_dollor" id="wallet_Phanton_whole_asset_dollor"></p>
+        <div class="wallet_whole_asset_dollor_menu_btn" id="wallet_Phanton_whole_asset_dollor_menu_btn" onclick="pop_wallet_currency_menu(this.id)">
+          <p class="wallet_whole_asset_dollor_menu" id="wallet_Phanton_whole_asset_dollor_menu_text">NTD</p>
+          <div class="triangle_down wallet_whole_asset_triangle_down" id="wallet_Phanton_whole_asset_triangle_down"></div>
         </div>
-        <div class="wallet_whole_asset_dollor_scrollable_dropdown_menu" id="wallet_WalletConnect_whole_asset_scrollable_dollor_menu">
-          <div class="wallet_whole_asset_dollor_dropdown_menu" id="wallet_WalletConnect_whole_asset_dollor_menu" >
-            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_WalletConnect_whole_asset_dollor_menu_NTD" onclick="close_wallet_whole_asset_currency_menu(this.id)">NTD</div>
+        <div class="wallet_whole_asset_dollor_scrollable_dropdown_menu" id="wallet_Phanton_whole_asset_scrollable_dollor_menu">
+          <div class="wallet_whole_asset_dollor_dropdown_menu" id="wallet_Phanton_whole_asset_dollor_menu" >
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_Phanton_whole_asset_dollor_menu_NTD" onclick="close_wallet_whole_asset_currency_menu(this.id)">NTD</div>
             <div class="wallet_menu_line" id="wallet_menu_line_first"></div>
-            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_WalletConnect_whole_asset_dollor_menu_USD" onclick="close_wallet_whole_asset_currency_menu(this.id)">USD</div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_Phanton_whole_asset_dollor_menu_USD" onclick="close_wallet_whole_asset_currency_menu(this.id)">USD</div>
             <div class="wallet_menu_line" id="wallet_menu_line_second"></div>
-            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_WalletConnect_whole_asset_dollor_menu_JPY" onclick="close_wallet_whole_asset_currency_menu(this.id)">JPY</div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_Phanton_whole_asset_dollor_menu_JPY" onclick="close_wallet_whole_asset_currency_menu(this.id)">JPY</div>
             <div class="wallet_menu_line" id="wallet_menu_line_third"></div>
-            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_WalletConnect_whole_asset_dollor_menu_ETH" onclick="close_wallet_whole_asset_currency_menu(this.id)">ETH</div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_Phanton_whole_asset_dollor_menu_ETH" onclick="close_wallet_whole_asset_currency_menu(this.id)">ETH</div>
             <div class="wallet_menu_line" id="wallet_menu_line_second"></div>
-            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_WalletConnect_whole_asset_dollor_menu_RMB" onclick="close_wallet_whole_asset_currency_menu(this.id)">RMB</div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_Phanton_whole_asset_dollor_menu_RMB" onclick="close_wallet_whole_asset_currency_menu(this.id)">RMB</div>
             <div class="wallet_menu_line" id="wallet_menu_line_third"></div>
-            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_WalletConnect_whole_asset_dollor_menu_EUR" onclick="close_wallet_whole_asset_currency_menu(this.id)">EUR</div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_Phanton_whole_asset_dollor_menu_EUR" onclick="close_wallet_whole_asset_currency_menu(this.id)">EUR</div>
           </div>
         </div>
       
         <p class="wallet_show" id="wallet_overview_show">show</p>
-        <p class="wallet_category WalletConnect" id="wallet_overview_category">Category</p>
+        <p class="wallet_category Phanton" id="wallet_overview_category">Category</p>
         <p class="wallet_totalamount" id="wallet_overview_totalamount">Total amount</p>
         <p class="wallet_currency" id="wallet_overview_currency">Currency</p>
-        <p class="wallet_percentage WalletConnect" id="wallet_overview_percentage">Percentage</p>
-        <div class="wallet_object_container wallet_object_container1" id="wallet_WalletConnect_object_container1">
+        <p class="wallet_percentage Phanton" id="wallet_overview_percentage">Percentage</p>
+        <div class="wallet_object_container wallet_object_container1" id="wallet_Phanton_object_container1">
           <div class="wallet_show_color_container">
-            <div class="wallet_show_color wallet_show_color1" id="wallet_WalletConnect_show_color1" onclick="show_wallet_object(this.id)"></div>
+            <div class="wallet_show_color wallet_show_color1" id="wallet_Phanton_show_color1" onclick="show_wallet_object(this.id)"></div>
           </div>
-          <p class="wallet_category_category wallet_text" id="wallet_WalletConnect_category1"></p>
-          <p class="wallet_totalamount_totalamount wallet_text WalletConnect" id="wallet_WalletConnect_totalamount1"></p>
-          <p class="wallet_currency_currency wallet_text WalletConnect" id="wallet_WalletConnect_currency1">NTD</p>
-          <p class="wallet_percentage_percentage wallet_text WalletConnect" id="wallet_WalletConnect_percentage1"></p>
+          <p class="wallet_category_category wallet_text" id="wallet_Phanton_category1"></p>
+          <p class="wallet_totalamount_totalamount wallet_text Phanton" id="wallet_Phanton_totalamount1"></p>
+          <p class="wallet_currency_currency wallet_text Phanton" id="wallet_Phanton_currency1">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text Phanton" id="wallet_Phanton_percentage1"></p>
         </div>
-        <div class="wallet_object_container wallet_object_container2" id="wallet_WalletConnect_object_container2">
+        <div class="wallet_object_container wallet_object_container2" id="wallet_Phanton_object_container2">
           <div class="wallet_show_color_container">
-            <p class="wallet_show_color wallet_show_color2" id="wallet_WalletConnect_show_color2" onclick="show_wallet_object(this.id)"></p>
+            <p class="wallet_show_color wallet_show_color2" id="wallet_Phanton_show_color2" onclick="show_wallet_object(this.id)"></p>
           </div>
-          <p class="wallet_category_category wallet_text" id="wallet_WalletConnect_category2"></p>
-          <p class="wallet_totalamount_totalamount wallet_text WalletConnect" id="wallet_WalletConnect_totalamount2"></p>
-          <p class="wallet_currency_currency wallet_text WalletConnect" id="wallet_WalletConnect_currency2">NTD</p>
-          <p class="wallet_percentage_percentage wallet_text WalletConnect" id="wallet_WalletConnect_percentage2"></p>
+          <p class="wallet_category_category wallet_text" id="wallet_Phanton_category2"></p>
+          <p class="wallet_totalamount_totalamount wallet_text Phanton" id="wallet_Phanton_totalamount2"></p>
+          <p class="wallet_currency_currency wallet_text Phanton" id="wallet_Phanton_currency2">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text Phanton" id="wallet_Phanton_percentage2"></p>
         </div>
-        <div class="wallet_object_container wallet_object_container3" id="wallet_WalletConnect_object_container3">
+        <div class="wallet_object_container wallet_object_container3" id="wallet_Phanton_object_container3">
           <div class="wallet_show_color_container">
-            <div class="wallet_show_color wallet_show_color3" id="wallet_WalletConnect_show_color3" onclick="show_wallet_object(this.id)"></div>
+            <div class="wallet_show_color wallet_show_color3" id="wallet_Phanton_show_color3" onclick="show_wallet_object(this.id)"></div>
           </div>
-          <p class="wallet_category_category wallet_text" id="wallet_WalletConnect_category3"></p>
-          <p class="wallet_totalamount_totalamount wallet_text WalletConnect" id="wallet_WalletConnect_totalamount3"></p>
-          <p class="wallet_currency_currency wallet_text WalletConnect" id="wallet_WalletConnect_currency3">NTD</p>
-          <p class="wallet_percentage_percentage wallet_text WalletConnect" id="wallet_WalletConnect_percentage3"></p>
+          <p class="wallet_category_category wallet_text" id="wallet_Phanton_category3"></p>
+          <p class="wallet_totalamount_totalamount wallet_text Phanton" id="wallet_Phanton_totalamount3"></p>
+          <p class="wallet_currency_currency wallet_text Phanton" id="wallet_Phanton_currency3">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text Phanton" id="wallet_Phanton_percentage3"></p>
         </div>
-        <div class="wallet_object_container wallet_object_container4" id="wallet_WalletConnect_object_container4">
+        <div class="wallet_object_container wallet_object_container4" id="wallet_Phanton_object_container4">
           <div class="wallet_show_color_container">
-            <div class="wallet_show_color wallet_show_color4" id="wallet_WalletConnect_show_color4" onclick="show_wallet_object(this.id)"></div>
+            <div class="wallet_show_color wallet_show_color4" id="wallet_Phanton_show_color4" onclick="show_wallet_object(this.id)"></div>
           </div>
-          <p class="wallet_category_category wallet_text" id="wallet_WalletConnect_category4"></p>
-          <p class="wallet_totalamount_totalamount wallet_text WalletConnect" id="wallet_WalletConnect_totalamount4"></p>
-          <p class="wallet_currency_currency wallet_text WalletConnect" id="wallet_WalletConnect_currency4">NTD</p>
-          <p class="wallet_percentage_percentage wallet_text WalletConnect" id="wallet_WalletConnect_percentage4"></p>
+          <p class="wallet_category_category wallet_text" id="wallet_Phanton_category4"></p>
+          <p class="wallet_totalamount_totalamount wallet_text Phanton" id="wallet_Phanton_totalamount4"></p>
+          <p class="wallet_currency_currency wallet_text Phanton" id="wallet_Phanton_currency4">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text Phanton" id="wallet_Phanton_percentage4"></p>
         </div>
-        <div class="wallet_object_container wallet_object_container5" id="wallet_WalletConnect_object_container5">
+        <div class="wallet_object_container wallet_object_container5" id="wallet_Phanton_object_container5">
           <div class="wallet_show_color_container">
-            <div class="wallet_show_color wallet_show_color5" id="wallet_WalletConnect_show_color5" onclick="show_wallet_object(this.id)"></div>
+            <div class="wallet_show_color wallet_show_color5" id="wallet_Phanton_show_color5" onclick="show_wallet_object(this.id)"></div>
           </div>
-          <p class="wallet_category_category wallet_text" id="wallet_WalletConnect_category5"></p>
-          <p class="wallet_totalamount_totalamount wallet_text WalletConnect" id="wallet_WalletConnect_totalamount5"></p>
-          <p class="wallet_currency_currency wallet_text WalletConnect" id="wallet_WalletConnect_currency5">NTD</p>
-          <p class="wallet_percentage_percentage wallet_text WalletConnect" id="wallet_WalletConnect_percentage5"></p>
+          <p class="wallet_category_category wallet_text" id="wallet_Phanton_category5"></p>
+          <p class="wallet_totalamount_totalamount wallet_text Phanton" id="wallet_Phanton_totalamount5"></p>
+          <p class="wallet_currency_currency wallet_text Phanton" id="wallet_Phanton_currency5">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text Phanton" id="wallet_Phanton_percentage5"></p>
         </div>
-        <!-- WalletConnect Chart -->
+        <!-- Phanton Chart -->
+        <!-------------------------- Risk -------------------------->
+       
+      </div>
+
+      <!---------------------------------------------Wallet SinoPac------------------------------------>
+      <div class="wallet_page" id="wallet_SinoPac">
+        <div class="wallet_back_container" onclick="turn_to_wallet_page()">
+          <div class="triangle_back"></div>
+          <p class="wallet_back_text">Back to overview</p>
+        </div>
+        <p class="wallet_title" id="wallet_SinoPac_title" >SinoPac</p>
+        <p class="wallet_whole_asset_dollor" id="wallet_SinoPac_whole_asset_dollor"></p>
+        <div class="wallet_whole_asset_dollor_menu_btn" id="wallet_SinoPac_whole_asset_dollor_menu_btn" onclick="pop_wallet_currency_menu(this.id)">
+          <p class="wallet_whole_asset_dollor_menu" id="wallet_SinoPac_whole_asset_dollor_menu_text">NTD</p>
+          <div class="triangle_down wallet_whole_asset_triangle_down" id="wallet_SinoPac_whole_asset_triangle_down"></div>
+        </div>
+        <div class="wallet_whole_asset_dollor_scrollable_dropdown_menu" id="wallet_SinoPac_whole_asset_scrollable_dollor_menu">
+          <div class="wallet_whole_asset_dollor_dropdown_menu" id="wallet_SinoPac_whole_asset_dollor_menu" >
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_SinoPac_whole_asset_dollor_menu_NTD" onclick="close_wallet_whole_asset_currency_menu(this.id)">NTD</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_first"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_SinoPac_whole_asset_dollor_menu_USD" onclick="close_wallet_whole_asset_currency_menu(this.id)">USD</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_second"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_SinoPac_whole_asset_dollor_menu_JPY" onclick="close_wallet_whole_asset_currency_menu(this.id)">JPY</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_third"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_SinoPac_whole_asset_dollor_menu_ETH" onclick="close_wallet_whole_asset_currency_menu(this.id)">ETH</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_second"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_SinoPac_whole_asset_dollor_menu_RMB" onclick="close_wallet_whole_asset_currency_menu(this.id)">RMB</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_third"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_SinoPac_whole_asset_dollor_menu_EUR" onclick="close_wallet_whole_asset_currency_menu(this.id)">EUR</div>
+          </div>
+        </div>
+      
+        <p class="wallet_show" id="wallet_overview_show">show</p>
+        <p class="wallet_category SinoPac" id="wallet_overview_category">Category</p>
+        <p class="wallet_totalamount" id="wallet_overview_totalamount">Total amount</p>
+        <p class="wallet_currency" id="wallet_overview_currency">Currency</p>
+        <p class="wallet_percentage SinoPac" id="wallet_overview_percentage">Percentage</p>
+        <div class="wallet_object_container wallet_object_container1" id="wallet_SinoPac_object_container1">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color1" id="wallet_SinoPac_show_color1" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_SinoPac_category1"></p>
+          <p class="wallet_totalamount_totalamount wallet_text SinoPac" id="wallet_SinoPac_totalamount1"></p>
+          <p class="wallet_currency_currency wallet_text SinoPac" id="wallet_SinoPac_currency1">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text SinoPac" id="wallet_SinoPac_percentage1"></p>
+        </div>
+        <div class="wallet_object_container wallet_object_container2" id="wallet_SinoPac_object_container2">
+          <div class="wallet_show_color_container">
+            <p class="wallet_show_color wallet_show_color2" id="wallet_SinoPac_show_color2" onclick="show_wallet_object(this.id)"></p>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_SinoPac_category2"></p>
+          <p class="wallet_totalamount_totalamount wallet_text SinoPac" id="wallet_SinoPac_totalamount2"></p>
+          <p class="wallet_currency_currency wallet_text SinoPac" id="wallet_SinoPac_currency2">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text SinoPac" id="wallet_SinoPac_percentage2"></p>
+        </div>
+        <div class="wallet_object_container wallet_object_container3" id="wallet_SinoPac_object_container3">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color3" id="wallet_SinoPac_show_color3" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_SinoPac_category3"></p>
+          <p class="wallet_totalamount_totalamount wallet_text SinoPac" id="wallet_SinoPac_totalamount3"></p>
+          <p class="wallet_currency_currency wallet_text SinoPac" id="wallet_SinoPac_currency3">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text SinoPac" id="wallet_SinoPac_percentage3"></p>
+        </div>
+        <div class="wallet_object_container wallet_object_container4" id="wallet_SinoPac_object_container4">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color4" id="wallet_SinoPac_show_color4" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_SinoPac_category4"></p>
+          <p class="wallet_totalamount_totalamount wallet_text SinoPac" id="wallet_SinoPac_totalamount4"></p>
+          <p class="wallet_currency_currency wallet_text SinoPac" id="wallet_SinoPac_currency4">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text SinoPac" id="wallet_SinoPac_percentage4"></p>
+        </div>
+        <div class="wallet_object_container wallet_object_container5" id="wallet_SinoPac_object_container5">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color5" id="wallet_SinoPac_show_color5" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_SinoPac_category5"></p>
+          <p class="wallet_totalamount_totalamount wallet_text SinoPac" id="wallet_SinoPac_totalamount5"></p>
+          <p class="wallet_currency_currency wallet_text SinoPac" id="wallet_SinoPac_currency5">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text SinoPac" id="wallet_SinoPac_percentage5"></p>
+        </div>
+        <!-- SinoPac Chart -->
+        <!-------------------------- Risk -------------------------->
+       
+      </div>
+
+      <!---------------------------------------------Wallet Yuanta------------------------------------>
+      <div class="wallet_page" id="wallet_Yuanta">
+        <div class="wallet_back_container" onclick="turn_to_wallet_page()">
+          <div class="triangle_back"></div>
+          <p class="wallet_back_text">Back to overview</p>
+        </div>
+        <p class="wallet_title" id="wallet_Yuanta_title" >Yuanta</p>
+        <p class="wallet_whole_asset_dollor" id="wallet_Yuanta_whole_asset_dollor"></p>
+        <div class="wallet_whole_asset_dollor_menu_btn" id="wallet_Yuanta_whole_asset_dollor_menu_btn" onclick="pop_wallet_currency_menu(this.id)">
+          <p class="wallet_whole_asset_dollor_menu" id="wallet_Yuanta_whole_asset_dollor_menu_text">NTD</p>
+          <div class="triangle_down wallet_whole_asset_triangle_down" id="wallet_Yuanta_whole_asset_triangle_down"></div>
+        </div>
+        <div class="wallet_whole_asset_dollor_scrollable_dropdown_menu" id="wallet_Yuanta_whole_asset_scrollable_dollor_menu">
+          <div class="wallet_whole_asset_dollor_dropdown_menu" id="wallet_Yuanta_whole_asset_dollor_menu" >
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_Yuanta_whole_asset_dollor_menu_NTD" onclick="close_wallet_whole_asset_currency_menu(this.id)">NTD</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_first"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_Yuanta_whole_asset_dollor_menu_USD" onclick="close_wallet_whole_asset_currency_menu(this.id)">USD</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_second"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_Yuanta_whole_asset_dollor_menu_JPY" onclick="close_wallet_whole_asset_currency_menu(this.id)">JPY</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_third"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_Yuanta_whole_asset_dollor_menu_ETH" onclick="close_wallet_whole_asset_currency_menu(this.id)">ETH</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_second"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_Yuanta_whole_asset_dollor_menu_RMB" onclick="close_wallet_whole_asset_currency_menu(this.id)">RMB</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_third"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_Yuanta_whole_asset_dollor_menu_EUR" onclick="close_wallet_whole_asset_currency_menu(this.id)">EUR</div>
+          </div>
+        </div>
+      
+        <p class="wallet_show" id="wallet_overview_show">show</p>
+        <p class="wallet_category Yuanta" id="wallet_overview_category">Category</p>
+        <p class="wallet_totalamount" id="wallet_overview_totalamount">Total amount</p>
+        <p class="wallet_currency" id="wallet_overview_currency">Currency</p>
+        <p class="wallet_percentage Yuanta" id="wallet_overview_percentage">Percentage</p>
+        <div class="wallet_object_container wallet_object_container1" id="wallet_Yuanta_object_container1">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color1" id="wallet_Yuanta_show_color1" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_Yuanta_category1"></p>
+          <p class="wallet_totalamount_totalamount wallet_text Yuanta" id="wallet_Yuanta_totalamount1"></p>
+          <p class="wallet_currency_currency wallet_text Yuanta" id="wallet_Yuanta_currency1">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text Yuanta" id="wallet_Yuanta_percentage1"></p>
+        </div>
+        <div class="wallet_object_container wallet_object_container2" id="wallet_Yuanta_object_container2">
+          <div class="wallet_show_color_container">
+            <p class="wallet_show_color wallet_show_color2" id="wallet_Yuanta_show_color2" onclick="show_wallet_object(this.id)"></p>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_Yuanta_category2"></p>
+          <p class="wallet_totalamount_totalamount wallet_text Yuanta" id="wallet_Yuanta_totalamount2"></p>
+          <p class="wallet_currency_currency wallet_text Yuanta" id="wallet_Yuanta_currency2">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text Yuanta" id="wallet_Yuanta_percentage2"></p>
+        </div>
+        <div class="wallet_object_container wallet_object_container3" id="wallet_Yuanta_object_container3">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color3" id="wallet_Yuanta_show_color3" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_Yuanta_category3"></p>
+          <p class="wallet_totalamount_totalamount wallet_text Yuanta" id="wallet_Yuanta_totalamount3"></p>
+          <p class="wallet_currency_currency wallet_text Yuanta" id="wallet_Yuanta_currency3">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text Yuanta" id="wallet_Yuanta_percentage3"></p>
+        </div>
+        <div class="wallet_object_container wallet_object_container4" id="wallet_Yuanta_object_container4">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color4" id="wallet_Yuanta_show_color4" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_Yuanta_category4"></p>
+          <p class="wallet_totalamount_totalamount wallet_text Yuanta" id="wallet_Yuanta_totalamount4"></p>
+          <p class="wallet_currency_currency wallet_text Yuanta" id="wallet_Yuanta_currency4">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text Yuanta" id="wallet_Yuanta_percentage4"></p>
+        </div>
+        <div class="wallet_object_container wallet_object_container5" id="wallet_Yuanta_object_container5">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color5" id="wallet_Yuanta_show_color5" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_Yuanta_category5"></p>
+          <p class="wallet_totalamount_totalamount wallet_text Yuanta" id="wallet_Yuanta_totalamount5"></p>
+          <p class="wallet_currency_currency wallet_text Yuanta" id="wallet_Yuanta_currency5">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text Yuanta" id="wallet_Yuanta_percentage5"></p>
+        </div>
+        <!-- Yuanta Chart -->
+        <!-------------------------- Risk -------------------------->
+       
+      </div>
+
+      <!---------------------------------------------Wallet Citibank------------------------------------>
+      <div class="wallet_page" id="wallet_Citibank">
+        <div class="wallet_back_container" onclick="turn_to_wallet_page()">
+          <div class="triangle_back"></div>
+          <p class="wallet_back_text">Back to overview</p>
+        </div>
+        <p class="wallet_title" id="wallet_Citibank_title" >Citibank</p>
+        <p class="wallet_whole_asset_dollor" id="wallet_Citibank_whole_asset_dollor"></p>
+        <div class="wallet_whole_asset_dollor_menu_btn" id="wallet_Citibank_whole_asset_dollor_menu_btn" onclick="pop_wallet_currency_menu(this.id)">
+          <p class="wallet_whole_asset_dollor_menu" id="wallet_Citibank_whole_asset_dollor_menu_text">NTD</p>
+          <div class="triangle_down wallet_whole_asset_triangle_down" id="wallet_Citibank_whole_asset_triangle_down"></div>
+        </div>
+        <div class="wallet_whole_asset_dollor_scrollable_dropdown_menu" id="wallet_Citibank_whole_asset_scrollable_dollor_menu">
+          <div class="wallet_whole_asset_dollor_dropdown_menu" id="wallet_Citibank_whole_asset_dollor_menu" >
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_Citibank_whole_asset_dollor_menu_NTD" onclick="close_wallet_whole_asset_currency_menu(this.id)">NTD</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_first"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_Citibank_whole_asset_dollor_menu_USD" onclick="close_wallet_whole_asset_currency_menu(this.id)">USD</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_second"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_Citibank_whole_asset_dollor_menu_JPY" onclick="close_wallet_whole_asset_currency_menu(this.id)">JPY</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_third"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_Citibank_whole_asset_dollor_menu_ETH" onclick="close_wallet_whole_asset_currency_menu(this.id)">ETH</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_second"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_Citibank_whole_asset_dollor_menu_RMB" onclick="close_wallet_whole_asset_currency_menu(this.id)">RMB</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_third"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_Citibank_whole_asset_dollor_menu_EUR" onclick="close_wallet_whole_asset_currency_menu(this.id)">EUR</div>
+          </div>
+        </div>
+      
+        <p class="wallet_show" id="wallet_overview_show">show</p>
+        <p class="wallet_category Citibank" id="wallet_overview_category">Category</p>
+        <p class="wallet_totalamount" id="wallet_overview_totalamount">Total amount</p>
+        <p class="wallet_currency" id="wallet_overview_currency">Currency</p>
+        <p class="wallet_percentage Citibank" id="wallet_overview_percentage">Percentage</p>
+        <div class="wallet_object_container wallet_object_container1" id="wallet_Citibank_object_container1">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color1" id="wallet_Citibank_show_color1" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_Citibank_category1"></p>
+          <p class="wallet_totalamount_totalamount wallet_text Citibank" id="wallet_Citibank_totalamount1"></p>
+          <p class="wallet_currency_currency wallet_text Citibank" id="wallet_Citibank_currency1">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text Citibank" id="wallet_Citibank_percentage1"></p>
+        </div>
+        <div class="wallet_object_container wallet_object_container2" id="wallet_Citibank_object_container2">
+          <div class="wallet_show_color_container">
+            <p class="wallet_show_color wallet_show_color2" id="wallet_Citibank_show_color2" onclick="show_wallet_object(this.id)"></p>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_Citibank_category2"></p>
+          <p class="wallet_totalamount_totalamount wallet_text Citibank" id="wallet_Citibank_totalamount2"></p>
+          <p class="wallet_currency_currency wallet_text Citibank" id="wallet_Citibank_currency2">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text Citibank" id="wallet_Citibank_percentage2"></p>
+        </div>
+        <div class="wallet_object_container wallet_object_container3" id="wallet_Citibank_object_container3">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color3" id="wallet_Citibank_show_color3" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_Citibank_category3"></p>
+          <p class="wallet_totalamount_totalamount wallet_text Citibank" id="wallet_Citibank_totalamount3"></p>
+          <p class="wallet_currency_currency wallet_text Citibank" id="wallet_Citibank_currency3">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text Citibank" id="wallet_Citibank_percentage3"></p>
+        </div>
+        <div class="wallet_object_container wallet_object_container4" id="wallet_Citibank_object_container4">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color4" id="wallet_Citibank_show_color4" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_Citibank_category4"></p>
+          <p class="wallet_totalamount_totalamount wallet_text Citibank" id="wallet_Citibank_totalamount4"></p>
+          <p class="wallet_currency_currency wallet_text Citibank" id="wallet_Citibank_currency4">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text Citibank" id="wallet_Citibank_percentage4"></p>
+        </div>
+        <div class="wallet_object_container wallet_object_container5" id="wallet_Citibank_object_container5">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color5" id="wallet_Citibank_show_color5" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_Citibank_category5"></p>
+          <p class="wallet_totalamount_totalamount wallet_text Citibank" id="wallet_Citibank_totalamount5"></p>
+          <p class="wallet_currency_currency wallet_text Citibank" id="wallet_Citibank_currency5">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text Citibank" id="wallet_Citibank_percentage5"></p>
+        </div>
+        <!-- Citibank Chart -->
         <!-------------------------- Risk -------------------------->
        
       </div>
@@ -1076,9 +1326,9 @@
     <div class="navbar" id="NFT_Market_navbar">
       <div class="navbar_logo">
         <div class="navbar_logo_img_container">
-          <img class="navbar_logo_img" src="./img/logo.png">
+          <img class="navbar_logo_img" src="./Img/logo.png">
         </div>
-        <img class="navbar_logo_text"  id="navbar_NFT_Market_logo_text" src="./img/logo_text.png" onclick="turn_to_wallet_NFT_page()">
+        <img class="navbar_logo_text"  id="navbar_NFT_Market_logo_text" src="./Img/logo_text.png" onclick="turn_to_wallet_NFT_page()">
       </div>
       <div id="navbar_nonlogo">
         <div id="navbar_search">

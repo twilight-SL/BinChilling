@@ -1,3 +1,5 @@
+//import * as exchange from "./database/get_exchange_rate.js";
+// const exchange = require("./databse/get_exchange_rate.js");
 function homepage_turn_to_signin_page(btn_id){
   document.getElementById('signin_page').style.display='block';
   document.getElementById('homepage').style.display='none';
@@ -98,10 +100,13 @@ function turn_to_wallet_page(){
   document.getElementById('signin_page').style.display='none';
   document.getElementById('add_new_account_page').style.display='none';
   document.getElementById('connect_nft_account').style.display='none';
+  console.log(wallet_pages.length)
   for(var i = 1; i < wallet_pages.length; i++){
     now_wallet_page = wallet_pages[i];
     console.log(now_wallet_page);
     var id = 'wallet_' + now_wallet_page;
+    console.log(i);
+    console.log(id);
     document.getElementById(id).style.display='none';  
   }  
   document.getElementById('wallet_navbar').style.display='block';
@@ -123,7 +128,6 @@ function turn_to_specific_wallet(btn_id){
     if(document.getElementById(btn_id).textContent == wallet_pages[wallet]) {
       var next_wallet_page = wallet_pages[wallet];
       wallet_page = next_wallet_page;
-      console.log(wallet_page);
       break;
     }  
   }
@@ -282,13 +286,16 @@ function pop_wallet_currency_menu(btn_id){
   document.getElementById(id).style.borderBottomColor='#286A93';
 }
 
-var show_array_pages = ['overview', 'Stock', 'MetaMask', 'Crypto', 'WalletConnect']
+var show_array_pages = ['overview', 'Stock', 'MetaMask', 'Crypto', 'Phanton', 'SinoPac', 'Yuanta', 'Citibank']
 var overview_show = ['false', 'false', 'false', 'false', 'false']
 var Stock_show = ['false', 'false', 'false', 'false', 'false']
 var MetaMask_show = ['false', 'false', 'false', 'false', 'false']
 var Crypto_show = ['false', 'false', 'false', 'false', 'false']
-var WalletConnect_show = ['false', 'false', 'false', 'false', 'false']
-var show = [overview_show, Stock_show, MetaMask_show, Crypto_show, WalletConnect_show]
+var Phanton_show = ['false', 'false', 'false', 'false', 'false']
+var SinoPac_show = ['false', 'false', 'false', 'false', 'false']
+var Yuanta_show = ['false', 'false', 'false', 'false', 'false']
+var Citibank_show = ['false', 'false', 'false', 'false', 'false']
+var show = [overview_show, Stock_show, MetaMask_show, Crypto_show, Phanton_show, SinoPac_show, Yuanta_show, Citibank_show]
 var show_color = ['#B8CAD6', '#E9E9EB', '#528CA2', '#42506B', '#FF7582']
 
 function show_wallet_object(object_id){
@@ -328,7 +335,7 @@ function show_wallet_object(object_id){
         var show_object_id = 'wallet_'+now_wallet_page+'_show_color'+String(i+1);
         document.getElementById(show_object_id).style.backgroundColor=show_color[i];
         var show_object_id = 'wallet_'+now_wallet_page+'_category'+String(i+1);
-        if(now_wallet_page == 'MetaMask'){
+        if(switch_overview == 'account'){
           document.getElementById(show_object_id).style.color='#286A93';
         }
         else{
@@ -356,22 +363,30 @@ function show_wallet_object(object_id){
 
 var switch_overview = 'category'
 var Currency=['NTD', 'USD', 'JPY', 'ETH', 'RMB', 'EUR']
-var Currency_calculator = [1, 0.034, 4.3, 1/67568, 0.2, 0.032]
-var wallet_pages = ['overview', 'NFT', 'Stock', 'MetaMask', 'WalletConnect', 'Crypto']
+//var Currency_calculator = [exchange.get_rate(1,"ntd","ntd"), exchange.get_rate(1, "ntd", "usd"), exchange.get_rate(1, "ntd", "jpy"), 100, exchange.get_rate(1, "ntd", "cny"), exchange.get_rate(1, "ntd", "eur")]
+//var Currency_calculator = [get_rate(1,"ntd","ntd"), get_rate(1, "ntd", "usd"), get_rate(1, "ntd", "jpy"), 100, get_rate(1, "ntd", "cny"), get_rate(1, "ntd", "eur")]
+var Currency_calculator = [1, 0.034, 4.3, 1, 1, 1]
+var wallet_pages = ['overview', 'NFT', 'Stock', 'MetaMask', 'Phanton', 'Crypto', 'SinoPac', 'Yuanta', 'Citibank']
 var overview_category_totalamount = []
 var overview_category_totalamount_percentage = [];
 var Stock_totalamount = [];
 var Stock_totalamount_percentage = [];
 var MetaMask_totalamount = [];
 var MetaMask_totalamount_percentage = [];
-var WalletConnect_totalamount = [];
-var WalletConnect_totalamount_percentage = [];
+var Phanton_totalamount = [];
+var Phanton_totalamount_percentage = [];
 var Crypto_totalamount = [];
 var Crypto_totalamount_percentage = [];
+var SinoPac_totalamount = [];
+var SinoPac_totalamount_percentage = [];
+var Yuanta_totalamount = [];
+var Yuanta_totalamount_percentage = [];
+var Citibank_totalamount = [];
+var Citibank_totalamount_percentage = [];
 var NFT_totalamount = [];
 var NFT_totalamount_percentage = [];
-var totalamount_all_array = [overview_category_totalamount, Stock_totalamount, MetaMask_totalamount, Crypto_totalamount, WalletConnect_totalamount, NFT_totalamount]
-var percentage_all_array = [overview_category_totalamount_percentage, Stock_totalamount_percentage, MetaMask_totalamount_percentage, Crypto_totalamount_percentage, WalletConnect_totalamount_percentage, NFT_totalamount_percentage]
+var totalamount_all_array = [overview_category_totalamount, Stock_totalamount, MetaMask_totalamount, Crypto_totalamount, Phanton_totalamount, NFT_totalamount, SinoPac_totalamount, Yuanta_totalamount, Citibank_totalamount]
+var percentage_all_array = [overview_category_totalamount_percentage, Stock_totalamount_percentage, MetaMask_totalamount_percentage, Crypto_totalamount_percentage, Phanton_totalamount_percentage, NFT_totalamount_percentage, SinoPac_totalamount_percentage, Yuanta_totalamount_percentage, Citibank_totalamount_percentage]
 var overview_total_asset = 618910  //unit: Currency[0] = NTD
 var Stock_original_price = [];
 var Crypto_original_price = [];
@@ -379,12 +394,15 @@ var original_price_all_array = [Stock_original_price];
 var earnings = [];
 var Total_asset = [];
 var overview_category_category = ['Stock', 'NFT', 'Crypto', 'CD(For)', 'CD(NTD)']
-var overview_category_account = ['Bank SinoPac', 'MetaMask', 'Yuanta', 'WalletConnect', 'Citibank Taiwan']
+var overview_category_account = ['SinoPac', 'MetaMask', 'Yuanta', 'Phanton', 'Citibank']
 var Stock_category = ['EVAAIR', 'MTK', 'AP Memory', 'TSM'];
 var Stock_institution = ['SinoPac', 'SinoPac', 'Yuanta', 'Yuanta']
 var MetaMask_category = ['ETH', 'BTC', 'NFT'];
-var WalletConnect_category = ['NFT', 'ETH'];
+var Phanton_category = ['NFT', 'ETH'];
 var Crypto_category = ['ETH', 'BTC'];
+var SinoPac_category = ['unknown1', 'unknown2'];
+var Yuanta_category = ['unknown3', 'unknown4'];
+var Citibank_category = ['unknown3', 'unknown4'];
 var username = 'Louis'
 
 function load_database(){
@@ -394,7 +412,10 @@ function load_database(){
   laod_overview_category_institute(overview_category_category);
   load_Stock_asset();
   load_MetaMask_asset();
-  load_WalletConnect_asset();
+  load_Phanton_asset();
+  load_SinoPac_asset();
+  load_Yuanta_asset();
+  load_Citibank_asset();
   load_Crypto_asset();
   load_NFTs_asset();
   calculate_earnings();
@@ -438,9 +459,24 @@ function load_MetaMask_asset(){
   document.getElementById('wallet_MetaMask_whole_asset_dollor').textContent = '$' + String(Total_asset[wallet_pages.indexOf('MetaMask')].toFixed(3));
 }
 
-function load_WalletConnect_asset(){
-  get_WalletConnect_asset();
-  document.getElementById('wallet_WalletConnect_whole_asset_dollor').textContent = '$' + String(Total_asset[wallet_pages.indexOf('WalletConnect')].toFixed(3));
+function load_Phanton_asset(){
+  get_Phanton_asset();
+  document.getElementById('wallet_Phanton_whole_asset_dollor').textContent = '$' + String(Total_asset[wallet_pages.indexOf('Phanton')].toFixed(3));
+}
+
+function load_SinoPac_asset(){
+  get_SinoPac_asset();
+  document.getElementById('wallet_SinoPac_whole_asset_dollor').textContent = '$' + String(Total_asset[wallet_pages.indexOf('SinoPac')].toFixed(3));
+}
+
+function load_Yuanta_asset(){
+  get_Yuanta_asset();
+  document.getElementById('wallet_Yuanta_whole_asset_dollor').textContent = '$' + String(Total_asset[wallet_pages.indexOf('Yuanta')].toFixed(3));
+}
+
+function load_Citibank_asset(){
+  get_Citibank_asset();
+  document.getElementById('wallet_Citibank_whole_asset_dollor').textContent = '$' + String(Total_asset[wallet_pages.indexOf('Citibank')].toFixed(3));
 }
 
 function load_Crypto_asset(){
@@ -577,27 +613,92 @@ function get_MetaMask_asset(){
   Total_asset[wallet_pages.indexOf('MetaMask')] = MetaMask_total_asset;
 }
 
-function get_WalletConnect_totalamount(){
-  WalletConnect_totalamount[0] = 2075;
-  WalletConnect_totalamount[1] = 982;
+function get_Phanton_totalamount(){
+  Phanton_totalamount[0] = 2075;
+  Phanton_totalamount[1] = 982;
 }
 
-function get_WalletConnect_asset(){
-  get_WalletConnect_totalamount();
-  var WalletConnect_total_asset = 0;
-  console.log('into walletconnect');
-  for(var i = 0; i < WalletConnect_totalamount.length; i++){   //display NFT value on the card
-    WalletConnect_total_asset += WalletConnect_totalamount[i];
-    WalletConnect_show[i] = 'true';
+function get_Phanton_asset(){
+  get_Phanton_totalamount();
+  var Phanton_total_asset = 0;
+  for(var i = 0; i < Phanton_totalamount.length; i++){   //display NFT value on the card
+    Phanton_total_asset += Phanton_totalamount[i];
+    Phanton_show[i] = 'true';
     var index = i + 1;
-    var id = 'wallet_WalletConnect_object_container' + index;
+    var id = 'wallet_Phanton_object_container' + index;
     document.getElementById(id).style.display = "block";
-    id = "wallet_WalletConnect_totalamount" + index;
-    document.getElementById(id).textContent = '$' + WalletConnect_totalamount[i];
-    id = 'wallet_WalletConnect_category' + index;
-    document.getElementById(id).textContent = WalletConnect_category[i];
+    id = "wallet_Phanton_totalamount" + index;
+    document.getElementById(id).textContent = '$' + Phanton_totalamount[i];
+    id = 'wallet_Phanton_category' + index;
+    document.getElementById(id).textContent = Phanton_category[i];
   }
-  Total_asset[wallet_pages.indexOf('WalletConnect')] = WalletConnect_total_asset;
+  Total_asset[wallet_pages.indexOf('Phanton')] = Phanton_total_asset;
+}
+
+function get_SinoPac_totalamount(){
+  SinoPac_totalamount[0] = 1923101;
+  SinoPac_totalamount[1] = 123289;
+}
+
+function get_SinoPac_asset(){
+  get_SinoPac_totalamount();
+  var SinoPac_total_asset = 0;
+  for(var i = 0; i < SinoPac_totalamount.length; i++){   //display NFT value on the card
+    SinoPac_total_asset += SinoPac_totalamount[i];
+    SinoPac_show[i] = 'true';
+    var index = i + 1;
+    var id = 'wallet_SinoPac_object_container' + index;
+    document.getElementById(id).style.display = "block";
+    id = "wallet_SinoPac_totalamount" + index;
+    document.getElementById(id).textContent = '$' + SinoPac_totalamount[i];
+    id = 'wallet_SinoPac_category' + index;
+    document.getElementById(id).textContent = SinoPac_category[i];
+  }
+  Total_asset[wallet_pages.indexOf('SinoPac')] = SinoPac_total_asset;
+}
+
+function get_Yuanta_totalamount(){
+  Yuanta_totalamount[0] = 11123;
+  Yuanta_totalamount[1] = 9822;
+}
+
+function get_Yuanta_asset(){
+  get_Yuanta_totalamount();
+  var Yuanta_total_asset = 0;
+  for(var i = 0; i < Yuanta_totalamount.length; i++){   //display NFT value on the card
+    Yuanta_total_asset += Yuanta_totalamount[i];
+    Yuanta_show[i] = 'true';
+    var index = i + 1;
+    var id = 'wallet_Yuanta_object_container' + index;
+    document.getElementById(id).style.display = "block";
+    id = "wallet_Yuanta_totalamount" + index;
+    document.getElementById(id).textContent = '$' + Yuanta_totalamount[i];
+    id = 'wallet_Yuanta_category' + index;
+    document.getElementById(id).textContent = Yuanta_category[i];
+  }
+  Total_asset[wallet_pages.indexOf('Yuanta')] = Yuanta_total_asset;
+}
+
+function get_Citibank_totalamount(){
+  Citibank_totalamount[0] = 11123;
+  Citibank_totalamount[1] = 9822;
+}
+
+function get_Citibank_asset(){
+  get_Citibank_totalamount();
+  var Citibank_total_asset = 0;
+  for(var i = 0; i < Citibank_totalamount.length; i++){   //display NFT value on the card
+    Citibank_total_asset += Citibank_totalamount[i];
+    Citibank_show[i] = 'true';
+    var index = i + 1;
+    var id = 'wallet_Citibank_object_container' + index;
+    document.getElementById(id).style.display = "block";
+    id = "wallet_Citibank_totalamount" + index;
+    document.getElementById(id).textContent = '$' + Citibank_totalamount[i];
+    id = 'wallet_Citibank_category' + index;
+    document.getElementById(id).textContent = Citibank_category[i];
+  }
+  Total_asset[wallet_pages.indexOf('Citibank')] = Citibank_total_asset;
 }
 
 function get_Crypto_totalamount(){
@@ -687,9 +788,9 @@ function calculate_percentage_all(totalamount_arr, percentage_arr){
         percentage_node[k].innerHTML = String(percentage_arr[3][k]) + '%';
         }
         break;
-      case WalletConnect_totalamount:
-        calculate_percentage(WalletConnect_totalamount, percentage_arr[4], 'WalletConnect');
-        var percentage_node = document.querySelectorAll('.wallet_percentage_percentage.WalletConnect');
+      case Phanton_totalamount:
+        calculate_percentage(Phanton_totalamount, percentage_arr[4], 'Phanton');
+        var percentage_node = document.querySelectorAll('.wallet_percentage_percentage.Phanton');
         for(k in percentage_node){
         percentage_node[k].innerHTML = String(percentage_arr[4][k]) + '%';
         }
@@ -699,6 +800,27 @@ function calculate_percentage_all(totalamount_arr, percentage_arr){
         var percentage_node = document.querySelectorAll('.wallet_NFT_percentage');
         for(k in percentage_node){
         percentage_node[k].innerHTML = String(percentage_arr[5][k]) + '%';
+        }
+        break;
+      case SinoPac_totalamount:
+        calculate_percentage(SinoPac_totalamount, percentage_arr[6], 'SinoPac');
+        var percentage_node = document.querySelectorAll('.wallet_percentage_percentage.SinoPac');
+        for(k in percentage_node){
+        percentage_node[k].innerHTML = String(percentage_arr[6][k]) + '%';
+        }
+        break;
+      case Yuanta_totalamount:
+        calculate_percentage(Yuanta_totalamount, percentage_arr[7], 'Yuanta');
+        var percentage_node = document.querySelectorAll('.wallet_percentage_percentage.Yuanta');
+        for(k in percentage_node){
+        percentage_node[k].innerHTML = String(percentage_arr[7][k]) + '%';
+        }
+        break;
+      case Citibank_totalamount:
+        calculate_percentage(Citibank_totalamount, percentage_arr[8], 'Citibank');
+        var percentage_node = document.querySelectorAll('.wallet_percentage_percentage.Citibank');
+        for(k in percentage_node){
+          percentage_node[k].innerHTML = String(percentage_arr[8][k]) + '%';
         }
         break;
     }
@@ -773,11 +895,20 @@ function close_wallet_whole_asset_currency_menu(currency_id){
                 case 'MetaMask':
                   total_anount_node[i].textContent = '$' + String((Currency_calculator[currency]*MetaMask_totalamount[i]).toFixed(3));
                   break;
-                case 'WalletConnect':
-                  total_anount_node[i].textContent = '$' + String((Currency_calculator[currency]*WalletConnect_totalamount[i]).toFixed(3));
+                case 'Phanton':
+                  total_anount_node[i].textContent = '$' + String((Currency_calculator[currency]*Phanton_totalamount[i]).toFixed(3));
                   break;
                 case 'Crypto':
                   total_anount_node[i].textContent = '$' + String((Currency_calculator[currency]*Crypto_totalamount[i]).toFixed(3));
+                  break;
+                case 'SinoPac':
+                  total_anount_node[i].textContent = '$' + String((Currency_calculator[currency]*SinoPac_totalamount[i]).toFixed(3));
+                  break;
+                case 'Yuanta':
+                  total_anount_node[i].textContent = '$' + String((Currency_calculator[currency]*Yuanta_totalamount[i]).toFixed(3));
+                  break;
+                case 'Citibank':
+                  total_anount_node[i].textContent = '$' + String((Currency_calculator[currency]*Citibank_totalamount[i]).toFixed(3));
                   break;
               }
             }
@@ -894,15 +1025,6 @@ $(document).ready(function(){
   });
 });
 
-function homepage_turn_to_signin_page(btn_id){
-  document.getElementById('signin_page').style.display='block';
-  document.getElementById('homepage').style.display='none';
-}
-
-function homepage_turn_to_signup_page(btn_id){
-  document.getElementById('signup_page').style.display='block';
-  document.getElementById('homepage').style.display='none';
-}
 
 var logged_account = [];
 function modify_navbar_account_menu(account){

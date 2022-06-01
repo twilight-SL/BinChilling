@@ -112,4 +112,4 @@ function getUSDtoNTD() {
 // }))
 
 
-export { getETHtoUSD, getUSDtoNTD }
+//export { getETHtoUSD, getUSDtoNTD }
