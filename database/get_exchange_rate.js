@@ -2,25 +2,68 @@ import request from "request";
 import cheerio from "cheerio"; "cheerio";
 import "fs";
 import "console";
+import { resolve } from "path";
 
-export function get_rate(amount, original_currency, target_currency){
+export function get_rate_no_eth(amount, original_currency, target_currency) {
+    return new Promise(function (data) {
+        var to_usd = 0;
+        switch (original_currency) {
+            case "ntd":
+                to_usd = parseFloat(amount) * 0.034;
+                break;
+            case "usd":
+                to_usd = parseFloat(amount);
+                break;
+            case "gbp":
+                to_usd = parseFloat(amount) * 1.26;
+                break;
+            case "aud":
+                to_usd = parseFloat(amount) * 0.71;
+                break;
+            case "eur":
+                to_usd = parseFloat(amount) * 1.07;
+                break;
+            case "jpy":
+                to_usd = parseFloat(amount) * 0.0078;
+                break;
+            case "cny":
+                to_usd = parseFloat(amount) * 0.15;
+                break;
+        }
+        switch (target_currency) {
+            case "ntd":
+                resolve((to_usd / 0.034).toString());
+            case "usd":
+                resolve(to_usd.toString());
+                break
+            case "gbp":
+                resolve(to_usd / 1.26);
+                break;
+            case "aud":
+                resolve(to_usd / 0.71);
+            case "eur":
+                resolve(to_usd / 1.07);
+            case "jpy":
+                resolve(to_usd / 0.0078);
+            case "cny":
+                resolve(to_usd / 0.15);
+        }
+    })
+
+}
+
+export function get_rate_to_eth(amount, original_currency){
     var to_usd = 0;
-    switch(original_currency){
+    switch (original_currency) {
         case "ntd":
             to_usd = parseFloat(amount) * 0.034;
             break;
         case "usd":
             to_usd = parseFloat(amount);
             break;
-        case "eth":
-            getETHtoUSD(parseFloat(amount)).then(function(data){
-                to_usd = parseFloat(data);
-            }
-            )
-            break;
         case "gbp":
             to_usd = parseFloat(amount) * 1.26;
-            break; 
+            break;
         case "aud":
             to_usd = parseFloat(amount) * 0.71;
             break;
@@ -34,55 +77,13 @@ export function get_rate(amount, original_currency, target_currency){
             to_usd = parseFloat(amount) * 0.15;
             break;
     }
-    switch(target_currency){
-        case "ntd":
-            return to_usd / 0.034;
-        case "usd":
-            return to_usd;
-        case "eth":
-            getETHtoUSD(parseFloat(amount)).then(function(data){
-                return to_usd = to_usd /parseFloat(data);
-            }
-            )
-        case "gbp":
-            return to_usd / 1.26;
-            break; 
-        case "aud":
-            return to_usd / 0.71;
-        case "eur":
-            return to_usd / 1.07;
-        case "jpy":
-            return to_usd / 0.0078;
-        case "cny":
-            return to_usd / 0.15;
-    }
+    return get_rate_to_eth_craw(amount)
 }
 
-function getETHtoUSD() {
-return new Promise (function(resolve, reject){
-    request({
-        url: "https://bitflyer.com/en-us/ethereum-chart",
-        method: "GET"
-    }, (error, res, body) => {
-        if (error || !body) {
-            console.log("Error")
-        }
-        const data = [];
-        const $ = cheerio.load(body)
-        const rate = $(".p-currencyInfo__head");
-        var text = rate.text().replace(" ", "")
-        var text = text.replace(/\s/g, '')
-        var final = text.split("*")[0]
-        // console.log("Function Obtained Result:" + final);
-        resolve(final)
-    })
-})
-}
-
-function getUSDtoNTD() {
-    return new Promise(function(resolve, reject){
+function get_rate_to_eth_craw(amount) {
+    return new Promise(function (resolve, reject) {
         request({
-            url: "https://www.exchangerates.org.uk/Dollars-to-Taiwan-Dollar-currency-conversion-page.html",
+            url: "https://bitflyer.com/en-us/ethereum-chart",
             method: "GET"
         }, (error, res, body) => {
             if (error || !body) {
@@ -90,20 +91,87 @@ function getUSDtoNTD() {
             }
             const data = [];
             const $ = cheerio.load(body)
-            const rate = $("#shd2a");
-            var text = rate.text();
-            text = text.replace(/\s/g, '');
-            text = text.split("1USD=");
-            text = text[1].split("TWD");
-            var final = text[0];
-            // console.log("Function Obtained Result:" + final);
-    
-            resolve(final);
-    
-    })
-
+            const rate = $(".p-currencyInfo__head");
+            var text = rate.text().replace(" ", "")
+            var text = text.replace(/\s/g, '')
+            var text = text.replace(",", '')
+            var final = text.split("*")[0]
+            resolve(1/(parseFloat(final)*amount))
+        })
     })
 }
+
+export function get_rate_from_eth(amount, target_currency){
+    var to_usd = 0
+    switch (target_currency) {
+        case "ntd":
+            to_usd = parseFloat(amount) * 0.034;
+            break;
+        case "usd":
+            to_usd = parseFloat(amount);
+            break;
+        case "gbp":
+            to_usd = parseFloat(amount) * 1.26;
+            break;
+        case "aud":
+            to_usd = parseFloat(amount) * 0.71;
+            break;
+        case "eur":
+            to_usd = parseFloat(amount) * 1.07;
+            break;
+        case "jpy":
+            to_usd = parseFloat(amount) * 0.0078;
+            break;
+        case "cny":
+            to_usd = parseFloat(amount) * 0.15;
+            break;
+    }
+    return get_rate_from_eth_craw(amount)
+}
+
+function get_rate_from_eth_craw(amount) {
+    return new Promise(function (resolve, reject) {
+        request({
+            url: "https://bitflyer.com/en-us/ethereum-chart",
+            method: "GET"
+        }, (error, res, body) => {
+            if (error || !body) {
+                console.log("Error")
+            }
+            const data = [];
+            const $ = cheerio.load(body)
+            const rate = $(".p-currencyInfo__head");
+            var text = rate.text().replace(" ", "")
+            var text = text.replace(/\s/g, '')
+            var text = text.replace(",", '')
+            var final = text.split("*")[0]
+            resolve((parseFloat(final)*amount))
+        })
+    })
+}
+
+// function getUSDtoNTD() {
+//     return new Promise(function (resolve, reject) {
+//         request({
+//             url: "https://www.exchangerates.org.uk/Dollars-to-Taiwan-Dollar-currency-conversion-page.html",
+//             method: "GET"
+//         }, (error, res, body) => {
+//             if (error || !body) {
+//                 console.log("Error")
+//             }
+//             const data = [];
+//             const $ = cheerio.load(body)
+//             const rate = $("#shd2a");
+//             var text = rate.text();
+//             text = text.replace(/\s/g, '');
+//             text = text.split("1USD=");
+//             text = text[1].split("TWD");
+//             var final = text[0];
+//             resolve(final);
+//         })
+
+//     })
+// }
 
 // README
 // 使用時採用.then的形式，以getETHtoUSD為例，如下：
@@ -111,5 +179,3 @@ function getUSDtoNTD() {
 //     console.log(data); //print result
 // }))
 
-
-//export { getETHtoUSD, getUSDtoNTD }

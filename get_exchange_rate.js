@@ -3,61 +3,6 @@ import cheerio from "cheerio"; "cheerio";
 import "fs";
 import "console";
 
-export function get_rate(amount, original_currency, target_currency){
-    var to_usd = 0;
-    switch(original_currency){
-        case "ntd":
-            to_usd = parseFloat(amount) * 0.034;
-            break;
-        case "usd":
-            to_usd = parseFloat(amount);
-            break;
-        case "eth":
-            getETHtoUSD(parseFloat(amount)).then(function(data){
-                to_usd = parseFloat(data);
-            }
-            )
-            break;
-        case "gbp":
-            to_usd = parseFloat(amount) * 1.26;
-            break; 
-        case "aud":
-            to_usd = parseFloat(amount) * 0.71;
-            break;
-        case "eur":
-            to_usd = parseFloat(amount) * 1.07;
-            break;
-        case "jpy":
-            to_usd = parseFloat(amount) * 0.0078;
-            break;
-        case "cny":
-            to_usd = parseFloat(amount) * 0.15;
-            break;
-    }
-    switch(target_currency){
-        case "ntd":
-            return to_usd / 0.034;
-        case "usd":
-            return to_usd;
-        case "eth":
-            getETHtoUSD(parseFloat(amount)).then(function(data){
-                return to_usd = to_usd /parseFloat(data);
-            }
-            )
-        case "gbp":
-            return to_usd / 1.26;
-            break; 
-        case "aud":
-            return to_usd / 0.71;
-        case "eur":
-            return to_usd / 1.07;
-        case "jpy":
-            return to_usd / 0.0078;
-        case "cny":
-            return to_usd / 0.15;
-    }
-}
-
 function getETHtoUSD() {
 return new Promise (function(resolve, reject){
     request({
@@ -112,4 +57,4 @@ function getUSDtoNTD() {
 // }))
 
 
-export { get_rate, getETHtoUSD, getUSDtoNTD }
+export { getETHtoUSD, getUSDtoNTD }
