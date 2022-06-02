@@ -4,7 +4,7 @@ import * as exchange from "./get_exchange_rate.js";
 
 const connection = mysql.createConnection(config.mysql)
 
-// makeConnection()
+makeConnection()
 
 export function makeConnection() {
     connection.connect(err => {
@@ -24,13 +24,16 @@ export function newEmailSubscribe(email) {
 }
 
 //1sign-in
-export function verifyUser(input_username, input_password) {
-    let command = `SELECT * FROM user_data where username = "${input_username}"`
+export function verifyUser(input_email, input_password) {
+    let command = `SELECT * FROM user_data where email = "${input_email}"`
     // console.log(runView(command))
+    //console.log(input_email)
+    console.log(input_password)
     return new Promise(function (resolve, reject) {
         runView(command).then(function (data) {
             if (data == "") {
-                resolve("no_such_user");
+                console.log("input_email: "+input_email)
+                resolve("no_such_email_debug");
             }
             else if (dealRowData(data)[0]["password"] == input_password) {
                 resolve(true);
@@ -51,12 +54,10 @@ export function newUser(username, password, email) {
     username="${username}",  
     password="${password}"`
     return new Promise(function (resolve, reject) {
-        makeConnection()
         connection.query(command, function (err) {
             if (err) {
                 if (err.errno == 1452) {    //Error Code: er_no_referenced_row_2
                     resolve("no_such_user")
-                    connection.end()
                 } else if (err.errno == 1062) {
                     console.log(err)  //Error Code: er_dup_entry
                     if (err.sqlMessage.includes('PRIMARY')) {
@@ -65,16 +66,13 @@ export function newUser(username, password, email) {
                     else {
                         resolve("email_duplicate")
                     }
-                    connection.end()
                 } else {
                     console.log(err)
 
                     resolve("err code:" + err.code + "/err no:" + err.errno)
-                    connection.end()
                 }
             }
             else {
-                connection.end()
                 resolve("success")
             }
         })
@@ -186,24 +184,20 @@ export function readUserData(username) {
 
 export function runView(command) {
     return new Promise(function (resolve, reject) {
-        // makeConnection()
         connection.query(command, function (err, result) {
             if (err) {
                 if (err.errno == 1452) {    //Error Code: er_no_referenced_row_2
                     resolve("no_such_user")
-                    connection.end()
+
                 } else if (err.errno == 1062) {  //Error Code: er_dup_entry
                     resolve("user_exists")
-                    connection.end()
                 } else {
                     console.log("***********" + err + "*************")
 
                     resolve("***********err code:" + err.code + "/err no:" + err.errno + "*************")
-                    connection.end()
                 }
             }
             else {
-                connection.end()
                 resolve(result)
             }
         })
@@ -213,25 +207,20 @@ export function runView(command) {
 
 export function runAddUser(command) {
     return new Promise(function (resolve, reject) {
-        makeConnection()
         connection.query(command, function (err) {
             if (err) {
                 if (err.errno == 1452) {    //Error Code: er_no_referenced_row_2
                     resolve("no_such_user")
-                    connection.end()
                 } else if (err.errno == 1062) {
                     console.log(err)  //Error Code: er_dup_entry
                     resolve("user_exists")
-                    connection.end()
                 } else {
                     console.log(err)
 
                     resolve("err code:" + err.code + "/err no:" + err.errno)
-                    connection.end()
                 }
             }
             else {
-                connection.end()
                 resolve("success")
             }
         })
@@ -242,7 +231,6 @@ export function runAddUser(command) {
 
 export function runAddAccount(command) {
     return new Promise(function (resolve, reject) {
-
         connection.query(command, function (err) {
             if (err) {
                 if (err.errno == 1062) {

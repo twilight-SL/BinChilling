@@ -11,7 +11,7 @@ const __dirname = dirname(__filename)
 
 //Pre-setting
 const app = express();
-const port = 2335;
+const port = 2336;
 app.use(express.static(`${__dirname}`))
 
 app.listen(port, () => {
@@ -23,6 +23,18 @@ app.get('/0homepage_newEmailSubscribe', function (req, res) {
     sql.newEmailSubscribe(req.query.emailToAdd).then(function (data) {
         console.log(data)
         res.send(data);
+    })
+})
+
+app.get('/sign_up', function (req, res) {
+    sql.newUser(req.query.username, req.query.password, req.query.email).then(function(data){
+        res.send(data)
+    })
+})
+
+app.get('/sign_in', function (req,res){
+    sql.verifyUser(req.query.email, req.query.password).then(function(data){
+        res.send(data)
     })
 })
 

@@ -14,10 +14,10 @@
     <link rel="stylesheet" href="Binchilling.css" />
     <link href="chart.css" rel="stylesheet"/>
     <link href="account.css" rel="stylesheet"/>
-    <script src="./Binchilling.js" defer></script>
+    <script type="module" src="./Binchilling.js" defer></script>
     
 </head>
-<body onload="load_database()">
+<body>
     <!--
     <div class="homepage" id="homepage_01">
       <div id="homepage_logo_img_container">
@@ -41,8 +41,8 @@
           </div>
           <img class="navbar_logo_text" src="./Img/logo_text.png">
         </div>
-        <div class="narbar_sign navbar_signin" id="homepage_navbar_signin" onclick="homepage_turn_to_signin_page(this.id)">Sign in</div>
-        <div class="narbar_sign navbar_signup" id="homepage_navbar_signup" onclick="homepage_turn_to_signup_page(this.id)">Sign up</div>
+        <div class="narbar_sign navbar_signin" id="homepage_navbar_signin">Sign in</div>
+        <div class="narbar_sign navbar_signup" id="homepage_navbar_signup">Sign up</div>
       </div>
 
       <div class="homepage_01_blank"></div>
@@ -152,7 +152,7 @@
       -->
       <p id="signin_signin_text">Sign In</p>
       <p id="signin_noaccount_text">Don't have an account yet?</p>
-      <p id="signin_noaccount_signup_text" onclick="turn_to_signup_page(this.id)">Sign Up</p>
+      <p id="signin_noaccount_signup_text">Sign Up</p>
       <p class="sign_item" id="signin_email">Email</p>
       <input class="typebox" id="signin_email_typebox" placeholder="Please enter your email">
       <!--  
@@ -168,7 +168,7 @@
         <p class="typetext" id="signin_password_text">Please enter your password</p>
       </div>
       -->
-      <p id="signin_signin_btn" onclick="turn_to_wallet_page()">Sign In</p> 
+      <p id="signin_signin_btn">Sign In</p> 
     </div>
 
     <div id="signup_page">
@@ -185,13 +185,13 @@
       </div>
         
      
-      <div class="sign_back_container" id="signup_back_container" onclick="turn_to_signin_page(this.id)">
+      <div class="sign_back_container" id="signup_back_container">
         <div class="triangle_back"></div>
         <p class="sign_back_text">Back</p>
       </div>
       <p id="signup_signup_text">Sign Up</p>
       <p id="signup_haveaccount_text">Already have an account?</p>
-      <p id="signup_haveaccount_signin_text" onclick="turn_to_signin_page(this.id)">Sign In</p>
+      <p id="signup_haveaccount_signin_text">Sign In</p>
       <p class="sign_item" id="signup_email">Email</p> 
       <input class="typebox" id="signup_email_typebox" placeholder="Please enter your email">
       <!--
@@ -236,7 +236,7 @@
           <label for="signup_checkbox" id="signup_agreement_text">By clicking Sign Up, I hereby acknowledge that I agree to the Crypto.com NFT Terms and Conditions and I've read the Privacy Notice.</label>
         </div>
       </div>
-      <p id="signup_signup_btn" onclick="pop_verify_email()">Sign Up</p> 
+      <p id="signup_signup_btn">Sign Up</p> 
       <div class="verify_container" id="verify_email_container">
         <p id="signup_verify_confirm" onclick="turn_to_verify_email_page()">Confirm</p>
       </div>
@@ -250,8 +250,8 @@
           </div>
           <img class="navbar_logo_text" src="./Img/logo_text.png">
         </div>
-        <div class="narbar_sign navbar_signin" id="verify_email_navbar_signin" onclick="turn_to_signin_page_from_verify()">Sign in</div>
-        <div class="narbar_sign navbar_signup" id="verify_email_navbar_signup" onclick="turn_to_signup_page_from_verify()">Sign up</div>
+        <div class="narbar_sign navbar_signin" id="verify_email_navbar_signin">Sign in</div>
+        <div class="narbar_sign navbar_signup" id="verify_email_navbar_signup">Sign up</div>
       </div>
       <form id="verify_email_verify_code_align_container" name="verify_email">
         <div class="verify_email_verify_code_container" id="verify_email_verify_code_container1">
@@ -2204,6 +2204,6 @@
 
 
     <!-- Liu -->
-    <script type="module" src="./database/front_end.js"></script>
+    <!--<script src="./database/front_end.js"></script>-->
   </body>
 </html>

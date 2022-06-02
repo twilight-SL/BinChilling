@@ -1,0 +1,1960 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BinChilling</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script language="JavaScript" type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script language="JavaScript" type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script language="JavaScript" type="text/javascript" src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <!------------ customized file -------------->
+    <link rel="stylesheet" href="Binchilling.css" />
+    <link href="chart.css" rel="stylesheet"/>
+    <link href="account.css" rel="stylesheet"/>
+    <script src="./Binchilling.js" defer></script>
+    
+</head>
+<body onload="load_database()">
+    <!--
+    <div class="homepage" id="homepage_01">
+      <div id="homepage_logo_img_container">
+        <img id="homepage_logo_img" src="./img/logo.png">
+      </div>
+      <div id="homepage_email_text_container">
+        <p id="homepage_email_text">Email</p>
+      </div>
+      
+      </div>
+      <div class="homepage_sign_container" id="homepage_sign_in_container">
+        <p class="homepage_sign_text" id="homepage_sign_in_text">Sign In</p>
+      </div>
+    </div>
+    -->
+    <div id="homepage">
+      <div class="navbar_logo_container" id="homepage_navbar_logo_container">
+        <div class="navbar_logo">
+          <div class="navbar_logo_img_container">
+            <img class="navbar_logo_img" src="./Img/logo.png">
+          </div>
+          <img class="navbar_logo_text" src="./Img/logo_text.png">
+        </div>
+        <div class="narbar_sign navbar_signin" id="homepage_navbar_signin" onclick="homepage_turn_to_signin_page(this.id)">Sign in</div>
+        <div class="narbar_sign navbar_signup" id="homepage_navbar_signup" onclick="homepage_turn_to_signup_page(this.id)">Sign up</div>
+      </div>
+
+      <div class="homepage_01_blank"></div>
+      <div class="homepage_01">
+        <div id="homepage_binchilling_logo">
+          <img src="./Img/homepage/binchilling_logo.png">
+        </div>
+        <div class="homepage_page1_words">
+          <p id="words-homepage-1-chilling-with-all-your-accounts">Chilling with all your accounts!</p>
+          <p id="words-binchilling-is-a-platform">BinChilling is a platform that facilitates transactions between users and accounts in the management of NFTs and other virtual assets. </p>
+        </div>
+        <div class="homepage_photo_of_banks_logo">
+          <img src="./Img/homepage/Banks.png">
+        </div>
+        <div class="homepage_01_next_page">
+          <img src="./Img/homepage/Group 340.png">
+        </div>
+
+      </div>
+      <div class="homepage_01_to_02_blank"></div>
+      <div class="homepage_02">
+          <p id="words-homepage-2-chilling-with-all-your-accounts">Chilling with all your accounts!</p>
+          <div class="homepage_02_center_blocks">
+            <div class="homepage_02_connect_your_wallet">
+              <img src="./Img/homepage/Vector.png" id="photo_connect_your_wallet">
+              <p id="word_connect_your_wallet">Connect your wallet</p>
+              <p id="word_describe_connect_your_wallet">Once you’ve connected your wallet of choice, you can get overall assets information.</p>
+            </div>
+            <div class="homepage_02_manage_your_assets">
+              <img src="./Img/homepage/Group 350 1.png" id="photo_manage_your_assets">
+              <p id="word_manage_your_assets">Manage your assets</p>
+              <p id="word_describe_manage_your_assets">Integrate multiple wallet accounts, manage them together in the overall asset chart.</p>
+            </div>
+            <div class="homepage_02_get_more_informations">
+              <img src="./Img/homepage/Group 354.png" id="photo_get_more_informations">
+              <p id="word_get_more_informations">Get more informations</p>
+              <p id="word_describe_get_more_informations">Double-click a single category or item in the asset chart to view asset details.</p>
+            </div>
+          </div>
+      </div>
+      <div class="homepage_02_to_03_blank"></div>
+      <div class="homepage_03">
+        <p id="homepage_03_never_miss_a_drop">Never miss a drop</p>
+        <p id="homepage_03_subscribe_for">Subscribe for the latest news, drops & collectibles</p>
+        <div class="homepage_03_subscribe_box">
+          <input type="text" id="textbox_homepage_03_subscribe_box">
+          <p id="textbox_homepage_03_subscribe_btn">Subscribe</p>
+        </div>
+        <p id="homepage_03_after_reading">After reading the Privacy Notice, you may subscribe for our newsletter to get special offers and occasional surveys delivered to your inbox. Unsubscribe at any time by clicking on the link in the email.</p>
+        <div class="homepage_03_by_entering">
+          <div id="checkbox_homepage_03_by_entering">
+            <input type="checkbox" id="checkbox_homepage_03_by_entering">
+          </div>
+          <p id="words_homepage_03_by_entering">By entering my email and subscribing I confirm and agree to the above.</p>
+        </div>
+      </div>
+      <!-- <div class="homepage_03_to_04_blank"></div>
+        
+      <div class="homepage_04">
+
+        <div class="homepage_04_words">
+          <p id="words-homepage-4-chilling-with-all-your-accounts">Chilling with all your accounts!</p>
+        </div>
+        <div id="homepage_04_binchilling_logo">
+          <img src="./Img/homepage/binchilling_logo.png">
+        </div>
+        <div class="homepage_04_sign_in_area">
+          <p id="word_homepage_04_email">Email</p>
+          <input type="text" id="textbox_homepage_04_email">
+          <div class="word_homepage_04_password_options">
+            <p id="word_homepage_04_password">Password</p>
+            <p id="word_homepage_04_forgot_password">Forgot password?</p>
+          </div>
+          <input type="text" id="textbox_homepage_04_password">
+          <p id="textbutton_homepage_04_sign_in" onclick="homepage_turn_to_signin_page(this.id)">Sign In</p>
+          <div class="word_homepage_04_dont_have_account">
+            <p id="word_homepage_04_dont_have_an_account_yet">Don't have an account yet?</p>
+            <p id="word_homepage_04_sign_up">Sign Up</p>
+          </div>
+            
+
+        </div>
+      </div> -->
+      <div class="homepage_03_to_bottom_blank"></div>
+      <!--<div id="homepage_bottom_area">BinChilling @ 2022 Social Web Research</div>-->
+    </div>
+    <!------------------------------------------Sign in page------------------------------->
+    <div id="signin_page">
+      <div id="signin_logo_container">
+        <div id="navbar_logo">
+          <div class="navbar_logo_img_container">
+            <img class="navbar_logo_img" src="./Img/logo.png">
+          </div>
+          <img class="navbar_logo_text" src="./Img/logo_text.png">
+        </div>
+      </div>
+      <div id="signin_title_container">
+        <p id="signin_title">Welcome to this virtual world!</p>
+      </div>
+
+      
+      <!--
+      <div class="sign_back_container" id="signin_back_container">
+        <div class="triangle_back"></div>
+        <p class="sign_back_text">Back</p>
+      </div>
+      -->
+      <p id="signin_signin_text">Sign In</p>
+      <p id="signin_noaccount_text">Don't have an account yet?</p>
+      <p id="signin_noaccount_signup_text" onclick="turn_to_signup_page(this.id)">Sign Up</p>
+      <p class="sign_item" id="signin_email">Email</p>
+      <input class="typebox" id="signin_email_typebox" placeholder="Please enter your email">
+      <!--  
+      <div class="typebox" id="signin_email_typebox">
+        <p class="typetext" id="signin_email_text">Please enter your email</p>
+      </div>
+      --> 
+      <p class="sign_item" id="signin_password">Password</p>
+      <p id="forgot_password">Forgot password?</p>
+      <input class="typebox" id="signin_password_typebox" placeholder="Please enter your password">
+      <!--
+      <div class="typebox" id="signin_password_typebox">
+        <p class="typetext" id="signin_password_text">Please enter your password</p>
+      </div>
+      -->
+      <p id="signin_signin_btn" onclick="turn_to_wallet_page()">Sign In</p> 
+    </div>
+
+    <div id="signup_page">
+      <div id="signup_title_container">
+        <p id="signup_title">Get more information of your account</p>
+      </div>
+      <div id="hightlight_container">
+        <p class="highlight" id="highlight1">Cross accounts</p>
+        <p class="highlight_description" id="highlight_description1">Connect all your accounts in one platform.</p>
+        <p class="highlight" id="highlight2">Overview Chart</p>
+        <p class="highlight_description" id="highlight_description2">Easy, simple and clear.</p>
+        <p class="highlight" id="highlight3">Risk management</p>
+        <p class="highlight_description" id="highlight_description3">Carefully track your asset allocation.</p>
+      </div>
+        
+     
+      <div class="sign_back_container" id="signup_back_container" onclick="turn_to_signin_page(this.id)">
+        <div class="triangle_back"></div>
+        <p class="sign_back_text">Back</p>
+      </div>
+      <p id="signup_signup_text">Sign Up</p>
+      <p id="signup_haveaccount_text">Already have an account?</p>
+      <p id="signup_haveaccount_signin_text" onclick="turn_to_signin_page(this.id)">Sign In</p>
+      <p class="sign_item" id="signup_email">Email</p> 
+      <input class="typebox" id="signup_email_typebox" placeholder="Please enter your email">
+      <!--
+      <div class="typebox" id="signup_email_typebox">
+        <p class="typetext" id="signup_email_text">Please enter your email</p>
+      </div>
+      -->
+      <!--
+      <p class="sign_item" id="signup_fullname">Full Name</p>   
+      <div class="typebox" id="signup_fullname_typebox">
+        <p class="typetext" id="signup_fullname_text">Please enter your full name</p>
+      </div>
+      -->
+      <p class="sign_item" id="signup_username">User Name</p>  
+      <p id="signup_username_visibility">(Visible to the Public)</p> 
+      <input type="text" class="typebox" id="signup_username_typebox" placeholder="Please enter your username">
+      <!--
+      <div class="typebox" id="signup_username_typebox">
+        <p class="typetext" id="signup_username_text">Please enter your username</p>
+      </div>
+      -->
+      <p class="sign_item" id="signup_password">Password</p>  
+      <p id="signup_password_restriction">*Please enter alphanumerical characters, hyphens or underscores</p> 
+      <input type="text" class="typebox" id="signup_password_typebox" placeholder="Please enter 8-20 characters">
+      <!--
+      <div class="typebox" id="signup_password_typebox">
+        <p class="typetext" id="signup_password_text">Please enter 8-20 characters</p>
+      </div>
+      -->
+      <p class="sign_item" id="signup_confirm_password">Confirm Password</p> 
+      <input type="text" class="typebox" id="signup_confirm_password_typebox" placeholder="Please confirm your password">  
+      <!--
+      <div class="typebox" id="signup_confirm_password_typebox">
+        <p class="typetext" id="signup_confirm_password_text">Please confirm your password</p>
+      </div>
+      -->
+      <div id="signup_agreement_container">
+        <div id="signup_checkbox_container">
+          <input type="checkbox" id="signup_checkbox" value="signup_agreement">
+        </div>
+        <div id="signup_agreement_text_container">
+          <label for="signup_checkbox" id="signup_agreement_text">By clicking Sign Up, I hereby acknowledge that I agree to the Crypto.com NFT Terms and Conditions and I've read the Privacy Notice.</label>
+        </div>
+      </div>
+      <p id="signup_signup_btn" onclick="pop_verify_email()">Sign Up</p> 
+      <div class="verify_container" id="verify_email_container">
+        <p id="signup_verify_confirm" onclick="turn_to_verify_email_page()">Confirm</p>
+      </div>
+    </div>
+    
+    <div id="verify_email_page">
+      <div class="navbar_logo_container" id="verify_email_navbar_logo_container">
+        <div class="navbar_logo">
+          <div class="navbar_logo_img_container">
+            <img class="navbar_logo_img" src="./Img/logo.png">
+          </div>
+          <img class="navbar_logo_text" src="./Img/logo_text.png">
+        </div>
+        <div class="narbar_sign navbar_signin" id="verify_email_navbar_signin" onclick="turn_to_signin_page_from_verify()">Sign in</div>
+        <div class="narbar_sign navbar_signup" id="verify_email_navbar_signup" onclick="turn_to_signup_page_from_verify()">Sign up</div>
+      </div>
+      <form id="verify_email_verify_code_align_container" name="verify_email">
+        <div class="verify_email_verify_code_container" id="verify_email_verify_code_container1">
+          <div class="verify_email_verify_text_container">
+            <input type="text" maxlength=1 autofocus autocomplete="off" class="verify_email_verify_text" id="verify_email_verify_code1" onkeyup="enter_email_verification_code(this.id,0)">
+          </div>
+          <div class="verify_email_verify_underline" id="verify_email_verify_underline1"></div>
+        </div>
+        <div class="verify_email_verify_code_container" id="verify_email_verify_code_container2">
+          <div class="verify_email_verify_text_container">
+            <input type="text" maxlength=1 autocomplete="off" class="verify_email_verify_text" id="verify_email_verify_code2" onkeyup="enter_email_verification_code(this.id,1)">
+          </div>
+          <div class="verify_email_verify_underline" id="verify_email_verify_underline2"></div>
+        </div>
+        <div class="verify_email_verify_code_container" id="verify_email_verify_code_container3">
+          <div class="verify_email_verify_text_container">
+            <input type="text" maxlength=1 autocomplete="off" class="verify_email_verify_text" id="verify_email_verify_code3" onkeyup="enter_email_verification_code(this.id,2)">
+          </div>
+          <div class="verify_email_verify_underline" id="verify_email_verify_underline3"></div>
+        </div>
+        <div class="verify_email_verify_code_container" id="verify_email_verify_code_container4">
+          <div class="verify_email_verify_text_container">
+            <input type="text" maxlength=1 autocomplete="off" class="verify_email_verify_text" id="verify_email_verify_code4" onkeyup="enter_email_verification_code(this.id,3)">
+          </div>
+          <div class="verify_email_verify_underline" id="verify_email_verify_underline4"></div>
+        </div>
+        <div class="verify_email_verify_code_container" id="verify_email_verify_code_container5">
+          <div class="verify_email_verify_text_container">
+            <input type="text" maxlength=1 autocomplete="off" class="verify_email_verify_text" id="verify_email_verify_code5" onkeyup="enter_email_verification_code(this.id,4)">
+          </div>
+          <div class="verify_email_verify_underline" id="verify_email_verify_underline5"></div>
+        </div>
+        <div class="verify_email_verify_code_container" id="verify_email_verify_code_container6">
+          <div class="verify_email_verify_text_container">
+            <input type="text" maxlength=1 autocomplete="off" class="verify_email_verify_text" id="verify_email_verify_code6" onkeyup="enter_email_verification_code(this.id,5)">
+          </div>
+          <div class="verify_email_verify_underline" id="verify_email_verify_underline6"></div>
+        </div>
+      </form>
+      <div id="verify_email_verify_btn" onclick="check_email_verification_code()"></div>
+      <img class="verify_container" id="verify_fail_img" src="./Img/verify/verify_fail.png"></img>
+      <img class="verify_container" id="verify_success_img" src="./Img/verify/verify_success.png"></img>
+    </div>
+   <!-------------------- Add account -------------------->
+   <div id="add_new_account_page" >
+    <p class="add_account_title">Add a new account.</p>
+    <p class="add_account_subtitle">Connect all your accounts and manage your assets easily.</p>
+    <div class="container">
+      <div class="input_account">
+        <label>Bank</label>
+        <input class="input_add_style" type="text" placeholder="+  Click to add a new account">
+      </div>
+      <div class="input_account">
+        <label>Securities</label>
+        <input class="input_add_style" type="text" placeholder="+  Click to add a new account">
+      </div>
+      <div class="input_account">
+        <label>Fund</label>
+        <input class="input_add_style" type="text" placeholder="+  Click to add a new account">
+      </div>
+      <div class="input_account">
+        <label>E-ticket</label>
+        <input class="input_add_style" type="text" placeholder="+  Click to add a new account">
+      </div>
+      <div class="input_account">
+        <label>Insurance</label>
+        <input class="input_add_style" type="text" placeholder="+  Click to add a new account">
+      </div>
+      <div class="input_account">
+        <label>NFT/ Cryptocurrency</label>
+        <!------------------  ! Add Demo !  ------------------>
+        <div id="demo-add" style="display: none;">
+          <div style="display: flex;justify-content:flex-start;align-items: center;margin-left: 30px;">
+            <img src="./Img/MetaMask_Fox 3.png" alt="">
+            <img src="./Img/MetaMask.png" style="height:17px;margin-left: 40px;" alt="">
+          </div>
+          <img src="./Img/Group 290.png" alt="">
+        </div>
+        <input id="add-nft" class="input_add_style" type="text" placeholder="+  Click to add a new account" onclick="add_NFT_account(this.id)">
+      </div>
+      <button id="back-to-top" class="toTop">Back to top</button>
+    </div>
+  </div>
+  <!-------------- connect NFT wallet page -------------->
+  <div id="connect_nft_account">
+    <p class="add_account_title">Connect your wallet.</p>
+    <p class="add_account_subtitle">Get to know more information about your assets.</p>
+    <div class="selection">
+        <ul class="row">
+          <div class="col-4">
+            <div class="list-group list-group-flush" id="list-tab" role="tablist">
+              <div class="list-group-item list-group-item-action item rounded-pill" id="list-metamask-list" data-toggle="modal" data-target="#MetaMaskModal" role="tab" aria-controls="list-Metamask">
+                <img src="./Img/MetaMask_Fox 3.png" alt="">
+                <p class="icon_name">MetaMask</p>
+              </div>
+              <!---------------------- MetaMask Modal Start --------------------------->
+              <div class="modal fade" id="MetaMaskModal" role="dialog">
+                <div class="modal-dialog">
+                  <!-- Modal content -->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <img src="./Img/MetaMask_Fox 3.png" alt="">
+                      <img src="./Img/Ellipse 31.png" class="ellipse">
+                      <select name="currency" class="form-select">
+                        <option selected>Main Ethereum Network</option>
+                        <option>Something Network</option>
+                      </select>
+                    </div>
+                    <div class="modal-body">
+                      <img src="./Img/MetaMask_Big.jpg" alt="">
+                      <h1>Welcome back!</h1>
+                      <h4>The decentralized web awaits</h4>
+                      <div class="metamask-passwaord">
+                        <div class="psw">Password</div>
+                        <input type="password" class="connect-wallet-password" id="metamask-password-input" onblur="get_metamask_password()">
+                      </div>
+                      <button class="unlock" onclick="verify_metamask_password()">Unlock</button>
+                      <a href="#" class="forgot-psw">Forgot password?</a>
+                      <p class="psw">Need help? Contact <a href="#">MetaMaskSupport</a></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!---------------------- MetaMask Connect Succes --------------------------->
+              <div class='dialog' id="dialog-success">
+                <div class="verify-modal" id="MetaMask-wallet-success-connect">
+                  <img src="./Img/Group 170.png" alt="">
+                </div>
+              </div>
+              <!---------------------- MetaMask Connect Failed --------------------------->
+              <div class='dialog' id="dialog-failed">
+                <div class="verify-modal" id="MetaMask-wallet-failed-connect">
+                  <img src="./Img/Group 167.png" alt="">
+                </div>
+              </div>
+              <!---------------------- MetaMask Modal End --------------------------->
+              <div class="list-group-item list-group-item-action item rounded-pill" id="list-coinbase-list" data-bs-toggle="list" role="tab" aria-controls="list-Coinbase">
+                <img src="./Img/coinbasewallet 1.png" alt="">
+                <p class="icon_name">Coinbase wallet</p>
+              </div>
+              <div class="list-group-item list-group-item-action item rounded-pill" id="list-walletconnect-list" data-bs-toggle="list" role="tab" aria-controls="list-WalletConnect">
+                <img src="./Img/walletconnect 1.png" alt="">
+                <p class="icon_name">WalletConnect</p>
+              </div>
+              <div class="list-group-item list-group-item-action item rounded-pill" id="list-phantom-list" data-bs-toggle="list" role="tab" aria-controls="list-Phantom">
+                <img src="./Img/Phantom 1.png" alt="">
+                <p class="icon_name">Phantom</p>
+              </div>
+              <div class="list-group-item list-group-item-action item rounded-pill" id="list-venly-list" data-bs-toggle="list" role="tab" aria-controls="list-Venly">
+                <img src="./Img/venly_logo 1.png" alt="">
+                <p class="icon_name">Venly</p>
+              </div>
+              <div class="list-group-item list-group-item-action item rounded-pill" id="list-formatic-list" data-bs-toggle="list" role="tab" aria-controls="list-Formatic">
+                <img src="./Img/formatic 1.png" alt="">
+                <p class="icon_name">Formatic</p>
+              </div>
+              <div class="list-group-item list-group-item-action item rounded-pill" id="list-kaikas-list" data-bs-toggle="list" role="tab" aria-controls="list-Kaikas">
+                <img src="./Img/kaikas 1.png" alt="">
+                <p class="icon_name">Kaikas</p>
+              </div>
+            </div>   
+          </div>
+        </ul>
+    </div>
+  </div>
+    <!--Wallet-->
+    <div id="wallet">
+      <div class="navbar" id="wallet_navbar">
+        <div class="navbar_logo">
+          <div class="navbar_logo_img_container">
+            <img class="navbar_logo_img" src="./Img/logo.png"  onclick="turn_to_wallet_page()">
+          </div>
+          <img class="navbar_logo_text" src="./Img/logo_text.png"  onclick="turn_to_wallet_page()">
+        </div>
+        <div class="navbar_function_container">
+          <p class="navbar_function" id="navbar_function_wallet" onclick="turn_to_wallet_page()">Wallet</p>
+          <p class="navbar_function" id="navbar_function_plan">Plan</p>
+          <div class="navbar_function3_container" id="wallet_navbar_function3_container" onmouseover="change_account_hover_color(this.id)" onmouseout="change_back_account_hover_color(this.id)">
+            <p class="navbar_function" id="navbar_function_account">Account</p>
+            <div class="navbar_function_triangle_container" id="wallet_navbar_function_triangle_container">
+              <div class="triangle_down navbar_triangle_down" id="navbar_account_triangle_down"></div>
+            </div> 
+          </div> 
+        </div>
+        <div id="navbar_account_dropdown_menu_container"  onmouseover="change_account_hover_color(this.id)" onmouseout="change_back_account_hover_color(this.id)">
+          <div id="navbar_account_dropdown_menu">
+            <p id="navbar_account_add" onclick="trun_to_add_account_page(this.id)">+ Add a new account</p>
+            <div class="navbar_account_line" id="navbar_account_line1"></div>
+            <p class="navbar_account_logged_account" id="navbar_account_logged_account1"></p>
+            <div class="navbar_account_line" id="navbar_account_line2"></div>
+            <p class="navbar_account_logged_account" id="navbar_account_logged_account2"></p>
+            <div class="navbar_account_line" id="navbar_account_line3"></div>
+            <p class="navbar_account_logged_account" id="navbar_account_logged_account3"></p>
+            <div class="navbar_account_line" id="navbar_account_line4"></div>
+            <p class="navbar_account_logged_account" id="navbar_account_logged_account4"></p>
+          </div>
+        </div>
+        <div class="navbar_vertical_rec" id="wallet_navbar_vertical_rec"></div>
+        <div id="wallet_navbar_head_contianer">
+          <div id="wallet_navbar_head"></div>
+        </div>
+        <div id="wallet_username_container" onmouseover="change_username_hover_color(this.id)" onmouseout="change_back_username_hover_color(this.id)">
+          <p class="navbar_username" id="wallet_navbar_username">Username</p>
+          <div class="navbar_function_triangle_container" id="wallet_navbar_username_triangle_container">
+            <div class="triangle_down navbar_triangle_down" id="navbar_wallet_username_triangle_down"></div>
+          </div>
+        </div>
+        <div id="navbar_user_dropdown_menu_container" onmouseover="change_username_hover_color(this.id)" onmouseout="change_back_username_hover_color(this.id)">
+          <div id="navbar_user_dropdown_menu">
+            <p class="navbar_user_menu">Profile</p>
+            <div class="navbar_user_dropdown_menu_line"></div>
+            <p class="navbar_user_menu">Setting</p>
+            <div class="navbar_user_dropdown_menu_line"></div>
+            <p class="navbar_user_menu">Device</p>
+            <div class="navbar_user_dropdown_menu_line"></div>
+            <p class="navbar_user_menu">Cloud</p>
+            <div class="navbar_user_dropdown_menu_line"></div>
+            <p class="navbar_user_menu">Privacy Policy</p>
+            <div class="navbar_user_dropdown_menu_line"></div>
+            <p class="navbar_user_menu">About us</p>
+          </div>
+        </div>
+      </div>
+
+      <!---------------------------------------------Wallet overview--------------------------------------------->
+      <div class="wallet_page" id="wallet_overview">
+        <p class="wallet_title" id="wallet_overview_title">Overview</p>
+        <div id="category_btw_account_container" >
+          <div id="category_btw_account"></div>
+        </div>
+        <p id="wallet_category_choice">Category</p>
+        <p id="wallet_account_choice">Account</p>
+        <p class="wallet_whole_asset_dollor" id="wallet_overview_whole_asset_dollor"></p>
+        <div class="wallet_whole_asset_dollor_menu_btn" id="wallet_overview_whole_asset_dollor_menu_btn" onclick="pop_wallet_currency_menu(this.id)">
+          <p class="wallet_whole_asset_dollor_menu" id="wallet_overview_whole_asset_dollor_menu_text">NTD</p>
+          <div class="triangle_down wallet_whole_asset_triangle_down" id="wallet_overview_whole_asset_triangle_down"></div>
+        </div>
+        <div class="wallet_whole_asset_dollor_scrollable_dropdown_menu" id="wallet_overview_whole_asset_scrollable_dollor_menu">
+          <div class="wallet_whole_asset_dollor_dropdown_menu" id="wallet_overview_whole_asset_dollor_menu" >
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_overview_whole_asset_dollor_menu_NTD" onclick="close_wallet_whole_asset_currency_menu(this.id)">NTD</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_first"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_overview_whole_asset_dollor_menu_USD" onclick="close_wallet_whole_asset_currency_menu(this.id)">USD</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_second"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_overview_whole_asset_dollor_menu_JPY" onclick="close_wallet_whole_asset_currency_menu(this.id)">JPY</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_third"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_overview_whole_asset_dollor_menu_ETH" onclick="close_wallet_whole_asset_currency_menu(this.id)">ETH</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_second"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_overview_whole_asset_dollor_menu_RMB" onclick="close_wallet_whole_asset_currency_menu(this.id)">RMB</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_third"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_overview_whole_asset_dollor_menu_EUR" onclick="close_wallet_whole_asset_currency_menu(this.id)">EUR</div>
+          </div>
+        </div>
+      
+        <p class="wallet_show" id="wallet_overview_show">show</p>
+        <p class="wallet_category" id="wallet_overview_category">Category</p>
+        <p class="wallet_totalamount" id="wallet_overview_totalamount">Total amount</p>
+        <p class="wallet_currency" id="wallet_overview_currency">Currency</p>
+        <p class="wallet_percentage" id="wallet_overview_percentage">Percentage</p>
+        <div class="wallet_object_container wallet_object_container1" id="wallet_overview_object_container1">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color1" id="wallet_overview_show_color1" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_overview_category1" onclick="turn_to_specific_wallet(this.id)"></p>
+          <p class="wallet_totalamount_totalamount wallet_text overview" id="wallet_overview_totalamount1"></p>
+          <p class="wallet_currency_currency wallet_text overview" id="wallet_overview_currency1">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text overview" id="wallet_overview_percentage1"></p>
+        </div>
+        <div class="wallet_object_container wallet_object_container2" id="wallet_overview_object_container2">
+          <div class="wallet_show_color_container">
+            <p class="wallet_show_color wallet_show_color2" id="wallet_overview_show_color2" onclick="show_wallet_object(this.id)"></p>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_overview_category2" onclick="turn_to_specific_wallet(this.id)"></p>
+          <p class="wallet_totalamount_totalamount wallet_text overview" id="wallet_overview_totalamount2"></p>
+          <p class="wallet_currency_currency wallet_text overview" id="wallet_overview_currency2">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text overview" id="wallet_overview_percentage2"></p>
+        </div>
+        <div class="wallet_object_container wallet_object_container3" id="wallet_overview_object_container3">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color3" id="wallet_overview_show_color3" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_overview_category3" onclick="turn_to_specific_wallet(this.id)"></p>
+          <p class="wallet_totalamount_totalamount wallet_text overview" id="wallet_overview_totalamount3"></p>
+          <p class="wallet_currency_currency wallet_text overview" id="wallet_overview_currency3">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text overview" id="wallet_overview_percentage3"></p>
+        </div>
+        <div class="wallet_object_container wallet_object_container4" id="wallet_overview_object_container4">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color4" id="wallet_overview_show_color4" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_overview_category4" onclick="turn_to_specific_wallet(this.id)"></p>
+          <p class="wallet_totalamount_totalamount wallet_text overview" id="wallet_overview_totalamount4">=</p>
+          <p class="wallet_currency_currency wallet_text overview" id="wallet_overview_currency4">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text overview" id="wallet_overview_percentage4"></p>
+        </div>
+        <div class="wallet_object_container wallet_object_container5" id="wallet_overview_object_container5">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color5" id="wallet_overview_show_color5" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_overview_category5" onclick="turn_to_specific_wallet(this.id)"></p>
+          <p class="wallet_totalamount_totalamount wallet_text overview" id="wallet_overview_totalamount5"></p>
+          <p class="wallet_currency_currency wallet_text overview" id="wallet_overview_currency5">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text overview" id="wallet_overview_percentage5"></p>
+        </div>
+        <!-- Overview Chart -->
+        <!-------------------------- Risk -------------------------->
+        <div class="risk_area" id="Risk">
+          <h2 class="risk-index">Risk Index</h2>
+          <img src="./Img/Group 364.png" id="tooltipex" data-toggle="tooltip" data-placement="top" title="Low risk! You have done a good job!"/>
+          <h3 class="risk-num">56</h3>
+        </div>
+        <!-------------------------- Overview Chart -------------------------->
+        <div id="chart" preserveAspectRatio="xMinYMin meet" viewBox="0 0 200 200"></div>
+      </div>
+      
+      <!---------------------------------------------Wallet Stock------------------------------------>
+      <div class="wallet_page" id="wallet_Stock">
+        <div class="wallet_back_container" onclick="turn_to_wallet_page()">
+          <div class="triangle_back"></div>
+          <p class="wallet_back_text">Back to overview</p>
+        </div>
+        <p class="wallet_title" id="wallet_Stock_title" >Stock</p>
+        <p class="wallet_whole_asset_dollor" id="wallet_Stock_whole_asset_dollor"></p>
+        <div class="wallet_whole_asset_dollor_menu_btn" id="wallet_Stock_whole_asset_dollor_menu_btn" onclick="pop_wallet_currency_menu(this.id)">
+          <p class="wallet_whole_asset_dollor_menu" id="wallet_Stock_whole_asset_dollor_menu_text">NTD</p>
+          <div class="triangle_down wallet_whole_asset_triangle_down" id="wallet_Stock_whole_asset_triangle_down"></div>
+        </div>
+        <div class="wallet_whole_asset_dollor_scrollable_dropdown_menu" id="wallet_Stock_whole_asset_scrollable_dollor_menu">
+          <div class="wallet_whole_asset_dollor_dropdown_menu" id="wallet_Stock_whole_asset_dollor_menu" >
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_Stock_whole_asset_dollor_menu_NTD" onclick="close_wallet_whole_asset_currency_menu(this.id)">NTD</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_first"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_Stock_whole_asset_dollor_menu_USD" onclick="close_wallet_whole_asset_currency_menu(this.id)">USD</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_second"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_Stock_whole_asset_dollor_menu_JPY" onclick="close_wallet_whole_asset_currency_menu(this.id)">JPY</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_third"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_Stock_whole_asset_dollor_menu_ETH" onclick="close_wallet_whole_asset_currency_menu(this.id)">ETH</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_second"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_Stock_whole_asset_dollor_menu_RMB" onclick="close_wallet_whole_asset_currency_menu(this.id)">RMB</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_third"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_Stock_whole_asset_dollor_menu_EUR" onclick="close_wallet_whole_asset_currency_menu(this.id)">EUR</div>
+          </div>
+        </div>
+      
+        <p class="wallet_show" id="wallet_overview_show">show</p>
+        <p class="wallet_category Stock" id="wallet_overview_category">Stock</p>
+        <p class="wallet_totalamount" id="wallet_overview_totalamount">Total amount</p>
+        <p class="wallet_currency Stock" id="wallet_overview_currency">Currency</p>
+        <p class="wallet_percentage Stock" id="wallet_overview_percentage">Institution</p>
+        <div class="wallet_object_container wallet_object_container1" id="wallet_Stock_object_container1">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color1" id="wallet_Stock_show_color1" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_Stock_category1" onclick="turn_to_specific_wallet(this.id)"></p>
+          <p class="wallet_totalamount_totalamount wallet_text Stock" id="wallet_Stock_totalamount1"></p>
+          <p class="wallet_totalamount_earning Stock" id="wallet_Stock_earning1"></p>
+          <p class="wallet_currency_currency wallet_text Stock" id="wallet_Stock_currency1">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text Stock" id="wallet_Stock_percentage1"></p>
+        </div>
+        <div class="wallet_object_container wallet_object_container2" id="wallet_Stock_object_container2">
+          <div class="wallet_show_color_container">
+            <p class="wallet_show_color wallet_show_color2" id="wallet_Stock_show_color2" onclick="show_wallet_object(this.id)"></p>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_Stock_category2"></p>
+          <p class="wallet_totalamount_totalamount wallet_text Stock" id="wallet_Stock_totalamount2"></p>
+          <p class="wallet_totalamount_earning Stock" id="wallet_Stock_earning2"></p>
+          <p class="wallet_currency_currency wallet_text Stock" id="wallet_Stock_currency2">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text Stock" id="wallet_Stock_percentage2"></p>
+        </div>
+        <div class="wallet_object_container wallet_object_container3" id="wallet_Stock_object_container3">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color3" id="wallet_Stock_show_color3" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_Stock_category3"></p>
+          <p class="wallet_totalamount_totalamount wallet_text Stock" id="wallet_Stock_totalamount3"></p>
+          <p class="wallet_totalamount_earning Stock" id="wallet_Stock_earning3"></p>
+          <p class="wallet_currency_currency wallet_text Stock" id="wallet_Stock_currency3">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text Stock" id="wallet_Stock_percentage3"></p>
+        </div>
+        <div class="wallet_object_container wallet_object_container4" id="wallet_Stock_object_container4">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color4" id="wallet_Stock_show_color4" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_Stock_category4"></p>
+          <p class="wallet_totalamount_totalamount wallet_text Stock" id="wallet_Stock_totalamount4"></p>
+          <p class="wallet_totalamount_earning Stock" id="wallet_Stock_earning4"></p>
+          <p class="wallet_currency_currency wallet_text Stock" id="wallet_Stock_currency4">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text Stock" id="wallet_Stock_percentage4"></p>
+        </div>
+        <div class="wallet_object_container wallet_object_container5" id="wallet_Stock_object_container5">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color5" id="wallet_Stock_show_color5" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_Stock_category5"></p>
+          <p class="wallet_totalamount_totalamount wallet_text Stock" id="wallet_Stock_totalamount5"></p>
+          <p class="wallet_totalamount_earning Stock" id="wallet_Stock_earning5"></p>
+          <p class="wallet_currency_currency wallet_text Stock" id="wallet_Stock_currency5">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text Stock" id="wallet_Stock_percentage5"></p>
+        </div>
+        <!-- Stock Chart -->
+        <!-------------------------- Risk -------------------------->
+       
+      </div>
+
+      <!---------------------------------------------Wallet Crypto------------------------------------>
+      <div class="wallet_page" id="wallet_Crypto">
+        <div class="wallet_back_container" onclick="turn_to_wallet_page()">
+          <div class="triangle_back"></div>
+          <p class="wallet_back_text">Back to overview</p>
+        </div>
+        <p class="wallet_title" id="wallet_Crypto_title">Crypto</p>
+        <p class="wallet_whole_asset_dollor" id="wallet_Crypto_whole_asset_dollor"></p>
+        <div class="wallet_whole_asset_dollor_menu_btn" id="wallet_Crypto_whole_asset_dollor_menu_btn" onclick="pop_wallet_currency_menu(this.id)">
+          <p class="wallet_whole_asset_dollor_menu" id="wallet_Crypto_whole_asset_dollor_menu_text">NTD</p>
+          <div class="triangle_down wallet_whole_asset_triangle_down" id="wallet_Crypto_whole_asset_triangle_down"></div>
+        </div>
+        <div class="wallet_whole_asset_dollor_scrollable_dropdown_menu" id="wallet_Crypto_whole_asset_scrollable_dollor_menu">
+          <div class="wallet_whole_asset_dollor_dropdown_menu" id="wallet_Crypto_whole_asset_dollor_menu" >
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_Crypto_whole_asset_dollor_menu_NTD" onclick="close_wallet_whole_asset_currency_menu(this.id)">NTD</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_first"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_Crypto_whole_asset_dollor_menu_USD" onclick="close_wallet_whole_asset_currency_menu(this.id)">USD</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_second"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_Crypto_whole_asset_dollor_menu_JPY" onclick="close_wallet_whole_asset_currency_menu(this.id)">JPY</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_third"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_Crypto_whole_asset_dollor_menu_ETH" onclick="close_wallet_whole_asset_currency_menu(this.id)">ETH</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_second"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_Crypto_whole_asset_dollor_menu_RMB" onclick="close_wallet_whole_asset_currency_menu(this.id)">RMB</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_third"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_Crypto_whole_asset_dollor_menu_EUR" onclick="close_wallet_whole_asset_currency_menu(this.id)">EUR</div>
+          </div>
+        </div>
+      
+        <p class="wallet_show" id="wallet_overview_show">show</p>
+        <p class="wallet_category" id="wallet_overview_category">Category</p>
+        <p class="wallet_totalamount" id="wallet_overview_totalamount">Total amount</p>
+        <p class="wallet_currency" id="wallet_overview_currency">Currency</p>
+        <p class="wallet_percentage" id="wallet_overview_percentage">Percentage</p>
+        <div class="wallet_object_container wallet_object_container1" id="wallet_Crypto_object_container1">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color1" id="wallet_Crypto_show_color1" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_Crypto_category1" onclick="turn_to_specific_wallet(this.id)"></p>
+          <p class="wallet_totalamount_totalamount wallet_text Crypto" id="wallet_Crypto_totalamount1"></p>
+          <!--<p class="wallet_totalamount_earning Crypto" id="wallet_Crypto_earning1"></p>-->
+          <p class="wallet_currency_currency wallet_text Crypto" id="wallet_Crypto_currency1">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text Crypto" id="wallet_Crypto_percentage1"></p>
+        </div>
+        <div class="wallet_object_container wallet_object_container2" id="wallet_Crypto_object_container2">
+          <div class="wallet_show_color_container">
+            <p class="wallet_show_color wallet_show_color2" id="wallet_Crypto_show_color2" onclick="show_wallet_object(this.id)"></p>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_Crypto_category2"></p>
+          <p class="wallet_totalamount_totalamount wallet_text Crypto" id="wallet_Crypto_totalamount2"></p>
+          <!--<p class="wallet_totalamount_earning Crypto" id="wallet_Crypto_earning2"></p>-->
+          <p class="wallet_currency_currency wallet_text Crypto" id="wallet_Crypto_currency2">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text Crypto" id="wallet_Crypto_percentage2"></p>
+        </div>
+        <div class="wallet_object_container wallet_object_container3" id="wallet_Crypto_object_container3">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color3" id="wallet_Crypto_show_color3" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_Crypto_category3"></p>
+          <p class="wallet_totalamount_totalamount wallet_text Crypto" id="wallet_Crypto_totalamount3"></p>
+          <!--<p class="wallet_totalamount_earning Crypto" id="wallet_Crypto_earning3"></p>-->
+          <p class="wallet_currency_currency wallet_text Crypto" id="wallet_Crypto_currency3">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text Crypto" id="wallet_Crypto_percentage3"></p>
+        </div>
+        <div class="wallet_object_container wallet_object_container4" id="wallet_Crypto_object_container4">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color4" id="wallet_Crypto_show_color4" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_Crypto_category4"></p>
+          <p class="wallet_totalamount_totalamount wallet_text Crypto" id="wallet_Crypto_totalamount4"></p>
+          <!--<p class="wallet_totalamount_earning Crypto" id="wallet_Crypto_earning4"></p>-->
+          <p class="wallet_currency_currency wallet_text Crypto" id="wallet_Crypto_currency4">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text Crypto" id="wallet_Crypto_percentage4"></p>
+        </div>
+        <div class="wallet_object_container wallet_object_container5" id="wallet_Crypto_object_container5">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color5" id="wallet_Crypto_show_color5" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_Crypto_category5"></p>
+          <p class="wallet_totalamount_totalamount wallet_text Crypto" id="wallet_Crypto_totalamount5"></p>
+          <!--<p class="wallet_totalamount_earning Crypto" id="wallet_Crypto_earning5"></p>-->
+          <p class="wallet_currency_currency wallet_text Crypto" id="wallet_Crypto_currency5">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text Crypto" id="wallet_Crypto_percentage5"></p>
+        </div>
+        <!-- Crypto Chart -->
+        <!-------------------------- Risk -------------------------->
+       
+      </div>
+
+      <!---------------------------------------------Wallet MetaMask------------------------------------>
+      <div class="wallet_page" id="wallet_MetaMask">
+        <div class="wallet_back_container" onclick="turn_to_wallet_page()">
+          <div class="triangle_back"></div>
+          <p class="wallet_back_text">Back to overview</p>
+        </div>
+        <p class="wallet_title" id="wallet_MetaMask_title">MetaMask</p>
+        <p class="wallet_whole_asset_dollor" id="wallet_MetaMask_whole_asset_dollor"></p>
+        <div class="wallet_whole_asset_dollor_menu_btn" id="wallet_MetaMask_whole_asset_dollor_menu_btn" onclick="pop_wallet_currency_menu(this.id)">
+          <p class="wallet_whole_asset_dollor_menu" id="wallet_MetaMask_whole_asset_dollor_menu_text">NTD</p>
+          <div class="triangle_down wallet_whole_asset_triangle_down" id="wallet_MetaMask_whole_asset_triangle_down"></div>
+        </div>
+        <div class="wallet_whole_asset_dollor_scrollable_dropdown_menu" id="wallet_MetaMask_whole_asset_scrollable_dollor_menu">
+          <div class="wallet_whole_asset_dollor_dropdown_menu" id="wallet_MetaMask_whole_asset_dollor_menu" >
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_MetaMask_whole_asset_dollor_menu_NTD" onclick="close_wallet_whole_asset_currency_menu(this.id)">NTD</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_first"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_MetaMask_whole_asset_dollor_menu_USD" onclick="close_wallet_whole_asset_currency_menu(this.id)">USD</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_second"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_MetaMask_whole_asset_dollor_menu_JPY" onclick="close_wallet_whole_asset_currency_menu(this.id)">JPY</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_third"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_MetaMask_whole_asset_dollor_menu_ETH" onclick="close_wallet_whole_asset_currency_menu(this.id)">ETH</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_second"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_MetaMask_whole_asset_dollor_menu_RMB" onclick="close_wallet_whole_asset_currency_menu(this.id)">RMB</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_third"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_MetaMask_whole_asset_dollor_menu_EUR" onclick="close_wallet_whole_asset_currency_menu(this.id)">EUR</div>
+          </div>
+        </div>
+      
+        <p class="wallet_show" id="wallet_overview_show">show</p>
+        <p class="wallet_category" id="wallet_overview_category">Category</p>
+        <p class="wallet_totalamount" id="wallet_overview_totalamount">Total amount</p>
+        <p class="wallet_currency" id="wallet_overview_currency">Currency</p>
+        <p class="wallet_percentage" id="wallet_overview_percentage">Percentage</p>
+        <div class="wallet_object_container wallet_object_container1" id="wallet_MetaMask_object_container1">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color1" id="wallet_MetaMask_show_color1" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_MetaMask_category1" onclick="turn_to_specific_wallet(this.id)"></p>
+          <p class="wallet_totalamount_totalamount wallet_text MetaMask" id="wallet_MetaMask_totalamount1"></p>
+          <p class="wallet_currency_currency wallet_text MetaMask" id="wallet_MetaMask_currency1">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text MetaMask" id="wallet_MetaMask_percentage1"></p>
+        </div>
+        <div class="wallet_object_container wallet_object_container2" id="wallet_MetaMask_object_container2">
+          <div class="wallet_show_color_container">
+            <p class="wallet_show_color wallet_show_color2" id="wallet_MetaMask_show_color2" onclick="show_wallet_object(this.id)"></p>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_MetaMask_category2"></p>
+          <p class="wallet_totalamount_totalamount wallet_text MetaMask" id="wallet_MetaMask_totalamount2"></p>
+          <p class="wallet_currency_currency wallet_text MetaMask" id="wallet_MetaMask_currency2">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text MetaMask" id="wallet_MetaMask_percentage2"></p>
+        </div>
+        <div class="wallet_object_container wallet_object_container3" id="wallet_MetaMask_object_container3">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color3" id="wallet_MetaMask_show_color3" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_MetaMask_category3"></p>
+          <p class="wallet_totalamount_totalamount wallet_text MetaMask" id="wallet_MetaMask_totalamount3"></p>
+          <p class="wallet_currency_currency wallet_text MetaMask" id="wallet_MetaMask_currency3">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text MetaMask" id="wallet_MetaMask_percentage3"></p>
+        </div>
+        <div class="wallet_object_container wallet_object_container4" id="wallet_MetaMask_object_container4">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color4" id="wallet_MetaMask_show_color4" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_MetaMask_category4"></p>
+          <p class="wallet_totalamount_totalamount wallet_text MetaMask" id="wallet_MetaMask_totalamount4"></p>
+          <p class="wallet_currency_currency wallet_text MetaMask" id="wallet_MetaMask_currency4">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text MetaMask" id="wallet_MetaMask_percentage4"></p>
+        </div>
+        <div class="wallet_object_container wallet_object_container5" id="wallet_MetaMask_object_container5">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color5" id="wallet_MetaMask_show_color5" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_MetaMask_category5"></p>
+          <p class="wallet_totalamount_totalamount wallet_text MetaMask" id="wallet_MetaMask_totalamount5"></p>
+          <p class="wallet_currency_currency wallet_text MetaMask" id="wallet_MetaMask_currency5">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text MetaMask" id="wallet_MetaMask_percentage5"></p>
+        </div>
+        <!-- MetaMask Chart -->
+        <!-------------------------- Risk -------------------------->
+       
+      </div>
+
+      <!---------------------------------------------Wallet WalletConnect------------------------------------>
+      <div class="wallet_page" id="wallet_WalletConnect">
+        <div class="wallet_back_container" onclick="turn_to_wallet_page()">
+          <div class="triangle_back"></div>
+          <p class="wallet_back_text">Back to overview</p>
+        </div>
+        <p class="wallet_title" id="wallet_WalletConnect_title" >WalletConnect</p>
+        <p class="wallet_whole_asset_dollor" id="wallet_WalletConnect_whole_asset_dollor"></p>
+        <div class="wallet_whole_asset_dollor_menu_btn" id="wallet_WalletConnect_whole_asset_dollor_menu_btn" onclick="pop_wallet_currency_menu(this.id)">
+          <p class="wallet_whole_asset_dollor_menu" id="wallet_WalletConnect_whole_asset_dollor_menu_text">NTD</p>
+          <div class="triangle_down wallet_whole_asset_triangle_down" id="wallet_WalletConnect_whole_asset_triangle_down"></div>
+        </div>
+        <div class="wallet_whole_asset_dollor_scrollable_dropdown_menu" id="wallet_WalletConnect_whole_asset_scrollable_dollor_menu">
+          <div class="wallet_whole_asset_dollor_dropdown_menu" id="wallet_WalletConnect_whole_asset_dollor_menu" >
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_WalletConnect_whole_asset_dollor_menu_NTD" onclick="close_wallet_whole_asset_currency_menu(this.id)">NTD</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_first"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_WalletConnect_whole_asset_dollor_menu_USD" onclick="close_wallet_whole_asset_currency_menu(this.id)">USD</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_second"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_WalletConnect_whole_asset_dollor_menu_JPY" onclick="close_wallet_whole_asset_currency_menu(this.id)">JPY</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_third"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_WalletConnect_whole_asset_dollor_menu_ETH" onclick="close_wallet_whole_asset_currency_menu(this.id)">ETH</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_second"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_WalletConnect_whole_asset_dollor_menu_RMB" onclick="close_wallet_whole_asset_currency_menu(this.id)">RMB</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_third"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_WalletConnect_whole_asset_dollor_menu_EUR" onclick="close_wallet_whole_asset_currency_menu(this.id)">EUR</div>
+          </div>
+        </div>
+      
+        <p class="wallet_show" id="wallet_overview_show">show</p>
+        <p class="wallet_category WalletConnect" id="wallet_overview_category">Category</p>
+        <p class="wallet_totalamount" id="wallet_overview_totalamount">Total amount</p>
+        <p class="wallet_currency" id="wallet_overview_currency">Currency</p>
+        <p class="wallet_percentage WalletConnect" id="wallet_overview_percentage">Percentage</p>
+        <div class="wallet_object_container wallet_object_container1" id="wallet_WalletConnect_object_container1">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color1" id="wallet_WalletConnect_show_color1" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_WalletConnect_category1"></p>
+          <p class="wallet_totalamount_totalamount wallet_text WalletConnect" id="wallet_WalletConnect_totalamount1"></p>
+          <p class="wallet_currency_currency wallet_text WalletConnect" id="wallet_WalletConnect_currency1">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text WalletConnect" id="wallet_WalletConnect_percentage1"></p>
+        </div>
+        <div class="wallet_object_container wallet_object_container2" id="wallet_WalletConnect_object_container2">
+          <div class="wallet_show_color_container">
+            <p class="wallet_show_color wallet_show_color2" id="wallet_WalletConnect_show_color2" onclick="show_wallet_object(this.id)"></p>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_WalletConnect_category2"></p>
+          <p class="wallet_totalamount_totalamount wallet_text WalletConnect" id="wallet_WalletConnect_totalamount2"></p>
+          <p class="wallet_currency_currency wallet_text WalletConnect" id="wallet_WalletConnect_currency2">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text WalletConnect" id="wallet_WalletConnect_percentage2"></p>
+        </div>
+        <div class="wallet_object_container wallet_object_container3" id="wallet_WalletConnect_object_container3">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color3" id="wallet_WalletConnect_show_color3" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_WalletConnect_category3"></p>
+          <p class="wallet_totalamount_totalamount wallet_text WalletConnect" id="wallet_WalletConnect_totalamount3"></p>
+          <p class="wallet_currency_currency wallet_text WalletConnect" id="wallet_WalletConnect_currency3">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text WalletConnect" id="wallet_WalletConnect_percentage3"></p>
+        </div>
+        <div class="wallet_object_container wallet_object_container4" id="wallet_WalletConnect_object_container4">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color4" id="wallet_WalletConnect_show_color4" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_WalletConnect_category4"></p>
+          <p class="wallet_totalamount_totalamount wallet_text WalletConnect" id="wallet_WalletConnect_totalamount4"></p>
+          <p class="wallet_currency_currency wallet_text WalletConnect" id="wallet_WalletConnect_currency4">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text WalletConnect" id="wallet_WalletConnect_percentage4"></p>
+        </div>
+        <div class="wallet_object_container wallet_object_container5" id="wallet_WalletConnect_object_container5">
+          <div class="wallet_show_color_container">
+            <div class="wallet_show_color wallet_show_color5" id="wallet_WalletConnect_show_color5" onclick="show_wallet_object(this.id)"></div>
+          </div>
+          <p class="wallet_category_category wallet_text" id="wallet_WalletConnect_category5"></p>
+          <p class="wallet_totalamount_totalamount wallet_text WalletConnect" id="wallet_WalletConnect_totalamount5"></p>
+          <p class="wallet_currency_currency wallet_text WalletConnect" id="wallet_WalletConnect_currency5">NTD</p>
+          <p class="wallet_percentage_percentage wallet_text WalletConnect" id="wallet_WalletConnect_percentage5"></p>
+        </div>
+        <!-- WalletConnect Chart -->
+        <!-------------------------- Risk -------------------------->
+       
+      </div>
+
+      <!---------------------------------------------Wallet NFT--------------------------------------------->
+      <div class="wallet_page" id="wallet_NFT">
+        <div class="wallet_back_container" onclick="turn_to_wallet_page()">
+          <div class="triangle_back"></div>
+          <p class="wallet_back_text">Back to overview</p>
+        </div>
+        <p class="wallet_title" id="wallet_NFT_title">NFT</p>
+        <p id="explore_NFT_btn" onclick="turn_to_NFT_Martket()">Explore more</p>
+        <p class="wallet_whole_asset_dollor" id="wallet_NFT_whole_asset_dollor"></p>
+        <div class="wallet_whole_asset_dollor_menu_btn" id="wallet_NFT_whole_asset_dollor_menu_btn" onclick="pop_wallet_currency_menu(this.id)">
+          <p class="wallet_whole_asset_dollor_menu" id="wallet_NFT_whole_asset_dollor_menu_text">NTD</p>
+          <div class="triangle_down wallet_whole_asset_triangle_down" id="wallet_NFT_whole_asset_triangle_down"></div>
+        </div>
+        <div class="wallet_whole_asset_dollor_scrollable_dropdown_menu" id="wallet_NFT_whole_asset_scrollable_dollor_menu">
+          <div class="wallet_whole_asset_dollor_dropdown_menu" id="wallet_NFT_whole_asset_dollor_menu" >
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_NFT_whole_asset_dollor_menu_NTD" onclick="close_wallet_whole_asset_currency_menu(this.id)">NTD</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_first"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_NFT_whole_asset_dollor_menu_USD" onclick="close_wallet_whole_asset_currency_menu(this.id)">USD</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_second"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_NFT_whole_asset_dollor_menu_JPY" onclick="close_wallet_whole_asset_currency_menu(this.id)">JPY</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_third"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_NFT_whole_asset_dollor_menu_ETH" onclick="close_wallet_whole_asset_currency_menu(this.id)">ETH</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_second"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_NFT_whole_asset_dollor_menu_RMB" onclick="close_wallet_whole_asset_currency_menu(this.id)">RMB</div>
+            <div class="wallet_menu_line" id="wallet_menu_line_third"></div>
+            <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_NFT_whole_asset_dollor_menu_EUR" onclick="close_wallet_whole_asset_currency_menu(this.id)">EUR</div>
+          </div>
+        </div>
+        <div id="wallet_NFT_filter_btn" onclick="pop_wallet_NFT_filer_table(this.id)">
+          <div id="wallet_NFT_filter_btn_strips_container">
+            <div class="wallet_NFT_filter_btn_strip_container">
+              <div id="wallet_NFT_filter_btn_strip1"></div>
+            </div>
+            <div class="wallet_NFT_filter_btn_strip_container">
+              <div id="wallet_NFT_filter_btn_strip2"></div>
+            </div>
+            <div class="wallet_NFT_filter_btn_strip_container">
+              <div id="wallet_NFT_filter_btn_strip3"></div>
+            </div>
+          </div>
+          <p id="wallet_NFT_filter_btn_text" >Filter</p>
+        </div>
+        <!--  filter-->
+        <div id="wallet_NFT_filter_table">
+          <div id="navbar_search_title_container">
+            <p id="wallet_NFT_filter_price_text">Price</p>
+            <div id="wallet_NFT_filter_dollor_menu_btn" onclick="pop_wallet_NFT_filter_currency_menu(this.id)">
+              <p id="wallet_NFT_filter_dollor_menu_text">USD</p>
+              <div class="triangle_down wallet_whole_asset_triangle_down" id="wallet_NFT_whole_asset_triangle_down"></div>
+            </div>
+            <div class="wallet_filter_dollor_scrollable_dropdown_menu" id="wallet_NFT_filter_scrollable_dollor_menu">
+              <div class="wallet_whole_asset_dollor_dropdown_menu" id="wallet_NFT_whole_asset_dollor_menu" >
+                <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_NFT_filter_dollor_menu_NTD" onclick="close_wallet_whole_asset_currency_menu(this.id)">NTD</div>
+                <div class="wallet_menu_line" id="wallet_menu_line_first"></div>
+                <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_NFT_filter_dollor_menu_USD" onclick="close_wallet_whole_asset_currency_menu(this.id)">USD</div>
+                <div class="wallet_menu_line" id="wallet_menu_line_second"></div>
+                <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_NFT_filter_dollor_menu_JPY" onclick="close_wallet_whole_asset_currency_menu(this.id)">JPY</div>
+                <div class="wallet_menu_line" id="wallet_menu_line_third"></div>
+                <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_NFT_filter_dollor_menu_ETH" onclick="close_wallet_whole_asset_currency_menu(this.id)">ETH</div>
+                <div class="wallet_menu_line" id="wallet_menu_line_second"></div>
+                <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_NFT_filter_dollor_menu_RMB" onclick="close_wallet_whole_asset_currency_menu(this.id)">RMB</div>
+                <div class="wallet_menu_line" id="wallet_menu_line_third"></div>
+                <div class="wallet_overview_whole_asset_dollor_menu_currency" id="wallet_NFT_filter_dollor_menu_EUR" onclick="close_wallet_whole_asset_currency_menu(this.id)">EUR</div>
+              </div>
+            </div>
+              
+            </form>
+            <p id="wallet_NFT_filter_min_text">Min</p>
+            <div id="wallet_NFT_filter_min_typebox_container">
+              <input class="typebox" id="wallet_NFT_filter_min_typebox" placeholder="Min" style="font-size: 1.8vh;">
+            </div>
+            <p id="wallet_NFT_filter_to_text">to</p>
+            <p id="wallet_NFT_filter_max_text">Max</p>
+            <div id="wallet_NFT_filter_max_typebox_container">
+              <input class="typebox" id="wallet_NFT_filter_max_typebox" placeholder="Max">
+            </div>
+            
+          </div>
+          <div id="navbar_search_table_line"></div>
+          <div id="navbar_search_category_align_container">
+            <div id="navbar_search_category_container">
+              <p class="navbar_search_category filter_category_all" id="wallet_NFT_filter_category_all" onclick="change_search_category_bgcolor(this.id)">All</p>
+              <p class="navbar_search_category filter_category_art" id="wallet_NFT_filter_category_art" onclick="change_search_category_bgcolor(this.id)">Art</p>
+              <p class="navbar_search_category filter_category_celebrities" id="wallet_NFT_filter_category_celebrities" onclick="change_search_category_bgcolor(this.id)">Celebrities</p>
+              <p class="navbar_search_category filter_category_domainnames" id="wallet_NFT_filter_category_domainnames" onclick="change_search_category_bgcolor(this.id)">Domain Names</p>
+              <p class="navbar_search_category filter_category_music" id="wallet_NFT_filter_category_music" onclick="change_search_category_bgcolor(this.id)">Music</p>
+              <p class="navbar_search_category filter_category_photography" id="wallet_NFT_filter_category_photography" onclick="change_search_category_bgcolor(this.id)">Photography</p>
+              <p class="navbar_search_category filter_category_sports" id="wallet_NFT_filter_category_sports" onclick="change_search_category_bgcolor(this.id)">Sports</p>
+              <p class="navbar_search_category filter_category_tradingcards" id="wallet_NFT_filter_category_tradingcards" onclick="change_search_category_bgcolor(this.id)">Trading cards</p>
+              <p class="navbar_search_category filter_category_utility" id="wallet_NFT_filter_category_utility" onclick="change_search_category_bgcolor(this.id)">Utility</p>
+              <p class="navbar_search_category filter_category_virtualworld" id="wallet_NFT_filter_category_virtualworld" onclick="change_search_category_bgcolor(this.id)">Virtual World</p>
+              <p class="navbar_search_category filter_category_collectibles" id="wallet_NFT_filter_category_collectibles" onclick="change_search_category_bgcolor(this.id)">Collectibles</p>
+              <p class="navbar_search_category filter_category_gaming" id="wallet_NFT_filter_category_gaming" onclick="change_search_category_bgcolor(this.id)">Gaming</p>
+            </div>
+          </div>
+          <div id="navbar_search_confirm_container">
+            <div id="navbar_search_confirm_btn_container">
+              <div class="navbar_search_confirm_btn" id="wallet_NFT_filter_confirm_btn" onclick="close_wallet_NFT_filer_table(this.id)">Apply</div>
+            </div>
+          </div>
+        </div>
+        <!--filter end-->
+        <p id="wallet_NFT_all_btn">All</p>
+        <div class="wallet_NFT_direction_btn" id="wallet_NFT_left_btn" onclick="slide_NFTs(this.id)">
+          <div id="wallet_NFT_left_btn_direction"></div>
+        </div>
+        <div id="wallet_NFT_NFTs_mask_container">
+          <div id="wallet_NFT_NFTs_container">
+            <div class="wallet_NFT_NFTs" id="wallet_NFT_NFT1">
+              <div class="wallet_NFT_NFTs_img_container" id="wallet_NFT_NFTs_img_container1"></div>
+              <p class="wallet_NFT_percentage" id="wallet_NFT_percentage1"></p>
+              <div class="wallet_NFT_NFTs_info_container">
+                <div class="wallet_NFT_NFTs_info_self_container">
+                  <p class="wallet_NFT_NFTs_info_subname" >Crazy bird</p>
+                  <p class="wallet_NFT_NFTs_info_name">Crazy bird #5487</p>
+                  <p class="wallet_NFT_NFTs_info_source">MetaMask</p>
+                </div>
+                <p class="wallet_NFT_NFTs_info_value" id="wallet_NFT_NFTs_info_value1"></p>
+                <p class="wallet_NFT_NFTs_info_currency" id="wallet_NFT_NFTs_info_currency1">NTD</p>
+              </div>
+            </div>
+            <div class="wallet_NFT_NFTs" id="wallet_NFT_NFT2">
+              <div class="wallet_NFT_NFTs_img_container" id="wallet_NFT_NFTs_img_container2"></div>
+              <p class="wallet_NFT_percentage" id="wallet_NFT_percentage2"></p>
+              <div class="wallet_NFT_NFTs_info_container">
+                <div class="wallet_NFT_NFTs_info_self_container">
+                  <p class="wallet_NFT_NFTs_info_subname" >Japanese Illustration</p>
+                  <p class="wallet_NFT_NFTs_info_name">Japanese Illustra_</p>
+                  <p class="wallet_NFT_NFTs_info_source">WalletConnect</p>
+                </div>
+                <p class="wallet_NFT_NFTs_info_value" id="wallet_NFT_NFTs_info_value2"></p>
+                <p class="wallet_NFT_NFTs_info_currency" id="wallet_NFT_NFTs_info_currency2">NTD</p>
+              </div>
+            </div>
+            <div class="wallet_NFT_NFTs" id="wallet_NFT_NFT3">
+              <div class="wallet_NFT_NFTs_img_container" id="wallet_NFT_NFTs_img_container3"></div>
+              <p class="wallet_NFT_percentage" id="wallet_NFT_percentage3"></p>
+              <div class="wallet_NFT_NFTs_info_container">
+                <div class="wallet_NFT_NFTs_info_self_container">
+                  <p class="wallet_NFT_NFTs_info_subname" >Crazy tiger</p>
+                  <p class="wallet_NFT_NFTs_info_name">Crazy tiger #6771</p>
+                  <p class="wallet_NFT_NFTs_info_source">MetaMask</p>
+                </div>
+                <p class="wallet_NFT_NFTs_info_value" id="wallet_NFT_NFTs_info_value3"></p>
+                <p class="wallet_NFT_NFTs_info_currency" id="wallet_NFT_NFTs_info_currency3">USD</p>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        <div class="wallet_NFT_direction_btn" id="wallet_NFT_right_btn" onclick="slide_NFTs(this.id)">
+          <div id="wallet_NFT_right_btn_direction"></div>
+        </div>
+        <!-- NFT Chart -->
+        <!-------------------------- Risk -------------------------->
+        <div class="risk_area" id="Risk_NFT">
+          <h2 class="risk-index" style="color: #C86B86;">Risk Index</h2>
+          <img src="./Img/Group 363.png" id="tooltipex" data-toggle="tooltip" data-placement="top" class="red-tooltip" title="Watch out! Got to pay attension!"/>
+          <h3 class="risk-num" style="color: #C86B86;">65</h3>
+        </div>
+        <!-------------------------- Chart -------------------------->
+        <div id="chart_NFT" preserveAspectRatio="xMinYMin meet" viewBox="0 0 200 200"></div>
+      </div>
+    </div>
+   <!---------------------------------------------NFT Market--------------------------------------------->
+   <div id="NFT_Market">
+    <div class="navbar" id="NFT_Market_navbar">
+      <div class="navbar_logo">
+        <div class="navbar_logo_img_container">
+          <img class="navbar_logo_img" src="./Img/logo.png">
+        </div>
+        <img class="navbar_logo_text"  id="navbar_NFT_Market_logo_text" src="./Img/logo_text.png" onclick="turn_to_wallet_NFT_page()">
+      </div>
+      <div id="navbar_nonlogo">
+        <div id="navbar_search">
+          <div id="navbar_search_container">
+            <div id="navbar_search_circle_container">
+              <div id="navbar_search_circle"></div>
+            </div>
+            <div id="navbar_search_text_container" onclick="pop_search_table(this.id)">
+              <div id="navbar_search_text">Search</div>
+            </div>
+          </div>
+          <div id="navbar_search_table">
+            <div id="navbar_search_title_container">
+              <form action="#" id="navbar_search_floorprice_container">
+                <div id="navbar_search_floorprice_text_container">
+                  <label id="navbar_search_floorprice_text" for="floor_price_dropdownmenu">Floor price</label>
+                </div>
+                <div id="navbar_search_floorprice_dropdownmenu_container">
+                  <select class="dropdownmenu" id="floor_price_dropdownmenu">
+                    <option selected="selected" disabled="disabled"  style='display: none' value=''></option>
+                    <option value="0.01">0~1</option>
+                    <option value="0.1">1~3</option>
+                    <option value="1">3~5</option>
+                    <option value="1">5~10</option>
+                    <option value="1">10+</option>
+                  </select>
+                </div>
+              </form>
+              <form action="#" id="navbar_search_time_container">
+                <div id="navbar_search_time_text_container">
+                  <label id="navbar_search_time_text" for="time_dropdownmenu">Time</label>
+                </div>
+                <div id="navbar_search_time_dropdownmenu_container">
+                  <select class="dropdownmenu" id="time_dropdownmenu">
+                    <option selected="selected" disabled="disabled"  style='display: none' value=''></option>
+                    <option value="1">Today</option>
+                    <option value="7">Last 24 hours</option>
+                    <option value="30">Last 7 days</option>
+                    <option value="30">Last 14 days</option>
+                    <option value="30">Last 30 days</option>
+                    <option value="30">Last 60 days</option>
+                    <option value="30">Last 90 days</option>
+                    <option value="30">Last year</option>
+                    <option value="30">All times</option>
+                  </select>
+                </div>
+              </form>
+            </div>
+            <div id="navbar_search_table_line"></div>
+            <div id="navbar_search_category_align_container">
+              <div id="navbar_search_category_container">
+                <p class="navbar_search_category filter_category_all" id="navbar_search_category_all" onclick="change_search_category_bgcolor(this.id)">All</p>
+                <p class="navbar_search_category filter_category_art" id="navbar_search_category_art" onclick="change_search_category_bgcolor(this.id)">Art</p>
+                <p class="navbar_search_category filter_category_celebrities" id="navbar_search_category_celebrities" onclick="change_search_category_bgcolor(this.id)">Celebrities</p>
+                <p class="navbar_search_category filter_category_domainnames" id="navbar_search_category_domainnames" onclick="change_search_category_bgcolor(this.id)">Domain Names</p>
+                <p class="navbar_search_category filter_category_music" id="navbar_search_category_music" onclick="change_search_category_bgcolor(this.id)">Music</p>
+                <p class="navbar_search_category filter_category_photography" id="navbar_search_category_photography" onclick="change_search_category_bgcolor(this.id)">Photography</p>
+                <p class="navbar_search_category filter_category_sports" id="navbar_search_category_sports" onclick="change_search_category_bgcolor(this.id)">Sports</p>
+                <p class="navbar_search_category filter_category_tradingcards" id="navbar_search_category_tradingcards" onclick="change_search_category_bgcolor(this.id)">Trading cards</p>
+                <p class="navbar_search_category filter_category_utility" id="navbar_search_category_utility" onclick="change_search_category_bgcolor(this.id)">Utility</p>
+                <p class="navbar_search_category filter_category_virtualworld" id="navbar_search_category_virtualworld" onclick="change_search_category_bgcolor(this.id)">Virtual World</p>
+                <p class="navbar_search_category filter_category_collectibles" id="navbar_search_category_collectibles" onclick="change_search_category_bgcolor(this.id)">Collectibles</p>
+                <p class="navbar_search_category filter_category_gaming" id="navbar_search_category_gaming" onclick="change_search_category_bgcolor(this.id)">Gaming</p>
+              </div>
+            </div>
+            <div id="navbar_search_confirm_container">
+              <div id="navbar_search_confirm_btn_container">
+                <div class="navbar_search_confirm_btn"id="navbar_search_confirm_btn" onclick="close_search_table(this.id)">Confirm</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="navbar_function_container">
+          <p class="navbar_function" id="navbar_function_marketplace">Marketpalce</p>
+          <p class="navbar_function" id="navbar_function_drops">Drops</p>
+          <div class="navbar_function3_container" id="NFT_navbar_function3_container" onmouseover="change_NFT_Market_brands_hover_color(this.id)" onmouseout="change_back_NFT_Market_brands_hover_color(this.id)">
+            <p class="navbar_function" id="navbar_function_brands">Brands</p>
+            <div class="navbar_function_triangle_container">
+              <div class="triangle_down navbar_triangle_down" id="NFT_Market_navbar_triangle_down"></div>
+            </div> 
+          </div> 
+        </div>
+        <div class="navbar_vertical_rec" id="NFT__navbar_vertical_rec"></div>
+        <div id="wallet_navbar_head_contianer">
+          <div id="wallet_navbar_head"></div>
+        </div>
+        <div id="wallet_username_container" onmouseover="change_NFT_Market_username_hover_color(this.id)" onmouseout="change_back_NFT_Market_username_hover_color(this.id)">
+          <p class="navbar_username" id="NFT_Market_navbar_username">Username</p>
+          <div class="navbar_function_triangle_container" id="wallet_navbar_username_triangle_container">
+            <div class="triangle_down navbar_triangle_down" id="NFT_Market_navbar_username_triangle_down"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--
+    <div class="landing_page" id="landing_page_01">
+      <h1 class="title" id="landing_page_01_title">Title or something about our product</h1>
+      <p class="subtitle" id="landing_page_01_subtitle">Subtitle or something about our product</p>
+      <div id="collectibles_view_container">
+        <div id="collectibles_view">
+          <div id="collectibles_view_circle_left"></div>
+          <p id="collectibles_view_upcoming">Upcoming</p>
+          <p id="collectibles_view_date">Mon, April 18</p>
+          <p id="collectibles_view_collectibles">Collectibles</p>
+          <p id="collectibles_view_info">Something about collectibles</p>
+          <div id="collectibles_view_more_container">
+            <div id="collectibles_view_more">View More</div>
+          </div>
+          <div id="collectibles_view_selections_bar_container">
+            <div id="collectibles_view_selections_bar">
+              <div class="selections_rec" id="collectibles_view_selections_rec_1"></div>
+              <div class="selections_rec" id="collectibles_view_selections_rec_2"></div>
+              <div class="selections_rec" id="collectibles_view_selections_rec_3"></div>
+              <div class="selections_rec" id="collectibles_view_selections_rec_4"></div>
+            </div>
+          </div>
+          <div id="collectibles_view_circle_right"></div>
+        </div>
+      </div>
+    </div>
+    <div class="landing_page" id="landing_page_02">
+      <div id="landing_page_02_blue">
+        <p class="title" id="landing_page_02_title">Title or something about our product</p>
+        <p class="subtitle" id="landing_page_02_subtitle">Subtitle or something about our product</p>
+        <div id="landing_page_02_subscribe_bar_container">
+          <div id="landing_page_02_subscribe_bar">
+            <div id="landing_page_02_subscribe_email"></div>
+            <div id="landing_page_02_subscribe_btn">
+              <p id="landing_page_02_subscribe_subscribe">Subscribe</p>
+            </div>
+          </div>
+        </div>
+        <div id="landing_page_02_info_align_container">
+          <div id="landing_page_02_info_container">
+            <p class="landing_page_02_info">After reading the Privacy Notice, you may subscribe for our newsletter to get special</p>
+            <p class="landing_page_02_info">offers and occasional surveys delivered to your inbox. Unsubscribe at any time by</p>
+            <p class="landing_page_02_info">on the link in the email.</p>
+          </div>
+        </div>
+        <div id="landing_page_02_agree_align_container">
+          <p id="landing_page_02_agree_container">
+            <input type="checkbox" id="landing_page_02_checkbox" value="subscribe_agreement">
+            <label for="landing_page_02_checkbox" id="landing_page_02_agreement">By entering my email and subscribing I confirm and agree to the above.</label>
+          </p>
+        </div>
+      </div>
+    </div>
+    -->
+    <div class="landing_page" id="landing_page_03">
+      <div id="top_creators_view_top_selling_container">
+        <div id="top_creators_view_top_selling">Top Selling</div>
+      </div>
+      <p id="landing_page_03_top_creators_title">Top Creators</p>
+      <div id="top_creators_view_circle_left" onclick="top_creators_top_selling_left_btn_clicked(this.id)">
+        <div id="top_creators_left_btn_direction"></div>
+      </div>
+      <div id="top_creators_view_circle_right" onclick="top_creators_top_selling_right_btn_clicked(this.id)">
+        <div id="top_creators_right_btn_direction"></div>
+      </div>
+      <div id="top_creators_view_profile_align_container_container">
+        <div id="top_creators_view_profile_align_container">
+          <div class="top_creators_view_profile_container" id="top_creators_view_profile_container_1">
+            <div class="top_creators_view_profile_photo" id="top_creators_view_profile_photo_1" ></div>
+            <p class="top_creators_view_profile_name" id="top_creators_view_profile_creator_1">Super Magic 2</p>
+            <div class="top_creators_view_profile_value_container" id="top_creators_view_profile_value_container_1">
+              <div class="top_creators_view_profile_num_container" id="top_creators_view_profile_num_1">
+                <p class="top_creators_view_profile_num">1</p>
+              </div>
+              <p class="top_creators_view_profile_dollor">＄1,000,000 +</p>
+            </div>
+          </div>
+          <div class="top_creators_view_profile_container" id="top_creators_view_profile_container_2">
+            <div class="top_creators_view_profile_photo" id="top_creators_view_profile_photo_2"></div>
+            <p class="top_creators_view_profile_name" id="top_creators_view_profile_creator_2">Crazy Daruma</p>
+            <div class="top_creators_view_profile_value_container" id="top_creators_view_profile_value_container_2">
+              <div class="top_creators_view_profile_num_container" id="top_creators_view_profile_num_2">
+                <p class="top_creators_view_profile_num">2</p>
+              </div>
+              <p class="top_creators_view_profile_dollor">＄1,000,000 +</p>
+            </div>
+          </div>
+          <div class="top_creators_view_profile_container" id="top_creators_view_profile_container_3">
+            <div class="top_creators_view_profile_photo" id="top_creators_view_profile_photo_3"></div>
+            <p class="top_creators_view_profile_name" id="top_creators_view_profile_creator_3">Atlantis</p>
+            <div class="top_creators_view_profile_value_container" id="top_creators_view_profile_value_container_3">
+              <div class="top_creators_view_profile_num_container" id="top_creators_view_profile_num_3">
+                <p class="top_creators_view_profile_num">3</p>
+              </div>
+              <p class="top_creators_view_profile_dollor">＄1,000,000 +</p>
+            </div>
+          </div>
+          <div class="top_creators_view_profile_container" id="top_creators_view_profile_container_4">
+            <div class="top_creators_view_profile_photo" id="top_creators_view_profile_photo_4"></div>
+            <p class="top_creators_view_profile_name" id="top_creators_view_profile_creator_4">Special Art</p>
+            <div class="top_creators_view_profile_value_container" id="top_creators_view_profile_value_container_4">
+              <div class="top_creators_view_profile_num_container" id="top_creators_view_profile_num_4">
+                <p class="top_creators_view_profile_num">4</p>
+              </div>
+              <p class="top_creators_view_profile_dollor">＄1,000,000 +</p>
+            </div>
+          </div>
+          <div class="top_creators_view_profile_container" id="top_creators_view_profile_container_5">
+            <div class="top_creators_view_profile_photo" id="top_creators_view_profile_photo_5"></div>
+            <p class="top_creators_view_profile_name" id="top_creators_view_profile_creator_5">Creator</p>
+            <div class="top_creators_view_profile_value_container" id="top_creators_view_profile_value_container_5">
+              <div class="top_creators_view_profile_num_container" id="top_creators_view_profile_num_5">
+                <p class="top_creators_view_profile_num">5</p>
+              </div>
+              <p class="top_creators_view_profile_dollor">＄1,000,000 +</p>
+            </div>
+          </div>
+          <div class="top_creators_view_profile_container" id="top_creators_view_profile_container_6">
+            <div class="top_creators_view_profile_photo" id="top_creators_view_profile_photo_6"></div>
+            <p class="top_creators_view_profile_name" id="top_creators_view_profile_creator_6">Kanaheiheihei</p>
+            <div class="top_creators_view_profile_value_container" id="top_creators_view_profile_value_container_6">
+              <div class="top_creators_view_profile_num_container" id="top_creators_view_profile_num_6">
+                <p class="top_creators_view_profile_num">6</p>
+              </div>
+              <p class="top_creators_view_profile_dollor">＄1,000,000 +</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Start -->
+    <div class="landing_page" id="landing_page_04">
+      <p id="landing_page_04_top_collections_title" style="margin-bottom: 100px;">Top Collections</p>
+      <div class="top_collect04_top_container">
+        <div>
+          <span>Sort By</span>
+          <select>
+            <option selected="selected">Sales Volume</option>
+            <option>XXX</option>
+          </select>
+        </div>
+        <div>
+          <button>Today</button>
+          <button>Last 7 Days</button>
+          <button>Last 30 Days</button>
+        </div>
+      </div>
+      <div class="p04_round_card_container">
+        <div class="round_card">
+          <span>1</span>
+          <img src="./Img/marketplace/Ellipse 23.png" alt="" />
+          <div class="paragraph" style="width: 350px">
+            <img
+              src="./Img/marketplace/I’m a SHIBA INU.png"
+              alt=""
+              style="width: 241px;height: 24px;"
+            />
+            <div class="paragraph_1">
+              <img src="./Img/marketplace/Volume-2.png" alt="" />
+              <img src="./Img/marketplace/＄666-7.png" alt="" />
+              <div class="mark">
+                <img src="./Img/marketplace/+66.66%-1.png" alt="" />
+              </div>
+            </div>
+            <div class="paragraph_2">
+              <img src="./Img/marketplace/Volume-3.png" alt="" />
+              <img src="./Img/marketplace/＄666.6K-4.png" alt="" />
+              <img src="./Img/marketplace/+66.66_-8.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="round_card">
+          <span>6</span>
+          <img src="./Img/marketplace/Ellipse 22.png" alt="" />
+          <div class="paragraph" style="width: 350px">
+            <img
+              src="./Img/marketplace/Psychokitties_ The Rid...-5.png"
+              alt=""
+              style="width: 235px"
+            />
+            <div class="paragraph_1">
+              <img src="./Img/marketplace/Volume-2.png" alt="" />
+              <img src="./Img/marketplace/＄666-7.png" alt="" />
+              <div class="mark"><img src="./Img/marketplace/+66.66%-1.png" alt="" /></div>
+            </div>
+            <div class="paragraph_2">
+              <img src="./Img/marketplace/Volume-3.png" alt="" />
+              <img src="./Img/marketplace/＄666.6K-4.png" alt="" />
+              <img src="./Img/marketplace/-66.66_-3.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="round_card">
+          <span>11</span>
+          <img src="./Img/marketplace/Ellipse 21.png" alt="" />
+          <div class="paragraph" style="width: 350px">
+            <img
+              src="./Img/marketplace/Psychokitties_ The Rid...-5.png"
+              alt=""
+              style="width: 235px"
+            />
+            <div class="paragraph_1">
+              <img src="./Img/marketplace/Volume-2.png" alt="" />
+              <img src="./Img/marketplace/＄666-7.png" alt="" />
+              <div class="mark"><img src="./Img/marketplace/+66.66%-1.png" alt="" /></div>
+            </div>
+            <div class="paragraph_2">
+              <img src="./Img/marketplace/Volume-3.png" alt="" />
+              <img src="./Img/marketplace/＄666.6K-4.png" alt="" />
+              <img src="./Img/marketplace/+66.66_-8.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="round_card">
+          <span>2</span>
+          <img src="./Img/marketplace/Ellipse 23-1.png" alt="" />
+          <div class="paragraph" style="width: 350px">
+           <img
+              src="./Img/marketplace/Psychokitties_ The Rid...-5.png"
+              alt=""
+              style="width: 235px"
+            />
+            <div class="paragraph_1">
+              <img src="./Img/marketplace/Volume-2.png" alt="" />
+              <img src="./Img/marketplace/＄666-7.png" alt="" />
+              <div class="mark"><img src="./Img/marketplace/+66.66%-1.png" alt="" /></div>
+            </div>
+            <div class="paragraph_2">
+              <img src="./Img/marketplace/Volume-3.png" alt="" />
+              <img src="./Img/marketplace/＄666.6K-4.png" alt="" />
+              <img src="./Img/marketplace/-66.66_-3.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="round_card">
+          <span>7</span>
+          <img src="./Img/marketplace/Ellipse 22-1.png" alt="" />
+          <div class="paragraph" style="width: 350px">
+            <img
+              src="./Img/marketplace/Psychokitties_ The Rid...-5.png"
+              alt=""
+              style="width: 235px"
+            />
+            <div class="paragraph_1">
+              <img src="./Img/marketplace/Volume-2.png" alt="" />
+              <img src="./Img/marketplace/＄666-7.png" alt="" />
+              <div class="mark"><img src="./Img/marketplace/+66.66%-1.png" alt="" /></div>
+            </div>
+            <div class="paragraph_2">
+              <img src="./Img/marketplace/Volume-3.png" alt="" />
+              <img src="./Img/marketplace/＄666.6K-4.png" alt="" />
+              <img src="./Img/marketplace/+66.66_-8.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <!-- 6 -->
+        <div class="round_card">
+          <span>12</span>
+          <img src="./Img/marketplace/Ellipse 21-1.png" alt="" />
+          <div class="paragraph" style="width: 350px">
+            <img
+              src="./Img/marketplace/Psychokitties_ The Rid...-5.png"
+              alt=""
+              style="width: 235px"
+            />
+            <div class="paragraph_1">
+              <img src="./Img/marketplace/Volume-2.png" alt="" />
+              <img src="./Img/marketplace/＄666-7.png" alt="" />
+              <div class="mark"><img src="./Img/marketplace/+66.66%-1.png" alt="" /></div>
+            </div>
+            <div class="paragraph_2">
+              <img src="./Img/marketplace/Volume-3.png" alt="" />
+              <img src="./Img/marketplace/＄666.6K-4.png" alt="" />
+              <img src="./Img/marketplace/-66.66_-3.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="round_card">
+          <span>3</span>
+          <img src="./Img/marketplace/Ellipse 23-2.png" alt="" />
+          <div class="paragraph" style="width: 350px">
+            <img
+              src="./Img/marketplace/Psychokitties_ The Rid...-5.png"
+              alt=""
+              style="width: 235px"
+            />
+            <div class="paragraph_1">
+              <img src="./Img/marketplace/Volume-2.png" alt="" />
+              <img src="./Img/marketplace/＄666-7.png" alt="" />
+              <div class="mark"><img src="./Img/marketplace/+66.66%-1.png" alt="" /></div>
+            </div>
+            <div class="paragraph_2">
+              <img src="./Img/marketplace/Volume-3.png" alt="" />
+              <img src="./Img/marketplace/＄666.6K-4.png" alt="" />
+              <img src="./Img/marketplace/+66.66_-8.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="round_card">
+          <span>8</span>
+          <img src="./Img/marketplace/Ellipse 22-2.png" alt="" />
+          <div class="paragraph" style="width: 350px">
+            <img
+              src="./Img/marketplace/Psychokitties_ The Rid...-5.png"
+              alt=""
+              style="width: 235px"
+            />
+            <div class="paragraph_1">
+              <img src="./Img/marketplace/Volume-2.png" alt="" />
+              <img src="./Img/marketplace/＄666-7.png" alt="" />
+              <div class="mark"><img src="./Img/marketplace/+66.66%-1.png" alt="" /></div>
+            </div>
+            <div class="paragraph_2">
+              <img src="./Img/marketplace/Volume-3.png" alt="" />
+              <img src="./Img/marketplace/＄666.6K-4.png" alt="" />
+              <img src="./Img/marketplace/-66.66_-3.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="round_card">
+          <span>13</span>
+          <img src="./Img/marketplace/Ellipse 21-2.png" alt="" />
+          <div class="paragraph" style="width: 350px">
+            <img
+              src="./Img/marketplace/Psychokitties_ The Rid...-5.png"
+              alt=""
+              style="width: 235px"
+            />
+            <div class="paragraph_1">
+              <img src="./Img/marketplace/Volume-2.png" alt="" />
+              <img src="./Img/marketplace/＄666-7.png" alt="" />
+              <div class="mark"><img src="./Img/marketplace/+66.66%-1.png" alt="" /></div>
+            </div>
+            <div class="paragraph_2">
+              <img src="./Img/marketplace/Volume-3.png" alt="" />
+              <img src="./Img/marketplace/＄666.6K-4.png" alt="" />
+              <img src="./Img/marketplace/+66.66_-8.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="round_card">
+          <span>4</span>
+          <img src="./Img/marketplace/Ellipse 23-3.png" alt="" />
+          <div class="paragraph" style="width: 350px">
+            <img
+              src="./Img/marketplace/Psychokitties_ The Rid...-5.png"
+              alt=""
+              style="width: 235px"
+            />
+            <div class="paragraph_1">
+              <img src="./Img/marketplace/Volume-2.png" alt="" />
+              <img src="./Img/marketplace/＄666-7.png" alt="" />
+              <div class="mark"><img src="./Img/marketplace/+66.66%-1.png" alt="" /></div>
+            </div>
+            <div class="paragraph_2">
+              <img src="./Img/marketplace/Volume-3.png" alt="" />
+              <img src="./Img/marketplace/＄666.6K-4.png" alt="" />
+              <img src="./Img/marketplace/-66.66_-3.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <!-- 11 -->
+        <div class="round_card">
+          <span>9</span>
+          <img src="./Img/marketplace/Ellipse 22-3.png" alt="" />
+          <div class="paragraph" style="width: 350px">
+            <img
+              src="./Img/marketplace/Psychokitties_ The Rid...-5.png"
+              alt=""
+              style="width: 235px"
+            />
+            <div class="paragraph_1">
+              <img src="./Img/marketplace/Volume-2.png" alt="" />
+              <img src="./Img/marketplace/＄666-7.png" alt="" />
+              <div class="mark"><img src="./Img/marketplace/+66.66%-1.png" alt="" /></div>
+            </div>
+            <div class="paragraph_2">
+              <img src="./Img/marketplace/Volume-3.png" alt="" />
+              <img src="./Img/marketplace/＄666.6K-4.png" alt="" />
+              <img src="./Img/marketplace/+66.66_-8.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="round_card">
+          <span>14</span>
+          <img src="./Img/marketplace/Ellipse 21-3.png" alt="" />
+          <div class="paragraph" style="width: 350px">
+            <img
+              src="./Img/marketplace/Psychokitties_ The Rid...-5.png"
+              alt=""
+              style="width: 235px"
+            />
+            <div class="paragraph_1">
+              <img src="./Img/marketplace/Volume-2.png" alt="" />
+              <img src="./Img/marketplace/＄666-7.png" alt="" />
+              <div class="mark"><img src="./Img/marketplace/+66.66%-1.png" alt="" /></div>
+            </div>
+            <div class="paragraph_2">
+              <img src="./Img/marketplace/Volume-3.png" alt="" />
+              <img src="./Img/marketplace/＄666.6K-4.png" alt="" />
+              <img src="./Img/marketplace/-66.66_-3.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="round_card">
+          <span>5</span>
+          <img src="./Img/marketplace/Ellipse 23-4.png" alt="" />
+          <div class="paragraph" style="width: 350px">
+            <img
+              src="./Img/marketplace/Psychokitties_ The Rid...-5.png"
+              alt=""
+              style="width: 235px"
+            />
+            <div class="paragraph_1">
+              <img src="./Img/marketplace/Volume-2.png" alt="" />
+              <img src="./Img/marketplace/＄666-7.png" alt="" />
+              <div class="mark"><img src="./Img/marketplace/+66.66%-1.png" alt="" /></div>
+            </div>
+            <div class="paragraph_2">
+              <img src="./Img/marketplace/Volume-3.png" alt="" />
+              <img src="./Img/marketplace/＄666.6K-4.png" alt="" />
+              <img src="./Img/marketplace/+66.66_-8.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="round_card">
+          <span>10</span>
+          <img src="./Img/marketplace/Ellipse 22-4.png" alt="" />
+          <div class="paragraph" style="width: 350px">
+            <img
+              src="./Img/marketplace/Psychokitties_ The Rid...-5.png"
+              alt=""
+              style="width: 235px"
+            />
+            <div class="paragraph_1">
+              <img src="./Img/marketplace/Volume-2.png" alt="" />
+              <img src="./Img/marketplace/＄666-7.png" alt="" />
+              <div class="mark"><img src="./Img/marketplace/+66.66%-1.png" alt="" /></div>
+            </div>
+            <div class="paragraph_2">
+              <img src="./Img/marketplace/Volume-3.png" alt="" />
+              <img src="./Img/marketplace/＄666.6K-4.png" alt="" />
+              <img src="./Img/marketplace/-66.66_-3.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="round_card">
+          <span>15</span>
+          <img src="./Img/marketplace/Ellipse 21-4.png" alt="" />
+          <div class="paragraph" style="width: 350px">
+            <img
+              src="./Img/marketplace/Psychokitties_ The Rid...-5.png"
+              alt=""
+              style="width: 235px"
+            />
+            <div class="paragraph_1">
+              <img src="./Img/marketplace/Volume-2.png" alt="" />
+              <img src="./Img/marketplace/＄666-7.png" alt="" />
+              <div class="mark"><img src="./Img/marketplace/+66.66%-1.png" alt="" /></div>
+            </div>
+            <div class="paragraph_2">
+              <img src="./Img/marketplace/Volume-3.png" alt="" />
+              <img src="./Img/marketplace/＄666.6K-4.png" alt="" />
+              <img src="./Img/marketplace/+66.66_-8.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="landing_page_collectibles" id="landing_page_05">
+      <p id="landing_page_05_top_collections_title" style="padding-top: 100px;">Top Collectibles</p>
+      <div class="top_collect_05_top_container">
+        <div>
+          <span>Sort By</span>
+          <select>
+            <option selected="selected">Sales Volume</option>
+            <option>XXX</option>
+          </select>
+        </div>
+        <div>
+          <button>Today</button>
+          <button>Last 7 Days</button>
+          <button>Last 30 Days</button>
+        </div>
+      </div>
+      <div id="p05_card_container">
+        <div class="square_card">
+          <div id='image1' class='image'></div>
+          <div class="text">
+            <img
+              src="./Img/marketplace/Im a f__king cute SHIBA INU5487.png"
+              alt=""
+            />
+            <div class="price">
+              <img
+                style="width: 97px; height: 12px"
+                src="./Img/marketplace/FLOOR PRICE.png"
+                alt=""
+              />
+              <div class="row">
+                <div class="vertical">
+                  <img class="price_title" src="./Img/marketplace/AUCTION-1.png" alt="" />
+                  <img src="./Img/marketplace/30.png" alt="" />
+                </div>
+                <div class="vertical">
+                  <img class="price_title"  src="./Img/marketplace/BUY NOW-1.png" alt="" />
+                  <img src="./Img/marketplace/40.png" alt="" />
+                </div>
+              </div>
+              <img class="defi"
+                style="width: 87px; height: 11px"
+                src="./Img/marketplace/Defi The Game.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+        <div class="square_card">
+          <div id='image2' class='image'></div>
+          <div class="text">
+            <img
+              src="./Img/marketplace/Do you want to be a doctor.png"
+              alt=""
+            />
+            <div class="price">
+              <img
+                style="width: 97px; height: 12px"
+                src="./Img/marketplace/FLOOR PRICE.png"
+                alt=""
+              />
+              <div class="row">
+                <div class="vertical">
+                  <img class="price_title" src="./Img/marketplace/AUCTION-1.png" alt="" />
+                  <img src="./Img/marketplace/30.png" alt="" />
+                </div>
+                <div class="vertical">
+                  <img class="price_title" src="./Img/marketplace/BUY NOW-1.png" alt="" />
+                  <img src="./Img/marketplace/40.png" alt="" />
+                </div>
+              </div>
+              <img class="defi"
+                style="width: 87px; height: 11px"
+                src="./Img/marketplace/Defi The Game.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+        <div class="square_card">
+          <div id='image3' class='image'></div>
+          <div class="text">
+            <img
+              src="./Img/marketplace/Real Goldfish8787.png"
+              alt="" style="margin-bottom: 30px;"
+            />
+            <div class="price">
+              <img
+                style="width: 97px; height: 12px"
+                src="./Img/marketplace/FLOOR PRICE.png"
+                alt=""
+              />
+              <div class="row">
+                <div class="vertical">
+                  <img class="price_title" src="./Img/marketplace/AUCTION-1.png" alt="" />
+                  <img src="./Img/marketplace/30.png" alt="" />
+                </div>
+           
+                <div class="vertical">
+                  <img class="price_title" src="./Img/marketplace/BUY NOW-1.png" alt="" />
+                  <img src="./Img/marketplace/40.png" alt="" />
+                </div>
+              </div>
+              <img class="defi"
+                style="width: 87px; height: 11px"
+                src="./Img/marketplace/Defi The Game.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+        <div class="square_card">
+          <div id='image4' class='image'></div>
+          <div class="text">
+            <img
+            src="./Img/marketplace/Japanese Animation Meme7414.png"
+              alt=""
+            />
+            <div class="price">
+              <img
+                style="width: 97px; height: 12px"
+                src="./Img/marketplace/FLOOR PRICE.png"
+                alt=""
+              />
+              <div class="row">
+                <div class="vertical">
+                  <img class="price_title" src="./Img/marketplace/AUCTION-1.png" alt="" />
+                  <img src="./Img/marketplace/30.png" alt="" />
+                </div>
+        
+                <div class="vertical">
+                  <img class="price_title" src="./Img/marketplace/BUY NOW-1.png" alt="" />
+                  <img src="./Img/marketplace/40.png" alt="" />
+                </div>
+              </div>
+              <img class="defi"
+                style="width: 87px; height: 11px"
+                src="./Img/marketplace/Defi The Game.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+        <!-- 5 -->
+        <div class="square_card">
+          <div id='image5' class='image'></div>
+          <div class="text">
+            <img
+              src="./Img/marketplace/Im a f__king cute SHIBA INU5487.png"
+              alt=""
+            />
+            <div class="price">
+              <img
+                style="width: 97px; height: 12px"
+                src="./Img/marketplace/FLOOR PRICE.png"
+                alt=""
+              />
+              <div class="row">
+                <div class="vertical">
+                  <img class="price_title" src="./Img/marketplace/AUCTION-1.png" alt="" />
+                  <img src="./Img/marketplace/30.png" alt="" />
+                </div>
+
+                <div class="vertical">
+                  <img class="price_title" src="./Img/marketplace/BUY NOW-1.png" alt="" />
+                  <img src="./Img/marketplace/40.png" alt="" />
+                </div>
+              </div>
+              <img class="defi"
+                style="width: 87px; height: 11px"
+                src="./Img/marketplace/Defi The Game.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+        <div class="square_card">
+          <div id='image6' class='image'></div>
+          <div class="text">
+            <img
+              src="./Img/marketplace/Japanese Animation Meme7414.png"
+              alt=""
+            />
+            <div class="price">
+              <img
+                style="width: 97px; height: 12px"
+                src="./Img/marketplace/FLOOR PRICE.png"
+                alt=""
+              />
+              <div class="row">
+                <div class="vertical">
+                  <img class="price_title" src="./Img/marketplace/AUCTION-1.png" alt="" />
+                  <img src="./Img/marketplace/30.png" alt="" />
+                </div>
+     
+                <div class="vertical">
+                  <img class="price_title" src="./Img/marketplace/BUY NOW-1.png" alt="" />
+                  <img src="./Img/marketplace/40.png" alt="" />
+                </div>
+              </div>
+              <img class="defi"
+                style="width: 87px; height: 11px"
+                src="./Img/marketplace/Defi The Game.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+        <div class="square_card">
+          <div id='image7' class='image'></div>
+          <div class="text">
+            <img
+            src="./Img/marketplace/Do you want to be a doctor.png"
+              alt=""
+            />
+            <div class="price">
+              <img
+                style="width: 97px; height: 12px"
+                src="./Img/marketplace/FLOOR PRICE.png"
+                alt=""
+              />
+              <div class="row">
+                <div class="vertical">
+                  <img class="price_title" src="./Img/marketplace/AUCTION-1.png" alt="" />
+                  <img src="./Img/marketplace/30.png" alt="" />
+                </div>
+  
+                <div class="vertical">
+                  <img class="price_title" src="./Img/marketplace/BUY NOW-1.png" alt="" />
+                  <img src="./Img/marketplace/40.png" alt="" />
+                </div>
+              </div>
+              <img class="defi"
+                style="width: 87px; height: 11px"
+                src="./Img/marketplace/Defi The Game.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+        <div class="square_card">
+          <div id='image8' class='image'></div>
+          <div class="text">
+            <img
+              src="./Img/marketplace/Japanese Animation Meme7414.png"
+              alt=""
+            />
+            <div class="price">
+              <img
+                style="width: 97px; height: 12px"
+                src="./Img/marketplace/FLOOR PRICE.png"
+                alt=""
+              />
+              <div class="row">
+                <div class="vertical">
+                  <img class="price_title" src="./Img/marketplace/AUCTION-1.png" alt="" />
+                  <img src="./Img/marketplace/30.png" alt="" />
+                </div>
+        
+                <div class="vertical">
+                  <img class="price_title" src="./Img/marketplace/BUY NOW-1.png" alt="" />
+                  <img src="./Img/marketplace/40.png" alt="" />
+                </div>
+              </div>
+              <img class="defi"
+                style="width: 87px; height: 11px"
+                src="./Img/marketplace/Defi The Game.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <button id="see-more">See More</button>
+    </div>
+  </div>
+    <!-- Chang -->
+    <div id="privacybar">
+      <div id="privacy_statement_container">
+        <p id="privacy_statement">We use cookies to personalise content and ads, to provide social media features and to analyse our traffic. We also share information about 
+          your use of our site with our social media, advertising and analytics partners.</p>
+      </div>
+      <div id="customize_settings_menu_container_container">
+        <div id="customize_settings_menu_align_container">
+          <div id="customize_settings_text_container">
+            <p id="customize_settings_text">Customize Settings</p>
+          </div>
+          <div id="customize_settings_disable_container">
+            <p id="customize_settings_disable_text">Disable All</p>
+          </div>
+          <div id="customize_settings_accept_container">
+            <p id="customize_settings_accept_text">Accept All</p>
+          </div>
+        </div>
+      </div>
+      <div id="privacybar_close_container" onclick="close_privacybar(this.id)">
+        <div class="close" id="privacybar_close_btn">&times;</div>
+      </div> 
+    </div>
+    <div id="bottom_area">BinChilling @ 2022 Social Web Research</div>
+    <script language="JavaScript" type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script language="JavaScript" type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script language="JavaScript" type="text/javascript" src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script language="JavaScript" type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+
+
+    <!-- Liu -->
+    <script type="module" src="./database/front_end.js"></script>
+  </body>
+</html>

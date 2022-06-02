@@ -1,0 +1,3690 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+@font-face {
+  font-family: SFPRODISPLAY_BOLD;
+  src: url(./fonts/SFPRODISPLAYBOLD.OTF);
+}
+
+@font-face {
+  font-family: SFProDisplay-Heavy;
+  src: url(./fonts/SFProDisplay-Heavy.ttf);
+}
+
+@font-face {
+  font-family: SFProDisplay-Semibold;
+  src: url(./fonts/SFProDisplay-Semibold.ttf);
+}
+
+@font-face {
+  font-family: SFPRODISPLAY_MEDIUM;
+  src: url(./fonts/SFPRODISPLAYMEDIUM.OTF);
+}
+
+@font-face {
+  font-family: SFPRODISPLAYREGULAR;
+  src: url(./fonts/SFPRODISPLAYREGULAR.OTF);
+}
+
+
+.homepage {
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+}
+
+#homepage_logo_img_container {
+  width: 100%;
+  height: 40%;
+  top: 30%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+#homepage_logo_img {
+  position: relative;
+  max-height: 20vh;
+  width: same-as-height;
+}
+
+#homepage_email_text_container {
+  position: absolute;
+  width: 100%;
+  margin-left: 40%;
+  margin-right: 40%;
+}
+
+.homepage_sign_container {
+  position: relative;
+  top: 20%;
+  width: 100%;
+  height: 5%;
+  display: flex;
+  justify-content: center;
+}
+
+.homepage_sign_text {
+  position: relative;
+  width: 10%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #286A93;
+  color: white;
+  font-size: 2vh;
+  font-family: SFPRODISPLAY_BOLD;
+}
+
+#signin_page {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  display: none;
+}
+
+#signin_title_container {
+  position: absolute;
+  width: 42%;
+  height: 100vh;
+  background-image: url("./Img/sign_title_bg.png");
+}
+
+#signin_title {
+  position: relative;
+  height: 26.67%;
+  margin-left: 31.8%;
+  margin-top: 50%;
+  margin-bottom: 20%;
+  margin-right: 13%;
+  display: flex;
+  align-items: center;
+  text-align: right;
+  color: white;
+  font-size: 6vh;
+  font-family: SFPRODISPLAY_BOLD;
+}
+
+.sign_back_container {
+  position: relative;
+  width: 4%;
+  height: 3%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+#signin_back_container {
+  top: 15%;
+  left: 50%;
+}
+
+#signup_back_container {
+  top: 5%;
+  left: 45%;
+}
+
+.triangle_back {
+  position: relative;
+  width: 0;
+  height: 0;
+  border-right: 10px solid #286A93;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+.sign_back_text {
+  position: relative;
+  font-size: 2vh;
+  color: #286A93;
+  font-family: SFProDisplay-Semibold;
+}
+
+#signin_signin_text {
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  font-size: 7vh;
+  color: #286A93;
+  font-family: SFPRODISPLAY_BOLD;
+}
+
+#signin_noaccount_text {
+  position: absolute;
+  left: 50%;
+  top: 29%;
+  font-size: 2.3vh;
+  color: #A0A0A0;
+  font-family: SFPRODISPLAY_MEDIUM;
+}
+
+#signin_noaccount_signup_text {
+  position: absolute;
+  left: 67%;
+  top: 29%;
+  font-size: 2.3vh;
+  color: #286A93;
+  font-family: SFPRODISPLAY_MEDIUM;
+}
+
+.typebox {
+  position: absolute;
+  left: 50%;
+  width: 42%;
+  height: 5.6%;
+  border-radius: 5px;
+  background-color: white;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #A0A0A0;
+  display: flex;
+  align-items: center;
+  font-size: 2.5vh;
+  color: black;
+  font-family: SFPRODISPLAY_BOLD;
+}
+
+.typetext {
+  position: inherit;
+  color: #E5E5E5;
+  font-size: 2.2vh;
+  font-family: SFPRODISPLAY_BOLD;
+  left: 3%;
+}
+
+::-webkit-input-placeholder {
+  position: fix;
+  color: #E5E5E5;
+  font-size: 2.2vh;
+  font-family: SFPRODISPLAY_BOLD;
+}
+
+
+
+.sign_item {
+  position: absolute;
+  left: 50%;
+  font-size: 2.5vh;
+  color: #A0A0A0;
+  font-family: SFPRODISPLAY_BOLD;
+}
+
+#signin_email {
+  top: 50%;
+}
+
+#signin_email_typebox {
+  top: 54%;
+}
+
+#signin_password {
+  top: 63%;
+}
+
+#signin_password_typebox {
+  top: 67%;
+}
+
+#forgot_password {
+  position: absolute;
+  top: 63%;
+  left: 80%;
+  font-size: 2.3vh;
+  color: #286A93;
+  font-family: SFPRODISPLAY_MEDIUM;
+}
+
+
+
+
+#signin_signin_btn {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  width: 42%;
+  height: 5.6%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #286A93;
+  border-radius: 5px;
+  color: white;
+  font-size: 2.4vh;
+  font-family: SFPRODISPLAY_BOLD;
+}
+
+
+#signup_page {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  display: none;
+}
+
+#signup_title_container {
+  position: absolute;
+  width: 42%;
+  height: 100vh;
+  background-image: url("./Img/sign_title_bg.png");
+}
+
+#signup_title {
+  position: relative;
+  height: 13.34%;
+  margin-left: 10%;
+  margin-top: 30%;
+  margin-right: 13%;
+  display: flex;
+  align-items: center;
+  text-align: right;
+  color: white;
+  font-size: 6vh;
+  font-family: SFPRODISPLAY_BOLD;
+}
+
+#hightlight_container {
+  position: absolute;
+  top: 30%;
+  width: 42%;
+  height: 70%;
+}
+
+.highlight {
+  position: relative;
+  right: 13%;
+  text-align: right;
+  font-size: 3vh;
+  font-family: SFProDisplay-Semibold;
+  color: white;
+}
+
+.highlight_description {
+  position: relative;
+  right: 13%;
+  text-align: right;
+  font-size: 2vh;
+  font-family: SFPRODISPLAYREGULAR;
+  color: white;
+}
+
+#highlight1 {
+  top: 20%;
+}
+
+#highlight2 {
+  top: 35%;
+}
+
+#highlight3 {
+  top: 50%;
+}
+
+#highlight_description1 {
+  top: 23%;
+}
+
+#highlight_description2 {
+  top: 38%;
+}
+
+#highlight_description3 {
+  top: 53%;
+}
+
+#signup_signup_text {
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  font-size: 7vh;
+  color: #286A93;
+  font-family: SFPRODISPLAY_BOLD;
+}
+
+#signup_haveaccount_text {
+  position: absolute;
+  left: 50%;
+  top: 19%;
+  font-size: 2.3vh;
+  color: #A0A0A0;
+  font-family: SFPRODISPLAY_MEDIUM;
+}
+
+#signup_haveaccount_signin_text {
+  position: absolute;
+  left: 67%;
+  top: 19%;
+  font-size: 2.3vh;
+  color: #286A93;
+  font-family: SFPRODISPLAY_MEDIUM;
+}
+
+/*#signup_fullname{
+  top: 35%;
+}
+
+#signup_fullname_typebox{
+  top: 39%;
+}
+*/
+#signup_email {
+  top: 30%;
+}
+
+#signup_email_typebox {
+  top: 34%;
+}
+
+#signup_username {
+  top: 43%;
+}
+
+#signup_username_visibility {
+  position: absolute;
+  top: 43%;
+  left: 58%;
+  font-size: 2.3vh;
+  color: #A0A0A0;
+  font-family: SFPRODISPLAY_MEDIUM;
+}
+
+#signup_username_typebox {
+  top: 47%;
+}
+
+#signup_password {
+  top: 56%;
+}
+
+#signup_password_restriction {
+  position: absolute;
+  top: 57%;
+  left: 58%;
+  font-size: 1.3vh;
+  color: red;
+  font-family: SFPRODISPLAYREGULAR;
+}
+
+#signup_password_typebox {
+  top: 60%;
+}
+
+#signup_confirm_password {
+  top: 69%;
+}
+
+#signup_confirm_password_typebox {
+  top: 73%;
+}
+
+#signup_agreement_container {
+  position: absolute;
+  width: 42%;
+  height: 5.6%;
+  left: 50%;
+  top: 83%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+#signup_checkbox_container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#signup_checkbox {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+
+#signup_agreement_text_container {
+  position: relative;
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#signup_agreement_text {
+  position: relative;
+  font-size: 2vh;
+  color: #A0A0A0;
+  font-family: SFPRODISPLAY_MEDIUM;
+}
+
+#signup_signup_btn {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  width: 42%;
+  height: 5.6%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #286A93;
+  border-radius: 5px;
+  color: white;
+  font-size: 2.4vh;
+  font-family: SFPRODISPLAY_BOLD;
+}
+
+.verify_container {
+  position: absolute;
+  width: 26.78%;
+  height: 41.3%;
+  top: 30%;
+  left: 36.31%;
+  background-image: url("./Img/verify/verify_email.png");
+  background-position: center;
+  background-size: cover;
+}
+
+#verify_email_container {
+  display: none;
+}
+
+#signup_verify_confirm {
+  position: absolute;
+  top: 85.3%;
+  left: 36.5%;
+  width: 27%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: SFProDisplay-Semibold;
+  font-size: 2vh;
+  background-color: #3E619B;
+  border-radius: 15px;
+}
+
+/*------------------------Verify email page--------------------*/
+#verify_email_page {
+  height: 100vh;
+  background-color: white;
+  display: none;
+}
+
+#verify_email_navbar_logo_container {
+  background-color: #BCBCBC;
+}
+
+.narbar_sign {
+  width: 7%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2vh;
+  color: white;
+  font-family: SFPRODISPLAY_BOLD;
+}
+
+.navbar_signin {
+  left: 87.5%;
+}
+
+.navbar_signup {
+  left: 92.7%;
+}
+
+#verify_email_verify_code_align_container {
+  position: absolute;
+  width: 42%;
+  height: 12%;
+  top: 30%;
+  left: 29%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.verify_email_verify_code_container {
+  position: relative;
+  width: 10%;
+  height: 100%;
+}
+
+.verify_email_verify_text {
+  position: relative;
+  width: 68%;
+  height: 100%;
+  font-size: 8vh;
+  color: #A0A0A0;
+  font-family: SFPRODISPLAY_BOLD;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+}
+
+
+
+.verify_email_verify_text_container {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+}
+
+.verify_email_verify_underline {
+  position: absolute;
+  width: 100%;
+  height: 5%;
+  bottom: 0%;
+  border-radius: 50px;
+  background-color: #A0A0A0;
+}
+
+#verify_email_verify_btn {
+  position: absolute;
+  width: 42%;
+  height: 5.56%;
+  top: 53%;
+  left: 29%;
+  background-image: url("./Img/verify/verify_btn.png");
+  background-position: center;
+  background-size: cover;
+}
+
+#verify_fail_img {
+  display: none;
+}
+
+#verify_success_img {
+  display: none;
+}
+
+.navbar {
+  top: 0%;
+  position: fixed;
+  height: 11.5vh;
+  width: 100vw;
+  z-index: 1;
+  background-color: #BCBCBC;
+}
+
+#NFT_Market_navbar {
+  display: none;
+}
+
+.navbar_logo_container {
+  top: 0%;
+  position: fixed;
+  height: 11.5vh;
+  width: 100vw;
+  z-index: 1;
+  background-color: #BCBCBC;
+}
+
+.navbar_logo_img_container {
+  position: absolute;
+  top: 33%;
+  left: 1.875%;
+  height: 33%;
+  width: 2.1875%;
+}
+
+
+#navbar_signin {
+  position: absolute;
+  height: 20%;
+  top: 38.8%;
+  left: 87.5%;
+  color: white;
+  font-family: SFPRODISPLAY_BOLD;
+}
+
+#navbar_signup {
+  position: absolute;
+  height: 20%;
+  top: 38.8%;
+  left: 92.7%;
+  color: white;
+  font-family: SFPRODISPLAY_BOLD;
+}
+
+
+#wallet_navbar {
+  display: none;
+}
+
+#wallet_overview {
+  display: none;
+}
+
+#wallet_navbar_head_contianer {
+  position: absolute;
+  left: 87.5%;
+  top: 0%;
+  width: 30px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+#wallet_navbar_head {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #E5E5E5;
+}
+
+#wallet_username_container {
+  position: absolute;
+  top: 0%;
+  width: 7%;
+  height: 100%;
+  left: 90.5%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.navbar_username {
+  position: relative;
+  height: 100%;
+  width: 70%;
+  top: 0%;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: SFPRODISPLAY_BOLD;
+}
+
+#wallet_navbar_username_triangle_container {
+  left: 0%;
+}
+
+#navbar_wallet_username_triangle_down {
+  border-top-color: white;
+}
+
+.wallet_page {
+  height: 100vh;
+  width: 100vw;
+  display: block;
+  z-index: 0;
+  background-color: white;
+  min-height: 100%;
+  min-width: 100%;
+  position: relative;
+  top: 0;
+}
+
+.wallet_title {
+  position: absolute;
+  left: 48.95%;
+  top: 23.8%;
+  width: 0.21%;
+  height: 6.67%;
+  font-size: 6vh;
+  color: #286A93;
+  font-family: SFPRODISPLAY_BOLD;
+}
+
+#category_btw_account_container {
+  position: absolute;
+  left: 64.75%;
+  top: 26.76%;
+  width: 7.03%;
+  height: 2.314%;
+  border-style: solid;
+  border-width: 1.5px;
+  border-radius: 70px;
+  border-color: #286A93;
+  z-index: 0;
+}
+
+#category_btw_account {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  width: 55%;
+  height: 100%;
+  border-style: solid;
+  border-width: 1.5px;
+  border-radius: 60px;
+  border-color: #286A93;
+  background-color: #286A93;
+  z-index: 1;
+}
+
+#wallet_category_choice {
+  position: absolute;
+  left: 64.75%;
+  top: 26.76%;
+  width: 3.6%;
+  height: 2.314%;
+  color: white;
+  border-radius: 70px;
+  font-size: 1.2vh;
+  font-family: SFPRODISPLAYREGULAR;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+#wallet_account_choice {
+  position: absolute;
+  left: 68.2%;
+  top: 26.76%;
+  width: 3.5%;
+  height: 2.314%;
+  color: #286A93;
+  font-size: 1.2vh;
+  font-family: SFPRODISPLAYREGULAR;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.wallet_whole_asset_dollor {
+  position: absolute;
+  top: 32.5%;
+  left: 48.954%;
+  width: 10.3125%;
+  height: 4.45%;
+  color: #286A93;
+  font-size: 4vh;
+  font-family: SFProDisplay-Semibold;
+}
+
+.wallet_whole_asset_dollor_menu_btn {
+  position: absolute;
+  height: 3.9%;
+  width: 12.35%;
+  left: 77%;
+  top: 32.5%;
+}
+
+.wallet_whole_asset_dollor_menu {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-style: solid;
+  border-width: 1.5px;
+  border-color: #286A93;
+  border-radius: 70px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #286A93;
+  font-size: 1.6vh;
+  font-family: SFPRODISPLAY_BOLD;
+}
+
+.wallet_triangle_down {
+  border-top-color: #286A93;
+  top: 42%;
+  left: 87.5%;
+}
+
+.wallet_whole_asset_triangle_down.triangle_down {
+  border-top-color: #286A93;
+  top: 42%;
+  left: 87.5%;
+}
+
+.wallet_whole_asset_dollor_scrollable_dropdown_menu {
+  position: relative;
+  top: 38%;
+  left: 77%;
+  width: 12.35%;
+  height: 17.74%;
+  background-color: white;
+  border-color: #286A93;
+  border-width: 1.5px;
+  border-radius: 20px;
+  border-style: solid;
+  z-index: 2;
+  overflow: scroll;
+  display: none;
+}
+
+.wallet_whole_asset_dollor_dropdown_menu {
+  position: relative;
+  width: 100%;
+  height: 150%;
+  background-color: white;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.wallet_overview_whole_asset_dollor_menu_currency {
+  position: relative;
+  color: #286A93;
+  font-size: 2vh;
+  font-family: SFPRODISPLAY_MEDIUM;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  height: 23%;
+  border-radius: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wallet_overview_whole_asset_dollor_menu_currency:hover {
+  background-color: #D4D4D4;
+}
+
+.wallet_menu_line {
+  position: relative;
+  width: 90%;
+  height: 1%;
+  left: 5%;
+  background-color: #E5E5E5;
+}
+
+#wallet_overview_whole_asset_dollor_menu_NTD {}
+
+#wallet_overview_whole_asset_dollor_menu_USD {}
+
+#wallet_overview_whole_asset_dollor_menu_ETH {}
+
+#wallet_overview_whole_asset_dollor_menu_JPY {}
+
+.wallet_show {
+  position: absolute;
+  left: 50%;
+  top: 42.1%;
+  color: #286A93;
+  font-size: 2vh;
+  font-family: SFPRODISPLAYREGULAR;
+}
+
+.wallet_category {
+  position: absolute;
+  left: 55.26%;
+  top: 42.1%;
+  color: #286A93;
+  font-size: 2vh;
+  font-family: SFPRODISPLAYREGULAR;
+}
+
+.wallet_category.Stock{
+  left: 56%;
+}
+
+.wallet_totalamount {
+  position: absolute;
+  left: 63.28%;
+  top: 42.1%;
+  color: #286A93;
+  font-size: 2vh;
+  font-family: SFPRODISPLAYREGULAR;
+}
+
+.wallet_currency {
+  position: absolute;
+  left: 73.125%;
+  top: 42.1%;
+  color: #286A93;
+  font-size: 2vh;
+  font-family: SFPRODISPLAYREGULAR;
+}
+
+.wallet_percentage {
+  position: absolute;
+  left: 81%;
+  top: 42.1%;
+  color: #286A93;
+  font-size: 2vh;
+  font-family: SFPRODISPLAYREGULAR;
+}
+
+.wallet_object_container {
+  position: absolute;
+  width: 41%;
+  height: 4.537%;
+  left: 49%;
+  border-style: solid;
+  border-color: #286A93;
+  border-width: 1px;
+  border-radius: 60px;
+  display: none;
+}
+
+.wallet_object_container1 {
+  top: 46.39%;
+}
+
+.wallet_show_color_container {
+  position: absolute;
+  height: 100%;
+  width: 9%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wallet_show_color {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.wallet_show_color:hover{
+  width: 24px;
+  height: 24px;
+}
+
+.wallet_show_color1 {
+  background-color: #B8CAD6;
+}
+
+.wallet_show_color2 {
+  background-color: #E9E9EB;
+}
+
+.wallet_show_color3 {
+  background-color: #528CA2;
+}
+
+.wallet_show_color4 {
+  background-color: #42506B;
+}
+
+.wallet_show_color5 {
+  background-color: #FF7582;
+}
+
+.wallet_text {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: SFProDisplay-Semibold;
+  font-size: 2vh;
+}
+
+.wallet_category_category {
+  position: absolute;
+  height: 100%;
+  width: 20%;
+  left: 11%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+
+.wallet_category_category:hover{
+  font-size: 2.3vh;
+}
+
+.wallet_category_account {
+  position: absolute;
+  height: 100%;
+  width: 22%;
+  left: 11%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #286A93;
+  text-decoration: underline;
+}
+
+.wallet_category_account:hover{
+  font-size: 2.3vh;
+}
+
+.wallet_totalamount_totalamount {
+  position: absolute;
+  height: 100%;
+  width: 20%;
+  left: 32%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wallet_totalamount_totalamount.Stock {
+  position: absolute;
+  height: 100%;
+  width: 20%;
+  left: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wallet_totalamount_earning{
+  position: absolute;
+  left: 50%;
+  top: 26%;
+  height: 48%;
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #91B263;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.2vh;
+  font-family: SFProDisplay-Semibold;;
+}
+
+.wallet_currency_currency {
+  position: absolute;
+  height: 100%;
+  width: 10%;
+  left: 59%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wallet_percentage_percentage {
+  position: absolute;
+  height: 100%;
+  width: 10%;
+  left: 79.5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wallet_object_container2 {
+  top: 53%;
+}
+
+.wallet_object_container3 {
+  top: 59.5%;
+}
+
+.wallet_object_container4 {
+  top: 66%;
+}
+
+.wallet_object_container5 {
+  top: 72.5%;
+}
+
+/*------------------------------------------Wallet Stock------------------------------------------*/
+#wallet_Stock{
+  display: none;
+}
+
+#wallet_Stock_title{
+  width: 40%;
+}
+
+.wallet_currency.Stock{
+  left: 75%;
+}
+
+.wallet_currency_currency.Stock{
+  left: 63%;
+}
+
+.wallet_percentage.Stock{
+  left: 82%;
+}
+
+.wallet_percentage_percentage.Stock{
+  color: #286A93;
+  text-decoration: underline;
+  left: 81.5%;
+}
+
+.wallet_category_category:hover{
+  font-size: 2.3vh;
+}
+
+.wallet_category_account:hover{
+  font-size: 2.3vh;
+}
+
+/*------------------------------------------Wallet MetaMask------------------------------------------*/
+#wallet_MetaMask{
+  display: none;
+}
+
+#wallet_MetaMask_title{
+  width: 40%;
+}
+
+/*------------------------------------------Wallet Crypto------------------------------------------*/
+#wallet_Crypto{
+  display: none;
+}
+
+#wallet_Crypto_title{
+  width: 40%;
+}
+
+/*------------------------------------------Wallet NFT------------------------------------------*/
+#wallet_NFT {
+  display: none;
+}
+
+.wallet_back_container {
+  position: absolute;
+  left: 4.635417%;
+  top: 15%;
+  width: 8.95%;
+  height: 2.4%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.wallet_back_text {
+  position: relative;
+  font-size: 1.8vh;
+  color: #286A93;
+  font-family: SFProDisplay-Semibold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
+
+#explore_NFT_btn {
+  position: absolute;
+  top: 26.85%;
+  left: 56.875%;
+  font-size: 2vh;
+  font-family: SFProDisplay-Semibold;
+  text-decoration: underline;
+  color: #286A93;
+}
+
+#wallet_NFT_filter_btn {
+  position: absolute;
+  top: 40.56%;
+  left: 49.9%;
+  width: 6.71875%;
+  height: 2.685185%;
+  border-radius: 70px;
+  background-color: #42506B;
+}
+
+#wallet_NFT_filter_btn_strips_container {
+  position: absolute;
+  width: 16%;
+  height: 37.931034%;
+  top: 0%;
+  left: 14%;
+  display: flex;
+  margin-top: 0.92592593vh;
+  margin-bottom: 0.8334vh;
+  justify-content: space-between;
+  flex-direction: column;
+  overflow: cover;
+}
+
+.wallet_NFT_filter_btn_strip_container {
+  position: relative;
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+}
+
+#wallet_NFT_filter_btn_strip1 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+
+#wallet_NFT_filter_btn_strip2 {
+  position: relative;
+  width: 70%;
+  height: 100%;
+  background-color: white;
+}
+
+#wallet_NFT_filter_btn_strip3 {
+  position: relative;
+  width: 40%;
+  height: 100%;
+  background-color: white;
+}
+
+#wallet_NFT_filter_btn_text {
+  position: absolute;
+  height: 100%;
+  left: 43.41%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 2vh;
+  color: white;
+  font-family: SFProDisplay-Semibold;
+}
+
+
+/*---------------------Wallet NFT Filter-----------------*/
+#wallet_NFT_filter_table {
+  display: none;
+  position: absolute;
+  height: 22.315%;
+  width: 34%;
+  top: 45%;
+  left: 49.9%;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  border-color: #42506B;
+  border-width: 1px;
+  border-style: solid;
+  z-index: 3;
+}
+
+#wallet_NFT_filter_price_container {
+  position: absolute;
+  height: 100%;
+  width: 35%;
+  left: 0%;
+  top: 0%;
+}
+
+#wallet_NFT_filter_price_text {
+  position: absolute;
+  color: #42506B;
+  font-family: SFProDisplay-Semibold;
+  font-size: 2vh;
+  left: 3%;
+  height: 100%;
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#wallet_NFT_filter_dollor_menu_btn {
+  position: absolute;
+  width: 22.4%;
+  height: 49%;
+  top: 25%;
+  left: 15.5%;
+}
+
+#wallet_NFT_filter_dollor_menu_text {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #42506B;
+  border-color: #42506B;
+  border-style: solid;
+  border-radius: 8px;
+  border-width: 1px;
+  font-size: 2vh;
+  font-family: SFProDisplay-Semibold;
+}
+
+#wallet_NFT_whole_asset_triangle_down {
+  position: absolute;
+  border-top-color: #286A93;
+  left: 85%;
+}
+
+#wallet_NFT_filter_scrollable_dollor_menu {
+  display: none;
+}
+
+.wallet_filter_dollor_scrollable_dropdown_menu {
+  position: absolute;
+  top: 90%;
+  left: 15.5%;
+  width: 22.4%;
+  height: 250%;
+  background-color: white;
+  border-color: #42506B;
+  border-width: 1.5px;
+  border-radius: 8px;
+  border-style: solid;
+  z-index: 4;
+  overflow-y: hidden;
+  display: block;
+}
+
+
+#wallet_NFT_filter_min_text {
+  position: absolute;
+  left: 43.712%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #42506B;
+  font-family: SFProDisplay-Semibold;
+  font-size: 2vh;
+}
+
+#wallet_NFT_filter_min_typebox_container {
+  position: absolute;
+  left: 50.61%;
+  width: 15.34%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#wallet_NFT_filter_min_typebox {
+  position: relative;
+  left: 0%;
+  width: 100%;
+  height: 45%;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #42506B;
+  border-radius: 8px;
+  font-size: 2vh;
+}
+
+#wallet_NFT_filter_to_text {
+  position: absolute;
+  left: 67%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #42506B;
+  font-family: SFProDisplay-Semibold;
+  font-size: 2vh;
+}
+
+#wallet_NFT_filter_max_text {
+  position: absolute;
+  left: 71.6157%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #42506B;
+  font-family: SFProDisplay-Semibold;
+  font-size: 2vh;
+}
+
+#wallet_NFT_filter_max_typebox_container {
+  position: absolute;
+  left: 78.68%;
+  width: 15.34%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#wallet_NFT_filter_max_typebox {
+  position: relative;
+  left: 0%;
+  width: 100%;
+  height: 45%;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #42506B;
+  border-radius: 8px;
+}
+
+
+/*---------------------end of Wallet NFT filter---------------*/
+#wallet_NFT_all_btn {
+  position: absolute;
+  width: 3.645833%;
+  height: 2.685185%;
+  top: 40.56%;
+  left: 57.5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 70px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #286A93;
+  font-size: 2vh;
+  color: #286A93;
+  font-family: SFProDisplay-Semibold;
+}
+
+.wallet_NFT_direction_btn {
+  position: absolute;
+  left: 91%;
+  top: 62%;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background-color: #3E619B;
+  z-index: 1;
+}
+
+#wallet_NFT_left_btn {
+  left: 46.2%;
+}
+
+#wallet_NFT_right_btn {
+  left: 91.2%;
+}
+
+#wallet_NFT_right_btn_direction {
+  position: absolute;
+  left: 40%;
+  top: 40%;
+  border: solid white;
+  border-width: 0 5px 5px 0;
+  display: inline-block;
+  padding: 5px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+#wallet_NFT_left_btn_direction {
+  position: absolute;
+  left: 40%;
+  top: 40%;
+  border: solid white;
+  border-width: 0 5px 5px 0;
+  display: inline-block;
+  padding: 5px;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+#wallet_NFT_NFTs_mask_container {
+  position: absolute;
+  top: 47.223%;
+  left: 48.95%;
+  width: 45%;
+  height: 34.7223%;
+  overflow-x: hidden;
+}
+
+#wallet_NFT_NFTs_container {
+  position: relative;
+  top: 0%;
+  left: 0%;
+  width: 200%;
+  height: 100%;
+}
+
+.wallet_NFT_NFTs {
+  position: absolute;
+  width: 17%;
+  height: 100%;
+}
+
+#wallet_NFT_NFT1 {
+  left: 0%;
+}
+
+#wallet_NFT_NFT2 {
+  left: 20%;
+}
+
+#wallet_NFT_NFT3{
+  left: 40%;
+}
+
+.wallet_NFT_NFTs_img_container {
+  position: absolute;
+  top: 0%;
+  width: 100%;
+  height: 73.6%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  overflow: auto;
+  background-size: cover;
+}
+
+#wallet_NFT_NFTs_img_container1 {
+  background-image: url("./img/NFT/Wallet/NFT_crazy_bird.png");
+}
+
+#wallet_NFT_NFTs_img_container2 {
+  background-image: url("./img/NFT/Wallet/NFT_Japaneses_Illstra.png");
+}
+
+#wallet_NFT_NFTs_img_container3 {
+  background-image: url("./img/NFT/Wallet/NFT_crazy_tiger.png");
+}
+
+.wallet_NFT_percentage{
+  position: absolute;
+  top: 3%;
+  left: 8%;
+  height: 8%;
+  width: 18%;
+  color: white;
+  font-size: 1.5vh;
+  font-family: SFPRODISPLAYREGULAR;
+  text-decoration: underline;
+  z-index: 2;
+}
+
+.wallet_NFT_NFTs_info_container {
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
+  height: 26.3%;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: #5C7FA7;
+}
+
+.wallet_NFT_NFTs_info_self_container {
+  position: absolute;
+  top: 0%;
+  width: 100%;
+  height: 50%;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: #5C7FA7;
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);
+}
+
+.wallet_NFT_NFTs_info_subname {
+  position: absolute;
+  left: 7.608696%;
+  top: 22%;
+  color: #D4D4D4;
+  font-size: 1.3vh;
+  font-family: SFPRODISPLAY_BOLD;
+}
+
+.wallet_NFT_NFTs_info_name {
+  position: absolute;
+  left: 7.608696%;
+  top: 42%;
+  color: white;
+  font-size: 1.7vh;
+  font-family: SFPRODISPLAY_BOLD;
+}
+
+.wallet_NFT_NFTs_info_source {
+  position: absolute;
+  left: 70%;
+  top: 50%;
+  width: 25%;
+  height: 40%;
+  color: white;
+  font-size: 1vh;
+  font-family: SFPRODISPLAY_BOLD;
+  text-decoration: underline;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wallet_NFT_NFTs_info_value {
+  position: absolute;
+  left: 7.608696%;
+  top: 58%;
+  color: white;
+  font-size: 2.2vh;
+  font-family: SFPRODISPLAYREGULAR;
+}
+
+.wallet_NFT_NFTs_info_currency {
+  position: absolute;
+  left: 76.344086%;
+  top: 58%;
+  color: white;
+  font-size: 1.9vh;
+  font-family: SFProDisplay-Semibold;
+}
+
+/*------------------------------------------NFT Market------------------------------------------*/
+#NFT_Market {
+  display: none;
+  ;
+}
+
+.navbar_logo_img {
+  position: absolute;
+  max-height: 4vh;
+  width: same-as-height;
+}
+
+.navbar_logo_text {
+  position: absolute;
+  top: 42%;
+  left: 4.79%;
+  max-width: 8.385%;
+  max-height: 20%;
+}
+
+#navbar_search {
+  position: absolute;
+  display: inline-block;
+  top: 30%;
+  left: 15.52%;
+  width: 29%;
+  height: 39.5%;
+  border-radius: 20px;
+  background-color: white;
+}
+
+#navbar_search_container {
+  position: relative;
+  left: 5%;
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#navbar_search_circle_container {
+  width: 10%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#navbar_search_circle {
+  position: relative;
+  height: 29px;
+  width: 29px;
+  border-radius: 50%;
+  background-color: #E5E5E5;
+  display: inline-block;
+}
+
+#navbar_search_text_container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 88%;
+  top: 0%;
+  height: 100%;
+}
+
+#navbar_search_text {
+  position: relative;
+  text-align: left;
+  font-size: 2vh;
+  color: #E5E5E5;
+  font-family: SFPRODISPLAY_BOLD;
+  cursor: default;
+}
+
+#navbar_search_table {
+  display: none;
+  position: relative;
+  height: 500%;
+  width: 100%;
+  top: 20%;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+}
+
+#navbar_search_title_container {
+  position: relative;
+  height: 25.7%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+#navbar_search_floorprice_container {
+  position: relative;
+  width: 54%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#navbar_search_time_container {
+  position: relative;
+  width: 45%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#navbar_search_floorprice_text_container {
+  position: relative;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#navbar_search_time_text_container {
+  position: relative;
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#navbar_search_floorprice_text {
+  position: relative;
+  color: #8C8C8C;
+  font-family: SFProDisplay-Semibold;
+  font-size: 1.7vh;
+}
+
+#navbar_search_time_text {
+  position: relative;
+  color: #8C8C8C;
+  font-family: SFProDisplay-Semibold;
+  font-size: 1.7vh;
+}
+
+#navbar_search_floorprice_dropdownmenu_container {
+  position: relative;
+  height: 100%;
+  width: 65%;
+  display: flex;
+  align-items: center;
+}
+
+#navbar_search_time_dropdownmenu_container {
+  position: relative;
+  height: 100%;
+  width: 75%;
+  display: flex;
+  align-items: center;
+}
+
+.dropdownmenu {
+  width: 100%;
+  border-radius: 5px;
+  display: block;
+}
+
+#navbar_search_time_container {
+  position: relative;
+  width: 32.67%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#navbar_search_table_line {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 0.7%;
+  top: 22%;
+  left: 0%;
+  background-color: #E5E5E5;
+}
+
+#navbar_search_category_align_container {
+  position: relative;
+  top: 3%;
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+#navbar_search_category_container {
+  position: relative;
+  width: 91.7%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.navbar_search_category {
+  position: relative;
+  height: 28%;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #E5E5E5;
+  color: white;
+  font-size: 1.6vh;
+  font-family: SFPRODISPLAY_BOLD;
+}
+
+.filter_category_all {
+  width: 12%;
+}
+
+.filter_category_art {
+  width: 12%;
+}
+
+.filter_category_celebrities {
+  width: 27%;
+}
+
+.filter_category_domainnames {
+  width: 33%;
+}
+
+.filter_category_music {
+  width: 19%;
+}
+
+.filter_category_photography {
+  width: 27%;
+}
+
+.filter_category_sports {
+  width: 19%;
+}
+
+.filter_category_tradingcards {
+  width: 27%;
+}
+
+.filter_category_utility {
+  width: 19%;
+}
+
+.filter_category_virtualworld {
+  width: 27%;
+}
+
+.filter_category_collectibles {
+  width: 29%;
+}
+
+.filter_category_gaming {
+  width: 19%;
+}
+
+#navbar_search_confirm_container {
+  position: relative;
+  width: 100%;
+  height: 12.5%;
+  top: 6%;
+}
+
+#navbar_search_confirm_btn_container {
+  position: absolute;
+  height: 100%;
+  width: 17%;
+  right: 4.15%;
+}
+
+.navbar_search_confirm_btn {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  margin: 0%;
+  border-style: solid;
+  border-width: 1.5px;
+  border-radius: 12px;
+  background-color: #42506B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.6vh;
+  font-family: SFPRODISPLAY_BOLD;
+}
+
+.navbar_function_container {
+  position: absolute;
+  height: 100%;
+  width: 18.5%;
+  left: 66%;
+  top: 0%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.navbar_function {
+  position: relative;
+  height: 100%;
+  top: 0%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: SFPRODISPLAY_BOLD;
+}
+
+#navbar_function_plan:hover {
+  color: #286A93;
+}
+
+#navbar_function_wallet:hover {
+  color: #286A93;
+}
+
+#navbar_function_marketplace {
+  width: 35%;
+}
+
+#navbar_function_drops {
+  width: 19%;
+}
+
+#navbar_function_brands {
+  width: 60%;
+}
+
+#navbar_function_marketplace:hover {
+  color: #286A93;
+}
+
+#navbar_function_drops:hover {
+  color: #286A93;
+}
+
+.navbar_function3_container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+#wallet_navbar_function3_container {
+  width: 30%;
+}
+
+#navbar_account_dropdown_menu_container{
+  position: absolute;
+  width: 12.34375%;
+  height: 40%;
+  top: 90%;
+  left: 73.5%;
+  display: none;
+}
+
+#navbar_account_dropdown_menu{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  border-radius: 21px;
+  border-width: 1.5px;
+  border-style: solid;
+  border-color: #286A93;
+  background-color: white;
+}
+
+#navbar_account_add{
+  position: relative;
+  width: 100%;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12.5px;
+  word-spacing: 2px;
+  color:#D4D4D4;
+  font-family: SFProDisplay-Semibold;
+}
+
+.navbar_account_line{
+  position: relative;
+  width: 90%;
+  left: 5%;
+  height: 3px;
+  background-color: #E5E5E5;
+  display: none;
+}
+
+.navbar_account_logged_account{
+  position: relative;
+  width: 90%;
+  left: 5%;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  word-spacing: 2px;
+  color:#286A93;
+  font-family: SFProDisplay-Semibold;
+  display: none;
+}
+
+#navbar_user_dropdown_menu_container{
+  position: absolute;
+  width: 14%;
+  height: 240%;
+  top: 90%;
+  left: 85%;
+  display: none;
+}
+
+#navbar_user_dropdown_menu{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  border-radius: 21px;
+  border-width: 1.5px;
+  border-style: solid;
+  border-color: #286A93;
+  background-color: white;
+}
+
+.navbar_user_menu{
+  position: relative;
+  width: 90%;
+  left: 5%;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  word-spacing: 2px;
+  color:#286A93;
+  font-family: SFProDisplay-Semibold;
+  border-radius: 8px;
+}
+
+.navbar_user_menu:hover {
+  background-color: #D4D4D4;
+}
+
+.navbar_user_dropdown_menu_line{
+  position: relative;
+  width: 90%;
+  left: 5%;
+  height: 3px;
+  background-color: #E5E5E5;
+}
+
+#NFT_navbar_function3_container {
+  width: 25%;
+}
+
+.navbar_function_triangle_container {
+  top: 0%;
+  width: 20%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.triangle_down {
+  position: relative;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid;
+}
+
+.navbar_triangle_down {
+  border-top-color: white;
+}
+
+.navbar_vertical_rec {
+  position: absolute;
+  width: 0.2%;
+  height: 32.6%;
+  top: 33.87%;
+  left: 86%;
+  background-color: white;
+}
+
+
+.landing_page {
+  height: 100vh;
+  width: 100vw;
+  display: block;
+  z-index: 0;
+  background-color: white;
+  min-height: 100%;
+  min-width: 100%;
+  position: relative;
+  top: 0;
+}
+
+
+.title {
+  position: absolute;
+  width: 100%;
+  height: 6.67%;
+  text-align: center;
+  font-family: SFProDisplay-Heavy;
+  font-size: 5vh;
+  color: white;
+
+}
+
+.subtitle {
+  position: absolute;
+  width: 100%;
+  height: 3.75%;
+  text-align: center;
+  font-family: SFPRODISPLAY_BOLD;
+  font-size: 2.5vh;
+  color: white;
+}
+
+#landing_page_01_title {
+  top: 22%;
+  color: white;
+}
+
+#landing_page_01_subtitle {
+  top: 30%;
+  color: white;
+}
+
+#collectibles_view_container {
+  position: relative;
+  width: 100%;
+  height: 47%;
+  top: 39%;
+  display: flex;
+  justify-content: center;
+}
+
+#collectibles_view {
+  position: relative;
+  width: 66%;
+  height: 100%;
+  top: 0%;
+  background-color: white;
+  border-radius: 10px;
+}
+
+#collectibles_view_circle_left {
+  position: absolute;
+  top: 40%;
+  left: 2.88%;
+  height: 88px;
+  width: 88px;
+  border-radius: 50%;
+  background-color: #E5E5E5;
+  display: inline-block;
+}
+
+#collectibles_view_circle_right {
+  position: absolute;
+  top: 40%;
+  right: 2.88%;
+  height: 88px;
+  width: 88px;
+  border-radius: 50%;
+  background-color: #E5E5E5;
+  display: inline-block;
+}
+
+#collectibles_view_upcoming {
+  position: absolute;
+  top: 10%;
+  width: 100%;
+  text-align: center;
+  font-family: SFProDisplay-Semibold;
+  font-size: 2vh;
+  color: #C4C4C4;
+}
+
+#collectibles_view_date {
+  position: absolute;
+  top: 15%;
+  width: 100%;
+  text-align: center;
+  font-family: SFProDisplay-Semibold;
+  font-size: 2.5vh;
+  color: #C4C4C4;
+}
+
+#collectibles_view_collectibles {
+  position: absolute;
+  top: 30%;
+  width: 100%;
+  text-align: center;
+  font-family: SFProDisplay-Heavy;
+  font-size: 4vh;
+  color: #C4C4C4;
+}
+
+#collectibles_view_info {
+  position: absolute;
+  top: 42%;
+  width: 100%;
+  text-align: center;
+  font-family: SFPRODISPLAY_BOLD;
+  font-size: 2vh;
+  color: #C4C4C4;
+}
+
+#collectibles_view_more {
+  position: absolute;
+  top: 0%;
+  width: 20%;
+  height: 100%;
+  border-radius: 30px;
+  background-color: #C4C4C4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: SFPRODISPLAY_BOLD;
+  font-size: 2.4vh;
+  color: white;
+}
+
+#collectibles_view_more_container {
+  position: relative;
+  top: 55%;
+  width: 100%;
+  height: 13.77%;
+  display: flex;
+  justify-content: center;
+}
+
+.selections_rec {
+  position: relative;
+  width: 18%;
+  height: 10%;
+  background-color: #E5E5E5;
+  border-radius: 5px;
+}
+
+#collectibles_view_selections_bar {
+  position: relative;
+  width: 18%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#collectibles_view_selections_bar_container {
+  position: relative;
+  height: 10%;
+  width: 100%;
+  top: 78%;
+  display: flex;
+  justify-content: center;
+}
+
+#collectibles_view_selections_rec_1 {
+  background-color: #C4C4C4;
+}
+
+#landing_page_02_blue {
+  position: absolute;
+  width: 100%;
+  height: 55%;
+  top: 28%;
+  background-color: #286A93;
+}
+
+#landing_page_02_title {
+  top: 22%;
+  z-index: 1;
+}
+
+#landing_page_02_title {
+  top: 20%;
+  z-index: 1;
+}
+
+#landing_page_02_subtitle {
+  top: 32%;
+  color: white;
+}
+
+#landing_page_02_subscribe_bar_container {
+  width: 100%;
+  height: 10%;
+  position: absolute;
+  top: 51%;
+  display: flex;
+  justify-content: center;
+}
+
+#landing_page_02_subscribe_bar {
+  width: 43%;
+  height: 100%;
+  position: absolute;
+}
+
+#landing_page_02_subscribe_email {
+  width: 79.6%;
+  height: 100%;
+  position: absolute;
+  left: 0%;
+  background-color: white;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+#landing_page_02_subscribe_subscribe {
+  position: absolute;
+  font-family: SFPRODISPLAY_BOLD;
+  color: white;
+}
+
+#landing_page_02_subscribe_btn {
+  width: 20.4%;
+  height: 100%;
+  left: 79.6%;
+  position: relative;
+  background-color: #BCBCBC;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#landing_page_02_info_align_container {
+  position: relative;
+  width: 100%;
+  height: 9.16%;
+  top: 68%;
+  display: flex;
+  justify-content: center;
+}
+
+#landing_page_02_info_container {
+  position: relative;
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.landing_page_02_info {
+  color: white;
+  font-family: SFProDisplay-Semibold;
+  font-size: 1.5vh;
+  text-align: center;
+}
+
+#landing_page_02_agree_align_container {
+  position: relative;
+  width: 100%;
+  height: 3%;
+  top: 75%;
+  display: flex;
+  justify-content: center;
+}
+
+#landing_page_02_checkbox {
+  color: white;
+  font-family: SFProDisplay-Semibold;
+  font-size: 1.5vh;
+  text-align: center;
+}
+
+#landing_page_02_agreement {
+  color: white;
+  font-family: SFProDisplay-Semibold;
+  font-size: 1.5vh;
+  text-align: center;
+}
+
+#top_creators_view_top_selling_container {
+  position: relative;
+  top: 23.5%;
+  width: 100%;
+  height: 4.53%;
+  display: flex;
+  justify-content: center;
+}
+
+#top_creators_view_top_selling {
+  position: absolute;
+  top: 0%;
+  width: 12.5%;
+  height: 100%;
+  border-radius: 20px;
+  background: linear-gradient(270deg, #528CA2, #286A93);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: SFPRODISPLAY_BOLD;
+  font-size: 1.8vh;
+  color: white;
+}
+
+#landing_page_03_top_creators_title {
+  position: absolute;
+  width: 100%;
+  height: 6.67%;
+  top: 30%;
+  font-family: SFPRODISPLAY_BOLD;
+  text-align: center;
+  color: #286A93;
+  font-size: 6vh;
+}
+
+#top_creators_view_circle_left {
+  position: absolute;
+  top: 33.7%;
+  left: 81.3%;
+  width: 4%;
+  padding-top: 4%;
+  border-radius: 50%;
+  background-color: #9BB3C6;
+  display: inline-block;
+}
+
+#top_creators_left_btn_direction {
+  position: absolute;
+  left: 40%;
+  top: 35%;
+  border: solid white;
+  border-width: 0 6px 6px 0;
+  display: inline-block;
+  padding: 10px;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+#top_creators_view_circle_right {
+  position: absolute;
+  top: 33.7%;
+  left: 87%;
+  width: 4%;
+  padding-top: 4%;
+  border-radius: 50%;
+  background-color: #9BB3C6;
+  display: inline-block;
+}
+
+#top_creators_right_btn_direction {
+  position: absolute;
+  right: 40%;
+  top: 35%;
+  border: solid white;
+  border-width: 0 6px 6px 0;
+  display: inline-block;
+  padding: 10px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+#top_creators_view_profile_align_container_container {
+  position: relative;
+  width: 100%;
+  height: 49.6%;
+  top: 45%;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+#top_creators_view_profile_align_container {
+  position: relative;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.top_creators_view_profile_container {
+  position: relative;
+  height: 100%;
+  width: 13.28125%;
+}
+
+
+.top_creators_view_profile_photo {
+  position: absolute;
+  width: 100%;
+  padding-top: 100%;
+  top: 0%;
+  border-radius: 50%;
+  background-position: center;
+  background-size: cover;
+}
+
+#top_creators_view_profile_photo_1 {
+  background-image: url("./Img/top_creators/super_magic_2.png");
+}
+
+#top_creators_view_profile_photo_2 {
+  background-image: url("./Img/top_creators/crazy_daruma.png");
+}
+
+#top_creators_view_profile_photo_3 {
+  background-image: url("./Img/top_creators/atlantis.png");
+}
+
+#top_creators_view_profile_photo_4 {
+  background-image: url("./Img/top_creators/special_art.png");
+}
+
+#top_creators_view_profile_photo_5 {
+  background-image: url("./Img/top_creators/creator.png");
+}
+
+#top_creators_view_profile_photo_6 {
+  background-image: url("./Img/top_creators/Kanaheiheihei.png");
+}
+
+.top_creators_view_profile_name {
+  position: absolute;
+  width: 100%;
+  top: 47.5%;
+  text-align: center;
+  color: #286A93;
+  font-family: SFProDisplay-Heavy;
+  font-size: 2.5vh;
+}
+
+.top_creators_view_profile_value_container {
+  position: absolute;
+  width: 100%;
+  height: 30px;
+  top: 55%;
+}
+
+.top_creators_view_profile_num_container {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #286A93;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top_creators_view_profile_num {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-family: SFProDisplay-Heavy;
+  font-size: 2vh;
+  color: white;
+}
+
+.top_creators_view_profile_dollor {
+  position: absolute;
+  width: 80%;
+  height: 100%;
+  left: 25%;
+  display: flex;
+  align-items: center;
+  font-family: SFProDisplay-Semibold;
+  font-size: 2vh;
+  color: #286A93;
+}
+
+#privacybar {
+  bottom: 0%;
+  position: fixed;
+  height: 11.5vh;
+  width: 100vw;
+  z-index: 1;
+  background-color: #9BB3C6;
+  display: none;
+}
+
+#privacy_statement_container {
+  position: relative;
+  width: 53.7%;
+  left: 2.1875%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+#privacy_statement {
+  position: absolute;
+  text-align: left;
+  color: white;
+  font-size: 1.6vh;
+  font-family: SFProDisplay-Semibold
+}
+
+#customize_settings_menu_container_container {
+  position: absolute;
+  height: 100%;
+  width: 30%;
+  left: 63%;
+  top: 0%;
+}
+
+
+
+/* Liu */
+.homepage_01_blank {
+  height: 1vh;
+  width: 100vh;
+  background-color: white;
+}
+
+.homepage_01 {
+  height: 100vh;
+  width: 100%;
+  background-color: white;
+  position: relative;
+  top: 10.5vh;
+  display: inline-flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+#homepage_binchilling_logo {
+  /* display: flex; */
+  position: relative;
+  width: 19.4vh;
+  height: 19.4vh;
+  align-items: center;
+  /* top: 10.5vh; */
+  justify-content: center;
+  top: -10vh;
+}
+
+#homepage_navbar_logo_container {
+  display: block;
+}
+
+#homepage_navbar_signin {}
+
+#homepage_binchilling_logo Img {
+  max-width: 100%;
+  max-height: 100%;
+  filter: drop-shadow(4px 4px 5px rgba(0, 0, 0, 0.25));
+
+}
+
+#words-homepage-1-chilling-with-all-your-accounts {
+  color: #286A93;
+  font-family: SFPRODISPLAY_BOLD;
+  font-size: 5vh;
+}
+
+#words-binchilling-is-a-platform {
+  position: relative;
+  top: 3vh;
+  font-family: SFPRODISPLAY_BOLD;
+  font-size: 2vh;
+  width: 55.52%;
+  text-align: center;
+
+}
+
+.homepage_page1_words {
+  position: relative;
+  text-align: center;
+  top: -6vh;
+  justify-content: center;
+  align-items: center;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+#words-binchilling-is-a-platform {
+  font-size: 2.3vh;
+  text-align: center;
+  color: #A0A0A0;
+  ;
+}
+
+.homepage_photo_of_banks_logo {
+  position: relative;
+  width: 60%;
+  height: 19.4vh;
+  align-items: center;
+  top: 3.5vh;
+  justify-content: center;
+}
+
+.homepage_photo_of_banks_logo Img {
+  max-width: 100%;
+  max-height: 100%;
+  align-items: center;
+}
+
+.homepage_navbar_head_contianer {
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  margin-right: 3vh;
+  width: 12%;
+  height: 11.5vh;
+  right: 0.7%;
+  flex-direction: row;
+  align-items: center;
+}
+
+.navbar_function_container {
+  font-size: 2vh;
+}
+
+.homepage_navbar_head_contianer p {
+  color: white;
+  font-family: SFPRODISPLAY_BOLD;
+  font-size: 2vh;
+}
+
+.homepage_sign_text {
+  position: relative;
+  width: 10%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #286A93;
+  color: white;
+  font-size: 2vh;
+  font-family: SFPRODISPLAY_BOLD;
+}
+
+.homepage_01_next_page {
+  position: relative;
+  width: 3vh;
+  height: 3vh;
+  top: 9vh;
+}
+
+.homepage_01_next_page Img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+
+
+/* homepage02 */
+.homepage_02 {
+  position: relative;
+  background: #286A93;
+  height: 72.5vh;
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+#words-homepage-2-chilling-with-all-your-accounts {
+  color: white;
+  font-size: 5vh;
+  font-family: SFPRODISPLAY_BOLD;
+  position: relative;
+  top: -20vh;
+}
+
+.homepage_02_center_blocks {
+  position: relative;
+  width: 100%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.homepage_02_connect_your_wallet {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 12.29%;
+  margin-right: 12.66%;
+}
+
+.homepage_02_connect_your_wallet Img {
+  /* max-height: 100%;*/
+  width: 50%;
+  /* position: relative; */
+  left: 22.34%;
+  right: 72.76%;
+  bottom: 46.48%;
+}
+
+#word_connect_your_wallet {
+  font-size: 2.3vh;
+  font-family: SFPRODISPLAY_BOLD;
+  color: white;
+  position: relative;
+  top: 3vh;
+
+}
+
+#word_describe_connect_your_wallet {
+  font-size: 1.11vh;
+  font-family: SFProDisplay-Semibold;
+  color: white;
+  position: relative;
+  top: 5vh;
+  text-align: center;
+}
+
+.homepage_02_manage_your_assets {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 12.29%;
+}
+
+.homepage_02_manage_your_assets Img {
+  position: relative;
+  max-width: 100%;
+  height: 100%;
+
+}
+
+#word_manage_your_assets {
+  font-size: 2.3vh;
+  font-family: SFPRODISPLAY_BOLD;
+  color: white;
+  position: relative;
+  top: 2.5vh;
+}
+
+#word_describe_manage_your_assets {
+  font-size: 1.11vh;
+  font-family: SFProDisplay-Semibold;
+  color: white;
+  position: relative;
+  top: 4.5vh;
+  text-align: center;
+}
+
+.homepage_02_get_more_informations {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 12.29%;
+  top: 0.5vh;
+  margin-left: 12.03%;
+}
+
+.homepage_02_get_more_informations Img {
+  width: 63.27px;
+  height: 100px;
+  left: 1413px;
+  top: 485px;
+
+
+}
+
+#word_get_more_informations {
+  font-size: 2.3vh;
+  font-family: SFPRODISPLAY_BOLD;
+  color: white;
+  position: relative;
+  top: 2.5vh;
+}
+
+#word_describe_get_more_informations {
+  font-size: 1.11vh;
+  font-family: SFProDisplay-Semibold;
+  color: white;
+  position: relative;
+  top: 4.5vh;
+  text-align: center;
+}
+
+.homepage_03 {
+  position: relative;
+  background-image: url("./Img/homepage/Rectangle 7.png");
+  background-size: cover;
+  height: 58.3vh;
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+#homepage_03_never_miss_a_drop {
+  font-size: 6vh;
+  font-family: SFPRODISPLAY_BOLD;
+  color: white;
+  position: relative;
+  top: -7vh;
+}
+
+#homepage_03_subscribe_for {
+  font-size: 3vh;
+  font-family: SFProDisplay-Semibold;
+  color: white;
+  position: relative;
+  top: -4vh;
+}
+
+
+#homepage_03_after_reading {
+  font-size: 0.5vh;
+  font-family: SFPRODISPLAY_BOLD;
+  color: white;
+  position: relative;
+  width: 70%;
+  text-align: center;
+}
+
+
+
+.homepage_03_subscribe_box {
+  height: 5vh;
+  display: block;
+  width: 41.14%;
+  position: relative;
+  top: 3vh;
+}
+
+#textbox_homepage_03_subscribe_btn {
+  position: absolute;
+  height: 100%;
+  width: 19%;
+  left: 81%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2vh;
+  color: white;
+  font-family: SFProDisplay-Semibold;
+  background: linear-gradient(90deg, #286A93 0%, #528CA2 100%);
+  border-radius: 0px 7px 7px 0px;
+}
+
+#textbox_homepage_03_subscribe_box {
+  position: absolute;
+  width: 83%;
+  height: 100%;
+  left: 0%;
+  padding: 0px;
+  box-sizing: border-box;
+  border-radius: 7px;
+  border: 0vh;
+}
+
+#homepage_03_after_reading {
+  position: relative;
+  top: 7vh;
+  width: 40.88%;
+}
+
+.homepage_03_by_entering {
+  position: relative;
+  top: 10vh;
+}
+
+#homepage_03_after_reading {
+  font-size: 1.3vh;
+  font-family: SFProDisplay-Semibold;
+  color: white;
+  position: relative;
+  text-align: center;
+}
+
+.homepage_03_by_entering {
+  height: 5vh;
+  display: flex;
+  width: 80%;
+  position: relative;
+  left: 2%;
+  align-items: center;
+  justify-content: center;
+}
+
+#words_homepage_03_by_entering {
+  font-size: 1.3vh;
+  font-family: SFPRODISPLAY_BOLD;
+  color: white;
+  position: relative;
+  text-align: center;
+}
+
+#checkbox_homepage_03_by_entering {
+  height: 1.7vh;
+  width: 1.7vh;
+}
+
+#checkbox_homepage_03_by_entering {
+  position: relative;
+  right: 1vh;
+  top: -0.1vh;
+}
+
+.homepage_04 {
+  position: relative;
+  background-color: white;
+  height: 90vh;
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.homepage_04_words {
+  position: relative;
+  top: -6vh;
+}
+
+#words-homepage-4-chilling-with-all-your-accounts {
+  color: #8C8C8C;
+  font-family: SFPRODISPLAY_BOLD;
+  font-size: 5vh;
+  position: relative;
+}
+
+#homepage_04_binchilling_logo {
+  /* display: flex; */
+  position: relative;
+  width: 19.4vh;
+  height: 19.4vh;
+  align-items: center;
+  justify-content: center;
+}
+
+#homepage_04_binchilling_logo Img {
+  max-width: 100%;
+  max-height: 100%;
+  filter: drop-shadow(4px 4px 5px rgba(0, 0, 0, 0.25));
+}
+
+.homepage_04_sign_in_area {
+  width: 25%;
+}
+
+#word_homepage_04_email {
+  color: #A0A0A0;
+  font-family: SFPRODISPLAY_BOLD;
+  font-size: 2.5vh;
+  position: relative;
+  margin-bottom: 1vh;
+  margin-left: 1vh;
+}
+
+#word_homepage_04_password {
+  color: #A0A0A0;
+  font-family: SFPRODISPLAY_BOLD;
+  font-size: 2.5vh;
+  position: relative;
+  margin-left: 0.5vh;
+}
+
+#textbox_homepage_04_email {
+  box-sizing: border-box;
+  width: 100%;
+  border: 2px solid #A0A0A0;
+  border-radius: 70px;
+}
+
+.word_homepage_04_password_options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+}
+
+#textbox_homepage_04_password {
+  box-sizing: border-box;
+  width: 100%;
+  border: 2px solid #A0A0A0;
+  border-radius: 70px;
+}
+
+#word_homepage_04_forgot_password {
+  font-family: SFPRODISPLAY_BOLD;
+  color: #286A93;
+  font-size: 1vh;
+  position: relative;
+}
+
+#textbutton_homepage_04_sign_in {
+  text-align: center;
+  font-family: SFPRODISPLAY_BOLD;
+  color: white;
+  font-size: 2vh;
+  height: 4vh;
+  line-height: 4vh;
+  margin-top: 4vh;
+  position: flex;
+  background: linear-gradient(90deg, #286A93 0%, #528CA2 100%);
+  border-radius: 7px;
+}
+
+.word_homepage_04_dont_have_account {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  top: 4vh;
+}
+
+.word_homepage_04_dont_have_account p {
+  font-family: SFPRODISPLAY_BOLD;
+  font-size: 2.5vh;
+}
+
+#word_homepage_04_dont_have_an_account_yet {
+  color: #8C8C8C;
+}
+
+#word_homepage_04_sign_up {
+  color: #286A93;
+}
+
+.homepage_01_to_02_blank {
+  height: 12.96vh;
+  width: 100vh;
+  background-color: white;
+}
+
+.homepage_02_to_03_blank {
+  height: 15.75vh;
+  width: 100vh;
+  background-color: white;
+}
+
+.homepage_03_to_bottom_blank {
+  height: 11.4vh;
+  width: 100vh;
+  background-color: white;
+}
+
+.homepage_03_to_04_blank {
+  height: 7.12vh;
+  width: 100vh;
+  background-color: white;
+}
+
+#homepage_bottom_area {
+  position: relative;
+  bottom: 0%;
+  height: 7.4vh;
+  background: #9BB3C6;
+  font-family: 'SF Pro';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2vh;
+  line-height: 7.4vh;
+  text-align: center;
+  color: #FFFFFF;
+  display: block;
+  font-family: SFPRODISPLAY_BOLD;
+}
+
+
+#customize_settings_menu_align_container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+#customize_settings_text_container {
+  width: 25.7%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+#customize_settings_text {
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  color: white;
+  font-family: SFProDisplay-Semibold;
+  font-size: 1.5vh;
+  text-decoration: underline;
+}
+
+#customize_settings_disable_container {
+  width: 27.25%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+#customize_settings_disable_text {
+  position: relative;
+  top: 0%;
+  width: 100%;
+  height: 36.2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #286A93;
+  color: white;
+  font-size: 1.5vh;
+  font-family: SFPRODISPLAY_BOLD;
+}
+
+#customize_settings_accept_container {
+  width: 27.25%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+#customize_settings_accept_text {
+  position: relative;
+  top: 0%;
+  width: 100%;
+  height: 36.2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #286A93;
+  color: white;
+  font-size: 1.5vh;
+  font-family: SFPRODISPLAY_BOLD;
+}
+
+#privacybar_close_container {
+  width: 1.1%;
+  height: 100%;
+  top: 0;
+  right: 2.3%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
+
+#privacybar_close_btn {
+  width: 100%;
+  color: white;
+  font-size: 2.5vh;
+  font-family: SFPRODISPLAY_BOLD;
+}
+
+/* Lai */
+#landing_page_04_top_collections_title,
+#landing_page_05_top_collections_title {
+  box-sizing: border-box;
+  position: absolute;
+  width: 454px;
+  height: 72px;
+  left: 733px;
+  font-family: SFPRODISPLAY_BOLD;
+  font-size: 60px;
+  line-height: 72px;
+  text-align: center;
+  color: #286A93;
+}
+
+.top_collect04_top_container {
+  display: flex;
+  justify-content: space-between;
+  padding: 9% 11% 0% 9%;
+}
+
+span {
+  font-family: SFPRODISPLAY_BOLD;
+  width: 85px;
+  font-size: 25px;
+  color: #355B7F;
+}
+
+button {
+  font-family: SFPRODISPLAYREGULAR;
+  font-size: 22px;
+  width: 167px;
+  height: 41px;
+  line-height: 26px;
+  text-align: center;
+  color: #FFFFFF;
+  background: #D4D4D4;
+  border-radius: 70px;
+  border: none;
+}
+
+button:nth-child(2) {
+  background: linear-gradient(270deg, #528CA2 0%, #286A93 100%);
+}
+
+select {
+  background-color: #FFFFFF;
+  font-family: SFPRODISPLAYREGULAR;
+  padding: 5px 25px;
+  border: 1px solid #355B7F;
+  border-radius: 70px;
+  margin-left: 15px;
+  font-size: 22px;
+  color: #355B7F;
+}
+
+.p04_round_card_container {
+  color: #286A93;
+  margin: 0% 7.5%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.round_card {
+  width: 29%;
+  border-radius: 55px;
+  border: 1px solid #fff;
+  padding: 15px 25px;
+  margin: 1.25% 0%;
+  display: flex;
+  align-items: center;
+}
+
+.landing_page img {
+  margin: 0.5px 1.5%;
+}
+
+.mark {
+  background: #355B7F;
+  border-radius: 5px;
+  width: 70px;
+  padding: 2px 0px;
+  margin-left: 5px;
+  display: inline-block;
+}
+
+.paragraph {
+  height: 80px;
+  margin-left: 15px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.paragraph_1,
+.paragraph_2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.landing_page_collectibles {
+  height: 180vh;
+  width: 100vw;
+  display: block;
+  z-index: 0;
+  min-height: 100%;
+  min-width: 100%;
+  position: relative;
+  top: 0;
+}
+
+.top_collect_05_top_container {
+  display: flex;
+  justify-content: space-between;
+  padding: 14% 11% 0% 9%;
+}
+
+#p05_card_container {
+  padding: 3% 7.5%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.square_card {
+  height: 500px;
+  margin-bottom: 3.5%;
+}
+
+#image1 {
+  background-image: url("./Img/marketplace/Rectangle 59.png");
+  background-size: cover;
+}
+
+#image2 {
+  background-image: url("./Img/marketplace/Rectangle 57.png");
+  background-size: cover;
+}
+
+#image3 {
+  background-image: url("./Img/marketplace/Rectangle 55.png");
+  background-size: cover;
+}
+
+#image4 {
+  background-image: url("./Img/marketplace/Rectangle 53.png");
+  background-size: cover;
+}
+
+#image5 {
+  background-image: url("./Img/marketplace/NFT marketplace-27.png");
+  background-size: cover;
+}
+
+#image6 {
+  background-image: url("./Img/marketplace/NFT_marketplace+-25.png");
+  background-size: cover;
+}
+
+#image7 {
+  background-image: url("./Img/marketplace/NFT_marketplace+-26.png");
+  background-size: cover;
+}
+
+#image8 {
+  background-image: url("./Img/marketplace/Rectangle 59.png");
+  background-size: cover;
+}
+
+.image {
+  background-color: #E0E0E0;
+  width: 345px;
+  height: 500px;
+  border-radius: 25px;
+}
+
+.text {
+  box-sizing: border-box;
+  position: relative;
+  top: -200px;
+  width: 345px;
+  height: 233.9px;
+  background: #355B7F;
+  border-radius: 0px 0px 20px 20px;
+  padding: 15px;
+}
+
+.text:first-child {
+  margin-bottom: 10px;
+}
+
+.vertical {
+  width: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.price {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.defi {
+  position: relative;
+  top: -80%;
+}
+
+.price_title {
+  width: 70.5px;
+  height: 12px;
+}
+
+.price img {
+  margin: 10px;
+  s
+}
+
+.row {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#bottom_logo {
+  position: absolute;
+  margin: 5% 17%;
+}
+
+.col {
+  position: absolute;
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+}
+
+.col img {
+  margin-bottom: 14%;
+}
+
+.col img:first-child {
+  margin-bottom: 30%;
+}
+
+
+#see-more {
+  position: absolute;
+  left: 836px;
+  top: 1600px;
+  width: 246px;
+  height: 41px;
+  font-family: SFPRODISPLAYREGULAR;
+  font-size: 22px;
+  line-height: 26px;
+  text-align: center;
+  color: #FFFFFF;
+  background: linear-gradient(270deg, #528CA2 0%, #286A93 100%);
+  border-radius: 70px;
+}
+
+/* ---------------- bottom area bar ----------------  */
+#bottom_area {
+  position: relative;
+  bottom: 0%;
+  max-width: 100%;
+  height: 20px;
+  padding: 20px 740px 40px 740px;
+  background: #9BB3C6;
+  font-family: SFProDisplay-Semibold;
+  font-size: 22px;
+  text-align: center;
+  color: #FFFFFF;
+}
