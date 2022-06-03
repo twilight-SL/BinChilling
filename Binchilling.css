@@ -1170,6 +1170,14 @@ video {
   font-family: SFProDisplay-Semibold;;
 }
 
+.wallet_totalamount_earning.MetaMask{
+  display: none;
+}
+
+.wallet_totalamount_earning.Phanton{
+  display: none;
+}
+
 .wallet_currency_currency {
   position: absolute;
   height: 100%;
