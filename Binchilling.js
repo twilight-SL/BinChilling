@@ -1393,10 +1393,19 @@ function draw_NFT_chart() {
 }
 
 /* -------------------- Add Account Event ---------------------- */
-function TurnBack_choose_account() {
-  document.getElementById("add_new_account_page").style.display = 'block';
-  document.getElementById("connect_nft_account").style.display = 'none';
-  document.getElementById("demo-add").style.display = 'block';
+function TurnBack_choose_account(SuccessOrNot){
+  document.getElementById("add_new_account_page").style.display='block';
+  document.getElementById("connect_nft_account").style.display='none';
+ switch(SuccessOrNot){
+  case 1:
+    document.getElementById("demo-metamask").style.display='block';
+    break;
+  case 2:
+    document.getElementById("demo-phantom").style.display='block';
+    break;
+  default:
+    break;
+ }
 }
 
 function add_NFT_account(input_id) {
@@ -1406,47 +1415,74 @@ function add_NFT_account(input_id) {
 
 /* --------------------  Modal Action  -------------------- */
 const input_MetaMask_success_password = 456789;
+const input_Phantom_success_password = 878787;
 var input_password;
 
-function get_metamask_password() {
-  input_password = document.querySelector("#metamask-password-input").value;
-  if (input_password !== null) {
-    console.log("get_metamask_password: " + input_password);
-  } else {
-    console.log("Something error!");
+function get_password(id){
+  input_password = document.querySelector("#" + id).value;
+  if( input_password !== null){
+    switch(id){
+      case "metamask-password-input":
+        console.log("metamask_password:  " + input_password);
+        break;
+      case "phantom-password-input":
+        console.log("phantom_password:  " + input_password);
+        break;
+      default:
+        break;
+    }
   }
 }
 
-function verify_metamask_password() {
+function verify_password(id){
   let state = 1; // Inform which state the class 'dialog' should be closed
   let SuccessOrNot = 0; // Initialize false (which equals failed)
+  /*
+    1 -> Success to MetaMask
+    2 -> Success to Phantom
+   */
   $('#MetaMaskModal').modal('hide');
+  $('#PhantomModal').modal('hide');
 
-  if (input_password == input_MetaMask_success_password) {
-    console.log("Success: " + input_password);
-    document.getElementById('MetaMask-wallet-success-connect').style.display = 'block';
-    document.getElementById('dialog-success').style.display = 'block';
-    SuccessOrNot = 1;
-  } else {
-    console.log("Error: " + input_password);
-    document.getElementById('MetaMask-wallet-failed-connect').style.display = 'block';
-    document.getElementById('dialog-failed').style.display = 'block';
+  switch(id){
+    case "metamask-unlock":
+      console.log("metamask_password:  " + input_password);
+      if(input_password == input_MetaMask_success_password){
+        SuccessOrNot = 1;
+        document.getElementById('MetaMask-connect-success').style.display='block';
+        document.getElementById('MetaMask-dialog-success').style.display='block';
+      }else {
+        SuccessOrNot = 0;
+        document.getElementById('MetaMask-connect-failed').style.display='block';
+        document.getElementById('MetaMask-dialog-failed').style.display='block';
+      }
+      break;
+    case "phantom-unlock":
+      console.log("phantom_password:  " + input_password);
+      if(input_password == input_Phantom_success_password){
+        SuccessOrNot = 2;
+        document.getElementById('Phantom-connect-success').style.display='block';
+        document.getElementById('Phantom-dialog-success').style.display='block';
+      }else {
+        SuccessOrNot = 0;
+        document.getElementById('Phantom-connect-failed').style.display='block';
+        document.getElementById('Phantom-dialog-failed').style.display='block';
+      }
+      break;
   }
 
-  $(".dialog").on("click", function () {
-    console.log("you have click");
-    if (state == 1) {
+  $(".dialog").on("click", function(){
+    if(state === 1){
       $(".dialog").fadeOut("normal");
       state = 0;
-      if (SuccessOrNot == 1) {
-        console.log("TurnBack_choose_account");
-        TurnBack_choose_account();
-      }
+       if(SuccessOrNot !== 0){
+         TurnBack_choose_account(SuccessOrNot);
+       }
     }
   });
-
-  $(".verify-modal").on("click", function (event) {
+  $( ".verify-modal" ).on( "click", function(event) {
     event.stopPropagation();
   });
   $("#metamask-password-input").val('');
+  $("#phantom-password-input").val('');
 }

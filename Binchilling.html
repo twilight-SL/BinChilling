@@ -322,13 +322,62 @@
       </div>
       <div class="input_account">
         <label>NFT/ Cryptocurrency</label>
-        <!------------------  ! Add Demo !  ------------------>
-        <div id="demo-add" style="display: none;">
-          <div style="display: flex;justify-content:flex-start;align-items: center;margin-left: 30px;">
-            <img src="./Img/MetaMask_Fox 3.png" alt="">
-            <img src="./Img/MetaMask.png" style="height:17px;margin-left: 40px;" alt="">
+         <!------------------  ! Add Demo !  ------------------>
+         <div id="demo-add">
+          <!-------------------------------- MetaMask connected Information ------------------------------->
+          <div id="demo-metamask" style="display: none;">
+            <div class="account-info">
+              <img src="./img/MetaMask_Fox 3.png" alt="">
+              <img src="./img/MetaMask.png" style="height:17px;margin-left: 40px;" alt="">
+              <button class="delete-account" data-toggle="modal" data-target="#Delete_metamask_account" role="tab" aria-controls="list">
+                <img src="./img/Group 373.png" alt="">
+              </button>
+              <!---------------------- Delete Account Start --------------------------->
+              <div class="modal fade" id="Delete_metamask_account" role="dialog">
+                <div class="modal-dialog">
+                  <!-- Modal content -->
+                  <div class="modal-content">
+                    <div class="modal-body">
+                      <h3>Are you sure to delete your account?</h3>
+                      <div> 
+                        <button class="del-btn" style="background: #42506B; color: #FFFFFF;">Not now</button>
+                        <button class="del-btn" style="background: #FFFFFF;color: #42506B;">Yes</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!---------------------- Delete Account End  ---------------------->
+            </div>
+            <img src="./img/Group 290.png" alt="">
           </div>
-          <img src="./Img/Group 290.png" alt="">
+          <!-------------------------------- Phantom connected Information ------------------------------->
+          <div id="demo-phantom" style="display: none;">
+            <div class="account-info">
+              <img src="./img/Phantom 1.png" alt="">
+              <img src="./img/Phantom_text.jpg" style="width: 90px;margin-left:47.5px;" alt="">
+              <button class="delete-account" data-toggle="modal" data-target="#Delete_phantom_account" role="tab" aria-controls="list">
+                <img src="./img/Group 373.png" alt="">
+              </button>
+              <!---------------------- Delete Account Start --------------------------->
+              <div class="modal fade" id="Delete_phantom_account" role="dialog">
+                <div class="modal-dialog">
+                  <!-- Modal content -->
+                  <div class="modal-content">
+                    <div class="modal-body">
+                      <h3>Are you sure to delete your account?</h3>
+                      <div> 
+                        <button class="del-btn" style="background: #42506B; color: #FFFFFF;">Not now</button>
+                        <button class="del-btn" style="background: #FFFFFF;color: #42506B;">Yes</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!---------------------- Delete Account End  ---------------------->
+            </div>
+            <img src="./img/phantom-conected-info.jpg" alt="">
+          </div>
         </div>
         <input id="add-nft" class="input_add_style" type="text" placeholder="+  Click to add a new account" onclick="add_NFT_account(this.id)">
       </div>
@@ -353,22 +402,22 @@
                   <!-- Modal content -->
                   <div class="modal-content">
                     <div class="modal-header">
-                      <img src="./Img/MetaMask_Fox 3.png" alt="">
-                      <img src="./Img/Ellipse 31.png" class="ellipse">
+                      <img src="./img/MetaMask_Fox 3.png" alt="">
+                      <img src="./img/Ellipse 31.png" class="ellipse">
                       <select name="currency" class="form-select">
                         <option selected>Main Ethereum Network</option>
                         <option>Something Network</option>
                       </select>
                     </div>
                     <div class="modal-body">
-                      <img src="./Img/MetaMask_Big.jpg" alt="">
+                      <img src="./img/MetaMask_Big.jpg" alt="">
                       <h1>Welcome back!</h1>
                       <h4>The decentralized web awaits</h4>
                       <div class="metamask-passwaord">
                         <div class="psw">Password</div>
-                        <input type="password" class="connect-wallet-password" id="metamask-password-input" onblur="get_metamask_password()">
+                        <input type="password" class="connect-wallet-password" id="metamask-password-input" onblur="get_password(this.id)">
                       </div>
-                      <button class="unlock" onclick="verify_metamask_password()">Unlock</button>
+                      <button class="unlock" id="metamask-unlock" onclick="verify_password(this.id)">Unlock</button>
                       <a href="#" class="forgot-psw">Forgot password?</a>
                       <p class="psw">Need help? Contact <a href="#">MetaMaskSupport</a></p>
                     </div>
@@ -376,15 +425,15 @@
                 </div>
               </div>
               <!---------------------- MetaMask Connect Succes --------------------------->
-              <div class='dialog' id="dialog-success">
-                <div class="verify-modal" id="MetaMask-wallet-success-connect">
-                  <img src="./Img/Group 170.png" alt="">
+              <div class='dialog' id="MetaMask-dialog-success">
+                <div class="verify-modal-success" id="MetaMask-connect-success">
+                  <img src="./img/Group 170.png" alt="">
                 </div>
               </div>
               <!---------------------- MetaMask Connect Failed --------------------------->
-              <div class='dialog' id="dialog-failed">
-                <div class="verify-modal" id="MetaMask-wallet-failed-connect">
-                  <img src="./Img/Group 167.png" alt="">
+              <div class='dialog' id="MetaMask-dialog-failed">
+                <div class="verify-modal-failed" id="MetaMask-connect-failed">
+                  <img src="./img/Group 167.png" alt="">
                 </div>
               </div>
               <!---------------------- MetaMask Modal End --------------------------->
@@ -396,10 +445,41 @@
                 <img src="./Img/walletconnect 1.png" alt="">
                 <p class="icon_name">WalletConnect</p>
               </div>
-              <div class="list-group-item list-group-item-action item rounded-pill" id="list-phantom-list" data-bs-toggle="list" role="tab" aria-controls="list-Phantom">
-                <img src="./Img/Phantom 1.png" alt="">
+              <div class="list-group-item list-group-item-action item rounded-pill" id="list-phantom-list" data-toggle="modal" data-target="#PhantomModal" role="tab" aria-controls="list-Phantom">
+                <img src="./img/Phantom 1.png" alt="">
                 <p class="icon_name">Phantom</p>
               </div>
+               <!---------------------- Phantom Modal Start --------------------------->
+               <div class="modal fade" id="PhantomModal" role="dialog">
+                <div class="modal-dialog">
+                  <!-- Modal content -->
+                  <div class="modal-content" id="phantom-modal">
+                    <div class="modal-header">
+                      <img src="./img/Group 375.png" alt="" style="width: 23px;">
+                      <p>Phantom.app</p>
+                    </div>
+                    <div class="modal-body">
+                      <img src="./img/phantom 2.png" alt="" id="phantom-img">
+                      <h5>Enter your password</h5>
+                      <input type="password" class="connect-phantom-password" id="phantom-password-input" placeholder="password" onblur="get_password(this.id)">
+                      <button id="phantom-unlock" onclick="verify_password(this.id)">Unlock</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!---------------------- Phantom Connect Succes --------------------------->
+              <div class='dialog' id="Phantom-dialog-success">
+                <div class="verify-modal-success" id="Phantom-connect-success">
+                  <img src="./img/Group 170.png" alt="">
+                </div>
+              </div>
+              <!---------------------- Phantom Connect Failed --------------------------->
+              <div class='dialog' id="Phantom-dialog-failed">
+                <div class="verify-modal-failed" id="Phantom-connect-failed">
+                  <img src="./img/Group 167.png" alt="">
+                </div>
+              </div>
+              <!---------------------- Phantom Modal End --------------------------->
               <div class="list-group-item list-group-item-action item rounded-pill" id="list-venly-list" data-bs-toggle="list" role="tab" aria-controls="list-Venly">
                 <img src="./Img/venly_logo 1.png" alt="">
                 <p class="icon_name">Venly</p>
