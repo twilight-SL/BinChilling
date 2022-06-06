@@ -6,10 +6,10 @@
 }*/
 $(document).ready(function () {
   console.log("in document ready")
-  var wallet_pages = ['overview', 'NFT', 'Stock', 'MetaMask', 'Phanton', 'Crypto', 'SinoPac', 'Yuanta', 'Citibank']
+  var wallet_pages = ['overview', 'NFT', 'Stock', 'MetaMask', 'Phanton', 'Crypto', 'SinoPac', 'Yuanta', 'Citibank', 'CD_NTD', 'CD_For']
   var wallet_page = 'overview';
 
-  
+
   $("#navbar_account_add").on("click", function () {
     var recent_page = "wallet_" + wallet_page;
     document.getElementById(recent_page).style.display = 'none';
@@ -24,11 +24,11 @@ $(document).ready(function () {
     console.log(document.getElementById($(this).attr("id")).value)
     email_verification_code_entered[verify_index] = document.getElementById($(this).attr("id")).value;
     if (document.getElementById($(this).attr("id")).value.length == 1 && (verify_index != (email_verification_code.length - 1))) {
-      verify_index ++;
-      document.forms['verify_email'].elements[verify_index ].focus();
+      verify_index++;
+      document.forms['verify_email'].elements[verify_index].focus();
     }
   });
-  
+
   /*function enter_email_verification_code(code_id, index) {
     email_verification_code_entered[index] = document.getElementById(code_id).value;
     if (document.getElementById(code_id).value.length == 1 && (index != (email_verification_code.length - 1))) {
@@ -119,14 +119,14 @@ $(document).ready(function () {
   });
 
 
-function turn_to_overview_page() {
-  document.getElementById('wallet_NFT').style.display = 'none';
-  document.getElementById('wallet_overview').style.display = 'block';
-  document.getElementById("Risk").style.visibility = 'hidden';
-  d3.select("svg").remove();
-  draw();
-  show_risk_index('overview');
-}
+  function turn_to_overview_page() {
+    document.getElementById('wallet_NFT').style.display = 'none';
+    document.getElementById('wallet_overview').style.display = 'block';
+    document.getElementById("Risk").style.visibility = 'hidden';
+    d3.select("svg").remove();
+    draw();
+    show_risk_index('overview');
+  }
 
   $("#explore_NFT_btn").on("click", function () {
     document.getElementById('wallet_NFT').style.display = 'none';
@@ -173,20 +173,88 @@ function turn_to_overview_page() {
     document.getElementById('navbar_search_table').style.display = 'none';
   })
 
+
   $("#wallet_NFT_filter_confirm_btn").on("click", function () {
     document.getElementById('wallet_NFT_filter_table').style.display = 'none';
+    var NFT_filter_min;
+    var NFT_filter_max;
+    if ($("#wallet_NFT_filter_min_typebox").val() != "") {
+      NFT_filter_min = $("#wallet_NFT_filter_min_typebox").val();
+    }
+    else {
+      NFT_filter_min = NFT_price_min;
+    }
+    if ($('#wallet_NFT_filter_max_typebox').val() != "") {
+      NFT_filter_max = $("#wallet_NFT_filter_max_typebox").val();
+    }
+    else {
+      NFT_filter_max = NFT_price_max;
+    }
+    if ($('#wallet_NFT_filter_min_typebox').val() == "" && $("#wallet_NFT_filter_max_typebox").val() == "") {
+      NFT_filter_min = NFT_price_min;
+      NFT_filter_max = NFT_price_max;
+    }
+    console.log("Max: "+ NFT_filter_max + " min: "+  NFT_filter_min)
+    var visibility_NFT = 0;
+    $(".wallet_NFT_NFTs").css('display','none');
+    
+    var exchange_rate = Currency_calculator[Currency.indexOf(NFT_filter_currency)]
+    
+    if (NFT_filter.includes("All")) {
+      for (var i = 0; i < NFT_totalamount.length; i++) {
+        if ((NFT_totalamount[i]*exchange_rate >= NFT_filter_min) && (NFT_totalamount[i]*exchange_rate <= NFT_filter_max)) {
+          var id = '#wallet_NFT_NFT' + String(i+1);
+          console.log("exchanged_price: " + NFT_totalamount[i]*exchange_rate)
+          $(id).css('display','block');
+          visibility_NFT ++;
+        }
+      }
+      var width = (visibility_NFT)*276 + (visibility_NFT-1)*50;
+      document.getElementById("wallet_NFT_NFTs_container").style.width = width + "px";
+    }
+    else{
+      for(var i = 0; i < NFT_totalamount.length; i++){
+        for(var j=0; j < NFT_filter.length; j++){
+          for(var k=0; k < NFT_category[i].length; k++){
+            var id = '#wallet_NFT_NFT' + String(i+1);
+            if((NFT_filter[j] == NFT_category[i][k]) && (NFT_totalamount[i]*exchange_rate >= NFT_filter_min) && (NFT_totalamount[i]*exchange_rate <= NFT_filter_max)){
+              $(id).css('display','block');
+              console.log("NFT: "+ i)
+              console.log("filter: " + NFT_filter[j])
+              
+              visibility_NFT ++;
+              console.log("Visibility_NFT: " + visibility_NFT);
+            }
+          }
+        }
+      }
+    }
+    if(visibility_NFT == 1){
+      document.getElementById("wallet_NFT_NFTs_container").style.width = '276px';
+    }
+    else{
+      var width = (visibility_NFT)*276 + (visibility_NFT-1)*50;
+      document.getElementById("wallet_NFT_NFTs_container").style.width = width + "px";
+    }
   });
 
   $("#wallet_NFT_filter_dollor_menu_btn").on("click", function () {
     document.getElementById('wallet_NFT_filter_scrollable_dollor_menu').style.display = 'block';
   });
 
+  var NFT_filter = []
   $(".change_search_category_bgcolor").on("click", function () {
     if (document.getElementById($(this).attr("id")).style.backgroundColor == "rgb(140, 140, 140)") {
       document.getElementById($(this).attr("id")).style.backgroundColor = '#E5E5E5';
+      NFT_filter = NFT_filter.filter(item => item != document.getElementById($(this).attr("id")).textContent)
+      console.log(NFT_filter.length);
+      console.log(NFT_filter);
     }
     else {
       document.getElementById($(this).attr("id")).style.backgroundColor = '#8C8C8C';
+      NFT_filter[NFT_filter.length] = document.getElementById($(this).attr("id")).textContent;
+      console.log(NFT_filter.length);
+      console.log(NFT_filter);
     }
   });
 
@@ -218,7 +286,7 @@ function turn_to_overview_page() {
     document.getElementById('navbar_function_brands').style.color = '#286A93';
     document.getElementById('NFT_Market_navbar_triangle_down').style.borderTopColor = '#286A93';
   });
-  
+
   $("#NFT_navbar_function3_container").on("mouseout", function () {
     document.getElementById('navbar_function_brands').style.color = "white";
     document.getElementById('NFT_Market_navbar_triangle_down').style.borderTopColor = "white";
@@ -228,7 +296,7 @@ function turn_to_overview_page() {
     document.getElementById('NFT_Market_navbar_username').style.color = '#286A93';
     document.getElementById('NFT_Market_navbar_username_triangle_down').style.borderTopColor = '#286A93';
   });
-  
+
   $("wallet_username_container").on("mouseout", function () {
     document.getElementById('NFT_Market_navbar_username').style.color = "white";
     document.getElementById('NFT_Market_navbar_username_triangle_down').style.borderTopColor = "white";
@@ -251,7 +319,7 @@ function turn_to_overview_page() {
     document.getElementById(id).style.borderBottomColor = '#286A93';
   });
 
-  var show_array_pages = ['overview', 'Stock', 'MetaMask', 'Crypto', 'Phanton', 'SinoPac', 'Yuanta', 'Citibank']
+  var show_array_pages = ['overview', 'Stock', 'MetaMask', 'Crypto', 'Phanton', 'SinoPac', 'Yuanta', 'Citibank', 'CD_NTD', 'CD_For']
   var overview_show = ['false', 'false', 'false', 'false', 'false']
   var Stock_show = ['false', 'false', 'false', 'false', 'false']
   var MetaMask_show = ['false', 'false', 'false', 'false', 'false']
@@ -260,7 +328,9 @@ function turn_to_overview_page() {
   var SinoPac_show = ['false', 'false', 'false', 'false', 'false']
   var Yuanta_show = ['false', 'false', 'false', 'false', 'false']
   var Citibank_show = ['false', 'false', 'false', 'false', 'false']
-  var show = [overview_show, Stock_show, MetaMask_show, Crypto_show, Phanton_show, SinoPac_show, Yuanta_show, Citibank_show]
+  var CD_NTD_show = ['false', 'false', 'false', 'false', 'false']
+  var CD_For_show = ['false', 'false', 'false', 'false', 'false']
+  var show = [overview_show, Stock_show, MetaMask_show, Crypto_show, Phanton_show, SinoPac_show, Yuanta_show, Citibank_show, CD_NTD_show, CD_For_show]
   var show_color = ['#B8CAD6', '#E9E9EB', '#528CA2', '#42506B', '#FF7582']
 
   $(".show_wallet_object").on("click", function () {
@@ -346,10 +416,14 @@ function turn_to_overview_page() {
   var Yuanta_totalamount_percentage = [];
   var Citibank_totalamount = [];
   var Citibank_totalamount_percentage = [];
+  var CD_NTD_totalamount = [];
+  var CD_NTD_totalamount_percentage = [];
+  var CD_For_totalamount = [];
+  var CD_For_totalamount_percentage = [];
   var NFT_totalamount = [];
   var NFT_totalamount_percentage = [];
-  var totalamount_all_array = [overview_category_totalamount, Stock_totalamount, MetaMask_totalamount, Crypto_totalamount, Phanton_totalamount, NFT_totalamount, SinoPac_totalamount, Yuanta_totalamount, Citibank_totalamount]
-  var percentage_all_array = [overview_category_totalamount_percentage, Stock_totalamount_percentage, MetaMask_totalamount_percentage, Crypto_totalamount_percentage, Phanton_totalamount_percentage, NFT_totalamount_percentage, SinoPac_totalamount_percentage, Yuanta_totalamount_percentage, Citibank_totalamount_percentage]
+  var totalamount_all_array = [overview_category_totalamount, Stock_totalamount, MetaMask_totalamount, Crypto_totalamount, Phanton_totalamount, NFT_totalamount, SinoPac_totalamount, Yuanta_totalamount, Citibank_totalamount, CD_NTD_totalamount, CD_For_totalamount]
+  var percentage_all_array = [overview_category_totalamount_percentage, Stock_totalamount_percentage, MetaMask_totalamount_percentage, Crypto_totalamount_percentage, Phanton_totalamount_percentage, NFT_totalamount_percentage, SinoPac_totalamount_percentage, Yuanta_totalamount_percentage, Citibank_totalamount_percentage, CD_NTD_totalamount_percentage, CD_For_totalamount_percentage]
   var overview_total_asset = 618910  //unit: Currency[0] = NTD
   var Stock_original_price = [];
   var Crypto_original_price = [];
@@ -358,7 +432,7 @@ function turn_to_overview_page() {
   var original_price_all_array = [Stock_original_price, MetaMask_original_price, Phanton_original_price];
   var earnings = [];
   var Total_asset = [];
-  var overview_category_category = ['Stock', 'NFT', 'Crypto', 'CD(For)', 'CD(NTD)']
+  var overview_category_category = ['Stock', 'NFT', 'Crypto', 'CD_For', 'CD_NTD']
   var overview_category_account = ['SinoPac', 'MetaMask', 'Yuanta', 'Phanton', 'Citibank']
   var Stock_category = ['EVAAIR', 'MTK', 'AP Memory', 'TSM'];
   var Stock_institution = ['SinoPac', 'SinoPac', 'Yuanta', 'Yuanta']
@@ -367,7 +441,9 @@ function turn_to_overview_page() {
   var Crypto_category = ['ETH', 'BTC'];
   var SinoPac_category = ['unknown1', 'unknown2'];
   var Yuanta_category = ['unknown3', 'unknown4'];
-  var Citibank_category = ['CD(for)', 'CD(NTD)'];
+  var Citibank_category = ['CD_For', 'CD_NTD'];
+  var CD_NTD_category = ['Citibank', 'Yuanta']
+  var CD_For_category = ['Citibank', 'Yuanta']
   var username = 'Louis'
 
   function load_database() {
@@ -382,6 +458,8 @@ function turn_to_overview_page() {
     load_Yuanta_asset();
     load_Citibank_asset();
     load_Crypto_asset();
+    load_CD_NTD_asset();
+    load_CD_For_asset();
     load_NFTs_asset();
     calculate_earnings();
     calculate_percentage_all(totalamount_all_array, percentage_all_array);
@@ -450,6 +528,16 @@ function turn_to_overview_page() {
     get_Crypto_asset();
     get_Crypto_original_price();
     document.getElementById('wallet_Crypto_whole_asset_dollor').textContent = '$' + String(Total_asset[wallet_pages.indexOf('Crypto')].toFixed(3));
+  }
+
+  function load_CD_NTD_asset() {
+    get_CD_NTD_asset();
+    document.getElementById('wallet_CD_NTD_whole_asset_dollor').textContent = '$' + String(Total_asset[wallet_pages.indexOf('CD_NTD')].toFixed(3));
+  }
+
+  function load_CD_For_asset() {
+    get_CD_For_asset();
+    document.getElementById('wallet_CD_For_whole_asset_dollor').textContent = '$' + String(Total_asset[wallet_pages.indexOf('CD_For')].toFixed(3));
   }
 
   function load_NFTs_asset() {
@@ -538,8 +626,8 @@ function turn_to_overview_page() {
         }
         else if (i == 1) {
           for (var j = 0; j < MetaMask_totalamount.length; j++) {
-            var id = "wallet_MetaMask_category" + (j+1);
-            if(document.getElementById(id).textContent != "NFT"){
+            var id = "wallet_MetaMask_category" + (j + 1);
+            if (document.getElementById(id).textContent != "NFT") {
               var id = 'wallet_MetaMask_earning' + String(j + 1);
               var earning_percentage = (((MetaMask_totalamount[j] - original_price_all_array[i][j])) * 100 / (original_price_all_array[i][j])).toFixed(2);
               console.log(MetaMask_totalamount[j]);
@@ -559,8 +647,8 @@ function turn_to_overview_page() {
         }
         else if (i == 2) {
           for (var j = 0; j < Phanton_totalamount.length; j++) {
-            var id = "wallet_Phanton_category" + (j+1);
-            if(document.getElementById(id).textContent != "NFT"){
+            var id = "wallet_Phanton_category" + (j + 1);
+            if (document.getElementById(id).textContent != "NFT") {
               var id = 'wallet_Phanton_earning' + String(j + 1);
               var earning_percentage = (((Phanton_totalamount[j] - original_price_all_array[i][j])) * 100 / (original_price_all_array[i][j])).toFixed(2);
               console.log(Phanton_totalamount[j]);
@@ -731,21 +819,102 @@ function turn_to_overview_page() {
     Total_asset[wallet_pages.indexOf('Crypto')] = Crypto_total_asset;
   }
 
-  function get_NFT_totalamount() {
+  function get_CD_NTD_totalamount() {
+    CD_NTD_totalamount[0] = 1262;
+    CD_NTD_totalamount[1] = 1100;
+  }
+
+  function get_CD_NTD_asset() {
+    get_CD_NTD_totalamount();
+    var CD_NTD_total_asset = 0;
+    for (var i = 0; i < CD_NTD_totalamount.length; i++) {   //display NFT value on the card
+      CD_NTD_total_asset += CD_NTD_totalamount[i];
+      CD_NTD_show[i] = 'true';
+      var index = i + 1;
+      var id = 'wallet_CD_NTD_object_container' + index;
+      document.getElementById(id).style.display = "block";
+      id = "wallet_CD_NTD_totalamount" + index;
+      document.getElementById(id).textContent = '$' + CD_NTD_totalamount[i];
+      id = 'wallet_CD_NTD_category' + index;
+      document.getElementById(id).textContent = CD_NTD_category[i];
+    }
+    Total_asset[wallet_pages.indexOf('CD_NTD')] = CD_NTD_total_asset;
+  }
+
+  function get_CD_For_totalamount() {
+    CD_For_totalamount[0] = 1262;
+    CD_For_totalamount[1] = 1100;
+  }
+
+  function get_CD_For_asset() {
+    get_CD_For_totalamount();
+    var CD_For_total_asset = 0;
+    for (var i = 0; i < CD_For_totalamount.length; i++) {   //display NFT value on the card
+      CD_For_total_asset += CD_For_totalamount[i];
+      CD_For_show[i] = 'true';
+      var index = i + 1;
+      var id = 'wallet_CD_For_object_container' + index;
+      document.getElementById(id).style.display = "block";
+      id = "wallet_CD_For_totalamount" + index;
+      document.getElementById(id).textContent = '$' + CD_For_totalamount[i];
+      id = 'wallet_CD_For_category' + index;
+      document.getElementById(id).textContent = CD_For_category[i];
+    }
+    Total_asset[wallet_pages.indexOf('CD_For')] = CD_For_total_asset;
+  }
+
+  var NFT_info_subname = []
+  var NFT_info_name = []
+  var NFT_info_src = []
+  var NFT_category = []
+  var NFT_price_max = 0;
+  var NFT_price_min = 0;
+  function get_NFT_info() {
     NFT_totalamount[0] = 157435.788;
     NFT_totalamount[1] = 138774.538;
     NFT_totalamount[2] = 241123.987;
+    NFT_price_max = Math.max(...NFT_totalamount);
+    NFT_price_min = Math.min(...NFT_totalamount);
+    NFT_info_subname[0] = "Crazy bird";
+    NFT_info_subname[1] = "Japanese Illustration";
+    NFT_info_subname[2] = "Crazy tiger";
+    NFT_info_name[0] = "Crazy bird #5487";
+    NFT_info_name[1] = "Japanese Illustration";
+    NFT_info_name[2] = "Crazy tiger #6771";
+    NFT_info_src[0] = "MetaMask";
+    NFT_info_src[1] = "Phanton";
+    NFT_info_src[2] = "MetaMask";
+    NFT_category[0] = ["Collectibles", "Photography"];
+    NFT_category[1] = ["Art", "Collectibles"];
+    NFT_category[2] = ["Collectibles", "Photography"];
   }
 
   function get_NFTs_asset() {
-    get_NFT_totalamount();
+    get_NFT_info();
     var NFT_total_asset = 0;
     for (var i = 0; i < NFT_totalamount.length; i++) {   //display NFT value on the card
       NFT_total_asset += NFT_totalamount[i];
       var index = i + 1;
+      var id = "wallet_NFT_NFT" + String(index);
+      document.getElementById(id).visibility = 'visible';
       var id = "wallet_NFT_NFTs_info_value" + String(index);
       document.getElementById(id).textContent = NFT_totalamount[i];
+      var id = "wallet_NFT_NFTs_info_subname" + String(index);
+      document.getElementById(id).textContent = NFT_info_subname[i];
+      var id = "wallet_NFT_NFTs_info_name" + String(index);
+      document.getElementById(id).textContent = NFT_info_name[i];
+      var id = "wallet_NFT_NFTs_info_source" + String(index);
+      document.getElementById(id).textContent = NFT_info_src[i];
+      var id = "wallet_NFT_NFTs_info_subname" + String(index);
     }
+    if(NFT_totalamount.length == 1){
+      document.getElementById("wallet_NFT_NFTs_container").style.width = '276px';
+    }
+    else{
+      var width = NFT_totalamount.length*276 + (NFT_totalamount.length-1)*50;
+      document.getElementById("wallet_NFT_NFTs_container").style.width = width + "px";
+    }
+    //document.getElementById(id).style.width = NFT_info_src[i];
     Total_asset[wallet_pages.indexOf('NFT')] = NFT_total_asset;
   }
 
@@ -826,6 +995,20 @@ function turn_to_overview_page() {
             percentage_node[k].innerHTML = String(percentage_arr[8][k]) + '%';
           }
           break;
+        case CD_NTD_totalamount:
+          calculate_percentage(CD_NTD_totalamount, percentage_arr[9], 'CD_NTD');
+          var percentage_node = document.querySelectorAll('.wallet_percentage_percentage.CD_NTD');
+          for (k in percentage_node) {
+            percentage_node[k].innerHTML = String(percentage_arr[9][k]) + '%';
+          }
+          break;
+        case CD_For_totalamount:
+          calculate_percentage(CD_For_totalamount, percentage_arr[10], 'CD_For');
+          var percentage_node = document.querySelectorAll('.wallet_percentage_percentage.CD_For');
+          for (k in percentage_node) {
+            percentage_node[k].innerHTML = String(percentage_arr[10][k]) + '%';
+          }
+          break;
       }
     }
   }
@@ -863,6 +1046,7 @@ function turn_to_overview_page() {
     }
   }
 
+  var NFT_filter_currency;
   $(".close_wallet_whole_asset_currency_menu").on("click", function () {
     var chosed_currency = document.getElementById($(this).attr("id")).textContent;
     for (var currency in Currency) {
@@ -912,6 +1096,12 @@ function turn_to_overview_page() {
                   case 'Citibank':
                     total_anount_node[i].textContent = '$' + String((Currency_calculator[currency] * Citibank_totalamount[i]).toFixed(3));
                     break;
+                  case 'CD_NTD':
+                    total_anount_node[i].textContent = '$' + String((Currency_calculator[currency] * CD_NTD_totalamount[i]).toFixed(3));
+                    break;
+                  case 'CD_For':
+                    total_anount_node[i].textContent = '$' + String((Currency_calculator[currency] * CD_For_totalamount[i]).toFixed(3));
+                    break;
                 }
               }
             }
@@ -922,6 +1112,7 @@ function turn_to_overview_page() {
           }
         }
         if ($(this).attr("id").indexOf('filter') != -1) {
+          NFT_filter_currency = Currency[currency];
           document.getElementById('wallet_NFT_filter_dollor_menu_text').textContent = Currency[currency];
         }
         var id = 'wallet_' + now_wallet_page + '_whole_asset_dollor_menu_text';
@@ -942,7 +1133,7 @@ function turn_to_overview_page() {
       id = 'wallet_' + now_wallet_page + '_whole_asset_scrollable_dollor_menu';
       document.getElementById(id).style.display = 'none';
     }
-    
+
   });
 
   $(".slide_NFTs").on("click", function () {

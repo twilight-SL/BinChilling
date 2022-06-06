@@ -1106,8 +1106,8 @@ video {
 .wallet_category_category {
   position: absolute;
   height: 100%;
-  width: 20%;
-  left: 10%;
+  width: 22%;
+  left: 9%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1122,7 +1122,7 @@ video {
   position: absolute;
   height: 100%;
   width: 22%;
-  left: 11%;
+  left: 9%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1496,7 +1496,7 @@ video {
   border-style: solid;
   border-color: #42506B;
   border-radius: 8px;
-  font-size: 2vh;
+  font-size: 1.8vh;
 }
 
 #wallet_NFT_filter_to_text {
@@ -1542,6 +1542,7 @@ video {
   border-style: solid;
   border-color: #42506B;
   border-radius: 8px;
+  font-size: 1.8vh;
 }
 
 
@@ -1618,28 +1619,27 @@ video {
 
 #wallet_NFT_NFTs_container {
   position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   top: 0%;
   left: 0%;
-  width: 200%;
   height: 100%;
 }
 
 .wallet_NFT_NFTs {
-  position: absolute;
-  width: 17%;
+  position: relative;
+  width: 276px;
   height: 100%;
 }
 
 #wallet_NFT_NFT1 {
-  left: 0%;
 }
 
 #wallet_NFT_NFT2 {
-  left: 20%;
 }
 
 #wallet_NFT_NFT3{
-  left: 40%;
 }
 
 .wallet_NFT_NFTs_img_container {
@@ -1654,15 +1654,15 @@ video {
 }
 
 #wallet_NFT_NFTs_img_container1 {
-  background-image: url("./img/NFT/Wallet/NFT_crazy_bird.png");
+  background-image: url("./Img/NFT/Wallet/NFT_crazy_bird.png");
 }
 
 #wallet_NFT_NFTs_img_container2 {
-  background-image: url("./img/NFT/Wallet/NFT_Japaneses_Illstra.png");
+  background-image: url("./Img/NFT/Wallet/NFT_Japaneses_Illstra.png");
 }
 
 #wallet_NFT_NFTs_img_container3 {
-  background-image: url("./img/NFT/Wallet/NFT_crazy_tiger.png");
+  background-image: url("./Img/NFT/Wallet/NFT_crazy_tiger.png");
 }
 
 .wallet_NFT_percentage{
