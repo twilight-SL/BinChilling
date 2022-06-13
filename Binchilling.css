@@ -1094,6 +1094,10 @@ video {
   background-color: #FF7582;
 }
 
+.wallet_show_color6 {
+  background-color: #A5DEF1;
+}
+
 .wallet_text {
   position: relative;
   display: flex;
@@ -1112,6 +1116,7 @@ video {
   justify-content: center;
   align-items: center;
   color: black;
+  font-family: SFProDisplay-Semibold;
 }
 
 .wallet_category_category:hover{
@@ -1128,6 +1133,7 @@ video {
   align-items: center;
   color: #286A93;
   text-decoration: underline;
+  font-family: SFProDisplay-Semibold;
 }
 
 .wallet_category_account:hover{
@@ -1142,6 +1148,7 @@ video {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: SFProDisplay-Semibold;
 }
 
 .wallet_totalamount_totalamount.Stock {
@@ -1152,6 +1159,7 @@ video {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: SFProDisplay-Semibold;
 }
 
 .wallet_totalamount_earning{
@@ -1186,6 +1194,7 @@ video {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: SFProDisplay-Semibold;
 }
 
 .wallet_percentage_percentage {
@@ -1196,6 +1205,7 @@ video {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: SFProDisplay-Semibold;
 }
 
 .wallet_object_container2 {
@@ -1653,6 +1663,7 @@ video {
   background-size: cover;
 }
 
+/*
 #wallet_NFT_NFTs_img_container1 {
   background-image: url("./Img/NFT/Wallet/NFT_crazy_bird.png");
 }
@@ -1663,7 +1674,7 @@ video {
 
 #wallet_NFT_NFTs_img_container3 {
   background-image: url("./Img/NFT/Wallet/NFT_crazy_tiger.png");
-}
+}*/
 
 .wallet_NFT_percentage{
   position: absolute;
@@ -1749,8 +1760,417 @@ video {
   font-size: 1.9vh;
   font-family: SFProDisplay-Semibold;
 }
+/*------------------------------------------NFT Detail------------------------------------------*/
+#NFT_detail_page{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  display: none;
+}
 
-/*------------------------------------------NFT Market------------------------------------------*/
+#NFT_detail_page_rec{
+  position: absolute;
+  height: 65%;
+  width: 90%;
+  top: 20%;
+  left: 5%;
+  background-color: white;
+  box-shadow: 0 3px 3px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+#NFT_detail_title_container{
+  position: absolute;
+  width: 23%;
+  height: 5%;
+  top: 4.25%;
+  left: 4%;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+
+#NFT_detail_name{
+  font-size: 3vh;
+  font-family: SFPRODISPLAY_BOLD;
+  color: #286A93;
+}
+
+#NFT_detail_title_bar{
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  width: 1%;
+  height: 100%;
+  background-color: #286A93;
+  display: none;
+}
+
+#NFT_detail_num{
+  font-size: 3vh;
+  font-family: SFPRODISPLAY_MEDIUM;
+  color: #286A93;
+  display: none;
+}
+
+#NFT_detail_img{
+  position: absolute;
+  width: 23%;
+  height: 55%;
+  top: 12.78%;
+  left: 4%;
+  border-radius: 25px;
+  background-size: cover;
+}
+
+#NFT_detail_about_container{
+  position: absolute;
+  width: 23%;
+  height: 24.3%;
+  top: 70.7%;
+  left: 4%;
+  background-color: #E5E5E5;
+  border-radius: 21px;
+}
+
+#NFT_detail_about{
+  position: absolute;
+  margin-left: 7.75%;
+  margin-right: 7.75%;
+  top: 11.865%;
+  font-size: 3vh;
+  font-family: SFProDisplay-Semibold;
+  color:#286A93;
+}
+
+#NFT_detail_about_info{
+  position: absolute;
+  margin-left: 7.75%;
+  margin-right: 7.75%;
+  top: 30.5%;
+  font-size: 1.5vh;
+  font-family: SFPRODISPLAYREGULAR;
+  color:#286A93;
+}
+
+#NFT_detail_characteristic_box{
+  position: absolute;
+  width: 22.454%;
+  height: 45.05%;
+  left: 28.76%;
+  top: 12.78%;
+  border-radius: 21px;
+  border-width: 3px;
+  border-style: solid;
+  border-color:#42506B;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.NFT_detail_characteristic_container{
+  position: relative;
+  width: 92%;
+  height: 22%;
+  left: 4%;
+  border-radius: 21px;
+}
+
+.NFT_detail_characteristic{
+  position: absolute;
+  width: 40%;
+  height: 30%;
+  top: 20%;
+  left: 0%;
+  color: #286A93;
+  font-size: 2vh;
+  font-family: SFPRODISPLAY_MEDIUM;
+}
+
+.NFT_detail_characteristic_description{
+  position: absolute;
+  width: 65%;
+  height: 30%;
+  top: 50%;
+  left: 0%;
+  color: #286A93;
+  font-size: 3vh;
+  font-family: SFProDisplay-Semibold;
+}
+
+.NFT_detail_characteristic_percentage{
+  position: absolute;
+  height: 30%;
+  top: 20%;
+  right: 0%;
+  color: #A0A0A0;
+  font-size: 2vh;
+  font-family: SFPRODISPLAY_MEDIUM;
+}
+
+.NFT_detail_characteristic_floorprice{
+  position: absolute;
+  height: 30%;
+  top: 50%;
+  right: 0%;
+  color: #286A93;
+  font-size: 3vh;
+  font-family: SFProDisplay-Semibold;
+}
+
+.NFT_detail_characteristic_bar{
+  width: 90%;
+  height: 1%;
+  margin-left: 5%;
+  background-color: #E5E5E5;
+}
+
+.NFT_detail_characteristic_floorprice_bar1{
+  position: absolute;
+  width: 8%;
+  height: 4%;
+  top: 60%;
+  left: 72%;
+  background-color: #286A93;
+}
+
+.NFT_detail_characteristic_floorprice_bar2{
+  position: absolute;
+  width: 8%;
+  height: 4%;
+  top: 72.5%;
+  left: 72%;
+  background-color: #286A93;
+}
+
+.NFT_detail_characteristic_floorprice_bar3{
+  position: absolute;
+  width: 8%;
+  height: 4%;
+  top: 85%;
+  left: 72%;
+  background-color: #286A93;
+}
+
+#close_NFT_detail{
+  position: absolute;
+  left: 96%;
+  top: 5%;
+  font-size: 2.5vh;
+  color: #286A93;
+  font-family: SFPRODISPLAY_MEDIUM;
+}
+/*----------------------------------------- Plan Page ------------------------------------------*/
+#Plan_page{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+}
+
+#Plan_subtitle{
+  position: absolute;
+  width: 36%;
+  left: 49.167%;
+  top: 30%;
+  font-family: SFPRODISPLAY_MEDIUM;
+  font-size: 2.5vh;
+  color: #A0A0A0;
+}
+
+#Plan_estimation_title{
+  position: absolute;
+  width: 14%;
+  left: 49.167%;
+  top: 38%;
+  font-family: SFPRODISPLAY_MEDIUM;
+  font-size: 2.5vh;
+  color: #42506B;
+}
+
+#Plan_estimation_title_NTD{
+  position: absolute;
+  width: 13.4%;
+  left: 63%;
+  top: 38%;
+  font-family: SFPRODISPLAY_MEDIUM;
+  font-size: 2.5vh;
+  color: #42506B;
+}
+
+#Plan_estimation_amount{
+  position: absolute;
+  width: 9.8%;
+  height: 3.7%;
+  left: 67%;
+  top: 37.2%;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: #286A93;
+}
+
+#Plan_estimation_time{
+  position: absolute;
+  width: 6.25%;
+  height: 3.7%;
+  left: 78.9%;
+  top: 37.2%;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: #286A93;
+}
+
+input[type="text"]
+{
+  font-size:2.5vh;
+  font-family: SFPRODISPLAY_MEDIUM;
+  color: black;
+  left: 10px;
+}
+.plan_subtitle{
+  position: absolute;
+  top: 42.1%;
+  color: #286A93;
+  font-size: 2vh;
+  font-family: SFPRODISPLAYREGULAR;
+}
+
+#plan_show{
+  left: 50%;
+}
+
+#plan_category{
+  left: 55.26%;
+}
+
+#plan_rate{
+  left: 62.34375%;
+}
+
+#plan_riskindex{
+  left: 66.5625%;
+}
+
+#plan_expected_rate{
+  left: 73.9%;
+}
+
+#plan_expected_riskindex{
+  left: 82.96875%;
+}
+
+#plan_object_container_container{
+  position: absolute;
+  width: 41%;
+  height: 34.074%;
+  left: 49.114583%;
+  top: 46.3889%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.plan_object_container {
+  position: relative;
+  width: 100%;
+  height: 12%;
+  left: 0%;
+  border-style: solid;
+  border-color: #286A93;
+  border-width: 1px;
+  border-radius: 60px;
+  display: block;
+}
+
+.plan_category_category{
+  height: 100%;
+  width: 22%;
+  left: 9%;
+  color:black;
+  font-family: SFProDisplay-Semibold;
+}
+
+.plan_percentage_percentage{
+  position: absolute;
+  height: 90%;
+  width: 10%;
+  top: 5%;
+  left: 30%;
+  color:black;
+  font-family: SFPRODISPLAYREGULAR;
+}
+
+.plan_riskindex_riskindex{
+  position: absolute;
+  height: 100%;
+  width: 10%;
+  left: 43.5%;
+  font-family: SFPRODISPLAYREGULAR;
+}
+
+.plan_percent_symbol{
+  position: absolute;
+  left: 76%;
+  top: 0%;
+  height: 100%;
+  font-family: SFProDisplay-Semibold;
+}
+
+.plan_expected_riskindex_riskindex{
+  position: absolute;
+  height: 90%;
+  width: 5%;
+  top: 5%;
+  left: 85%;
+  font-family: SFProDisplay-Semibold;
+}
+
+.plan_expected_rate_rate{
+  position: absolute;
+  width: 15.756%;
+  left: 59.847522%;
+  top: 10%;
+  height: 80%;
+  border-style: solid;
+  border-radius: 10px;
+  border-color: #286A93;
+  border-width: 2px;
+}
+
+
+
+#plan_confirm{
+  position: absolute;
+  left: 49.114583%;
+  top: 84.444%;
+  width: 41%;
+  height: 5.55556%;
+  border-radius: 10px;
+  background: linear-gradient(270deg, #528CA2, #286A93);
+  font-family: SFPRODISPLAY_BOLD;
+  color: white;
+  font-size: 2.5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#plan_add_object_container{
+  border-color:#A0A0A0;
+  border-style: dashed;
+}
+
+#plan_add_category{
+  position: absolute;
+  height: 100%;
+  left: 7%;
+  display: flex;
+  align-items: center;
+  color: #A0A0A0;
+  font-size:2vh;
+  font-family: SFPRODISPLAYREGULAR;
+}
+
+/*----------------------------------------- NFT Market -----------------------------------------*/
 #NFT_Market {
   display: none;
   ;

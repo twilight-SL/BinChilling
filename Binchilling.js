@@ -78,12 +78,8 @@ $(document).ready(function () {
     document.getElementById('connect_nft_account').style.display = 'none';
     console.log(wallet_pages.length)
     for (var i = 1; i < wallet_pages.length; i++) {
-      console.log(wallet_pages[i])
       var now_wallet_page = wallet_pages[i];
-      console.log(now_wallet_page);
       var id = 'wallet_' + now_wallet_page;
-      console.log(i);
-      console.log(id);
       document.getElementById(id).style.display = 'none';
     }
     document.getElementById('wallet_navbar').style.display = 'block';
@@ -244,14 +240,14 @@ $(document).ready(function () {
 
   var NFT_filter = []
   $(".change_search_category_bgcolor").on("click", function () {
-    if (document.getElementById($(this).attr("id")).style.backgroundColor == "rgb(140, 140, 140)") {
+    if (document.getElementById($(this).attr("id")).style.backgroundColor == "rgb(40, 106, 147)") {
       document.getElementById($(this).attr("id")).style.backgroundColor = '#E5E5E5';
       NFT_filter = NFT_filter.filter(item => item != document.getElementById($(this).attr("id")).textContent)
       console.log(NFT_filter.length);
       console.log(NFT_filter);
     }
     else {
-      document.getElementById($(this).attr("id")).style.backgroundColor = '#8C8C8C';
+      document.getElementById($(this).attr("id")).style.backgroundColor = '#286A93';
       NFT_filter[NFT_filter.length] = document.getElementById($(this).attr("id")).textContent;
       console.log(NFT_filter.length);
       console.log(NFT_filter);
@@ -434,6 +430,7 @@ $(document).ready(function () {
   var Total_asset = [];
   var overview_category_category = ['Stock', 'NFT', 'Crypto', 'CD_For', 'CD_NTD']
   var overview_category_account = ['SinoPac', 'MetaMask', 'Yuanta', 'Phanton', 'Citibank']
+  var plan_category_percentage = [];
   var Stock_category = ['EVAAIR', 'MTK', 'AP Memory', 'TSM'];
   var Stock_institution = ['SinoPac', 'SinoPac', 'Yuanta', 'Yuanta']
   var MetaMask_category = ['ETH', 'BTC', 'NFT'];
@@ -482,13 +479,18 @@ $(document).ready(function () {
     }
     else {
       get_fake_overview_category_totalamount();
+      for (var i = 0; i < overview_category_category.length; i++) {
+        plan_category_percentage[i] = overview_category_totalamount[i]
+      }
     }
 
     for (var i = 0; i < overview_category_totalamount.length; i++) {
+      console.log("load overview asset debug")
       var index = i + 1;
       var id = "wallet_overview_totalamount" + index;
       document.getElementById(id).textContent = '$' + String(overview_category_totalamount[i]);
     }
+   
   }
 
   function load_Stock_asset() {
@@ -863,10 +865,12 @@ $(document).ready(function () {
     Total_asset[wallet_pages.indexOf('CD_For')] = CD_For_total_asset;
   }
 
-  var NFT_info_subname = []
-  var NFT_info_name = []
-  var NFT_info_src = []
-  var NFT_category = []
+  var NFT_info_subname = [];
+  var NFT_info_name = [];
+  var NFT_info_src = [];
+  var NFT_category = [];
+  var NFT_detail = [];
+  var NFT_img_url = [];
   var NFT_price_max = 0;
   var NFT_price_min = 0;
   function get_NFT_info() {
@@ -887,6 +891,12 @@ $(document).ready(function () {
     NFT_category[0] = ["Collectibles", "Photography"];
     NFT_category[1] = ["Art", "Collectibles"];
     NFT_category[2] = ["Collectibles", "Photography"];
+    NFT_detail[0] = {"PHOTOGRAPHER": "Jonathan Joestar", "TYPE": "Macaw", "BACKGROUND": "Dark mode", "FUR COLOR" : "Bright orange"};
+    NFT_detail[1] = {"PHOTOGRAPHER": "Jonathan Joestar", "TYPE": "Macaw", "BACKGROUND": "Dark mode", "FUR COLOR" : "Bright orange"};
+    NFT_detail[2] = {"PHOTOGRAPHER": "Jonathan Joestar", "TYPE": "Macaw", "BACKGROUND": "Dark mode", "FUR COLOR" : "Bright orange"};
+    NFT_img_url[0] = "url('./Img/NFT/Wallet/NFT_crazy_bird.png')";
+    NFT_img_url[1] = "url('./Img/NFT/Wallet/NFT_Japaneses_Illstra.png')";
+    NFT_img_url[2] = "url('./Img/NFT/Wallet/NFT_crazy_tiger.png')";
   }
 
   function get_NFTs_asset() {
@@ -916,6 +926,11 @@ $(document).ready(function () {
     }
     //document.getElementById(id).style.width = NFT_info_src[i];
     Total_asset[wallet_pages.indexOf('NFT')] = NFT_total_asset;
+    
+    for(var i = 0; i<NFT_totalamount.length; i++){
+      var id = "wallet_NFT_NFTs_img_container" + String(i+1);
+      document.getElementById(id).style.backgroundImage = NFT_img_url[i];
+    }
   }
 
   function load_overview_total_asset() {
@@ -1194,6 +1209,66 @@ $(document).ready(function () {
     }
   }
 
+  $(".wallet_NFT_NFTs").click(function () {
+    for(var i = 0; i<NFT_totalamount.length; i++){
+      if($(this).attr('id').indexOf(i+1) != -1){
+        document.getElementById('NFT_detail_page').style.display = 'block';
+        document.getElementById('wallet_NFT').style.display = 'none';
+        var id = "wallet_NFT_NFTs_info_subname" + String(i+1);
+        document.getElementById('NFT_detail_name').textContent = NFT_info_name[i];
+        
+        document.getElementById('NFT_detail_img').style.backgroundImage = NFT_img_url[i];
+        for(var j = 0; j<4; j++){
+          var id = "NFT_detail_characteristic" + String(j+1);
+          document.getElementById(id).textContent = Object.keys(NFT_detail[i])[j];
+        }
+        for(var j = 0; j<4; j++){
+          var id = "NFT_detail_characteristic_description" + String(j+1);
+          document.getElementById(id).textContent = Object.values(NFT_detail[i])[j];
+        }
+        
+
+      }
+    }
+  });
+
+  $("#close_NFT_detail").click(function () {
+    document.getElementById('wallet_NFT').style.display = 'block';
+    document.getElementById('NFT_detail_page').style.display = 'none';
+  });
+
+  //**********************************************   Plan page *************************************//
+  $("#navbar_function_plan").click(function () {
+    laod_plan_category();
+  });
+  laod_plan_category();
+  function laod_plan_category() {
+    for (var i = 0; i < overview_category_category.length; i++) {
+      var index = i + 1;
+      var id = "plan_object_container" + index;
+      overview_show[i] = 'true';
+      document.getElementById(id).style.display = "block";
+      id = "plan_category" + index;
+      document.getElementById(id).textContent = String(overview_category_category[i]);
+      id = "plan_percentage" + index;
+      load_overview_asset("category");
+      calculate_plan_category_percentage();
+    }
+  }
+
+  function calculate_plan_category_percentage(){
+    var total = 0;
+    for (var i = 0; i < overview_category_category.length; i++) {
+      total += plan_category_percentage[i];
+    }
+    
+    for (var i = 0; i < overview_category_category.length; i++) {
+      plan_category_percentage[i] = (plan_category_percentage[i]*100/total).toFixed(2);
+      var percentage_id = "plan_percentage" + String(i+1);
+      document.getElementById(percentage_id).textContent = String(plan_category_percentage[i])+"%";
+    }
+  }
+  
   //$(document).ready(function () {
   console.log("ready")
   $("#homepage_navbar_signin").click(function () {
