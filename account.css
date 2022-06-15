@@ -394,3 +394,44 @@ h3 {
   text-align: center;
   color: #FFFFFF;
 }
+
+
+/* ---------------- connect to Bank page  ---------------- */
+#connect_bank_account {
+  display: none;
+}
+
+.bank-Unlock{
+  width: 380px;
+  height: 56px;
+  margin-top: 10%;
+  margin-bottom: 15%;
+  font-family: SFProDisplay-Semibold;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  color: #FFFFFF;
+  background: linear-gradient(90deg, #286A93 0%, #528CA2 100%);
+  border: none;
+  border-radius: 8px;
+}
+
+.connect-bank-password {
+  width: 380px;
+  height: 61px;
+  background: #FFFFFF;
+  border: 1px solid #56595F;
+  border-radius: 8px;
+  margin-top: 5%;
+  padding:0% 5%;
+}
+
+#connect-bank-password::placeholder {
+  width: 89px;
+  height: 24px;
+  font-family: SFPRODISPLAYREGULAR;
+  font-size: 20px;
+  line-height: 24px;
+  color: #A0A0A0;
+  text-align: center;
+}
