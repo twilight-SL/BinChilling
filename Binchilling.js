@@ -15,6 +15,7 @@ $(document).ready(function () {
     document.getElementById(recent_page).style.display = 'none';
     document.getElementById('add_new_account_page').style.display = 'block';
     document.getElementById('navbar_account_dropdown_menu_container').style.display = 'none';
+    document.getElementById('plan_page').style.display = 'none';
   });
 
   var email_verification_code = ['1', '2', '3', '4', '5', '6']
@@ -76,6 +77,7 @@ $(document).ready(function () {
     document.getElementById('signin_page').style.display = 'none';
     document.getElementById('add_new_account_page').style.display = 'none';
     document.getElementById('connect_nft_account').style.display = 'none';
+    document.getElementById('plan_page').style.display = 'none';
     console.log(wallet_pages.length)
     for (var i = 1; i < wallet_pages.length; i++) {
       var now_wallet_page = wallet_pages[i];
@@ -84,6 +86,7 @@ $(document).ready(function () {
     }
     document.getElementById('wallet_navbar').style.display = 'block';
     document.getElementById('wallet_overview').style.display = 'block';
+    document.getElementById('wallet').style.display = 'block';
     document.getElementById('privacybar').style.display = 'block';
     document.getElementById('bottom_area').style.display = 'block';
     document.getElementById("Risk").style.visibility = 'hidden';
@@ -172,64 +175,76 @@ $(document).ready(function () {
 
   $("#wallet_NFT_filter_confirm_btn").on("click", function () {
     document.getElementById('wallet_NFT_filter_table').style.display = 'none';
+    var exchange_rate;
+    console.log("NFT_filter_currency: "+NFT_filter_currency);
+    if(NFT_filter_currency != null){
+      exchange_rate = Currency_calculator[Currency.indexOf(NFT_filter_currency)];
+    }
+    else{
+      exchange_rate = 1;
+    }
     var NFT_filter_min;
     var NFT_filter_max;
     if ($("#wallet_NFT_filter_min_typebox").val() != "") {
-      NFT_filter_min = $("#wallet_NFT_filter_min_typebox").val();
+      NFT_filter_min = $("#wallet_NFT_filter_min_typebox").val() * exchange_rate;
     }
     else {
-      NFT_filter_min = NFT_price_min;
+      NFT_filter_min = NFT_price_min * exchange_rate;
     }
     if ($('#wallet_NFT_filter_max_typebox').val() != "") {
-      NFT_filter_max = $("#wallet_NFT_filter_max_typebox").val();
+      NFT_filter_max = $("#wallet_NFT_filter_max_typebox").val() * exchange_rate;
     }
     else {
-      NFT_filter_max = NFT_price_max;
+      NFT_filter_max = NFT_price_max * exchange_rate;
     }
     if ($('#wallet_NFT_filter_min_typebox').val() == "" && $("#wallet_NFT_filter_max_typebox").val() == "") {
-      NFT_filter_min = NFT_price_min;
-      NFT_filter_max = NFT_price_max;
+      NFT_filter_min = NFT_price_min * exchange_rate;
+      NFT_filter_max = NFT_price_max * exchange_rate;
     }
-    console.log("Max: "+ NFT_filter_max + " min: "+  NFT_filter_min)
+    console.log("Max: " + NFT_filter_max + " min: " + NFT_filter_min)
     var visibility_NFT = 0;
-    $(".wallet_NFT_NFTs").css('display','none');
+    $(".wallet_NFT_NFTs").css('display', 'none');
+    console.log("NFT_filter_currency: "+NFT_filter_currency);
+    console.log("Currency.indexOf(NFT_filter_currency): "+Currency.indexOf(NFT_filter_currency));
     
-    var exchange_rate = Currency_calculator[Currency.indexOf(NFT_filter_currency)]
-    
+
     if (NFT_filter.includes("All")) {
       for (var i = 0; i < NFT_totalamount.length; i++) {
-        if ((NFT_totalamount[i]*exchange_rate >= NFT_filter_min) && (NFT_totalamount[i]*exchange_rate <= NFT_filter_max)) {
-          var id = '#wallet_NFT_NFT' + String(i+1);
-          console.log("exchanged_price: " + NFT_totalamount[i]*exchange_rate)
-          $(id).css('display','block');
-          visibility_NFT ++;
+        console.log("Total NFT amount: "+NFT_totalamount.length);
+        console.log("value: "+NFT_totalamount[i] * exchange_rate);
+        console.log("exchange rate: "+exchange_rate);
+        if ((NFT_totalamount[i] * exchange_rate >= NFT_filter_min) && (NFT_totalamount[i] * exchange_rate <= NFT_filter_max)) {
+          var id = '#wallet_NFT_NFT' + String(i + 1);
+          console.log("exchanged_price: " + NFT_totalamount[i] * exchange_rate)
+          $(id).css('display', 'block');
+          visibility_NFT++;
         }
       }
-      var width = (visibility_NFT)*276 + (visibility_NFT-1)*50;
+      var width = (visibility_NFT) * 276 + (visibility_NFT - 1) * 50;
       document.getElementById("wallet_NFT_NFTs_container").style.width = width + "px";
     }
-    else{
-      for(var i = 0; i < NFT_totalamount.length; i++){
-        for(var j=0; j < NFT_filter.length; j++){
-          for(var k=0; k < NFT_category[i].length; k++){
-            var id = '#wallet_NFT_NFT' + String(i+1);
-            if((NFT_filter[j] == NFT_category[i][k]) && (NFT_totalamount[i]*exchange_rate >= NFT_filter_min) && (NFT_totalamount[i]*exchange_rate <= NFT_filter_max)){
-              $(id).css('display','block');
-              console.log("NFT: "+ i)
+    else {
+      for (var i = 0; i < NFT_totalamount.length; i++) {
+        for (var j = 0; j < NFT_filter.length; j++) {
+          for (var k = 0; k < NFT_category[i].length; k++) {
+            var id = '#wallet_NFT_NFT' + String(i + 1);
+            if ((NFT_filter[j] == NFT_category[i][k]) && (NFT_totalamount[i] * exchange_rate >= NFT_filter_min) && (NFT_totalamount[i] * exchange_rate <= NFT_filter_max)) {
+              $(id).css('display', 'block');
+              console.log("NFT: " + i)
               console.log("filter: " + NFT_filter[j])
-              
-              visibility_NFT ++;
+
+              visibility_NFT++;
               console.log("Visibility_NFT: " + visibility_NFT);
             }
           }
         }
       }
     }
-    if(visibility_NFT == 1){
+    if (visibility_NFT == 1) {
       document.getElementById("wallet_NFT_NFTs_container").style.width = '276px';
     }
-    else{
-      var width = (visibility_NFT)*276 + (visibility_NFT-1)*50;
+    else {
+      var width = (visibility_NFT) * 276 + (visibility_NFT - 1) * 50;
       document.getElementById("wallet_NFT_NFTs_container").style.width = width + "px";
     }
   });
@@ -490,7 +505,7 @@ $(document).ready(function () {
       var id = "wallet_overview_totalamount" + index;
       document.getElementById(id).textContent = '$' + String(overview_category_totalamount[i]);
     }
-   
+
   }
 
   function load_Stock_asset() {
@@ -891,9 +906,9 @@ $(document).ready(function () {
     NFT_category[0] = ["Collectibles", "Photography"];
     NFT_category[1] = ["Art", "Collectibles"];
     NFT_category[2] = ["Collectibles", "Photography"];
-    NFT_detail[0] = {"PHOTOGRAPHER": "Jonathan Joestar", "TYPE": "Macaw", "BACKGROUND": "Dark mode", "FUR COLOR" : "Bright orange"};
-    NFT_detail[1] = {"PHOTOGRAPHER": "Jonathan Joestar", "TYPE": "Macaw", "BACKGROUND": "Dark mode", "FUR COLOR" : "Bright orange"};
-    NFT_detail[2] = {"PHOTOGRAPHER": "Jonathan Joestar", "TYPE": "Macaw", "BACKGROUND": "Dark mode", "FUR COLOR" : "Bright orange"};
+    NFT_detail[0] = { "PHOTOGRAPHER": "Jonathan Joestar", "TYPE": "Macaw", "BACKGROUND": "Dark mode", "FUR COLOR": "Bright orange" };
+    NFT_detail[1] = { "BACKGROUND": "Orange", "ILLUSTRATOR": "Kau", "ANIMAL": "Tiger", "COLOR": "Orange", "CLOTHES": "Traditional", "CHARACTER": "Boy" };
+    NFT_detail[2] = { "PHOTOGRAPHER": "BYH", "BACKGROUND": "Black", "SCALE": "Medium" };
     NFT_img_url[0] = "url('./Img/NFT/Wallet/NFT_crazy_bird.png')";
     NFT_img_url[1] = "url('./Img/NFT/Wallet/NFT_Japaneses_Illstra.png')";
     NFT_img_url[2] = "url('./Img/NFT/Wallet/NFT_crazy_tiger.png')";
@@ -917,18 +932,18 @@ $(document).ready(function () {
       document.getElementById(id).textContent = NFT_info_src[i];
       var id = "wallet_NFT_NFTs_info_subname" + String(index);
     }
-    if(NFT_totalamount.length == 1){
+    if (NFT_totalamount.length == 1) {
       document.getElementById("wallet_NFT_NFTs_container").style.width = '276px';
     }
-    else{
-      var width = NFT_totalamount.length*276 + (NFT_totalamount.length-1)*50;
+    else {
+      var width = NFT_totalamount.length * 276 + (NFT_totalamount.length - 1) * 50;
       document.getElementById("wallet_NFT_NFTs_container").style.width = width + "px";
     }
     //document.getElementById(id).style.width = NFT_info_src[i];
     Total_asset[wallet_pages.indexOf('NFT')] = NFT_total_asset;
-    
-    for(var i = 0; i<NFT_totalamount.length; i++){
-      var id = "wallet_NFT_NFTs_img_container" + String(i+1);
+
+    for (var i = 0; i < NFT_totalamount.length; i++) {
+      var id = "wallet_NFT_NFTs_img_container" + String(i + 1);
       document.getElementById(id).style.backgroundImage = NFT_img_url[i];
     }
   }
@@ -1210,23 +1225,23 @@ $(document).ready(function () {
   }
 
   $(".wallet_NFT_NFTs").click(function () {
-    for(var i = 0; i<NFT_totalamount.length; i++){
-      if($(this).attr('id').indexOf(i+1) != -1){
+    for (var i = 0; i < NFT_totalamount.length; i++) {
+      if ($(this).attr('id').indexOf(i + 1) != -1) {
         document.getElementById('NFT_detail_page').style.display = 'block';
         document.getElementById('wallet_NFT').style.display = 'none';
-        var id = "wallet_NFT_NFTs_info_subname" + String(i+1);
+        var id = "wallet_NFT_NFTs_info_subname" + String(i + 1);
         document.getElementById('NFT_detail_name').textContent = NFT_info_name[i];
-        
+
         document.getElementById('NFT_detail_img').style.backgroundImage = NFT_img_url[i];
-        for(var j = 0; j<4; j++){
-          var id = "NFT_detail_characteristic" + String(j+1);
+        for (var j = 0; j < 4; j++) {
+          var id = "NFT_detail_characteristic" + String(j + 1);
           document.getElementById(id).textContent = Object.keys(NFT_detail[i])[j];
         }
-        for(var j = 0; j<4; j++){
-          var id = "NFT_detail_characteristic_description" + String(j+1);
+        for (var j = 0; j < 4; j++) {
+          var id = "NFT_detail_characteristic_description" + String(j + 1);
           document.getElementById(id).textContent = Object.values(NFT_detail[i])[j];
         }
-        
+
 
       }
     }
@@ -1238,12 +1253,20 @@ $(document).ready(function () {
   });
 
   //**********************************************   Plan page *************************************//
+
+  var plan_category = [];
+
   $("#navbar_function_plan").click(function () {
     laod_plan_category();
+    document.getElementById('wallet').style.display = "none";
+    document.getElementById('plan_page').style.display = "block";
   });
+
   laod_plan_category();
+
   function laod_plan_category() {
     for (var i = 0; i < overview_category_category.length; i++) {
+      plan_category[i] = overview_category_category[i];
       var index = i + 1;
       var id = "plan_object_container" + index;
       overview_show[i] = 'true';
@@ -1256,19 +1279,154 @@ $(document).ready(function () {
     }
   }
 
-  function calculate_plan_category_percentage(){
+  function calculate_plan_category_percentage() {
     var total = 0;
     for (var i = 0; i < overview_category_category.length; i++) {
       total += plan_category_percentage[i];
     }
-    
+
     for (var i = 0; i < overview_category_category.length; i++) {
-      plan_category_percentage[i] = (plan_category_percentage[i]*100/total).toFixed(2);
-      var percentage_id = "plan_percentage" + String(i+1);
-      document.getElementById(percentage_id).textContent = String(plan_category_percentage[i])+"%";
+      plan_category_percentage[i] = (plan_category_percentage[i] * 100 / total).toFixed(2);
+      var percentage_id = "plan_percentage" + String(i + 1);
+      document.getElementById(percentage_id).textContent = String(plan_category_percentage[i]) + "%";
     }
   }
+
+  var plan_estimation_amount = 0;
+  var plan_estimation_time = 0;
+  var plan_estimation_date = 0;
+  $("#plan_estimation_amount").click(function () {
+    document.getElementById('plan_estimation_amount_menu').style.display = 'flex';
+  });
+
+  $(".plan_estimation_amount_option").click(function () {
+    plan_estimation_amount = 0;
+    plan_estimation_amount = document.getElementById($(this).attr("id")).textContent;
+    document.getElementById('plan_estimation_amount').value = plan_estimation_amount;
+    document.getElementById('plan_estimation_amount_menu').style.display = 'none';
+  });
+
+  $("#plan_estimation_amount_menu").hover(function () {
+  }, function () {
+    $("#plan_estimation_amount_menu").css("display", "none");
+  });
   
+  $('#plan_estimation_amount').keypress(function(event){ 
+    var keynum = (event.keyCode ? event.keyCode : event.which); 
+    if(keynum == '13'){ 
+      $("#plan_estimation_amount_menu").css("display", "none");
+    }
+  });
+
+  $("#plan_estimation_time").click(function () {
+    document.getElementById('plan_estimation_time_menu').style.display = 'flex';
+  });
+
+  $(".plan_estimation_time_option").click(function () {
+    plan_estimation_time = 0;
+    plan_estimation_time = document.getElementById($(this).attr("id")).textContent;
+    document.getElementById('plan_estimation_time').value = plan_estimation_time;
+    document.getElementById('plan_estimation_time_menu').style.display = 'none';
+  });
+
+  $("#plan_estimation_time_menu").hover(function () {
+  }, function () {
+    $("#plan_estimation_time_menu").css("display", "none");
+  });
+
+  $('#plan_estimation_time').keypress(function(event){ 
+    var keynum = (event.keyCode ? event.keyCode : event.which); 
+    if(keynum == '13'){ 
+      $("#plan_estimation_time_menu").css("display", "none");
+    }
+  });
+
+  $("#plan_estimation_date").click(function () {
+    document.getElementById('plan_estimation_date_menu').style.display = 'flex';
+  });
+
+  $(".plan_estimation_date_option").click(function () {
+    plan_estimation_date = 0;
+    plan_estimation_date = document.getElementById($(this).attr("id")).textContent;
+    document.getElementById('plan_estimation_date').textContent = plan_estimation_date;
+    document.getElementById('plan_estimation_date_menu').style.display = 'none';
+  });
+
+  $("#plan_add_object_container").click(function () {
+    if (plan_category.length + 1 <= 6) {
+      var index = plan_category.length + 1;
+      var id = "plan_object_container" + index;
+      document.getElementById(id).style.display = "block";
+      id = "plan_category_menu_category" + index;
+      document.getElementById(id).style.display = "block";
+      id = "plan_percentage" + index;
+      document.getElementById(id).textContent = "-";
+    }
+    else {
+      alert("Limited categories!")
+    }
+  });
+
+  $(".plan_category_menu_category").click(function () {
+    for (var i = 1; i <= 6; i++) {
+      if ($(this).attr("id").indexOf(i) != -1) {
+        var id = "plan_category_menu_container" + i;
+        document.getElementById(id).style.display = "flex";
+      }
+    }
+  });
+
+
+  $(".plan_category_menu_option").click(function () {
+    for (var i = 1; i <= 6; i++) {
+      if ($(this).attr("id").indexOf(i) != -1) {
+        var id = "plan_category_menu_category" + i;
+        document.getElementById(id).textContent = document.getElementById($(this).attr("id")).textContent;
+        document.getElementById(id).style.display = "flex";
+        id = "plan_category_menu_container" + i;
+        document.getElementById(id).style.display = "none";
+        plan_category[plan_category.length] = document.getElementById($(this).attr("id")).textContent;
+      }
+    }
+  });
+
+  $("#plan_confirm").click(function () {
+    var increase_amount;
+    var increase_time;
+    var increase_date;
+    if($("#plan_estimation_amount").val() == ''){
+      $("#plan_estimation_ammount_warn_container").css("display", "flex");
+    }
+    else{
+      increase_amount = $("#plan_estimation_amount").val();
+    }
+    if($("#plan_estimation_time").val() == ''){
+      $("#plan_estimation_time_warn_container").css("display", "flex");
+    }
+    else{
+      increase_time = $("#plan_estimation_time").val();
+    }
+    if($("#plan_estimation_amount").val() == ''){
+      increase_date = "day";
+    }
+    else{
+      increase_date = $("#plan_estimation_amount").val();
+    }
+    console.log(increase_date);
+  });
+  /*$(".plan_category_menu_option").hover(function () {
+    var id;
+    var id_menu;
+    for (var i = 1; i <= 6; i++) {
+      if ($(this).attr("id").indexOf(i) != -1) {
+        id = "plan_category_menu_option" + i;
+        id_menu = "plan_category_menu_category" + i;
+      }
+    }
+    document.getElementById(id_menu).textContent = document.getElementById(id).textContent;
+  });*/
+
+  /*************************** End Plan ***********************/
   //$(document).ready(function () {
   console.log("ready")
   $("#homepage_navbar_signin").click(function () {
@@ -1659,67 +1817,40 @@ function draw_NFT_chart() {
 }
 
 /* -------------------- Add Account Event ---------------------- */
-function TurnBack_choose_account(SuccessOrNot){
-  document.getElementById("add_new_account_page").style.display='block';
-  document.getElementById("connect_nft_account").style.display='none';
-  document.getElementById("connect_bank_account").style.display='none';
-  switch(SuccessOrNot){
+function TurnBack_choose_account(SuccessOrNot) {
+  document.getElementById("add_new_account_page").style.display = 'block';
+  document.getElementById("connect_nft_account").style.display = 'none';
+  switch (SuccessOrNot) {
     case 1:
-      document.getElementById("demo-metamask").style.display='block';
+      document.getElementById("demo-metamask").style.display = 'block';
       break;
     case 2:
-      document.getElementById("demo-phantom").style.display='block';
+      document.getElementById("demo-phantom").style.display = 'block';
       break;
-    case 3:
-      document.getElementById("demo-citibank").style.display='block';
+    default:
       break;
-    case 4:
-      document.getElementById("demo-sinoPac").style.display='block';
-      break;
-    case 5:
-      document.getElementById("demo-yuanta").style.display='block';
-      break;
-   }
+  }
 }
-
 
 function add_NFT_account(input_id) {
   document.getElementById("add_new_account_page").style.display = 'none';
   document.getElementById("connect_nft_account").style.display = 'block';
 }
 
-function add_Bank_account(input_id){
-  document.getElementById("add_new_account_page").style.display='none';
-  document.getElementById("connect_bank_account").style.display='block';
-}
 /* --------------------  Modal Action  -------------------- */
-// NFT & Crypto account
 const input_MetaMask_success_password = 456789;
 const input_Phantom_success_password = 878787;
-// Bank account
-const input_CitiBank_success_password = 4747474747;
-const input_SinoPac_success_password = 5050505050;
-const input_Yuanta_success_password = 1122334455;
 var input_password;
 
-function get_password(id){
+function get_password(id) {
   input_password = document.querySelector("#" + id).value;
-  if( input_password !== null){
-    switch(id){
+  if (input_password !== null) {
+    switch (id) {
       case "metamask-password-input":
         console.log("metamask_password:  " + input_password);
         break;
       case "phantom-password-input":
         console.log("phantom_password:  " + input_password);
-        break;
-      case "Citi-password-input":
-        console.log("Citi_password:  " + input_password);
-        break;
-      case "SinoPac-password-input":
-        console.log("SinoPac_password:  " + input_password);
-        break;
-      case "Yuanta-password-input":
-        console.log("Yuanta_password:  " + input_password);
         break;
       default:
         break;
@@ -1727,104 +1858,55 @@ function get_password(id){
   }
 }
 
-function verify_password(id){
+function verify_password(id) {
   let state = 1; // Inform which state the class 'dialog' should be closed
   let SuccessOrNot = 0; // Initialize false (which equals failed)
   /*
     1 -> Success to MetaMask
     2 -> Success to Phantom
-    3 -> Success to CitiBank
-    4 -> Success to SinoPacBank
-    5 -> Success to Yuanta
    */
-  // NFT & Crypto
   $('#MetaMaskModal').modal('hide');
   $('#PhantomModal').modal('hide');
-  // Bank
-  $('#CitiBankModal').modal('hide');
-  $('#SinoPacModal').modal('hide');
-  $('#YuantaModal').modal('hide');
 
-  switch(id){
+  switch (id) {
     case "metamask-unlock":
       console.log("metamask_password:  " + input_password);
-      if(input_password == input_MetaMask_success_password){
+      if (input_password == input_MetaMask_success_password) {
         SuccessOrNot = 1;
-        document.getElementById('MetaMask-connect-success').style.display='block';
-        document.getElementById('MetaMask-dialog-success').style.display='block';
-      }else {
+        document.getElementById('MetaMask-connect-success').style.display = 'block';
+        document.getElementById('MetaMask-dialog-success').style.display = 'block';
+      } else {
         SuccessOrNot = 0;
-        document.getElementById('MetaMask-connect-failed').style.display='block';
-        document.getElementById('MetaMask-dialog-failed').style.display='block';
+        document.getElementById('MetaMask-connect-failed').style.display = 'block';
+        document.getElementById('MetaMask-dialog-failed').style.display = 'block';
       }
       break;
     case "phantom-unlock":
       console.log("phantom_password:  " + input_password);
-      if(input_password == input_Phantom_success_password){
+      if (input_password == input_Phantom_success_password) {
         SuccessOrNot = 2;
-        document.getElementById('Phantom-connect-success').style.display='block';
-        document.getElementById('Phantom-dialog-success').style.display='block';
-      }else {
+        document.getElementById('Phantom-connect-success').style.display = 'block';
+        document.getElementById('Phantom-dialog-success').style.display = 'block';
+      } else {
         SuccessOrNot = 0;
-        document.getElementById('Phantom-connect-failed').style.display='block';
-        document.getElementById('Phantom-dialog-failed').style.display='block';
-      }
-      break;
-    case "Citi-unlock":
-      if(input_password == input_CitiBank_success_password){
-        SuccessOrNot = 3;
-        document.getElementById('Citi-connect-success').style.display='block';
-        document.getElementById('Citi-dialog-success').style.display='block';
-      }else {
-        SuccessOrNot = 0;
-        document.getElementById('Citi-connect-failed').style.display='block';
-        document.getElementById('Citi-dialog-failed').style.display='block';
-      }
-      break;
-    case "SinoPac-unlock":
-      if(input_password == input_SinoPac_success_password){
-        SuccessOrNot = 4;
-        document.getElementById('SinoPac-connect-success').style.display='block';
-        document.getElementById('SinoPac-dialog-success').style.display='block';
-      }else {
-        SuccessOrNot = 0;
-        document.getElementById('SinoPac-connect-failed').style.display='block';
-        document.getElementById('SinoPac-dialog-failed').style.display='block';
-      }
-      break;
-    case "Yuanta-unlock":
-      if(input_password == input_Yuanta_success_password){
-        SuccessOrNot = 5;
-        document.getElementById('SinoPac-connect-success').style.display='block';
-        document.getElementById('SinoPac-dialog-success').style.display='block';
-      }else {
-        SuccessOrNot = 0;
-        document.getElementById('SinoPac-connect-failed').style.display='block';
-        document.getElementById('SinoPac-dialog-failed').style.display='block';
+        document.getElementById('Phantom-connect-failed').style.display = 'block';
+        document.getElementById('Phantom-dialog-failed').style.display = 'block';
       }
       break;
   }
 
-  $(".dialog").on("click", function(){
-    if(state === 1){
+  $(".dialog").on("click", function () {
+    if (state === 1) {
       $(".dialog").fadeOut("normal");
       state = 0;
-       if(SuccessOrNot !== 0){
-         TurnBack_choose_account(SuccessOrNot);
-       }
+      if (SuccessOrNot !== 0) {
+        TurnBack_choose_account(SuccessOrNot);
+      }
     }
   });
-  $( ".verify-modal" ).on( "click", function(event) {
+  $(".verify-modal").on("click", function (event) {
     event.stopPropagation();
   });
-  // NFT & Crypto
   $("#metamask-password-input").val('');
   $("#phantom-password-input").val('');
-  // Bank
-  $("#Citi-userid-input").val('');
-  $("#Citi-password-input").val('');
-  $("#SinoPac-userid-input").val('');
-  $("#SinoPac-password-input").val('');
-  $("#Yuanta-userid-input").val('');
-  $("#Yuanta-password-input").val('');
 }

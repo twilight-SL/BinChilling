@@ -1961,10 +1961,11 @@ video {
   font-family: SFPRODISPLAY_MEDIUM;
 }
 /*----------------------------------------- Plan Page ------------------------------------------*/
-#Plan_page{
-  position: absolute;
+#plan_page{
+  position: relative;
   width: 100vw;
   height: 100vh;
+  display: none;
 }
 
 #Plan_subtitle{
@@ -1977,58 +1978,303 @@ video {
   color: #A0A0A0;
 }
 
-#Plan_estimation_title{
+#plan_estimation_type_container{
+  position: absolute;
+  left: 49.167%;
+  top: 32.3145815%;
+  width: 45.9375%;
+  height: 3.703704%;
+  display: flex;
+  flex-direction: row;
+}
+
+#plan_estimation_title{
   position: absolute;
   width: 14%;
+  height: 2.222222%;
+  top: 32.314815%;
   left: 49.167%;
-  top: 38%;
   font-family: SFPRODISPLAY_MEDIUM;
   font-size: 2.5vh;
   color: #42506B;
+  display: flex;
+  align-items: center;
 }
 
-#Plan_estimation_title_NTD{
+#plan_estimation_title_NTD{
   position: absolute;
-  width: 13.4%;
-  left: 63%;
-  top: 38%;
+  width: 2%;
+  height: 2.222222%;
+  top: 32.314815%;
+  left: 63.7%;
   font-family: SFPRODISPLAY_MEDIUM;
   font-size: 2.5vh;
   color: #42506B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-#Plan_estimation_amount{
+#plan_estimation_amount{
   position: absolute;
-  width: 9.8%;
-  height: 3.7%;
-  left: 67%;
-  top: 37.2%;
+  width: 9.791667%;
+  height: 3.703704%;
+  top: 31.574074%;
+  left: 66.79187%;
   border-radius: 10px;
   border-style: solid;
   border-color: #286A93;
 }
 
-#Plan_estimation_time{
+.plan_estimation_warn_container{
+  position: absolute;
+  top: 29%;
+  height: 2.314814815%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  border-radius: 5px;
+  border-color: #42506B;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.plan_estimation_warn_i_container{
+  position: relative;
+  width: 18px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.plan_estimation_warn_i{
+  background-image: url("./Img/Group\ 364.png");
+  background-size: cover;
+  width: 13px;
+  height: 13px;
+}
+
+#plan_estimation_ammount_warn_container{
+  left: 65.10416%;
+  width: 15%;
+  display: none;
+}
+
+.plan_estimation_warn_text{
+  position: relative;
+  font-size: 1.8vh;
+  font-family: SFPRODISPLAYREGULAR;
+  color: #286A93;
+  height: 100%;
+  width: 90%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+#plan_estimation_time_warn_container{
+  left: 75.26041667%;
+  width: 13.5%;
+  display: none;
+}
+
+#plan_estimation_date_warn_container{
+  left: 84.4791667%;
+  width: 10.8%;
+  display: none;
+}
+
+#plan_estimation_time{
   position: absolute;
   width: 6.25%;
-  height: 3.7%;
-  left: 78.9%;
-  top: 37.2%;
+  height: 3.703704%;
+  top: 31.574074%;
+  left: 78.02833%;
   border-radius: 10px;
   border-style: solid;
   border-color: #286A93;
 }
+
+#plan_estimation_date{
+  position: relative;
+  height: 3.703704%;
+  width: 6.25%;
+  top: 31.574074%;
+  left: 85.520833%;
+  border-width: 2px;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: #286A93;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: SFPRODISPLAYREGULAR;
+  font-size: 2.5vh;
+  color:#286A93;
+}
+
+#plan_estimation_date_tri{
+  position: absolute;
+  left: 80%;
+}
+
+#plan_estimation_amount_menu{
+  position: absolute;
+  height: 27.22222%;
+  width: 9.791667%;
+  left: 66.79187%;
+  top: 36%;
+  border-width: 2px;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: #286A93;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  z-index: 2;
+}
+
+.plan_estimation_amount_option{
+  position: relative;
+  height: 13.5%;
+  width: 90%;
+  left: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: SFPRODISPLAYREGULAR;
+  font-size: 2.5vh;
+  color:#286A93;
+  border-radius: 7px;
+}
+
+.plan_estimation_amount_option:hover{
+  background-color: #E5E5E5;
+}
+
+#plan_estimation_time_menu{
+  position: absolute;
+  height: 19.4444%;
+  width: 6.25%;
+  left: 78.02833%;
+  top: 36%;
+  border-width: 2px;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: #286A93;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  z-index: 2;
+}
+
+.plan_estimation_time_option{
+  position: relative;
+  height: 18.5%;
+  width: 90%;
+  left: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: SFPRODISPLAYREGULAR;
+  font-size: 2.5vh;
+  color:#286A93;
+  border-radius: 7px;
+}
+
+.plan_estimation_time_option:hover{
+  background-color: #E5E5E5;
+}
+
+#plan_estimation_date_menu{
+  position: absolute;
+  height: 11.6666667%;
+  width: 6.25%;
+  left: 85.520833%;
+  top: 36%;
+  border-width: 2px;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: #286A93;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  z-index: 2;
+}
+
+
+.plan_estimation_date_option{
+  position: relative;
+  height: 30%;
+  width: 90%;
+  left: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: SFPRODISPLAYREGULAR;
+  font-size: 2.5vh;
+  color:#286A93;
+  border-radius: 7px;
+}
+
+.plan_estimation_date_option:hover{
+  background-color: #E5E5E5;
+}
+
+.plan_estimation_strip{
+  width: 90%;
+  margin-left: 5%;
+  height: 1px;
+  background-color:#E5E5E5;
+}
+
+#plan_estimation_container{
+  position: absolute;
+  top: 37.407407%;
+  left: 49.167%;
+  width: 24.010417%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#plan_estimation_time_text1{
+  position: relative;
+  font-family: SFPRODISPLAY_MEDIUM;
+  font-size: 2.5vh;
+  color: #42506B;
+}
+
+#plan_estimation_time_text{
+  position: relative;
+  font-family: SFPRODISPLAY_MEDIUM;
+  font-size: 2.5vh;
+  color: #42506B;
+  text-decoration: underline;
+}
+
+#plan_estimation_time_text2{
+  position: relative;
+  font-family: SFPRODISPLAY_MEDIUM;
+  font-size: 2.5vh;
+  color: #42506B;
+}
+
 
 input[type="text"]
 {
   font-size:2.5vh;
   font-family: SFPRODISPLAY_MEDIUM;
   color: black;
-  left: 10px;
 }
 .plan_subtitle{
   position: absolute;
-  top: 42.1%;
+  top: 42.87%;
   color: #286A93;
   font-size: 2vh;
   font-family: SFPRODISPLAYREGULAR;
@@ -2070,14 +2316,43 @@ input[type="text"]
 }
 
 .plan_object_container {
-  position: relative;
-  width: 100%;
-  height: 12%;
-  left: 0%;
+  position: absolute;
+  width: 41%;
+  height: 4.537%;
+  left: 49%;
   border-style: solid;
   border-color: #286A93;
   border-width: 1px;
   border-radius: 60px;
+  display: none;
+}
+
+.plan_object_container1 {
+  top: 46.3888889%;
+}
+
+.plan_object_container2 {
+  top: 52.22222%;
+}
+
+.plan_object_container3 {
+  top: 58.148148%;
+}
+
+.plan_object_container4 {
+  top: 64.074074%;
+}
+
+.plan_object_container5 {
+  top: 70%;
+}
+
+.plan_object_container6 {
+  top: 75.925926%;
+}
+
+#plan_add_object_container{
+  top: 81.851852%;
   display: block;
 }
 
@@ -2087,6 +2362,70 @@ input[type="text"]
   left: 9%;
   color:black;
   font-family: SFProDisplay-Semibold;
+}
+
+.plan_category_menu_category{
+  position: absolute;
+  top: 5%;
+  height: 90%;
+  width: 15%;
+  left: 12.5%;
+  border-radius: 10px;
+  border-width: 2px;
+  border-color: #286A93;
+  border-style: solid;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-family: SFPRODISPLAYREGULAR;
+  font-size: 2.2vh;
+  color:#286A93;
+}
+
+.plan_category_menu_category_tri{
+  position: absolute;
+  left: 80%;
+  top: 40%;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #286A93;
+}
+
+.plan_category_menu_container{
+  position: absolute;
+  top: 105%;
+  height: 600%;
+  width: 15%;
+  left: 12.5%;
+  z-index: 2;
+  border-radius: 7px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #286A93;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+}
+
+.plan_category_menu_option{
+  position: relative;
+  height: 15.5%;
+  width: 100%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  font-family: SFPRODISPLAYREGULAR;
+  font-size: 2.5vh;
+  color:#286A93;
+}
+
+.plan_category_menu_option:hover{
+  background-color: #E5E5E5;
 }
 
 .plan_percentage_percentage{
@@ -2141,7 +2480,7 @@ input[type="text"]
 #plan_confirm{
   position: absolute;
   left: 49.114583%;
-  top: 84.444%;
+  top: 90.37037%;
   width: 41%;
   height: 5.55556%;
   border-radius: 10px;

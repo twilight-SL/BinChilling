@@ -317,98 +317,14 @@
     <img class="verify_container" id="verify_fail_img" src="./Img/verify/verify_fail.png"></img>
     <img class="verify_container" id="verify_success_img" src="./Img/verify/verify_success.png"></img>
   </div>
-   <!-------------------- Add account -------------------->
-   <div id="add_new_account_page" >
+  <!-------------------- Add account -------------------->
+  <div id="add_new_account_page">
     <p class="add_account_title">Add a new account.</p>
     <p class="add_account_subtitle">Connect all your accounts and manage your assets easily.</p>
     <div class="container">
       <div class="input_account">
         <label>Bank</label>
-           <!------------------  ! Add Demo !  ------------------>
-           <div id="demo-bank-add">
-            <!-------------------------------- SinoPac connected Information ------------------------------->
-            <div id="demo-sinoPac" style="display: none;">
-              <div class="account-info">
-                <img src="./Img/account/SinoPac.png" alt="">
-                <img src="./Img/account/sinoPac_text.jpg" style="height:17px;margin-left: 40px;" alt="">
-                <button class="delete-account" data-toggle="modal" data-target="#Delete_sinoPac_account" role="tab" aria-controls="list">
-                  <img src="./Img/account/Group 373.png" alt="">
-                </button>
-                <!---------------------- Delete Account Start --------------------------->
-                <div class="modal fade" id="Delete_sinoPac_account" role="dialog">
-                  <div class="modal-dialog">
-                    <!-- Modal content -->
-                    <div class="modal-content">
-                      <div class="modal-body">
-                        <h3>Are you sure to delete your account?</h3>
-                        <div> 
-                          <button class="del-btn" style="background: #42506B; color: #FFFFFF;">Not now</button>
-                          <button class="del-btn" style="background: #FFFFFF;color: #42506B;">Yes</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!---------------------- Delete Account End  ---------------------->
-              </div>
-              <img src="./Img/account/sinopac_success.jpg" style="width: 790px;" alt="">
-            </div>
-            <!-------------------------------- CitiBank connected Information ------------------------------->
-            <div id="demo-citibank" style="display: none;">
-              <div class="account-info">
-                <img src="./Img/account/citiBank.png" alt="">
-                <img src="./Img/account/citiBank_text.jpg" style="height:17px;margin-left: 40px;" alt="">
-                <button class="delete-account" data-toggle="modal" data-target="#Delete_citibank_account" role="tab" aria-controls="list">
-                  <img src="./Img/account/Group 373.png" alt="">
-                </button>
-                <!---------------------- Delete Account Start --------------------------->
-                <div class="modal fade" id="Delete_citibank_account" role="dialog">
-                  <div class="modal-dialog">
-                    <!-- Modal content -->
-                    <div class="modal-content">
-                      <div class="modal-body">
-                        <h3>Are you sure to delete your account?</h3>
-                        <div> 
-                          <button class="del-btn" style="background: #42506B; color: #FFFFFF;">Not now</button>
-                          <button class="del-btn" style="background: #FFFFFF;color: #42506B;">Yes</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!---------------------- Delete Account End  ---------------------->
-              </div>
-              <img src="./Img/account/citibank_success.jpg" style="width: 790px;" alt="">
-            </div>
-            <!-------------------------------- Yuanta connected Information ------------------------------->
-            <div id="demo-yuanta" style="display: none;">
-              <div class="account-info">
-                <img src="./Img/account/Yuanta.png" alt="">
-                <img src="./Img/account/yuanta_text.jpg" style="width: 90px;margin-left:47.5px;" alt="">
-                <button class="delete-account" data-toggle="modal" data-target="#Delete_yuanta_account" role="tab" aria-controls="list">
-                  <img src="./Img/account/Group 373.png" alt="">
-                </button>
-                <!---------------------- Delete Account Start --------------------------->
-                <div class="modal fade" id="Delete_yuanta_account" role="dialog">
-                  <div class="modal-dialog">
-                    <!-- Modal content -->
-                    <div class="modal-content">
-                      <div class="modal-body">
-                        <h3>Are you sure to delete your account?</h3>
-                        <div> 
-                          <button class="del-btn" style="background: #42506B; color: #FFFFFF;">Not now</button>
-                          <button class="del-btn" style="background: #FFFFFF;color: #42506B;">Yes</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!---------------------- Delete Account End  ---------------------->
-              </div>
-              <img src="./Img/account/yuanta_success.jpg" style="width: 790px;" alt="">
-            </div>
-          </div>
-        <input class="input_add_style" type="text" placeholder="+  Click to add a new account" onclick="add_Bank_account(this.id)">
+        <input class="input_add_style" type="text" placeholder="+  Click to add a new account">
       </div>
       <div class="input_account">
         <label>Securities</label>
@@ -419,16 +335,25 @@
         <input class="input_add_style" type="text" placeholder="+  Click to add a new account">
       </div>
       <div class="input_account">
+        <label>E-ticket</label>
+        <input class="input_add_style" type="text" placeholder="+  Click to add a new account">
+      </div>
+      <div class="input_account">
+        <label>Insurance</label>
+        <input class="input_add_style" type="text" placeholder="+  Click to add a new account">
+      </div>
+      <div class="input_account">
         <label>NFT/ Cryptocurrency</label>
         <!------------------  ! Add Demo !  ------------------>
         <div id="demo-add">
           <!-------------------------------- MetaMask connected Information ------------------------------->
           <div id="demo-metamask" style="display: none;">
             <div class="account-info">
-              <img src="./Img/account/MetaMask_Fox 3.png" alt="">
-              <img src="./Img/account/MetaMask.png" style="height:17px;margin-left: 40px;" alt="">
-              <button class="delete-account" data-toggle="modal" data-target="#Delete_metamask_account" role="tab" aria-controls="list">
-                <img src="./Img/account/Group 373.png" alt="">
+              <img src="./img/MetaMask_Fox 3.png" alt="">
+              <img src="./img/MetaMask.png" style="height:17px;margin-left: 40px;" alt="">
+              <button class="delete-account" data-toggle="modal" data-target="#Delete_metamask_account" role="tab"
+                aria-controls="list">
+                <img src="./img/Group 373.png" alt="">
               </button>
               <!---------------------- Delete Account Start --------------------------->
               <div class="modal fade" id="Delete_metamask_account" role="dialog">
@@ -437,7 +362,7 @@
                   <div class="modal-content">
                     <div class="modal-body">
                       <h3>Are you sure to delete your account?</h3>
-                      <div> 
+                      <div>
                         <button class="del-btn" style="background: #42506B; color: #FFFFFF;">Not now</button>
                         <button class="del-btn" style="background: #FFFFFF;color: #42506B;">Yes</button>
                       </div>
@@ -447,15 +372,16 @@
               </div>
               <!---------------------- Delete Account End  ---------------------->
             </div>
-            <img src="./Img/account/Group 290.png" alt="">
+            <img src="./img/Group 290.png" alt="">
           </div>
           <!-------------------------------- Phantom connected Information ------------------------------->
           <div id="demo-phantom" style="display: none;">
             <div class="account-info">
-              <img src="./Img/account/Phantom 1.png" alt="">
-              <img src="./Img/account/Phantom_text.jpg" style="width: 90px;margin-left:47.5px;" alt="">
-              <button class="delete-account" data-toggle="modal" data-target="#Delete_phantom_account" role="tab" aria-controls="list">
-                <img src="./Img/account/Group 373.png" alt="">
+              <img src="./img/Phantom 1.png" alt="">
+              <img src="./img/Phantom_text.jpg" style="width: 90px;margin-left:47.5px;" alt="">
+              <button class="delete-account" data-toggle="modal" data-target="#Delete_phantom_account" role="tab"
+                aria-controls="list">
+                <img src="./img/Group 373.png" alt="">
               </button>
               <!---------------------- Delete Account Start --------------------------->
               <div class="modal fade" id="Delete_phantom_account" role="dialog">
@@ -464,7 +390,7 @@
                   <div class="modal-content">
                     <div class="modal-body">
                       <h3>Are you sure to delete your account?</h3>
-                      <div> 
+                      <div>
                         <button class="del-btn" style="background: #42506B; color: #FFFFFF;">Not now</button>
                         <button class="del-btn" style="background: #FFFFFF;color: #42506B;">Yes</button>
                       </div>
@@ -474,341 +400,198 @@
               </div>
               <!---------------------- Delete Account End  ---------------------->
             </div>
-            <img src="./Img/account/phantom-conected-info.jpg" alt="">
+            <img src="./img/phantom-conected-info.jpg" alt="">
           </div>
         </div>
-        <input id="add-nft" class="input_add_style" type="text" placeholder="+  Click to add a new account" onclick="add_NFT_account(this.id)">
+        <input id="add-nft" class="input_add_style" type="text" placeholder="+  Click to add a new account"
+          onclick="add_NFT_account(this.id)">
       </div>
       <button id="back-to-top" class="toTop">Back to top</button>
     </div>
- </div>
+  </div>
   <!-------------- connect NFT wallet page -------------->
   <div id="connect_nft_account">
     <p class="add_account_title">Connect your wallet.</p>
     <p class="add_account_subtitle">Get to know more information about your assets.</p>
     <div class="selection">
-        <ul>
-          <div class="col-4">
-            <div class="list-group list-group-flush" id="list-tab" role="tablist">
-              <div class="list-group-item list-group-item-action item rounded-pill" id="list-metamask-list" data-toggle="modal" data-target="#MetaMaskModal" role="tab" aria-controls="list-Metamask">
-                <img src="./Img/account/MetaMask_Fox 3.png" alt="">
-                <p class="icon_name">MetaMask</p>
-              </div>
-              <!---------------------- MetaMask Modal Start --------------------------->
-              <div class="modal fade" id="MetaMaskModal" role="dialog">
-                <div class="modal-dialog">
-                  <!-- Modal content -->
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <img src="./Img/account/MetaMask_Fox 3.png" alt="">
-                      <img src="./Img/account/Ellipse 31.png" class="ellipse">
-                      <select name="currency" class="form-select">
-                        <option selected>Main Ethereum Network</option>
-                        <option>Something Network</option>
-                      </select>
-                    </div>
-                    <div class="modal-body">
-                      <img src="./Img/account/MetaMask_Big.jpg" alt="">
-                      <h1>Welcome back!</h1>
-                      <h4>The decentralized web awaits</h4>
-                      <div class="metamask-passwaord">
-                        <div class="psw">Password</div>
-                        <input type="password" class="connect-wallet-password" id="metamask-password-input" onblur="get_password(this.id)">
-                      </div>
-                      <button class="unlock" id="metamask-unlock" onclick="verify_password(this.id)">Unlock</button>
-                      <a href="#" class="forgot-psw">Forgot password?</a>
-                      <p class="psw">Need help? Contact <a href="#">MetaMaskSupport</a></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!---------------------- MetaMask Connect Succes --------------------------->
-              <div class='dialog' id="MetaMask-dialog-success">
-                <div class="verify-modal-success" id="MetaMask-connect-success">
-                  <img src="./Img/account/Group 170.png" alt="">
-                </div>
-              </div>
-              <!---------------------- MetaMask Connect Failed --------------------------->
-              <div class='dialog' id="MetaMask-dialog-failed">
-                <div class="verify-modal-failed" id="MetaMask-connect-failed">
-                  <img src="./Img/account/Group 167.png" alt="">
-                </div>
-              </div>
-              <!---------------------- MetaMask Modal End --------------------------->
-              <div class="list-group-item list-group-item-action item rounded-pill" id="list-coinbase-list" data-bs-toggle="list" role="tab" aria-controls="list-Coinbase">
-                <img src="./Img/account/coinbasewallet 1.png" alt="">
-                <p class="icon_name">Coinbase wallet</p>
-              </div>
-              <div class="list-group-item list-group-item-action item rounded-pill" id="list-walletconnect-list" data-bs-toggle="list" role="tab" aria-controls="list-WalletConnect">
-                <img src="./Img/account/walletconnect 1.png" alt="">
-                <p class="icon_name">WalletConnect</p>
-              </div>
-              <div class="list-group-item list-group-item-action item rounded-pill" id="list-phantom-list" data-toggle="modal" data-target="#PhantomModal" role="tab" aria-controls="list-Phantom">
-                <img src="./Img/account/Phantom 1.png" alt="">
-                <p class="icon_name">Phantom</p>
-              </div>
-              <!---------------------- Phantom Modal Start --------------------------->
-              <div class="modal fade" id="PhantomModal" role="dialog">
-                <div class="modal-dialog">
-                  <!-- Modal content -->
-                  <div class="modal-content" id="phantom-modal">
-                    <div class="modal-header">
-                      <img src="./Img/account/Group 375.png" alt="" style="width: 23px;">
-                      <p>Phantom.app</p>
-                    </div>
-                    <div class="modal-body">
-                      <img src="./Img/account/phantom 2.png" alt="" id="phantom-img">
-                      <h5>Enter your password</h5>
-                      <input type="password" class="connect-phantom-password" id="phantom-password-input" placeholder="password" onblur="get_password(this.id)">
-                      <button id="phantom-unlock" onclick="verify_password(this.id)">Unlock</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!---------------------- Phantom Connect Succes --------------------------->
-              <div class='dialog' id="Phantom-dialog-success">
-                <div class="verify-modal-success" id="Phantom-connect-success">
-                  <img src="./Img/account/Group 170.png" alt="">
-                </div>
-              </div>
-              <!---------------------- Phantom Connect Failed --------------------------->
-              <div class='dialog' id="Phantom-dialog-failed">
-                <div class="verify-modal-failed" id="Phantom-connect-failed">
-                  <img src="./Img/account/Group 167.png" alt="">
-                </div>
-              </div>
-              <!---------------------- Phantom Modal End --------------------------->
-              <div class="list-group-item list-group-item-action item rounded-pill" id="list-venly-list" data-bs-toggle="list" role="tab" aria-controls="list-Venly">
-                <img src="./Img/account/venly_logo 1.png" alt="">
-                <p class="icon_name">Venly</p>
-              </div>
-              <div class="list-group-item list-group-item-action item rounded-pill" id="list-formatic-list" data-bs-toggle="list" role="tab" aria-controls="list-Formatic">
-                <img src="./Img/account/formatic 1.png" alt="">
-                <p class="icon_name">Formatic</p>
-              </div>
-              <div class="list-group-item list-group-item-action item rounded-pill" id="list-kaikas-list" data-bs-toggle="list" role="tab" aria-controls="list-Kaikas">
-                <img src="./Img/account/kaikas 1.png" alt="">
-                <p class="icon_name">Kaikas</p>
-              </div>
-            </div>   
-          </div>
-        </ul>
-    </div>
-  </div>
-  <!------------------ connect to Bank page ------------------->
-  <div id="connect_bank_account">
-  <p class="add_account_title">Connect your account.</p>
-  <p class="add_account_subtitle">Get to know more information about your assets.</p>
-  <div class="selection">
-      <ul>
+      <ul class="row">
         <div class="col-4">
           <div class="list-group list-group-flush" id="list-tab" role="tablist">
-            <div class="list-group-item list-group-item-action item rounded-pill" id="list-BankOfTaiwan-list" data-toggle="list" role="tab" aria-controls="list-BankOfTaiwan">
-              <img src="./Img/account/Bank Of Taiwan.png" style="width:39px;height:39px" alt="">
-              <p class="icon_name">Bank of Taiwan</p>
+            <div class="list-group-item list-group-item-action item rounded-pill" id="list-metamask-list"
+              data-toggle="modal" data-target="#MetaMaskModal" role="tab" aria-controls="list-Metamask">
+              <img src="./Img/MetaMask_Fox 3.png" alt="">
+              <p class="icon_name">MetaMask</p>
             </div>
-            <div class="list-group-item list-group-item-action item rounded-pill" id="list-HuaNan-list" data-bs-toggle="list" role="tab" aria-controls="list-HuaNan">
-              <img src="./Img/account/Hua Nan.png" style="width:36px;height:35px" alt="">
-              <p class="icon_name">Hua Nan Commercial Bank</p>
-            </div>
-            <div class="list-group-item list-group-item-action item rounded-pill" id="list-Fubon-list" data-bs-toggle="list" role="tab" aria-controls="list-Fubon">
-              <img src="./Img/account/Taipei Fubon.png" style="width:34px;height:35px" alt="">
-              <p class="icon_name">Taipei Fubon Commercial Bank</p>
-            </div>
-            <div class="list-group-item list-group-item-action item rounded-pill" id="list-Cathay-list" data-toggle="list" role="tab" aria-controls="list-Cathay">
-              <img src="./Img/account/Cathay.png" style="width:35px;height:26px" alt="">
-              <p class="icon_name">Cathay United Bank</p>
-            </div>
-            <div class="list-group-item list-group-item-action item rounded-pill" id="list-Mega-list" data-bs-toggle="list" role="tab" aria-controls="list-Mega">
-              <img src="./Img/account/Mega.png" style="width:33px;height:33px" alt="">
-              <p class="icon_name">Mega International Commercial Bank</p>
-            </div>
-            <div class="list-group-item list-group-item-action item rounded-pill" id="list-citiBank-list" data-toggle="modal" data-target="#CitiBankModal" role="tab" aria-controls="list-citiBank">
-              <img src="./Img/account/citiBank.png" style="width:35px;height:23px" alt="">
-              <p class="icon_name">CitiBank Taiwan</p>
-            </div>
-            <!---------------------- CitiBank Modal Start --------------------------->
-            <div class="modal fade" id="CitiBankModal" role="dialog">
+            <!---------------------- MetaMask Modal Start --------------------------->
+            <div class="modal fade" id="MetaMaskModal" role="dialog">
               <div class="modal-dialog">
                 <!-- Modal content -->
                 <div class="modal-content">
-                  <div class="modal-header" style="border:none;background-color:#FFFFFF"></div>
+                  <div class="modal-header">
+                    <img src="./img/MetaMask_Fox 3.png" alt="">
+                    <img src="./img/Ellipse 31.png" class="ellipse">
+                    <select name="currency" class="form-select">
+                      <option selected>Main Ethereum Network</option>
+                      <option>Something Network</option>
+                    </select>
+                  </div>
                   <div class="modal-body">
-                    <img src="./Img/account/CitiBank_modal.jpg" style="margin:7.5% 0%;width:138px;height:90px" alt="">
-                    <h1>CitiBank Taiwan</h1>
-                    <h4 style="margin-bottom:3%">Enter your account</h4>
-                    <input type="password" class="connect-bank-password" id="Citi-userid-input" placeholder="User ID">
-                    <input type="password" class="connect-bank-password" id="Citi-password-input" placeholder="Eser Password" onblur="get_password(this.id)">
-                    <button id="Citi-unlock" class="bank-Unlock" onclick="verify_password(this.id)">Unlock</button>
+                    <img src="./img/MetaMask_Big.jpg" alt="">
+                    <h1>Welcome back!</h1>
+                    <h4>The decentralized web awaits</h4>
+                    <div class="metamask-passwaord">
+                      <div class="psw">Password</div>
+                      <input type="password" class="connect-wallet-password" id="metamask-password-input"
+                        onblur="get_password(this.id)">
+                    </div>
+                    <button class="unlock" id="metamask-unlock" onclick="verify_password(this.id)">Unlock</button>
+                    <a href="#" class="forgot-psw">Forgot password?</a>
+                    <p class="psw">Need help? Contact <a href="#">MetaMaskSupport</a></p>
                   </div>
                 </div>
               </div>
             </div>
-            <!---------------------- CitiBank Connect Succes --------------------------->
-            <div class='dialog' id="Citi-dialog-success">
-              <div class="verify-modal-success" id="Citi-connect-success">
-                <img src="./Img/account/Group 170.png" alt="">
+            <!---------------------- MetaMask Connect Succes --------------------------->
+            <div class='dialog' id="MetaMask-dialog-success">
+              <div class="verify-modal-success" id="MetaMask-connect-success">
+                <img src="./img/Group 170.png" alt="">
               </div>
             </div>
-            <!---------------------- CitiBank Connect Failed --------------------------->
-            <div class='dialog' id="Citi-dialog-failed">
-              <div class="verify-modal-failed" id="Citi-connect-failed">
-                <img src="./Img/account/Group 167.png" alt="">
+            <!---------------------- MetaMask Connect Failed --------------------------->
+            <div class='dialog' id="MetaMask-dialog-failed">
+              <div class="verify-modal-failed" id="MetaMask-connect-failed">
+                <img src="./img/Group 167.png" alt="">
               </div>
             </div>
-            <!---------------------- CitiBank Modal End --------------------------->
-            <div class="list-group-item list-group-item-action item rounded-pill" id="list-ShinKong-list" data-bs-toggle="list" role="tab" aria-controls="list-ShinKong">
-              <img src="./Img/account/Shin Kong.png" style="width:35px;height:25px" alt="">
-              <p class="icon_name">Shin Kong Commercial Bank</p>
+            <!---------------------- MetaMask Modal End --------------------------->
+            <div class="list-group-item list-group-item-action item rounded-pill" id="list-coinbase-list"
+              data-bs-toggle="list" role="tab" aria-controls="list-Coinbase">
+              <img src="./Img/coinbasewallet 1.png" alt="">
+              <p class="icon_name">Coinbase wallet</p>
             </div>
-            <div class="list-group-item list-group-item-action item rounded-pill" id="list-Chunghwa-list" data-bs-toggle="list" role="tab" aria-controls="list-Chunghwa">
-              <img src="./Img/account/Chunghwa.png" style="width:35px;height:35px" alt="">
-              <p class="icon_name">Chunghwa Post</p>
+            <div class="list-group-item list-group-item-action item rounded-pill" id="list-walletconnect-list"
+              data-bs-toggle="list" role="tab" aria-controls="list-WalletConnect">
+              <img src="./Img/walletconnect 1.png" alt="">
+              <p class="icon_name">WalletConnect</p>
             </div>
-            <div class="list-group-item list-group-item-action item rounded-pill" id="list-SinoPac-list" data-toggle="modal" data-target="#SinoPacModal" role="tab" aria-controls="list-SinoPac">
-              <img src="./Img/account/SinoPac.png" style="width:35px;height:35px" alt="">
-              <p class="icon_name">Bank SinoPac</p>
+            <div class="list-group-item list-group-item-action item rounded-pill" id="list-phantom-list"
+              data-toggle="modal" data-target="#PhantomModal" role="tab" aria-controls="list-Phantom">
+              <img src="./img/Phantom 1.png" alt="">
+              <p class="icon_name">Phantom</p>
             </div>
-            <!---------------------- Bank SinoPac Modal Start --------------------------->
-            <div class="modal fade" id="SinoPacModal" role="dialog">
+            <!---------------------- Phantom Modal Start --------------------------->
+            <div class="modal fade" id="PhantomModal" role="dialog">
               <div class="modal-dialog">
                 <!-- Modal content -->
-                <div class="modal-content">
-                  <div class="modal-header" style="border:none;background-color:#FFFFFF"></div>
+                <div class="modal-content" id="phantom-modal">
+                  <div class="modal-header">
+                    <img src="./img/Group 375.png" alt="" style="width: 23px;">
+                    <p>Phantom.app</p>
+                  </div>
                   <div class="modal-body">
-                    <img src="./Img/account/sinoPac_modal.jpg" style="margin:7.5% 0%;;width:120px;height:120px" alt="">
-                    <h1>Bank SinoPac</h1>
-                    <h4 style="margin-bottom:3%">Enter your account</h4>
-                    <input type="password" class="connect-bank-password" id="SinoPac-userid-input" placeholder="User ID">
-                    <input type="password" class="connect-bank-password" id="SinoPac-password-input" placeholder="Eser Password" onblur="get_password(this.id)">
-                    <button id="SinoPac-unlock" class="bank-Unlock" onclick="verify_password(this.id)">Unlock</button>
+                    <img src="./img/phantom 2.png" alt="" id="phantom-img">
+                    <h5>Enter your password</h5>
+                    <input type="password" class="connect-phantom-password" id="phantom-password-input"
+                      placeholder="password" onblur="get_password(this.id)">
+                    <button id="phantom-unlock" onclick="verify_password(this.id)">Unlock</button>
                   </div>
                 </div>
               </div>
             </div>
-            <!---------------------- Bank SinoPac Connect Succes --------------------------->
-            <div class='dialog' id="SinoPac-dialog-success">
-              <div class="verify-modal-success" id="SinoPac-connect-success">
-                <img src="./Img/account/Group 170.png" alt="">
+            <!---------------------- Phantom Connect Succes --------------------------->
+            <div class='dialog' id="Phantom-dialog-success">
+              <div class="verify-modal-success" id="Phantom-connect-success">
+                <img src="./img/Group 170.png" alt="">
               </div>
             </div>
-            <!---------------------- Bank SinoPac Connect Failed --------------------------->
-            <div class='dialog' id="SinoPac-dialog-failed">
-              <div class="verify-modal-failed" id="SinoPac-connect-failed">
-                <img src="./Img/account/Group 167.png" alt="">
+            <!---------------------- Phantom Connect Failed --------------------------->
+            <div class='dialog' id="Phantom-dialog-failed">
+              <div class="verify-modal-failed" id="Phantom-connect-failed">
+                <img src="./img/Group 167.png" alt="">
               </div>
             </div>
-            <!---------------------- Bank SinoPac Modal End --------------------------->
-            <div class="list-group-item list-group-item-action item rounded-pill" id="list-Taishin-list" data-bs-toggle="list" role="tab" aria-controls="list-Taishin">
-              <img src="./Img/account/Taishin.png" style="width:38px;height:35px" alt="">
-              <p class="icon_name">Taishin International Bank</p>
+            <!---------------------- Phantom Modal End --------------------------->
+            <div class="list-group-item list-group-item-action item rounded-pill" id="list-venly-list"
+              data-bs-toggle="list" role="tab" aria-controls="list-Venly">
+              <img src="./Img/venly_logo 1.png" alt="">
+              <p class="icon_name">Venly</p>
             </div>
-            <div class="list-group-item list-group-item-action item rounded-pill" id="list-Yuanta-list" data-toggle="modal" data-target="#YuantaModal" role="tab" aria-controls="list-Yuanta">
-              <img src="./Img/account/Yuanta.png" style="width:35px;height:35px" alt="">
-              <p class="icon_name">Yuanta Commercial Bank</p>
+            <div class="list-group-item list-group-item-action item rounded-pill" id="list-formatic-list"
+              data-bs-toggle="list" role="tab" aria-controls="list-Formatic">
+              <img src="./Img/formatic 1.png" alt="">
+              <p class="icon_name">Formatic</p>
             </div>
-            <!---------------------- Bank Yuanta Modal Start --------------------------->
-            <div class="modal fade" id="YuantaModal" role="dialog">
-              <div class="modal-dialog">
-                <!-- Modal content -->
-                <div class="modal-content">
-                  <div class="modal-header" style="border:none;background-color:#FFFFFF"></div>
-                  <div class="modal-body">
-                    <img src="./Img/account/Yuanta_modal.jpg" style="margin:7.5% 0%;width:120px;height:120px" alt="">
-                    <h1>Yuanta</h1>
-                    <h4 style="margin-bottom:3%">Enter your account</h4>
-                    <input type="password" class="connect-bank-password" id="Yuanta-userid-input" placeholder="User ID">
-                    <input type="password" class="connect-bank-password" id="Yuanta-password-input" placeholder="Eser Password" onblur="get_password(this.id)">
-                    <button id="Yuanta-unlock" class="bank-Unlock" onclick="verify_password(this.id)">Unlock</button>
-                  </div>
-                </div>
-              </div>
+            <div class="list-group-item list-group-item-action item rounded-pill" id="list-kaikas-list"
+              data-bs-toggle="list" role="tab" aria-controls="list-Kaikas">
+              <img src="./Img/kaikas 1.png" alt="">
+              <p class="icon_name">Kaikas</p>
             </div>
-            <!---------------------- Bank Yuanta Connect Succes --------------------------->
-            <div class='dialog' id="Yuanta-dialog-success">
-              <div class="verify-modal-success" id="Yuanta-connect-success">
-                <img src="./Img/account/Group 170.png" alt="">
-              </div>
-            </div>
-            <!---------------------- Bank Yuanta Connect Failed --------------------------->
-            <div class='dialog' id="Yuanta-dialog-failed">
-              <div class="verify-modal-failed" id="Yuanta-connect-failed">
-                <img src="./Img/account/Group 167.png" alt="">
-              </div>
-            </div>
-            <!---------------------- Bank Yuanta Modal End --------------------------->
-            <div class="list-group-item list-group-item-action item rounded-pill" id="list-CTBCBank-list" data-bs-toggle="list" role="tab" aria-controls="list-CTBCBank">
-              <img src="./Img/account/CTBC.png" style="width:33px;height:35px" alt="">
-              <p class="icon_name">CTBC Bank</p>
-            </div>
-          </div>   
-        </div>
-      </ul>
-  </div>
-  </div>
-
-  <!--Wallet-->
-  <div id="wallet">
-    <div class="navbar" id="wallet_navbar">
-      <div class="navbar_logo">
-        <div class="navbar_logo_img_container">
-          <img class="navbar_logo_img turn_to_wallet_page" src="./Img/logo.png">
-        </div>
-        <img class="navbar_logo_text turn_to_wallet_page" src="./Img/logo_text.png">
-      </div>
-      <div class="navbar_function_container">
-        <p class="navbar_function turn_to_wallet_page" id="navbar_function_wallet">Wallet</p>
-        <p class="navbar_function" id="navbar_function_plan">Plan</p>
-        <div class="navbar_function3_container change_account_hover_color change_back_account_hover_color"
-          id="wallet_navbar_function3_container">
-          <p class="navbar_function" id="navbar_function_account">Account</p>
-          <div class="navbar_function_triangle_container" id="wallet_navbar_function_triangle_container">
-            <div class="triangle_down navbar_triangle_down" id="navbar_account_triangle_down"></div>
           </div>
         </div>
+      </ul>
+    </div>
+  </div>
+  <!--Wallet-->
+  <div class="navbar" id="wallet_navbar">
+    <div class="navbar_logo">
+      <div class="navbar_logo_img_container">
+        <img class="navbar_logo_img turn_to_wallet_page" src="./Img/logo.png">
       </div>
-      <div class="change_account_hover_color change_back_account_hover_color"
-        id="navbar_account_dropdown_menu_container">
-        <div id="navbar_account_dropdown_menu">
-          <p id="navbar_account_add">+ Add a new account</p>
-          <div class="navbar_account_line" id="navbar_account_line1"></div>
-          <p class="navbar_account_logged_account" id="navbar_account_logged_account1"></p>
-          <div class="navbar_account_line" id="navbar_account_line2"></div>
-          <p class="navbar_account_logged_account" id="navbar_account_logged_account2"></p>
-          <div class="navbar_account_line" id="navbar_account_line3"></div>
-          <p class="navbar_account_logged_account" id="navbar_account_logged_account3"></p>
-          <div class="navbar_account_line" id="navbar_account_line4"></div>
-          <p class="navbar_account_logged_account" id="navbar_account_logged_account4"></p>
-        </div>
-      </div>
-      <div class="navbar_vertical_rec" id="wallet_navbar_vertical_rec"></div>
-      <div id="wallet_navbar_head_contianer">
-        <div id="wallet_navbar_head"></div>
-      </div>
-      <div class="change_username_hover_color change_back_username_hover_color" id="wallet_username_container">
-        <p class="navbar_username" id="wallet_navbar_username">Username</p>
-        <div class="navbar_function_triangle_container" id="wallet_navbar_username_triangle_container">
-          <div class="triangle_down navbar_triangle_down" id="navbar_wallet_username_triangle_down"></div>
-        </div>
-      </div>
-      <div class="change_username_hover_color change_back_username_hover_color"
-        id="navbar_user_dropdown_menu_container">
-        <div id="navbar_user_dropdown_menu">
-          <p class="navbar_user_menu">Profile</p>
-          <div class="navbar_user_dropdown_menu_line"></div>
-          <p class="navbar_user_menu">Setting</p>
-          <div class="navbar_user_dropdown_menu_line"></div>
-          <p class="navbar_user_menu">Device</p>
-          <div class="navbar_user_dropdown_menu_line"></div>
-          <p class="navbar_user_menu">Cloud</p>
-          <div class="navbar_user_dropdown_menu_line"></div>
-          <p class="navbar_user_menu">Privacy Policy</p>
-          <div class="navbar_user_dropdown_menu_line"></div>
-          <p class="navbar_user_menu">About us</p>
+      <img class="navbar_logo_text turn_to_wallet_page" src="./Img/logo_text.png">
+    </div>
+    <div class="navbar_function_container">
+      <p class="navbar_function turn_to_wallet_page" id="navbar_function_wallet">Wallet</p>
+      <p class="navbar_function" id="navbar_function_plan">Plan</p>
+      <div class="navbar_function3_container change_account_hover_color change_back_account_hover_color"
+        id="wallet_navbar_function3_container">
+        <p class="navbar_function" id="navbar_function_account">Account</p>
+        <div class="navbar_function_triangle_container" id="wallet_navbar_function_triangle_container">
+          <div class="triangle_down navbar_triangle_down" id="navbar_account_triangle_down"></div>
         </div>
       </div>
     </div>
-
+    <div class="change_account_hover_color change_back_account_hover_color"
+      id="navbar_account_dropdown_menu_container">
+      <div id="navbar_account_dropdown_menu">
+        <p id="navbar_account_add">+ Add a new account</p>
+        <div class="navbar_account_line" id="navbar_account_line1"></div>
+        <p class="navbar_account_logged_account" id="navbar_account_logged_account1"></p>
+        <div class="navbar_account_line" id="navbar_account_line2"></div>
+        <p class="navbar_account_logged_account" id="navbar_account_logged_account2"></p>
+        <div class="navbar_account_line" id="navbar_account_line3"></div>
+        <p class="navbar_account_logged_account" id="navbar_account_logged_account3"></p>
+        <div class="navbar_account_line" id="navbar_account_line4"></div>
+        <p class="navbar_account_logged_account" id="navbar_account_logged_account4"></p>
+      </div>
+    </div>
+    <div class="navbar_vertical_rec" id="wallet_navbar_vertical_rec"></div>
+    <div id="wallet_navbar_head_contianer">
+      <div id="wallet_navbar_head"></div>
+    </div>
+    <div class="change_username_hover_color change_back_username_hover_color" id="wallet_username_container">
+      <p class="navbar_username" id="wallet_navbar_username">Username</p>
+      <div class="navbar_function_triangle_container" id="wallet_navbar_username_triangle_container">
+        <div class="triangle_down navbar_triangle_down" id="navbar_wallet_username_triangle_down"></div>
+      </div>
+    </div>
+    <div class="change_username_hover_color change_back_username_hover_color"
+      id="navbar_user_dropdown_menu_container">
+      <div id="navbar_user_dropdown_menu">
+        <p class="navbar_user_menu">Profile</p>
+        <div class="navbar_user_dropdown_menu_line"></div>
+        <p class="navbar_user_menu">Setting</p>
+        <div class="navbar_user_dropdown_menu_line"></div>
+        <p class="navbar_user_menu">Device</p>
+        <div class="navbar_user_dropdown_menu_line"></div>
+        <p class="navbar_user_menu">Cloud</p>
+        <div class="navbar_user_dropdown_menu_line"></div>
+        <p class="navbar_user_menu">Privacy Policy</p>
+        <div class="navbar_user_dropdown_menu_line"></div>
+        <p class="navbar_user_menu">About us</p>
+      </div>
+    </div>
+  </div>
+  <div id="wallet">
     <!---------------------------------------------Wallet overview--------------------------------------------->
     <div class="wallet_page" id="wallet_overview">
       <p class="wallet_title" id="wallet_overview_title">Overview</p>
@@ -2001,91 +1784,253 @@
   </div>
 
   <!-------------------------------------------- Plan Page --------------------------------------------->
-  <div id="Plan_page">
+  <div id="plan_page">
     <p class="wallet_title" id="Plan_title">Plan</p>
-    <p id="Plan_subtitle">Leave a point of protection for your investment career and easily grasp your direction of
-      future investment.</p>
-    <p id="Plan_estimation_title">Estimated increase amount</p>
-    <p id="Plan_estimation_title_NTD">NTD$</p>
-    <input type="text" id="Plan_estimation_amount" placeholder="Amount">
-    <input type="text" id="Plan_estimation_time" placeholder="Time">
+    <!--<p id="Plan_subtitle">Leave a point of protection for your investment career and easily grasp your direction of
+      future investment.</p>-->
+    <!--<div id="plan_estimation_type_container">-->
+      <p id="plan_estimation_title">Estimated increase amount</p>
+      <p id="plan_estimation_title_NTD">NTD$</p>
+      <input type="text" id="plan_estimation_amount" placeholder="Amount">
+      <div class="plan_estimation_warn_container" id="plan_estimation_ammount_warn_container">
+        <div class="plan_estimation_warn_i_container">
+          <div class="plan_estimation_warn_i"></div>
+        </div>
+        <p class="plan_estimation_warn_text" id="plan_estimation_ammount_warn_text">Please enter the amount you want.</p>
+      </div>
+      <input type="text" id="plan_estimation_time" placeholder="Time">
+      <div class="plan_estimation_warn_container" id="plan_estimation_time_warn_container">
+        <div class="plan_estimation_warn_i_container">
+          <div class="plan_estimation_warn_i"></div>
+        </div>
+        <p class="plan_estimation_warn_text" id="plan_estimation_time_warn_text">Please enter the time of each </p>
+      </div>
+      <div id="plan_estimation_date">Day
+        <div class="triangle_down" id="plan_estimation_date_tri"></div>
+      </div>
+      <div class="plan_estimation_warn_container" id="plan_estimation_date_warn_container">
+        <div class="plan_estimation_warn_i_container">
+          <div class="plan_estimation_warn_i"></div>
+        </div>
+        <p class="plan_estimation_warn_text" id="plan_estimation_date_warn_text">Please select a time unit.</p>
+      </div>   
+    <!--</div>-->
+    <div id="plan_estimation_amount_menu">
+      <!--<div id="plan_estimation_date_container">-->
+        <p class="plan_estimation_amount_option" id="plan_estimation_amount_1">10000</p>
+        <div class="plan_estimation_strip"></div>
+        <p class="plan_estimation_amount_option" id="plan_estimation_amount_2">30000</p>
+        <div class="plan_estimation_strip"></div>
+        <p class="plan_estimation_amount_option" id="plan_estimation_amount_3">50000</p>
+        <div class="plan_estimation_strip"></div>
+        <p class="plan_estimation_amount_option" id="plan_estimation_amount_4">100000</p>
+        <div class="plan_estimation_strip"></div>
+        <p class="plan_estimation_amount_option" id="plan_estimation_amount_5">300000</p>
+        <div class="plan_estimation_strip"></div>
+        <p class="plan_estimation_amount_option" id="plan_estimation_amount_6">500000</p>
+        <div class="plan_estimation_strip"></div>
+        <p class="plan_estimation_amount_option" id="plan_estimation_amount_7">1000000</p>
+      <!--</div>-->
+    </div>
+    <div id="plan_estimation_time_menu">
+      <!--<div id="plan_estimation_date_container">-->
+        <p class="plan_estimation_time_option" id="plan_estimation_time_1">1</p>
+        <div class="plan_estimation_strip"></div>
+        <p class="plan_estimation_time_option" id="plan_estimation_time_2">2</p>
+        <div class="plan_estimation_strip"></div>
+        <p class="plan_estimation_time_option" id="plan_estimation_time_3">3</p>
+        <div class="plan_estimation_strip"></div>
+        <p class="plan_estimation_time_option" id="plan_estimation_time_4">4</p>
+        <div class="plan_estimation_strip"></div>
+        <p class="plan_estimation_time_option" id="plan_estimation_time_5">5</p>
+      <!--</div>-->
+    </div>
+    <div id="plan_estimation_date_menu">
+      <!--<div id="plan_estimation_date_container">-->
+        <p class="plan_estimation_date_option" id="plan_estimation_date_day">Day</p>
+        <div class="plan_estimation_strip"></div>
+        <p class="plan_estimation_date_option" id="plan_estimation_date_month">Month</p>
+        <div class="plan_estimation_strip"></div>
+        <p class="plan_estimation_date_option" id="plan_estimation_date_year">Year</p>
+      <!--</div>-->
+    </div>
+    <div id="plan_estimation_container">
+      <p id="plan_estimation_time_text1">It is expected to take</p>
+      <p id="plan_estimation_time_text">3 month</p>
+      <P id="plan_estimation_time_text2">to reach the ratio.</P>
+    </div>
     <p class="plan_subtitle" id="plan_show">Show</p>
     <p class="plan_subtitle" id="plan_category">Category</p>
     <p class="plan_subtitle" id="plan_rate">Rate</p>
-    <p class="plan_subtitle" id="plan_riskindex">Risk index</p>
+    <!--<p class="plan_subtitle" id="plan_riskindex">Risk index</p>-->
     <p class="plan_subtitle" id="plan_expected_rate">Expected rate</p>
-    <p class="plan_subtitle" id="plan_expected_riskindex">Risk index</p>
-    <div id="plan_object_container_container">
-      <div class="plan_object_container plan_object_container1" id="plan_object_container1">
-        <div class="wallet_show_color_container">
-          <div class="wallet_show_color wallet_show_color1 show_wallet_object" id="plan_show_color1"></div>
-        </div>
-        <p class="plan_category_category wallet_text" id="plan_category1"></p>
-        <p class="plan_percentage_percentage wallet_text" id="plan_percentage1"></p>
-        <p class="plan_riskindex_riskindex wallet_text" id="plan_riskindex1"></p>
-        <input class="typebox plan_expected_rate_rate wallet_text" id="plan_expected_rate1" placeholder="Rate">
-        <p class="plan_percent_symbol wallet_text" id="plan_percent_symbol1">%</p>
-        <p class="plan_expected_riskindex_riskindex wallet_text" id="plan_expected_riskindex1">-</p>
+    <!--<p class="plan_subtitle" id="plan_expected_riskindex">Risk index</p>-->
+    <div class="plan_object_container plan_object_container1" id="plan_object_container1">
+      <div class="wallet_show_color_container">
+        <div class="wallet_show_color wallet_show_color1 show_wallet_object" id="plan_show_color1"></div>
       </div>
-      <div class="plan_object_container plan_object_container2" id="plan_object_container2">
-        <div class="wallet_show_color_container">
-          <div class="wallet_show_color wallet_show_color2 show_wallet_object" id="plan_show_color2"></div>
-        </div>
-        <p class="plan_category_category wallet_text" id="plan_category2"></p>
-        <p class="plan_percentage_percentage wallet_text" id="plan_percentage2"></p>
-        <p class="plan_riskindex_riskindex wallet_text" id="plan_riskindex2"></p>
-        <input class="typebox plan_expected_rate_rate  wallet_text" id="plan_expected_rate2" placeholder="Rate">
-        <p class="plan_percent_symbol wallet_text" id="plan_percent_symbol2">%</p>
-        <p class="plan_expected_riskindex_riskindex wallet_text" id="plan_expected_riskindex2">-</p>
+      <p class="plan_category_category wallet_text" id="plan_category1"></p>
+      <div class="plan_category_menu_category" id="plan_category_menu_category1">
+        <div class="plan_category_menu_category_tri" id="plan_category_menu_category_tri1"></div>
       </div>
-      <div class="plan_object_container plan_object_container3" id="plan_object_container3">
-        <div class="wallet_show_color_container">
-          <div class="wallet_show_color wallet_show_color3 show_wallet_object" id="plan_show_color3"></div>
-        </div>
-        <p class="plan_category_category wallet_text" id="plan_category3"></p>
-        <p class="plan_percentage_percentage wallet_text" id="plan_percentage3"></p>
-        <p class="plan_riskindex_riskindex wallet_text" id="plan_riskindex3"></p>
-        <input class="typebox plan_expected_rate_rate  wallet_text" id="plan_expected_rate3" placeholder="Rate">
-        <p class="plan_percent_symbol wallet_text" id="plan_percent_symbol3">%</p>
-        <p class="plan_expected_riskindex_riskindex wallet_text" id="plan_expected_riskindex3">-</p>
+      <div class="plan_category_menu_container" id="plan_category_menu_container1">
+        <p class="plan_category_menu_option" id="plan_category_menu_option1_Crypto">Crypto</p>
+        <div class="plan_estimation_strip"></div>
+        <p class="plan_category_menu_option" id="plan_category_menu_option1_NFT">NFT</p>
+        <div class="plan_estimation_strip"></div>
+        <p class="plan_category_menu_option" id="plan_category_menu_option1_Stock">Stock</p>
+        <div class="plan_estimation_strip"></div>
+        <p class="plan_category_menu_option" id="plan_category_menu_option1_Fund">Fund</p>
+        <div class="plan_estimation_strip"></div>
+        <p class="plan_category_menu_option" id="plan_category_menu_option1_CDNTD">CD(NTD)</p>
+        <div class="plan_estimation_strip"></div>
+        <p class="plan_category_menu_option" id="plan_category_menu_option1_CDFor">CD(For)</p>
       </div>
-      <div class="plan_object_container plan_object_container4" id="plan_object_container4">
-        <div class="wallet_show_color_container">
-          <div class="wallet_show_color wallet_show_color4 show_wallet_object" id="plan_show_color4"></div>
-        </div>
-        <p class="plan_category_category wallet_text" id="plan_category4"></p>
-        <p class="plan_percentage_percentage wallet_text" id="plan_percentage4"></p>
-        <p class="plan_riskindex_riskindex wallet_text" id="plan_riskindex4"></p>
-        <input class="typebox plan_expected_rate_rate  wallet_text" id="plan_expected_rate4" placeholder="Rate">
-        <p class="plan_percent_symbol wallet_text" id="plan_percent_symbol4">%</p>
-        <p class="plan_expected_riskindex_riskindex wallet_text" id="plan_expected_riskindex4">-</p>
-      </div>
-      <div class="plan_object_container plan_object_container5" id="plan_object_container5">
-        <div class="wallet_show_color_container">
-          <div class="wallet_show_color wallet_show_color5 show_wallet_object" id="plan_show_color5"></div>
-        </div>
-        <p class="plan_category_category wallet_text" id="plan_category5"></p>
-        <p class="plan_percentage_percentage wallet_text" id="plan_percentage5"></p>
-        <p class="plan_riskindex_riskindex wallet_text" id="plan_riskindex5"></p>
-        <input class="typebox plan_expected_rate_rate  wallet_text" id="plan_expected_rate5" placeholder="Rate">
-        <p class="plan_percent_symbol wallet_text" id="plan_percent_symbol5">%</p>
-        <p class="plan_expected_riskindex_riskindex wallet_text" id="plan_expected_riskindex5">-</p>
-      </div>
-      <div class="plan_object_container plan_object_container6" id="plan_object_container6">
-        <div class="wallet_show_color_container">
-          <div class="wallet_show_color wallet_show_color6 show_wallet_object" id="plan_show_color6"></div>
-        </div>
-        <p class="plan_category_category wallet_text" id="plan_category6"></p>
-        <p class="plan_percentage_percentage wallet_text" id="plan_percentage6"></p>
-        <p class="plan_riskindex_riskindex wallet_text" id="plan_riskindex6"></p>
-        <input class="typebox plan_expected_rate_rate  wallet_text" id="plan_expected_rate6" placeholder="Rate">
-        <p class="plan_percent_symbol wallet_text" id="plan_percent_symbol6">%</p>
-        <p class="plan_expected_riskindex_riskindex wallet_text" id="plan_expected_riskindex6">-</p>
-      </div>
-      <div class="plan_object_container" id="plan_add_object_container">
-        <p id="plan_add_category">+ Category</p>
-      </div>
+      <p class="plan_percentage_percentage wallet_text" id="plan_percentage1"></p>
+      <!--<p class="plan_riskindex_riskindex wallet_text" id="plan_riskindex1"></p>-->
+      <input class="typebox plan_expected_rate_rate wallet_text" id="plan_expected_rate1" placeholder="Rate">
+      <p class="plan_percent_symbol wallet_text" id="plan_percent_symbol1">%</p>
+      <!--<p class="plan_expected_riskindex_riskindex wallet_text" id="plan_expected_riskindex1">-</p>-->
     </div>
+    <div class="plan_object_container plan_object_container2" id="plan_object_container2">
+      <div class="wallet_show_color_container">
+        <div class="wallet_show_color wallet_show_color2 show_wallet_object" id="plan_show_color2"></div>
+      </div>
+      <p class="plan_category_category wallet_text" id="plan_category2"></p>
+      <div class="plan_category_menu_category" id="plan_category_menu_category2">
+        <div class="plan_category_menu_category_tri" id="plan_category_menu_category_tri2"></div>
+      </div>
+      <div class="plan_category_menu_container" id="plan_category_menu_container2">
+        <p class="plan_category_menu_option" id="plan_category_menu_option2_Crypto">Crypto</p>
+        <div class="plan_estimation_strip"></div>
+        <p class="plan_category_menu_option" id="plan_category_menu_option2_NFT">NFT</p>
+        <div class="plan_estimation_strip"></div>
+        <p class="plan_category_menu_option" id="plan_category_menu_option2_Stock">Stock</p>
+        <div class="plan_estimation_strip"></div>
+        <p class="plan_category_menu_option" id="plan_category_menu_option2_Fund">Fund</p>
+        <div class="plan_estimation_strip"></div>
+        <p class="plan_category_menu_option" id="plan_category_menu_option2_CDNTD">CD(NTD)</p>
+        <div class="plan_estimation_strip"></div>
+        <p class="plan_category_menu_option" id="plan_category_menu_option2_CDFor">CD(For)</p>
+      </div>
+      <p class="plan_percentage_percentage wallet_text" id="plan_percentage2"></p>
+      <!--<p class="plan_riskindex_riskindex wallet_text" id="plan_riskindex2"></p>-->
+      <input class="typebox plan_expected_rate_rate  wallet_text" id="plan_expected_rate2" placeholder="Rate">
+      <p class="plan_percent_symbol wallet_text" id="plan_percent_symbol2">%</p>
+      <!--<p class="plan_expected_riskindex_riskindex wallet_text" id="plan_expected_riskindex2">-</p>-->
+    </div>
+    <div class="plan_object_container plan_object_container3" id="plan_object_container3">
+      <div class="wallet_show_color_container">
+        <div class="wallet_show_color wallet_show_color3 show_wallet_object" id="plan_show_color3"></div>
+      </div>
+      <p class="plan_category_category wallet_text" id="plan_category3"></p>
+      <div class="plan_category_menu_category" id="plan_category_menu_category3">
+        <div class="plan_category_menu_category_tri" id="plan_category_menu_category_tri3"></div>
+      </div>
+      <div class="plan_category_menu_container" id="plan_category_menu_container3">
+        <p class="plan_category_menu_option" id="plan_category_menu_option3_Crypto">Crypto</p>
+        <div class="plan_estimation_strip"></div>
+        <p class="plan_category_menu_option" id="plan_category_menu_option3_NFT">NFT</p>
+        <div class="plan_estimation_strip"></div>
+        <p class="plan_category_menu_option" id="plan_category_menu_option3_Stock">Stock</p>
+        <div class="plan_estimation_strip"></div>
+        <p class="plan_category_menu_option" id="plan_category_menu_option3_Fund">Fund</p>
+        <div class="plan_estimation_strip"></div>
+        <p class="plan_category_menu_option" id="plan_category_menu_option3_CDNTD">CD(NTD)</p>
+        <div class="plan_estimation_strip"></div>
+        <p class="plan_category_menu_option" id="plan_category_menu_option3_CDFor">CD(For)</p>
+      </div>
+      <p class="plan_percentage_percentage wallet_text" id="plan_percentage3"></p>
+      <!--<p class="plan_riskindex_riskindex wallet_text" id="plan_riskindex3"></p>-->
+      <input class="typebox plan_expected_rate_rate  wallet_text" id="plan_expected_rate3" placeholder="Rate">
+      <p class="plan_percent_symbol wallet_text" id="plan_percent_symbol3">%</p>
+      <!--<p class="plan_expected_riskindex_riskindex wallet_text" id="plan_expected_riskindex3">-</p>-->
+    </div>
+    <div class="plan_object_container plan_object_container4" id="plan_object_container4">
+      <div class="wallet_show_color_container">
+        <div class="wallet_show_color wallet_show_color4 show_wallet_object" id="plan_show_color4"></div>
+      </div>
+      <p class="plan_category_category wallet_text" id="plan_category4"></p>
+      <div class="plan_category_menu_category" id="plan_category_menu_category4">
+        <div class="plan_category_menu_category_tri" id="plan_category_menu_category_tri4"></div>
+      </div>
+      <div class="plan_category_menu_container" id="plan_category_menu_container4">
+        <p class="plan_category_menu_option" id="plan_category_menu_option4_Crypto">Crypto</p>
+        <div class="plan_estimation_strip"></div>
+        <p class="plan_category_menu_option" id="plan_category_menu_option4_NFT">NFT</p>
+        <div class="plan_estimation_strip"></div>
+        <p class="plan_category_menu_option" id="plan_category_menu_option4_Stock">Stock</p>
+        <div class="plan_estimation_strip"></div>
+        <p class="plan_category_menu_option" id="plan_category_menu_option4_Fund">Fund</p>
+        <div class="plan_estimation_strip"></div>
+        <p class="plan_category_menu_option" id="plan_category_menu_option4_CDNTD">CD(NTD)</p>
+        <div class="plan_estimation_strip"></div>
+        <p class="plan_category_menu_option" id="plan_category_menu_option4_CDFor">CD(For)</p>
+      </div>
+      <p class="plan_percentage_percentage wallet_text" id="plan_percentage4"></p>
+      <!--<p class="plan_riskindex_riskindex wallet_text" id="plan_riskindex4"></p>-->
+      <input class="typebox plan_expected_rate_rate  wallet_text" id="plan_expected_rate4" placeholder="Rate">
+      <p class="plan_percent_symbol wallet_text" id="plan_percent_symbol4">%</p>
+      <!--<p class="plan_expected_riskindex_riskindex wallet_text" id="plan_expected_riskindex4">-</p>-->
+    </div>
+    <div class="plan_object_container plan_object_container5" id="plan_object_container5">
+      <div class="wallet_show_color_container">
+        <div class="wallet_show_color wallet_show_color5 show_wallet_object" id="plan_show_color5"></div>
+      </div>
+      <p class="plan_category_category wallet_text" id="plan_category5"></p>
+      <p class="plan_percentage_percentage wallet_text" id="plan_percentage5"></p>
+      <div class="plan_category_menu_category" id="plan_category_menu_category5">
+        <div class="plan_category_menu_category_tri" id="plan_category_menu_category_tri5"></div>
+      </div>
+      <div class="plan_category_menu_container" id="plan_category_menu_container5">
+        <p class="plan_category_menu_option" id="plan_category_menu_option5_Crypto">Crypto</p>
+        <div class="plan_estimation_strip"></div>
+        <p class="plan_category_menu_option" id="plan_category_menu_option5_NFT">NFT</p>
+        <div class="plan_estimation_strip"></div>
+        <p class="plan_category_menu_option" id="plan_category_menu_option5_Stock">Stock</p>
+        <div class="plan_estimation_strip"></div>
+        <p class="plan_category_menu_option" id="plan_category_menu_option5_Fund">Fund</p>
+        <div class="plan_estimation_strip"></div>
+        <p class="plan_category_menu_option" id="plan_category_menu_option5_CDNTD">CD(NTD)</p>
+        <div class="plan_estimation_strip"></div>
+        <p class="plan_category_menu_option" id="plan_category_menu_option5_CDFor">CD(For)</p>
+      </div>
+      <!--<p class="plan_riskindex_riskindex wallet_text" id="plan_riskindex5"></p>-->
+      <input class="typebox plan_expected_rate_rate  wallet_text" id="plan_expected_rate5" placeholder="Rate">
+      <p class="plan_percent_symbol wallet_text" id="plan_percent_symbol5">%</p>
+      <!--<p class="plan_expected_riskindex_riskindex wallet_text" id="plan_expected_riskindex5">-</p>-->
+    </div>
+    <div class="plan_object_container plan_object_container6" id="plan_object_container6">
+      <div class="wallet_show_color_container">
+        <div class="wallet_show_color wallet_show_color6 show_wallet_object" id="plan_show_color6"></div>
+      </div>
+      <p class="plan_category_category wallet_text" id="plan_category6"></p>
+      <div class="plan_category_menu_category" id="plan_category_menu_category6">
+        <div class="plan_category_menu_category_tri" id="plan_category_menu_category_tri6"></div>
+      </div>
+      <div class="plan_category_menu_container" id="plan_category_menu_container6">
+        <p class="plan_category_menu_option" id="plan_category_menu_option6_Crypto">Crypto</p>
+        <div class="plan_estimation_strip"></div>
+        <p class="plan_category_menu_option" id="plan_category_menu_option6_NFT">NFT</p>
+        <div class="plan_estimation_strip"></div>
+        <p class="plan_category_menu_option" id="plan_category_menu_option6_Stock">Stock</p>
+        <div class="plan_estimation_strip"></div>
+        <p class="plan_category_menu_option" id="plan_category_menu_option6_Fund">Fund</p>
+        <div class="plan_estimation_strip"></div>
+        <p class="plan_category_menu_option" id="plan_category_menu_option6_CDNTD">CD(NTD)</p>
+        <div class="plan_estimation_strip"></div>
+        <p class="plan_category_menu_option" id="plan_category_menu_option6_CDFor">CD(For)</p>
+      </div>
+      <p class="plan_percentage_percentage wallet_text" id="plan_percentage6"></p>
+      <!--<p class="plan_riskindex_riskindex wallet_text" id="plan_riskindex6"></p>-->
+      <input class="typebox plan_expected_rate_rate  wallet_text" id="plan_expected_rate6" placeholder="Rate">
+      <p class="plan_percent_symbol wallet_text" id="plan_percent_symbol6">%</p>
+      <!--<p class="plan_expected_riskindex_riskindex wallet_text" id="plan_expected_riskindex6">-</p>-->
+    </div>
+    <div class="plan_object_container" id="plan_add_object_container">
+      <p id="plan_add_category">+ Category</p>
+    </div>
+
     <p id="plan_confirm">Confirm</p>
   </div>
   <!---------------------------------------------NFT Market--------------------------------------------->
