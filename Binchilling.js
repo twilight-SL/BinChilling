@@ -1663,25 +1663,23 @@ function TurnBack_choose_account(SuccessOrNot){
   document.getElementById("add_new_account_page").style.display='block';
   document.getElementById("connect_nft_account").style.display='none';
   document.getElementById("connect_bank_account").style.display='none';
- switch(SuccessOrNot){
-  case 1:
-    document.getElementById("demo-metamask").style.display='block';
-    break;
-  case 2:
-    document.getElementById("demo-phantom").style.display='block';
-    break;
-  case 3:
-    // document.getElementById("demo-phantom").style.display='block';
-    break;
-  case 4:
-    // document.getElementById("demo-phantom").style.display='block';
-    break;
-  case 5:
-    // document.getElementById("demo-phantom").style.display='block';
-    break;
-  default:
-    break;
- }
+  switch(SuccessOrNot){
+    case 1:
+      document.getElementById("demo-metamask").style.display='block';
+      break;
+    case 2:
+      document.getElementById("demo-phantom").style.display='block';
+      break;
+    case 3:
+      document.getElementById("demo-citibank").style.display='block';
+      break;
+    case 4:
+      document.getElementById("demo-sinoPac").style.display='block';
+      break;
+    case 5:
+      document.getElementById("demo-yuanta").style.display='block';
+      break;
+   }
 }
 
 
@@ -1774,7 +1772,7 @@ function verify_password(id){
       break;
     case "Citi-unlock":
       if(input_password == input_CitiBank_success_password){
-        SuccessOrNot = 1;
+        SuccessOrNot = 3;
         document.getElementById('Citi-connect-success').style.display='block';
         document.getElementById('Citi-dialog-success').style.display='block';
       }else {
@@ -1785,7 +1783,7 @@ function verify_password(id){
       break;
     case "SinoPac-unlock":
       if(input_password == input_SinoPac_success_password){
-        SuccessOrNot = 1;
+        SuccessOrNot = 4;
         document.getElementById('SinoPac-connect-success').style.display='block';
         document.getElementById('SinoPac-dialog-success').style.display='block';
       }else {
@@ -1796,7 +1794,7 @@ function verify_password(id){
       break;
     case "Yuanta-unlock":
       if(input_password == input_Yuanta_success_password){
-        SuccessOrNot = 1;
+        SuccessOrNot = 5;
         document.getElementById('SinoPac-connect-success').style.display='block';
         document.getElementById('SinoPac-dialog-success').style.display='block';
       }else {
