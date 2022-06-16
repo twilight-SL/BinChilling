@@ -1817,19 +1817,27 @@ function draw_NFT_chart() {
 }
 
 /* -------------------- Add Account Event ---------------------- */
-function TurnBack_choose_account(SuccessOrNot) {
-  document.getElementById("add_new_account_page").style.display = 'block';
-  document.getElementById("connect_nft_account").style.display = 'none';
-  switch (SuccessOrNot) {
-    case 1:
-      document.getElementById("demo-metamask").style.display = 'block';
-      break;
-    case 2:
-      document.getElementById("demo-phantom").style.display = 'block';
-      break;
-    default:
-      break;
-  }
+function TurnBack_choose_account(SuccessOrNot){
+  document.getElementById("add_new_account_page").style.display='block';
+  document.getElementById("connect_nft_account").style.display='none';
+  document.getElementById("connect_bank_account").style.display='none';
+ switch(SuccessOrNot){
+  case 1:
+    document.getElementById("demo-metamask").style.display='block';
+    break;
+  case 2:
+    document.getElementById("demo-phantom").style.display='block';
+    break;
+  case 3:
+    document.getElementById("demo-citibank").style.display='block';
+    break;
+  case 4:
+    document.getElementById("demo-sinoPac").style.display='block';
+    break;
+  case 5:
+    document.getElementById("demo-yuanta").style.display='block';
+    break;
+ }
 }
 
 function add_NFT_account(input_id) {
@@ -1837,20 +1845,38 @@ function add_NFT_account(input_id) {
   document.getElementById("connect_nft_account").style.display = 'block';
 }
 
+function add_Bank_account(input_id){
+  document.getElementById("add_new_account_page").style.display='none';
+  document.getElementById("connect_bank_account").style.display='block';
+}
 /* --------------------  Modal Action  -------------------- */
+// NFT & Crypto account
 const input_MetaMask_success_password = 456789;
 const input_Phantom_success_password = 878787;
+// Bank account
+const input_CitiBank_success_password = 4747474747;
+const input_SinoPac_success_password = 5050505050;
+const input_Yuanta_success_password = 1122334455;
 var input_password;
 
 function get_password(id) {
   input_password = document.querySelector("#" + id).value;
-  if (input_password !== null) {
-    switch (id) {
+  if( input_password !== null){
+    switch(id){
       case "metamask-password-input":
         console.log("metamask_password:  " + input_password);
         break;
       case "phantom-password-input":
         console.log("phantom_password:  " + input_password);
+        break;
+      case "Citi-password-input":
+        console.log("Citi_password:  " + input_password);
+        break;
+      case "SinoPac-password-input":
+        console.log("SinoPac_password:  " + input_password);
+        break;
+      case "Yuanta-password-input":
+        console.log("Yuanta_password:  " + input_password);
         break;
       default:
         break;
@@ -1864,37 +1890,75 @@ function verify_password(id) {
   /*
     1 -> Success to MetaMask
     2 -> Success to Phantom
+    3 -> Success to CitiBank
+    4 -> Success to SinoPacBank
+    5 -> Success to Yuanta
    */
+  // NFT & Crypto
   $('#MetaMaskModal').modal('hide');
   $('#PhantomModal').modal('hide');
+  // Bank
+  $('#CitiBankModal').modal('hide');
+  $('#SinoPacModal').modal('hide');
+  $('#YuantaModal').modal('hide');
 
-  switch (id) {
+  switch(id){
     case "metamask-unlock":
-      console.log("metamask_password:  " + input_password);
-      if (input_password == input_MetaMask_success_password) {
+      if(input_password == input_MetaMask_success_password){
         SuccessOrNot = 1;
-        document.getElementById('MetaMask-connect-success').style.display = 'block';
-        document.getElementById('MetaMask-dialog-success').style.display = 'block';
-      } else {
+        document.getElementById('MetaMask-connect-success').style.display='block';
+        document.getElementById('MetaMask-dialog-success').style.display='block';
+      }else {
         SuccessOrNot = 0;
-        document.getElementById('MetaMask-connect-failed').style.display = 'block';
-        document.getElementById('MetaMask-dialog-failed').style.display = 'block';
+        document.getElementById('MetaMask-connect-failed').style.display='block';
+        document.getElementById('MetaMask-dialog-failed').style.display='block';
       }
       break;
     case "phantom-unlock":
-      console.log("phantom_password:  " + input_password);
-      if (input_password == input_Phantom_success_password) {
+      if(input_password == input_Phantom_success_password){
         SuccessOrNot = 2;
-        document.getElementById('Phantom-connect-success').style.display = 'block';
-        document.getElementById('Phantom-dialog-success').style.display = 'block';
-      } else {
+        document.getElementById('Phantom-connect-success').style.display='block';
+        document.getElementById('Phantom-dialog-success').style.display='block';
+      }else {
         SuccessOrNot = 0;
-        document.getElementById('Phantom-connect-failed').style.display = 'block';
-        document.getElementById('Phantom-dialog-failed').style.display = 'block';
+        document.getElementById('Phantom-connect-failed').style.display='block';
+        document.getElementById('Phantom-dialog-failed').style.display='block';
+      }
+      break;
+    case "Citi-unlock":
+      if(input_password == input_CitiBank_success_password){
+        SuccessOrNot = 3;
+        document.getElementById('Citi-connect-success').style.display='block';
+        document.getElementById('Citi-dialog-success').style.display='block';
+      }else {
+        SuccessOrNot = 0;
+        document.getElementById('Citi-connect-failed').style.display='block';
+        document.getElementById('Citi-dialog-failed').style.display='block';
+      }
+      break;
+    case "SinoPac-unlock":
+      if(input_password == input_SinoPac_success_password){
+        SuccessOrNot = 4;
+        document.getElementById('SinoPac-connect-success').style.display='block';
+        document.getElementById('SinoPac-dialog-success').style.display='block';
+      }else {
+        SuccessOrNot = 0;
+        document.getElementById('SinoPac-connect-failed').style.display='block';
+        document.getElementById('SinoPac-dialog-failed').style.display='block';
+      }
+      break;
+    case "Yuanta-unlock":
+      if(input_password == input_Yuanta_success_password){
+        SuccessOrNot = 5;
+        document.getElementById('SinoPac-connect-success').style.display='block';
+        document.getElementById('SinoPac-dialog-success').style.display='block';
+      }else {
+        SuccessOrNot = 0;
+        document.getElementById('SinoPac-connect-failed').style.display='block';
+        document.getElementById('SinoPac-dialog-failed').style.display='block';
       }
       break;
   }
-
   $(".dialog").on("click", function () {
     if (state === 1) {
       $(".dialog").fadeOut("normal");
@@ -1907,6 +1971,14 @@ function verify_password(id) {
   $(".verify-modal").on("click", function (event) {
     event.stopPropagation();
   });
+  // NFT & Crypto
   $("#metamask-password-input").val('');
   $("#phantom-password-input").val('');
+  // Bank
+  $("#Citi-userid-input").val('');
+  $("#Citi-password-input").val('');
+   $("#SinoPac-userid-input").val('');
+  $("#SinoPac-password-input").val('');
+  $("#Yuanta-userid-input").val('');
+  $("#Yuanta-password-input").val('');
 }
