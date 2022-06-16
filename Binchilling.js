@@ -1241,8 +1241,6 @@ $(document).ready(function () {
           var id = "NFT_detail_characteristic_description" + String(j + 1);
           document.getElementById(id).textContent = Object.values(NFT_detail[i])[j];
         }
-
-
       }
     }
   });
@@ -1251,6 +1249,61 @@ $(document).ready(function () {
     document.getElementById('wallet_NFT').style.display = 'block';
     document.getElementById('NFT_detail_page').style.display = 'none';
   });
+
+
+
+
+  /* ----------------- Scatter of NFT ---------------- */
+  var timesSelectClicked = 0;
+  $("#scatter-selection").on("click", function(e){
+    if (timesSelectClicked == 0)
+    {
+        timesSelectClicked += 1;
+    }
+    else if (timesSelectClicked == 1)
+    {
+      timesSelectClicked = 0;
+      let slt = $('#scatter-selection option:selected').text();
+      switch(slt){
+        case '1 H':
+          svg.selectAll("g").remove();
+          scatter(hour);
+          break;
+        case '1 D':
+          svg.selectAll("g").remove();
+          scatter(day);
+          document.getElementById('scatter-day-scale').style.display='block';
+          document.getElementById('scatter-week-scale').style.display='none';
+          document.getElementById('scatter-twoWeek-scale').style.display='none';
+          document.getElementById('scatter-month-scale').style.display='none';
+          break;
+        case '7 D':
+          svg.selectAll("g").remove();
+          scatter(week);
+          document.getElementById('scatter-week-scale').style.display='block';
+          document.getElementById('scatter-day-scale').style.display='none';
+          document.getElementById('scatter-twoWeek-scale').style.display='none';
+          document.getElementById('scatter-month-scale').style.display='none';
+          break;
+        case '14 D':
+          svg.selectAll("g").remove();
+          scatter(two_week);
+          document.getElementById('scatter-twoWeek-scale').style.display='block';
+          document.getElementById('scatter-day-scale').style.display='none';
+          document.getElementById('scatter-week-scale').style.display='none';
+          document.getElementById('scatter-month-scale').style.display='none';
+          break;
+        case '30 D':
+          svg.selectAll("g").remove();
+          scatter(month);
+          document.getElementById('scatter-month-scale').style.display='block';
+          document.getElementById('scatter-day-scale').style.display='none';
+          document.getElementById('scatter-week-scale').style.display='none';
+          document.getElementById('scatter-twoWeek-scale').style.display='none';
+          break;
+      }
+    }
+  })
 
   //**********************************************   Plan page *************************************//
 
@@ -1551,7 +1604,6 @@ $(document).ready(function () {
   load_database();
 });
 
-
 var logged_account = [];
 function modify_navbar_account_menu(account) {
   logged_account[logged_account.length] = account;
@@ -1564,10 +1616,8 @@ function modify_navbar_account_menu(account) {
   document.getElementById(id).textContent = account;
 }
 
-
 /* ****** ------------------------------------------------------- Chart Animation--------------------------------------------------------- ****** */
-
-let data = [296210.326, 175832.331, 91722.462, 30017.135, 25127.746]; // ["296210.326", "175832.331", "91722.462", "30017.135", "25127.746"];
+let data = [296210.326, 175832.331, 91722.462, 30017.135, 25127.746];
 let colors = ["#B8CAD6", "#E9E9EB", "#528CA2", "#42506B", "#FF7582"];
 let NFT_data = [1651.428965, 1455.681035];
 let NFT_colors = ["#E9E9EB", "#FF7582"];
@@ -1708,7 +1758,6 @@ function show_risk_index(page) {
   }, 2500);
 }
 
-
 function draw_NFT_chart() {
   const Name = ["Metamask", "Wallet Connect"]
   let generator = d3.pie()
@@ -1814,6 +1863,151 @@ function draw_NFT_chart() {
         .innerRadius(innerRadiusInterpolation(t))
         .outerRadius(outerRadiusInterpolation(t));
     });
+}
+
+/* ------------------------- Scatter ------------------------- */
+const hour = [ 
+];
+
+const day = [ 
+  {Date: 5.14, Amount: 3.2},
+  {Date: 5.15, Amount: 2},
+];
+
+const week = [ 
+{Date: 5.14, Amount: 3.2},
+{Date: 5.15, Amount: 2},
+{Date: 5.17, Amount: 1.8},
+];
+
+const two_week = [ 
+  {Date: 5.14, Amount: 3.2},
+  {Date: 5.15, Amount: 2},
+  {Date: 5.17, Amount: 1.8},
+  {Date: 5.21, Amount: 2.1},
+];
+
+const month = [ 
+  {Date: 5.14, Amount: 3.2},
+  {Date: 5.15, Amount: 2},
+  {Date: 5.17, Amount: 1.8},
+  {Date: 5.21, Amount: 2.1},
+  {Date: 5.23, Amount: 2.3}
+];
+
+// set the dimensions and margins of the graph
+const margin = {top: 10, right: 30, bottom: 30, left: 60},
+      width = 600 - margin.left - margin.right,
+      height = 400 - margin.top - margin.bottom;
+
+// append the svg object to the body of the page
+const svg = d3.select("#chart")
+  .append("svg")
+  .attr("width", width + margin.left + margin.right + "")
+  .attr("height", height + margin.top + margin.bottom + "")
+  .append("g")
+  .attr("transform", `translate(${margin.left}, ${margin.top})`);
+
+function scatter(data){
+  if(data == ''){
+    document.getElementById('nodata').style.display='block';
+    document.getElementById('chart').style.display='none';
+  }else{
+    document.getElementById('nodata').style.display='none';
+    document.getElementById('chart').style.display='block';
+    // Add X axis
+    const x = d3.scaleLinear()
+    .domain([d3.min(data, function(d) { return d.Date })-0.01, d3.max(data, function(d) { return d.Date }) ])
+    .range([ 0, width ]);
+    const xAxis = d3.axisBottom().scale(x).ticks(6);
+    svg.append("g")
+    .attr("transform", `translate(0, ${height})`)
+    .call(xAxis);
+    // Add Y axis
+    const y = d3.scaleLinear()
+    .domain([0, d3.max(data, function(d) { return d.Amount  })+1 ])
+    .range([ height, 0]);
+    const yAxis = d3.axisLeft().scale(y).ticks(4);
+    svg.append("g")
+    .call(yAxis);
+
+    svg.append("text")
+    .attr("text-anchor", "end")
+    .attr("transform", "rotate(-90)")
+    .attr("y", -11+"%")
+    .attr("x", -23+"%")
+    .style("font-family","SFProDisplay-Semibold")
+    .style("font-size",20)
+    .style("fill","#42506B")
+    .text("Amount (ETH)")
+
+    // grid line
+    // function make_y_gridlines() {		
+    //   return d3.axisLeft(y)
+    //       .ticks(3)
+    // }
+    // svg.append("g")			
+    // .attr("class", "grid")
+    // .call(make_y_gridlines()
+    //     .tickSize(-width)
+    //     .tickFormat("")
+    // )
+
+    // Add a tooltip div
+    var tooltip = d3.select("#chart")
+    .append("div")
+    .style("opacity", 0)
+    .attr("class", "tooltip")
+    .style("z-index", "10")
+    // Add dots
+    svg.append('g')
+    .selectAll("dot")
+    .data(data)
+    .join("circle")
+        .attr("cx", function (d) { return x(d.Date); } )
+        .attr("cy", function (d) { return y(d.Amount); } )
+        .attr("r", 5)
+        .style("fill", "#528CA2")
+    .on('mouseover', function (d, i) {
+      var random_seed = Math.floor(Math.random() * 5);
+      switch(random_seed){
+        case 0:
+          tooltip.style('background-image','url("./Img/scatter/Group\ 416.png")')
+          break;
+        case 1:
+          tooltip.style('background-image','url("./Img/scatter/Group\ 417.png")')
+          break;
+        case 2:
+          tooltip.style('background-image','url("./Img/scatter/Group\ 418.png")')
+          break;
+        case 3:
+          tooltip.style('background-image','url("./Img/scatter/Group\ 419.png")')
+          break;
+        case 4:
+          tooltip.style('background-image','url("./Img/scatter/Group\ 420.png")')
+          break;
+      }
+      d3.select(this).transition()
+          .duration('100')
+          .attr("r", 7.5);
+      tooltip.transition()
+          .duration(100)
+          .style("opacity", 1);
+     })
+    .on('mousemove', function(d, i){
+      tooltip
+      .style("left", (d3.pointer(event)[0]+50) + "px")
+      .style("top", (d3.pointer(event)[1]+50) + "px")
+    })
+    .on('mouseout', function (d, i) {
+          d3.select(this).transition()
+               .duration('200')
+               .attr("r", 5);
+          tooltip.transition()
+          .duration('200')
+          .style("opacity", 0);
+     });
+  }
 }
 
 /* -------------------- Add Account Event ---------------------- */
