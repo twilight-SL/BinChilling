@@ -6,6 +6,8 @@ import { resolve } from "path";
 
 
 export function get_rate(amount, deposit_currency, target_currency) {
+    deposit_currency = deposit_currency.toLowerCase()
+    target_currency = target_currency.toLowerCase()
     return new Promise(function (resolve, reject) {
         var to_usd = 0;
         switch (deposit_currency) {
