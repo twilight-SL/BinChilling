@@ -12,7 +12,7 @@ const __dirname = dirname(__filename)
 
 //Pre-setting
 const app = express();
-const port = 2340;
+const port = 2335;
 app.use(express.static(`${__dirname}`))
 
 app.listen(port, () => {
@@ -26,6 +26,8 @@ app.get('/0homepage_newEmailSubscribe', function (req, res) {
         res.send(data);
     })
 })
+
+
 
 app.get('/sign_up', function (req, res) {
     sql.newUser(req.query.username, req.query.password, req.query.email).then(function (data) {
@@ -45,22 +47,35 @@ app.get('/new_bank_account', function (req, res) {
     })
 })
 
-app.get('/get_rate_from_eth', function (req, res) {
-    exchange.get_rate_from_eth(req.query.amount, req.query.target_currency).then(function (data) {
+// #exchange
+app.get('/get_rate', function (req, res) {
+    exchange.get_rate(req.query.amount, req.query.original_currency, req.query.target_currency).then(function (data) {
         res.send(data)
     })
 })
 
-app.get('/get_rate_no_eth', function (req, res) {
-    exchange.get_rate_from_eth(req.query.amount, req.query.original_currency, req.query.target_currency).then(function (data) {
-        res.send(data)
-    })
-})
 
+// #stock
 app.get('/get_stock', function(req,res){
     stock.getStock(req.query.stock_code,req.query.CEyear,req.query.month).then(function(data){
         res.send(data)
     })
+})
+
+app.get('/get_stock_specific_day', function(req,res){
+    stock.getStock_Specific_Day(req.query.stock_code, req.query.CEyear, req.query.month, req.query.day).then(function(data){
+        res.send(data)
+    })
+})
+
+app.get('/get_stock_name', function(req,res){
+    stock.getStock_name(req.query.stock_code).then(function(data){
+        res.send(data)
+    })
+})
+
+app.get('get_stock_month_average',function(req,res){
+    stock.getStock_month_average(req.query.stock_code,req.query.CEyear, req.query.month)
 })
 
 // stock.getStock_Specific_Day(2330,2022,5,10).then(function(data){
@@ -71,7 +86,3 @@ app.get('/get_stock', function(req,res){
 // exchange.get_rate_pend(35,"usd","gbp").then(function(data){
 //     console.log(data)
 // })
-
-stock.getStock_five_month_average(2330, 2022, 6).then(function(data){
-    console.log(data)
-})
