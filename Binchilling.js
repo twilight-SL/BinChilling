@@ -1251,9 +1251,36 @@ $(document).ready(function () {
   });
 
 
+   /* ----------------- Scatter of NFT ---------------- */
+   const hour = [ 
+  ];
+  
+  const day = [ 
+    {Date: 5.14, Amount: 3.2},
+    {Date: 5.15, Amount: 2},
+  ];
+  
+  const week = [ 
+  {Date: 5.14, Amount: 3.2},
+  {Date: 5.15, Amount: 2},
+  {Date: 5.17, Amount: 1.8},
+  ];
+  
+  const two_week = [ 
+    {Date: 5.14, Amount: 3.2},
+    {Date: 5.15, Amount: 2},
+    {Date: 5.17, Amount: 1.8},
+    {Date: 5.21, Amount: 2.1},
+  ];
+  
+  const month = [ 
+    {Date: 5.14, Amount: 3.2},
+    {Date: 5.15, Amount: 2},
+    {Date: 5.17, Amount: 1.8},
+    {Date: 5.21, Amount: 2.1},
+    {Date: 5.23, Amount: 2.3}
+  ];
 
-
-  /* ----------------- Scatter of NFT ---------------- */
   var timesSelectClicked = 0;
   $("#scatter-selection").on("click", function(e){
     if (timesSelectClicked == 0)
@@ -1266,36 +1293,45 @@ $(document).ready(function () {
       let slt = $('#scatter-selection option:selected').text();
       switch(slt){
         case '1 H':
-          svg.selectAll("g").remove();
-          scatter(hour);
+          d3.select("svg").remove();
+          scatter(hour, scatter_width, scatter_height);
+          document.getElementById('scatter-white-bar').style.display='none';
+          document.getElementById('scatter-day-scale').style.display='none';
+          document.getElementById('scatter-week-scale').style.display='none';
+          document.getElementById('scatter-twoWeek-scale').style.display='none';
+          document.getElementById('scatter-month-scale').style.display='none';
           break;
         case '1 D':
-          svg.selectAll("g").remove();
-          scatter(day);
+          d3.select("svg").remove();
+          scatter(day, scatter_width, scatter_height);
+          document.getElementById('scatter-white-bar').style.display='block';
           document.getElementById('scatter-day-scale').style.display='block';
           document.getElementById('scatter-week-scale').style.display='none';
           document.getElementById('scatter-twoWeek-scale').style.display='none';
           document.getElementById('scatter-month-scale').style.display='none';
           break;
         case '7 D':
-          svg.selectAll("g").remove();
-          scatter(week);
+          d3.select("svg").remove();
+          scatter(week, scatter_width, scatter_height);
+          document.getElementById('scatter-white-bar').style.display='block';
           document.getElementById('scatter-week-scale').style.display='block';
           document.getElementById('scatter-day-scale').style.display='none';
           document.getElementById('scatter-twoWeek-scale').style.display='none';
           document.getElementById('scatter-month-scale').style.display='none';
           break;
         case '14 D':
-          svg.selectAll("g").remove();
-          scatter(two_week);
+          d3.select("svg").remove();
+          scatter(two_week, scatter_width, scatter_height);
+          document.getElementById('scatter-white-bar').style.display='block';
           document.getElementById('scatter-twoWeek-scale').style.display='block';
           document.getElementById('scatter-day-scale').style.display='none';
           document.getElementById('scatter-week-scale').style.display='none';
           document.getElementById('scatter-month-scale').style.display='none';
           break;
         case '30 D':
-          svg.selectAll("g").remove();
-          scatter(month);
+          d3.select("svg").remove();
+          scatter(month, scatter_width, scatter_height);
+          document.getElementById('scatter-white-bar').style.display='block';
           document.getElementById('scatter-month-scale').style.display='block';
           document.getElementById('scatter-day-scale').style.display='none';
           document.getElementById('scatter-week-scale').style.display='none';
@@ -1866,55 +1902,26 @@ function draw_NFT_chart() {
 }
 
 /* ------------------------- Scatter ------------------------- */
-const hour = [ 
-];
+// set the dimensions and scatter_margins of the graph
+var scatter_margin = {top: 25, right: 25, bottom: 20, left: 20},
+    scatter_width = 620 - scatter_margin.left - scatter_margin.right,
+    scatter_height = 300 - scatter_margin.top - scatter_margin.bottom;
 
-const day = [ 
-  {Date: 5.14, Amount: 3.2},
-  {Date: 5.15, Amount: 2},
-];
+function scatter(data, width, height){
+  const svg = d3.select("#scatter-chart")
+    .append("svg")
+    .attr("width", width + scatter_margin.left + scatter_margin.right + "")
+    .attr("height", height + scatter_margin.top + scatter_margin.bottom + "")
+    .append("g")
+    .attr("transform", `translate(${scatter_margin.left + 5} , 30)`);
 
-const week = [ 
-{Date: 5.14, Amount: 3.2},
-{Date: 5.15, Amount: 2},
-{Date: 5.17, Amount: 1.8},
-];
-
-const two_week = [ 
-  {Date: 5.14, Amount: 3.2},
-  {Date: 5.15, Amount: 2},
-  {Date: 5.17, Amount: 1.8},
-  {Date: 5.21, Amount: 2.1},
-];
-
-const month = [ 
-  {Date: 5.14, Amount: 3.2},
-  {Date: 5.15, Amount: 2},
-  {Date: 5.17, Amount: 1.8},
-  {Date: 5.21, Amount: 2.1},
-  {Date: 5.23, Amount: 2.3}
-];
-
-// set the dimensions and margins of the graph
-const margin = {top: 10, right: 30, bottom: 30, left: 60},
-      width = 600 - margin.left - margin.right,
-      height = 400 - margin.top - margin.bottom;
-
-// append the svg object to the body of the page
-const svg = d3.select("#chart")
-  .append("svg")
-  .attr("width", width + margin.left + margin.right + "")
-  .attr("height", height + margin.top + margin.bottom + "")
-  .append("g")
-  .attr("transform", `translate(${margin.left}, ${margin.top})`);
-
-function scatter(data){
   if(data == ''){
     document.getElementById('nodata').style.display='block';
-    document.getElementById('chart').style.display='none';
+    document.getElementById('scatter-chart').style.display='none';
   }else{
+    console.log("Have data");
     document.getElementById('nodata').style.display='none';
-    document.getElementById('chart').style.display='block';
+    document.getElementById('scatter-chart').style.display='block';
     // Add X axis
     const x = d3.scaleLinear()
     .domain([d3.min(data, function(d) { return d.Date })-0.01, d3.max(data, function(d) { return d.Date }) ])
@@ -1949,12 +1956,12 @@ function scatter(data){
     // svg.append("g")			
     // .attr("class", "grid")
     // .call(make_y_gridlines()
-    //     .tickSize(-width)
+    //     .tickSize(-scatter_width)
     //     .tickFormat("")
     // )
 
     // Add a tooltip div
-    var tooltip = d3.select("#chart")
+    var tooltip = d3.select("#scatter-chart")
     .append("div")
     .style("opacity", 0)
     .attr("class", "tooltip")
@@ -1995,9 +2002,11 @@ function scatter(data){
           .style("opacity", 1);
      })
     .on('mousemove', function(d, i){
+      console.log("X: " + d3.pointer(event)[0])
+      console.log("Y: " + d3.pointer(event)[1])
       tooltip
-      .style("left", (d3.pointer(event)[0]+50) + "px")
-      .style("top", (d3.pointer(event)[1]+50) + "px")
+      .style("left", (d3.pointer(event)[0]+20) + "px")
+      .style("top", (d3.pointer(event)[1]-100) + "px")
     })
     .on('mouseout', function (d, i) {
           d3.select(this).transition()
