@@ -52,7 +52,7 @@ export function get_rate_no_eth(amount, original_currency, target_currency) {
 
 }
 
-export function get_rate_to_eth(amount, original_currency){
+export function get_rate_to_eth(amount, original_currency) {
     var to_usd = 0;
     switch (original_currency) {
         case "ntd":
@@ -96,38 +96,38 @@ function get_rate_to_eth_craw(amount) {
             var text = text.replace(/\s/g, '')
             var text = text.replace(",", '')
             var final = text.split("*")[0]
-            resolve(1/(parseFloat(final)*amount))
+            resolve(1 / (parseFloat(final) * amount))
         })
     })
 }
 
-export function get_rate_from_eth(amount, target_currency){
-    var to_usd = 0
-    switch (target_currency) {
-        case "ntd":
-            to_usd = parseFloat(amount) * 0.034;
-            break;
-        case "usd":
-            to_usd = parseFloat(amount);
-            break;
-        case "gbp":
-            to_usd = parseFloat(amount) * 1.26;
-            break;
-        case "aud":
-            to_usd = parseFloat(amount) * 0.71;
-            break;
-        case "eur":
-            to_usd = parseFloat(amount) * 1.07;
-            break;
-        case "jpy":
-            to_usd = parseFloat(amount) * 0.0078;
-            break;
-        case "cny":
-            to_usd = parseFloat(amount) * 0.15;
-            break;
-    }
-    return get_rate_from_eth_craw(amount)
-}
+// export function get_rate_from_eth(amount, target_currency) {
+//     var to_usd = 0
+//     switch (target_currency) {
+//         case "ntd":
+//             to_usd = parseFloat(amount) * 0.034;
+//             break;
+//         case "usd":
+//             to_usd = parseFloat(amount);
+//             break;
+//         case "gbp":
+//             to_usd = parseFloat(amount) * 1.26;
+//             break;
+//         case "aud":
+//             to_usd = parseFloat(amount) * 0.71;
+//             break;
+//         case "eur":
+//             to_usd = parseFloat(amount) * 1.07;
+//             break;
+//         case "jpy":
+//             to_usd = parseFloat(amount) * 0.0078;
+//             break;
+//         case "cny":
+//             to_usd = parseFloat(amount) * 0.15;
+//             break;
+//     }
+//     return get_rate_from_eth_craw(amount)
+// }
 
 function get_rate_from_eth_craw(amount) {
     return new Promise(function (resolve, reject) {
@@ -145,10 +145,84 @@ function get_rate_from_eth_craw(amount) {
             var text = text.replace(/\s/g, '')
             var text = text.replace(",", '')
             var final = text.split("*")[0]
-            resolve((parseFloat(final)*amount))
+            resolve((parseFloat(final) * amount))
         })
     })
 }
+
+export function get_rate(amount, deposit_currency, target_currency) {
+    if (deposit_currency == "eth") {
+        if (target_currency == "eth") {
+            return amount
+        } else {
+            return get_rate_from_eth(amount,)
+        }
+    }
+    return amount
+}
+
+export function get_rate_pend(amount, deposit_currency, target_currency) {
+    return new Promise(function (resolve, reject) {
+        var to_usd = 0;
+        switch (deposit_currency) {
+            case "ntd":
+                to_usd = parseFloat(amount) * 0.034;
+                break;
+            case "usd":
+                to_usd = parseFloat(amount);
+                break;
+            case "gbp":
+                to_usd = parseFloat(amount) * 1.26;
+                break;
+            case "aud":
+                to_usd = parseFloat(amount) * 0.71;
+                break;
+            case "eur":
+                to_usd = parseFloat(amount) * 1.07;
+                break;
+            case "jpy":
+                to_usd = parseFloat(amount) * 0.0078;
+                break;
+            case "cny":
+                to_usd = parseFloat(amount) * 0.15;
+                break;
+            case "eth":
+                get_rate_from_eth_craw(parseFloat(amount)).then(function(data){
+                    to_usd = data
+                })
+        }
+        switch (target_currency) {
+            case "ntd":
+                var a = (to_usd / 0.034).toString()
+                resolve(a);
+                br
+            case "usd":
+                resolve(to_usd.toString());
+                break
+            case "gbp":
+                resolve((to_usd / 1.26).toString());
+                break;
+            case "aud":
+                resolve(to_usd / 0.71);
+                break;
+            case "eur":
+                resolve(to_usd / 1.07);
+                break;
+            case "jpy":
+                resolve(to_usd / 0.0078);
+                break;
+            case "cny":
+                resolve(to_usd / 0.15);
+                break;
+            case "eth":
+                resolve(get_rate_to_eth_craw(to_usd))
+                break;
+        }
+    })
+}
+
+
+
 
 // function getUSDtoNTD() {
 //     return new Promise(function (resolve, reject) {

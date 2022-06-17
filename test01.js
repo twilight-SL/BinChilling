@@ -6,12 +6,13 @@ import fs from 'fs';
 import { dirname } from 'path'
 import { stringify } from 'querystring';
 import { fileURLToPath } from 'url'
+import { SlowBuffer } from "buffer";
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
 //Pre-setting
 const app = express();
-const port = 2336;
+const port = 2340;
 app.use(express.static(`${__dirname}`))
 
 app.listen(port, () => {
@@ -27,17 +28,50 @@ app.get('/0homepage_newEmailSubscribe', function (req, res) {
 })
 
 app.get('/sign_up', function (req, res) {
-    sql.newUser(req.query.username, req.query.password, req.query.email).then(function(data){
+    sql.newUser(req.query.username, req.query.password, req.query.email).then(function (data) {
         res.send(data)
     })
 })
 
-app.get('/sign_in', function (req,res){
-    sql.verifyUser(req.query.email, req.query.password).then(function(data){
+app.get('/sign_in', function (req, res) {
+    sql.verifyUser(req.query.email, req.query.password).then(function (data) {
         res.send(data)
     })
 })
 
-stock.getStock_Specific_Day(2330, 2022,5,4).then(function(data){
+app.get('/new_bank_account', function (req, res) {
+    sql.newBankAccount(req.query.username, req.query.hostname, req.query.bank_account_id, req.query.deposit_currency, req.query.deposit_amount, req.query.account_type).then(function (data) {
+        res.send(data)
+    })
+})
+
+app.get('/get_rate_from_eth', function (req, res) {
+    exchange.get_rate_from_eth(req.query.amount, req.query.target_currency).then(function (data) {
+        res.send(data)
+    })
+})
+
+app.get('/get_rate_no_eth', function (req, res) {
+    exchange.get_rate_from_eth(req.query.amount, req.query.original_currency, req.query.target_currency).then(function (data) {
+        res.send(data)
+    })
+})
+
+app.get('/get_stock', function(req,res){
+    stock.getStock(req.query.stock_code,req.query.CEyear,req.query.month).then(function(data){
+        res.send(data)
+    })
+})
+
+// stock.getStock_Specific_Day(2330,2022,5,10).then(function(data){
+//     console.log(data)
+// })
+
+
+// exchange.get_rate_pend(35,"usd","gbp").then(function(data){
+//     console.log(data)
+// })
+
+stock.getStock_five_month_average(2330, 2022, 6).then(function(data){
     console.log(data)
 })

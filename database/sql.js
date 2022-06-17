@@ -111,7 +111,7 @@ export function getExchangedAmount(amount, original_currency, target_currency) {
 //Multi-currency canceled
 
 //13overview 14overview 15overview 18Account 24Account 25Account
-export function getAllDepositByCategory(username, target_currency) {
+export function getAllDepositByCategory(username) {
     let command = `SELECT * FROM bank_account where username = "${username}"`
     return new Promise(function (resolve, reject) {
         runView(command).then(function (data) {
@@ -135,12 +135,12 @@ export function getAllDepositInOneCategory(username, category) {
 
 //18Account 24Account 25Account
 export function newBankAccount(username, host_name, bank_account_id, deposit_currency, deposit_amount, account_type) {
-    bank_account_id = parseInt(bank_account_id)
     deposit_amount = parseFloat(deposit_amount)
+    console.log(bank_account_id)
     let command = `INSERT INTO bank_account SET
     username = "${username}",
     host_name = "${host_name}",
-    bank_account_id = ${bank_account_id},
+    bank_account_id = "${bank_account_id}",
     deposit_currency = "${deposit_currency}",
     deposit = ${deposit_amount},
     account_type = "${account_type}"`   // nft/stock/crypto/cdFor/cdNtd
