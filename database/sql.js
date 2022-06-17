@@ -26,14 +26,11 @@ export function newEmailSubscribe(email) {
 //1sign-in
 export function verifyUser(input_email, input_password) {
     let command = `SELECT * FROM user_data where email = "${input_email}"`
-    // console.log(runView(command))
-    //console.log(input_email)
-    console.log(input_password)
     return new Promise(function (resolve, reject) {
         runView(command).then(function (data) {
             if (data == "") {
                 console.log("input_email: "+input_email)
-                resolve("no_such_email_debug");
+                resolve("no_such_email");
             }
             else if (dealRowData(data)[0]["password"] == input_password) {
                 resolve(true);
