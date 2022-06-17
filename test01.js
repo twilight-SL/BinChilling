@@ -47,6 +47,31 @@ app.get('/new_bank_account', function (req, res) {
     })
 })
 
+// #overview #account
+app.get('/get_all_deposit_default', function (req, res) {
+    sql.getAllDepositDefault(req.query.username).then(function (data) {
+        res.send(data)
+    })
+})
+
+app.get('/get_all_deposit_default_exchanged', function (req, res) {
+    sql.getAllDepositExchangeAll(req.query.username, req.query.target_currency).then(function (data) {
+        res.send(data)
+    })
+})
+
+app.get('/get_all_deposit_by_category', function(req,res){
+    sql.getAllDepositByCategory(req.query.username).then(function(data){
+        res.send(data)
+    })
+})
+
+app.get('/get_all_deposit_in_one_category', function(req,res){
+    sql.getAllDepositInOneCategory(req.query.username, req.query.category).then(function(data){
+        res.send(data)
+    })
+})
+
 // #exchange
 app.get('/get_rate', function (req, res) {
     exchange.get_rate(req.query.amount, req.query.original_currency, req.query.target_currency).then(function (data) {
