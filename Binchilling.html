@@ -1006,6 +1006,53 @@
         <p class="wallet_percentage_percentage wallet_text Stock" id="wallet_Stock_percentage5"></p>
       </div>
       <!-- Stock Chart -->
+      <!-------------------------- Button -------------------------->
+      <div class="btn-area">
+        <button id="select-pie-chart-btn" class="change-chart-btn selected">
+          <p class="chart-text">Pie chart</p>
+        </button>
+        <button id="select-line-chart-btn" class="change-chart-btn">
+          <p class="chart-text">Line chart</p>
+        </button>
+        <div class="time-scope-btns">
+          <button id="day" class="scope-btn select-scope">Day</button>
+          <button id="week" class="scope-btn" >Week</button>
+          <!-- onclick="update(this.id,week)" -->
+          <button id="month" class="scope-btn">Month</button>
+        </div>
+      </div>
+      <!-------------------------- Chart -------------------------->
+      <div id="stock-chart"></div>
+      <div class="line-white-bar">
+        <div id="line-day-scale">
+          <div class="flex">
+            <span>5/13</span>
+            <span>5/17</span>
+            <span>5/19</span>
+            <span>5/20</span>
+            <span>5/23</span>
+          </div>
+        </div>
+        <div id="line-week-scale">
+          <div class="flex">
+            <span>3/18</span>
+            <span>4/1</span>
+            <span>4/15</span>
+            <span>4/29</span>
+            <span>5/13</span>
+          </div>
+        </div>
+        <div id="line-month-scale">
+          <div class="flex">
+            <span>Jan</span>
+            <span>Feb</span>
+            <span>Mar</span>
+            <span>Apr</span>
+            <span>May</span>
+          </div>
+        </div>
+      </div>
+      <div id="line-chart-category">EVAAIR</div>
       <!-------------------------- Risk -------------------------->
 
     </div>

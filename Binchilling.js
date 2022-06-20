@@ -1637,6 +1637,140 @@ $(document).ready(function () {
     })
   })
 
+    /* ---------------------------- Stock Chart ------------------------------ */
+  /* ----- Chart Type select ----- */
+  $(".change-chart-btn").on("click",function(){
+    $('.change-chart-btn').css({"color":"#C4C4C4", "border-bottom": "2.8px solid #C4C4C4"});// Remove Before set color to selected button
+    $('.change-chart-btn').removeClass("selected");
+    $(this).css({"color":"#286A93",  "border-bottom": "2.8px solid #286A93"}); // Set Color to Selected Button
+    $(this).addClass("selected");
+  });
+  $(".change-chart-btn").click(function(){
+    // console.log(this.id);
+    if(this.id == "select-pie-chart-btn"){
+      document.getElementById('line-month-scale').style.display='none';
+      document.getElementById('line-chart-category').style.display='none';
+      document.getElementById('line-week-scale').style.display='none';
+      document.getElementById('line-day-scale').style.display='none';
+      var scp_btn = document.getElementsByClassName("scope-btn");
+      for(let i = 0; i < scp_btn.length; i++){
+        scp_btn[i].style.visibility='hidden';
+      }
+      d3.select("svg").remove();
+      draw();
+    }else if(this.id == "select-line-chart-btn"){
+      var scp_btn = document.getElementsByClassName("scope-btn");
+      for(let i = 0; i < scp_btn.length; i++){
+        scp_btn[i].style.visibility='visible';
+      }
+      /* ----- Line Chart Scope select ----- */
+      $(".scope-btn").on("click",function(){
+        $('.scope-btn').css("background","#D4D4D4");
+        $('.scope-btn').removeClass("select-scope");
+        $(this).css("background","linear-gradient(270deg, #528CA2 0%, #286A93 100%)");
+        $(this).addClass("select-scope");
+        console.log("ID: " + this.id);
+        var output = ''
+        switch(this.id){
+          case 'day':
+            output = 'D';
+            break;
+          case 'week':
+            output = 'W';
+            break;
+          case 'month':
+            output = 'M';
+            break;
+          default:
+              break;
+        }
+
+        switch(this.id){
+          case "day":
+            $.get('./get_stock', {
+              stock_code:2330,
+              CEyear:2022,
+              month:5
+            }, function (result) {
+              var data_stock = result;
+              console.log(data_stock)
+              var day = [
+                {Date: 5.13, Amount: data_stock[8][1]},
+                {Date: 5.17, Amount: data_stock[10][1]},
+                {Date: 5.19, Amount: data_stock[12][1]},
+                {Date: 5.20, Amount: data_stock[13][1]},
+                {Date: 5.23, Amount: data_stock[14][1]}
+              ];
+              update(output, day);
+              document.getElementById('line-month-scale').style.display='none';
+              document.getElementById('line-chart-category').style.display='block';
+              document.getElementById('line-week-scale').style.display='none';
+              document.getElementById('line-day-scale').style.display='block';
+            });
+            break;
+          case "week":
+            var week;
+            $.get('./get_stock', {
+              stock_code:2330,
+              CEyear:2022,
+              month:3
+            }, function (result) {
+              var data_stock = result;
+              console.log(data_stock)
+              week = [
+                {Date: 3.18, Amount: data_stock[13][1]}
+              ];
+            });
+            console.log("outside week: " + week);
+            $.get('./get_stock', {
+              stock_code:2330,
+              CEyear:2022,
+              month:4
+            }, function (result) {
+              var data_stock = result;
+              console.log("week: " + week);
+              console.log(data_stock)
+              var week = [
+                {Date: 3.18, Amount: data_stock[data_stock.length-1][1]},
+                {Date: 4.1, Amount: data_stock[data_stock.length-5][1]},
+                {Date: 4.15, Amount: data_stock[data_stock.length-8][1]},
+                {Date: 4.29, Amount: data_stock[data_stock.length-14][1]}
+              ];
+              update(output, week);
+              document.getElementById('line-month-scale').style.display='none';
+              document.getElementById('line-chart-category').style.display='block';
+              document.getElementById('line-week-scale').style.display='block';
+              document.getElementById('line-day-scale').style.display='none';
+            });
+            break;
+          case "month":
+            $.get('../get_stock_month_average', {
+              stock_code:2330,
+              CEyear:2022,
+              month:4
+            }, function (result) {
+              var data_stock = result;
+              var month = [
+                {Date: 1, Amount: data_stock[data_stock.length-1][1]},
+                {Date: 2, Amount: data_stock[data_stock.length-5][1]},
+                {Date: 3, Amount: data_stock[data_stock.length-10][1]},
+                {Date: 4, Amount: data_stock[data_stock.length-15][1]},
+                {Date: 5, Amount: data_stock[data_stock.length-18][1]}
+              ];
+              update(output, month); 
+              document.getElementById('line-day-scale').style.display='none';
+              document.getElementById('line-week-scale').style.display='none';
+              document.getElementById('line-month-scale').style.display='block';
+              document.getElementById('line-chart-category').style.display='block';
+            });
+            break;
+        }
+      });
+      d3.select("svg").remove();
+    }});
+
+
+
   load_database();
 });
 
