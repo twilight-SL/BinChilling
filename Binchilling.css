@@ -4223,9 +4223,10 @@ button {
   border: none;
 }
 
-button:nth-child(2) {
+.nft-market-btns button:nth-child(2) {
   background: linear-gradient(270deg, #528CA2 0%, #286A93 100%);
 }
+
 
 select {
   background-color: #FFFFFF;
