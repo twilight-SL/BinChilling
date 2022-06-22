@@ -238,13 +238,15 @@ a {
   border-radius: 60px;
 }
 
-.verify-modal {
+.verify-modal-success,
+.verify-modal-failed {
   display: none;
   position: absolute;
   z-index: 10;
   left: 705px;
   top: 260px;
 }
+
 
 .dialog {
   display: none;

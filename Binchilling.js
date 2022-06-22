@@ -14,6 +14,8 @@ $(document).ready(function () {
     var recent_page = "wallet_" + wallet_page;
     document.getElementById(recent_page).style.display = 'none';
     document.getElementById('add_new_account_page').style.display = 'block';
+    document.getElementById("connect_nft_account").style.display='none';
+    document.getElementById("connect_bank_account").style.display='none';
     document.getElementById('navbar_account_dropdown_menu_container').style.display = 'none';
     document.getElementById('plan_page').style.display = 'none';
   });
