@@ -52,22 +52,163 @@
   color: #3E619B;
 }
 
+
+/* ---------------------- Button ---------------------- */
+.btn-area {
+  position: absolute;
+  top:20%;
+  margin-left: 120px;
+}
+
+.change-chart-btn {
+  width: 277px;
+  background: none;
+  color: #C4C4C4;
+  font-family: SFPRODISPLAY_BOLD;
+  font-size: 27px;
+  border: none;
+  padding: 0px 0px 10px 0px;
+  cursor: pointer;
+  outline: inherit;
+  margin-left: 50px;
+  border-bottom: 2.8px solid #C4C4C4;
+}
+
+.change-chart-btn:hover,
+.change-chart-btn:active {
+  color: #286A93;
+  border-bottom: 2.8px solid #286A93;
+}
+
+.selected {
+  color: #286A93;
+  border-bottom: 2.8px solid #286A93;
+}
+
+.select-scope {
+  background: linear-gradient(270deg, #528CA2 0%, #286A93 100%);
+  border-radius: 70px;
+}
+
+.time-scope-btns {
+  visibility: hidden;
+  position: absolute;
+  left: 25%;
+  top: 150%;
+}
+
+.scope-btn {
+  width: 116px;
+  height: 30px;
+  border-radius: 70px;
+  color: #FFFFFF;
+  background: #D4D4D4;
+  font-family: SFPRODISPLAYREGULAR;
+  font-size: 15px;
+  border: none;
+  padding: 5px 15px 5px 15px;
+  cursor: pointer;
+  outline: inherit;
+  margin-right: 25px;
+}
+
+.scope-btn:hover,
+.scope-btn:active {
+  background: linear-gradient(270deg, #528CA2 0%, #286A93 100%);
+  border-radius: 70px;
+}
+
 /* ---------- Tooltip ---------- */
 .tooltip-inner {
   max-width: 100%;
-  height: 29px;
-  padding: 3px 5px;
-  color: #3E619B;
+  height: 20px;
+  padding: 3.5px 7.5px;
+  color: #C86B86;
   text-align: center;
   font-family: SFPRODISPLAYREGULAR;
   font-size: 15px;
   background-color: #FFFFFF;
-  border: 2px solid #3E619B;
+  border: 2px solid #C86B86;
   border-radius: 10px;
 }
 
 .tooltip {
   margin: 5px;
+}
+
+/* ---------- Line Chart ---------- */
+.tick {
+  width: 40px;
+  height: 24px;
+  font-family: SFPRODISPLAY_MEDIUM;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  color: #42506B;
+}
+
+.domain {
+  stroke: #000000;
+  stroke-width: 3px;
+}
+
+.axis-grid .tick:nth-child(odd) {
+  stroke: #000000;
+  stroke-dasharray: 5, 5;
+}
+
+.amount {
+  background-color: white;
+  stroke: #286A93;
+  letter-spacing: 2px;
+  width: 500px;
+  outline: 1px solid #286A93;
+  z-index: 10;
+}
+
+g text {
+  border-radius: 15px;
+}
+
+
+/* ----- line chart axis & category -----*/
+.line-white-bar{
+  background-color:#FFFFFF;
+  width:28.5vw;
+  height: 3.5%;
+  position: absolute;
+  z-index:10;
+  top:90%;
+  left:11.5%;
+  font-family: SFPRODISPLAYREGULAR;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  color: #42506B;
+}
+
+.flex{
+  display: flex;
+  justify-content:space-between;
+}
+
+#line-day-scale,
+#line-week-scale,#line-month-scale,#line-chart-category{
+  display: none;
+}
+
+.line-chart-category{
+  width: 104px;
+  height: 36px;
+  position: absolute;
+  top:95%;
+  left:22.5%;
+  font-family: SFProDisplay-Semibold;
+  font-size: 30px;
+  line-height: 36px;
+  text-align: center;
+  text-decoration-line: underline;
+  color: #42506B;
 }
 
 /* -------------- Scatter Chart --------------- */
