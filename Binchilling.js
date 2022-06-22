@@ -2153,7 +2153,7 @@ function scatter(data, width, height){
 }
 
 /* ----------------- Line Chart -------------------*/
-function update(id,data) {
+function update(output,data) {
   console.log(data);
   console.log(data.Amount);
 
@@ -2194,21 +2194,6 @@ function update(id,data) {
   svg.selectAll(".myXaxis").transition()
     .duration(3000)
     .call(xAxis)
-    
-  let output = ''
-  switch(id){
-    case 'day':
-      output = 'D';
-      break;
-    case 'week':
-      output = 'W';
-      break;
-    case 'month':
-      output = 'M';
-      break;
-    default:
-        break;
-  }
 
   svg.append("text")
     .transition()
@@ -2331,7 +2316,6 @@ function update(id,data) {
     focusText.style("opacity", 0)
   }
 }
-
 /* -------------------- Add Account Event ---------------------- */
 function TurnBack_choose_account(SuccessOrNot){
   document.getElementById("add_new_account_page").style.display='block';
