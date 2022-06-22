@@ -139,8 +139,8 @@
 /* ---------- Line Chart ---------- */
 #stock-chart{
   position: absolute;
-  top:35%;
-  left: 7.5%;
+  top:30%;
+  left: 2%;
 }
 
 .tick {
@@ -184,8 +184,8 @@ g text {
   height: 3.5%;
   position: absolute;
   z-index:10;
-  top:90%;
-  left:11.5%;
+  top:91.5%;
+  left:8.5%;
   font-family: SFPRODISPLAYREGULAR;
   font-size: 20px;
   line-height: 24px;

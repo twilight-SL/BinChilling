@@ -2152,7 +2152,6 @@ function scatter(data, width, height){
   }
 }
 
-
 /* ----------------- Line Chart -------------------*/
 function update(id,data) {
   console.log(data);
@@ -2165,10 +2164,10 @@ function update(id,data) {
 
   const svg = d3.select("#stock-chart")
   .append("svg")
-    .attr("width", 1000)
-    .attr("height", height + margin.top + margin.bottom)
+    .attr("width", 700)
+    .attr("height", 680)
   .append("g")
-    .attr("transform", `translate(0,${margin.top})`);
+    .attr("transform", `translate(150,${margin.top})`);
 
   const x = d3.scaleLinear().range([0,width]);
   const xAxis = d3.axisBottom().scale(x).ticks(6);
@@ -2191,7 +2190,7 @@ function update(id,data) {
   svg.selectAll("circle").remove();
   svg.selectAll(".area").remove();
   // axis
-  x.domain([d3.min(data, function(d) { return d.Date }) - 0.02, d3.max(data, function(d) { return d.Date }) ]);
+  x.domain([d3.min(data, function(d) { return d.Date }), d3.max(data, function(d) { return d.Date }) ]);
   svg.selectAll(".myXaxis").transition()
     .duration(3000)
     .call(xAxis)
@@ -2221,7 +2220,7 @@ function update(id,data) {
     .attr("y", 545)
     .text("Time (" + output + ")");
 
-  y.domain([d3.min(data, function(d) { return d.Amount })-2000, d3.max(data, function(d) { return d.Amount  }) ]);
+  y.domain([d3.min(data, function(d) { return d.Amount }), d3.max(data, function(d) { return d.Amount  }) ]);
   svg.selectAll(".myYaxis")
     .transition()
     .duration(3000)
