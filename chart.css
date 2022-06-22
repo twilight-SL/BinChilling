@@ -137,6 +137,12 @@
 }
 
 /* ---------- Line Chart ---------- */
+#stock-chart{
+  position: absolute;
+  top:35%;
+  left: 7.5%;
+}
+
 .tick {
   width: 40px;
   height: 24px;

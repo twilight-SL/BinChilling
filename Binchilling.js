@@ -2152,6 +2152,187 @@ function scatter(data, width, height){
   }
 }
 
+
+/* ----------------- Line Chart -------------------*/
+function update(id,data) {
+  console.log(data);
+  console.log(data.Amount);
+
+  d3.select("svg").remove();
+  const margin = {top: 80, right: 10, bottom: 130, left: 200},
+   width = 700 - margin.left - margin.right,
+   height = 700 - margin.top - margin.bottom;
+
+  const svg = d3.select("#stock-chart")
+  .append("svg")
+    .attr("width", 1000)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", `translate(0,${margin.top})`);
+
+  const x = d3.scaleLinear().range([0,width]);
+  const xAxis = d3.axisBottom().scale(x).ticks(6);
+  svg.append("g")
+  .attr("transform", `translate(0, ${height})`)
+  .attr("class","myXaxis")
+
+  const y = d3.scaleLinear().range([height, 0]);
+  const yAxis = d3.axisLeft().scale(y).ticks(4);
+  svg.append("g")
+  .attr("class","myYaxis")
+
+  // grid line
+  const xAxisGrid = d3.axisBottom(x).tickSize(-height).tickFormat('');
+  svg.append('g')
+    .attr('class', 'axis-grid')
+    .attr('transform', 'translate(0,' + height + ')')
+    .call(xAxisGrid);
+
+  svg.selectAll("circle").remove();
+  svg.selectAll(".area").remove();
+  // axis
+  x.domain([d3.min(data, function(d) { return d.Date }) - 0.02, d3.max(data, function(d) { return d.Date }) ]);
+  svg.selectAll(".myXaxis").transition()
+    .duration(3000)
+    .call(xAxis)
+    
+  let output = ''
+  switch(id){
+    case 'day':
+      output = 'D';
+      break;
+    case 'week':
+      output = 'W';
+      break;
+    case 'month':
+      output = 'M';
+      break;
+    default:
+        break;
+  }
+
+  svg.append("text")
+    .transition()
+    .duration(3000)
+    .style("text-anchor", "middle")
+    .style("font-family","SFPRODISPLAYREGULAR")
+    .style("font-size","20px")
+    .attr("x", 515)
+    .attr("y", 545)
+    .text("Time (" + output + ")");
+
+  y.domain([d3.min(data, function(d) { return d.Amount })-2000, d3.max(data, function(d) { return d.Amount  }) ]);
+  svg.selectAll(".myYaxis")
+    .transition()
+    .duration(3000)
+    .call(yAxis)
+  svg.append("text")
+    .transition()
+    .duration(3000)
+    .style("text-anchor", "middle")
+    .style("font-family","SFPRODISPLAYREGULAR")
+    .style("font-size","20px")
+    .attr("x", -85)
+    .attr("y", -15)
+    .text("Amount (10k)");
+
+  const u = svg.selectAll(".lineTest")
+    .data([data], function(d){ return d.Date });
+  // lines
+  u
+    .join("path")
+    .attr("class","lineTest")
+    .transition()
+    .duration(2500)
+    .attr("d", d3.line()
+      .x(function(d) { return x(d.Date); })
+      .y(function(d) { return y(d.Amount); }))
+      .attr("fill", "none")
+      .attr("stroke", "#42506B")
+      .attr("stroke-linejoin", "round")
+      .attr("stroke-width", 3);
+
+  // area
+  var area = d3.area()
+  .x(function(d) { return x(d.Date); })
+  .y0(height-2*(d3.min(data, function(d) { return d.Amount }))/10000)
+  .y1(function(d) { return y(d.Amount); });
+
+  svg.append("path")
+    .datum(data)
+    .attr("class", "area")
+    .attr("d", area)
+    .attr("fill", "rgba(255, 0, 0, 0.2)")
+    // .transition()
+    // .duration(2500);
+
+  // dots
+  svg.selectAll("myCircles")
+      .data(data)
+      .join("circle")
+      .transition()
+      .duration(2500)
+        .attr("fill", "#42506B")
+        .attr("stroke", "#42506B")
+        .attr("cx", d => x(d.Date))
+        .attr("cy", d => y(d.Amount))
+        .attr("r", 3);
+
+  /* -------------------- Detail Of the dots ------------------------- */
+  var bisect = d3.bisector(function(d) { return d.Amount; }).left;
+  var focus = svg
+   .append('g')
+   .append('circle')
+     .style("fill", "none")
+     .attr("stroke", "black")
+     .attr('r', 6.5)
+     .style("opacity", 0)
+  var focusText = svg
+   .append('g')
+   .append('text')
+     .style("opacity", 0)
+     .attr("text-anchor", "middle")
+     .attr("alignment-baseline", "middle")
+
+  svg
+     .append('rect')
+     .style("fill", "none")
+     .style("pointer-events", "all")
+     .attr('width', width)
+     .attr('height', height)
+     .on('mouseover', mouseover)
+     .on('mousemove', mousemove)
+     .on('mouseout', mouseout);
+
+  function mouseover() {
+    focus.style("opacity", 1)
+    focusText.style("opacity",1)
+  }
+
+  function mousemove() {
+    var pt = d3.pointer(event);
+    var y0 = y.invert(pt[1]);
+    var i = bisect(data, y0, 1);
+    selectedData = data[i]
+    focus
+      .attr("cx", x(selectedData.Date))
+      .attr("cy", y(selectedData.Amount))
+    focusText
+      .html(selectedData.Amount)
+      .attr("class", "amount")
+      .attr("Amount", y(selectedData.Amount))
+      .style("font-family","SFPRODISPLAYREGULAR")
+      .style("font-size","15px")
+      .attr("x", pt[0])
+      .attr("y", pt[1])
+  }
+
+  function mouseout() {
+    focus.style("opacity", 0)
+    focusText.style("opacity", 0)
+  }
+}
+
 /* -------------------- Add Account Event ---------------------- */
 function TurnBack_choose_account(SuccessOrNot){
   document.getElementById("add_new_account_page").style.display='block';
