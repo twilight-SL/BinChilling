@@ -91,10 +91,10 @@ $(document).ready(function () {
     document.getElementById('wallet').style.display = 'block';
     document.getElementById('privacybar').style.display = 'block';
     document.getElementById('bottom_area').style.display = 'block';
-    document.getElementById("Risk").style.visibility = 'hidden';
+    // document.getElementById("Risk").style.visibility = 'hidden';
     d3.select("svg").remove();
     draw();  // Overview chart
-    show_risk_index('overview');
+    // show_risk_index('overview');
   }
 
   $(".turn_to_wallet_page").on("click", function () {
@@ -102,10 +102,10 @@ $(document).ready(function () {
   });
 
   $(".turn_to_specific_wallet").on("click", function () {
-    document.getElementById("Risk_NFT").style.visibility = 'hidden';
+    // document.getElementById("Risk_NFT").style.visibility = 'hidden';
     d3.select("svg").remove();
     draw_NFT_chart();
-    show_risk_index('NFT');
+    // show_risk_index('NFT');
     for (var wallet in wallet_pages) {
       if (document.getElementById($(this).attr("id")).textContent == wallet_pages[wallet]) {
         var next_wallet_page = wallet_pages[wallet];
@@ -123,10 +123,10 @@ $(document).ready(function () {
   function turn_to_overview_page() {
     document.getElementById('wallet_NFT').style.display = 'none';
     document.getElementById('wallet_overview').style.display = 'block';
-    document.getElementById("Risk").style.visibility = 'hidden';
+    // document.getElementById("Risk").style.visibility = 'hidden';
     d3.select("svg").remove();
     draw();
-    show_risk_index('overview');
+    // show_risk_index('overview');
   }
 
   $("#explore_NFT_btn").on("click", function () {
@@ -1659,7 +1659,7 @@ $(document).ready(function () {
         scp_btn[i].style.visibility='hidden';
       }
       d3.select("svg").remove();
-      draw();
+      draw_stock_pie_chart();
     }else if(this.id == "select-line-chart-btn"){
       var scp_btn = document.getElementsByClassName("scope-btn");
       for(let i = 0; i < scp_btn.length; i++){
@@ -1903,20 +1903,130 @@ function draw() {
     });
 }
 
-function show_risk_index(page) {
-  setTimeout(function () {
-    switch (page) {
-      case "overview":
-        document.getElementById("Risk").style.visibility = "visible";
-        break;
-      case "NFT":
-        document.getElementById("Risk_NFT").style.visibility = "visible";
-        break;
-    }
-  }, 2500);
+// function show_risk_index(page) {
+//   setTimeout(function () {
+//     switch (page) {
+//       case "overview":
+//         document.getElementById("Risk").style.visibility = "visible";
+//         break;
+//       case "NFT":
+//         document.getElementById("Risk_NFT").style.visibility = "visible";
+//         break;
+//     }
+//   }, 2500);
+// }
+
+function draw_stock_pie_chart() {
+  console.log("Enter!")
+  let Stock_colors = ["#B8CAD6", "#42506B", "#528CA2","#FF7582"];
+  let data_stock = [1758329, 160236, 146187, 136655];
+  const Name = ["EVAAIR", "MTK", "AP Memory", "TSM"]
+  let generator = d3.pie()
+    .sort(null);
+
+  let chart = generator(data_stock);
+  let arcs = d3.select("#stock-pie-chart")
+    .append('svg')
+    .attr('width', 650)
+    .attr('height', 650)
+    .append("g")
+    .attr("transform", "translate(400, 230)");
+
+  var path = arcs.selectAll('path')
+    .data(chart)
+    .enter()
+    .append('path')
+    .style("fill", (d, i) => Stock_colors[i]);
+
+
+  /* ------------------ Tooltip ----------------- */
+  let tooltips = d3.select("#stock-pie-chart")
+    .append("div")
+    .attr('class', 'tooltip')
+    .style("opacity", 0)
+    .style("position", "absolute")
+    .attr("class", "tooltip")
+    .style("background-color", "white")
+    .style("border", "solid")
+    .style("border-width", "2px")
+    .style("border-radius", "5px")
+    .style("padding", "5px");
+
+  tooltips.append('div')
+    .attr('class', 'count');
+
+  tooltips.append('div')
+    .attr('class', 'percent');
+
+  // 加上滑鼠事件
+  // d3.select('#stock-pie-chart')
+  //   .style('cursor', 'pointer')
+  //   .on('mouseover', function () {
+  //     tooltips.style("opacity", 1)
+  //   })
+  //   .on("mousemove", function (event, d) {
+  //     var percent = ["1651.428965", "1455.681035"];
+  //     var total = d3.sum(percent);
+  //     function myFunction(item, index, arr) {
+  //       arr[index] = Math.round(1000 * item / total) / 10;
+  //     }
+  //     percent.forEach(myFunction);
+
+  //     let pt = d3.pointer(event) // 抓圓點位置
+
+  //     let i;
+
+  //     if (pt[0] > 0 || (-35 < pt[0] && pt[0] < 0 && pt[1] > 0)) {
+  //       i = 0;
+  //     } else if (pt[0] < 0) {
+  //       i = 1;
+  //     }
+
+  //     tooltips.style("opacity", 1)
+  //       .style('left', (1.8 * pt[0] + 450) + 'px') // 設定tooltips位置
+  //       .style('top', (1.8 * pt[1] + 450) + 'px')
+  //       .html(" " + Name[i] + " <br> (" + percent[i] + "%)") // 抓到綁定在DOM元素的資料  
+  //       .style("font-family", "SFProDisplay-Heavy")
+  //       .style("font-size", "20px")
+  //   })
+  //   .on('mouseleave', function () { //設定滑鼠離開時tooltips隱藏
+  //     tooltips.style("opacity", 0)
+  //   });
+
+  /* ------------------ Sth ------------------ */
+  let angleInterpolation = d3.interpolate(generator.startAngle()(), generator.endAngle()());
+  let innerRadiusInterpolation = d3.interpolate(0, sizes.innerRadius);
+  let outerRadiusInterpolation = d3.interpolate(0, sizes.outerRadius);
+
+  let arc = d3.arc();
+
+  /* ------------------ Animation ------------------ */
+  path.transition()
+    .duration(durations.entryAnimation)
+    .attrTween("d", d => {
+      let originalEnd = d.endAngle;
+      return t => {
+        let currentAngle = angleInterpolation(t);
+        if (currentAngle < d.startAngle) {
+          return "";
+        }
+        d.endAngle = Math.min(currentAngle, originalEnd);
+        return arc(d);
+      };
+    });
+
+  d3.select("#stock-pie-chart")
+    .transition()
+    .duration(durations.entryAnimation)
+    .tween("arcRadii", () => {
+      return t => arc
+        .innerRadius(innerRadiusInterpolation(t))
+        .outerRadius(outerRadiusInterpolation(t));
+    });
 }
 
-function draw_NFT_chart() {
+
+function draw_NFT_chart(){
   const Name = ["Metamask", "Wallet Connect"]
   let generator = d3.pie()
     .sort(null);
@@ -1927,7 +2037,6 @@ function draw_NFT_chart() {
     .attr('width', 650)
     .attr('height', 650)
     .append("g")
-    .attr("id", "piechart_NFT")
     .attr("transform", "translate(400, 230)");
 
   var path = arcs.selectAll('path')
@@ -1957,7 +2066,7 @@ function draw_NFT_chart() {
     .attr('class', 'percent');
 
   // 加上滑鼠事件
-  d3.select('#piechart_NFT')
+  d3.select('#chart_NFT')
     .style('cursor', 'pointer')
     .on('mouseover', function () {
       tooltips.style("opacity", 1)
@@ -2013,7 +2122,7 @@ function draw_NFT_chart() {
       };
     });
 
-  d3.select("#chart_NFT")
+  d3.select("#stock-pie-chart")
     .transition()
     .duration(durations.entryAnimation)
     .tween("arcRadii", () => {

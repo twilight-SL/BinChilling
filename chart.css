@@ -136,6 +136,15 @@
   margin: 5px;
 }
 
+
+/* chart_NFT */
+/* --------------- Stock Pie Chart --------------- */
+#stock-pie-chart{
+  position: absolute;
+  top:30%;
+  left:2%;
+}
+
 /* ---------- Line Chart ---------- */
 #stock-chart{
   position: absolute;
@@ -354,6 +363,7 @@ hr{
 #scatter-twoWeek-scale,
 #scatter-month-scale{
   display: none;
+  z-index:50;
 }
 
 /* -------------- No Data --------------- */
