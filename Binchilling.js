@@ -2044,10 +2044,10 @@ var scatter_margin = {top: 25, right: 25, bottom: 20, left: 20},
 function scatter(data, width, height){
   const svg = d3.select("#scatter-chart")
     .append("svg")
-    .attr("width", width + scatter_margin.left + scatter_margin.right + "")
-    .attr("height", height + scatter_margin.top + scatter_margin.bottom + "")
+    .attr("width", 1000)
+    .attr("height", 300)
     .append("g")
-    .attr("transform", `translate(${scatter_margin.left + 5} , 30)`);
+    .attr("transform", `translate(${scatter_margin.left + 250} , 40)`);
 
   if(data == ''){
     document.getElementById('nodata').style.display='block';
@@ -2076,7 +2076,7 @@ function scatter(data, width, height){
     .attr("text-anchor", "end")
     .attr("transform", "rotate(-90)")
     .attr("y", -11+"%")
-    .attr("x", -23+"%")
+    .attr("x", -7.5+"%")
     .style("font-family","SFProDisplay-Semibold")
     .style("font-size",20)
     .style("fill","#42506B")
@@ -2139,7 +2139,7 @@ function scatter(data, width, height){
       console.log("X: " + d3.pointer(event)[0])
       console.log("Y: " + d3.pointer(event)[1])
       tooltip
-      .style("left", (d3.pointer(event)[0]+20) + "px")
+      .style("left", (d3.pointer(event)[0]+135) + "px")
       .style("top", (d3.pointer(event)[1]-100) + "px")
     })
     .on('mouseout', function (d, i) {

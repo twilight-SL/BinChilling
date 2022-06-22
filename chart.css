@@ -77,8 +77,8 @@
   display: flex;
   justify-content: space-between;
   position: absolute;
-  left:60%;
-  top:2.5%;
+  left:125%;
+  top: 0.5%;
 }
 
 h6 {
@@ -146,7 +146,7 @@ div.tooltip {
 .chart-info-form{
   position: absolute;
   left: 135%;
-  top: 120%;
+  top: 127.5%;
   padding: 1% 3.5%;
   width: 600px;
   height: 176px;
@@ -213,8 +213,8 @@ hr{
 #nodata{
   width:25%;
   position: absolute;
-  left:62%;
-  top:18%;
+  left:145%;
+  top:22.5%;
   display: none;
 }
 #nodata img{
