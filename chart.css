@@ -145,8 +145,8 @@ div.tooltip {
 /* ---------------- Chart Information -------------- */
 .chart-info-form{
   position: absolute;
-  left: 55vw;
-  top: 43.5vh;
+  left: 135%;
+  top: 120%;
   padding: 1% 3.5%;
   width: 600px;
   height: 176px;
