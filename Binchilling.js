@@ -2044,16 +2044,15 @@ var scatter_margin = {top: 25, right: 25, bottom: 20, left: 20},
 function scatter(data, width, height){
   const svg = d3.select("#scatter-chart")
     .append("svg")
-    .attr("width", 1000)
-    .attr("height", 300)
+    .attr("width", 800)
+    .attr("height", 295)
     .append("g")
-    .attr("transform", `translate(${scatter_margin.left + 250} , 40)`);
+    .attr("transform", `translate(${scatter_margin.left } , 20)`);
 
   if(data == ''){
     document.getElementById('nodata').style.display='block';
     document.getElementById('scatter-chart').style.display='none';
   }else{
-    console.log("Have data");
     document.getElementById('nodata').style.display='none';
     document.getElementById('scatter-chart').style.display='block';
     // Add X axis
@@ -2136,10 +2135,10 @@ function scatter(data, width, height){
           .style("opacity", 1);
      })
     .on('mousemove', function(d, i){
-      console.log("X: " + d3.pointer(event)[0])
-      console.log("Y: " + d3.pointer(event)[1])
+      // console.log("X: " + d3.pointer(event)[0])
+      // console.log("Y: " + d3.pointer(event)[1])
       tooltip
-      .style("left", (d3.pointer(event)[0]+135) + "px")
+      .style("left", (d3.pointer(event)[0]+25) + "px")
       .style("top", (d3.pointer(event)[1]-100) + "px")
     })
     .on('mouseout', function (d, i) {

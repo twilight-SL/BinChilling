@@ -77,8 +77,8 @@
   display: flex;
   justify-content: space-between;
   position: absolute;
-  left:125%;
-  top: 0.5%;
+  left:60%;
+  top: 7.5%;
 }
 
 h6 {
@@ -139,14 +139,14 @@ div.tooltip {
 #scatter-chart{
   position: absolute;
   left:60%;
-  top:10%;
+  top:15%;
 }
 
 /* ---------------- Chart Information -------------- */
 .chart-info-form{
   position: absolute;
-  left: 135%;
-  top: 127.5%;
+  left: 59%;
+  top: 67%;
   padding: 1% 3.5%;
   width: 600px;
   height: 176px;
@@ -185,11 +185,11 @@ hr{
 .scatter-white-bar{
   background-color:#FFFFFF;
   width:36%;
-  height: 2.5%;
+  height: 3%;
   position: absolute;
   z-index:10;
-  top: 57.5%;
-  left:60.5%;
+  top: 61%;
+  left: 60%;
   font-family: SFPRODISPLAYREGULAR;
   font-size: 20px;
   line-height: 24px;
@@ -213,8 +213,8 @@ hr{
 #nodata{
   width:25%;
   position: absolute;
-  left:145%;
-  top:22.5%;
+  left:60%;
+  top:18%;
   display: none;
 }
 #nodata img{

@@ -2047,98 +2047,98 @@
           <div class="NFT_detail_characteristic_floorprice_bar2"></div>
           <div class="NFT_detail_characteristic_floorprice_bar3"></div>
         </div>
-        <!-------------------------- Chart -------------------------->
-        <!-- Initialize a select button -->
-        <div class="scatter-title">
-          <h6>Crazy bird</h6>
-          <div class="scatter-scope-select">
-            <p>Span</p>
-            <select class="form-select form-select-sm" id="scatter-selection" aria-label=".form-select-sm example">
-                <option value="0" selected>1 H</option>
-                <option value="1">1 D</option>
-                <option value="7">7 D</option>
-                <option value="14">14 D</option>
-                <option value="30">30 D</option>
-            </select>
+      </div>
+      <!-------------------------- Chart -------------------------->
+      <!-- Initialize a select button -->
+      <div class="scatter-title">
+        <h6>Crazy bird</h6>
+        <div class="scatter-scope-select">
+          <p>Span</p>
+          <select class="form-select form-select-sm" id="scatter-selection" aria-label=".form-select-sm example">
+              <option value="0" selected>1 H</option>
+              <option value="1">1 D</option>
+              <option value="7">7 D</option>
+              <option value="14">14 D</option>
+              <option value="30">30 D</option>
+          </select>
+        </div>
+      </div>
+      <div id="nodata">
+        <img src="./Img/scatter/noTrade.jpg" style="width:27.5vw;position:absolute;top:27.5%" alt="">
+      </div>
+        <!-- Create a div where the graph will take place -->
+        <div id="scatter-chart"></div>
+      <div class="scatter-white-bar">
+        <div class="flex" id="scatter-day-scale">
+          <div class="flex">
+            <span>15:30</span>
+            <span>19:30</span>
+            <span>23:30</span>
+            <span>3:30</span>
+            <span>6:30</span>
+            <span>10:30</span>
           </div>
         </div>
-        <div id="nodata">
-          <img src="./Img/scatter/noTrade.jpg" style="width:27.5vw;position:absolute;top:27.5%" alt="">
-        </div>
-         <!-- Create a div where the graph will take place -->
-         <div id="scatter-chart"></div>
-        <div class="scatter-white-bar">
-          <div class="flex" id="scatter-day-scale">
-            <div class="flex">
-              <span>15:30</span>
-              <span>19:30</span>
-              <span>23:30</span>
-              <span>3:30</span>
-              <span>6:30</span>
-              <span>10:30</span>
-            </div>
-          </div>
-          <div class="flex" id="scatter-week-scale">
-            <div class="flex">
-              <span>15.May</span>
-              <span>17.May</span>
-              <span>19.May</span>
-              <span>21.May</span>
-              <span>23.May</span>
-            </div>
-          </div>
-          <div class="flex" id="scatter-twoWeek-scale">
-            <div class="flex">
-              <span>10.May</span>
-              <span>13.May</span>
-              <span>16.May</span>
-              <span>19.May</span>
-              <span>22.May</span>
-            </div>
-          </div>
-          <div id="scatter-month-scale">
-            <div class="flex">
-              <span>23.Apr</span>
-              <span>29.Apr</span>
-              <span>4.May</span>
-              <span>10.May</span>
-              <span>16.May</span>
-              <span>22.May</span>
-            </div>
+        <div class="flex" id="scatter-week-scale">
+          <div class="flex">
+            <span>15.May</span>
+            <span>17.May</span>
+            <span>19.May</span>
+            <span>21.May</span>
+            <span>23.May</span>
           </div>
         </div>
-        <!--------- Chart Information ----------->
-        <div class="chart-info-form">
-          <div class="r3"> 
-            <div class="tc">
-              <p style="width: 60px;">VOLUME</p>
-              <img src="./Img/scatter/Group 421.png" alt="">
-              <img src="./Img/scatter/487.png" alt="">
-            </div>
-            <div class="tc">
-              <p style="width: 74px;">AVG PRICE</p>
-              <img src="./Img/scatter/Group 421.png" alt="">
-              <img src="./Img/scatter/2.34.png" alt="">
-            </div>
-            <div class="tc">
-              <p style="width: 69px;">1H FLOOR</p>
-              <img src="./Img/scatter/-.png" alt="">
-            </div>
+        <div class="flex" id="scatter-twoWeek-scale">
+          <div class="flex">
+            <span>10.May</span>
+            <span>13.May</span>
+            <span>16.May</span>
+            <span>19.May</span>
+            <span>22.May</span>
           </div>
-        <hr>
-        <div class="r3">  
-            <div class="tc">
-              <p style="width: 66px;">1D SALES</p>
-              <img src="./Img/scatter/1.png" style="width:10px" alt="">
-            </div>
-            <div class="tc">
-              <p style="width: 66px;">1H SALES</p>
-              <img src="./Img/scatter/0-1.png" alt="">
-            </div>
-            <div class="tc">
-              <p style="width: 95px;">10 MIN SALES</p>
-              <img src="./Img/scatter/0-1.png" alt="">
-            </div>
+        </div>
+        <div id="scatter-month-scale">
+          <div class="flex">
+            <span>23.Apr</span>
+            <span>29.Apr</span>
+            <span>4.May</span>
+            <span>10.May</span>
+            <span>16.May</span>
+            <span>22.May</span>
+          </div>
+        </div>
+      </div>
+      <!--------- Chart Information ----------->
+      <div class="chart-info-form">
+        <div class="r3"> 
+          <div class="tc">
+            <p style="width: 60px;">VOLUME</p>
+            <img src="./Img/scatter/Group 421.png" alt="">
+            <img src="./Img/scatter/487.png" alt="">
+          </div>
+          <div class="tc">
+            <p style="width: 74px;">AVG PRICE</p>
+            <img src="./Img/scatter/Group 421.png" alt="">
+            <img src="./Img/scatter/2.34.png" alt="">
+          </div>
+          <div class="tc">
+            <p style="width: 69px;">1H FLOOR</p>
+            <img src="./Img/scatter/-.png" alt="">
+          </div>
+        </div>
+      <hr>
+      <div class="r3">  
+          <div class="tc">
+            <p style="width: 66px;">1D SALES</p>
+            <img src="./Img/scatter/1.png" style="width:10px" alt="">
+          </div>
+          <div class="tc">
+            <p style="width: 66px;">1H SALES</p>
+            <img src="./Img/scatter/0-1.png" alt="">
+          </div>
+          <div class="tc">
+            <p style="width: 95px;">10 MIN SALES</p>
+            <img src="./Img/scatter/0-1.png" alt="">
           </div>
         </div>
       </div>
