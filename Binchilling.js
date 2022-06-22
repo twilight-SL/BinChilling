@@ -1672,99 +1672,85 @@ $(document).ready(function () {
         $(this).css("background","linear-gradient(270deg, #528CA2 0%, #286A93 100%)");
         $(this).addClass("select-scope");
         console.log("ID: " + this.id);
-        var output = ''
-        switch(this.id){
-          case 'day':
-            output = 'D';
-            break;
-          case 'week':
-            output = 'W';
-            break;
-          case 'month':
-            output = 'M';
-            break;
-          default:
-              break;
-        }
+        var output = ""
 
         switch(this.id){
           case "day":
-            $.get('./get_stock', {
-              stock_code:2330,
-              CEyear:2022,
-              month:5
-            }, function (result) {
-              var data_stock = result;
-              console.log(data_stock)
+            // $.get('./get_stock', {
+            //   stock_code:2330,
+            //   CEyear:2022,
+            //   month:5
+            // }, function (result) {
+            //   var data_stock = result;
+              // console.log(data_stock)
+              // var day = [
+              //   {Date: 5.13, Amount: data_stock[8][1]},
+              //   {Date: 5.17, Amount: data_stock[10][1]},
+              //   {Date: 5.19, Amount: data_stock[12][1]},
+              //   {Date: 5.20, Amount: data_stock[13][1]},
+              //   {Date: 5.23, Amount: data_stock[14][1]}
+              // ];
               var day = [
-                {Date: 5.13, Amount: data_stock[8][1]},
-                {Date: 5.17, Amount: data_stock[10][1]},
-                {Date: 5.19, Amount: data_stock[12][1]},
-                {Date: 5.20, Amount: data_stock[13][1]},
-                {Date: 5.23, Amount: data_stock[14][1]}
+                {Date: 5.15, Amount: 35.7}, // 5.10
+                {Date: 5.17, Amount: 31.8},
+                {Date: 5.19, Amount: 30.75},
+                {Date: 5.21, Amount: 30.7}, //5.20
+                {Date: 5.23, Amount: 32.35}
               ];
+              output = "D";
               update(output, day);
               document.getElementById('line-month-scale').style.display='none';
               document.getElementById('line-chart-category').style.display='block';
               document.getElementById('line-week-scale').style.display='none';
               document.getElementById('line-day-scale').style.display='block';
-            });
+            // });
             break;
           case "week":
             var week;
-            $.get('./get_stock', {
-              stock_code:2330,
-              CEyear:2022,
-              month:3
-            }, function (result) {
-              var data_stock = result;
-              console.log(data_stock)
-              week = [
-                {Date: 3.18, Amount: data_stock[13][1]}
-              ];
-            });
-            console.log("outside week: " + week);
-            $.get('./get_stock', {
-              stock_code:2330,
-              CEyear:2022,
-              month:4
-            }, function (result) {
-              var data_stock = result;
-              console.log("week: " + week);
-              console.log(data_stock)
+            // $.get('./get_stock', {
+            //   stock_code:2330,
+            //   CEyear:2022,
+            //   month:3
+            // }, function (result) {
+            //   var data_stock = result;
+            //   console.log(data_stock)
               var week = [
-                {Date: 3.18, Amount: data_stock[data_stock.length-1][1]},
-                {Date: 4.1, Amount: data_stock[data_stock.length-5][1]},
-                {Date: 4.15, Amount: data_stock[data_stock.length-8][1]},
-                {Date: 4.29, Amount: data_stock[data_stock.length-14][1]}
+                {Date: 3.91, Amount: 32.25},//3.31
+                {Date: 4.01, Amount: 33.0},
+                {Date: 4.14, Amount: 37.35},
+                {Date: 4.21, Amount: 35.65},
+                {Date: 4.28, Amount: 33.75} 
               ];
+              output = "W";
               update(output, week);
               document.getElementById('line-month-scale').style.display='none';
               document.getElementById('line-chart-category').style.display='block';
               document.getElementById('line-week-scale').style.display='block';
               document.getElementById('line-day-scale').style.display='none';
-            });
+            // });
             break;
           case "month":
-            $.get('../get_stock_month_average', {
-              stock_code:2330,
-              CEyear:2022,
-              month:4
-            }, function (result) {
-              var data_stock = result;
+            // $.get('../get_stock_month_average', {
+            //   stock_code:2330,
+            //   CEyear:2022,
+            //   month:4
+            // }, function (result) {
+            //   var data_stock = result;
               var month = [
-                {Date: 1, Amount: data_stock[data_stock.length-1][1]},
-                {Date: 2, Amount: data_stock[data_stock.length-5][1]},
-                {Date: 3, Amount: data_stock[data_stock.length-10][1]},
-                {Date: 4, Amount: data_stock[data_stock.length-15][1]},
-                {Date: 5, Amount: data_stock[data_stock.length-18][1]}
+                {Date: 1, Amount: 26.85},
+                {Date: 2, Amount: 26.4},
+                {Date: 3, Amount: 32.7},
+                {Date: 4, Amount: 34.2},
+                {Date: 5, Amount: 35.5},
+                {Date: 6, Amount: 34.1}
               ];
+              output = "M";
               update(output, month); 
               document.getElementById('line-day-scale').style.display='none';
               document.getElementById('line-week-scale').style.display='none';
               document.getElementById('line-month-scale').style.display='block';
               document.getElementById('line-chart-category').style.display='block';
-            });
+            // });
             break;
         }
       });
@@ -2207,7 +2193,7 @@ function update(output,data) {
     .attr("y", 545)
     .text("Time (" + output + ")");
 
-  y.domain([d3.min(data, function(d) { return d.Amount }), d3.max(data, function(d) { return d.Amount  }) ]);
+  y.domain([d3.min(data, function(d) { return d.Amount })-2, d3.max(data, function(d) { return d.Amount  })+1 ]);
   svg.selectAll(".myYaxis")
     .transition()
     .duration(3000)
@@ -2318,6 +2304,7 @@ function update(output,data) {
     focusText.style("opacity", 0)
   }
 }
+
 /* -------------------- Add Account Event ---------------------- */
 function TurnBack_choose_account(SuccessOrNot){
   document.getElementById("add_new_account_page").style.display='block';
