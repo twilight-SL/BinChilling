@@ -329,7 +329,7 @@ hr{
   text-align: center;
 }
 
-.scatter-white-bar{
+#scatter-white-bar{
   background-color:#FFFFFF;
   width:36%;
   height: 3%;
